@@ -1,0 +1,97 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Modifying the list of associations shown in the classification editor</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?ar01s02s07.htm"; }
+  else { parent.quicksync('a4.1.7'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Modifying the list of associations shown in the classification editor</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="ar01s02s06.htm">Previous</a>&nbsp;
+     <a href="ar01s03.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p style="margin: 14px 0px 10px 0px;">The TMCore EPiServer Module creates as list of association types that will be rendered as slots in the classification editor:</p>
+<p style="margin: 14px 0px 0px 0px;"><img src="ag-classificationeditor.png" width="502" height="311" border="0" alt="Association slots derived from the topic map schema shown in the classification editor" title="Association slots derived from the topic map schema shown in the classification editor"></p>
+<p class="p_ImageCaption"><span class="f_ImageCaption">Association slots derived from the topic map schema shown in the classification editor</span></p>
+<p>This list is created in code as a list of instances of <span class="f_InlineCode">NetworkedPlanet.EPiServerModule.Schema.AssociationField</span> objects, and then converted to a serialized JSON object.</p>
+<p>It is possible for administrators to deploy a plug-in that edits the list of associations slots shown in the classification editor by registering an event handler with the <span class="f_InlineCode">TopicTypeSchemaInitialized</span> event on the <span class="f_InlineCode">NetworkedPlanet.EPiServerModule.Schema.SchemaJSON</span> class. This event is then invoked when the JSON schema for the topic type is calculated, but before final serialization.</p>
+<p>This is useful, as an example, for reordering the slots before they are rendered. The following class listing shows how ordering the slots by arc label may be achieved:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">using&nbsp;System.Collections.Generic;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">using&nbsp;System.Reflection;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">using&nbsp;EPiServer.PlugIn;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">using&nbsp;log4net;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">using&nbsp;NetworkedPlanet.EPiServerModule.Schema;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">namespace&nbsp;EPiServerModuleDemo</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;///&nbsp;&lt;summary&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;///&nbsp;Demonstration&nbsp;of&nbsp;using&nbsp;the&nbsp;TopicTypeSchemaInitialized&nbsp;event&nbsp;on&nbsp;&lt;see&nbsp;cref="SchemaJSON"/&gt;&nbsp;to&nbsp;order&nbsp;association&nbsp;fields&nbsp;in&nbsp;the</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;///&nbsp;classification&nbsp;editor</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;///&nbsp;&lt;/summary&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;class&nbsp;AssociationFieldOrdererPlugin&nbsp;:&nbsp;PlugInAttribute</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#region&nbsp;Log&nbsp;Configuration</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;///&nbsp;&lt;summary&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;///&nbsp;The&nbsp;log4net&nbsp;logger&nbsp;for&nbsp;this&nbsp;class</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;///&nbsp;&lt;/summary&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;readonly&nbsp;ILog&nbsp;log&nbsp;=&nbsp;LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#endregion</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;///&nbsp;&lt;summary&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;///&nbsp;Automatically&nbsp;invoked&nbsp;at&nbsp;system&nbsp;start-up&nbsp;by&nbsp;EPiServer</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;///&nbsp;&lt;/summary&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;void&nbsp;Start()</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SchemaJSON.Instance.TopicTypeSchemaInitialized&nbsp;+=&nbsp;Instance_TopicTypeSchemaInitialized;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SchemaJSON.Instance.FlushSchema();</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;///&nbsp;&lt;summary&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;///&nbsp;Sort&nbsp;the&nbsp;set&nbsp;of&nbsp;&lt;see&nbsp;cref="AssociationField"/&gt;&nbsp;instance&nbsp;by&nbsp;the&nbsp;arc&nbsp;label</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;///&nbsp;&lt;/summary&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;///&nbsp;&lt;param&nbsp;name="sender"&gt;&lt;/param&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;///&nbsp;&lt;param&nbsp;name="args"&gt;&lt;/param&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;void&nbsp;Instance_TopicTypeSchemaInitialized(object&nbsp;sender,&nbsp;TopicTypeSchemaDelegateArgs&nbsp;args)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.DebugFormat("Sorting&nbsp;list&nbsp;of&nbsp;association&nbsp;fields&nbsp;for&nbsp;{0}({1})",&nbsp;args.TopicTypeSI,&nbsp;args.TopicTypeId);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List&lt;AssociationField&gt;&nbsp;fields&nbsp;=&nbsp;args.AssociationFields;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fields.Sort((first,&nbsp;second)&nbsp;=&gt;&nbsp;(!string.IsNullOrEmpty(first.ArcLabel)&nbsp;?&nbsp;first.ArcLabel.CompareTo(</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;second.ArcLabel)&nbsp;:&nbsp;0));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">}</span></p>
+<p>&nbsp;</p>
+
+</td></tr></table>
+
+</body>
+</html>

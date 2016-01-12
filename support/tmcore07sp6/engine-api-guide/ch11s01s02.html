@@ -1,0 +1,58 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Constraints</title><link rel="stylesheet" href="../doc.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><link rel="start" href="index.html" title="TMCore Engine API Guide"><link rel="up" href="ch11s01.html" title="Key Concepts"><link rel="prev" href="ch11s01s01.html" title="Types"><link rel="next" href="ch11s01s03.html" title="Superclass-Subclass Inheritance"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="pageheader"><table class="logo" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td><span class="networked">Networked</span><span class="planet">Planet</span></td><td align="right"><span class="title">TMCore Engine API Guide</span></td></tr></table></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Constraints</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch11s01s01.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><th width="60%" align="center">Key Concepts</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch11s01s03.html"><img src="../graphics/next.png" alt="Next"></a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e3097"></a>Constraints</h3></div></div></div><p>Constraints in NPCL specify the relationships that are allowed
+      between instances of the types defined by the schema. NPCL has three
+      kinds of constraints:</p><div class="variablelist"><dl><dt><span class="term">Occurrence Constraints</span></dt><dd><p>Occurrence Constraints are allowed only on Topic Types.
+            These constraints specify the types of occurrences that are
+            allowed on a topic of a specific Topic Type.</p></dd><dt><span class="term">Role Player Constraints</span></dt><dd><p>Role Player Constraints are allowed only on Topic Types.
+            They specify the types of roles in associations that can be played
+            by a topic of a specific Topic Type.</p></dd><dt><span class="term">Association Role Constraints</span></dt><dd><p>Association Role Constraints occur only on Association
+            Types. They specify the types of roles that can be present in an
+            association of a specific Association Type.</p></dd></dl></div><p>All of the constraints support the Minimum Cardinality and Maximum
+      Cardinality facets which specify a numeric limit on the number of
+      relationships (e.g. the number of occurrences of type "Age" that can
+      appear on a topic of type "Person" could be limited to a minimum of 0
+      and a maximum of 1). Some constraints provide additional rules about how
+      topics can be related to each other. The following sections describe
+      each constraint in more detail.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e3123"></a>Occurrence Constraints</h4></div></div></div><p>An Occurrence Constraint specifies that a topic of a specific
+        Topic Type can have occurrences of a specific Occurrence Type. The
+        Minimum Cardinality and Maximum Cardinality facets specify how many
+        occurrences of the Occurrence Type are allowed on any single instance
+        of the Topic Type.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e3128"></a>Role Player Constraints</h4></div></div></div><p>A Role Player Constraint specifies that a topic of a specific
+        Topic Type can play a role of a specific Role Type. These constraints
+        can also optionally limit the roles played to only those in an
+        association of a specific Association Type.</p><p>The Minimum and Maximum Cardinality facets constrain how many
+        roles of the specified Role Type any instance of the specified Topic
+        Type may participate in.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e3135"></a>Association Role Constraints</h4></div></div></div><p>An Association Role Constraint specifies that an association of
+        a specific Association Type can have a role of a specific Role
+        Type.</p><p>The Minimum and Maximum Cardinality facets constraint how many
+        roles of the specified Role Type can appear on any single instance of
+        the specified Association Type.</p><div class="note"><h3 class="title">Note</h3><p>At this point it might seem confusing that there are limits on
+          how many roles a topic can play and how many roles can appear in an
+          association. However, the two controls apply in different
+          circumstances. Consider a topic map in which we want to record
+          people and the companies they work for. We want to record each
+          Person-to-Company relationship as a separate association, but we
+          recognise that a Company will have many employees and a Person may
+          work for more than one company. We create topic types "Person" and
+          "Company", association type "Employment" and Role Types "Employee"
+          and "Employer". In this example, we would allow the Person Topic
+          Type to play 0 or more roles of type "Employee" and the "Company"
+          topic type to play 0 or more roles of type "Employer", using the
+          Cardinality facets on the Role Player Constraints. However, to
+          ensure that we keep each Person-Company relationship in a separate
+          associaction, we would restrict the "Employment" Association Type to
+          have exactly one role of type "Employer" and exactly one role of
+          type "Employee" (set Minimum and Maximum Cardinality to "1").</p></div><p>The Association Role Constraint also supports an additional Arc
+        Label Facet. This facet specifies a default human-readable label for
+        the role. This label should be the way to describe the association
+        relationship when seen from the point of view of the role player. For
+        example an association describing the relationship between a person
+        and the company they work for might be represented using the
+        Association Type "Employment", with Role Types "Employee" and
+        "Employer". This implies that there are two Association Role
+        Constraints, one between the Association Type "Employment" and the
+        Role Type "Employee" and the other between the Association Type
+        "Employment" and the Role Type "Employer". For the "Employee" Role
+        Type, a suitable arc label might be "Works For" whereas for the
+        "Employer" Role Type we might use "Employs".</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch11s01s01.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch11s01.html"><img src="../graphics/up.png" alt="Up"></a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch11s01s03.html"><img src="../graphics/next.png" alt="Next"></a></td></tr><tr><td width="40%" align="left" valign="top">Types&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html"><img src="../graphics/home.png" alt="Home"></a></td><td width="40%" align="right" valign="top">&nbsp;Superclass-Subclass Inheritance</td></tr></table></div></body></html>

@@ -1,0 +1,471 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Service Operations</title><link rel="stylesheet" href="../doc.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><link rel="start" href="index.html" title="TMCore Web Services Guide"><link rel="up" href="ar01s03.html" title="Topic Map Web Service Definition"><link rel="prev" href="ar01s03s03.html" title="General Operation Errors"><link rel="next" href="ar01s04.html" title="NPCL Web Services Definition"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="pageheader"><table class="logo" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td><span class="networked">Networked</span><span class="planet">Planet</span></td><td align="right"><span class="title">TMCore Web Services Guide</span></td></tr></table></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Service Operations</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s03s03.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><th width="60%" align="center">Topic Map Web Service Definition</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ar01s04.html"><img src="../graphics/next.png" alt="Next"></a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e557"></a>Service Operations</h3></div></div></div><p>This section describes the methods supported by the Topic Map Web
+      Service.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e562"></a>Delete Associations</h4></div></div></div><p>Removes one or more associations from the specified topic map.
+        The associations to be deleted are identified by their unique object
+        identifiers.</p><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e567"></a>Method Name</h5></div></div></div><p><code class="methodname">DeleteAssociations</code></p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e573"></a>Parameters</h5></div></div></div><div class="variablelist"><dl><dt><span class="term">topicmap</span></dt><dd><p>The name of the topic map to delete the associations
+                from. This parameter is a single string.</p></dd><dt><span class="term">oids</span></dt><dd><p>The unique object identifiers of the associations to be
+                deleted. This parameter is an array of strings.</p></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e589"></a>Returns</h5></div></div></div><p>This method returns an XML document conforming to the Web
+          Service Results schema with a root element of type
+          <code class="sgmltag-element">res:results</code> which contains one
+          <code class="sgmltag-element">res:result </code>element for each association OID
+          specified in the request. The <code class="sgmltag-element">key</code> attribute of
+          each <code class="sgmltag-element">res:result</code> element specifies the OID of the
+          association that was deleted.</p><div class="note"><h3 class="title">Note</h3><p>This structure is returned as long as the
+            <em class="parameter"><code>topicmap</code></em> parameter is valid. Any error that
+            occurs on the deletion of an individual association will be
+            reported in the <code class="sgmltag-element">res:result</code> element for that
+            association.</p></div><p>Each <code class="sgmltag-element">res:result</code> element that reports an
+          error may contain a <code class="sgmltag-element">res:error</code> element that uses
+          one of the following codes:</p><div class="informaltable"><table cellspacing="0" cellpadding="3" border="1"><colgroup><col><col></colgroup><thead><tr><th>Error Code</th><th>Condition</th></tr></thead><tbody><tr><td>INVALID_OID</td><td>The object identifier provided for the association is
+                  not valid or is not an OID of an association contained in
+                  the topic map identified by the
+                  <em class="parameter"><code>topicmap</code></em> parameter.</td></tr><tr><td>DELETE_ASSOCIATION_FAILED</td><td>One of the associations specified for deletion could
+                  not be removed from the topic map. The error key will
+                  specify the OID of the association which could not be
+                  deleted. The message and nested action elements will help
+                  you identify the cause of the failure.</td></tr></tbody></table></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e645"></a>Errors</h5></div></div></div><div class="informaltable"><table cellspacing="0" cellpadding="3" border="1"><colgroup><col><col></colgroup><thead><tr><th>Error Code</th><th>Condition</th></tr></thead><tbody><tr><td>INVALID_TOPICMAP</td><td>The name provided in the
+                  <em class="parameter"><code>topicmap</code></em> parameter does not match the
+                  name of any topic map known to the server. The client should
+                  retry, specifying the correct topic map name.</td></tr></tbody></table></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e665"></a>Examples</h5></div></div></div><div class="example"><a name="d0e668"></a><p class="title"><b>Example&nbsp;9.&nbsp;HTTP Interface Request XML for DeleteAssociations
+            Operation</b></p><p>The following example shows an XML request that can be sent
+            using an HTTP POST to the DeleteAssociations.aspx operation
+            page.</p><pre class="programlisting">&lt;request&gt;
+  &lt;param name="topicmap"&gt;mytopicmap&lt;/param&gt;
+  &lt;param name="oids"&gt;1234&lt;/param&gt;
+  &lt;param name="oids"&gt;5678&lt;/param&gt;
+&lt;/request&gt;</pre></div><div class="example"><a name="d0e675"></a><p class="title"><b>Example&nbsp;10.&nbsp;C# Code Using the Web Services Client Library to Invoke the
+            DeleteAssociations Operation</b></p><p>The following example shows how to delete associations using
+            the Web Services Client library.</p><pre class="programlisting">TMSClient client = new TMSClient("http://topicmap.mycorp.com/tmws/TMService.asmx");
+XmlNode results = client.DeleteAssociations("mytopicmap", new string[] {"1234", "5678"});</pre></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e682"></a>Delete Topics</h4></div></div></div><p>Removes one or more topics from the specified topic map. The
+        topics to be deleted are identified by their unique object
+        identifiers.</p><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e687"></a>Method Name</h5></div></div></div><p><code class="methodname">DeleteTopics</code></p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e693"></a>Parameters</h5></div></div></div><div class="variablelist"><dl><dt><span class="term">topicmap</span></dt><dd><p>The name of the topic map to delete topics from.</p></dd><dt><span class="term">oidsc</span></dt><dd><p>The unique object identifiers of the topics to be
+                deleted. This parameter is an array of strings.</p></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e709"></a>Returns</h5></div></div></div><p>Returns an XML document conforming to the Web Service Results
+          schema with a root element of type <code class="sgmltag-element">res:results</code>
+          which contains one <code class="sgmltag-element">res:result</code> element for each
+          topic OID specified in the request. The key attribute of each
+          <code class="sgmltag-element">res:result</code> element specifies the OID of the topic
+          to be deleted.</p><div class="note"><h3 class="title">Note</h3><p>This structure is returned as long as the
+            <em class="parameter"><code>topicmap</code></em> parameter is valid. Any error that
+            occurs on the deletion of an individual topic will be reported in
+            the <code class="sgmltag-element">res:result</code> element for that topic.</p></div><p>Each <code class="sgmltag-element">res:result</code> element that reports an
+          error may contain a <code class="sgmltag-element">res:error</code> element that uses
+          one of the following codes:</p><div class="informaltable"><table cellspacing="0" cellpadding="3" border="1"><colgroup><col><col></colgroup><thead><tr><th>Error Code</th><th>Condition</th></tr></thead><tbody><tr><td>INVALID_OID</td><td>The object identifier provided for the topic is not
+                  valid or is not an OID of a topic contained in the topic map
+                  identified by the <em class="parameter"><code>topicmap</code></em>
+                  parameter.</td></tr><tr><td>DELETE_TOPIC_FAILED</td><td>One of the topics specified for deletion could not be
+                  removed from the topic map. The error key will specify the
+                  OID of the topic which could not be deleted. The message and
+                  nested action elements will help you identify the cause of
+                  the failure.</td></tr><tr><td>TOPIC_IN_USE</td><td>The topic could not be deleted because it is
+                  referenced from elsewhere in the topic map as a type, a
+                  scoping topic or plays a role in one or more associations.
+                  The error key specifies the OID of the topic that could not
+                  be deleted.</td></tr></tbody></table></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e767"></a>Errors</h5></div></div></div><div class="informaltable"><table cellspacing="0" cellpadding="3" border="1"><colgroup><col><col></colgroup><thead><tr><th>Error Code</th><th>Condition</th></tr></thead><tbody><tr><td>INVALID_TOPICMAP</td><td>The name provided in the
+                  <em class="parameter"><code>topicmap</code></em> parameter does not match the
+                  name of any topic map known to the server. The client should
+                  retry, specifying the correct topic map name.</td></tr></tbody></table></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e787"></a>Examples</h5></div></div></div><div class="example"><a name="d0e790"></a><p class="title"><b>Example&nbsp;11.&nbsp;HTTP Interface Request XML for DeleteTopics
+            Operation</b></p><p>The following request XML can be POSTed to the
+            DeleteTopics.aspx page to request the deletion of two topics from
+            the topic map.</p><pre class="programlisting">&lt;request&gt;
+  &lt;param name="topicmap"&gt;mytopicmap&lt;/param&gt;
+  &lt;param name="oids"&gt;1234&lt;/param&gt;
+  &lt;param name="oids"&gt;5678&lt;/param&gt;
+&lt;/request&gt;</pre></div><div class="example"><a name="d0e797"></a><p class="title"><b>Example&nbsp;12.&nbsp;C# Code Using the Web Services Client to Invoke the
+            DeleteTopics Operation</b></p><p>The following code snippet shows how to delete two topics
+            from a topic map using the Web Services Client library:</p><pre class="programlisting">TMSClient client = new TMSClient("http://topicmap.mycorp.com/tmws/TMService.asmx");
+XmlNode results = client.DeleteTopics("mytopicmap", new string[] {"1234", "5678"});</pre></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e804"></a>Get Hierarchy</h4></div></div></div><p>Retrieves an XML document describing a single hierarchy present
+        in the topic map. The hierarchy to be retrieved is identified by the
+        unique object identifier of the topic that defines the
+        hierarchy.</p><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e809"></a>Method Name</h5></div></div></div><p><code class="methodname">GetHierarchy</code></p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e815"></a>Parameters</h5></div></div></div><div class="variablelist"><dl><dt><span class="term">topicmap</span></dt><dd><p>The name of the topic map to retrieve the specified
+                hierarchy from.</p></dd><dt><span class="term">hierarchydefid</span></dt><dd><p>The object identifier of the topic that defines the
+                hierarchy to be retrieved.</p></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e831"></a>Returns</h5></div></div></div><p>An XML document conforming to the Networked Planet Hierarchy
+          XML Schema.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e836"></a>Errors</h5></div></div></div><div class="informaltable"><table cellspacing="0" cellpadding="3" border="1"><colgroup><col><col></colgroup><thead><tr><th>Error Code</th><th>Condition</th></tr></thead><tbody><tr><td>INVALID_TOPICMAP</td><td>The name provided in the
+                  <em class="parameter"><code>topicmap</code></em> parameter does not match the
+                  name of any topic map known to the server. The client should
+                  retry, specifying the correct topic map name.</td></tr><tr><td>INVALID_OID</td><td>The value of the
+                  <em class="parameter"><code>hierarchydefid</code></em> parameter was not a
+                  valid object identifier or was not the identifier of a topic
+                  contained in the topic map identified by the
+                  <em class="parameter"><code>topicmap</code></em> parameter.</td></tr><tr><td>NOT_A_HIERARCHY</td><td>The topic identified by
+                  <em class="parameter"><code>hierarchydefid</code></em> does not define a
+                  hierarchy in the topic map.</td></tr></tbody></table></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e875"></a>Examples</h5></div></div></div><div class="example"><a name="d0e878"></a><p class="title"><b>Example&nbsp;13.&nbsp;HTTP POST Body to Invoke the GetHierarchy Operation</b></p><pre class="programlisting">&lt;request&gt;
+  &lt;param name="topicmap"&gt;mytopicmap&lt;/param&gt;
+  &lt;param name="hierarchydefid"&gt;1234&lt;/param&gt;
+&lt;/request&gt;</pre></div><div class="example"><a name="d0e883"></a><p class="title"><b>Example&nbsp;14.&nbsp;HTTP GET URL to Invoke the GetHierarchy Operation</b></p><pre class="programlisting">http://topicmap.mycorp.com/tmws/GetHierarchy.aspx?topicmap=mytopicmap&amp;hierarchydefid=1234</pre></div><div class="example"><a name="d0e888"></a><p class="title"><b>Example&nbsp;15.&nbsp;C# Code to Invoke the GetHierarchy Operation using the Web
+            Services Client Library</b></p><pre class="programlisting">TMSClient client = new TMSClient("http://topicmap.mycorp.com/tmws/TMService.asmx");
+
+XmlNode hierarchy = client.GetHierarchy("mytopicmap", "1234");</pre></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e893"></a>Get Hierarchy Roots</h4></div></div></div><p>Returns an XML document describing all of the hierarchies
+        present in the topic map. For each hierarchy, the returned document
+        provides the unique object identifier of the topic that defines the
+        hierarchy and the topic that is the root topic of the
+        hierarchy.</p><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e898"></a>Method Name</h5></div></div></div><p><code class="methodname">GetHierarchyRoots</code></p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e904"></a>Parameters</h5></div></div></div><div class="variablelist"><dl><dt><span class="term">topicmap</span></dt><dd><p>The name of the topic map to retrieve the hierarchy
+                information from.</p></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e914"></a>Returns</h5></div></div></div><p>An XML document describing each of the hierarchies contained
+          in the specified topic map. The document conforms to the
+          NetworkedPlanet Hierarchy XML Schema with the
+          <code class="sgmltag-element">tmh:treelist</code> element as its root element.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e922"></a>Errors</h5></div></div></div><div class="informaltable"><table cellspacing="0" cellpadding="3" border="1"><colgroup><col><col></colgroup><thead><tr><th>Error Code</th><th>Condition</th></tr></thead><tbody><tr><td>INVALID_TOPICMAP</td><td>The name provided in the
+                  <em class="parameter"><code>topicmap</code></em> parameter does not match the
+                  name of any topic map known to the server. The client should
+                  retry, specifying the correct topic map name.</td></tr></tbody></table></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e942"></a>Examples</h5></div></div></div><div class="example"><a name="d0e945"></a><p class="title"><b>Example&nbsp;16.&nbsp;HTTP POST Body to Invoke the GetHierarchyRoots
+            Operation</b></p><pre class="programlisting">&lt;request&gt;
+  &lt;param name="topicmap"&gt;mytopicmap&lt;/param&gt;
+&lt;/request&gt;</pre></div><div class="example"><a name="d0e950"></a><p class="title"><b>Example&nbsp;17.&nbsp;HTTP GET URL to Invoke the GetHierarchyRoots
+            Operation</b></p><pre class="programlisting">http://topicmap.mycorp.com/tmws/GetHierarchyRoots.aspx?topicmap=mytopicmap</pre></div><div class="example"><a name="d0e955"></a><p class="title"><b>Example&nbsp;18.&nbsp;C# Code to Invoke the GetHierarchyRoots Operation using the
+            Web Services Client Library</b></p><pre class="programlisting">TMSClient client = new TMSClient("http://topicmap.mycorp.com/tmws/TMService.asmx");
+
+XmlNode hierarchyRoots = client.GetHierarchyRoots("mytopicmap");</pre></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e960"></a>Get Object By Source Locator</h4></div></div></div><p>Returns a topic map fragment that includes the topic map object
+        with the specified source locator. If the object is a topic,
+        occurrence, topic name, or variant name then the returned fragment
+        will contain at least a <code class="sgmltag-element">topiclist</code> element
+        containing the topic that contains that object. If the object is an
+        association or association role, then the returned fragment will
+        contain at least an <code class="sgmltag-element">associationlist</code> element that
+        contains the object.</p><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e971"></a>Method Name</h5></div></div></div><p><code class="methodname">GetObjectBySourceLocator</code></p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e977"></a>Parameters</h5></div></div></div><div class="variablelist"><dl><dt><span class="term">topicmap</span></dt><dd><p>The name of the topic map to search.</p></dd><dt><span class="term">sourcelocator</span></dt><dd><p>The source locator URI of the object to be
+                returned.</p></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e993"></a>Returns</h5></div></div></div><p>An XML document conforming to the NetworkedPlanet Topic Map
+          Fragment XML Schema. The object found by the query will be contained
+          in the topic map fragment. If the object requested was a topic, it
+          will be present as a <code class="sgmltag-element">frag:topic</code> element inside
+          the <code class="sgmltag-element">frag:topiclist</code> element. If the object was an
+          occurrence, topic name or variant name, the entire topic that
+          contains that object will be present as a
+          <code class="sgmltag-element">frag:topic</code> element inside the
+          <code class="sgmltag-element">frag:topiclist</code> element. If the object was an
+          association, it will be present as a
+          <code class="sgmltag-element">frag:association</code> element inside the
+          <code class="sgmltag-element">frag:associationlist</code> element. If the object was
+          an association role, the entire association that contains the object
+          will be present as a <code class="sgmltag-element">frag:association</code> element
+          inside the <code class="sgmltag-element">frag:associationlist</code> element. If the
+          result requires the generation of a <code class="sgmltag-element">frag:topic</code>
+          element, that topic will be fully serialized and any topics that it
+          references will be serialized as stubs.</p><p>If no object was found in the topic map with the specified
+          source locator, this method will return an empty
+          <code class="sgmltag-element">frag:topicmap</code> element.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1030"></a>Errors</h5></div></div></div><div class="informaltable"><table cellspacing="0" cellpadding="3" border="1"><colgroup><col><col></colgroup><thead><tr><th>Error Code</th><th>Condition</th></tr></thead><tbody><tr><td>INVALID_TOPICMAP</td><td>The name provided in the
+                  <em class="parameter"><code>topicmap</code></em> parameter does not match the
+                  name of any topic map known to the server. The client should
+                  retry, specifying the correct topic map name.</td></tr></tbody></table></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1050"></a>Examples</h5></div></div></div><div class="example"><a name="d0e1053"></a><p class="title"><b>Example&nbsp;19.&nbsp;HTTP POST Body to Invoke the GetObjectBySourceLocator
+            Operation</b></p><p>The following example could be used in the body of an HTTP
+            POST request to the GetObjectBySourceLocator.aspx request
+            page.</p><pre class="programlisting">&lt;request&gt;
+  &lt;param name="topicmap"&gt;mytopicmap&lt;/param&gt;
+  &lt;param name="sourcelocator"&gt;http://www.example.com/topicmaps/foo.xtm#bar&lt;/param&gt;
+&lt;/request&gt;</pre></div><div class="example"><a name="d0e1060"></a><p class="title"><b>Example&nbsp;20.&nbsp;HTTP GET URL to Invoke the GetObjectBySourceLocator
+            Operation</b></p><p>The following example shows how to invoke the
+            GetObjectBySourceLocator operation using an HTTP GET. Note that
+            the source locator value should be properly escaped within the URL
+            string.</p><pre class="programlisting">http://topicmap.mycorp.com/tmws/GetObjectBySourceLocator.aspx?topicmap=mytopicmap&amp;sourcelocator=http%3a%2f%2f...</pre></div><div class="example"><a name="d0e1067"></a><p class="title"><b>Example&nbsp;21.&nbsp;C# Code to Invoke the GetObjectBySourceLocator Operation
+            using the Web Services Client Library</b></p><pre class="programlisting">TMSClient client = new TMSClient("http://topicmap.mycorp.com/tmws/TMService.asmx");
+
+XmlNode tmFragment = client.GetObjectBySourceLocator("mytopicmap", "http://www.example.com/topicmaps/foo.xtm#bar");</pre></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e1072"></a>Get Topic</h4></div></div></div><p>Returns a topic map fragment that includes the specified topic.
+        The topic is identified by its unique object identifier.</p><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1077"></a>Method Name</h5></div></div></div><p><code class="methodname">GetTopic</code></p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1083"></a>Parameters</h5></div></div></div><div class="variablelist"><dl><dt><span class="term">topicmap</span></dt><dd><p>The name of the topic map to be searched for the
+                requested topic.</p></dd><dt><span class="term">topicid</span></dt><dd><p>The OID of the topic to be returned.</p></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1099"></a>Returns</h5></div></div></div><p>An XML document conforming to the NetworkedPlanet Topic Map
+          Fragment XML Schema. The root element will be the
+          <code class="sgmltag-element">frag:topicmap</code> element. This fragment will contain
+          a <code class="sgmltag-element">frag:topiclist</code> which contains the requested
+          topic fully serialized and any topics that it references serialized
+          as stub topics. If no topic is found with the specified OID in the
+          specified topic map, then this method will return an empty
+          <code class="sgmltag-element">frag:topicmap</code> element.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1113"></a>Errors</h5></div></div></div><div class="informaltable"><table cellspacing="0" cellpadding="3" border="1"><colgroup><col><col></colgroup><thead><tr><th>Error Code</th><th>Condition</th></tr></thead><tbody><tr><td>INVALID_TOPICMAP</td><td>The name provided in the
+                  <em class="parameter"><code>topicmap</code></em> parameter does not match the
+                  name of any topic map known to the server. The client should
+                  retry, specifying the correct topic map name.</td></tr><tr><td>INVALID_OID</td><td>The value of the <em class="parameter"><code>topicid</code></em>
+                  parameter could not be parsed as a valid topic object
+                  identifier.</td></tr></tbody></table></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1141"></a>Examples</h5></div></div></div><div class="example"><a name="d0e1144"></a><p class="title"><b>Example&nbsp;22.&nbsp;HTTP POST Body to Invoke the GetTopic Operation</b></p><p>The following example could be used in the body of an HTTP
+            POST request to the GetTopic.aspx request page.</p><pre class="programlisting">&lt;request&gt;
+  &lt;param name="topicmap"&gt;mytopicmap&lt;/param&gt;
+  &lt;param name="topicid"&gt;1234&lt;/param&gt;
+&lt;/request&gt;</pre></div><div class="example"><a name="d0e1151"></a><p class="title"><b>Example&nbsp;23.&nbsp;HTTP GET URL to Invoke the GetTopic Operation</b></p><p>The following example shows how to invoke the GetTopic
+            operation using an HTTP GET.</p><pre class="programlisting">http://topicmap.mycorp.com/tmws/GetTopic.aspx?topicmap=mytopicmap&amp;topicid=1234</pre></div><div class="example"><a name="d0e1158"></a><p class="title"><b>Example&nbsp;24.&nbsp;C# Code to Invoke the GetObjectBySourceLocator Operation
+            using the Web Services Client Library</b></p><pre class="programlisting">TMSClient client = new TMSClient("http://topicmap.mycorp.com/tmws/TMService.asmx");
+
+XmlNode tmFragment = client.GetTopic("mytopicmap", "1234");</pre></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e1163"></a>Get Topic By Subject Identifier</h4></div></div></div><p>Returns a topic map fragment that includes the topic with the
+        specified subject identifier.</p><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1168"></a>Method Name</h5></div></div></div><p><code class="methodname">GetTopicBySubjectIdentifier</code></p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1174"></a>Parameters</h5></div></div></div><div class="variablelist"><dl><dt><span class="term">topicmap</span></dt><dd><p>The name of the topic map to be searched.</p></dd><dt><span class="term">locator</span></dt><dd><p>The subject identifier of the topic to be
+                returned.</p></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1190"></a>Returns</h5></div></div></div><p>An XML document conforming to the NetworkedPlanet Topic Map
+          Fragment XML Schema. This fragment will contain a
+          <code class="sgmltag-element">frag:topiclist</code> which contains the requested topic
+          fully serialized and any topics that it references serialized as
+          stub topics. If no topics have the specified subject identifier, an
+          empty <code class="sgmltag-element">frag:topicmap</code> element will be
+          returned.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1201"></a>Errors</h5></div></div></div><div class="informaltable"><table cellspacing="0" cellpadding="3" border="1"><colgroup><col><col></colgroup><thead><tr><th>Error Code</th><th>Condition</th></tr></thead><tbody><tr><td>INVALID_TOPICMAP</td><td>The name provided in the
+                  <em class="parameter"><code>topicmap</code></em> parameter does not match the
+                  name of any topic map known to the server. The client should
+                  retry, specifying the correct topic map name.</td></tr></tbody></table></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1221"></a>Examples</h5></div></div></div><div class="example"><a name="d0e1224"></a><p class="title"><b>Example&nbsp;25.&nbsp;HTTP POST Body to Invoke the GetTopicBySubjectIdentifier
+            Operation</b></p><p>The following example could be used in the body of an HTTP
+            POST request to the GetTopicBySubjectIdentifier.aspx request
+            page.</p><pre class="programlisting">&lt;request&gt;
+  &lt;param name="topicmap"&gt;mytopicmap&lt;/param&gt;
+  &lt;param name="locator"&gt;http://psi.example.com/companies/MSFT&lt;/param&gt;
+&lt;/request&gt;</pre></div><div class="example"><a name="d0e1231"></a><p class="title"><b>Example&nbsp;26.&nbsp;HTTP GET URL to Invoke the GetTopicBySubjectIdentifier
+            Operation</b></p><p>The following example shows how to invoke the
+            GetTopicBySubjectIdentifier operation using an HTTP GET. Note that
+            the subject identifier value should be properly escaped within the
+            URL string.</p><pre class="programlisting">http://topicmap.mycorp.com/tmws/GetTopicBySubjectIdentifier?topicmap=mytopicmap&amp;locator=http%3a%2f%2f...</pre></div><div class="example"><a name="d0e1238"></a><p class="title"><b>Example&nbsp;27.&nbsp;C# Code to Invoke the GetTopicBySubjectIdentifier Operation
+            using the Web Services Client Library</b></p><pre class="programlisting">TMSClient client = new TMSClient("http://topicmap.mycorp.com/tmws/TMService.asmx");
+
+XmlNode tmFragment = client.GetTopicBySubjectIdentifier("mytopicmap", "http://psi.example.com/companies/MSFT");</pre></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e1243"></a>Get Topic Maps</h4></div></div></div><p>Returns an XML document that describes all of the topic maps
+        managed by the TMCore server.</p><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1248"></a>Method Name</h5></div></div></div><p><code class="methodname">GetTopicMaps</code></p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1254"></a>Parameters</h5></div></div></div><p>This method takes no parameters.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1259"></a>Returns</h5></div></div></div><p>An XML document conforming to the NetworkedPlanet Topic Map
+          Fragment XML Schema. The root element of this document will be the
+          <code class="sgmltag-element">frag:topicmapsystem</code> element.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1267"></a>Errors</h5></div></div></div><p>There are no operation-specific errors for this
+          operation.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1272"></a>Examples</h5></div></div></div><div class="example"><a name="d0e1275"></a><p class="title"><b>Example&nbsp;28.&nbsp;HTTP POST Body to Invoke the GetTopicMaps Operation</b></p><p>The following example could be used in the body of an HTTP
+            POST request to the GetTopicMaps request page.</p><pre class="programlisting">&lt;request /&gt;
+</pre></div><div class="example"><a name="d0e1282"></a><p class="title"><b>Example&nbsp;29.&nbsp;HTTP GET URL to Invoke the GetTopicMaps Operation</b></p><p>The following example shows how to invoke the GetTopicMaps
+            operation using an HTTP GET.</p><pre class="programlisting">http://topicmap.mycorp.com/tmws/GetTopicMaps.aspx</pre></div><div class="example"><a name="d0e1289"></a><p class="title"><b>Example&nbsp;30.&nbsp;C# Code to Invoke the GetTopicMaps Operation using the Web
+            Services Client Library</b></p><pre class="programlisting">TMSClient client = new TMSClient("http://topicmap.mycorp.com/tmws/TMService.asmx");
+XmlNode tmSystem = client.GetTopicMaps();</pre></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e1294"></a>Get Topics By Name</h4></div></div></div><p>Returns a topic map fragment that includes every topic with a
+        specified name.</p><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1299"></a>Method Name</h5></div></div></div><p><code class="methodname">GetTopicsByName</code></p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1305"></a>Parameters</h5></div></div></div><div class="variablelist"><dl><dt><span class="term">topicmap</span></dt><dd><p>The name of the topic map to be searched.</p></dd><dt><span class="term">name</span></dt><dd><p>The string to find.</p></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1321"></a>Returns</h5></div></div></div><p>An XML document conforming to the NetworkedPlanet Topic Map
+          Fragment XML Schema. This fragment will contain a
+          <code class="sgmltag-element">frag:topiclist</code> which contains each of the topics
+          that have at least one name that matches the name parameter. These
+          topics will all be fully serialized. All of the topics referenced by
+          the fully serialized topics which are not themselves full serialized
+          will be included in the <code class="sgmltag-element">frag:topiclist</code> returned
+          as stub topics. If no topics are found with a name that matches the
+          name parameter, then an empty <code class="sgmltag-element">frag:topicmap</code>
+          element will be returned.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1335"></a>Errors</h5></div></div></div><div class="informaltable"><table cellspacing="0" cellpadding="3" border="1"><colgroup><col><col></colgroup><thead><tr><th>Error Code</th><th>Condition</th></tr></thead><tbody><tr><td>INVALID_TOPICMAP</td><td>The name provided in the
+                  <em class="parameter"><code>topicmap</code></em> parameter does not match the
+                  name of any topic map known to the server. The client should
+                  retry, specifying the correct topic map name.</td></tr></tbody></table></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1355"></a>Examples</h5></div></div></div><div class="example"><a name="d0e1358"></a><p class="title"><b>Example&nbsp;31.&nbsp;HTTP POST Body to Invoke the GetTopicsByName
+            Operation</b></p><p>The following example could be used in the body of an HTTP
+            POST request to the GetTopicsByName.aspx request page.</p><pre class="programlisting">&lt;request&gt;
+  &lt;param name="topicmap"&gt;mytopicmap&lt;/param&gt;
+  &lt;param name="name"&gt;NetworkedPlanet&lt;/param&gt;
+&lt;/request&gt;</pre></div><div class="example"><a name="d0e1365"></a><p class="title"><b>Example&nbsp;32.&nbsp;HTTP GET URL to Invoke the GetObjectBySourceLocator
+            Operation</b></p><p>The following example shows how to invoke the
+            GetObjectBySourceLocator operation using an HTTP GET. Note that
+            the name value should be properly escaped within the URL string if
+            it contains reserved or non-ASCII characters.</p><pre class="programlisting">http://topicmap.mycorp.com/tmws/GetTopicsByName?topicmap=mytopicmap&amp;name=NetworkedPlanet</pre></div><div class="example"><a name="d0e1372"></a><p class="title"><b>Example&nbsp;33.&nbsp;C# Code to Invoke the GetObjectBySourceLocator Operation
+            using the Web Services Client Library</b></p><pre class="programlisting">TMSClient client = new TMSClient("http://topicmap.mycorp.com/tmws/TMService.asmx");
+XmlNode tmFragment = client.GetTopicsByName("mytopicmap", "NetworkedPlanet");</pre></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e1377"></a>Get Topics By Type</h4></div></div></div><p>Returns a topic map fragment that includes all topics of a
+        specified type. The topic type is identified by its unique object
+        identifier.</p><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1382"></a>Method Name</h5></div></div></div><p><code class="methodname">GetTopicsByType</code></p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1388"></a>Parameters</h5></div></div></div><div class="variablelist"><dl><dt><span class="term">topicmap</span></dt><dd><p>The name of the topic map to search</p></dd><dt><span class="term">typeid</span></dt><dd><p>The object identifier of the topic type to return all
+                instances for.</p></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1404"></a>Returns</h5></div></div></div><p>An XML document conforming to the NetworkedPlanet Topic Map
+          Fragment XML Schema. The root element of this document will be a
+          <code class="sgmltag-element">frag:topicmap</code> element and will contain a
+          <code class="sgmltag-element">frag:topiclist</code> element which in turn contains a
+          <code class="sgmltag-element">frag:topic</code> element for each topic that is typed
+          by the topic identified by the <em class="parameter"><code>typeid</code></em>
+          parameter. The instance topics will all be serialized as stub
+          topics. If no topics are typed by the specified type, then the
+          <code class="sgmltag-element">frag:topicmap</code> element returned will be
+          empty.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1424"></a>Errors</h5></div></div></div><div class="informaltable"><table cellspacing="0" cellpadding="3" border="1"><colgroup><col><col></colgroup><thead><tr><th>Error Code</th><th>Condition</th></tr></thead><tbody><tr><td>INVALID_TOPICMAP</td><td>The name provided in the
+                  <em class="parameter"><code>topicmap</code></em> parameter does not match the
+                  name of any topic map known to the server. The client should
+                  retry, specifying the correct topic map name.</td></tr><tr><td>INVALID_OID</td><td>The value of the <em class="parameter"><code>typeid</code></em>
+                  parameter could not be converted to a valid object
+                  identifier.</td></tr><tr><td>NO_SUCH_OBJECT</td><td>The value of the <em class="parameter"><code>typeid</code></em>
+                  parameter was converted to a valid object identifier, but
+                  that identifier does not refer to a topic contained in the
+                  topic map identified by the <em class="parameter"><code>topicmap</code></em>
+                  parameter.</td></tr></tbody></table></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1463"></a>Examples</h5></div></div></div><div class="example"><a name="d0e1466"></a><p class="title"><b>Example&nbsp;34.&nbsp;HTTP POST Body to Invoke the GetTopicsByType
+            Operation</b></p><p>The following example could be used in the body of an HTTP
+            POST request to the GetTopicsByType.aspx request page.</p><pre class="programlisting">&lt;request&gt;
+  &lt;param name="topicmap"&gt;mytopicmap&lt;/param&gt;
+  &lt;param name="typeid"&gt;1234&lt;/param&gt;
+&lt;/request&gt;</pre></div><div class="example"><a name="d0e1473"></a><p class="title"><b>Example&nbsp;35.&nbsp;HTTP GET URL to Invoke the GetTopicsByType
+            Operation</b></p><p>The following example shows how to invoke the
+            GetTopicsByType operation using an HTTP GET.</p><pre class="programlisting">http://topicmap.mycorp.com/tmws/GetTopicsByType.aspx?topicmap=mytopicmap&amp;typeid=1234</pre></div><div class="example"><a name="d0e1480"></a><p class="title"><b>Example&nbsp;36.&nbsp;C# Code to Invoke the GetObjectBySourceLocator Operation
+            using the Web Services Client Library</b></p><pre class="programlisting">TMSClient client = new TMSClient("http://topicmap.mycorp.com/tmws/TMService.asmx");
+XmlNode tmFragment = client.GetTopicsByType("mytopicmap", "1234");</pre></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e1485"></a>Get Topic Types</h4></div></div></div><p>Returns a topic map fragment that includes all topics which are
+        used as the type of one or more other topics in the specified topic
+        map.</p><div class="note"><h3 class="title">Note</h3><p>This operation returns a list of all topics which are
+          currently used to type other topics in the topic map and is thus
+          based on actual usage rather than on a pre-defined topic map schema.
+          This list may therefore differ from the list of types returned by
+          the NPCL Schema Web Service.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1493"></a>Method Name</h5></div></div></div><p><code class="methodname">GetTopicTypes</code></p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1499"></a>Parameters</h5></div></div></div><div class="variablelist"><dl><dt><span class="term">topicmap</span></dt><dd><p>The name of the topic map to search.</p></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1509"></a>Returns</h5></div></div></div><p>An XML document conforming to the NetworkedPlanet Topic Map
+          Fragment XML Schema. The root element of this document will be a
+          <code class="sgmltag-element">frag:topicmap</code> element and will contain a
+          <code class="sgmltag-element">frag:topiclist</code> element which in turn contains a
+          <code class="sgmltag-element">frag:topic</code> element for each topic that is used as
+          the type of one or more topics in then topic map. All of these
+          topics will be fully serialized. Any topics which are referred to by
+          the type topics will also be included in the
+          <code class="sgmltag-element">frag:topiclist</code> element but will be serialized as
+          stubs.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1526"></a>Errors</h5></div></div></div><div class="informaltable"><table cellspacing="0" cellpadding="3" border="1"><colgroup><col><col></colgroup><thead><tr><th>Error Code</th><th>Condition</th></tr></thead><tbody><tr><td>INVALID_TOPICMAP</td><td>The name provided in the
+                  <em class="parameter"><code>topicmap</code></em> parameter does not match the
+                  name of any topic map known to the server. The client should
+                  retry, specifying the correct topic map name.</td></tr></tbody></table></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1546"></a>Examples</h5></div></div></div><div class="example"><a name="d0e1549"></a><p class="title"><b>Example&nbsp;37.&nbsp;HTTP POST Body to Invoke the GetTopicTypes
+            Operation</b></p><p>The following example could be used in the body of an HTTP
+            POST request to the GetTopicTypes.aspx request page.</p><pre class="programlisting">&lt;request&gt;
+  &lt;param name="topicmap"&gt;mytopicmap&lt;/param&gt;
+&lt;/request&gt;</pre></div><div class="example"><a name="d0e1556"></a><p class="title"><b>Example&nbsp;38.&nbsp;HTTP GET URL to Invoke the GetTopicTypes Operation</b></p><p>The following example shows how to invoke the
+            GetObjectBySourceLocator operation using an HTTP GET.</p><pre class="programlisting">http://topicmap.mycorp.com/tmws/GetTopicTypes.aspx?topicmap=mytopicmap</pre></div><div class="example"><a name="d0e1563"></a><p class="title"><b>Example&nbsp;39.&nbsp;C# Code to Invoke the GetObjectBySourceLocator Operation
+            using the Web Services Client Library</b></p><pre class="programlisting">TMSClient client = new TMSClient("http://topicmap.mycorp.com/tmws/TMService.asmx");
+XmlNode tmFragment = client.GetTopicTypes("mytopicmap");</pre></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e1568"></a>Query</h4></div></div></div><p>Executes a named query, optionally with one or more parameters.
+        The query string is configured on the server. The results are returned
+        as an XML document describing a results table.</p><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1573"></a>Method Name</h5></div></div></div><p><code class="methodname">Query</code></p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1579"></a>Parameters</h5></div></div></div><div class="variablelist"><dl><dt><span class="term">topicmap</span></dt><dd><p>The name of the topic map to execute the query
+                against.</p></dd><dt><span class="term">queryid</span></dt><dd><p>The string identifier of the query to be
+                executed.</p></dd><dt><span class="term">args</span></dt><dd><p>The arguments to be passed in to the query before it is
+                executed. Arguments are specified using the following XML
+                structure:</p><pre class="programlisting">&lt;tmws:args&gt;
+  &lt;tmws:string&gt;
+                <em class="replaceable"><code>ARG</code></em>
+&lt;/tmws:string&gt;
+&lt;/tmws:args&gt;</pre><div class="variablelist"><dl><dt><span class="term">tmws:args</span></dt><dd><p>The wrapper for the arguments to be passed in to
+                      the query.</p></dd><dt><span class="term">tmws:args/tmws:string</span></dt><dd><p>Contains a single argument value to pass in to the
+                      query. Arguments are passed by position and are bound to
+                      the parameters in the named query configuration in the
+                      order that the parameters are declared, so the ordering
+                      of tmws:string elements is important. This element is
+                      OPTIONAL and REPEATABLE.</p></dd></dl></div></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1619"></a>Returns</h5></div></div></div><p>An XML representation of the data set returned by executing
+          the query. This data set uses the normal XML syntax for ADO.NET data
+          sets and the XML namespace
+          <code class="literal">http://www.networkedplanet.com/2005/01/topicmap/querydata/</code>
+          .</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1627"></a>Errors</h5></div></div></div><div class="informaltable"><table cellspacing="0" cellpadding="3" border="1"><colgroup><col><col></colgroup><thead><tr><th>Error Code</th><th>Condition</th></tr></thead><tbody><tr><td>INVALID_TOPICMAP</td><td>The name provided in the
+                  <em class="parameter"><code>topicmap</code></em> parameter does not match the
+                  name of any topic map known to the server. The client should
+                  retry, specifying the correct topic map name.</td></tr><tr><td>INVALID_QUERY_ID</td><td>There is no query on the server with the identifier
+                  specified in the <em class="parameter"><code>queryid</code></em>
+                  parameter.</td></tr><tr><td>MISSING_ARGUMENTS</td><td>At least one argument was required but missing from
+                  the <em class="parameter"><code>args</code></em> parameter.</td></tr><tr><td>SQL_ERROR</td><td>An error was encountered exceuting the SQL query. The
+                  error message will also contain the error reported by the
+                  database.</td></tr></tbody></table></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1668"></a>Examples</h5></div></div></div><div class="example"><a name="d0e1671"></a><p class="title"><b>Example&nbsp;40.&nbsp;HTTP POST Body to Invoke the Query Operation</b></p><p>The following example could be used in the body of an HTTP
+            POST request to the Query.aspx request page.</p><pre class="programlisting">&lt;request&gt;
+  &lt;param name="topicmap"&gt;mytopicmap&lt;/param&gt;
+  &lt;param name="queryid"&gt;MyQuery&lt;/param&gt;
+  &lt;param name="args"&gt;ARG1&lt;/param&gt;
+  &lt;param name="args"&gt;ARG2&lt;/param&gt;
+&lt;/request&gt;</pre></div><div class="example"><a name="d0e1678"></a><p class="title"><b>Example&nbsp;41.&nbsp;HTTP GET URL to Invoke the Query Operation</b></p><p>The following example shows how to invoke the Query
+            operation using an HTTP GET. Note that this interface can be only
+            used if the query takes one argument or no arguments.</p><pre class="programlisting">http://topicmap.mycorp.com/tmws/Query.aspx?topicmap=mytopicmap&amp;queryid=MyQuery&amp;args=ARG1</pre></div><div class="example"><a name="d0e1685"></a><p class="title"><b>Example&nbsp;42.&nbsp;C# Code to Invoke the Query Operation using the Web
+            Services Client Library</b></p><pre class="programlisting">TMSClient client = new TMSClient("http://topicmap.mycorp.com/tmws/TMService.asmx");
+
+XmlNode results = client.Query("mytopicmap", "MyQuery", new string[] { "ARG1", "ARG2" });
+
+// The results can be deserialized as a DataSet which will always contain a single table:
+DataSet dsResults = new DataSet();
+dsResults.ReadXml(new XmlNodeReader(results));
+
+// Now you can access the results table as:
+DataTable dt = dsResults.Tables[0];</pre></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e1690"></a>Save</h4></div></div></div><p>Saves one or more topics and associations to the topic map. This
+        method can be used to create new topics and associations, to modify
+        existing topics and associations, and to delete objects from topics
+        and associations (to delete entire topics or associations, use the
+        Delete Topics or Delete Associations methods).</p><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1695"></a>Method Name</h5></div></div></div><p><code class="methodname">Save</code></p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1701"></a>Parameters</h5></div></div></div><div class="variablelist"><dl><dt><span class="term">topicmap</span></dt><dd><p>The topic map to be updated.</p></dd><dt><span class="term">tmfragment</span></dt><dd><p>The updates to be made to the topic map expressed as an
+                XML document conforming to the <a href="apas01.html" title="Topic Map Fragment XML Schema">NetworkedPlanet Topic Map Fragment XML
+                Schema</a> and with the frag:topicmap element as the root
+                element.</p></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1720"></a>Returns</h5></div></div></div><p>An XML document conforming to the NetworkedPlanet Web Service
+          Results XML schema with a <code class="sgmltag-element">res:results</code> element as
+          the root element of the document. The res:resultrs element will
+          contain one <code class="sgmltag-element">res:result</code> element for each
+          frag:topic and each <code class="sgmltag-element">frag:association</code> element
+          contained in the <em class="parameter"><code>tmfragment</code></em> parameter
+          indicating the success status for the update of that object). The
+          <code class="sgmltag-element">key</code> attribute of the
+          <code class="sgmltag-element">res:result</code> element will contain the value of the
+          <code class="sgmltag-element">oid</code> attribute of the
+          <code class="sgmltag-element">frag:topic</code> or <code class="sgmltag-element">frag:association</code>
+          that was processed. The following error codes may appear inside
+          res:result/res:error elements where an error occurs updating an
+          individual object:</p><div class="informaltable"><table cellspacing="0" cellpadding="3" border="1"><colgroup><col><col></colgroup><thead><tr><th>Error Code</th><th>Condition</th></tr></thead><tbody><tr><td>INVALID_OID</td><td>The value of the <code class="sgmltag-element">oid</code> attribute of
+                  the object to be updated was not a valid object identifier.
+                  For existing objects, the value of the
+                  <code class="sgmltag-element">oid</code> attribute must match the object
+                  identifier of at least one existing object. For newly
+                  created objects, the <code class="sgmltag-element">oid</code> attribute must
+                  start with the prefix 'new:' followed by one or more ASCII
+                  letters or digits.</td></tr><tr><td>INVALID_VERSION</td><td>The value of the <code class="sgmltag-element">version</code> attribute
+                  of the object to be updated was not a valid version number.
+                  A valid version number must be an integer value greater than
+                  0.</td></tr><tr><td>INVALID_TOPIC_REFERENCE</td><td>A topic reference contained in the
+                  <code class="sgmltag-element">frag:topic</code> or
+                  <code class="sgmltag-element">frag:association</code> could not be properly
+                  resolved. To properly resolve, the reference must be either
+                  the object identifier of an existing topic in the topic map,
+                  or it must match the value of the oid attribute for a newly
+                  created topic defined in the current
+                  <em class="parameter"><code>tmfragment</code></em> parameter.</td></tr><tr><td>NO_SUCH_TOPIC</td><td><p>The fragment contains a reference to a topic
+                  that does not exist in the topic map or which does not exist
+                  in the context specified in the
+                  <em class="parameter"><code>tmfragment</code></em> parameter.</p></td></tr><tr><td>UPDATE_ERROR</td><td>The fragment was syntactically valid but one of the
+                  operations described caused an error. The res:cause element
+                  will contain details about the error.</td></tr></tbody></table></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1811"></a>Errors</h5></div></div></div><div class="informaltable"><table cellspacing="0" cellpadding="3" border="1"><colgroup><col><col></colgroup><thead><tr><th>Error Code</th><th>Condition</th></tr></thead><tbody><tr><td>INVALID_TOPICMAP</td><td>The name provided in the
+                  <em class="parameter"><code>topicmap</code></em> parameter does not match the
+                  name of any topic map known to the server. The client should
+                  retry, specifying the correct topic map name.</td></tr></tbody></table></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1831"></a>Examples</h5></div></div></div><div class="example"><a name="d0e1834"></a><p class="title"><b>Example&nbsp;43.&nbsp;HTTP POST Body to Invoke the Save Operation</b></p><p>The following example could be used in the body of an HTTP
+            POST request to the Save.aspx request page. The updated topic will
+            have one name and one occurence after the operation
+            completes.</p><pre class="programlisting">&lt;request&gt;
+  &lt;param name="topicmap"&gt;mytopicmap&lt;/param&gt;
+  &lt;param name="tmfragment"&gt;
+    &lt;tmf:topicmap xmlns:tmf="http://www.networkedplanet.com/2005/01/topicmap/data/"&gt;
+      &lt;tmf:topiclist&gt;
+        &lt;tmf:topic oid="1234"&gt;
+          &lt;tmf:names&gt;
+            &lt;tmf:name&gt;
+              &lt;tmf:namestring&gt;Mega Corp Limited&lt;/tmf:namestring&gt;
+            &lt;/tmf:name&gt;
+          &lt;/tmf:names&gt;
+          &lt;tmf:occurrences&gt;
+            &lt;tmf:occurrence&gt;
+              &lt;tmf:type psi="http://psi.example.com/organizations/stock-ticker"/&gt;
+              &lt;tmf:resourcedata&gt;MGCP&lt;/tmf:resourcedata&gt;
+            &lt;/tmf:occurrence&gt;
+          &lt;/tmf:occurrences&gt;
+        &lt;/tmf:topic&gt;
+      &lt;/tmf:topiclist&gt;
+    &lt;/tmf:topicmap&gt;
+  &lt;/param&gt;
+&lt;/request&gt;</pre></div><div class="example"><a name="d0e1841"></a><p class="title"><b>Example&nbsp;44.&nbsp;C# Code to Invoke the Save Operation using the Web Services
+            Client Library</b></p><pre class="programlisting">TMSClient client = new TMSClient("http://topicmap.mycorp.com/tmws/TMService.asmx");
+// NOTE: This example shows building the request using CreateElement calls.
+// You could also use XmlDocument.Load() to read from an external source
+// or an internal string.
+string tmfNS = "http://www.networkedplanet.com/2005/01/topicmap/data/";
+XmlDocument requestDoc = new XmlDocument();
+XmlElement topicmap = requestDoc.CreateElement("topicmap", tmfNS);
+XmlElement topiclist = requestDoc.CreateElement("topiclist", tmfNS);
+XmlElement topic = requestDoc.CreateElement("topic", tmfNS);
+topic.SetAttribute("oid", "1234");
+XmlElement names = requestDoc.CreateElement("names", tmfNS);
+XmlElement name= requestDoc.CreateElement("name", tmfNS);
+XmlElement namestring = requestDoc.CreateElement("namestring", tmfNS);
+namestring.InnerText="Mega Corp Limited";
+name.AppendChild(namestring);
+names.AppendChild(name);
+topic.AppendChild(names);
+topiclist.AppendChild(topic);
+topicmap.AppendChild(topiclist);
+requestDoc.AppendChild(topicmap);
+
+client.Save("mytopicmap", requestDoc);</pre></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="tmws.ProcessTransaction"></a>ProcessTransaction</h4></div></div></div><p>Processes a Topic Map Transaction to update a named topic map.
+        Whereas the Save method updates a single topic or association and
+        completely overwrites all existing information for that topic or
+        association, this method provides the ability to update or create
+        several topics or associations in a single batch and also to add or
+        update parts of a topic without modifying the rest of it. For example,
+        you can add a new occurrence to a topic without having to also specify
+        all of the other names and occurrences that you don't want to be
+        changed.</p><p>The <a href="apas03.html" title="Topic Map Transaction Schema">description of the Topic Map
+        Transaction Schema</a> contained in the appendix of this document
+        provides more detail about all of the different operations that can be
+        specified in a single request.</p><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1856"></a>Method Name</h5></div></div></div><p><code class="methodname">ProcessTransaction</code></p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1862"></a>Parameters</h5></div></div></div><div class="variablelist"><dl><dt><span class="term">topicmap</span></dt><dd><p>The name of the topic map to update.</p></dd><dt><span class="term">tmfragment</span></dt><dd><p>A XML representation of the transaction to perform. The
+                transaction must adhere to the <a href="apas03.html" title="Topic Map Transaction Schema">Topic Map Transaction XML
+                Schema</a>.</p></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1881"></a>Returns</h5></div></div></div><p>A document conforming to the Results XML Schema that lists the
+          results of each individual operation in the transaction.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1886"></a>Errors</h5></div></div></div><div class="informaltable"><table cellspacing="0" cellpadding="3" border="1"><colgroup><col><col></colgroup><thead><tr><th>Error Code</th><th>Condition</th></tr></thead><tbody><tr><td>INVALID_TOPICMAP</td><td>The name provided in the
+                  <em class="parameter"><code>topicmap</code></em> parameter does not match the
+                  name of any topic map known to the server. The client should
+                  retry, specifying the correct topic map name.</td></tr><tr><td>UPDATE_EXCEPTION</td><td>There was an error processing the transaction
+                  provided. Detailed information is provided as part of the
+                  error report.</td></tr></tbody></table></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1911"></a>Examples</h5></div></div></div><p>This section only shows examples of the wrapper XML required
+          to pass a transaction in to the ProcessTransaction method. For a
+          detailed description of the transaction document and its processing,
+          please refer to the <a href="apas03.html" title="Topic Map Transaction Schema">Topic Map
+          Transaction XML Schema</a> description in the Appendix.</p><div class="example"><a name="d0e1919"></a><p class="title"><b>Example&nbsp;45.&nbsp;Invoking the ProcessTransaction Method using an HTTP
+            POST</b></p><pre class="programlisting">&lt;request&gt;
+  &lt;param name="topicmap"&gt;mytopicmap&lt;/param&gt;
+  &lt;param name="transaction"&gt;
+    &lt;txn:TopicMapTransaction xmlns:txn="http://www.networkedplanet.com/schema/transaction"&gt;
+     &lt;!-- Operation descriptions go here --&gt;
+    &lt;/txn:TopicMapTransaction&gt;
+  &lt;/param&gt;
+&lt;/request&gt;</pre></div><div class="example"><a name="d0e1924"></a><p class="title"><b>Example&nbsp;46.&nbsp;Invoking The ProcessTransaction Method using C# and the Web
+            Services Client Library</b></p><p>The method interface for the ProcessTransaction proxy simply
+            takes an XmlNode as the transaction parameter value and so can be
+            invoked as follows:</p><pre class="programlisting">TMSClient client = new TMSClient("http://topicmap.mycorp.com/tmws/TMService.asmx");
+XmlDocument txnDoc = new XmlDocument();
+// Code to populate the txnDoc goes here
+client.ProcessTransaction("mytopicmap", txnDoc);</pre><p>The transaction XML can be constructed in a number of ways.
+            It can be read from a local file or from an internal string using
+            the XmlDocument.Load() method, or you can construct the document
+            element by element using the XmlDocument.CreateElement() and other
+            related methods.</p></div></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s03s03.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ar01s03.html"><img src="../graphics/up.png" alt="Up"></a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ar01s04.html"><img src="../graphics/next.png" alt="Next"></a></td></tr><tr><td width="40%" align="left" valign="top">General Operation Errors&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html"><img src="../graphics/home.png" alt="Home"></a></td><td width="40%" align="right" valign="top">&nbsp;NPCL Web Services Definition</td></tr></table></div></body></html>

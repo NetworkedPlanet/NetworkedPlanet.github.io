@@ -1,0 +1,59 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Saving and Publishing Changes</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?saving_and_publishing_changes.htm"; }
+  else { parent.quicksync('a6.1.2.2'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Saving and Publishing Changes</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="editing_related_topics.htm">Previous</a>&nbsp;
+     <a href="using_the_topic_search_picker.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>Any changes you make to a topic in the Topic Map gadget are not stored on the server until you press the <span style="font-weight: bold;">Save</span> button. When you press the <span style="font-weight: bold;">Save</span> button the Topic Map gadget will send the changes you have made to the server, the changes will not go live on the site but will be available to other editors to see when they access the page (or one of the related pages). When you press the <span style="font-weight: bold;">Save</span> button there may be a short delay will the server receives and processes the changes during which time the button text will change to <span style="font-weight: bold;">Saving...</span> We recommend that while the save is happening you do not attempt to navigate to another page.</p>
+<p>The relationships between topics are all managed in the TMCore topic map database. To allow you to have a "published" view of a topic and a "draft" view, the TMCore EPiServer Module maintains special categories of relationship. </p>
+<p>Published relationships are all relationships between topics that are ready to be used on the public website. </p>
+<p>A new relationship added between two topics is marked as a draft relationship. Draft relationships are only made into published relationships when either the page that is connected to a topic at either end of the relationship is published or when the editor uses the Publish button in the Topic Map gadget.</p>
+<p>When an existing published relationship is removed it is first marked as deleted. Deleted relationships are only finally removed when either the page that is connected to a topic at either end of the relationship is published or when you use the Publish button in the Topic Map gadget. Relationships that are marked as deleted can be easily undeleted at any time prior to being published.</p>
+<p>In most cases you will want to only have the relationships between pages published when other changes made to page content or metadata are also published. This is the default behaviour of the TMCore EPiServer Module. When a page is published, all relationships that involve the topic for that page are also published (if they are new) or finally deleted (if they are marked for deletion).</p>
+<p>In some circumstances you may want to publish changes in the relationships between topics without republishing the page (e.g. when the only thing that you are changing are relationships between pages). In this case you can use the <span style="font-weight: bold;">Publish</span> button in the Topic Map gadget to publish the relationship changes immediately. When you press the <span style="font-weight: bold;">Publish</span> button there may be a short delay while the server receives and processes the updates, during which time the button text will change to <span style="font-weight: bold;">Publishing..</span>. We recommend that while this processing takes place you do not attempt to navigate to another page.</p>
+<p>When you are making modifications to the relationships for a topic, you can at any time click on the Revert button to cancel all changes you have made locally. This action will reload the topic information from the server, during which time the text of the button will change to <span style="font-weight: bold;">Reverting...</span> </p>
+<p class="p_Notes"><span class="f_Notes">The </span><span class="f_Notes" style="font-weight: bold;">Revert</span><span class="f_Notes"> action does not back out all the changes made since the page was last published, it only reloads the topic from the server, so if some new relationships or relationships marked as deleted exist on the server they will be reloaded by the </span><span class="f_Notes" style="font-weight: bold;">Revert</span><span class="f_Notes"> action. </span><br>
+<span class="f_Notes">If you want to undo all changes made by yourself or other editors that have previously been saved to the server you will need to do this by manually undeleting deleted relationships (that are marked with the </span><span class="f_StrikeThrough">strike-through</span><span class="f_Notes">) and deleting new relationships (that are displayed in </span><span class="f_Notes" style="font-style: italic;">italics</span><span class="f_Notes">). In either case this is achieved simply by clicking on the </span><img src="deltoolsmall.gif" width="11" height="11" border="0" alt="DelToolSmall"> icon to the right of the related topic name.</p>
+
+</td></tr></table>
+
+</body>
+</html>

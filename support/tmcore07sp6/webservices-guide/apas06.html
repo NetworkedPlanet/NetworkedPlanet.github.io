@@ -1,0 +1,71 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Results Description Document Schema</title><link rel="stylesheet" href="../doc.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><link rel="start" href="index.html" title="TMCore Web Services Guide"><link rel="up" href="apa.html" title="A.&nbsp;Schema Definitions"><link rel="prev" href="apas05s07.html" title="associationField Element"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="pageheader"><table class="logo" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td><span class="networked">Networked</span><span class="planet">Planet</span></td><td align="right"><span class="title">TMCore Web Services Guide</span></td></tr></table></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Results Description Document Schema</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="apas05s07.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><th width="60%" align="center">A.&nbsp;Schema Definitions</th><td width="20%" align="right">&nbsp;</td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="results-schema"></a>Results Description Document Schema</h3></div></div></div><p>This schema is used to return results from operations which
+      perform a single transactional update or a set of transactional updates
+      on one or more topic maps. For operations invoked over SOAP, the results
+      description document will be returned in the body of the SOAP response
+      message. For operations invoked against ASP.NET pages directly, the
+      result document will be contained in the body of the HTTP
+      response.</p><p>The structure of the results document is as follows.</p><pre class="programlisting">&lt;res:results containsError="true|false"&gt;
+  &lt;res:result ... &gt; 
+    ...
+  &lt;/res:result&gt;
+&lt;/res:results&gt;</pre><div class="variablelist"><dl><dt><span class="term">res:results/@containsError</span></dt><dd><p>A boolean flag that is set to true if at least one of the
+            transactions failed, and true if and only if every transaction
+            succeeded. This attribute is REQUIRED.</p></dd><dt><span class="term">res:results/res:result</span></dt><dd><p>Contains the detailed result information for a single
+            transaction. The syntax of this element is as described
+            below.</p></dd></dl></div><p>Each <code class="sgmltag-element">res:result</code> element reports the status of a
+      single transaction performed during the request processing. The optional
+      <code class="sgmltag-element">key</code> attribute on this element allows the result
+      description to be correlated to one of the transactions in the request.
+      Each <code class="sgmltag-element">res:result</code> element has has the following
+      structure:</p><pre class="programlisting">&lt;res:result isError="true|false"&gt;
+  &lt;res:error code="CODE" key="KEY"&gt; 
+    &lt;res:message&gt; ERROR MESSAGE &lt;/res:message&gt;
+    &lt;res:action role="ROLE"&gt; ACTION MESSAGE &lt;/res:action&gt;
+    &lt;res:cause&gt;
+      &lt;res:message&gt; EXCEPTION MESSAGE &lt;/res:message&gt;
+      &lt;res:type&gt; EXCEPTION TYPE &lt;/res:type&gt;
+      &lt;res:stacktrace&gt; EXCEPTION STACK &lt;/res:stacktrace&gt;
+    &lt;/res:cause&gt;
+    ...
+  &lt;/res:error&gt;
+  ...
+&lt;/res:result&gt;</pre><div class="variablelist"><dl><dt><span class="term">res:result/@key</span></dt><dd><p>Contains a string value that can be used to correlate the
+            result report to part of the operation request. The precise way in
+            which this is achieved is operation-specific and described in the
+            operation definition. This attribute is OPTIONAL, and may be
+            omitted if the result is for a single transaction.</p></dd><dt><span class="term">res:result/@isError</span></dt><dd><p>Contains a boolean flag that is set to true if the operation
+            is reporting an error. This attribute is OPTIONAL and defaults to
+            false.</p></dd><dt><span class="term">res:result/res:error</span></dt><dd><p>Wrapper element for reporting detail on an error that
+            occurred in the processing of the operation. This element is
+            OPTIONAL. It SHOULD be present if the <code class="sgmltag-element">isError</code>
+            attribute of the parent <code class="sgmltag-element">res:result</code> element is
+            set to true, it SHOULD NOT be present if the
+            <code class="sgmltag-element">isError</code> attribute of the parent res:result
+            element is set to false.</p></dd><dt><span class="term">res:result/res:error/@code</span></dt><dd><p>Contains the error code for the error being reported. Error
+            codes are service-specific and defined as part of the service
+            description. The error code is specified in this attribute as a
+            string value. This attribute is REQUIRED.</p></dd><dt><span class="term">res:result/res:error/res:message</span></dt><dd><p>Contains an error message for the error being reported. This
+            element is OPTIONAL.</p></dd><dt><span class="term">res:result/res:error/res:action</span></dt><dd><p>The text contained in this element describes the action(s)
+            that can be taken to resolve the reported error.</p></dd><dt><span class="term">res:result/res:error/res:action/@role</span></dt><dd><p>This attribute identifies which user role can perform the
+            corrective action described in the content of the element. This
+            attribute has two allowed value. If the value is 'user', then the
+            action can be performed by the user who issued the request. If the
+            value is 'admin' then the corrective action requires
+            administrative intervention on the server.</p></dd><dt><span class="term">res:result/res:error/res:cause</span></dt><dd><p>This OPTIONAL element describes the underlying exception
+            that caused the process to fail. This element provides additional
+            detail which can be helpful in determining the cause of certain
+            errors.</p></dd><dt><span class="term">res:result/res:error/res:message</span></dt><dd><p>Contains the message reported by the exception that caused
+            the process to fail.</p></dd><dt><span class="term">res:result/res:error/res:type</span></dt><dd><p>Specifies the type of exception that caused the process to
+            fail.</p></dd><dt><span class="term">res:result/res:error/res:stacktrace</span></dt><dd><p>Contains the stack trace of the exception that caused the
+            process to fail.</p></dd><dt><span class="term">res:result/res:error/{##other}</span></dt><dd><p>Any number of elements from any other namespace may appear
+            after the <code class="sgmltag-element">res:message</code> element. This may be used
+            by services to convey additional detailed error information (such
+            as a stack trace or debug output) to the caller.</p></dd><dt><span class="term">res:result/{##other}</span></dt><dd><p>Any number of elements from any other namespace may appear
+            as the last children of the <code class="sgmltag-element">res:result</code> element.
+            This may be used by services to convey additional detailed
+            response information (such as performance statistics). This
+            extension point SHOULD NOT be used to convey detailed error
+            information - instead the extension point inside the
+            <code class="sgmltag-element">res:error</code> element should be used.</p></dd></dl></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="apas05s07.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="apa.html"><img src="../graphics/up.png" alt="Up"></a></td><td width="40%" align="right">&nbsp;</td></tr><tr><td width="40%" align="left" valign="top"><code class="sgmltag-element">associationField</code> Element&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html"><img src="../graphics/home.png" alt="Home"></a></td><td width="40%" align="right" valign="top">&nbsp;</td></tr></table></div></body></html>

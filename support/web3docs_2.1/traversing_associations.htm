@@ -1,0 +1,59 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Traversing Associations and Arcs</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?traversing_associations.htm"; }
+  else { parent.quicksync('a6.5.5');  parent.track('topic', location.href);}
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Finding Related Topics</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="finding_or_filtering_on_topic_.htm">Previous</a>&nbsp;
+     <a href="traversing_topic_map_structure.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>The simplest way to find all topics related to another topic is to use a single predicate where the subject is the topic to start from, the predicate is a role type or arc type and the object is either a topic that plays the type of role specified by the predicate in an association with the topic specified by the subject, or a topic that is at the end of an arc of the type specified by the predicate. </p>
+<p>&nbsp;</p>
+<p>For example, if our topic map has an employment association defined by the association type <a href="http://psi.networkedplanet.com/types/employment" target="_blank" onclick="return HMTrackTopiclink(this);" class="weblink">http://psi.networkedplanet.com/types/employment</a> with role types <a href="http://psi.networkedplanet.com/types/employee" target="_blank" onclick="return HMTrackTopiclink(this);" class="weblink">http://psi.networkedplanet.com/types/employee</a> and <a href="http://psi.networkedplanet.com/types/employer" target="_blank" onclick="return HMTrackTopiclink(this);" class="weblink">http://psi.networkedplanet.com/types/employer</a> then the following queries find all employees of the company identified by the subject identifier <a href="http://example.com/about" target="_blank" onclick="return HMTrackTopiclink(this);" class="weblink">http://example.com/about</a>:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">SELECT&nbsp;?employee&nbsp;WHERE&nbsp;{&nbsp;&lt;<a href="http://example.com/about" target="_blank" onclick="return HMTrackTopiclink(this);" class="weblink">http://example.com/about</a>&gt;&nbsp;&lt;<a href="http://psi.networkedplanet.com/types/employee" target="_blank" onclick="return HMTrackTopiclink(this);" class="weblink">http://psi.networkedplanet.com/types/employee</a>&gt;&nbsp;?employee&nbsp;}</span></p>
+<p>&nbsp;</p>
+<p>If our topic map has an arc type <a href="http://xmlns.org/foaf/0.1/knows" target="_blank" onclick="return HMTrackTopiclink(this);" class="weblink">http://xmlns.org/foaf/0.1/knows</a> then the following queries will find all the people that the person identified by the subject identifier <a href="http://example.com/people/bob" target="_blank" onclick="return HMTrackTopiclink(this);" class="weblink">http://example.com/people/bob</a> knows.</p>
+<p>&nbsp;</p>
+<p>SELECT ?friend WHERE { &lt;<a href="http://example.com/people/bob" target="_blank" onclick="return HMTrackTopiclink(this);" class="weblink">http://example.com/people/bob</a>&gt; &lt;<a href="http://xmlns.org/foaf/0.1/knows" target="_blank" onclick="return HMTrackTopiclink(this);" class="weblink">http://xmlns.org/foaf/0.1/knows</a>&gt; ?friend }</p>
+<p>&nbsp;</p>
+<p>With this simple type of traversal across associations it is not possible to filter based on the type of role played by the starting topic or the association type or scope. For these more advanced query scenarios you must <a href="traversing_topic_map_structure.htm">traverse the full topic map structure</a>.</p>
+
+</td></tr></table>
+
+</body>
+</html>

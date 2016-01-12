@@ -1,0 +1,42 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Changes In TMCore07</title><link rel="stylesheet" href="../doc.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><link rel="start" href="index.html" title="TMCore Engine API Guide"><link rel="up" href="ch01s03.html" title="Summary Of Changes"><link rel="prev" href="ch01s03s01.html" title="Changes In TMCore07 SP3"><link rel="next" href="ch01s03s03.html" title="Changes Prior To TMCore07"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="pageheader"><table class="logo" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td><span class="networked">Networked</span><span class="planet">Planet</span></td><td align="right"><span class="title">TMCore Engine API Guide</span></td></tr></table></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Changes In TMCore07</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch01s03s01.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><th width="60%" align="center">Summary Of Changes</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch01s03s03.html"><img src="../graphics/next.png" alt="Next"></a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e97"></a>Changes In TMCore07</h3></div></div></div><p>This section lists the the major changes introduced in TMCore07</p><div class="itemizedlist"><ul type="disc"><li><p>NEW: The ITopicMapObject interface now exposes a new readonly
+      property ID. This presents the object identifier as a 32-bit
+      integer.</p></li><li><p>NEW: The ITopicMapSystem interface now exposes two overrides for
+      the ExecuteQuery method. These overrides allow you to specify SQL
+      parameters in a TMRQL query string and provide values for those
+      parameters rather than relying on string concatenation. It is STRONGLY
+      RECOMMENDED that you use these overrides in preference to the original
+      ExceuteQuery(String) method. Refer to <a href="ch09s02.html" title="Executing Queries">the section called &#8220;Executing Queries&#8221;</a> for more details.</p></li><li><p>NEW: A new assembly NetworkedPlanet.Npcl provides APIs for
+      creating and reading topic map schema information using the Networked
+      Planet Constraint Language (NPCL). Refer to <a href="ch12.html" title="Chapter&nbsp;12.&nbsp;The NPCL Constraints API">Chapter&nbsp;12, <i>The NPCL Constraints API</i></a>
+      for more information about these APIs.</p></li><li><p>NEW: A new web service application, npclws implements the NPCL
+      Schema Web Service. This provides access to retrieve an XML
+      representation of the NPCL schema governing a topic map or a single
+      topic type within a topic map. Refer to the Web Service Guide for more
+      information. The operations of this web service can be accessed via SOAP
+      or using HTTP GET or POST requests.</p></li><li><p>NEW: New views have been added to the database to allow querying
+      of the NPCL schema information in a topic map using TMRQL. See the
+      TMCore Query Reference Sheet for an overview of these new views. The
+      new veiws can be easily identified as their names all start with the
+      prefix "tm_npcl".</p></li><li><p>UPDATED: The serviceclient.dll assembly that in previous versions
+      contained only the SOAP web service stubs for the Topic Map Web Service
+      now also contains the SOAP web service stubs for the NPCL Schema Web
+      Service and classes for representing the structure of input and output
+      XML used by the web services.</p></li><li><p>NEW: A new database user-defined function, tm_tc3 has been added.
+      This function performs a transitive closure starting from a specified
+      topic and using a set of association types and role types to determine
+      the paths traversed.</p></li><li><p>UPDATED: The Topic Map Web Service now implements a new operation
+      named ProcessTransaction. This operation allows a set of updates to a
+      topic map to be described as a simple XML document and passed to the web
+      service for processing as a single update transaction. This operation
+      is, in most cases, far more efficient at updating specific topics and
+      associations than the previously supported Save operation. However, the
+      Save operation remains part of the Topic Map Web Service interface to
+      enable efficient creation of new topics and associations in a topic map.
+      For more details about this operation, please refer to the Web Services
+      Guide.</p></li><li><p>NEW: The Topic Map Web Service now provides an ASP.NET-based
+      implementation of the service allowing access to the operations using
+      HTTP GET or HTTP POST requests. Unlike the SOAP HTTP transport, these
+      interfaces implement all of the operations of the Topic Map Web
+      Service.</p></li></ul></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch01s03s01.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch01s03.html"><img src="../graphics/up.png" alt="Up"></a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch01s03s03.html"><img src="../graphics/next.png" alt="Next"></a></td></tr><tr><td width="40%" align="left" valign="top">Changes In TMCore07 SP3&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html"><img src="../graphics/home.png" alt="Home"></a></td><td width="40%" align="right" valign="top">&nbsp;Changes Prior To TMCore07</td></tr></table></div></body></html>

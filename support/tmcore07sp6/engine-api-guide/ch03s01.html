@@ -1,0 +1,37 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Compiling and Running the Examples</title><link rel="stylesheet" href="../doc.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><link rel="start" href="index.html" title="TMCore Engine API Guide"><link rel="up" href="ch03.html" title="Chapter&nbsp;3.&nbsp;TMCore API Programming Kickstart"><link rel="prev" href="ch03.html" title="Chapter&nbsp;3.&nbsp;TMCore API Programming Kickstart"><link rel="next" href="ch03s02.html" title="APIExample1 : Creating a topic map with topics and&#xA;      associations"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="pageheader"><table class="logo" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td><span class="networked">Networked</span><span class="planet">Planet</span></td><td align="right"><span class="title">TMCore Engine API Guide</span></td></tr></table></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Compiling and Running the Examples</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch03.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><th width="60%" align="center">Chapter&nbsp;3.&nbsp;TMCore API Programming Kickstart</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch03s02.html"><img src="../graphics/next.png" alt="Next"></a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="compiling-examples"></a>Compiling and Running the Examples</h2></div></div></div><p>The full source code for these examples can be found in the
+      <code class="filename">examples/</code> directory of the TMCore distribution. The
+      directory contains both C# and VB.NET versions of the examples in the
+      subdirectories CS and VB respectively. Each example is provided in a
+      separate directory with its own project file. To compile and run an
+      example, open Visual Studio.NET and create a new blank solution; then
+      add the .csproj or .vbproj for the example to the solution. The project
+      can then be built using the Build &gt; Build Solution menu item. If the
+      solution contains multiple projects, set the new example project to be
+      the start-up project by right clicking the project in the Solution
+      Explorer pane and selecting "Set as StartUp Project" from the pop-up
+      menu.</p><p>Some of the examples allow command line parameters to be
+      specified. From within Visual Studio, you can assign the command line
+      parameters to be used when running an example by bringing up the
+      Properties pane for the project (right click on the project in the
+      Solution Explorer and select "Properties"). In the Properties Pane
+      select the item "Debugging" under "Configuration Properties" and in the
+      field labelled "Command line arguments", enter the parameters. However,
+      all of the example programs are written so that they can be run from
+      within Visual Studio without specifying any command line
+      parameters.</p><p>Finally, to run the project, press F5 or choose the Debug &gt;
+      Start menu item.</p><div class="note"><h3 class="title">Note</h3><p>You may find that the project files contain an invalid reference
+        to the TMCore assembly. You can check this by opening the "References"
+        icon under the project name in the solution explorer of Visual studio.
+        If you see the reference named "tmcore" with a yellow warning triangle
+        next to it, then the reference is invalid and must be changed before
+        you can successfully compile the project. To change the reference,
+        delete the existing reference and then right click on the "References"
+        icon and select <b><span class="guimenuitem">Add Reference</span></b>. In the
+        dialog that is displayed, click <b><span class="guibutton">Browse...</span></b> and
+        browse to the tmcore.dll that came with the TMCore installation.
+        Finally, click the <b><span class="guibutton">OK</span></b> button to dismiss the
+        dialog. You should now see the tmcore reference appear under
+        "References" with no warning triangle next to it.</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch03.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch03.html"><img src="../graphics/up.png" alt="Up"></a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch03s02.html"><img src="../graphics/next.png" alt="Next"></a></td></tr><tr><td width="40%" align="left" valign="top">Chapter&nbsp;3.&nbsp;TMCore API Programming Kickstart&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html"><img src="../graphics/home.png" alt="Home"></a></td><td width="40%" align="right" valign="top">&nbsp;APIExample1 : Creating a topic map with topics and
+      associations</td></tr></table></div></body></html>

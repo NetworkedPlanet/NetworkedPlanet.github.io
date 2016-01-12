@@ -1,0 +1,122 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Expanding Topics in SPARQL Query Results</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?expanding_topics_in_sparql_que.htm"; }
+  else { parent.quicksync('a6.5.10');  parent.track('topic', location.href);}
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Expanding Topics in SPARQL Query Results</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="example_queries.htm">Previous</a>&nbsp;
+     <a href="rest_interface_reference.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>In some cases it is desirable to retrieve more than just the URI address of a topic - for example labels and type are useful for display purposes and in some cases other topic properties can be useful too. In most cases it is advisable to add extra columns to the query to return just the specific properties, labels or identifiers of interest. However there are some cases where what the developer really needs is the one of the three Web3 topic representation structures in place of the topic URI. This is now supported through the SPARQL query interface as an in-place expansion of all URIs that refer to a topic into a representation of the referenced topic.</p>
+<p class="p_SectionHeading"><span class="f_SectionHeading">Procedure</span></p>
+<p>To specify that expansion of topics references should take place, specify an additional query parameter with the name <span class="f_CodeExample">expandTopic</span> and one of the following values:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p>expandTopic Query Parameter Value</p>
+</td>
+<td valign="top"><p>Topic URIs are replaced with:</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p>ref</p>
+</td>
+<td valign="top"><p><a href="topicref.htm">TopicRef</a> - Provides topic labels, identifiers and types (types only as a web address)</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p>rep</p>
+</td>
+<td valign="top"><p><a href="topicrepr.htm">TopicRepr</a> - Provides topic labels, identifiers, types and properties (types serialized as a <a href="topicref.htm">TopicRef</a>)</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p>ful</p>
+</td>
+<td valign="top"><p><a href="fulltopicrepr.htm">FullTopicRepr</a> - Provides a <a href="topicrepr.htm">TopicRepr</a> plus a list of <a href="associationrepr.htm">AssociationRepr</a> for all associations the topic is in.</p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<p>The resulting SPARQL results set structure will contain the specified topic serialization as the value for any binding that is recognized as a Web3 topic web address instead of the normal URI binding.</p>
+<p>&nbsp;</p>
+<p>For example, a query that returns the following SPARQL results XML with no expandTopic query parameter:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;sparql&nbsp;xmlns="http://www.w3.org/2005/sparql-results#"&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;head&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;variable&nbsp;name="t"/&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;/head&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;results&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;result&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;binding&nbsp;name="t"&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;uri&gt;http://localhost/web3/topicmaps/eab7e7e8-6fe9-402d-97c8-3a571b476189/topics/4d213ce8-7ef6-4dec-a286-d6b1f4cc306d&lt;/uri&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/binding&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/result&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;/results&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;/sparql&gt;</span></p>
+<p>&nbsp;</p>
+<p>Would return something like the following when expandTopic is set to ref:</p>
+<p>&nbsp;</p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;sparql&nbsp;xmlns="http://www.w3.org/2005/sparql-results#"&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;head&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;variable&nbsp;name="t"/&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;/head&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;results&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;result&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;binding&nbsp;name="t"&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;TopicRef&nbsp;Address="http://localhost/web3/topicmaps/eab7e7e8-6fe9-402d-97c8-3a571b476189/topics/4d213ce8-7ef6-4dec-a286-d6b1f4cc306d"</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xmlns=""&nbsp;xmlns:xsd="http://www.w3.org/2001/XMLSchema"&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Labels&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Label&nbsp;Lang="en"&gt;Sample&nbsp;Topic&lt;/Label&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Labels&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Identifiers/&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Types&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Type&nbsp;Address="http://localhost/web3/topicmaps/eab7e7e8-6fe9-402d-97c8-3a571b476189/topics/e81a795e-6e49-4bea-be7f-4f282aba5da4"/&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Types&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/TopicRef&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/binding&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/result&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;/results&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;/sparql&gt;</span></p>
+<p>&nbsp;</p>
+<p class="p_SectionHeading"><span class="f_SectionHeading">Limitation and Cautions</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="15"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">1.</span></td><td>The <span class="f_CodeExample">expandTopic</span> option is a NetworkedPlanet-specific extension to the SPARQL Protocol Recommendation and so is not likely to be supported on other systems.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="15"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">2.</span></td><td>The <span class="f_CodeExample">expandTopic</span> option is only available when the requested results format is either XML or JSON. It is not available in the HTML representation of the results set.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="15"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">3.</span></td><td>The option should be used with caution when the query results set could potentially be very large as the results set will not be returned until all topic references on the requested results set page have been expanded. If a query could potentially return a large number of results we recommend either retrieving the required properties into separate columns or using the OFFSET and LIMIT modifiers to page through the results as the expansion applies only to the page (as specified by OFFSET and LIMIT).</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="15"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">4.</span></td><td>Expansion applies to all columns of the result set - it is not possible to ask for only a specific column to be expanded.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="15"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">5.</span></td><td>Expansion limits the performance benefits of caching as the cache contains only the unexpanded results set and expansion must be performed each time the query is made, even if the results set itself has not changed.</td></tr></table></div>
+</td></tr></table>
+
+</body>
+</html>

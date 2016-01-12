@@ -1,0 +1,72 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Unable to access Topic Map tab when using a remote server</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?ar01s05s01.htm"; }
+  else { parent.quicksync('a3.4.1'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Unable to access Topic Map tab when using a remote server</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="ar01s05.htm">Previous</a>&nbsp;
+     <a href="ar01s05s02.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p><span style="font-weight: bold; text-decoration: underline;">Symptoms</span></p>
+<p>The Topic Map tab fails to load correctly and in the client trace you see the message:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">FATAL&nbsp;-&nbsp;Javascript&nbsp;Error&nbsp;http://.../ui/edit/EditPanel.aspx?id=453:306&nbsp;'TopicType'&nbsp;is&nbsp;null&nbsp;or&nbsp;not&nbsp;an&nbsp;object</span></p>
+<p>The stack trace showing:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">System.InvalidOperationException:&nbsp;Request&nbsp;format&nbsp;is&nbsp;unrecognized&nbsp;for&nbsp;URL&nbsp;unexpectedly&nbsp;ending&nbsp;in&nbsp;'/GetTopicNameAndType'.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;at&nbsp;System.Web.Services.Protocols.WebServiceHandlerFactory.CoreGetHandler(Type&nbsp;type,&nbsp;HttpContext&nbsp;context,&nbsp;HttpRequest&nbsp;request,&nbsp;HttpResponse&nbsp;response)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;at&nbsp;System.Web.Services.Protocols.WebServiceHandlerFactory.GetHandler(HttpContext&nbsp;context,&nbsp;String&nbsp;verb,&nbsp;String&nbsp;url,&nbsp;String&nbsp;filePath)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;at&nbsp;System.Web.Script.Services.ScriptHandlerFactory.GetHandler(HttpContext&nbsp;context,&nbsp;String&nbsp;requestType,&nbsp;String&nbsp;url,&nbsp;String&nbsp;pathTranslated)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;at&nbsp;System.Web.HttpApplication.MapHttpHandler(HttpContext&nbsp;context,&nbsp;String&nbsp;requestType,&nbsp;VirtualPath&nbsp;path,&nbsp;String&nbsp;pathTranslated,&nbsp;Boolean&nbsp;useAppConfig)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;at&nbsp;System.Web.HttpApplication.MapHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;at&nbsp;System.Web.HttpApplication.ExecuteStep(IExecutionStep&nbsp;step,&nbsp;Boolean&amp;&nbsp;completedSynchronously)</span></p>
+<p><span style="font-weight: bold; text-decoration: underline;">Fix</span></p>
+<p>The most common cause of this is that the EPiServer web application is not configured to accept HTTP POST requests from remote hosts. This can be fixed by adding the following declaration to the EPiServer application's <span class="f_InlineCode">web.config</span>, under the main configuration element of the file:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;location&nbsp;path="NetworkedPlanet/EPiServerModule/Service/TMCoreEPiDataService.asmx"&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;system.web&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;webServices&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;protocols&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;add&nbsp;name="HttpPost"/&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/protocols&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/webServices&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;/system.web&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;/location&gt;</span></p>
+<p class="p_Notes"><span class="f_Notes">You may need to change the value of the path attribute if you have installed the TMCore EPiServer Module services in a different location on the site.</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

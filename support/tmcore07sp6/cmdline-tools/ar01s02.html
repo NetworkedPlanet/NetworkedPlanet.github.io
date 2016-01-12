@@ -1,0 +1,52 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>tmimport : XTM Import Utility</title><link rel="stylesheet" href="../doc.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><link rel="start" href="index.html" title="TMCore Command Line Tools"><link rel="up" href="index.html" title="TMCore Command Line Tools"><link rel="prev" href="ar01s01.html" title="Introduction"><link rel="next" href="ar01s03.html" title="tmexport : XTM Export Utility"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="pageheader"><table class="logo" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td><span class="networked">Networked</span><span class="planet">Planet</span></td><td align="right"><span class="title">TMCore Command Line Tools</span></td></tr></table></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">tmimport : XTM Import Utility</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s01.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ar01s03.html"><img src="../graphics/next.png" alt="Next"></a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="tmimport"></a>tmimport : XTM Import Utility</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="ar01s02.html#d0e17">Command Synopsis</a></span></dt><dt><span class="section"><a href="ar01s02.html#d0e135">Usage Examples</a></span></dt></dl></div><p>The <span><strong class="command">tmimport</strong></span> command can be used to import data
+    from an XTM file into a topic map in the TMCore system. The imported data
+    can either be merged with an existing topic map or loaded into a new topic
+    map.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e17"></a>Command Synopsis</h3></div></div></div><div class="cmdsynopsis"><p><code class="command">tmimport</code>  [/host:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/database:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/userid:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/password:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/mapname:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/verbose] {<em class="replaceable"><code>filename</code></em>}</p></div><div class="table"><a name="d0e48"></a><p class="title"><b>Table&nbsp;1.&nbsp;tmimport Parameter Summary</b></p><table summary="tmimport Parameter Summary" cellspacing="0" cellpadding="3" border="1"><colgroup><col><col></colgroup><thead><tr><th><p>Parameter (Short Form)</p></th><th><p>Description</p></th></tr></thead><tbody><tr><td>/host (/h)</td><td><p>Specifies the name or IP address of the database
+              server that hosts the TMCore system database.
+              </p><p>Defaults to 'localhost'.</p></td></tr><tr><td>/database (/d)</td><td><p>Specifies the name of the database catalog that
+              contains the TMCore system tables. </p><p>Defaults to
+              'topicmap'.</p></td></tr><tr><td>/userid (/u)</td><td><p>Specifies the database user ID to use when
+              connecting to the database.</p><p>If this parameter is
+              omitted, the connection will instead use the current Windows
+              login for database authentication.</p></td></tr><tr><td>/password (/p)</td><td><p>Specifies the password to use when connection to
+              the database.</p><p>This parameter is ignored if the
+              <em class="parameter"><code>/userid:</code></em> parameter is not present. If the
+              <em class="parameter"><code>/userid:</code></em> parameter is present and this
+              parameter is omitted, the program will attempt to connect to the
+              database using the specified user ID and no
+              password.</p></td></tr><tr><td>/srcuri (/s)</td><td><p>Specifies the URI which will be used for the
+              resolution of relative paths contained in the XTM file.
+              </p><p>If this parameter is not specified, then relative
+              paths will be resolved against the path to the imported
+              file.</p></td></tr><tr><td>/mapname (/m)</td><td><p>Specifies the name of the topic map to be populated
+              with the XTM data.</p><p>If the TMCore system does not
+              contain a topic map with that name, then a new topic map will be
+              created. If a topic map already exists with the specified name,
+              then the XTM data will be merged with the existing data in the
+              named topic map. If this parameter is omitted, then the value of
+              the <em class="parameter"><code>/srcuri:</code></em> parameter will be used as
+              the topic map name.</p><p> If both this parameter and the
+              <em class="parameter"><code>/srcuri</code></em>: parameter are omitted, then the
+              file:// URI of the imported XTM file will be used as the topic
+              map name.</p></td></tr><tr><td>/verbose (/v)</td><td><p>Give more verbose error messages.</p></td></tr><tr><td>filename</td><td><p>The path to the XTM file to be
+              imported.</p></td></tr></tbody></table></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e135"></a>Usage Examples</h3></div></div></div><div class="literallayout"><p>tmimport&nbsp;c:\mymap.xtm</p></div><p>Imports data from <code class="filename">mymap.xtm</code> into the TMCore
+      system. All relative URIs will be resolved against the path to the topic
+      map expressed as a file:// URI (i.e. against file://c/mymap.xtm). This
+      URI will also be used as the name of the imported topic map in the
+      TMCore system (if a topic map with this name already exists, then the
+      data from <code class="filename">mymap.xtm</code> will be merged into the
+      existing topic map).</p><div class="literallayout"><p>tmimport&nbsp;/host:tmserver&nbsp;/database:test&nbsp;c:\mymap.xtm</p></div><p>Operates in the same way as the first example, but connects to a
+      remote database server and a non-default catalog. Note that even when
+      importing data into a remote server, all file paths are still resolved
+      locally and the topic map name will still be generated from the file://
+      URI of the local file.</p><div class="literallayout"><p>tmimport&nbsp;/userid:tmguy&nbsp;/password:ihearttms&nbsp;c:\mymap.xtm</p></div><p>Operates in the same way as the first example, but uses a database
+      account to authorise access to the TMCore system.</p><div class="literallayout"><p>tmimport&nbsp;/srcuri:http://www.example.com/tmdata/mymap.xtm&nbsp;mymap.xtm</p></div><p>Imports data from <code class="filename">mymap.xtm</code> into the TMCore
+      system. All relative URIs will be resolved against the URI
+      http://www.example.com/tmdata/mymap.xtm. This URI will also be used as
+      the name of the imported topic map in the TMCore system.</p><div class="literallayout"><p>tmimport&nbsp;/srcuri:http://www.example.com/tmdata/index.xtm&nbsp;/mapname:index.xtm&nbsp;mymap.xtm</p></div><p>Imports data from <code class="filename">mymap.xtm</code> into the TMCore
+      system. All relative URIs will be resolved against the URI
+      http://www.example.com/tmdata/index.xtm. The data will be imported into
+      the topic map named index.xtm (if the topic map does not already exist,
+      it will be created).</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s01.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><td width="20%" align="center">&nbsp;</td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ar01s03.html"><img src="../graphics/next.png" alt="Next"></a></td></tr><tr><td width="40%" align="left" valign="top">Introduction&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html"><img src="../graphics/home.png" alt="Home"></a></td><td width="40%" align="right" valign="top">&nbsp;tmexport : XTM Export Utility</td></tr></table></div></body></html>

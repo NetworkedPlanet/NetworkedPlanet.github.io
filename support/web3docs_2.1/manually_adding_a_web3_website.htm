@@ -1,0 +1,54 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Manually Adding a Web3 Website to IIS</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?manually_adding_a_web3_website.htm"; }
+  else { parent.quicksync('a2.8');  parent.track('topic', location.href);}
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Manually Adding a Web3 Website to IIS</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="licensing.htm">Previous</a>&nbsp;
+     <a href="troubleshooting.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>The Web3 Platform installer offers to automatically install the web application at /web3 under the default website. If you wish to install the Web3 web services under some other site or other path in IIS then you must manually map the application.</p>
+<p>&nbsp;</p>
+<p class="p_Notes"><span class="f_Notes">NOTE: The site that you add the Web3 web services to must be running .NET 4.0.</span></p>
+<p>&nbsp;</p>
+<p>The Web3 Platform installer will create an IIS application pool named "Web3AppPool". This application pool is configured to run .NET 4.0 applications and to use the identity information you entered during the installation process - we recommend that you use this application pool or a copy of it when setting up the Web3 web service directory. Otherwise the task is as simple as creating a new Application under your selected IIS website and path, and setting the application directory to point to the Server subdirectory under the Web3 installation directory (typically C:\Program Files\NetworkedPlanet\Web3\Server) and then configuring the application to use the Web3AppPool application pool.</p>
+
+</td></tr></table>
+
+</body>
+</html>

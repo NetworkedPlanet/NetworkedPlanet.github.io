@@ -1,0 +1,90 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Generating A Schema From A Topic Map</title><link rel="stylesheet" href="../doc.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><link rel="start" href="index.html" title="TMCore Engine API Guide"><link rel="up" href="ch12s03.html" title="API Operations"><link rel="prev" href="ch12s03s05.html" title="A Dynamic Schema Interface"><link rel="next" href="ch12s03s07.html" title="Example Code"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="pageheader"><table class="logo" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td><span class="networked">Networked</span><span class="planet">Planet</span></td><td align="right"><span class="title">TMCore Engine API Guide</span></td></tr></table></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Generating A Schema From A Topic Map</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch12s03s05.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><th width="60%" align="center">API Operations</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch12s03s07.html"><img src="../graphics/next.png" alt="Next"></a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4421"></a>Generating A Schema From A Topic Map</h3></div></div></div><p>The NPCL API provides a basic schema inference engine, that can
+      examine a topic map to determine what types exist and how they are used.
+      The programming interface to this engine is the method
+      InferSchema(ITopicMap, string) in the class
+      NetworkedPlanet.Npcl.SchemaUtils. To use this method you must pass in
+      the ITopicMap handle to the topic map you want to evaluate, and the base
+      URI to be used for generated subject identifiers. The base URI string
+      you pass in can be null, in which case the base URI defaults to the
+      special prefix 'urn:x-tmcore:topicid'.</p><p>The inference proceeds by querying the topic map to determine what
+      topics are being used as types; which types of occurrences occur on
+      which types of topics; which types of association roles appear in which
+      types of associations; and which types of topics play which types of
+      association role. The inference also attempts to determine what types of
+      topics are being used in scopes and will read and reflect the
+      superclass-subclass hierarchy if you have used the XTM-defined subject
+      identifiers for the superclass-subclass association type and related
+      role types.</p><p>The inference has a number of limitations and failsafes that you
+      should be aware of:</p><div class="orderedlist"><ol type="1"><li><p>If a topic is found that is used as a type, NPCL requires that
+          the topic must have a subject identifier. If the topic does not
+          already have at least one subject identifier, one will be generated
+          for it. This generated subject identifier will be base URI prefix
+          specified in the method parameters followed by the name of the topic
+          forced into lower case. So if you specify the base URI prefix as
+          'http://www.mycompany.com/psi/general/', then the topic with the
+          name "Sales Forecast" will get the generated subject identifier
+          'http://www.mycompany.com/psi/general/sales forecast'.</p><p>If you pass in NULL as the base URI prefix, then topics will
+          be assigned a URI of the form 'urn:x-tmcore:topicid:' followed by
+          the database object identifier of the topic. This special form of
+          URI is recognised by the NPCL TopicMapSchemaWriter class, which will
+          find the topic to be updated using its object identifier rather than
+          a subject indicator. This feature is provided to allow you to
+          generate an NPCL schema from a topic map and then import the schema
+          into that topic map without creatin duplicates of topics that did
+          not originally have subject identifiers. You should NOT use this
+          feature to create an NPCL schema that you then intend to import into
+          a different topic map.</p></li><li><p>Cardinality constraints are generated to be rather lax.
+          Occurrence and role player constraints are generated as either '0 or
+          more' or '1 or more' constraints. A '1 or more' constriant is
+          generated only if every topic of the given type would conform to
+          that constraint. Association role constraints minimum cardinality is
+          generated as 0 or 1 (only if all associations of the given type have
+          at least one role that conforms), and maximum cardinality is
+          generated as either unbounded or 1 (only if all associations of the
+          given type have no more than one role that conforms). You may wish
+          to review the generated constraints and make them tighter in certain
+          applications.</p></li><li><p>The inference process makes no attempt to infer datatype,
+          minimum value, maximum value or value pattern facets for occurrence
+          types. You should add these manually if they are required.</p></li><li><p>When a topic is used in a scope, the inference engine works as
+          follows:</p><div class="orderedlist"><ol type="a"><li><p>If the scoping topic is also a role type and the scoped
+              item is a topic name, the topic is ignored (role types are often
+              used to scope association type names to provide
+              context-sensitive association labels - these are one-off usages
+              and would make the NPCL schema grow unmanageably if they were
+              all recorded).</p></li><li><p>If the scoping topic is typed, then the appropriate
+              scoping facet value is added to the topic type. So if a topic
+              "English" is used to scope a topic name, and the "English" topic
+              has the type "Language", then the scoping facet value for the
+              type "Language" will include NAME as one of its values.</p></li><li><p>If the scoping topic is untyped, then a new Scoping Topic
+              is generated in the schema to represent it. Note, that this
+              <span class="emphasis"><em>only</em></span> occurs if the scoping topic is not
+              typed.</p></li></ol></div></li></ol></div><div class="example"><a name="d0e4458"></a><p class="title"><b>Example&nbsp;12.5.&nbsp;Generating An NPCL Schema File From A Topic Map</b></p><p>The following code snippet shows how the schema inference engine
+        can be used to generate an NPCL file for use in other topic
+        maps</p><pre class="programlisting">// Assume that tmSystem is an ITopicMapSystem object that is already initialized
+
+// Get the topic map to process
+ITopicMap tm = tmSystem.GetTopicMap("my-topicmap");
+// Invoke the SchemaUtils to generate the schema
+ISchema schema = SchemaUtils.InferSchema(tm, "http://www.mycompany.com/psi/");
+// Write the schema to a file
+XmlTextWriter xmlWriter = new XmlTextWriter("my-topicmap.npcl", System.Text.Encoding.UTF8);
+xmlWriter.Formatting = Formatting.Indented;
+XmlSchemaWriter writer = new XmlSchemaWriter(xmlWriter, false, "npcl");
+writer.WriteSchema(schema);
+xmlWriter.Close();
+</pre></div><div class="example"><a name="d0e4465"></a><p class="title"><b>Example&nbsp;12.6.&nbsp;Generating And Adding Schema Information To A Topic Map</b></p><p>The following code snippet shows how the inference engine can be
+        used to populate a topic map with a schema generated from it.</p><pre class="programlisting">// Assume that tmSystem is an ITopicMapSystem object that is already initialized
+
+// Get the topic map to process
+ITopicMap tm = tmSystem.GetTopicMap("my-topicmap");
+
+// Invoke the SchemaUtils to generate the schema
+// Using null for the subject identifier base generates identifiers
+// that will correctly update topics that do not currently have subject identifiers.
+ISchema schema = SchemaUtils.InferSchema(tm, null);
+
+// Write the schema back to the topic map - replacing any previous schema information
+TopicMapSchemaWriter writer = new TopicMapSchemaWriter(tm, SchemaWriterMode.ReplaceAll);
+writer.WriteSchema(schema);</pre></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch12s03s05.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch12s03.html"><img src="../graphics/up.png" alt="Up"></a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch12s03s07.html"><img src="../graphics/next.png" alt="Next"></a></td></tr><tr><td width="40%" align="left" valign="top">A Dynamic Schema Interface&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html"><img src="../graphics/home.png" alt="Home"></a></td><td width="40%" align="right" valign="top">&nbsp;Example Code</td></tr></table></div></body></html>

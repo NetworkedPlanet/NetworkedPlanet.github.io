@@ -1,0 +1,19 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>scopingTopic Element</title><link rel="stylesheet" href="../doc.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><link rel="start" href="index.html" title="TMCore Web Services Guide"><link rel="up" href="apas04.html" title="NPCL XML Schema"><link rel="prev" href="apas04s08.html" title="roleType Element"><link rel="next" href="apas04s10.html" title="subclasses Element"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="pageheader"><table class="logo" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td><span class="networked">Networked</span><span class="planet">Planet</span></td><td align="right"><span class="title">TMCore Web Services Guide</span></td></tr></table></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"><code class="sgmltag-element">scopingTopic</code> Element</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="apas04s08.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><th width="60%" align="center">NPCL XML Schema</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="apas04s10.html"><img src="../graphics/next.png" alt="Next"></a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e4301"></a><code class="sgmltag-element">scopingTopic</code> Element</h4></div></div></div><p>This element describes a single Scoping Topic in the
+        schema.</p><pre class="programlisting">
+&lt;npcl:scopingTopic&gt;
+  &lt;npcl:subjectIdentifier&gt;
+    ...
+  &lt;/subjectIdentifier&gt;
+  &lt;npcl:displayName&gt; ... &lt;/npcl:displayName&gt;
+  &lt;npcl:extension type="..."&gt;
+    ...
+  &lt;/npcl:extension&gt;
+&lt;/roleType&gt;
+      </pre><div class="variablelist"><dl><dt><span class="term">npcl:scopingTopic/npcl:subjectIdentifier</span></dt><dd><p>REQUIRED, REPEATABLE. Contains a subject identifier URI
+              for the type.</p></dd><dt><span class="term">npcl:scopingTopic/npcl:displayName</span></dt><dd><p>REQUIRED. Contains a human-readable display label for the
+              type.</p></dd><dt><span class="term">npcl:scopingTopic/npcl:extension</span></dt><dd><p>OPTIONAL, REPEATABLE. Contains a single typed extension
+              value for the type. The value is the string content of this
+              element. The type is specified as a URI in the
+              <code class="sgmltag-element">type</code> attribute of this elment.</p></dd></dl></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="apas04s08.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="apas04.html"><img src="../graphics/up.png" alt="Up"></a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="apas04s10.html"><img src="../graphics/next.png" alt="Next"></a></td></tr><tr><td width="40%" align="left" valign="top"><code class="sgmltag-element">roleType</code> Element&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html"><img src="../graphics/home.png" alt="Home"></a></td><td width="40%" align="right" valign="top">&nbsp;<code class="sgmltag-element">subclasses</code> Element</td></tr></table></div></body></html>

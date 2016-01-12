@@ -1,0 +1,40 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Chapter&nbsp;14.&nbsp;Logging</title><link rel="stylesheet" href="../doc.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><link rel="start" href="index.html" title="TMCore Engine API Guide"><link rel="up" href="index.html" title="TMCore Engine API Guide"><link rel="prev" href="ch13s03.html" title="Duplicate Removal Procedures"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="pageheader"><table class="logo" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td><span class="networked">Networked</span><span class="planet">Planet</span></td><td align="right"><span class="title">TMCore Engine API Guide</span></td></tr></table></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter&nbsp;14.&nbsp;Logging</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch13s03.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;</td></tr></table><hr></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="logging"></a>Chapter&nbsp;14.&nbsp;Logging</h2></div></div></div><p>The TMCore assembly makes use of the Apache Log4Net logging library
+    to provide configurable runtime logging services. Log4Net provides a
+    flexible hierarchical logging system that supports a wide variety of
+    logging formats and logging destinations include files, console and the
+    system event log. Details on how to Log4Net's features and how to
+    configure the Log4Net system can be found on the Apache Log4Net site at
+    <a href="http://logging.apache.org/log4net/" target="_top">http://logging.apache.org/log4net/</a>.</p><p>The TMCore assemly does not itself initialise the Log4Net library
+    which allows developers creating applications that use TMCore to choose
+    their own method of configurable or hardcoded logging
+    configuration.</p><div class="note"><h3 class="title">Note</h3><p>The Topic Map Web Service and NPCL Web Service web applications do
+      provide a default, overrideable configuration for the Log4Net system -
+      see the documentation for those applications for more details.</p></div><p>Log4Net supports the concept of a hierarchical set of logs, so for
+    example the log "networkedplanet.tmcore" is a child of the log
+    "networkedplanet". Configuration that applies to the parent log also
+    applies to the child log unless overridden. This is covered in much more
+    detail in the Apache documentation for Log4Net. The TMCore assembly writes
+    to the following logs:</p><div class="variablelist"><dl><dt><span class="term">networkedplanet.tmcore.system</span></dt><dd><p>This log receives the following types of messages:</p><div class="itemizedlist"><ul type="disc"><li><p>ERROR messages when a topic map processing exception
+              occurs such as an attempt to add a duplicate source
+              locator.</p></li><li><p>ERROR messages if the system cannot execute a set of SQL
+              statements against the database for some reason.</p></li><li><p>INFO messages when the TMCore
+              <code class="interfacename">ITopicMapSystem</code> is initialised
+              and closed.</p></li><li><p>DEBUG messages when a query is executed through the
+              <code class="methodname">ITopicMapSystem.ExecuteQuery()</code>
+              method.</p></li><li><p>DEBUG messages detailing the configuration parameters
+              passed when the TopicMapSystem is initialised</p><div class="warning"><h3 class="title">Warning</h3><p>If you are using database authentication with a password
+                specified in the connection string, these DEBUG messages will
+                contain the user name and password used for the connection in
+                clear text. You should either disable DEBUG level logging or
+                ensure that logs containing this sensitive data are not
+                accessible to unauthorized users.</p></div></li></ul></div></dd><dt><span class="term">networkedplanet.tmcore.merging</span></dt><dd><p>This log only receives DEBUG messages when the system detects
+          and performs a merge of two topics.</p></dd><dt><span class="term">networkedplanet.tmcore.syntax.xtm</span></dt><dd><p>Receives INFO and DEBUG level messages as an XTM source is
+          parsed into the topic map. The INFO level messages can be used for
+          timing imports. The DEBUG level messages are quite verbose and not
+          recommended except for debugging purposes.</p></dd><dt><span class="term">networkedplanet.tmcore.util.hierarchy</span></dt><dd><p>This log receives the following types of messages:</p><div class="itemizedlist"><ul type="disc"><li><p>ERROR messages if a required PSI has not been defined in
+              the topic map.</p></li><li><p>WARNING messages if a facet is found which cannot be
+              processed as a hierarchy for some reason.</p></li><li><p>DEBUG messages as a
+              <code class="classname">HierarchyManager</code> instance loads or
+              refreshes topic hierarchy data.</p></li></ul></div></dd></dl></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch13s03.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><td width="20%" align="center">&nbsp;</td><td width="40%" align="right">&nbsp;</td></tr><tr><td width="40%" align="left" valign="top">Duplicate Removal Procedures&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html"><img src="../graphics/home.png" alt="Home"></a></td><td width="40%" align="right" valign="top">&nbsp;</td></tr></table></div></body></html>

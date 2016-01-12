@@ -1,0 +1,205 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Topic of Type Cloud</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?topic_of_type_cloud.htm"; }
+  else { parent.quicksync('a7.3.1.2'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Topic of Type Cloud</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="common_configuration_propertie.htm">Previous</a>&nbsp;
+     <a href="styling_cloud_controls.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>The Topic of Type Cloud for EPiServer is available in the <span class="f_InlineCode">NetworkedPlanet.EPiServerTopicMapIndexModule.WebParts.TopicOfTypeEPiServerCloudControl</span>.</p>
+<p>The following properties are exposed on this web part:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 14px 0px 10px 1px;"><table cellspacing="0" cellpadding="3" border="1" style="border: solid 2px #000000; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="219" style="width:219px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Property Name</p>
+</td>
+<td valign="middle" width="131" style="width:131px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Required</p>
+</td>
+<td valign="middle" width="167" style="width:167px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Default Value</p>
+</td>
+<td valign="middle" width="758" style="width:758px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Description</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="219" style="width:219px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">TopicTypeSI</p>
+</td>
+<td valign="middle" width="131" style="width:131px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Yes</p>
+</td>
+<td valign="middle" width="167" style="width:167px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">None</p>
+</td>
+<td valign="middle" width="758" style="width:758px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">This is the subject identifier of the topic type of which all topics in the cloud will be instances.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="219" style="width:219px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">EPiServerProperties</p>
+</td>
+<td valign="middle" width="131" style="width:131px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">No</p>
+</td>
+<td valign="middle" width="167" style="width:167px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">None</p>
+</td>
+<td valign="middle" width="758" style="width:758px; border: solid 1px #000000;"><p>A semi-colon delimited list of EPiServer page property names that should be included in the XML. The name of the element will be the same as the property name. If the property does not exist on the page then the element will be omitted.</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_TableCaption"><span class="f_TableCaption">Common Properties on Topic of Type Cloud Web Parts</span></p>
+<p>Topic of Type clouds are typically used within the context of the entire topic map. Each member of the cloud is an instance of a particular topic type. The importance of each topic shown in the cloud is proportional to the number of associations to that topic, filtered by an association type.</p>
+<p>So for example: a map that contains topic types of "Person" and "Skill" may have an association "Person has Skill". You can then show topic of type cloud: "Show all people using the number of skills they have as the importance", to see who the most skilled individuals are.</p>
+<p>The ASP.NET code to do this is shown below:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;EPiParts:TopicOfTypeEPiServerCloudControl&nbsp;runat="server"&nbsp;ID="personBySkillsCloud"</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;AssociationTypePsi="http://www.networkedplanet.com/psi/organisation/personHasSkill"</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;SourceRoleTypePsi="http://www.networkedplanet.com/psi/organisation/personHasSkillSource"</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;TargetRoleTypePsi="http://www.networkedplanet.com/psi/organisation/personHasSkillTarget"</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;TopicTypeSI="http://www.networkedplanet.com/psi/organisation/person"</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;TopicMapName="EPiCMSDemo"</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;XslLink="/EPiServer1/NetworkedPlanet/EPiServerModuleDemo/Xsl/TopicCloud.xslt"</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">/&gt;</span></p>
+<p>Another example, using this simple association is: "Show all the skills known using the number of people who know them as the importance":</p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;EPiParts:TopicOfTypeEPiServerCloudControl&nbsp;runat="server"&nbsp;ID="skillsByPersonCloud"</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;AssociationTypePsi="http://www.networkedplanet.com/psi/organisation/personHasSkill"</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;SourceRoleTypePsi="http://www.networkedplanet.com/psi/organisation/personHasSkillTarget"</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;TargetRoleTypePsi="http://www.networkedplanet.com/psi/organisation/personHasSkillSource"</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;TopicTypeSI="http://www.networkedplanet.com/psi/organisation/skill"</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;TopicMapName="EPiCMSDemo"</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;XslLink="/EPiServer1/NetworkedPlanet/EPiServerModuleDemo/Xsl/TopicCloud.xslt"</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">/&gt;</span></p>
+<p>Note that an XSLT file is specified in both cases using the XslLink attribute. By default the controls will render as XML in the following form:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;OneHopDataSet&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;OneHopDataTable&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;topicid&gt;topic&nbsp;id&lt;/topicid&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;si&gt;Page/Topic&nbsp;GUID&lt;/si&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;name&gt;Page&nbsp;Name&lt;/name&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;linkUrl&gt;URL&nbsp;to&nbsp;link&nbsp;to&nbsp;page&lt;/linkUrl&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;pageId&gt;EPiServer&nbsp;Page&nbsp;ID&lt;/pageId&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;count&gt;Instance&nbsp;Count&lt;/count&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;CssClassName&gt;CSS&nbsp;class&nbsp;name&lt;/CssClassName&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;/OneHopDataTable&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;OneHopDataTable&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;....</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;/OneHopDataTable&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;/OneHopDataSet&gt;</span></p>
+<p>Each element of the XML is used as follows:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 14px 0px 10px 1px;"><table cellspacing="0" cellpadding="3" border="1" style="border: solid 2px #000000; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="238" style="width:238px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Element Name</p>
+</td>
+<td valign="middle" width="381" style="width:381px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Cardinality</p>
+</td>
+<td valign="middle" width="664" style="width:664px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Description</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="238" style="width:238px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-size: 10pt; font-family: 'Courier New';">OneHopDataSet</span></p>
+</td>
+<td valign="middle" width="381" style="width:381px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">1</p>
+</td>
+<td valign="middle" width="664" style="width:664px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">This is the root element of the XML document.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="238" style="width:238px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-size: 10pt; font-family: 'Courier New';">OneHopDataTable</span></p>
+</td>
+<td valign="middle" width="381" style="width:381px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">1 as a direct child of OneHopDataSet.</p>
+</td>
+<td valign="middle" width="664" style="width:664px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">This represents a single topic that is to be displayed in the cloud.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="238" style="width:238px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-size: 10pt; font-family: 'Courier New';">topicid</span></p>
+</td>
+<td valign="middle" width="381" style="width:381px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">1 per OneHopDataTable</p>
+</td>
+<td valign="middle" width="664" style="width:664px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">The ID of the topic in the cloud.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="238" style="width:238px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-size: 10pt; font-family: 'Courier New';">si</span></p>
+</td>
+<td valign="middle" width="381" style="width:381px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">1 per OneHopDataTable</p>
+</td>
+<td valign="middle" width="664" style="width:664px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Contains the subject identifier of the topic, the EPiServer Page GUID is present here.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="238" style="width:238px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-size: 10pt; font-family: 'Courier New';">name</span></p>
+</td>
+<td valign="middle" width="381" style="width:381px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">0..1 per OneHopDataTable. </p>
+</td>
+<td valign="middle" width="664" style="width:664px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">The name of the EPiServer Page that the topic represents. If the topic does not represent an EPiServer page then this element will not be present.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="238" style="width:238px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-size: 10pt; font-family: 'Courier New';">linkUrl</span></p>
+</td>
+<td valign="middle" width="381" style="width:381px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">0..1 per OneHopDataTable. </p>
+</td>
+<td valign="middle" width="664" style="width:664px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">A URI that may be used in the href attribute of an anchor link to link to the page. If the topic does not represent an EPiServer page then this element will not be present.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="238" style="width:238px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-size: 10pt; font-family: 'Courier New';">pageId</span></p>
+</td>
+<td valign="middle" width="381" style="width:381px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">0..1 per OneHopDataTable. </p>
+</td>
+<td valign="middle" width="664" style="width:664px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">The EPiServer Page ID of the page that the topic represents. If the topic does not represent an EPiServer page then this element will not be present.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="238" style="width:238px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-size: 10pt; font-family: 'Courier New';">count</span></p>
+</td>
+<td valign="middle" width="381" style="width:381px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">1 per OneHopDataTable</p>
+</td>
+<td valign="middle" width="664" style="width:664px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">The number of associations found to this topic. This represents the absolute value that determines the importance of the topic.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="238" style="width:238px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-size: 10pt; font-family: 'Courier New';">CssClassName</span></p>
+</td>
+<td valign="middle" width="381" style="width:381px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">1 per OneHopDataTable</p>
+</td>
+<td valign="middle" width="664" style="width:664px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">The name of the nominated CSS class that should be used to render the topic name. See <a href="ar01s03s01_2.htm#stylingcloudcontrols">Styling Cloud Controls</a> for more information about how this works.</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_TableCaption"><span class="f_TableCaption">Interpretation of XML Elements in Topic Cloud Response</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

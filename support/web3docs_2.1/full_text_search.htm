@@ -1,0 +1,62 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Full-Text Search</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?full_text_search.htm"; }
+  else { parent.quicksync('a6.5.7');  parent.track('topic', location.href);}
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Full-Text Search</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="tmsparql_modified_predicate.htm">Previous</a>&nbsp;
+     <a href="limitations.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>Full-text search against topic labels and property values is supported through an extension predicate &lt;<a href="http://www.networkedplanet.com/web3/tmsparql/providers/fulltext/matches%3E" target="_blank" onclick="return HMTrackTopiclink(this);" class="weblink">http://www.networkedplanet.com/web3/tmsparql/providers/fulltext/matches&gt;</a>. This predicate maps a topic as the subject of the predicate to a full-text search term as the object of the predicate. The full-text search term must be specified as a literal string value. </p>
+<p>&nbsp;</p>
+<p>For example, the following query finds all topics of a particular type that also have a label or property value that matches a full-text search query:</p>
+<p>&nbsp;</p>
+<p class="p_CodeExample"><span class="f_CodeExample">PREFIX&nbsp;ont:&nbsp;&lt;<a href="http://www.networkedplanet.com/ontology/employment/" target="_blank" onclick="return HMTrackTopiclink(this);" class="weblink">http://www.networkedplanet.com/ontology/employment/</a>&gt;</span><br>
+<span class="f_CodeExample">PREFIX&nbsp;tms:&nbsp;&lt;<a href="http://www.networkedplanet.com/tmsparql/" target="_blank" onclick="return HMTrackTopiclink(this);" class="weblink">http://www.networkedplanet.com/tmsparql/</a>&gt;</span><br>
+<span class="f_CodeExample">PREFIX&nbsp;ft:&nbsp;&lt;<a href="http://www.networkedplanet.com/web3/tmsparql/providers/fulltext/" target="_blank" onclick="return HMTrackTopiclink(this);" class="weblink">http://www.networkedplanet.com/web3/tmsparql/providers/fulltext/</a>&gt;</span><br>
+<span class="f_CodeExample">&nbsp;</span><br>
+<span class="f_CodeExample">SELECT&nbsp;?person&nbsp;?employer&nbsp;WHERE&nbsp;{</span><br>
+<span class="f_CodeExample">&nbsp;&nbsp;?person&nbsp;a&nbsp;ont:person&nbsp;.</span><br>
+<span class="f_CodeExample">&nbsp;&nbsp;?person&nbsp;ft:matches&nbsp;"alf"</span><br>
+<span class="f_CodeExample">}</span></p>
+<p>The full-text search string currently supports a list of space-separated search terms where each term can be either a complete word or a prefix followed by a * (e.g. alf* to match "Alfred", "Alfie" and "Alf").</p>
+
+</td></tr></table>
+
+</body>
+</html>

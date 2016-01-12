@@ -1,0 +1,155 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>NPCL Meta Types</title><link rel="stylesheet" href="../doc.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><link rel="start" href="index.html" title="TMCore Engine API Guide"><link rel="up" href="ch11s03.html" title="NPCL Topic Map Ontology"><link rel="prev" href="ch11s03.html" title="NPCL Topic Map Ontology"><link rel="next" href="ch11s03s02.html" title="Constraint Topics"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="pageheader"><table class="logo" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td><span class="networked">Networked</span><span class="planet">Planet</span></td><td align="right"><span class="title">TMCore Engine API Guide</span></td></tr></table></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">NPCL Meta Types</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch11s03.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><th width="60%" align="center">NPCL Topic Map Ontology</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch11s03s02.html"><img src="../graphics/next.png" alt="Next"></a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e3659"></a>NPCL Meta Types</h3></div></div></div><p>Meta-types are special NPCL-defined topics that are used to
+      specify that a topic can be used to type other topics, associations,
+      association roles or occurrences in a topic map. This is done by adding
+      the meta-type topic as a type to the typing topic. The following
+      meta-types are defined by NPCL:</p><div class="table"><a name="d0e3664"></a><p class="title"><b>Table&nbsp;11.1.&nbsp;NPCL Meta Types</b></p><table summary="NPCL Meta Types" cellspacing="0" cellpadding="3" border="1"><colgroup><col><col><col></colgroup><thead><tr><th align="center">Meta Type</th><th align="center">Relative PSI</th><th align="center">Description</th></tr></thead><tbody><tr><td>Topic Type</td><td><code class="uri">meta-types/topic-type</code></td><td>A topic typed by this meta-type topic can be used as the
+              type of other topics in the topic map.</td></tr><tr><td>Association Type</td><td><code class="uri">meta-types/association-type</code></td><td>A topic typed by this meta-type topic can be used to
+              specify the type of one or more associations in the topic
+              map.</td></tr><tr><td>Association Role Type</td><td><code class="uri">meta-types/role-type</code></td><td>A topic typed by this meta-type topic can be used to
+              specify the type of one or more association roles in the topic
+              map.</td></tr><tr><td>Occurrence Type</td><td><code class="uri">meta-types/occurrence-type</code></td><td>A topic typed by this meta-type topic can be used as the
+              type of one or more occurrences in the topic map.</td></tr><tr><td>Scoping Topic</td><td><code class="uri">types/scoping-topic</code></td><td>A topic typed by this meta-type topic can be used as a
+              scoping topic in the scope of an association, occurrence, name
+              or variant name in the topic map.</td></tr></tbody></table></div><p>The Relative PSI column shows the PSI for the meta-type relative
+      to the base PSI <code class="uri">http://www.networkedplanet.com/psi/npcl/</code>. The
+      full PSI must be present as a subject identifier for the meta-type
+      topic. For example, to create a "Topic Type" meta-type, you must create
+      a topic which has a subject identifier with the URI
+      <code class="uri">http://www.networkedplanet.com/psi/npcl/meta-types/topic-type</code>.</p><div class="example"><a name="d0e3725"></a><p class="title"><b>Example&nbsp;11.1.&nbsp;XTM For A Topic Type</b></p><p>The following example shows how a topic type meta-type is
+        defined in XTM syntax.</p><pre class="programlisting">&lt;xtm:topicMap xmlns:xtm="..." xmlns:xlink="..."&gt;
+  &lt;!-- 'person' can be used as a topic type --&gt;
+  &lt;xtm:topic id="person"&gt;
+    &lt;xtm:instanceOf&gt;
+      &lt;xtm:subjectIndicatorRef 
+xlink:href="http://www.networkedplanet.com/psi/npcl/meta-types/topic-type"/&gt;
+    &lt;/xtm:instanceOf&gt;
+    ...
+  &lt;/xtm:topic&gt;
+&lt;/xtm:topicMap&gt;</pre><p>Alternatively you could create a full topic for the meta-type
+        and reuse it throughout the topic map e.g.</p><pre class="programlisting">&lt;xtm:topicMap xmlns:xtm="..." xmlns:xlink="..."&gt;
+
+  &lt;!-- Topic type meta-type --&gt;
+  &lt;xtm:topic id="topic-type"&gt;
+    &lt;xtm:subjectIdentity&gt;
+      &lt;xtm:subjectIndicatorRef
+xlink:href="http://www.networkedplanet.com/psi/npcl/meta-types/topic-type"/&gt;
+    &lt;/xtm:subjectIdentity&gt;
+    ...
+  &lt;/xtm:topic&gt;
+
+  &lt;xtm:topic id="person"&gt;
+    &lt;xtm:instanceOf&gt;
+      &lt;xtm:topicRef xlink:href="#topic-type"/&gt;
+    &lt;/xtm:instanceOf&gt;
+  &lt;/xtm:topic&gt;
+
+  &lt;xtm:topic id="company"&gt;
+    &lt;xtm:instanceOf&gt;
+      &lt;xtm:topicRef xlink:href="#topic-type"/&gt;
+    &lt;/xtm:instanceOf&gt;
+  &lt;/xtm:topic&gt;
+&lt;/xtm:topicMap&gt;</pre></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e3736"></a>Is Abstract Facet</h4></div></div></div><p>The Is Abstract Facet is represented as an occurrence of a
+        special NPCL-defined type that can be added to a type topic. The PSI
+        for this type is
+        http://www.networkedplanet.com/psi/npcl/facets/is-abstract-facet. The
+        value of the occurrence should be the string "true" if the type is
+        abstract. Any other value for this occurrence will mark the type as
+        NOT abstract (i.e. all other values of the occurrence are treated as
+        "false").</p><div class="example"><a name="d0e3741"></a><p class="title"><b>Example&nbsp;11.2.&nbsp;An Abstract Topic Type</b></p><pre class="programlisting">&lt;xtm:topicMap xmlns:xtm="..." xmlns:xlink="..."&gt;
+
+  &lt;!-- Legal Entity is an abstract Topic Type --&gt;
+  &lt;xtm:topic id="legal-entity"&gt;
+    &lt;xtm:instanceOf&gt;
+      &lt;xtm:subjectIndicatorRef
+xlink:href="http://www.networkedplanet.com/psi/npcl/meta-types/topic-type"/&gt;
+    &lt;/xtm:instanceOf&gt;
+    &lt;!-- Is Abstract Facet = true --&gt;
+    &lt;xtm:occurrence&gt;
+      &lt;xtm:instanceOf&gt;
+        &lt;xtm:subjectIndicatorRef
+xlink:href="http://www.networkedplanet.com/psi/npcl/facets/is-abstract-facet"/&gt;
+      &lt;/xtm:instanceOf&gt;
+      &lt;xtm:resourceData&gt;true&lt;/xtm:resourceData&gt;
+    &lt;/xtm:occurrence&gt;
+  &lt;/xtm:topic&gt;
+
+&lt;/xtm:topicMap&gt;</pre></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e3746"></a>Occurrence Type Value Facets</h4></div></div></div><p>The set of values allowed as resource data in an occurrence of a
+        specific type can be defined by adding Value Facets to the occurrence
+        type topic. These facets are added as occurrences of special
+        NPCL-defined types that can be added to an occurrence type topic. The
+        facets are described in the following table.</p><div class="table"><a name="d0e3751"></a><p class="title"><b>Table&nbsp;11.2.&nbsp;Occurrence Type Value Facets</b></p><table summary="Occurrence Type Value Facets" cellspacing="0" cellpadding="3" border="1"><colgroup><col><col><col></colgroup><thead><tr><th align="center">Facet Name</th><th align="center">Relative PSI</th><th align="center">Description</th></tr></thead><tbody><tr><td>Value Data-Type</td><td>facets/value-datatype-facet</td><td>Specifies the datatype that the occurrence value should
+                match. The value of this facet occurrence must be a datatype
+                URI. It is strongly recommended to only use the W3C Schema
+                data type URIs, but applications may define their own data
+                type URIs if needed.</td></tr><tr><td>Minimum Value</td><td>facets/minimum-value-facet</td><td>Specifies the minimum value that occurrence resource
+                data must evaluate to. This facet is only consulted if the
+                occurrence type also has a Value Data-Type facet and the
+                data-type specified is a ranged data type (e.g. integer,
+                float, date-time etc. but not string, ID etc.).</td></tr><tr><td>Maximum Value</td><td>facets/maximum-value-facet</td><td>Specifies the minimum value that occurrence resource
+                data must evaluate to. This facet is only consulted if the
+                occurrence type also has a Value Data-Type facet and the
+                data-type specified is a ranged data type.</td></tr><tr><td>Value Pattern</td><td>facets/value-pattern-facet</td><td>Specifies a regular expression pattern that the
+                occurrence resource data must match.</td></tr></tbody></table></div><div class="example"><a name="d0e3792"></a><p class="title"><b>Example&nbsp;11.3.&nbsp;Occurrence Type Value Facets In XTM</b></p><p>The following example shows an occurrence type "Age" which is
+          restricted to integer values between 0 and 125.</p><pre class="programlisting">&lt;xtm:topicMap xmlns:xtm="..." xmlns:xlink="..."&gt;
+
+  &lt;xtm:topic id="age"&gt;
+    &lt;xtm:instanceOf&gt;
+      &lt;xtm:subjectIndicatorRef xlink:href="htttp://www.networkedplanet.com/psi/npcl/meta-types/occurrence-type"/&gt;
+    &lt;xtm:instanceOf&gt;
+    &lt;xtm:baseName&gt;
+      &lt;xtm:baseNameString&gt;Age (in years)&lt;/xtm:baseName&gt;
+    &lt;/xtm:baseName&gt;
+
+    &lt;!-- data-type is integer --&gt;
+    &lt;xtm:occurrence&gt;
+      &lt;xtm:instanceOf&gt;
+        &lt;xtm:subjectIndicatorRef xlink:href="htttp://www.networkedplanet.com/psi/npcl/facets/value-datatype-facet"/&gt;
+      &lt;/xtm:instanceOf&gt;
+      &lt;xtm:resourceData&gt;http://www.w3.org/2001/XMLSchema#int&lt;/xtm:resourceData&gt;
+    &lt;/xtm:occurrence&gt;
+
+    &lt;!-- minimum value is 0 --&gt;
+    &lt;xtm:occurrence&gt;
+      &lt;xtm:instanceOf&gt;
+        &lt;xtm:subjectIndicatorRef xlink:href="htttp://www.networkedplanet.com/psi/npcl/facets/minimum-value-facet"/&gt;
+      &lt;/xtm:instanceOf&gt;
+      &lt;xtm:resourceData&gt;0&lt;/xtm:resourceData&gt;
+    &lt;/xtm:occurrence&gt;
+
+    &lt;!-- maximum value is 125 --&gt;
+    &lt;xtm:occurrence&gt;
+      &lt;xtm:instanceOf&gt;
+        &lt;xtm:subjectIndicatorRef xlink:href="htttp://www.networkedplanet.com/psi/npcl/facets/maximum-value-facet"/&gt;
+      &lt;/xtm:instanceOf&gt;
+      &lt;xtm:resourceData&gt;125&lt;/xtm:resourceData&gt;
+    &lt;/xtm:occurrence&gt;
+  &lt;/xtm:topic&gt;
+
+&lt;/xtm:topicMap&gt;</pre></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e3799"></a>Topic Type Scoping Facet</h4></div></div></div><p>The topics of a particular type can be flagged for use in scopes
+        using the Scoping Facet on the Topic Type topic. This facet is added
+        as an occurrence of a special NPCL-defined type that can be added to a
+        Topic Type topic. The PSI for this occurrence type is
+        http://www.networkedplanet.com/npcl/facets/scoping-facet.</p><div class="example"><a name="d0e3804"></a><p class="title"><b>Example&nbsp;11.4.&nbsp;Topic Type Scoping Facets In XTM</b></p><p>The following example shows an Topic Type "Language" which is
+          restricted to scoping names and occurrence only.</p><pre class="programlisting">&lt;xtm:topicMap xmlns:xtm="..." xmlns:xlink="..."&gt;
+
+  &lt;xtm:topic id="language"&gt;
+    &lt;xtm:instanceOf&gt;
+      &lt;xtm:subjectIndicatorRef xlink:href="htttp://www.networkedplanet.com/psi/npcl/meta-types/topic-type"/&gt;
+    &lt;xtm:instanceOf&gt;
+    &lt;xtm:baseName&gt;
+      &lt;xtm:baseNameString&gt;Language&lt;/xtm:baseName&gt;
+    &lt;/xtm:baseName&gt;
+
+    &lt;!-- Language topics can scope topic names and occurrences --&gt;
+    &lt;xtm:occurrence&gt;
+      &lt;xtm:instanceOf&gt;
+        &lt;xtm:subjectIndicatorRef xlink:href="htttp://www.networkedplanet.com/psi/npcl/facets/scoping-facet"/&gt;
+      &lt;/xtm:instanceOf&gt;
+      &lt;xtm:resourceData&gt;NAME OCCURRENCE&lt;/xtm:resourceData&gt;
+    &lt;/xtm:occurrence&gt;
+
+  &lt;/xtm:topic&gt;
+
+&lt;/xtm:topicMap&gt;</pre></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch11s03.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch11s03.html"><img src="../graphics/up.png" alt="Up"></a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch11s03s02.html"><img src="../graphics/next.png" alt="Next"></a></td></tr><tr><td width="40%" align="left" valign="top">NPCL Topic Map Ontology&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html"><img src="../graphics/home.png" alt="Home"></a></td><td width="40%" align="right" valign="top">&nbsp;Constraint Topics</td></tr></table></div></body></html>

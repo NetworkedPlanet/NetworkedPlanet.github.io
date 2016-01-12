@@ -1,0 +1,150 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Walkthrough: Creating a Custom Query</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?walkthrough_creating_a_custom_.htm"; }
+  else { parent.quicksync('a5.3.2.1'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Walkthrough: Creating a Custom Query</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="creating_new_queries.htm">Previous</a>&nbsp;
+     <a href="ar01s04_1.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>This example demonstrated how to create a new query and include the results from within a page template. The query we are going to define returns the page link and default name of all pages of a specified topic type.</p>
+<p><span style="font-weight: bold;">1. Define the SQL</span></p>
+<p style="margin: 0px 0px 10px 24px;">This query requires three parameters:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 10px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><span style="font-size: 12pt; font-family: 'Times New Roman'; color: #000000;">1.</span></td><td>The identity of the occurrence type topic used for marking page links: <span style="font-style: italic;">@PageLinkOccurrenceTypeId</span>.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 10px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><span style="font-size: 12pt; font-family: 'Times New Roman'; color: #000000;">2.</span></td><td>The name of the topic map: <span style="font-style: italic;">@TopicMapName</span>.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 10px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><span style="font-size: 12pt; font-family: 'Times New Roman'; color: #000000;">3.</span></td><td>The subject identifier of the topic type that we want to find the instances of: <span style="font-style: italic;">@TopicTypeSi</span>.</td></tr></table></div><p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">CREATE&nbsp;PROCEDURE&nbsp;dbo.GetPagesOfType</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">(</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;@PageLinkOccurrenceTypeId&nbsp;int,</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;@tmId&nbsp;int,</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;@TopicTypeSi&nbsp;varchar(255)</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">)</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">AS</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">BEGIN</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;SELECT</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;dbo.tm_displayName(tm_directInstanceOf.topic_id)&nbsp;as&nbsp;PageName,</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;tm_occurResource.occur_resource&nbsp;AS&nbsp;PageLink</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;FROM</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;tm_occurResource&nbsp;INNER&nbsp;JOIN</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;tm_si&nbsp;INNER&nbsp;JOIN</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;tm_directInstanceOf&nbsp;ON&nbsp;tm_si.topic_id&nbsp;=&nbsp;tm_directInstanceOf.type_id&nbsp;ON&nbsp;tm_occurResource.topic_id&nbsp;=&nbsp;tm_directInstanceOf.topic_id</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;WHERE</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;(tm_si.subj_id&nbsp;=&nbsp;@TopicTypeSi)&nbsp;AND</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;(tm_occurResource.occur_type&nbsp;=&nbsp;@PageLinkOccurrenceTypeId)&nbsp;AND</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;(tm_si.topicmap&nbsp;=&nbsp;@tmId)</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">END</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">GO</span></p>
+<p style="margin: 0px 0px 10px 24px;">This query returns the page links and names of all pages which are connected to the page specified. Once this query has been loaded in to SQL server, ensure that the relevant permissions defined on the query to allow TMService to execute it.</p>
+<p><span style="font-weight: bold;">2. Add the query to TMService</span></p>
+<p style="margin: 0px 0px 10px 24px;">Having written and tested the query using the SQL server tools. The query can be added to the TMService <span class="f_CodeExample">web.config</span> configuration file as follows:</p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&lt;query&nbsp;name="EPiDemo_GetPagesOfType"&nbsp;topicMapParam="@tmId"&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&lt;tmrql&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;EXEC&nbsp;GetPagesOfType&nbsp;@PageLinkOccurrenceTypeId,@tmId,@TopicTypeSi</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&lt;/tmrql&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&lt;param&nbsp;name="@PageLinkOccurrenceTypeId"&nbsp;type="oid"/&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&lt;param&nbsp;name="@TopicTypeSi"&nbsp;type="string"/&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&lt;/query&gt;</span></p>
+<p style="margin: 0px 0px 10px 24px;">When TMService executes the query it will convert the table result from the SQL query into XML in the following format:</p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&lt;TopicMapWebServiceQueryResult&nbsp;xmlns="http://www.networkedplanet.com/2005/01/topicmap/querydata/"&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&lt;tmdata&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;column1name&gt;row1col1Value&lt;/column1name&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;column2name&gt;row1col2Value&lt;/column2name&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;columnNname&gt;row1colNValue&lt;/columnNname&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&lt;/tmdata&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&lt;tmdata&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;column1name&gt;row2col1Value&lt;/column1name&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;column2name&gt;row2col2Value&lt;/column2name&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;columnNname&gt;row2colNValue&lt;/columnNname&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&lt;/tmdata&gt;d</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;...</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&lt;tmdata&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;column1name&gt;rowNcol1Value&lt;/column1name&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;column2name&gt;rowNcol2Value&lt;/column2name&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;columnNname&gt;rowNcolNValue&lt;/columnNname&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&lt;/tmdata&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&lt;/TopicMapWebServiceQueryResult&gt;</span></p>
+<p style="margin: 0px 0px 10px 24px;">For this query the column names are fixed in the query to be PageLink and PageName, so the results supplied by TMService would resemble the following XML:</p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&lt;TopicMapWebServiceQueryResult&nbsp;xmlns="http://www.networkedplanet.com/2005/01/topicmap/querydata/"&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&lt;tmdata&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;PageLink&gt;URL&nbsp;to&nbsp;page&lt;/PageLink&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;PageName&gt;Default&nbsp;Page&nbsp;Name&lt;/PageName&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&lt;/tmdata&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&lt;tmdata&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;PageLink&gt;URL&nbsp;to&nbsp;page&lt;/PageLink&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;PageName&gt;Default&nbsp;Page&nbsp;Name&lt;/PageName&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&lt;/tmdata&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">...</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&lt;/TopicMapWebServiceQueryResult&gt;</span></p>
+<p style="margin: 0px 0px 10px 24px;">&nbsp;</p>
+<p><span style="font-weight: bold;">3. Invoke the Query from within the ASPX/ASCX code behind</span></p>
+<p style="margin: 0px 0px 10px 24px;">Once the query has been added to the TMService configuration then it should be executable from any application through the TMService service endpoint. Typically data is loaded and bound within the Load phase of an ASP.NET control, the following code demonstrates how to execute the query and load it in to an ADO.NET <span class="f_InlineCode">DataSet</span>.</p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">TMServiceClient&nbsp;client&nbsp;=&nbsp;EPiTMServiceHelper.GetServiceEndPoint();</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">XmlNode&nbsp;resultsXml&nbsp;=&nbsp;client.Query(EPiConfig.NP_TM_TopicMapName,&nbsp;"EPiDemo_GetPagesOfType",</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;new&nbsp;string[]</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;{</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EPiConfig.NP_TM_PageLinkOccurrenceTypeId,</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EPiConfig.NP_TM_TopicMapName,</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"http://psi.networkedplanet.com/types/Person"</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;});</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">DataSet&nbsp;resultsSet&nbsp;=&nbsp;new&nbsp;DataSet("QueryResults");</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">resultsSet.ReadXml(new&nbsp;StringReader(resultsXml.OuterXml));</span></p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">4. Bind the DataSet to a Repeater control</span></p>
+<p style="margin: 0px 0px 10px 24px;">Once the <span class="f_InlineCode">DataSet</span> has been created it is easy to bind it to a repeater. Declare the following in the page template ASPX file:</p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&lt;asp:repeater&nbsp;Runat="server"&nbsp;ID="myRepeater"&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&lt;headertemplate&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&lt;/headertemplate&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&lt;footertemplate&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&lt;/footertemplate&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&lt;itemtemplate&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href='&lt;%#&nbsp;DataBinder.Eval(Container.DataItem,&nbsp;"PageLink")&nbsp;%&gt;'&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;%#&nbsp;DataBinder.Eval(Container.DataItem,&nbsp;"PageName")&nbsp;%&gt;&lt;/a&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&lt;/itemtemplate&gt;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&lt;/asp:repeater&gt;</span></p>
+<p style="margin: 0px 0px 10px 24px;">Finally, in the code-behind for the page you can bind the resultsSet data set to the DataSource member of the repeater control.</p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">this.myRepeater.DataSource&nbsp;=&nbsp;resultsSet;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">this.myRepeater.DataBind();</span></p>
+<p style="margin: 0px 0px 10px 24px;">When the page is loaded, the repeater will render a list of all the instances of the specified topic type, in this case, people, to the page as an HTML unordered list.</p>
+
+</td></tr></table>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Install files in to the EPiServer instance web application</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?ar01s04s01_3.htm"; }
+  else { parent.quicksync('a3.3.3'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Install files in to the EPiServer instance web application</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="ar01s04s06.htm">Previous</a>&nbsp;
+     <a href="ar01s04s02_3.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>Copy the contents of the <span class="f_InlineCode">&lt;EPiModuleInstallFolder&gt;/webapp </span>directory to the EPiServer web application directory. For a EPiServer project in a typical installation this will be in <span class="f_InlineCode">\EPiServer\Sites\&lt;episerver_project&gt;</span>. Take care to add the files to the web application and not replace existing directories or your EPiServer site installation will stop working.</p>
+<p>When developing or building the EPiServer project using Visual Studio add references to the two DLLs (<span class="f_InlineCode">serviceclient.dll</span>, <span class="f_InlineCode">NetworkedPlanet.EPiServerModule.dll</span>) added to the into the <span class="f_InlineCode">bin</span> folder of the site.</p>
+<p class="p_Notes"><span class="f_Notes">Those familiar with the traditional layout of ASP.NET applications may be curious about the inclusion of an aspnet_client directory beneath the EPiServer web application directory. This directory contains client-side files which may be placed in the IIS installation's aspnet_client directory. However, by default we do not place them there because this makes debugging the scripts much harder than it would otherwise be in Visual Studio (because of browser caching and lack of inclusion in the Visual Studio project of these files).</span></p>
+<p>&nbsp;</p>
+
+</td></tr></table>
+
+</body>
+</html>

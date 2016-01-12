@@ -1,0 +1,50 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Merging Topics</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?merging_topics.htm"; }
+  else { parent.quicksync('a6.4.7');  parent.track('topic', location.href);}
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Merging Topics</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="populating_a_topic_map_with_da.htm">Previous</a>&nbsp;
+     <a href="defining_a_hierarchy.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>The TopicMap class provides a method to merge two topics (TopicMap.MergeTopics(Uri, Uri)). The topics to be merged must be identified by their web address (the value of the WebAddress property of the Topic or TopicReference class), and the topics to be merged must not be locally modified or new topics that have not yet been saved to the server. The merge operation is always performed immediately on the server and may affect other topics or associations if they contain references to the merged topic. It is therefore best practice to ensure that you save all other changes to the topic map before calling the TopicMap.MergeTopics() method and also that you do not reuse any Topic or Association objects after calling a merge without using the TopicMap.GetTopic() or TopicMap.GetAssociation() methods to retrieve updated representations from the server.</p>
+
+</td></tr></table>
+
+</body>
+</html>

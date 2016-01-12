@@ -1,0 +1,240 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>GetRelatedDataByTwoHop</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?getrelateddatabytwohop.htm"; }
+  else { parent.quicksync('a5.3.1.2.2'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">GetRelatedDataByTwoHop</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="getrelatedpagesbytwohop.htm">Previous</a>&nbsp;
+     <a href="creating_new_queries.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>This method exposes a <span class="f_CodeExample">DataSet</span> instead of a <span class="f_CodeExample">PageDataCollection</span>. This method can return a <span class="f_CodeExample">DataSet</span> in two formats, depending on whether the <span class="f_CodeExample" style="font-style: italic;">pivotData</span> parameter is set to <span class="f_CodeExample">true</span> or <span class="f_CodeExample">false</span>. If set to false, then a single table is returned:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 14px 0px 10px 1px;"><table cellspacing="0" cellpadding="3" border="1" style="border: solid 2px #000000; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Column Name</p>
+</td>
+<td valign="top" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Description</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Courier New'; font-style: italic;">oneHopTopicId</span></p>
+</td>
+<td valign="top" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">The TMCore ID of the page topic found by traversing the first association.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Courier New'; font-style: italic;">oneHopPageId</span></p>
+</td>
+<td valign="top" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">The EPiServer Page ID of the page found by traversing the first association.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Courier New'; font-style: italic;">assoc1IsPublished</span></p>
+</td>
+<td valign="top" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Set to <span style="font-size: 10pt; font-family: 'Courier New';">true</span> if the first association traversed is published</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Courier New'; font-style: italic;">assoc1IsDeleted</span></p>
+</td>
+<td valign="top" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Set to <span style="font-size: 10pt; font-family: 'Courier New';">true</span> if the first association traversed is deleted</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Courier New'; font-style: italic;">oneHopPageLinkURL</span> <span style="font-style: italic;">(optional)</span></p>
+</td>
+<td valign="top" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">The URL of the page found by traversing the first association.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Courier New'; font-style: italic;">oneHopPageName</span> <span style="font-style: italic;">(optional)</span></p>
+</td>
+<td valign="top" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">The name of the page found by traversing the first association.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Courier New'; font-style: italic;">twoHopTopicId</span></p>
+</td>
+<td valign="top" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">The TMCore ID of the page topic found by traversing the second association.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Courier New'; font-style: italic;">twoHopPageId</span></p>
+</td>
+<td valign="top" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">The EPiServer Page ID of the page found by traversing the second association.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Courier New'; font-style: italic;">assoc2IsPublished</span></p>
+</td>
+<td valign="top" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Set to <span style="font-size: 10pt; font-family: 'Courier New';">true</span> if the second association traversed is published</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Courier New'; font-style: italic;">assoc2IsDeleted</span></p>
+</td>
+<td valign="top" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Set to <span style="font-size: 10pt; font-family: 'Courier New';">true</span> if the second association traversed is deleted</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Courier New'; font-style: italic;">twoHopPageLinkURL</span><span style="font-style: italic;"> (optional)</span></p>
+</td>
+<td valign="top" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">The URL of the page found by traversing the second association.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Courier New'; font-style: italic;">twoHopPageName</span> <span style="font-style: italic;">(optional)</span></p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">The name of the page found by traversing the second association.</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_TableCaption"><span class="f_TableCaption">DataSet table schema returned by GetRelatedDataByTwoHop when pivotData==false</span></p>
+<p>&nbsp;</p>
+<p>Columns marked as <span style="font-style: italic;">(optional)</span> are only included if the <span class="f_CodeExample">addPageLinkAndName</span> parameter is set to true. Note that in this results set there is one row for each topic found by traversing the second association.</p>
+<p>&nbsp;</p>
+<p>The second data set is more useful for binding to sets of nested templated data bound ASP.NET controls, that splits the data in to two sets using a relation to link them. The first data set contains one row for each page topic found by traversing the first association (this is referred to as the "parent"), the second contains a "child" row for each page found as a result of traversing the second association from an instance of the parent.</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 14px 0px 10px 1px;"><table cellspacing="0" cellpadding="3" border="1" style="border: solid 2px #000000; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Column Name</p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Description</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Courier New'; font-style: italic;">id</span></p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">The ID of this parent. This is the primary key of the table.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Courier New'; font-style: italic;">oneHopTopicId</span></p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">The TMCore ID of the page topic found by traversing the first association.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Courier New'; font-style: italic;">oneHopPageId</span></p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">The EPiServer Page ID of the page found by traversing the first association.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Courier New'; font-style: italic;">assoc1IsPublished</span></p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Set to <span style="font-size: 10pt; font-family: 'Courier New';">true</span> if the first association traversed is published</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Courier New'; font-style: italic;">assoc1IsDeleted</span></p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Set to <span style="font-size: 10pt; font-family: 'Courier New';">true</span> if the first association traversed is deleted</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Courier New'; font-style: italic;">oneHopPageLinkURL</span> <span style="font-style: italic;">(optional)</span></p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">The URL of the page found by traversing the first association.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Courier New'; font-style: italic;">oneHopPageName</span> <span style="font-style: italic;">(optional)</span></p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">The name of the page found by traversing the first association.</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_TableCaption"><span class="f_TableCaption">Parent dataset table schema returned by GetRelatedDataByTwoHop when pivotData==true</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 14px 0px 10px 1px;"><table cellspacing="0" cellpadding="3" border="1" style="border: solid 2px #000000; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Column Name</p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Description</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Courier New'; font-style: italic;">id</span></p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">The ID of the parent that this row relates to.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Courier New'; font-style: italic;">twoHopTopicId</span></p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">The TMCore ID of the page topic found by traversing the second association.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Courier New'; font-style: italic;">twoHopPageId</span></p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">The EPiServer Page ID of the page found by traversing the second association.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Courier New'; font-style: italic;">assoc2IsPublished</span></p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Set to <span style="font-size: 10pt; font-family: 'Courier New';">true</span> if the second association traversed is published</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Courier New'; font-style: italic;">assoc2IsDeleted</span></p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Set to <span style="font-size: 10pt; font-family: 'Courier New';">true</span> if the second association traversed is deleted</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Courier New'; font-style: italic;">twoHopPageLinkURL</span><span style="font-style: italic;"> (optional)</span></p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">The URL of the page found by traversing the second association.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-family: 'Courier New'; font-style: italic;">twoHopPageName</span> <span style="font-style: italic;">(optional)</span></p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">The name of the page found by traversing the second association.</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_TableCaption"><span class="f_TableCaption">Child dataset table schema returned by GetRelatedDataByTwoHop when pivotData==true</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

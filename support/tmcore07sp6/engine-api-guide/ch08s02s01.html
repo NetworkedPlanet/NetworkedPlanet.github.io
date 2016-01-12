@@ -1,0 +1,31 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>How the ApplicationOntology Works</title><link rel="stylesheet" href="../doc.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><link rel="start" href="index.html" title="TMCore Engine API Guide"><link rel="up" href="ch08s02.html" title="The ApplicationOntology Object"><link rel="prev" href="ch08s02.html" title="The ApplicationOntology Object"><link rel="next" href="ch08s02s02.html" title="Configuring The Application Ontology"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="pageheader"><table class="logo" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td><span class="networked">Networked</span><span class="planet">Planet</span></td><td align="right"><span class="title">TMCore Engine API Guide</span></td></tr></table></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">How the <code class="classname">ApplicationOntology</code> Works</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch08s02.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><th width="60%" align="center">The ApplicationOntology Object</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch08s02s02.html"><img src="../graphics/next.png" alt="Next"></a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e2086"></a>How the <code class="classname">ApplicationOntology</code> Works</h3></div></div></div><p>The <code class="classname">ApplicationOntology</code> class works by taking
+    a configured list of mappings from short identifiers to full subject
+    identifiers and then using these full subject identifiers to look-up a
+    topic from one of a set of topic maps, returning the topic's unique object
+    ID. This shortening of identifiers can make your queries much easier to
+    read and also a lot shorter as it removes the need to explicitly look for
+    a topic by its subject identifier - you can simply insert the short
+    identifier for the topic in the place where you would normally have to
+    type the object identifier for the topic. In addtion, the
+    <code class="classname">ApplicationOntology</code> object caches successful
+    lookups to make subsequent requests for the same topic much faster than
+    embedding the lookup as part of a TMRQL query.</p><p>From a programming perspective, once it is configured the
+    <code class="classname">ApplicationOntology</code> object works like a read-only
+    Dictionary where the keys are short identifier strings and the values
+    return are <code class="interfacename">ITopic</code> instances.</p><p>The <code class="classname">ApplicationOntology</code> class supports two
+    forms of mapping between short identifiers and full subject identifiers.
+    The simplest form of mapping is simply to map a short identifier string to
+    a complete subject identifier. This simple form of mapping is useful for
+    one-off or small numbers of mappings, but in some cases you may have tens,
+    hundreds or even thousands of URIs to map. In this case you can make use
+    of the second form of mapping in which short identifier prefix is mapped
+    to subject identifier prefix. Once this mapping is made you can refer to a
+    full subject identifier by specifying the short prefix followed by the
+    remaining part of the identifier with a colon (:) separator. For example,
+    if you map the short identifier prefix "org" to the subject identifier
+    prefix "http://www.networkedplanet.com/2005/01/organisation/", then to
+    refer to the topic with the full subject identifier
+    "http://www.networkedplanet.com/2005/01/organisation/article", you would
+    use the short reference "org:article".</p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch08s02.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch08s02.html"><img src="../graphics/up.png" alt="Up"></a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch08s02s02.html"><img src="../graphics/next.png" alt="Next"></a></td></tr><tr><td width="40%" align="left" valign="top">The ApplicationOntology Object&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html"><img src="../graphics/home.png" alt="Home"></a></td><td width="40%" align="right" valign="top">&nbsp;Configuring The Application Ontology</td></tr></table></div></body></html>

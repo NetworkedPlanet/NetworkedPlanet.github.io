@@ -1,0 +1,73 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Creating a Topic Map</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?creating_a_topic_map.htm"; }
+  else { parent.quicksync('a6.4.5');  parent.track('topic', location.href);}
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Creating a Topic Map</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="creating_a_schema.htm">Previous</a>&nbsp;
+     <a href="populating_a_topic_map_with_da.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>To create a topic map, first create a <span class="f_FileName">TopicMapServiceClient</span> instance, then use the <span class="f_FileName">CreateTopicMap()</span> method on that instance to create the new topic map. When creating the topic map it is necessary to pass in the base address of the Web3 server and the web address of the schema. After the topic map is created it is necessary to synchronize the topic map with its schema. The synchronization process ensures that all types in the schema have a matching topic in the topic map and creates a map-specific version of the schema that can be quickly accessed by schema-driven applications. This synchronization is performed by calling the <span class="f_FileName">SynchronizeSchemas()</span> method on the TopicMap instance returned by <span class="f_FileName">CreateTopicMap()</span>. Whenever the schema that a topic map uses is updated, the <span class="f_FileName">SynchronizeSchemas()</span> method should be called to resynchronize the topic map with its schema.</p>
+<p>&nbsp;</p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Consolas'; color: #808080;">///</span><span style="font-family: 'Consolas'; color: #008000;"> </span><span style="font-family: 'Consolas'; color: #808080;">&lt;summary&gt;</span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Consolas'; color: #808080;">///</span><span style="font-family: 'Consolas'; color: #008000;"> Creates a new topic map and returns its web address</span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Consolas'; color: #808080;">///</span><span style="font-family: 'Consolas'; color: #008000;"> </span><span style="font-family: 'Consolas'; color: #808080;">&lt;/summary&gt;</span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Consolas'; color: #808080;">///</span><span style="font-family: 'Consolas'; color: #008000;"> </span><span style="font-family: 'Consolas'; color: #808080;">&lt;param name="schemaUri"&gt;</span><span style="font-family: 'Consolas'; color: #008000;">The web address of the schema that the topic map should be synchronized with</span><span style="font-family: 'Consolas'; color: #808080;">&lt;/param&gt;</span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Consolas'; color: #808080;">///</span><span style="font-family: 'Consolas'; color: #008000;"> </span><span style="font-family: 'Consolas'; color: #808080;">&lt;returns&gt;</span><span style="font-family: 'Consolas'; color: #008000;">The web address of the newly created topic map</span><span style="font-family: 'Consolas'; color: #808080;">&lt;/returns&gt;</span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Consolas'; color: #0000ff;">private</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #2b91af;">Uri</span><span style="font-family: 'Consolas';"> CreateTopicMap(</span><span style="font-family: 'Consolas'; color: #2b91af;">Uri</span><span style="font-family: 'Consolas';"> schemaUri)</span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp; &nbsp;{</span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Consolas'; color: #008000;">// create a topic map service client</span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Consolas'; color: #0000ff;">var</span><span style="font-family: 'Consolas';"> client = </span><span style="font-family: 'Consolas'; color: #0000ff;">new</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #2b91af;">TopicMapServiceClient</span><span style="font-family: 'Consolas';">();</span></p>
+<p>&nbsp;</p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Consolas'; color: #008000;">// create topic map</span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Consolas'; color: #008000;">// this operation does create a topic map on the server. </span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Consolas'; color: #0000ff;">var</span><span style="font-family: 'Consolas';"> tm = client.CreateTopicMap(_baseUri, schemaUri, </span><span style="font-family: 'Consolas'; color: #0000ff;">new</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #2b91af;">Label</span><span style="font-family: 'Consolas';">(</span><span style="font-family: 'Consolas'; color: #a31515;">"myTopicMap"</span><span style="font-family: 'Consolas';">, </span><span style="font-family: 'Consolas'; color: #a31515;">"en"</span><span style="font-family: 'Consolas';">));</span></p>
+<p>&nbsp;</p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Consolas'; color: #008000;">// The SynchronizeSchemas() call is necessary to ensure that all topic types </span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Consolas'; color: #008000;">// from the schema are created in the topicmap and the topic map schema is cached</span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Consolas'; color: #2b91af;">Console</span><span style="font-family: 'Consolas';">.WriteLine(</span><span style="font-family: 'Consolas'; color: #a31515;">"Schema synchronization started"</span><span style="font-family: 'Consolas';">);</span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;tm.SynchronizeSchemas();</span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Consolas'; color: #2b91af;">Console</span><span style="font-family: 'Consolas';">.WriteLine(</span><span style="font-family: 'Consolas'; color: #a31515;">"Schema synchronization completed"</span><span style="font-family: 'Consolas';">);</span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Consolas'; color: #0000ff;">return</span><span style="font-family: 'Consolas';"> tm.WebAddress;</span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp; &nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

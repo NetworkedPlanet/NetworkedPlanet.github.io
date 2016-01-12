@@ -1,0 +1,56 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Managing Long Running Jobs</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?managing_long_running_jobs.htm"; }
+  else { parent.quicksync('a6.3.4');  parent.track('topic', location.href);}
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Managing Long Running Jobs</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="transactions.htm">Previous</a>&nbsp;
+     <a href="querying.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>As well as transactions there are other long running jobs that are suited to asynchronous processing. These include import and export of topic maps. Like the Transaction processing import and export is done by creating a job in the context of a specific topicmap. A job is a resource in its own right, it has properties such as Job data that is used when processing the job. e.g. the job data for an import will be XTM or RDF and for a transaction it will be the uploaded transaction representation. </p>
+<p>&nbsp;</p>
+<p>The jobs for a topic map can be found at the following URL</p>
+<p>&nbsp;</p>
+<p class="p_CodeExample"><span class="f_CodeExample"><a href="http://%7Bserver%7D/web3/topicmaps/%7Btopicmapid%7D/jobs" target="_blank" onclick="return HMTrackTopiclink(this);" class="weblink">http://{server}/web3/topicmaps/{topicmapid}/jobs</a></span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p>Jobs can be canceled if job processing has not yet started.</p>
+
+</td></tr></table>
+
+</body>
+</html>

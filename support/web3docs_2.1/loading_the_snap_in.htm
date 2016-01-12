@@ -1,0 +1,61 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Loading The Snap-In</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?loading_the_snap_in.htm"; }
+  else { parent.quicksync('a4.4.2');  parent.track('topic', location.href);}
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Loading The Snap-In</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="installing_the_snap_in.htm">Previous</a>&nbsp;
+     <a href="command_reference.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>To check if the snap-in is currently installed use the following PowerShell command:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">Get-PSSnapin&nbsp;-Registered</span></p>
+<p>You should then see a list of registered snap-ins. The registration for the Web3 Admin snap-in should appear like this:</p>
+<p>&nbsp;</p>
+<p class="p_CodeExample"><span class="f_CodeExample">Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Web3Admin</span><br>
+<span class="f_CodeExample">PSVersion&nbsp;&nbsp;&nbsp;:&nbsp;2.0</span><br>
+<span class="f_CodeExample">Description&nbsp;:&nbsp;NetworkedPlanet&nbsp;Web3&nbsp;Platform&nbsp;Administration&nbsp;Snap-in</span></p>
+<p>If the snap-in is not listed then either the snap-in is not installed or you are using the 32-bit version of PowerShell on a 64-bit machine (the snap-in will only be registered in the 64-bit version of PowerShell on 64-bit machines).</p>
+<p>&nbsp;</p>
+<p>To load the snap-in into the current session so that you can use the cmdlets, use the following command:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">Add-PSSnapin&nbsp;Web3Admin</span></p>
+<p>&nbsp;</p>
+
+</td></tr></table>
+
+</body>
+</html>

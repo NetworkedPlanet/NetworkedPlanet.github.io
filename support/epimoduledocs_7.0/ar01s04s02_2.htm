@@ -1,0 +1,102 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Value Select Terms XML</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?ar01s04s02_2.htm"; }
+  else { parent.quicksync('a7.4.2'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Value Select Terms XML</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="ar01s04s01_2.htm">Previous</a>&nbsp;
+     <a href="ontologycreationguide.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>Value select terms are used on to specify what columns should appear in the dataset returned by TMIS queries. For example: which fields from the topic map are required to render faceted search results or clouds.</p>
+<p>Below is an example XML document describing some common value select query terms for use with EPiServer:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;ArrayOfValueSelectQueryTermConfiguration&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;xmlns:i="http://www.w3.org/2001/XMLSchema-instance"</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;xmlns="http://schemas.datacontract.org/2004/07/NetworkedPlanet.EnterpriseService.Web.Model"&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;ValueSelectQueryTermConfiguration&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;ColumnName&gt;pageid&lt;/ColumnName&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;JoinColumnName&gt;topicid&lt;/JoinColumnName&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;PropertyKey&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xmlns:d3p1="http://www.networkedplanet.com/2008/07/schemas/tm/topicmapindex"</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i:nil="true"&nbsp;/&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;PropertyTypeName&gt;Page&nbsp;ID&nbsp;Occurrence&nbsp;Type&lt;/PropertyTypeName&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;PropertyTypeSI&gt;http://www.networkedplanet.com/2005/01/episerver/pageid&lt;/PropertyTypeSI&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;/ValueSelectQueryTermConfiguration&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;ValueSelectQueryTermConfiguration&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;ColumnName&gt;pagelink&lt;/ColumnName&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;JoinColumnName&gt;topicid&lt;/JoinColumnName&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;PropertyKey&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xmlns:d3p1="http://www.networkedplanet.com/2008/07/schemas/tm/topicmapindex"</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i:nil="true"&nbsp;/&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;PropertyTypeName&gt;Page&nbsp;Link&nbsp;Occurrence&nbsp;Type&lt;/PropertyTypeName&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;PropertyTypeSI&gt;http://www.networkedplanet.com/2005/01/episerver/livepage&lt;/PropertyTypeSI&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;/ValueSelectQueryTermConfiguration&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;ValueSelectQueryTermConfiguration&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;ColumnName&gt;name&lt;/ColumnName&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;JoinColumnName&gt;topicid&lt;/JoinColumnName&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;PropertyKey</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xmlns:d3p1="http://www.networkedplanet.com/2008/07/schemas/tm/topicmapindex"&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;d3p1:Key&gt;ID_TO_TOPIC_DISPLAY_NAME&lt;/d3p1:Key&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/PropertyKey&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;PropertyTypeName&nbsp;i:nil="true"&nbsp;/&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;PropertyTypeSI&nbsp;i:nil="true"&nbsp;/&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;/ValueSelectQueryTermConfiguration&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;/ArrayOfValueSelectQueryTermConfiguration&gt;</span></p>
+<p>The example requests that the returned <span class="f_InlineCode">DataSet</span> will contain:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 10px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><span style="font-size: 12pt; font-family: 'Times New Roman'; color: #000000;">1.</span></td><td>A <span class="f_InlineCode">pageid</span> column, taken from the occurrence on the topic specified in the <span class="f_InlineCode">topicid</span> column. The occurrence must be of type <span class="f_InlineCode">http://www.networkedplanet.com/2005/01/episerver/pageid</span>. The values returned are the page IDs of the EPiServer pages represented by the topics in the returned <span class="f_InlineCode">DataSet</span>.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 10px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><span style="font-size: 12pt; font-family: 'Times New Roman'; color: #000000;">2.</span></td><td>A <span class="f_InlineCode">pagelink</span> column, taken from the occurrence on the topic specified in the <span class="f_InlineCode">topicid</span> column. The occurrence must be of type <span class="f_InlineCode">http://www.networkedplanet.com/2005/01/episerver/pagelink</span>. The values returned are the URL links to the EPiServer page represented by the topics in the returned <span class="f_InlineCode">DataSet</span>.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 10px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><span style="font-size: 12pt; font-family: 'Times New Roman'; color: #000000;">3.</span></td><td>The display name of the topic (no language specified).</td></tr></table></div><p>The top-level element <span class="f_InlineCode">ArrayOfValueSelectQueryTermConfiguration</span> defines a list of <span class="f_InlineCode">ValueSelectQueryTermConfiguration</span> elements. Each one of these represents a single query term.</p>
+<p>Each <span class="f_InlineCode">ValueSelectQueryTermConfiguration</span> element can be represented by a <span class="f_InlineCode">NetworkedPlanet.EnterpriseService.Web.Model.ValueSelectQueryTermConfiguration</span> object. The API documentation for this class explains the meaning of the different fields. The way in which the terms are converted to and from XML is through the .NET framework's <span class="f_InlineCode">DataContractSerializer</span>.</p>
+<p class="p_CodeExample"><span class="f_CodeExample">//&nbsp;Serialization&nbsp;example</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">DataContractSerializer&nbsp;ser&nbsp;=&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;new&nbsp;DataContractSerializer(typeof&nbsp;(List&lt;ValueSelectQueryTermConfiguration&gt;));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">StringWriter&nbsp;sw&nbsp;=&nbsp;new&nbsp;StringWriter();</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">XmlTextWriter&nbsp;xw&nbsp;=&nbsp;new&nbsp;XmlTextWriter(sw);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">ser.WriteObject(xw,&nbsp;valueSelectTermsXml);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">xw.Close();</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">ValueSelectQueryTermsXml&nbsp;=&nbsp;sw.ToString();</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">//&nbsp;Deserialization&nbsp;example:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">using&nbsp;(XmlTextReader&nbsp;xmlReader&nbsp;=&nbsp;new&nbsp;XmlTextReader(new&nbsp;StringReader(ValueSelectQueryTermsXml)))</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;DataContractSerializer&nbsp;ser&nbsp;=&nbsp;new&nbsp;DataContractSerializer(typeof(List&lt;ValueSelectQueryTermConfiguration&gt;));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;valueSelectTermsXml&nbsp;=&nbsp;ser.ReadObject(xmlReader)&nbsp;as&nbsp;List&lt;ValueSelectQueryTermConfiguration&gt;;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">}</span></p>
+<p>In addition, where web parts require this type of definition, the customized editor web parts provide an easy-to-use GUI for creating lists of value select query terms.</p>
+<p>&nbsp;</p>
+
+</td></tr></table>
+
+</body>
+</html>

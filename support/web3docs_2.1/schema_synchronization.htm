@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Schema Synchronization</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?schema_synchronization.htm"; }
+  else { parent.quicksync('a3.4.3');  parent.track('topic', location.href);}
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Schema Synchronization</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="constraints.htm">Previous</a>&nbsp;
+     <a href="administration.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>The Web3 Platform maintains schemas and topic maps as totally separate items. When you create a new topic map you specify the schema that it uses, at that point the topic map is <span style="font-weight: bold;">synchronized</span> with the schema. The synchronization process copies all the types and constraints from the source schema to the <span style="font-weight: bold;">topic map schema</span>. After this synchronization process, the source schema and the topic map schema are independent of each other - you can make changes to the source schema without affecting the topic map schema. At some point however you may wish to bring the topic map schema up-to-date with the source schema or even to change to a completely different source schema. This can be done at any time simply by updating the schema referenced by the topic map (if required) and then synchronizing the topic map with the schema again. </p>
+<p>&nbsp;</p>
+<p>Schema synchronization can be performed either through the Web3 API by creating Topic Map Synchronization job or through the web front-end. These options are described in the Developers' Guide and the Users' Guide respectively.</p>
+
+</td></tr></table>
+
+</body>
+</html>

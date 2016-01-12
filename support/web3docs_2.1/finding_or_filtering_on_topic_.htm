@@ -1,0 +1,74 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Finding or Filtering on Topic Properties</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?finding_or_filtering_on_topic_.htm"; }
+  else { parent.quicksync('a6.5.4');  parent.track('topic', location.href);}
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Finding or Filtering on Topic Properties</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="getting_topic_labels.htm">Previous</a>&nbsp;
+     <a href="traversing_associations.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p class="p_Heading1"><span class="f_Heading1">Retrieving Topic Property Values</span></p>
+<p>Topic properties can be retrieved referring to the topic property schema type as the predicate of a triple. For example to return each person (defined by the subject identifier <a href="http://psi.networkedplanet.com/types/person)" target="_blank" onclick="return HMTrackTopiclink(this);" class="weblink">http://psi.networkedplanet.com/types/person)</a> with their age (defined by the type <a href="http://psi.networkedplanet.com/types/age" target="_blank" onclick="return HMTrackTopiclink(this);" class="weblink">http://psi.networkedplanet.com/types/age</a>) you can use the following query:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">PREFIX&nbsp;ont:&nbsp;&lt;<a href="http://psi.networkedplanet.com/types/" target="_blank" onclick="return HMTrackTopiclink(this);" class="weblink">http://psi.networkedplanet.com/types/</a>&gt;</span><br>
+<span class="f_CodeExample">SELECT&nbsp;?p&nbsp;?age&nbsp;{</span><br>
+<span class="f_CodeExample">&nbsp;&nbsp;?p&nbsp;a&nbsp;ont:person&nbsp;.</span><br>
+<span class="f_CodeExample">&nbsp;&nbsp;?p&nbsp;ont:age&nbsp;?age</span><br>
+<span class="f_CodeExample">}</span></p>
+<p class="p_Heading1"><span class="f_Heading1">Finding Topics by Topic Property Value</span></p>
+<p>SPARQL filters are also supported in queries. So to find all people over the age of 21:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">PREFIX&nbsp;ont:&nbsp;&lt;<a href="http://psi.networkedplanet.com/types/" target="_blank" onclick="return HMTrackTopiclink(this);" class="weblink">http://psi.networkedplanet.com/types/</a>&gt;</span><br>
+<span class="f_CodeExample">SELECT&nbsp;?p&nbsp;?age&nbsp;{</span><br>
+<span class="f_CodeExample">&nbsp;&nbsp;?p&nbsp;a&nbsp;ont:person&nbsp;.</span><br>
+<span class="f_CodeExample">&nbsp;&nbsp;?p&nbsp;ont:age&nbsp;?age&nbsp;.</span><br>
+<span class="f_CodeExample">&nbsp;&nbsp;FILTER&nbsp;{&nbsp;?age&nbsp;&gt;&nbsp;21&nbsp;}</span><br>
+<span class="f_CodeExample">}</span></p>
+<p class="p_Heading1"><span class="f_Heading1">Sorting Results by Topic Property Value</span></p>
+<p>Property values can also be used for sorting results using the SPARQL ORDER BY (DESC) construct. The following example shows a query for all people over the age of 21 with the result topics ordered by age from oldest to youngest.</p>
+<p class="p_CodeExample"><span class="f_CodeExample">PREFIX&nbsp;ont:&nbsp;&lt;<a href="http://psi.networkedplanet.com/types/" target="_blank" onclick="return HMTrackTopiclink(this);" class="weblink">http://psi.networkedplanet.com/types/</a>&gt;</span><br>
+<span class="f_CodeExample">SELECT&nbsp;?p&nbsp;?age&nbsp;{</span><br>
+<span class="f_CodeExample">&nbsp;&nbsp;?p&nbsp;a&nbsp;ont:person&nbsp;.</span><br>
+<span class="f_CodeExample">&nbsp;&nbsp;?p&nbsp;ont:age&nbsp;?age&nbsp;.</span><br>
+<span class="f_CodeExample">&nbsp;&nbsp;FILTER&nbsp;{&nbsp;?age&nbsp;&gt;&nbsp;21&nbsp;}</span><br>
+<span class="f_CodeExample">}</span><br>
+<span class="f_CodeExample">ORDER&nbsp;BY&nbsp;DESC&nbsp;(?age)</span></p>
+<p>&nbsp;</p>
+
+</td></tr></table>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>TopicCreating &amp; TopicCreated</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?ar01s04s01_1.htm"; }
+  else { parent.quicksync('a5.4.1'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">TopicCreating &amp; TopicCreated</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="ar01s04_1.htm">Previous</a>&nbsp;
+     <a href="ar01s04s02_1.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>The <span class="f_InlineCode">TopicCreating</span> and <span class="f_InlineCode">TopicCreated</span> events are fired just before and after a topic is created that represents a page in EPiServer. During the event handler for the <span class="f_InlineCode">TopicCreating</span> event you may make changes to the topic before it is passed to TMCore.</p>
+<p>The following programming example, taken from a <span class="f_InlineCode">global.asax.cs</span> file adds a new occurrence to each topic as it is created using the <span class="f_InlineCode">TopicCreating</span> event, then verifies it's existence on the <span class="f_InlineCode">TopicCreated</span> event.</p>
+<p class="p_CodeExample"><span class="f_CodeExample">protected&nbsp;void&nbsp;Application_Start(Object&nbsp;sender,&nbsp;EventArgs&nbsp;e)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;//&nbsp;Other&nbsp;application&nbsp;startup&nbsp;code&nbsp;goes&nbsp;here</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;...</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;//&nbsp;Register&nbsp;our&nbsp;event&nbsp;handlers</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;TopicMapEventHandler.Instance.TopicCreating&nbsp;+=&nbsp;new&nbsp;TopicMapEventHandler.TopicEventHandler(Instance_TopicCreating);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;TopicMapEventHandler.Instance.TopicCreated&nbsp;+=&nbsp;new&nbsp;TopicMapEventHandler.TopicEventHandler(Instance_TopicCreated);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">void&nbsp;Instance_TopicCreating(object&nbsp;sender,&nbsp;TopicEventArgs&nbsp;tea)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;//&nbsp;On&nbsp;TopicCreating,&nbsp;add&nbsp;an&nbsp;occurrence&nbsp;to&nbsp;the&nbsp;topic&nbsp;being&nbsp;constructed</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;NetworkedPlanet.WebServiceClient.Tmws.Occurrence&nbsp;newOccurrence&nbsp;=&nbsp;new&nbsp;Occurrence();&nbsp;//&nbsp;from&nbsp;serviceclient.dll</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;newOccurrence.resourcedata&nbsp;=&nbsp;"A&nbsp;description&nbsp;of&nbsp;the&nbsp;topic&nbsp;"&nbsp;+&nbsp;tea.topic.names[0].namestring;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;newOccurrence.type&nbsp;=&nbsp;new&nbsp;TopicRef();</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;newOccurrence.type.psi&nbsp;=&nbsp;"http://www.networkedplanet.com/2005/01/episerver/description";</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;Occurrence[]&nbsp;newOccurrences&nbsp;=&nbsp;new&nbsp;Occurrence[tea.topic.occurrences.Length&nbsp;+&nbsp;1];</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;Array.Copy(tea.topic.occurrences,&nbsp;0,&nbsp;newOccurrences,&nbsp;1,&nbsp;tea.topic.occurrences.Length);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;newOccurrences[0]&nbsp;=&nbsp;newOccurrence;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;tea.topic.occurrences&nbsp;=&nbsp;newOccurrences;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">void&nbsp;Instance_TopicCreated(object&nbsp;sender,&nbsp;TopicEventArgs&nbsp;tea)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;//&nbsp;On&nbsp;topic&nbsp;created&nbsp;log&nbsp;the&nbsp;description&nbsp;occurrence</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;ILog&nbsp;log&nbsp;=&nbsp;LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;foreach&nbsp;(Occurrence&nbsp;occ&nbsp;in&nbsp;tea.topic.occurrences)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(occ.type&nbsp;!=&nbsp;null&nbsp;&amp;&amp;&nbsp;occ.type.psi&nbsp;==&nbsp;"http://www.networkedplanet.com/2005/01/episerver/description")</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.Info("Found&nbsp;description&nbsp;after&nbsp;topic&nbsp;created:&nbsp;"&nbsp;+&nbsp;occ.resourcedata);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

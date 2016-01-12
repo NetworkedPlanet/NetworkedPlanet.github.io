@@ -1,0 +1,59 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Determine Occurrence Types</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?ar01s02s04_1.htm"; }
+  else { parent.quicksync('a8.1.4'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Determine Occurrence Types</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="ar01s02s03_1.htm">Previous</a>&nbsp;
+     <a href="ar01s02s05_1.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>In Topic Maps, topics can be connected to additional information relating to the topic using occurrences. Occurrences can be typed to indicate how the information they convey is related to the topic. In EPiServer you can use topic occurrence information to present additional links or text information related either to a subject or to a content item. A typical use of this feature would be to provide external links providing more information about the subject topics in the topic map - this would enable you to automatically generate a list of relevant external links at the end of any document that is classified against a subject topic.</p>
+<p>When defining the types for additional information you should keep in mind how this information will be presented to the user and if the additional information will be in the form of a link what information the user might like to know about the destination before clicking on the link. You may choose to create types based on the type of resource to be retrieved (e.g. PDF File, External Web Site etc.) but it may be more meaningful to your users if you create types that reflect the nature of the resource you are retrieving (Application Form, Fan Site, Weblog etc.).</p>
+<p>If you find that you really want to give much more information to the users than can be conveyed in a single type name, you should consider instead creating a new topic type for the resource and then attach the information about the resource to that topic and use an association to link the topic representing the resource to the topic representing the subject. For example, if you want to create links to external sites but allow the content editors to give a title to those sites, you will need to create a topic of type External Site with its own URL occurrence type to provide the link information; and an association of type &lt;Subject&gt; Has External Site to connect External Site topics to the subject topic that they relate to.</p>
+<p>When you determine the occurrence types for your ontology, you must also assign those types to the content or subject types that they can be applied to. If you have your content or subject types arranged in a type hierarchy, the occurrence types assigned to the more general type will be inherited by all of the more specific types.</p>
+<p class="p_Heading1"><span class="f_Heading1">Occurrence Types for the Company Intranet</span></p>
+<p>For the intranet site we decide to add two properties to all subject topics. The Website occurrence is used to link to any related external resource. The Description occurrence is used to provide a short text description of the subject. These two property types are assigned to the Theme subject type and so are inherited by all the other subject types.</p>
+<p>We also decide to add contact details to our Company Employee subject type. These will be textual fields to store different contact information. We create Email, IM and Phone occurrence types and add these to the Company Employee subject type.</p>
+<p>The diagram below shows these new occurrence types assigned to the subject types.</p>
+<p style="margin: 14px 0px 0px 0px;"><img src="occurrencetypes.png" width="225" height="79" border="0" alt="Occurrence Types for the Company Intranet in UML Notation" title="Occurrence Types for the Company Intranet in UML Notation"></p>
+<p class="p_ImageCaption"><span class="f_ImageCaption">Occurrence Types for the Company Intranet in UML Notation</span></p>
+
+</td></tr></table>
+
+</body>
+</html>
