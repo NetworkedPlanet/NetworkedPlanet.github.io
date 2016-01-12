@@ -1,0 +1,924 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NetworkedPlanet</title>
+    <description>Data integration and metadata management solutions.
+</description>
+    <link>http://networkedplanet.com/</link>
+    <atom:link href="http://networkedplanet.com/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Mon, 30 Nov 2015 11:53:23 +0000</pubDate>
+    <lastBuildDate>Mon, 30 Nov 2015 11:53:23 +0000</lastBuildDate>
+    <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>SPARQL CONSTRUCT 101</title>
+        <description>&lt;p&gt;A SPARQL query can be written to return one of three things - SELECT returns a tabular set of results, ASK returns a simple boolean (true or false), and CONSTRUCT returns an RDF graph. For most human interaction with SPARQL endpoints we tend to prefer tables as they are just easier for us to grok, but if you are working with code that has an RDF parser available to it, then CONSTRUCT can really be your best friend and it is worth spending some time to understand how CONSTRUCT works and what cool sorts of things you can do with it.&lt;/p&gt;
+
+&lt;p&gt;I’m going to walk through a few features of SPARQL CONSTRUCT using a really simple made-up sample file. If you would like to follow along, you can get the sample file I’m using from &lt;a href=&quot;https://gist.github.com/kal/ee1260ceb462d8e0d5bb&quot;&gt;this gist on GitHub&lt;/a&gt;. You will need a triple-store to query too - if you don’t have one installed (and if you are on Windows), why not try out &lt;a href=&quot;http://brightstardb.codeplex.com/&quot;&gt;BrightstarDB&lt;/a&gt;? BrightstarDB comes with a management application called Polaris which makes it easy to create a new store, import the file and run SPARQL queries. You can read about Polaris &lt;a href=&quot;http://brightstardb.readthedocs.org/en/latest/Using_Polaris/&quot;&gt;here in the BrightstarDB documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The sample dataset I’ve produced is really simple, it lists 13 imaginary server transaction logs. Each transaction log records the server that processed the transaction, the date/time that the transaction was processed and the status code of the transaction (just for fun there are some failed transactions in there).&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Lets start with a really simple query to just list out the transactions in a table. For a table result we use a SELECT query::&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;PREFIX log: &amp;lt;http://example.org/ont/transaction-log/&amp;gt;
+SELECT ?txn WHERE { ?txn a log:Transaction . }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;SPARQL is based on matching patterns in the graph, so this simple query finds all triples
+that match a pattern &lt;code&gt;{something} rdf:type log:Transaction&lt;/code&gt; (&lt;code&gt;a&lt;/code&gt; is just short-hand for rdf:type, you will see it is also used in the sample file). Then all of the values that match
+{something} are assigned (in SPARQL-parlance &lt;strong&gt;bound&lt;/strong&gt;) to the variable ?txt. Each match found
+results in a separate row in our results table. As this sample file contains 13 transaction logs,
+the query will return a table with a single column and 13 rows like this:&lt;/p&gt;
+
+&lt;table class=&quot;table table-striped&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;?txn&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/134&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/135&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/130&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/131&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/132&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/133&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/129&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/128&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/125&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/124&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/127&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/126&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/123&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;You can see that the results are not in the same order that they were specified in the source file, or even in order of their value - to order our results we would need to explicitly specify that in our query.&lt;/p&gt;
+
+&lt;p&gt;Let’s suppose our challenge is to list transactions grouped together by the server that they are processed on. First we need to add the server itself to our triple pattern in the query:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;PREFIX log: &amp;lt;http://example.org/ont/transaction-log/&amp;gt;
+SELECT * WHERE { 
+    ?txn a log:Transaction . 
+    ?txn log:processedBy ?server
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I’m still using a &lt;code&gt;SELECT&lt;/code&gt; at the moment so that you can see more easily what is going on, but notice that I’ve changed the bit after the &lt;code&gt;SELECT&lt;/code&gt; to be &lt;code&gt;*&lt;/code&gt;. &lt;code&gt;SELECT *&lt;/code&gt; simply selects all of the variables in the pattern part of the query. Often in a query you will have variables in the pattern that are not useful in the results; but when exploring data and when debugging queries that are not returning the expected results I often switch from &lt;code&gt;SELECT ?v1 ?v2&lt;/code&gt; to &lt;code&gt;SELECT *&lt;/code&gt; so that I can see all of the variables.&lt;/p&gt;
+
+&lt;p&gt;Now we have two columns in our results:&lt;/p&gt;
+
+&lt;table class=&quot;table table-striped&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;?txn&lt;/th&gt;
+      &lt;th&gt;?server&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/130&lt;/td&gt;
+      &lt;td&gt;http://example.org/data/server/B&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/135&lt;/td&gt;
+      &lt;td&gt;http://example.org/data/server/A&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/134&lt;/td&gt;
+      &lt;td&gt;http://example.org/data/server/C&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/129&lt;/td&gt;
+      &lt;td&gt;http://example.org/data/server/A&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/131&lt;/td&gt;
+      &lt;td&gt;http://example.org/data/server/C&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/128&lt;/td&gt;
+      &lt;td&gt;http://example.org/data/server/C&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/125&lt;/td&gt;
+      &lt;td&gt;http://example.org/data/server/C&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/124&lt;/td&gt;
+      &lt;td&gt;http://example.org/data/server/B&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/127&lt;/td&gt;
+      &lt;td&gt;http://example.org/data/server/B&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/126&lt;/td&gt;
+      &lt;td&gt;http://example.org/data/server/A&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/123&lt;/td&gt;
+      &lt;td&gt;http://example.org/data/server/A&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/132&lt;/td&gt;
+      &lt;td&gt;http://example.org/data/server/A&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/133&lt;/td&gt;
+      &lt;td&gt;http://example.org/data/server/B&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;If we were sticking with SELECT I would go for using a SORT now to sort by server which effectively gives us a form of grouping:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;PREFIX log: &amp;lt;http://example.org/ont/transaction-log/&amp;gt;
+SELECT * WHERE { 
+    ?txn a log:Transaction . 
+    ?txn log:processedBy ?server
+} ORDER BY ?server
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Resulting in:&lt;/p&gt;
+
+&lt;table class=&quot;table table-striped&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;?txn&lt;/th&gt;
+      &lt;th&gt;?server&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/135&lt;/td&gt;
+      &lt;td&gt;http://example.org/data/server/A&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/132&lt;/td&gt;
+      &lt;td&gt;http://example.org/data/server/A&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/129&lt;/td&gt;
+      &lt;td&gt;http://example.org/data/server/A&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/126&lt;/td&gt;
+      &lt;td&gt;http://example.org/data/server/A&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/123&lt;/td&gt;
+      &lt;td&gt;http://example.org/data/server/A&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/130&lt;/td&gt;
+      &lt;td&gt;http://example.org/data/server/B&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/133&lt;/td&gt;
+      &lt;td&gt;http://example.org/data/server/B&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/124&lt;/td&gt;
+      &lt;td&gt;http://example.org/data/server/B&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/127&lt;/td&gt;
+      &lt;td&gt;http://example.org/data/server/B&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/134&lt;/td&gt;
+      &lt;td&gt;http://example.org/data/server/C&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/131&lt;/td&gt;
+      &lt;td&gt;http://example.org/data/server/C&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/128&lt;/td&gt;
+      &lt;td&gt;http://example.org/data/server/C&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/125&lt;/td&gt;
+      &lt;td&gt;http://example.org/data/server/C&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;To process this sort of result I would still need to do some basic grouping work on the client - I would loop through the rows checking when the &lt;code&gt;?server&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;But if my client code can handle RDF then I can instead use a CONSTRUCT with these results to build a little RDF graph that I can process. CONSTRUCT works by defining a second pattern 
+that looks a lot like the pattern in the WHERE part of the query. Here is a simple example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;PREFIX log: &amp;lt;http://example.org/ont/transaction-log/&amp;gt;
+CONSTRUCT {
+    ?server log:processed ?txn .
+}
+WHERE { 
+    ?txn a log:Transaction . 
+    ?txn log:processedBy ?server
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The best way to visualize how CONSTRUCT works is to imagine that the SPARQL query processor first executes the WHERE part with a SELECT * so that it has a table of all the matches and access to all of the variables you used in the WHERE pattern. Then it loops through those rows one at a time and it generates triples by replacing the value found for each variable into the pattern you have provided in the CONSTRUCT.
+ So when processing this sample query above it might find that the first row of the results table is:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;?txn&lt;/th&gt;
+      &lt;th&gt;?server&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;http://example.org/data/transaction/135&lt;/td&gt;
+      &lt;td&gt;http://example.org/data/server/A&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Resulting in the generation of a single triple:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;http://example.org/data/server/A&amp;gt; log:processed &amp;lt;http://example.org/data/transaction/135&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And here is our first cool thing about CONSTRUCT.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;You are not restricted to using the predicates and types that you are querying&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Effectively this means in CONSTRUCT you can build exactly the shape of RDF data that you want to process on the client. In my example, if I want to group the transactions together by the server that they are on, then the way that information is presented in the data is “backwards”. Sure I can query it backwards if I want to, but its more intuitive (to me at least) to restructure the results so that the server is the subject and the transaction log the object of the triples in my result graph.&lt;/p&gt;
+
+&lt;p&gt;As the rest of the results are processed more triples get added to the result graph. And this is the second cool thing about CONSTRUCT.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Duplicates get merged&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So at the end of processing the results, my RDF graph looks like this (excuse the ASCII art):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;           log:processed
+server:A +----------------&amp;gt; txn:132
+         | log:processed
+         +----------------&amp;gt; txn:135
+         |
+        ...
+         
+           log:processed
+server:B +----------------&amp;gt; txn:130
+         | log:processed
+         +----------------&amp;gt; txn:133
+         |
+        ...
+
+           log:processed
+server:C +----------------&amp;gt; txn:134
+         | log:processed
+         +----------------&amp;gt; txn:131
+         |
+        ...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you are using Polaris to follow along here, you will find the results in RDF/XML on the &lt;code&gt;Results XML&lt;/code&gt; tab in the query window.&lt;/p&gt;
+
+&lt;p&gt;When processing these results on the client we may have a little problem though. How do we know which servers are included in our results ? If we know beforehand the full list of servers we might expect in the results then we could just iterate that list and ask for the log:processed triples for each one, but that’s not going to work if we have no prior knowledge (or if someone
+adds another server). What we need instead is some way to mark our “entry points” into the results graph. As this is just RDF, the answer is of course “add another triple”. One way to tackle this would be to mark the servers out by adding an rdf:type to them:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;PREFIX log: &amp;lt;http://example.org/ont/transaction-log/&amp;gt;
+CONSTRUCT {
+    ?server a log:Server .
+    ?server log:processed ?txn .
+}
+WHERE { 
+    ?txn a log:Transaction . 
+    ?txn log:processedBy ?server
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Again we are using the ability to define types and predicates in our CONSTRUCT pattern that do not (necessarily) exist in the source data. We are also taking advantage of the fact that RDF automatically eliminates duplicate statements, so our results will only actually contain one &lt;code&gt;rdf:type&lt;/code&gt; statement for each server, and not 13 as you might think at first glance. The final RDF graph would be something like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;log:Server
+    ^  rdf:type           log:processed
+    |&amp;lt;-------  server:A +----------------&amp;gt; txn:132
+    |                   | log:processed
+    |                   +----------------&amp;gt; txn:135
+    |                   |
+    |                  ...
+    |    
+    |  rdf:type            log:processed
+    +&amp;lt;--------- server:B +----------------&amp;gt; txn:130
+    |                    | log:processed
+    |                    +----------------&amp;gt; txn:133
+    |                    |
+    |                   ...
+    |           
+    |  rdf:type            log:processed
+    +&amp;lt;--------- server:C +----------------&amp;gt; txn:134
+                         | log:processed
+                         +----------------&amp;gt; txn:131
+                         |
+                        ...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So now our code to process this result can just look for &lt;code&gt;log:Server&lt;/code&gt; and find all resources connected to it by an rdf:type predicate to list out the servers, then follow the &lt;code&gt;log:processed&lt;/code&gt; predicate for each server to list out the transactions for that server.&lt;/p&gt;
+
+&lt;p&gt;Hopefully what you can also see is that the graph view of results also makes it inherently far easier to work with queries that return items with lists of values for a given property. Because the SPARQL SELECT is restricted to a tabular result, you end up with one row for every possible combination of values which can lead to a massive explosion in the number of rows if you are dealing with complex data structures with several repeated properties. CONSTRUCT gets you out of that hole quite nicely because you are generating a graph from a graph rather than having to try and flatten everything out into a table.&lt;/p&gt;
+
+&lt;p&gt;One issue that does come up with the use of CONSTRUCT however is that of sorting. The RDF graph created by a CONSTRUCT query is, just like any other RDF graph, an unordered collection of triples. So if you need your results in sorted order, you will need to do that on the client. So this is the third really cool thing about using CONSTRUCT.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;You can use SPARQL on the client-side to slice and dice results from the server&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Personally I find the easiest way to do this is to use a secondary SPARQL query on the client that queries just the RDF graph that is returned from the server. It may sound odd to do this, but in effect you are using the server to deliver you a chunk of data as an RDF graph and then the client to extract the final results from that chunk. Sometimes you will want to do the sorting on both the client and the server - a good example of this would be asking for ordered, paged results. As an example, lets say that we want the first 10 transaction logs sorted by date/time. On the server we would need a CONSTRUCT query like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;PREFIX log: &amp;lt;http://example.org/ont/transaction-log/&amp;gt;
+CONSTRUCT {
+    ?server a log:Server .
+    ?server log:processed ?txn .
+	?txn log:processedAt ?procTime
+}
+WHERE { 
+    ?txn a log:Transaction . 
+    ?txn log:processedBy ?server .
+	?txn log:processedAt ?procTime .
+} ORDER BY ?procTime LIMIT 10
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The ORDER BY is needed on the server side because we want to ensure a consistent sort order when paging through the results. The LIMIT restricts us to the first 10 results. If you replace the &lt;code&gt;CONSTRUCT { ... }&lt;/code&gt; with &lt;code&gt;SELECT *&lt;/code&gt; and re-run the query you will see that the results table is sorted but because CONSTRUCT is generating a graph, that sorting gets lost. To reconstruct the correct order on the client we could just grovel through the RDF graph and do the sorting using standard programming language constructs; but if we have SPARQL capability on the client we can make life easy for ourselves by using a SELECT to pull out our results in the required order. On the client we might use a query like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;PREFIX log: &amp;lt;http://example.org/ont/transaction-log/&amp;gt;
+SELECT ?txn, ?time, ?server WHERE {
+	?server log:processed ?txn .
+	?txn log:processedAt ?time .
+} ORDER BY ?time
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note: we don’t need the LIMIT here because we only pulled 10 results from the server.&lt;/p&gt;
+
+&lt;p&gt;OK, for this simple example data using a CONSTRUCT in this way is just overhead; but if you imagine needing to retrieve more complex data where each transaction has one or more repeated properties then CONSTRUCT really is the way to go.&lt;/p&gt;
+
+&lt;p&gt;This sort of pattern of pulling a graph from the server and querying it on the client can become really useful in a variety of circumstances. It allows you to hit the server up once for a bunch of data and then selectively extract slices of that data on the client side in response to user input or other UI requirements rather than having to constantly hit the server with lots of smaller queries; it also allows you to incrementally build up a local in-memory cache of data from the server - again with the potential to reduce the number of server round-trips you need to make.&lt;/p&gt;
+
+&lt;p&gt;I hope this post has given you a bit of an insight into CONSTRUCT and has you hunting around for an RDF processing library for your chosen programming language! If you are on .NET, check out &lt;a href=&quot;http://dotnetrdf.org/&quot;&gt;DotNetRDF&lt;/a&gt;; Pythonistas should use &lt;a href=&quot;https://pypi.python.org/pypi/rdflib?&quot;&gt;rdflib&lt;/a&gt;; libraries are also available for many other languages that I don’t personally use - &lt;a href=&quot;https://duckduckgo.com/?q=rdf+library&quot;&gt;DuckDuckGo is your friend&lt;/a&gt;!&lt;/p&gt;
+
+&lt;p&gt;If you have any thoughts or questions or would like to share your own cool CONSTRUCT tips, hit us up in the comments below!&lt;/p&gt;
+</description>
+        <pubDate>Fri, 16 Oct 2015 14:41:38 +0100</pubDate>
+        <link>http://networkedplanet.com/blog/2015/10/16/sparql-construct-101.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2015/10/16/sparql-construct-101.html</guid>
+        
+        <category>rdf</category>
+        
+        <category>sparql</category>
+        
+        <category>tutorial</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Open Data Camp 2</title>
+        <description>&lt;p&gt;After missing out on ODCamp1 which was held in Winchester earlier in the year, I was looking forward to seeing what was in store for those attending the second. A &lt;a href=&quot;https://storify.com/RnROrganisation/odcamp-in-pics&quot;&gt;storify summary of ODCamp1&lt;/a&gt; had me excited for the content of the sessions that would be held, all with some kind of focus on Open Data, this time based in Manchester.&lt;/p&gt;
+
+&lt;p&gt;ODCamp is an unconference - the venue, organisation and promotion are handled by the ODCamp team, and then the sessions are decided at the beginning of each day by any attendee lining up to quickly pitch what their session could entail. After each pitch a show of hands helps the organisers decide on what kind of space would be needed for the session - and very quickly the schedule is arranged for the day.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/odc_board_day1.jpg&quot; alt=&quot;Day 1 session schedule&quot; height=&quot;300px&quot; width=&quot;250px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Instantly I had a problem - I wanted to go to all of them! But short of waiting til nobody was looking and rearranging the post-it notes (an idea I quickly abandoned as too risky to escape unnoticed), I had to make some tough choices.&lt;/p&gt;
+
+&lt;p&gt;Instead of attempting to summarise every session I went to (tempting, but this post would expand into thousands of words) just write about a few of my personal highlights (spoiler: I thought it was FANTASTIC) and urge you to &lt;a href=&quot;http://odcamp.org.uk/contact-us/&quot;&gt;stay up to date with the ODCamp team&lt;/a&gt; for news about future events.&lt;/p&gt;
+
+&lt;h3 id=&quot;something-for-everyone&quot;&gt;Something for everyone&lt;/h3&gt;
+
+&lt;p&gt;Attendees came from all kinds of different backgrounds, techies and non-techies alike. The one commonality was a shared interest in publishing data. The differences were a key element that made the camp work so well - each discussion would represent a fairly wide range of views and requirement needs, meaning that no matter what your own interest, you always walked away with food for thought.&lt;/p&gt;
+
+&lt;h3 id=&quot;drawnalism&quot;&gt;Drawnalism&lt;/h3&gt;
+&lt;p&gt;Matt from &lt;a href=&quot;http://drawnalism.com/&quot;&gt;Drawnalism&lt;/a&gt; was live recording sessions as large illustrations which were not only incredibly impressive to see happening and check out after a session, but I also knew just how valuable they would be after the event. It was seeing the illustrations from the last ODCamp that gave me such a clear idea of exactly what went on during the sessions, and after seeing them I’d instantly registered to not miss out on the next event. I know that sounds like a massive plug, but so be it, you cannot help but be impressed after turning around after an hour’s worth of lecture and/or dicussion to find the most salient points distilled and and then presented in a glorious hand illustrated info-graphic. Respect.&lt;/p&gt;
+
+&lt;div style=&quot;max-width:820px&quot; class=&quot;center-block&quot;&gt;
+	
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/odc_dr_gov.jpg&quot; alt=&quot;Drawnalism illustration of the talk given by Director of Data from the Cabinet Office&quot; height=&quot;300px&quot; width=&quot;250px&quot; class=&quot;img-medium img-responsive bordered-image pull-left&quot; style=&quot;margin-right:20px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/odc_dr_youth.jpg&quot; alt=&quot;Drawnalism illustration of discussion around engaging youth with Open Data&quot; height=&quot;300px&quot; width=&quot;250px&quot; class=&quot;img-medium img-responsive bordered-image pull-left&quot; style=&quot;margin-right:20px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/odc_dr_defra.jpg&quot; alt=&quot;Drawnalism illustration of Open Data at DEFRA&quot; height=&quot;300px&quot; width=&quot;250px&quot; class=&quot;img-medium img-responsive bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;h3 id=&quot;making-open-data-suck-less&quot;&gt;Making Open Data Suck Less&lt;/h3&gt;
+
+&lt;p&gt;With a provocative title for a pitch, Chris Gutteridge led a session towards the end of day one aimed at trying to improve the quality of Open Data. There were quite a few laughs to be had whilst people threw in their pet hates, and then very interesting discussions about what we could do to help alleviate them. Common problems were the publishing of “open” data in custom file formats, having to get through download forms to get to the data and bad data itself (e.g. a column of measurements that change whether it was recorded in mm or inches, sometimes using only numerals). As the session wrapped up it was great to hear solutions being thrashed out - such as suggestions for content of documentation (giving a better description of the data itself and links to learn more about it, what format is the data in? does it require a special program? is there a free version of the program if so?). Another good suggestion was a central wiki-style encyclopedia, an idea tempered by the need for that to be managed and someone’s responsibility. However, Amanda from &lt;a href=&quot;http://theodi.org/&quot;&gt;the ODI&lt;/a&gt; did mention that it was an idea that kept coming up and so I look forward to hearing more from them about it.&lt;/p&gt;
+
+&lt;h3 id=&quot;unkeynotes&quot;&gt;Unkeynotes&lt;/h3&gt;
+
+&lt;p&gt;Completely unplanned, there were two pitches that had such interest from everyone attending that the organisers helpfully did not place anyone else’s pitches at the same time. On day one it was bums on seats for a talk from Paul Maltby, Director of Data from the Cabinet Office. He gave an impassioned overview of the plans he and his team have to improve the way data is handled within the Cabinet Office. It will be interesting to keep track of the progress they make over the next year or so and whether the good intentions turn into published datasets.&lt;/p&gt;
+
+&lt;p&gt;John Murray’s session on spatial analysis queries led into a interesting discussions on personal perception of “place”, and on to who really “owns” addresses. As time ran out, this prompted a pitch for more on the debate - turning into day two’s unkeynote from Bob Barr with the full rundown “Address Wars” history. I can’t possibly summarise it all here, but we can only hope that &lt;a href=&quot;https://alpha.openaddressesuk.org/blog/2015/07/27/a-time-for-going-to-bed&quot;&gt;Open Addresses gets another boost to continue the amazing work they started&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;its-important-to-demystify-rdf&quot;&gt;It’s important to demystify RDF&lt;/h3&gt;
+
+&lt;p&gt;For an event targeted specifically at Open Data enthusiasts, I was surprised to find that there were very few that were comfortable with Linked Data. Some were unaware of it entirely, some knew a bit about it but weren’t sure of its benefits, and others were very comfortable with the idea of it but put it to one side as if it was some kind of pipe-dream rather than a simple step onwards from CSV style tabular data. It prompted me to do a pitch myself on the second day, targeted specifically to those people who would like to have a play around with RDF, but weren’t sure how to go about doing that. I ran a quick session to use OpenRefine to convert CSV to RDF using the RDF extension to map columns to predicates, and then we had a bit of a chat around the subjects of re-using existing Linked Data vocabularies (do you &lt;em&gt;have&lt;/em&gt; to? no you don’t). Fear not if you’d like me to write more on this subject, I’ve taken notes from the questions asked during that session and will do a separate blog post on that subject.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/odc_dr_learn.jpg&quot; alt=&quot;Drawnalism illustration zoom in: &amp;quot;There&#39;s a massive process of internal learning going on (and it must continue)&amp;quot;&quot; height=&quot;300px&quot; width=&quot;250px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The weekend-long camp concluded with a feedback session to chat about any points that particularly worked or didn’t work over the weekend. This was in keeping with the unconference ethos - the attendees come together and pitch in to build a conference on the fly. It works fantastically when done well, and hats off to the organisers for making ODCamp one of those. ODCamp3 is looking like it will be held in about six months time - &lt;a href=&quot;http://odcamp.org.uk/contact-us/&quot;&gt;head over to ODCamp website and sign up to get updates&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;also-check-out&quot;&gt;Also check out:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.flickr.com/photos/puntofisso/albums/72157659650939562&quot;&gt;Open Data Camp 2 in pictures&lt;/a&gt; (via Guiseppe Sollazzo on Flickr)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://twitter.com/hashtag/odcamp?vertical=default&amp;amp;src=hash&quot;&gt;The #odcamp hashtag on twitter&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://odcamp.org.uk/&quot;&gt;ODCamp website&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Tue, 13 Oct 2015 14:17:38 +0100</pubDate>
+        <link>http://networkedplanet.com/blog/2015/10/13/open-data-camp.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2015/10/13/open-data-camp.html</guid>
+        
+        <category>linked data</category>
+        
+        <category>open data</category>
+        
+        <category>opinion</category>
+        
+        <category>conference</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Linked Data Webinar  15/10</title>
+        <description>&lt;p&gt;We are pleased to announce our second training webinar, “Introduction to Linked Data”. This is a (mostly)
+non-technical presentation focussed on the what and why of Linked Data - what is Linked Data, what are 
+the benefits of publishing and using Linked Data, what are the steps to take in publishing your own
+Linked Data either internally or externally.&lt;/p&gt;
+
+&lt;p&gt;The webinar will be presented by Kal Ahmed who in addition to being the founder of NetworkedPlanet is also
+the lead developer of &lt;a href=&quot;http://brightstardb.com/&quot;&gt;BrightstarDB&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This webinar is FREE, but places are limited.&lt;/p&gt;
+
+&lt;p&gt;&lt;a class=&quot;btn btn-primary btn-lg&quot; href=&quot;https://www.eventbrite.co.uk/e/webinar-introduction-to-linked-data-registration-18733197498&quot;&gt;Sign Up Here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;We plan to follow this webinar up with others looking at SPARQL; RDF; BrightstarDB;
+and the &lt;a href=&quot;http://dataplatform.co.uk/&quot;&gt;Data Platform&lt;/a&gt;. If you would like to get a heads-up on these
+future webinars when they are announced, &lt;a href=&quot;https://twitter.com/nwplanet&quot;&gt;follow us on Twitter&lt;/a&gt; or &lt;a href=&quot;/#contact&quot;&gt;sign-up for the NetworkedPlanet Newsletter&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 12 Oct 2015 00:00:00 +0100</pubDate>
+        <link>http://networkedplanet.com/blog/2015/10/12/linked-data-webinar-oct-15.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2015/10/12/linked-data-webinar-oct-15.html</guid>
+        
+        <category>webinar</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Data Platform 1.0 Released</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/images/blog/dataplatform_logo_600.png&quot; alt=&quot;Data Platform Logo&quot; class=&quot;img-medium center-block img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We are delighted to announce the 1.0 release of the &lt;a href=&quot;http://dataplatform.co.uk/&quot;&gt;Data Platform&lt;/a&gt;. The Data Platform fulfils the need of an easy-to-use interface for managing and publishing datasets, without limiting the number of datasets or requests to the data you publish, and publishing standards-compliant, 5-star Linked Open Data.&lt;/p&gt;
+
+&lt;p&gt;Every organisation is different when it comes to managing the data they hold, here at NetworkedPlanet we can chat with you about the different types of data you manage, identify which parts are suitable for publishing as Open Data and outline the best processes to implement so that your organisation can be linked into the Web of Data.&lt;/p&gt;
+
+&lt;h3 id=&quot;new-to-linked-open-data&quot;&gt;New to Linked Open Data?&lt;/h3&gt;
+
+&lt;p&gt;We run a &lt;a href=&quot;http://www.eventbrite.co.uk/o/networkedplanet-limited-8359397016&quot;&gt;regular webinar series&lt;/a&gt; about the basics of Linked Open Data, and also host private webinars for organisations interested in learning more about the Data Platform. To find out more, visit the &lt;a href=&quot;http://dataplatform.co.uk/&quot;&gt;Data Platform microsite&lt;/a&gt; or &lt;a href=&quot;http://networkedplanet.com/#contact&quot;&gt;drop us a line&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;For recent goings on at NetworkedPlanet, &lt;a href=&quot;http://bit.ly/1KDRDiz&quot;&gt;read our latest newsletter&lt;/a&gt; or &lt;a href=&quot;http://networkedplanet.us11.list-manage.com/subscribe?u=62daac7ae19a90ef03ea3bd42&amp;amp;id=a797a2dd15&quot;&gt;sign-up for the next issue&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 24 Sep 2015 14:17:38 +0100</pubDate>
+        <link>http://networkedplanet.com/blog/2015/09/24/data-platform-1.0.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2015/09/24/data-platform-1.0.html</guid>
+        
+        <category>linked data</category>
+        
+        <category>open data</category>
+        
+        <category>products</category>
+        
+        <category>releases</category>
+        
+        <category>data platform</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Sharing Data In The Third Sector</title>
+        <description>&lt;p&gt;Last week &lt;a href=&quot;http://bristol.girlgeekdinners.com/&quot;&gt;Bristol Girl Geek Dinners&lt;/a&gt; hosted another fantastic evening for nerds in the heart of Bristol. This month they brought Emma Prest of &lt;a href=&quot;http://www.datakind.org/chapters/datakind-uk/&quot;&gt;DataKind UK&lt;/a&gt; over from London to talk about their work. The first time I’d heard of DataKind was when BGG had published their event information, so I did some reading up on them.&lt;/p&gt;
+
+&lt;h2 id=&quot;data-dive-events-for-charities&quot;&gt;Data Dive events for charities&lt;/h2&gt;
+
+&lt;p&gt;DataKind bring together charities and data science volunteers at hackathon style “Data Dives”. They work with the charities in the lead up to the event to set out clear goals and prep, then over the course of a weekend DataKind brings together all the volunteers and everyone works together to achieve those goals. Needless to say I was really looking forward to hearing what Emma had to say about it all and I wasn’t disappointed.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;What a great idea!&lt;/em&gt; People with different specialisations coming together as a community for the social good is one I can utterly get behind. Charities collect a LOT of data about their cause - in order to show the social impacts of the problem and to try and better understand it to try and help eradicate the problem once and for all. Having these Data Dives gives the chance to look at this data in new and interesting ways, compare it to other datasets from overlapping sectors and see what new insights might be made.&lt;/p&gt;
+
+&lt;p&gt;Of course my personal enthusiasm is with ongoing data collaboration by publishing datasets, and so a lot of my questions and conversations during the evening did tend to drift towards Open Data. As always though, when talking about Linked Open Data and charities in the same conversation I ran into a particular bugbear of mine. The fact that organisations are very dubious about actually publishing that data as raw datasets. Now, when I hear that from commercial enterprises I actually have more patience than when I hear it from charities, even though the answers are the same. It really irks me. Gets my goat. Bothers me. I was having trouble unpicking why this is so here are my thoughts on it:&lt;/p&gt;
+
+&lt;h2 id=&quot;why-the-reluctance-to-publish-open-data&quot;&gt;Why the reluctance to publish Open Data?&lt;/h2&gt;
+
+&lt;p&gt;First off, and let’s get this out of the way early, I’m not talking here about &lt;strong&gt;personal&lt;/strong&gt; data or any data that could be linked to an individual. I’m talking about completely anonymised data that’s used by that charity to show that the problem exists, that it has knock on effects and that the work the charity does helps with the problem. Other charities (especially the smaller ones working at a more localised level with far less funds) will also find that information &lt;em&gt;incredibly useful&lt;/em&gt; and will be able to better help people in turn. Those smaller charities also collect data that they could publish themselves and then all the charities in that sector can start looking across those datasets to see trends and what’s helping or exacerbating the problem.&lt;/p&gt;
+
+&lt;p&gt;Not only does this mean that researchers and data scientists could look across the datasets supplied by charities from different sectors and ask new questions that wasn’t possible when the data was kept closed off, it also means that charities of all sizes can avoid wasting time and money duplicating analysis and research that has already been done.&lt;/p&gt;
+
+&lt;p&gt;The potential benefits of sharing data are really not difficult to see. So why the reluctance to publish all that raw data? One statement uttered last night has been ringing round my head “&lt;strong&gt;charities are in competition with each other&lt;/strong&gt;”.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/seagulls_mine.gif&quot; alt=&quot;Animated gif of the seagulls from Finding Nemo standing on a rock in the sea all shouting &amp;quot;Mine!&amp;quot;&quot; class=&quot;img-medium center-block img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And therein lies a real problem. There’s two parts to every charity - the side working to help with the problem, and the side that exists to find funding so that the organisation can continue to do the good work they’re doing. Obviously finding funding (whether it be through public donations, business sponsorships or government funding) is absolutely key to be able to continue the work that a charity does. But who wins when those two sides are in opposition to each other? One side wants to share information in order to better collaborate and advance the charity’s mission, after all that’s the raison d’être of the charity itself. The other side spends every hour trying to find money to keep going and finds it difficult to imagine that sharing data doesn’t automatically mean lost revenue (or potential revenue).&lt;/p&gt;
+
+&lt;p&gt;Whilst I can understand this fear of loss of control, I still wondered why I feel so personally aggrieved by it in these cases. And then it struck me - when I donate money to a charity, buy merchandise or volunteer my time - it’s because I’m supporting their cause, not the charity. I believe that they are doing everything they can to meet their mission statement. I thought that collaborating with people both within and outside of their sector would be one of those things, and so I find it extra frustrating.&lt;/p&gt;
+
+&lt;h2 id=&quot;tackling-the-common-concerns&quot;&gt;Tackling the common concerns&lt;/h2&gt;
+
+&lt;p&gt;Of course we can see the benefits of sharing data, and I want to leave this post in a solution-focused way, so how do we address the fear that by publishing data they will lose funding? I’ll address some typical concerns:&lt;/p&gt;
+
+&lt;h3 id=&quot;the-data-is-worth-money-and-by-publishing-it-were-giving-it-away-for-free&quot;&gt;1. “The data is worth money and by publishing it we’re giving it away for free.”&lt;/h3&gt;
+
+&lt;p&gt;If your data is currently bringing in money and is a revenue stream for a charity then by all means continue to do that! Some open data publishers choose to make a subset of their data free and require a license fee to access the full set of data. 
+However, if you are not making any money from it and it’s just sitting in your databases being queried for reports now and again, it’s possible that it’s worth far more in knowledge advancement than it is a viable source of income for your organisation. Charities should carefully weigh up the social cost of not publishing their data as well as the cost in terms of lost revenue, if in fact there was any revenue coming from it.&lt;/p&gt;
+
+&lt;h3 id=&quot;people-could-use-the-data-to-come-up-with-bad-science-claims-we-are-the-specialists-and-can-avoid-that&quot;&gt;2. “People could use the data to come up with ‘Bad Science’ claims. We are the specialists and can avoid that.”&lt;/h3&gt;
+
+&lt;p&gt;The best way to negate this is to have the data public so that it’s instantly provable that someone has made an error. It’s also possible that people could discover correlations between your data and others that you can use to improve your service. Discoveries that were impossible to make when the data was kept closed off.&lt;/p&gt;
+
+&lt;h3 id=&quot;if-someone-else-uses-the-data-in-some-app-that-becomes-popular-they-get-the-publicity-rather-than-us&quot;&gt;3. “If someone else uses the data in some app that becomes popular, they get the publicity rather than us.”&lt;/h3&gt;
+
+&lt;p&gt;As mentioned earlier, you could choose to require people to pay for commercial access, but this is where we start getting into the grey area of what’s the purpose of the charity. If by publishing data you enable someone to develop a great app, visualisation or research paper that furthers the aim of your organisation then that’s money saved because you didn’t need to use any resources or money to do that. There are many data licenses you can choose from and my second favourite is the &lt;a href=&quot;http://creativecommons.org/licenses/by/4.0/&quot;&gt;Attribution license&lt;/a&gt; - which means that anyone using the data must credit you as the source of that information. At the end of the day, a popular app can raise more awareness and gain more support for the cause and increase donations to the charity.&lt;/p&gt;
+
+&lt;h3 id=&quot;people-arent-coming-to-us-for-the-information&quot;&gt;4. “People aren’t coming to &lt;em&gt;us&lt;/em&gt; for the information.”&lt;/h3&gt;
+
+&lt;p&gt;Firstly, someone &lt;strong&gt;is&lt;/strong&gt; still coming to you for the information - the developers. Secondly, your data isn’t static, you need to collect it over time and it’s up to you whether you release new data every hour, day, week, month or even year! Meaning that people &lt;em&gt;are&lt;/em&gt; coming back to you for the information - it’s just in a different format than you’re used to.&lt;/p&gt;
+
+&lt;h2 id=&quot;final-thoughts&quot;&gt;Final thoughts&lt;/h2&gt;
+
+&lt;p&gt;DataKind is doing a fantastic job of bringing charities and data scientists together to look at how more power can be leveraged by the data the charities already have. A lot of the projects they list show the use of Open Data from various sources as part of the work, so it was disappointing to hear that not many charities have embraced the idea of publishing data in order to feedback into that pool. However, I do get the feeling that the tide is turning - most worries stem from not understanding the specifics of publishing data; as more people take the time to investigate rather than dismiss out of hand, we are starting to see more charities be interested in leading the way into the Web of Data.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 21 Sep 2015 14:17:38 +0100</pubDate>
+        <link>http://networkedplanet.com/blog/2015/09/21/sharing-data-in-the-third-sector.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2015/09/21/sharing-data-in-the-third-sector.html</guid>
+        
+        <category>linked data</category>
+        
+        <category>open data</category>
+        
+        <category>opinion</category>
+        
+        <category>third sector</category>
+        
+        <category>charities</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Opening Up Your Data Shouldn&#39;t Cost The Earth</title>
+        <description>&lt;p&gt;An &lt;a href=&quot;http://www.scpr.org/news/2015/06/24/52343/how-much-do-open-data-portals-cost-so-cal-governme/&quot;&gt;interesting article by KPCC&lt;/a&gt; compares the varying cost of open data portals for different districts in Southern California. Two things draw some attention. First is the price - these data portals are not cheap to run, and in one case costs as much as $700 per 1000 residents. The second thing that draws some attention is the variance in cost which does not seem to be directly correlated with the number of datasets published. Ironically there is not much open data about the pricing of these open data portals. Tom Levine has done &lt;a href=&quot;https://thomaslevine.com/!/socrata-products/&quot;&gt;some stirling work&lt;/a&gt; in digging into the data that is available to attempt to determine just what sort of portal features each customer is using, as it is clearly these features that are the primary reason for the variance in pricing.&lt;/p&gt;
+
+&lt;p&gt;The authorities involved are certainly getting some great portals built, and obviously must feel that the cost to their taxpayers is fully justified. But surely it must be possible to publish open data without incurring costs that can run to hundreds of thousands of dollars per year ?  Here are our tips to publishing open data on a budget:&lt;/p&gt;
+
+&lt;h2 id=&quot;keep-it-simple-stupid&quot;&gt;Keep It Simple, Stupid&lt;/h2&gt;
+
+&lt;p&gt;It is tempting to go for the all-singing all-dancing fully featured data portal. But these features all add more development time and more cost to your solution. When the features are provided by a vendor they also tie you more closely to that vendor. Many of the Linked Open Data pioneers produce very simple, minimalist portals (take a look at the &lt;a href=&quot;http://bnb.data.bl.uk/doc/resource/009455497&quot;&gt;British Library’s BNB pages&lt;/a&gt; for example), but despite this minimalism, the data and the links provide real value.&lt;/p&gt;
+
+&lt;h2 id=&quot;you-dont-need-to-build-it-all&quot;&gt;You Don’t Need To Build It All&lt;/h2&gt;
+
+&lt;p&gt;A lot of the portals include snazzy visualizations and engaging interactivity allowing users to slice and dice and select data. However, by making your data open, and licensing it in a way that encourages independent development, it is equally possible to find that others are willing, and able to turn your raw data into a &lt;a href=&quot;http://findmeabook.herokuapp.com/&quot;&gt;useful application&lt;/a&gt; or a beautiful visualization.&lt;/p&gt;
+
+&lt;h2 id=&quot;avoid-data-lock-in&quot;&gt;Avoid Data Lock-In&lt;/h2&gt;
+
+&lt;p&gt;Whatever solution you use for publishing should be independent of the data you produce. This is where open data standards such as RDF play an important role. If you convert your data to a standard format such as RDF it is much easier to move data between platforms.&lt;/p&gt;
+
+&lt;h2 id=&quot;it-is-not-magic&quot;&gt;It Is Not Magic&lt;/h2&gt;
+
+&lt;p&gt;Most importantly, remember that no matter what the vendors tell you (us included!) if you can publish web pages, you can publish linked open data. True there are some technical differences and challenges; but this is true of all web publishing - no two projects are ever alike. But fundamentally you are taking data, converting it to a digestible form and putting it on the web. It’s not hard, and if done right you can have an inspirational, open data platform that you can be proud of for a fraction of the cost of a “data portal”.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 10 Aug 2015 00:00:00 +0100</pubDate>
+        <link>http://networkedplanet.com/blog/2015/08/10/opening-up-your-data.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2015/08/10/opening-up-your-data.html</guid>
+        
+        <category>linked data</category>
+        
+        <category>open data</category>
+        
+        <category>opinion</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>RDF and SPARQL Webinar 29/9</title>
+        <description>&lt;p&gt;We are pleased to announce our first training webinar, “Introduction to RDF and SPARQL”. As the name suggests,
+this is a short (1 hour) introduction to the fundamental technologies behind Linked Open Data. RDF is the 
+defacto standard format for publishing Linked Data and SPARQL is the primary query language used with RDF
+data. The webinar aims to give you an overview of the basic principles behind RDF and SPARQL to kickstart
+your learning about these technologies.&lt;/p&gt;
+
+&lt;p&gt;The webinar will be presented by Kal Ahmed who in addition to being the founder of NetworkedPlanet is also
+the lead developer of &lt;a href=&quot;http://brightstardb.com/&quot;&gt;BrightstarDB&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This webinar is FREE, but places are limited.&lt;/p&gt;
+
+&lt;p&gt;&lt;a class=&quot;btn btn-primary btn-lg&quot; href=&quot;http://www.eventbrite.com/e/webinar-introduction-to-rdf-and-sparql-tickets-18018913054?aff=utm_source%3Deb_email%26utm_medium%3Demail%26utm_campaign%3Dnew_event_email?utm_term=eventurl_text&quot;&gt;Sign Up Here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;We plan to follow this webinar up with others looking at Linked Data and Linked Open Data; BrightstarDB;
+and the [Data Platform] (http://dataplatform.co.uk/). If you would like to get a heads-up on these
+future webinars when they are announced, &lt;a href=&quot;https://twitter.com/nwplanet&quot;&gt;follow us on Twitter&lt;/a&gt; or &lt;a href=&quot;/#contact&quot;&gt;sign-up for the NetworkedPlanet Newsletter&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 06 Aug 2015 00:00:00 +0100</pubDate>
+        <link>http://networkedplanet.com/blog/2015/08/06/rdf-webinar-sept-29.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2015/08/06/rdf-webinar-sept-29.html</guid>
+        
+        <category>webinar</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>We are now part of the Open Data Institute member network</title>
+        <description>&lt;div class=&quot;pull-right&quot;&gt;
+&lt;script src=&quot;http://directory.theodi.org/members/ZC6408HJ/badge?size=large&amp;amp;align=right&amp;amp;colour=black&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;/div&gt;
+
+&lt;p&gt;It goes without saying that we are huge supporters of the Open Data Institute (ODI), but from today we are now &lt;em&gt;official&lt;/em&gt; supporters of the ODI as part of their members network.&lt;/p&gt;
+
+&lt;p&gt;Founded by Sir Tim Berners-Lee (who created a little something known as the &lt;em&gt;World Wide Web&lt;/em&gt;) along with Sir Nigel Shadbolt - the ODI’s mission is to “&lt;a href=&quot;http://opendatainstitute.org/faq&quot;&gt;catalyse the evolution of an open data culture to create economic, environmental, and social value&lt;/a&gt;”.&lt;/p&gt;
+
+&lt;p&gt;We’re looking forward to hearing more about the development of best practice methods in the field of Open Data - exciting times!&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 15 Jul 2015 15:17:38 +0100</pubDate>
+        <link>http://networkedplanet.com/blog/2015/07/15/now-part-of-the-open-data-institute-members-network.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2015/07/15/now-part-of-the-open-data-institute-members-network.html</guid>
+        
+        <category>odi</category>
+        
+        <category>company news</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Turning flat data into semantic data with Open Refine and the RDF extension</title>
+        <description>&lt;p&gt;Most of the data that organisations hold will be in some form of flat data, either in spreadsheets or relational databases. In order for the data to achieve either &lt;a href=&quot;http://5stardata.info/&quot;&gt;4 or 5 star levels of Open Data&lt;/a&gt; this data must be changed to not only use non-proprietary formats but it must also use URIs so that each object can be linked with other data across the World Wide Web.&lt;/p&gt;
+
+&lt;p&gt;For ongoing data management purposes, organisations would choose to either input data directly into semantic data storage, or write custom programs to output standardised semantic data as a scheduled job, but for smaller amounts of data or one off jobs, there are free tools available that we can use, such as &lt;a href=&quot;http://openrefine.org/&quot;&gt;Open Refine&lt;/a&gt; with the &lt;a href=&quot;http://refine.deri.ie/&quot;&gt;RDF Extension from DERI&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;some-background--what-is-rdf&quot;&gt;Some background – What is RDF?&lt;/h2&gt;
+
+&lt;p&gt;The accepted best practise language for describing web resources and associated information is the Resource Description Framework (RDF). RDF syntax is made up of statements known as triples; which are made up of:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;a &lt;strong&gt;subject&lt;/strong&gt; – a URI that is used as a consistent addressable identity for the resource&lt;/li&gt;
+  &lt;li&gt;a &lt;strong&gt;predicate&lt;/strong&gt; – a URI that describes the relationship between the resource and the value of the triple. A lot of the time predicate URIs are chosen from known vocabularies to make collaboration easier between disparate datasets.&lt;/li&gt;
+  &lt;li&gt;an &lt;strong&gt;object&lt;/strong&gt; – this is the value of the statement made in the triple, it could be a literal value such as a date or number (in which case a datatype is included in the statement) or it could be another URI when the value of the resource is another resource.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A triple describing a book has the title of “The Hobbit” would look something like:&lt;/p&gt;
+
+&lt;table class=&quot;table table-striped&quot;&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Subject&lt;/td&gt;
+      &lt;td&gt;Predicate&lt;/td&gt;
+      &lt;td&gt;Object&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;http://www.thebookshop.com/tolkein-jrr/hobbit-the&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;http://purl.org/dc/terms/title&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;“The Hobbit”&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;open-refine-and-grefine---the-rdf-extension&quot;&gt;Open Refine and GRefine - the RDF Extension&lt;/h2&gt;
+
+&lt;p&gt;Open Refine is a free downloadable tool for working with data, and along with the RDF extension written by DERI we can quickly change some flat spreadsheet data to RDF ready for use in the Data Platform.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Download and install Open Refine using the correct installer for your system.&lt;/li&gt;
+  &lt;li&gt;Download the RDF Extension and install it into the extensions directory of your Open Refine installation.&lt;/li&gt;
+  &lt;li&gt;Start Open Refine.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p class=&quot;bg-info&quot;&gt;For this walkthrough I downloaded a set of data from the &lt;a href=&quot;http://data.gov.uk/dataset/naptan&quot;&gt;National Public Transport Access Nodes (NaPTAN) available on data.gov.uk&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;create-a-new-project&quot;&gt;Create a new project&lt;/h3&gt;
+
+&lt;p&gt;Create a new project, select your spreadsheet and click &lt;strong&gt;Next&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p class=&quot;img-large&quot;&gt;&lt;img src=&quot;/assets/images/csv_to_rdf/createproj.png&quot; alt=&quot;Create a new Open Refine project&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This then shows you a preview of the data; depending on the content, you may need to set the encoding to a content type such as UTF-8 so that special characters are displayed correctly. Most of the default values are sufficient to confirm the creation of the project, so once you’ve checked these you can amend the name of the project if you wish and then click &lt;strong&gt;Create Project&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p class=&quot;img-large&quot;&gt;&lt;img src=&quot;/assets/images/csv_to_rdf/preview.png&quot; alt=&quot;Preview the spreadsheet data&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This then loads up all the data in Open Refine. From this point on, most of the magic happens using the RDF extension to map the values in the columns of the spreadsheet into RDF triple formats.&lt;/p&gt;
+
+&lt;h3 id=&quot;editing-the-rdf-skeleton&quot;&gt;Editing the RDF Skeleton&lt;/h3&gt;
+
+&lt;p&gt;To edit the RDF mappings select &lt;strong&gt;Edit RDF Skeleton&lt;/strong&gt; in the RDF drop down menu at the top right of the Open Refine screen.&lt;/p&gt;
+
+&lt;p class=&quot;img-small&quot;&gt;&lt;img src=&quot;/assets/images/csv_to_rdf/editrdfskeleton.png&quot; alt=&quot;Edit the RDF Skeleton&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This opens the RDF Schema Alignment pop up window, where we can set up how the semantic data will be produced from the flat grid data imported into the project.&lt;/p&gt;
+
+&lt;h4 id=&quot;uri-identities&quot;&gt;URI Identities&lt;/h4&gt;
+
+&lt;p&gt;The first step is to set up how each resource in your data will be addressable. Every resource must have a URI that can be used to link that resource to other resources both within this dataset and others anywhere on the web.&lt;/p&gt;
+
+&lt;p&gt;Assuming that we are hosting our human readable data interface on a website at the (example only) web address http://mytravelsite.com, we would want to build up URIs that are unique to each of the resources so that when someone visits the address of a resource they would be able to view all the properties of that resource. In the RDF Schema Alignment window, first click the edit link next to the Base URI. Set this to be the same base address as your data website.&lt;/p&gt;
+
+&lt;p class=&quot;img-medium&quot;&gt;&lt;img src=&quot;/assets/images/csv_to_rdf/base_uri.png&quot; alt=&quot;Edit the Base URI of your data&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In our example data we can see that there are a couple of columns that look promising, AtcoCode and NaptanCode, to use as unique values in identity URIs. A sort on the columns show that all rows have AtcoCodes whilst some NaptanCodes are blank, and there are no duplicates in the AtcoCode column either, so we can use this column as a base for our URI identities.&lt;/p&gt;
+
+&lt;p&gt;To set up the URI used as the identity for each of your resources, select the AtcoCode column heading and check that the cell’s content is used “as a URI”.&lt;/p&gt;
+
+&lt;p class=&quot;img-medium&quot;&gt;&lt;img src=&quot;/assets/images/csv_to_rdf/id_uri.png&quot; alt=&quot;Set up the value to use as part of the resource URI&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If the data in the cell is not already a valid URI, the RDF Skeleton uses the Base URI to create a URI identity. You can preview the URIs by clicking the preview/edit link.&lt;/p&gt;
+
+&lt;p class=&quot;img-medium&quot;&gt;&lt;img src=&quot;/assets/images/csv_to_rdf/id_uri_preview.png&quot; alt=&quot;Preview the resource URI&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;predicate-prefixes&quot;&gt;Predicate Prefixes&lt;/h4&gt;
+
+&lt;p&gt;The next step is to set up a few prefixes that we’ll be using for this example. As we’ll mostly be concerned with places and locations, we’ll set up prefixes for well-known vocabularies such as the W3C Basic Geo ontology, Geonames and Ordnance Survey Spatial Relations. We’ll also add a prefix for an ontology that will point to our own hosting, to be used when a value does not fit with those found in known ontologies.&lt;/p&gt;
+
+&lt;table class=&quot;table table-striped&quot;&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Prefix&lt;/td&gt;
+      &lt;td&gt;URI&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;http://www.geonames.org/ontology#&quot; target=&quot;_blank&quot; class=&quot;external&quot;&gt;gn&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;http://www.geonames.org/ontology#&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;http://www.w3.org/2003/01/geo/wgs84_pos#&quot; target=&quot;_blank&quot; class=&quot;external&quot;&gt;geo&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;http://www.w3.org/2003/01/geo/wgs84_pos#&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;http://data.ordnancesurvey.co.uk/ontology/spatialrelations/&quot; target=&quot;_blank&quot; class=&quot;external&quot;&gt;spacerel&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;http://data.ordnancesurvey.co.uk/ontology/spatialrelations/&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;http://mytravelsite.com/data/ont/&quot; target=&quot;_blank&quot; class=&quot;external&quot;&gt;mts&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;http://mytravelsite.com/data/ont/&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p class=&quot;img-large&quot;&gt;&lt;img src=&quot;/assets/images/csv_to_rdf/prefixes.png&quot; alt=&quot;Predicate prefixes&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To add a prefix, click &lt;em&gt;manage prefixes&lt;/em&gt; to bring up the pop up window and then &lt;em&gt;Add Prefix&lt;/em&gt; to enter the extra prefixes. If the prefix chosen matches those found on prefix.cc then tabbing out of the prefix field will auto-fill the URI field.&lt;/p&gt;
+
+&lt;p class=&quot;img-medium&quot;&gt;&lt;img src=&quot;/assets/images/csv_to_rdf/prefixes_gn.png&quot; alt=&quot;Add a prefix&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;setting-up-predicates-and-values&quot;&gt;Setting up predicates and values&lt;/h4&gt;
+
+&lt;p&gt;To set up a mapping between a column’s value and a predicate from an ontology, click the &lt;em&gt;add property&lt;/em&gt; link and then click on the property itself to bring up a text field to enter the predicate. A type-ahead search helps with searching for known predicates from the loaded vocabularies entered in the previous step. Select &lt;code&gt;geo:lat&lt;/code&gt; and then hit the &lt;strong&gt;Add It&lt;/strong&gt; button.&lt;/p&gt;
+
+&lt;p class=&quot;img-large&quot;&gt;&lt;img src=&quot;/assets/images/csv_to_rdf/lookup.png&quot; alt=&quot;Add a predicate&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;After the predicate has been set, select &lt;strong&gt;Configure&lt;/strong&gt; to select the &lt;code&gt;Latitude&lt;/code&gt; column and set the cell’s content to mark it as a non-integer number.&lt;/p&gt;
+
+&lt;p class=&quot;img-medium&quot;&gt;&lt;img src=&quot;/assets/images/csv_to_rdf/lat.png&quot; alt=&quot;Set the predicate data type&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We can then repeat this step to add in a few more properties to the mapping skeleton and select the RDF Preview tab to see how the mapping is taking shape.&lt;/p&gt;
+
+&lt;table class=&quot;table table-striped&quot;&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Predicate&lt;/td&gt;
+      &lt;td&gt;Cell&lt;/td&gt;
+      &lt;td&gt;Cell Content&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;spacerel:easting&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;Easting&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Integer number&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;spacerel:northing&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;Northing&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Integer number&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;gn:colloquialName&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;CommonName&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Text&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;gn:locatedIn&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;ParentLocalityName&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Language Based Text (en)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;mts:stopType&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;StopType&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Text&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p class=&quot;img-large&quot;&gt;&lt;img src=&quot;/assets/images/csv_to_rdf/rdf_preview.png&quot; alt=&quot;RDF Preview&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;exporting-semantic-data&quot;&gt;Exporting Semantic Data&lt;/h4&gt;
+
+&lt;p&gt;Exporting the data in a semantic data format is straightforward, simply select one of the “RDF as” options from the &lt;em&gt;Export&lt;/em&gt; menu.&lt;/p&gt;
+
+&lt;p class=&quot;img-small&quot;&gt;&lt;img src=&quot;/assets/images/csv_to_rdf/export.png&quot; alt=&quot;Export semantic data&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;bg-warning&quot;&gt;Note: On large datasets the RDF Extension can struggle when it comes to exporting data as RDF. As mentioned earlier, for ongoing data management or very large datasets, it is far better to have a custom programme written to translate flat data to semantic data. However by working with a subset of your data in Open Refine, you can play around with the mappings to get a proper feel for semantic version of your data.&lt;/p&gt;
+
+&lt;p&gt;Exporting as Turtle opens a new tab in the browser showing the contents of the TTL file which you then save to your computer; exporting as RDF automatically downloads the RDF file.&lt;/p&gt;
+
+&lt;p class=&quot;img-large&quot;&gt;&lt;img src=&quot;/assets/images/csv_to_rdf/ttl.png&quot; alt=&quot;Exported Turtle data&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;summary&quot;&gt;Summary&lt;/h3&gt;
+
+&lt;p&gt;This post walks us through a very simple way of changing flat CSV data into semantic RDF data made up of subject URIs, along with predicates and objects that describe a resource’s properties and their values.&lt;/p&gt;
+
+&lt;p&gt;The RDF extension can also be used to link your resources to resources on other Linked Open Data sites using their reconciliation service. Whilst that is outside the scope of this post, you can find more information about &lt;a href=&quot;http://refine.deri.ie/docs&quot;&gt;how to link to external SPARQL Endpoints&lt;/a&gt; on the DERI website and this &lt;a href=&quot;https://www.youtube.com/watch?v=kn-YeDXR4R8&quot;&gt;youtube tutorial also runs through the basics to pull Linked Data into Open Refine&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Given that Open Refine and the RDF extension runs into memory issues when working with datasets of a few hundred thousand records, it is definitely recommended to only use this approach when first working out the proper mappings between your flat data and the final outline of the semantic RDF that you’ll be using to published your Open Data. For this purpose however, Open Refine and the RDF Extension is invaluable in the toolset for becoming more comfortable with working with semantic data.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 13 Jul 2015 16:21:38 +0100</pubDate>
+        <link>http://networkedplanet.com/blog/2015/07/13/turning-flat-data-into-semantic-data-with-open-refine-and-the-rdf-extension.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2015/07/13/turning-flat-data-into-semantic-data-with-open-refine-and-the-rdf-extension.html</guid>
+        
+        <category>open refine</category>
+        
+        <category>rdf</category>
+        
+        <category>tutorial</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Introducing the Data Platform</title>
+        <description>&lt;p&gt;At Networked Planet we’ve been specialising in developing systems that help organisations classify and organise their content for over ten years. This has given us a lot of experience and insight into what works best when it comes to managing data of all sorts. Whilst the concept of Linked Open Data is not a new one (the concept has been around since Tim Berners Lee’s first imaginings of the World Wide Web), it’s taken a while for the best practises of exactly how to achieve the goals of a Web of Data to become bedded in.&lt;/p&gt;
+
+&lt;p&gt;Since Tim Berners Lee’s first coining of the term “Linked Data” back in 2006, a vast amount of progress has been made in the specifications of the key elements, notably RDF and SPARQL, but also supporting standards such as Dublin Core and VoID metadata standards that are useful in dataset description and discovery; and Schema.org’s wide-ranging RDF schema for describing a wide variety of data.&lt;/p&gt;
+
+&lt;p&gt;In 2012 we started work on BrightstarDB, the first native RDF triple store for the .NET platform. Completely schema free, it means you can add and integrate data of all shapes. Additionally, tools such as the BrightstarDB Entity Framework makes working with semantic data pain-free and incredibly quick to develop server, desktop and mobile applications using semantic data.&lt;/p&gt;
+
+&lt;p&gt;In recent times a number of organizations have started publishing more of their data online using the Linked Open Data principles. Much of the initial movement has been in government and sciences, but increasingly publishers, arts organizations, and user-generated content is being opened up. However, we feel that the rate of progress is still not fast enough.&lt;/p&gt;
+
+&lt;p&gt;In our view, one of the issues facing organisations who want to join the Web of Data is having user friendly tools to publish and manage the data they put online. This is where the Data Platform comes in. Integrated with the Orchard CMS website system, and using BrightstarDB to store RDF data, the Data Platform provides a simple solution for creating and uploading data into RDF datasets to be published on your website.&lt;/p&gt;
+
+&lt;p&gt;We believe that data should be published in a way that is accessible both to machines and human beings. That is why the Data Platform provides a range of widgets to enrich the user experience of browsing around your data, such as maps and charting widgets to make the data easy to digest, and text and image widgets to lay out the information in whatever way you choose. Each resource is also, of course, accessible as machine readable RDF, with an optional SPARQL query service, so that your website sits firmly in the Web of Data, the next generation of the World Wide Web.&lt;/p&gt;
+
+&lt;p&gt;For more information about the Data Platform, visit our [Data Platform mini-site][dp-site].&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 08 Jul 2015 16:21:38 +0100</pubDate>
+        <link>http://networkedplanet.com/blog/2015/07/08/introduction-to-the-data-platform.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2015/07/08/introduction-to-the-data-platform.html</guid>
+        
+        <category>data platform</category>
+        
+        <category>brightstardb</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
