@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shfbBuild product="Sandcastle Help File Builder" version="1.9.6.0" projectFile="D:\Projects\web3\r2.1\platform\docs\platform_public.shfbproj" started="28/03/2013 09:17:27">
+<buildStep step="Initializing">
+Finding tools...
+Found Sandcastle tools in &#39;C:\Program Files (x86)\Sandcastle\&#39;
+Searching for HTML Help 1 compiler...
+Found HTML Help 1 compiler in &#39;C:\Program Files (x86)\HTML Help Workshop\&#39;
+</buildStep>
+<buildStep step="ClearWorkFolder">
+Clearing working folder...
+    Not all prior output was removed from &#39;D:\Projects\web3\r2.1\platform\docs\Help\Working\&#39;: The process cannot access the file &#39;manifest.xml&#39; because it is being used by another process.
+</buildStep>
+<buildStep step="ValidatingDocumentationSources">
+Validating and copying documentation source information
+Source: D:\Projects\web3\r2.1\platform\NetworkedPlanet.Web3.Platform.Service.Client\bin\Release\NetworkedPlanet.Web3.Platform.Common.dll
+    Found assembly &#39;D:\Projects\web3\r2.1\platform\NetworkedPlanet.Web3.Platform.Service.Client\bin\Release\NetworkedPlanet.Web3.Platform.Common.dll&#39;
+Source: D:\Projects\web3\r2.1\platform\NetworkedPlanet.Web3.Platform.Service.Client\bin\Release\NetworkedPlanet.Web3.Platform.Common.xml
+Source: D:\Projects\web3\r2.1\platform\NetworkedPlanet.Web3.Platform.Service.Client\bin\Release\NetworkedPlanet.Web3.Platform.Representations.dll
+    Found assembly &#39;D:\Projects\web3\r2.1\platform\NetworkedPlanet.Web3.Platform.Service.Client\bin\Release\NetworkedPlanet.Web3.Platform.Representations.dll&#39;
+Source: D:\Projects\web3\r2.1\platform\NetworkedPlanet.Web3.Platform.Service.Client\bin\Release\NetworkedPlanet.Web3.Platform.Representations.xml
+Source: D:\Projects\web3\r2.1\platform\NetworkedPlanet.Web3.Platform.Service.Client\bin\Release\NetworkedPlanet.Web3.Platform.Service.Client.dll
+    Found assembly &#39;D:\Projects\web3\r2.1\platform\NetworkedPlanet.Web3.Platform.Service.Client\bin\Release\NetworkedPlanet.Web3.Platform.Service.Client.dll&#39;
+Source: D:\Projects\web3\r2.1\platform\NetworkedPlanet.Web3.Platform.Service.Client\bin\Release\NetworkedPlanet.Web3.Platform.Service.Client.xml
+Source: D:\Projects\web3\r2.1\platform\NetworkedPlanet.Web3.Platform.UI\bin\Release\NetworkedPlanet.Web3.Platform.UI.dll
+    Found assembly &#39;D:\Projects\web3\r2.1\platform\NetworkedPlanet.Web3.Platform.UI\bin\Release\NetworkedPlanet.Web3.Platform.UI.dll&#39;
+Source: D:\Projects\web3\r2.1\platform\NetworkedPlanet.Web3.Platform.UI\bin\Release\NetworkedPlanet.Web3.Platform.UI.xml
+
+Copying XML comments files
+    D:\Projects\web3\r2.1\platform\NetworkedPlanet.Web3.Platform.Service.Client\bin\Release\NetworkedPlanet.Web3.Platform.Common.xml -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\NetworkedPlanet.Web3.Platform.Common.xml
+    D:\Projects\web3\r2.1\platform\NetworkedPlanet.Web3.Platform.Service.Client\bin\Release\NetworkedPlanet.Web3.Platform.Representations.xml -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\NetworkedPlanet.Web3.Platform.Representations.xml
+    D:\Projects\web3\r2.1\platform\NetworkedPlanet.Web3.Platform.Service.Client\bin\Release\NetworkedPlanet.Web3.Platform.Service.Client.XML -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\NetworkedPlanet.Web3.Platform.Service.Client.XML
+    D:\Projects\web3\r2.1\platform\NetworkedPlanet.Web3.Platform.UI\bin\Release\NetworkedPlanet.Web3.Platform.UI.XML -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\NetworkedPlanet.Web3.Platform.UI.XML
+</buildStep>
+<buildStep step="GenerateSharedContent">
+Generating shared content files (en-US, English (United States))...
+    Last step completed in 00:00:00.0290
+</buildStep>
+<buildStep step="GenerateApiFilter">
+Generating API filter for MRefBuilder...
+    Last step completed in 00:00:00.0070
+</buildStep>
+<buildStep step="GenerateReflectionInfo">
+Generating reflection information...
+[C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe]
+  MRefBuilder (v2.7.2.0)
+  Copyright &#169; 2006-2012, Microsoft Corporation, All Rights Reserved
+  Info: Loaded 4 assemblies for reflection and 1 dependency assemblies.
+  Info: Wrote information on 11 namespaces, 157 types, and 1104 members
+  XslTransform (v2.7.2.0)
+  Copyright &#169; 2006-2012, Microsoft Corporation, All Rights Reserved
+  Info: Applying XSL transformation &#39;C:\Program Files (x86)\Sandcastle\ProductionTransforms\MergeDuplicates.xsl&#39;.
+    Last step completed in 00:00:01.2641
+</buildStep>
+<buildStep step="GenerateNamespaceSummaries">
+Generating namespace summary information...
+    Last step completed in 00:00:00.0080
+</buildStep>
+<buildStep step="ApplyVisibilityProperties">
+Applying visibility properties to reflection information file
+    251 attribute nodes removed
+    3 explicit interface implementations removed
+    103 local and base class EII elements removed
+    Last step completed in 00:00:00.0480
+</buildStep>
+<buildStep step="TransformReflectionInfo">
+Transforming reflection output...
+[C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe]
+  XslTransform (v2.7.2.0)
+  Copyright &#169; 2006-2012, Microsoft Corporation, All Rights Reserved
+  Info: Applying XSL transformation &#39;C:\Program Files (x86)\Sandcastle\\ProductionTransforms\ApplyVSDocModel.xsl&#39;.
+  Info: Applying XSL transformation &#39;C:\Program Files (x86)\Sandcastle\ProductionTransforms\AddGuidFilenames.xsl&#39;.
+  XslTransform (v2.7.2.0)
+  Copyright &#169; 2006-2012, Microsoft Corporation, All Rights Reserved
+  Info: Applying XSL transformation &#39;C:\Program Files (x86)\Sandcastle\ProductionTransforms\ReflectionToManifest.xsl&#39;.
+Error : The output file &#39;manifest.xml&#39; could not be loaded. The error is: The process cannot access the file &#39;D:\Projects\web3\r2.1\platform\docs\Help\Working\manifest.xml&#39; because it is being used by another process. [D:\Projects\web3\r2.1\platform\docs\Help\Working\TransformManifest.proj]
+    Last step completed in 00:00:01.2211
+</buildStep>
+<buildStep step="ModifyHelpTopicFilenames">
+Modifying help topic filenames in reflection information file
+    Unique name M_NetworkedPlanet_Web3_Platform_Common_SecureUri__ctor_1 generated for M:NetworkedPlanet.Web3.Platform.Common.SecureUri.#ctor(System.String,System.Uri,System.Collections.Generic.IDictionary{System.String,System.String})
+    Unique name M_NetworkedPlanet_Web3_Platform_Common_SecureUri_SignRequest_1 generated for M:NetworkedPlanet.Web3.Platform.Common.SecureUri.SignRequest(NetworkedPlanet.Web3.Platform.Common.SignatureType,System.String,System.String,System.String,System.String,System.String,System.String)
+    Unique name M_NetworkedPlanet_Web3_Platform_Common_SerializationHelper_Deserialize_1 generated for M:NetworkedPlanet.Web3.Platform.Common.SerializationHelper.Deserialize(System.String,System.Type,NetworkedPlanet.Web3.Platform.Common.Format)
+    Unique name M_NetworkedPlanet_Web3_Platform_Common_TopicMapLinkHelper_ParseTopicLink_1 generated for M:NetworkedPlanet.Web3.Platform.Common.TopicMapLinkHelper.ParseTopicLink(System.String,System.Guid@,System.Guid@)
+    Unique name M_NetworkedPlanet_Web3_Platform_Common_TopicMapLinkHelper_ParseTopicLink_2 generated for M:NetworkedPlanet.Web3.Platform.Common.TopicMapLinkHelper.ParseTopicLink(System.Uri,System.Guid@)
+    Unique name M_NetworkedPlanet_Web3_Platform_Common_TopicMapLinkHelper_ParseTopicMapLink_1 generated for M:NetworkedPlanet.Web3.Platform.Common.TopicMapLinkHelper.ParseTopicMapLink(System.String,System.Uri@)
+    Unique name M_NetworkedPlanet_Web3_Platform_Common_TopicMapLinkHelper_ParseTopicMapLink_2 generated for M:NetworkedPlanet.Web3.Platform.Common.TopicMapLinkHelper.ParseTopicMapLink(System.Uri,System.Guid@)
+    Unique name M_NetworkedPlanet_Web3_Platform_Common_XmlSchemaDatatypes_GetValueType_1 generated for M:NetworkedPlanet.Web3.Platform.Common.XmlSchemaDatatypes.GetValueType(System.Uri)
+    Unique name M_NetworkedPlanet_Web3_Platform_Common_Validation_MultiException__ctor_1 generated for M:NetworkedPlanet.Web3.Platform.Common.Validation.MultiException.#ctor(System.Collections.Generic.IEnumerable{System.Exception})
+    Unique name M_NetworkedPlanet_Web3_Platform_Common_Validation_MultiException__ctor_2 generated for M:NetworkedPlanet.Web3.Platform.Common.Validation.MultiException.#ctor(System.String)
+    Unique name M_NetworkedPlanet_Web3_Platform_Common_Validation_MultiException__ctor_3 generated for M:NetworkedPlanet.Web3.Platform.Common.Validation.MultiException.#ctor(System.String,System.Collections.Generic.IEnumerable{System.Exception})
+    Unique name M_NetworkedPlanet_Web3_Platform_Common_Validation_MultiException__ctor_4 generated for M:NetworkedPlanet.Web3.Platform.Common.Validation.MultiException.#ctor(System.String,System.Exception)
+    Unique name M_NetworkedPlanet_Web3_Platform_Representations_ArcReprList__ctor_1 generated for M:NetworkedPlanet.Web3.Platform.Representations.ArcReprList.#ctor(System.Collections.Generic.List{NetworkedPlanet.Web3.Platform.Representations.ArcRepr},System.Int32,System.Int32,System.String)
+    Unique name M_NetworkedPlanet_Web3_Platform_Representations_LabelRepr__ctor_1 generated for M:NetworkedPlanet.Web3.Platform.Representations.LabelRepr.#ctor(System.String,System.String)
+    Unique name M_NetworkedPlanet_Web3_Platform_Representations_PermissionsListRepr__ctor_1 generated for M:NetworkedPlanet.Web3.Platform.Representations.PermissionsListRepr.#ctor(System.Collections.Generic.List{NetworkedPlanet.Web3.Platform.Representations.PermissionRepr})
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_AdminClient__ctor_1 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.AdminClient.#ctor(System.Net.ICredentials)
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_AdminClient__ctor_2 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.AdminClient.#ctor(System.Net.ICredentials,System.String,System.String,System.String,System.String)
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_AdminClient__ctor_3 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.AdminClient.#ctor(System.String,System.String,System.String,System.String)
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_HttpHelper__ctor_1 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.HttpHelper.#ctor(System.Net.ICredentials)
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_HttpHelper__ctor_2 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.HttpHelper.#ctor(System.Net.ICredentials,System.String,System.String,System.String,System.String)
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_HttpHelper__ctor_3 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.HttpHelper.#ctor(System.String,System.String,System.String,System.String)
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_HttpHelper_CreateWebRequest_1 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.HttpHelper.CreateWebRequest(System.Net.ICredentials,System.String,System.Uri,NetworkedPlanet.Web3.Platform.Common.Format,System.Int32,System.Int32)
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_HttpHelper_CreateWebRequest_2 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.HttpHelper.CreateWebRequest(System.String,System.Uri,NetworkedPlanet.Web3.Platform.Common.Format)
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_HttpHelper_CreateWebRequest_3 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.HttpHelper.CreateWebRequest(System.String,System.Uri,NetworkedPlanet.Web3.Platform.Common.Format,System.Int32,System.Int32)
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_HttpHelper_DeleteRepresentation_1 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.HttpHelper.DeleteRepresentation(System.Uri,System.Nullable{System.Int32})
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_HttpHelper_GetRepresentation__1_1 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.HttpHelper.GetRepresentation``1(System.Uri,System.Nullable{System.Int32})
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_HttpHelper_PostRepresentation__1_1 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.HttpHelper.PostRepresentation``1(``0,System.Uri,System.Nullable{System.Int32})
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_HttpHelper_PutRepresentation__1_1 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.HttpHelper.PutRepresentation``1(``0,System.Uri,System.Nullable{System.Int32})
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_SchemaServiceClient__ctor_1 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.SchemaServiceClient.#ctor(System.Uri,System.Net.ICredentials)
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_SchemaServiceClient__ctor_2 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.SchemaServiceClient.#ctor(System.Uri,System.Net.ICredentials,System.String,System.String,System.String,System.String)
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_SchemaServiceClient__ctor_3 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.SchemaServiceClient.#ctor(System.Uri,System.String,System.String,System.String,System.String)
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_ServiceClientException__ctor_1 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.ServiceClientException.#ctor(System.String)
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_ServiceClientException__ctor_2 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.ServiceClientException.#ctor(System.String,System.Exception)
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_TopicMapServiceClient__ctor_1 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.TopicMapServiceClient.#ctor(System.Net.ICredentials)
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_TopicMapServiceClient__ctor_2 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.TopicMapServiceClient.#ctor(System.Net.ICredentials,System.String,System.String,System.String,System.String)
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_TopicMapServiceClient__ctor_3 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.TopicMapServiceClient.#ctor(System.String,System.String,System.String,System.String)
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_TopicMapServiceClient_CreateTopicMap_1 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.TopicMapServiceClient.CreateTopicMap(System.Uri,System.Uri,System.String,NetworkedPlanet.Web3.Platform.Service.Client.Model.Label[])
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_Model_Label__ctor_1 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.Model.Label.#ctor(NetworkedPlanet.Web3.Platform.Representations.LabelRepr)
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_Model_Label__ctor_2 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.Model.Label.#ctor(System.String,System.String)
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_Model_LabelHelper_SelectByLanguage_1 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.Model.LabelHelper.SelectByLanguage(System.Collections.Generic.List{NetworkedPlanet.Web3.Platform.Service.Client.Model.Label},System.Collections.Generic.List{System.String})
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_Model_LabelHelper_SelectStringByLanguage_1 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.Model.LabelHelper.SelectStringByLanguage(System.Collections.Generic.List{NetworkedPlanet.Web3.Platform.Service.Client.Model.Label},System.Collections.Generic.List{System.String},System.String)
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_Model_SchemaService_AssociationTemplate_AddRoleBinding_1 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.Model.SchemaService.AssociationTemplate.AddRoleBinding(NetworkedPlanet.Web3.Platform.Service.Client.Model.SchemaService.SchemaType,NetworkedPlanet.Web3.Platform.Service.Client.Model.SchemaService.SchemaType,System.Int32,System.Int32,System.Int32,System.Int32)
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_Model_SchemaService_AssociationTemplate_GetRoleBindings_1 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.Model.SchemaService.AssociationTemplate.GetRoleBindings(System.Collections.Generic.List{NetworkedPlanet.Web3.Platform.Service.Client.Model.SchemaService.SchemaType},System.Collections.Generic.List{NetworkedPlanet.Web3.Platform.Service.Client.Model.SchemaService.SchemaType})
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_Model_SchemaService_SchemaModelBase_CreateAssociationTemplate_1 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.Model.SchemaService.SchemaModelBase.CreateAssociationTemplate(NetworkedPlanet.Web3.Platform.Service.Client.Model.SchemaService.SchemaType,System.Collections.Generic.IEnumerable{NetworkedPlanet.Web3.Platform.Service.Client.Model.SchemaService.RoleBinding})
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_Model_TopicMapService_HierarchyDefinition_CreateHierarchyNode_1 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.Model.TopicMapService.HierarchyDefinition.CreateHierarchyNode(NetworkedPlanet.Web3.Platform.Service.Client.Model.TopicMapService.TopicReference,NetworkedPlanet.Web3.Platform.Service.Client.Model.TopicMapService.TopicReference,NetworkedPlanet.Web3.Platform.Service.Client.Model.TopicMapService.TopicReference,NetworkedPlanet.Web3.Platform.Service.Client.Model.TopicMapService.TopicReference,NetworkedPlanet.Web3.Platform.Service.Client.Model.TopicMapService.TopicReference)
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_Model_TopicMapService_Topic_GetAssociations_1 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.Model.TopicMapService.Topic.GetAssociations(System.Uri,System.Int32,System.Int32)
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_Model_TopicMapService_TopicMap_CreateTopic_1 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.Model.TopicMapService.TopicMap.CreateTopic(System.String,System.String)
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_Model_TopicMapService_TopicMap_CreateTopic_2 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.Model.TopicMapService.TopicMap.CreateTopic(System.String,System.String,System.Uri)
+    Unique name M_NetworkedPlanet_Web3_Platform_Service_Client_Model_TopicMapService_TopicMap_CreateTopic_3 generated for M:NetworkedPlanet.Web3.Platform.Service.Client.Model.TopicMapService.TopicMap.CreateTopic(System.Uri)
+    Unique name M_NetworkedPlanet_Web3_Platform_UI_WebUIHelper_SelectLabel_1 generated for M:NetworkedPlanet.Web3.Platform.UI.WebUIHelper.SelectLabel(System.Collections.Generic.List{NetworkedPlanet.Web3.Platform.Representations.LabelRepr},System.Collections.Generic.IEnumerable{System.String})
+    Unique name M_NetworkedPlanet_Web3_Platform_UI_WebUIHelper_SelectLabel_2 generated for M:NetworkedPlanet.Web3.Platform.UI.WebUIHelper.SelectLabel(System.Collections.Generic.List{NetworkedPlanet.Web3.Platform.Representations.LabelRepr},System.String,System.Collections.Generic.IEnumerable{System.String})
+    Unique name M_NetworkedPlanet_Web3_Platform_UI_WebUIHelper_SelectLabel_3 generated for M:NetworkedPlanet.Web3.Platform.UI.WebUIHelper.SelectLabel(System.Collections.Generic.List{NetworkedPlanet.Web3.Platform.Service.Client.Model.Label},System.String,System.Collections.Generic.IEnumerable{System.String})
+    Unique name M_NetworkedPlanet_Web3_Platform_UI_Controls_ControlBase_SelectLabel_1 generated for M:NetworkedPlanet.Web3.Platform.UI.Controls.ControlBase.SelectLabel(System.Collections.Generic.List{NetworkedPlanet.Web3.Platform.Representations.LabelRepr},System.String)
+    Last step completed in 00:00:00.0860
+</buildStep>
+<buildStep step="CopyStandardContent">
+Copying standard help content...
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\adm.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\adm.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\adm_arch.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\adm_arch.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\adm_dev.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\adm_dev.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\adm_dev_arch.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\adm_dev_arch.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\alert_caution.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\alert_caution.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\alert_note.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\alert_note.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\alert_security.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\alert_security.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\arch.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\arch.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\big_adm.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\big_adm.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\big_arch.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\big_arch.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\big_dev.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\big_dev.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\big_kw.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\big_kw.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\box.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\box.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\Caution.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\Caution.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\CFW.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\CFW.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\collall.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\collall.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\collapse.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\collapse.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\collapse_all.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\collapse_all.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\copycode.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\copycode.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\copycodeHighlight.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\copycodeHighlight.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\dev.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\dev.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\dev_arch.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\dev_arch.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\dropdown.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\dropdown.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\dropdownHover.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\dropdownHover.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\drpdown.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\drpdown.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\drpdown_orange.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\drpdown_orange.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\drpdown_orange_up.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\drpdown_orange_up.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\drpup.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\drpup.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\exp.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\exp.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\expall.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\expall.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\expand_all.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\expand_all.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\filter1a.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\filter1a.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\filter1c.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\filter1c.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\footer.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\footer.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\gradient.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\gradient.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\greencheck.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\greencheck.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\greychck.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\greychck.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\header_prev_next.jpg -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\header_prev_next.jpg
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\header_sql_tutorial_blank.jpg -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\header_sql_tutorial_blank.jpg
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\header_sql_tutorial_logo.GIF -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\header_sql_tutorial_logo.GIF
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\kw.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\kw.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\kw_adm.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\kw_adm.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\kw_adm_arch.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\kw_adm_arch.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\kw_adm_dev.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\kw_adm_dev.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\kw_adm_dev_arch.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\kw_adm_dev_arch.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\kw_arch.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\kw_arch.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\kw_dev.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\kw_dev.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\kw_dev_arch.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\kw_dev_arch.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\LastChild.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\LastChild.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\load.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\load.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\load_hover.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\load_hover.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\note.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\note.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\pencil.GIF -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\pencil.GIF
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\privclass.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\privclass.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\privdelegate.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\privdelegate.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\privenum.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\privenum.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\privenumeration.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\privenumeration.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\privevent.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\privevent.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\privextension.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\privextension.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\privfield.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\privfield.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\privinterface.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\privinterface.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\privmethod.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\privmethod.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\privproperty.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\privproperty.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\privstructure.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\privstructure.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\protclass.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\protclass.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\protdelegate.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\protdelegate.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\protenum.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\protenum.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\protenumeration.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\protenumeration.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\protevent.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\protevent.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\protextension.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\protextension.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\protfield.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\protfield.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\protinterface.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\protinterface.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\protmethod.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\protmethod.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\protoperator.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\protoperator.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\protproperty.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\protproperty.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\protstructure.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\protstructure.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\pubclass.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\pubclass.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\pubdelegate.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\pubdelegate.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\pubenum.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\pubenum.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\pubenumeration.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\pubenumeration.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\pubevent.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\pubevent.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\pubextension.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\pubextension.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\pubfield.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\pubfield.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\pubinterface.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\pubinterface.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\pubmethod.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\pubmethod.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\puboperator.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\puboperator.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\pubproperty.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\pubproperty.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\pubstructure.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\pubstructure.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\requirements1a.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\requirements1a.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\requirements1c.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\requirements1c.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\save.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\save.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\save_hover.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\save_hover.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\security.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\security.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\seealso1a.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\seealso1a.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\seealso1c.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\seealso1c.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\slMobile.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\slMobile.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\static.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\static.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\xna.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\icons\xna.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\scripts\CheckboxMenu.js -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\scripts\CheckboxMenu.js
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\scripts\CommonUtilities.js -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\scripts\CommonUtilities.js
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\scripts\Dropdown.js -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\scripts\Dropdown.js
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\scripts\EventUtilities.js -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\scripts\EventUtilities.js
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\scripts\script_feedBack.js -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\scripts\script_feedBack.js
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\scripts\script_manifold.js -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\scripts\script_manifold.js
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\scripts\SplitScreen.js -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\scripts\SplitScreen.js
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\styles\Presentation.css -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\styles\Presentation.css
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\styles\Whidbey\Presentation.css -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\styles\Whidbey\Presentation.css
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\adm.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\adm.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\adm_arch.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\adm_arch.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\adm_dev.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\adm_dev.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\adm_dev_arch.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\adm_dev_arch.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\alert_caution.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\alert_caution.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\alert_note.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\alert_note.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\alert_security.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\alert_security.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\arch.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\arch.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\big_adm.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\big_adm.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\big_arch.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\big_arch.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\big_dev.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\big_dev.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\big_kw.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\big_kw.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\box.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\box.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\Caution.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\Caution.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\CFW.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\CFW.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\collall.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\collall.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\collapse.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\collapse.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\collapse_all.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\collapse_all.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\copycode.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\copycode.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\copycodeHighlight.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\copycodeHighlight.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\dev.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\dev.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\dev_arch.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\dev_arch.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\dropdown.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\dropdown.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\dropdownHover.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\dropdownHover.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\drpdown.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\drpdown.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\drpdown_orange.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\drpdown_orange.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\drpdown_orange_up.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\drpdown_orange_up.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\drpup.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\drpup.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\exp.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\exp.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\expall.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\expall.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\expand_all.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\expand_all.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\filter1a.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\filter1a.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\filter1c.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\filter1c.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\footer.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\footer.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\gradient.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\gradient.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\greencheck.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\greencheck.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\greychck.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\greychck.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\header_prev_next.jpg -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\header_prev_next.jpg
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\header_sql_tutorial_blank.jpg -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\header_sql_tutorial_blank.jpg
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\header_sql_tutorial_logo.GIF -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\header_sql_tutorial_logo.GIF
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\kw.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\kw.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\kw_adm.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\kw_adm.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\kw_adm_arch.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\kw_adm_arch.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\kw_adm_dev.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\kw_adm_dev.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\kw_adm_dev_arch.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\kw_adm_dev_arch.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\kw_arch.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\kw_arch.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\kw_dev.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\kw_dev.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\kw_dev_arch.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\kw_dev_arch.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\LastChild.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\LastChild.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\load.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\load.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\load_hover.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\load_hover.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\note.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\note.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\pencil.GIF -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\pencil.GIF
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\privclass.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\privclass.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\privdelegate.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\privdelegate.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\privenum.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\privenum.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\privenumeration.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\privenumeration.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\privevent.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\privevent.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\privextension.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\privextension.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\privfield.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\privfield.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\privinterface.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\privinterface.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\privmethod.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\privmethod.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\privproperty.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\privproperty.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\privstructure.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\privstructure.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\protclass.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\protclass.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\protdelegate.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\protdelegate.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\protenum.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\protenum.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\protenumeration.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\protenumeration.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\protevent.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\protevent.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\protextension.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\protextension.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\protfield.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\protfield.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\protinterface.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\protinterface.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\protmethod.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\protmethod.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\protoperator.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\protoperator.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\protproperty.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\protproperty.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\protstructure.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\protstructure.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\pubclass.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\pubclass.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\pubdelegate.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\pubdelegate.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\pubenum.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\pubenum.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\pubenumeration.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\pubenumeration.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\pubevent.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\pubevent.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\pubextension.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\pubextension.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\pubfield.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\pubfield.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\pubinterface.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\pubinterface.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\pubmethod.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\pubmethod.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\puboperator.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\puboperator.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\pubproperty.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\pubproperty.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\pubstructure.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\pubstructure.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\requirements1a.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\requirements1a.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\requirements1c.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\requirements1c.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\save.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\save.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\save_hover.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\save_hover.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\security.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\security.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\seealso1a.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\seealso1a.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\seealso1c.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\seealso1c.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\slMobile.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\slMobile.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\static.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\static.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\icons\xna.gif -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\icons\xna.gif
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\scripts\CheckboxMenu.js -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\scripts\CheckboxMenu.js
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\scripts\CommonUtilities.js -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\scripts\CommonUtilities.js
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\scripts\Dropdown.js -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\scripts\Dropdown.js
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\scripts\EventUtilities.js -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\scripts\EventUtilities.js
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\scripts\script_feedBack.js -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\scripts\script_feedBack.js
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\scripts\script_manifold.js -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\scripts\script_manifold.js
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\scripts\SplitScreen.js -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\scripts\SplitScreen.js
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\styles\Presentation.css -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\styles\Presentation.css
+C:\Program Files (x86)\Sandcastle\\Presentation\VS2005\styles\Whidbey\Presentation.css -&gt; D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website\styles\Whidbey\Presentation.css
+    Last step completed in 00:00:00.1360
+</buildStep>
+<buildStep step="CopyAdditionalContent">
+Copying additional content files...
+No additional content to copy
+    Last step completed in 00:00:00.0020
+</buildStep>
+<buildStep step="MergeTablesOfContents">
+Merging conceptual and additional tables of contents...
+    Last step completed in 00:00:00.0000
+</buildStep>
+<buildStep step="GenerateIntermediateTableOfContents">
+Generating intermediate table of contents file...
+[C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe]
+  XslTransform (v2.7.2.0)
+  Copyright &#169; 2006-2012, Microsoft Corporation, All Rights Reserved
+  Info: Applying XSL transformation &#39;C:\Program Files (x86)\Sandcastle\\ProductionTransforms\CreateVSToc.xsl&#39;.
+Generating conceptual content intermediate TOC file...
+    Last step completed in 00:00:00.3126
+</buildStep>
+<buildStep step="CreateBuildAssemblerConfigs">
+Creating Sandcastle configuration files...
+    sandcastle.config
+    Last step completed in 00:00:00.0140
+</buildStep>
+<buildStep step="MergeCustomConfigs">
+Merging custom build component configurations
+D:\Projects\web3\r2.1\platform\docs\Help\Working\sandcastle.config
+    Last step completed in 00:00:00.0660
+</buildStep>
+<buildStep step="BuildReferenceTopics">
+Building reference help topics...
+[C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe]
+  BuildAssembler (v2.7.2.0)
+  Copyright &#169; 2006-2012, Microsoft Corporation, All Rights Reserved
+  Info: Loading configuration...
+  Info: Processing topics...
+  Warn: ShowMissingComponent: [M:NetworkedPlanet.Web3.Platform.Common.TopicMapLinkHelper.AddQueryParameters(System.String,System.Collections.Generic.Dictionary{{System.String,System.String}})] Missing &lt;returns&gt; documentation
+  Warn: ShowMissingComponent: [M:NetworkedPlanet.Web3.Platform.Common.TopicMapLinkHelper.AddQueryParameters(System.String,System.Collections.Generic.Dictionary{{System.String,System.String}})] Missing &lt;param name=&quot;baseAddress&quot;/&gt; documentation
+  Warn: ShowMissingComponent: [M:NetworkedPlanet.Web3.Platform.Common.TopicMapLinkHelper.AddQueryParameters(System.String,System.Collections.Generic.Dictionary{{System.String,System.String}})] Missing &lt;param name=&quot;queryParams&quot;/&gt; documentation
+  Warn: ShowMissingComponent: [M:NetworkedPlanet.Web3.Platform.Service.Client.HttpHelper.CreateWebRequest(System.String,System.Uri,NetworkedPlanet.Web3.Platform.Common.Format)] Missing &lt;returns&gt; documentation
+  Warn: ShowMissingComponent: [M:NetworkedPlanet.Web3.Platform.Service.Client.HttpHelper.CreateWebRequest(System.String,System.Uri,NetworkedPlanet.Web3.Platform.Common.Format)] Missing &lt;param name=&quot;method&quot;/&gt; documentation
+  Warn: ShowMissingComponent: [M:NetworkedPlanet.Web3.Platform.Service.Client.HttpHelper.CreateWebRequest(System.String,System.Uri,NetworkedPlanet.Web3.Platform.Common.Format)] Missing &lt;param name=&quot;address&quot;/&gt; documentation
+  Warn: ShowMissingComponent: [M:NetworkedPlanet.Web3.Platform.Service.Client.HttpHelper.CreateWebRequest(System.String,System.Uri,NetworkedPlanet.Web3.Platform.Common.Format)] Missing &lt;param name=&quot;format&quot;/&gt; documentation
+  Warn: ShowMissingComponent: [M:NetworkedPlanet.Web3.Platform.Service.Client.HttpHelper.CreateWebRequest(System.String,System.Uri,NetworkedPlanet.Web3.Platform.Common.Format,System.Int32,System.Int32)] Missing &lt;returns&gt; documentation
+  Warn: ShowMissingComponent: [M:NetworkedPlanet.Web3.Platform.Service.Client.Model.SchemaService.SchemaModelBase.GetIncomingArcTemplates(NetworkedPlanet.Web3.Platform.Service.Client.Model.SchemaService.SchemaType,System.Boolean)] Missing &lt;returns&gt; documentation
+  Warn: ShowMissingComponent: [M:NetworkedPlanet.Web3.Platform.Service.Client.Model.SchemaService.SchemaModelBase.GetOutgoingArcTemplates(NetworkedPlanet.Web3.Platform.Service.Client.Model.SchemaService.SchemaType,System.Boolean)] Missing &lt;returns&gt; documentation
+  Info: Processed 1692 topics
+    Last step completed in 00:05:07.4621
+</buildStep>
+<buildStep step="CombiningIntermediateTocFiles">
+Combining conceptual and API intermediate TOC files...
+
+Clearing any prior web output
+    Last step completed in 00:00:00.0040
+</buildStep>
+<buildStep step="ExtractingHtmlInfo">
+Extracting HTML info for HTML Help 1 and/or website...
+[C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe]
+Sandcastle Help File Builder, version 1.9.6.0
+Copyright &#169; 2006-2012, Eric Woodruff, All Rights Reserved
+E-Mail: Eric@EWoodruff.us
+
+Using LCID &#39;1033&#39;, code page &#39;65001&#39;, encoding charset &#39;UTF-8&#39;.
+
+Processing Help 1 files in D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1
+Processed 1692 HTML files
+Sorting keywords and generating See Also indices
+Saving HTML Help 1 keyword index to D:\Projects\web3\r2.1\platform\docs\Help\Working\Web3Client.hhk
+Saving HTML Help 1 table of contents to D:\Projects\web3\r2.1\platform\docs\Help\Working\Web3Client.hhc
+
+Processing website files in D:\Projects\web3\r2.1\platform\docs\Help\Working\Output\Website
+Processed 1692 HTML files
+Sorting keywords and generating See Also indices
+Saving website keyword index to D:\Projects\web3\r2.1\platform\docs\Help\Working\WebKI.xml
+Saving website table of contents to D:\Projects\web3\r2.1\platform\docs\Help\Working\WebTOC.xml
+    Last step completed in 00:00:06.3919
+</buildStep>
+<buildStep step="GenerateHelpFormatTableOfContents">
+Generating HTML Help 1 table of contents file...
+    Last step completed in 00:00:00.0010
+</buildStep>
+<buildStep step="GenerateHelpFileIndex">
+Generating HTML Help 1 index file...
+    Last step completed in 00:00:00.0000
+</buildStep>
+<buildStep step="GenerateHelpProject">
+Generating HTML Help 1 project file...
+    Last step completed in 00:00:00.0230
+</buildStep>
+<buildStep step="CompilingHelpFile">
+Compiling HTML Help 1 file...
+[C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe]
+  Microsoft HTML Help Compiler 4.74.8702
+  
+  
+  
+  Compiling d:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\Web3Client.chm
+  
+  
+  
+  
+  
+  Compile time: 0 minutes, 24 seconds
+  
+  1,694	Topics
+  
+  24,063	Local links
+  
+  15,637	Internet links
+  
+  0	Graphics
+  
+  
+  
+  
+  
+  Created d:\Projects\web3\r2.1\platform\docs\Help\Working\Output\HtmlHelp1\Web3Client.chm, 2,284,591 bytes
+  
+  Compression decreased file by 22,719,134 bytes.
+  
+    Last step completed in 00:00:25.4353
+</buildStep>
+<buildStep step="GenerateHelpFormatTableOfContents">
+Generating website table of contents file...
+    Last step completed in 00:00:00.0010
+</buildStep>
+<buildStep step="GenerateFullTextIndex">
+Generating full-text index for the website...
+
+    Last step completed in 00:00:15.3509
+</buildStep>
+<buildStep step="CopyingWebsiteFiles">
+Copying website files to output folder...
+
+Copied 100 files
+Copied 200 files
+Copied 300 files
+Copied 400 files
+Copied 500 files
+Copied 600 files
+Copied 700 files
+Copied 800 files
+Copied 900 files
+Copied 1000 files
+Copied 1100 files
+Copied 1200 files
+Copied 1300 files
+Copied 1400 files
+Copied 1500 files
+Copied 1600 files
+Copied 1700 files
+Copied 1800 files
+Copied 1828 files for the website content
+    Last step completed in 00:00:03.3771
+</buildStep>
+<buildStep step="CleanIntermediates">
+Removing intermediate files...
+    Last step completed in 00:00:05.4504
+</buildStep>
+<buildStep step="Completed">
+
+Build completed successfully at 03/28/2013 09:23 AM.  Total time: 00:06:07.4146
+
+</buildStep>
+</shfbBuild>
