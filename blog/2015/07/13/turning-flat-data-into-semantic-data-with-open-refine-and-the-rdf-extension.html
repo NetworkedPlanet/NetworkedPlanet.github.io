@@ -148,7 +148,7 @@
 
 <p class="img-large"><img src="/assets/images/csv_to_rdf/preview.png" alt="Preview the spreadsheet data" /></p>
 
-<p>This then loads up all the data in Open Refine. From this point on, most of the magic happens using the RDF extension to map the values in the columns of the spreadsheet into RDF triple formats.</p>
+<p>This then loads up all the data in Open Refine. From this point on, most of the magic happens using the RDF extension to map the values in the columns of the spreadsheet into RDF triple formats. </p>
 
 <h3 id="editing-the-rdf-skeleton">Editing the RDF Skeleton</h3>
 
@@ -162,11 +162,11 @@
 
 <p>The first step is to set up how each resource in your data will be addressable. Every resource must have a URI that can be used to link that resource to other resources both within this dataset and others anywhere on the web.</p>
 
-<p>Assuming that we are hosting our human readable data interface on a website at the (example only) web address http://mytravelsite.com, we would want to build up URIs that are unique to each of the resources so that when someone visits the address of a resource they would be able to view all the properties of that resource. In the RDF Schema Alignment window, first click the edit link next to the Base URI. Set this to be the same base address as your data website.</p>
+<p>Assuming that we are hosting our human readable data interface on a website at the (example only) web address http://mytravelsite.com, we would want to build up URIs that are unique to each of the resources so that when someone visits the address of a resource they would be able to view all the properties of that resource. In the RDF Schema Alignment window, first click the edit link next to the Base URI. Set this to be the same base address as your data website. </p>
 
 <p class="img-medium"><img src="/assets/images/csv_to_rdf/base_uri.png" alt="Edit the Base URI of your data" /></p>
 
-<p>In our example data we can see that there are a couple of columns that look promising, AtcoCode and NaptanCode, to use as unique values in identity URIs. A sort on the columns show that all rows have AtcoCodes whilst some NaptanCodes are blank, and there are no duplicates in the AtcoCode column either, so we can use this column as a base for our URI identities.</p>
+<p>In our example data we can see that there are a couple of columns that look promising, AtcoCode and NaptanCode, to use as unique values in identity URIs. A sort on the columns show that all rows have AtcoCodes whilst some NaptanCodes are blank, and there are no duplicates in the AtcoCode column either, so we can use this column as a base for our URI identities. </p>
 
 <p>To set up the URI used as the identity for each of your resources, select the AtcoCode column heading and check that the cell’s content is used “as a URI”.</p>
 

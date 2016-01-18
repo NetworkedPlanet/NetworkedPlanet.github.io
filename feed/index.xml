@@ -6,9 +6,76 @@
 </description>
     <link>http://networkedplanet.com/</link>
     <atom:link href="http://networkedplanet.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 30 Nov 2015 11:53:23 +0000</pubDate>
-    <lastBuildDate>Mon, 30 Nov 2015 11:53:23 +0000</lastBuildDate>
-    <generator>Jekyll v2.5.3</generator>
+    <pubDate>Mon, 18 Jan 2016 13:04:54 +0000</pubDate>
+    <lastBuildDate>Mon, 18 Jan 2016 13:04:54 +0000</lastBuildDate>
+    <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>NetworkedPlanet Webinars</title>
+        <description>&lt;p&gt;We are pleased to announce our second series of training webinars. Following on from the couple of successful webinars we presented
+last year, Season 2 of the NetworkedPlanet webinars is now three episodes long.&lt;/p&gt;
+
+&lt;p&gt;In the &lt;a href=&quot;https://www.eventbrite.co.uk/e/webinar-introduction-to-rdf-and-sparql-tickets-20856883500&quot;&gt;Introduction to RDF and SPARQL&lt;/a&gt;
+(4th Feb, 14:00-15:00 GMT) you will learn the technical fundamentals of linked open data. 
+This presentation focusses on the technical details of what exactly RDF is and how the SPARQL language allows you to query RDF data.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://www.eventbrite.co.uk/e/webinar-introduction-to-linked-data-tickets-20857152304&quot;&gt;Introduction to Linked Data&lt;/a&gt; 
+(18th Feb, 14:00-15:00 GMT) is a (mostly) non-technical presentation focussed on the what and why of Linked Data - what is Linked Data, what are 
+the benefits of publishing and using Linked Data, what are the steps to take in publishing your own
+Linked Data either internally or externally.&lt;/p&gt;
+
+&lt;p&gt;Finally the &lt;a href=&quot;https://www.eventbrite.co.uk/e/webinar-sparql-101-tickets-20857308772&quot;&gt;SPARQL 101&lt;/a&gt; webinar (3rd March, 14:00-15:00 GMT) focusses on the SPARQL
+query language for RDF. Building on what was learnt in the introduction webinar, this webinar goes into more detail about the query
+language and shows some examples of how to use SPARQL to explore datasets, extract salient information from them and create reports
+by aggregating data.&lt;/p&gt;
+
+&lt;p&gt;All of these webinars will be an hour long, with about 45-50 minutes of presentation followed by some time for questions afterwards.
+The webinars will be presented by Kal Ahmed who in addition to being the founder of NetworkedPlanet is also the lead developer of &lt;a href=&quot;http://brightstardb.com/&quot;&gt;BrightstarDB&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;All of these webinars are FREE to attend, but places are limited - so be sure to register using the links above to assure your place!&lt;/p&gt;
+
+&lt;p&gt;We are already planning Season 3 with possible additional episodes covering things such as &lt;a href=&quot;http://brightstardb.com/&quot;&gt;BrightstarDB&lt;/a&gt;;
+and the &lt;a href=&quot;http://dataplatform.co.uk/&quot;&gt;Data Platform&lt;/a&gt;. If you would like to get a heads-up on these
+future webinars when they are announced, &lt;a href=&quot;https://twitter.com/nwplanet&quot;&gt;follow us on Twitter&lt;/a&gt; or &lt;a href=&quot;/#contact&quot;&gt;sign-up for the NetworkedPlanet Newsletter&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 18 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://networkedplanet.com/blog/2016/01/18/linked-data-webinars-season-2.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2016/01/18/linked-data-webinars-season-2.html</guid>
+        
+        <category>webinar</category>
+        
+        <category>rdf</category>
+        
+        <category>sparql</category>
+        
+        <category>linked data</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Closed / Shared / Open</title>
+        <description>&lt;p&gt;While we are great fans of Open Data, it is just one part of a spectrum from data that
+needs to be kept secure (such as personal information) through data that is shared between
+partner organisations all the way to data that is made available to all to use and reuse.&lt;/p&gt;
+
+&lt;p&gt;This nice, short video from the ODI explains the concepts of Closed, Shared and Open data. &lt;/p&gt;
+
+&lt;iframe src=&quot;https://player.vimeo.com/video/125783029&quot; width=&quot;500&quot; height=&quot;281&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href=&quot;https://vimeo.com/125783029&quot;&gt;Open / Shared / Closed: The world of data&lt;/a&gt; from &lt;a href=&quot;https://vimeo.com/theodiuk&quot;&gt;Open Data Institute&lt;/a&gt; on &lt;a href=&quot;https://vimeo.com&quot;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 18 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://networkedplanet.com/blog/2016/01/18/closed-shared-open.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2016/01/18/closed-shared-open.html</guid>
+        
+        <category>odi</category>
+        
+        <category>open data</category>
+        
+        <category>video</category>
+        
+        
+      </item>
     
       <item>
         <title>SPARQL CONSTRUCT 101</title>
@@ -438,13 +505,13 @@ SELECT ?txn, ?time, ?server WHERE {
 
 &lt;h3 id=&quot;making-open-data-suck-less&quot;&gt;Making Open Data Suck Less&lt;/h3&gt;
 
-&lt;p&gt;With a provocative title for a pitch, Chris Gutteridge led a session towards the end of day one aimed at trying to improve the quality of Open Data. There were quite a few laughs to be had whilst people threw in their pet hates, and then very interesting discussions about what we could do to help alleviate them. Common problems were the publishing of “open” data in custom file formats, having to get through download forms to get to the data and bad data itself (e.g. a column of measurements that change whether it was recorded in mm or inches, sometimes using only numerals). As the session wrapped up it was great to hear solutions being thrashed out - such as suggestions for content of documentation (giving a better description of the data itself and links to learn more about it, what format is the data in? does it require a special program? is there a free version of the program if so?). Another good suggestion was a central wiki-style encyclopedia, an idea tempered by the need for that to be managed and someone’s responsibility. However, Amanda from &lt;a href=&quot;http://theodi.org/&quot;&gt;the ODI&lt;/a&gt; did mention that it was an idea that kept coming up and so I look forward to hearing more from them about it.&lt;/p&gt;
+&lt;p&gt;With a provocative title for a pitch, Chris Gutteridge led a session towards the end of day one aimed at trying to improve the quality of Open Data. There were quite a few laughs to be had whilst people threw in their pet hates, and then very interesting discussions about what we could do to help alleviate them. Common problems were the publishing of “open” data in custom file formats, having to get through download forms to get to the data and bad data itself (e.g. a column of measurements that change whether it was recorded in mm or inches, sometimes using only numerals). As the session wrapped up it was great to hear solutions being thrashed out - such as suggestions for content of documentation (giving a better description of the data itself and links to learn more about it, what format is the data in? does it require a special program? is there a free version of the program if so?). Another good suggestion was a central wiki-style encyclopedia, an idea tempered by the need for that to be managed and someone’s responsibility. However, Amanda from &lt;a href=&quot;http://theodi.org/&quot;&gt;the ODI&lt;/a&gt; did mention that it was an idea that kept coming up and so I look forward to hearing more from them about it. &lt;/p&gt;
 
 &lt;h3 id=&quot;unkeynotes&quot;&gt;Unkeynotes&lt;/h3&gt;
 
 &lt;p&gt;Completely unplanned, there were two pitches that had such interest from everyone attending that the organisers helpfully did not place anyone else’s pitches at the same time. On day one it was bums on seats for a talk from Paul Maltby, Director of Data from the Cabinet Office. He gave an impassioned overview of the plans he and his team have to improve the way data is handled within the Cabinet Office. It will be interesting to keep track of the progress they make over the next year or so and whether the good intentions turn into published datasets.&lt;/p&gt;
 
-&lt;p&gt;John Murray’s session on spatial analysis queries led into a interesting discussions on personal perception of “place”, and on to who really “owns” addresses. As time ran out, this prompted a pitch for more on the debate - turning into day two’s unkeynote from Bob Barr with the full rundown “Address Wars” history. I can’t possibly summarise it all here, but we can only hope that &lt;a href=&quot;https://alpha.openaddressesuk.org/blog/2015/07/27/a-time-for-going-to-bed&quot;&gt;Open Addresses gets another boost to continue the amazing work they started&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;John Murray’s session on spatial analysis queries led into a interesting discussions on personal perception of “place”, and on to who really “owns” addresses. As time ran out, this prompted a pitch for more on the debate - turning into day two’s unkeynote from Bob Barr with the full rundown “Address Wars” history. I can’t possibly summarise it all here, but we can only hope that &lt;a href=&quot;https://alpha.openaddressesuk.org/blog/2015/07/27/a-time-for-going-to-bed&quot;&gt;Open Addresses gets another boost to continue the amazing work they started&lt;/a&gt;. &lt;/p&gt;
 
 &lt;h3 id=&quot;its-important-to-demystify-rdf&quot;&gt;It’s important to demystify RDF&lt;/h3&gt;
 
@@ -509,7 +576,7 @@ future webinars when they are announced, &lt;a href=&quot;https://twitter.com/nw
         <title>Data Platform 1.0 Released</title>
         <description>&lt;p&gt;&lt;img src=&quot;/assets/images/blog/dataplatform_logo_600.png&quot; alt=&quot;Data Platform Logo&quot; class=&quot;img-medium center-block img-responsive&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;We are delighted to announce the 1.0 release of the &lt;a href=&quot;http://dataplatform.co.uk/&quot;&gt;Data Platform&lt;/a&gt;. The Data Platform fulfils the need of an easy-to-use interface for managing and publishing datasets, without limiting the number of datasets or requests to the data you publish, and publishing standards-compliant, 5-star Linked Open Data.&lt;/p&gt;
+&lt;p&gt;We are delighted to announce the 1.0 release of the &lt;a href=&quot;http://dataplatform.co.uk/&quot;&gt;Data Platform&lt;/a&gt;. The Data Platform fulfils the need of an easy-to-use interface for managing and publishing datasets, without limiting the number of datasets or requests to the data you publish, and publishing standards-compliant, 5-star Linked Open Data. &lt;/p&gt;
 
 &lt;p&gt;Every organisation is different when it comes to managing the data they hold, here at NetworkedPlanet we can chat with you about the different types of data you manage, identify which parts are suitable for publishing as Open Data and outline the best processes to implement so that your organisation can be linked into the Web of Data.&lt;/p&gt;
 
@@ -538,23 +605,23 @@ future webinars when they are announced, &lt;a href=&quot;https://twitter.com/nw
     
       <item>
         <title>Sharing Data In The Third Sector</title>
-        <description>&lt;p&gt;Last week &lt;a href=&quot;http://bristol.girlgeekdinners.com/&quot;&gt;Bristol Girl Geek Dinners&lt;/a&gt; hosted another fantastic evening for nerds in the heart of Bristol. This month they brought Emma Prest of &lt;a href=&quot;http://www.datakind.org/chapters/datakind-uk/&quot;&gt;DataKind UK&lt;/a&gt; over from London to talk about their work. The first time I’d heard of DataKind was when BGG had published their event information, so I did some reading up on them.&lt;/p&gt;
+        <description>&lt;p&gt;Last week &lt;a href=&quot;http://bristol.girlgeekdinners.com/&quot;&gt;Bristol Girl Geek Dinners&lt;/a&gt; hosted another fantastic evening for nerds in the heart of Bristol. This month they brought Emma Prest of &lt;a href=&quot;http://www.datakind.org/chapters/datakind-uk/&quot;&gt;DataKind UK&lt;/a&gt; over from London to talk about their work. The first time I’d heard of DataKind was when BGG had published their event information, so I did some reading up on them. &lt;/p&gt;
 
 &lt;h2 id=&quot;data-dive-events-for-charities&quot;&gt;Data Dive events for charities&lt;/h2&gt;
 
 &lt;p&gt;DataKind bring together charities and data science volunteers at hackathon style “Data Dives”. They work with the charities in the lead up to the event to set out clear goals and prep, then over the course of a weekend DataKind brings together all the volunteers and everyone works together to achieve those goals. Needless to say I was really looking forward to hearing what Emma had to say about it all and I wasn’t disappointed.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;What a great idea!&lt;/em&gt; People with different specialisations coming together as a community for the social good is one I can utterly get behind. Charities collect a LOT of data about their cause - in order to show the social impacts of the problem and to try and better understand it to try and help eradicate the problem once and for all. Having these Data Dives gives the chance to look at this data in new and interesting ways, compare it to other datasets from overlapping sectors and see what new insights might be made.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;What a great idea!&lt;/em&gt; People with different specialisations coming together as a community for the social good is one I can utterly get behind. Charities collect a LOT of data about their cause - in order to show the social impacts of the problem and to try and better understand it to try and help eradicate the problem once and for all. Having these Data Dives gives the chance to look at this data in new and interesting ways, compare it to other datasets from overlapping sectors and see what new insights might be made. &lt;/p&gt;
 
 &lt;p&gt;Of course my personal enthusiasm is with ongoing data collaboration by publishing datasets, and so a lot of my questions and conversations during the evening did tend to drift towards Open Data. As always though, when talking about Linked Open Data and charities in the same conversation I ran into a particular bugbear of mine. The fact that organisations are very dubious about actually publishing that data as raw datasets. Now, when I hear that from commercial enterprises I actually have more patience than when I hear it from charities, even though the answers are the same. It really irks me. Gets my goat. Bothers me. I was having trouble unpicking why this is so here are my thoughts on it:&lt;/p&gt;
 
 &lt;h2 id=&quot;why-the-reluctance-to-publish-open-data&quot;&gt;Why the reluctance to publish Open Data?&lt;/h2&gt;
 
-&lt;p&gt;First off, and let’s get this out of the way early, I’m not talking here about &lt;strong&gt;personal&lt;/strong&gt; data or any data that could be linked to an individual. I’m talking about completely anonymised data that’s used by that charity to show that the problem exists, that it has knock on effects and that the work the charity does helps with the problem. Other charities (especially the smaller ones working at a more localised level with far less funds) will also find that information &lt;em&gt;incredibly useful&lt;/em&gt; and will be able to better help people in turn. Those smaller charities also collect data that they could publish themselves and then all the charities in that sector can start looking across those datasets to see trends and what’s helping or exacerbating the problem.&lt;/p&gt;
+&lt;p&gt;First off, and let’s get this out of the way early, I’m not talking here about &lt;strong&gt;personal&lt;/strong&gt; data or any data that could be linked to an individual. I’m talking about completely anonymised data that’s used by that charity to show that the problem exists, that it has knock on effects and that the work the charity does helps with the problem. Other charities (especially the smaller ones working at a more localised level with far less funds) will also find that information &lt;em&gt;incredibly useful&lt;/em&gt; and will be able to better help people in turn. Those smaller charities also collect data that they could publish themselves and then all the charities in that sector can start looking across those datasets to see trends and what’s helping or exacerbating the problem. &lt;/p&gt;
 
 &lt;p&gt;Not only does this mean that researchers and data scientists could look across the datasets supplied by charities from different sectors and ask new questions that wasn’t possible when the data was kept closed off, it also means that charities of all sizes can avoid wasting time and money duplicating analysis and research that has already been done.&lt;/p&gt;
 
-&lt;p&gt;The potential benefits of sharing data are really not difficult to see. So why the reluctance to publish all that raw data? One statement uttered last night has been ringing round my head “&lt;strong&gt;charities are in competition with each other&lt;/strong&gt;”.&lt;/p&gt;
+&lt;p&gt;The potential benefits of sharing data are really not difficult to see. So why the reluctance to publish all that raw data? One statement uttered last night has been ringing round my head “&lt;strong&gt;charities are in competition with each other&lt;/strong&gt;”. &lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/blog/seagulls_mine.gif&quot; alt=&quot;Animated gif of the seagulls from Finding Nemo standing on a rock in the sea all shouting &amp;quot;Mine!&amp;quot;&quot; class=&quot;img-medium center-block img-responsive&quot; /&gt;&lt;/p&gt;
 
@@ -581,7 +648,7 @@ However, if you are not making any money from it and it’s just sitting in your
 
 &lt;h3 id=&quot;people-arent-coming-to-us-for-the-information&quot;&gt;4. “People aren’t coming to &lt;em&gt;us&lt;/em&gt; for the information.”&lt;/h3&gt;
 
-&lt;p&gt;Firstly, someone &lt;strong&gt;is&lt;/strong&gt; still coming to you for the information - the developers. Secondly, your data isn’t static, you need to collect it over time and it’s up to you whether you release new data every hour, day, week, month or even year! Meaning that people &lt;em&gt;are&lt;/em&gt; coming back to you for the information - it’s just in a different format than you’re used to.&lt;/p&gt;
+&lt;p&gt;Firstly, someone &lt;strong&gt;is&lt;/strong&gt; still coming to you for the information - the developers. Secondly, your data isn’t static, you need to collect it over time and it’s up to you whether you release new data every hour, day, week, month or even year! Meaning that people &lt;em&gt;are&lt;/em&gt; coming back to you for the information - it’s just in a different format than you’re used to. &lt;/p&gt;
 
 &lt;h2 id=&quot;final-thoughts&quot;&gt;Final thoughts&lt;/h2&gt;
 
@@ -612,7 +679,7 @@ However, if you are not making any money from it and it’s just sitting in your
 
 &lt;h2 id=&quot;keep-it-simple-stupid&quot;&gt;Keep It Simple, Stupid&lt;/h2&gt;
 
-&lt;p&gt;It is tempting to go for the all-singing all-dancing fully featured data portal. But these features all add more development time and more cost to your solution. When the features are provided by a vendor they also tie you more closely to that vendor. Many of the Linked Open Data pioneers produce very simple, minimalist portals (take a look at the &lt;a href=&quot;http://bnb.data.bl.uk/doc/resource/009455497&quot;&gt;British Library’s BNB pages&lt;/a&gt; for example), but despite this minimalism, the data and the links provide real value.&lt;/p&gt;
+&lt;p&gt;It is tempting to go for the all-singing all-dancing fully featured data portal. But these features all add more development time and more cost to your solution. When the features are provided by a vendor they also tie you more closely to that vendor. Many of the Linked Open Data pioneers produce very simple, minimalist portals (take a look at the &lt;a href=&quot;http://bnb.data.bl.uk/doc/resource/009455497&quot;&gt;British Library’s BNB pages&lt;/a&gt; for example), but despite this minimalism, the data and the links provide real value. &lt;/p&gt;
 
 &lt;h2 id=&quot;you-dont-need-to-build-it-all&quot;&gt;You Don’t Need To Build It All&lt;/h2&gt;
 
@@ -687,235 +754,6 @@ future webinars when they are announced, &lt;a href=&quot;https://twitter.com/nw
         <category>odi</category>
         
         <category>company news</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Turning flat data into semantic data with Open Refine and the RDF extension</title>
-        <description>&lt;p&gt;Most of the data that organisations hold will be in some form of flat data, either in spreadsheets or relational databases. In order for the data to achieve either &lt;a href=&quot;http://5stardata.info/&quot;&gt;4 or 5 star levels of Open Data&lt;/a&gt; this data must be changed to not only use non-proprietary formats but it must also use URIs so that each object can be linked with other data across the World Wide Web.&lt;/p&gt;
-
-&lt;p&gt;For ongoing data management purposes, organisations would choose to either input data directly into semantic data storage, or write custom programs to output standardised semantic data as a scheduled job, but for smaller amounts of data or one off jobs, there are free tools available that we can use, such as &lt;a href=&quot;http://openrefine.org/&quot;&gt;Open Refine&lt;/a&gt; with the &lt;a href=&quot;http://refine.deri.ie/&quot;&gt;RDF Extension from DERI&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;some-background--what-is-rdf&quot;&gt;Some background – What is RDF?&lt;/h2&gt;
-
-&lt;p&gt;The accepted best practise language for describing web resources and associated information is the Resource Description Framework (RDF). RDF syntax is made up of statements known as triples; which are made up of:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;a &lt;strong&gt;subject&lt;/strong&gt; – a URI that is used as a consistent addressable identity for the resource&lt;/li&gt;
-  &lt;li&gt;a &lt;strong&gt;predicate&lt;/strong&gt; – a URI that describes the relationship between the resource and the value of the triple. A lot of the time predicate URIs are chosen from known vocabularies to make collaboration easier between disparate datasets.&lt;/li&gt;
-  &lt;li&gt;an &lt;strong&gt;object&lt;/strong&gt; – this is the value of the statement made in the triple, it could be a literal value such as a date or number (in which case a datatype is included in the statement) or it could be another URI when the value of the resource is another resource.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;A triple describing a book has the title of “The Hobbit” would look something like:&lt;/p&gt;
-
-&lt;table class=&quot;table table-striped&quot;&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Subject&lt;/td&gt;
-      &lt;td&gt;Predicate&lt;/td&gt;
-      &lt;td&gt;Object&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code&gt;http://www.thebookshop.com/tolkein-jrr/hobbit-the&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code&gt;http://purl.org/dc/terms/title&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code&gt;“The Hobbit”&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;open-refine-and-grefine---the-rdf-extension&quot;&gt;Open Refine and GRefine - the RDF Extension&lt;/h2&gt;
-
-&lt;p&gt;Open Refine is a free downloadable tool for working with data, and along with the RDF extension written by DERI we can quickly change some flat spreadsheet data to RDF ready for use in the Data Platform.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Download and install Open Refine using the correct installer for your system.&lt;/li&gt;
-  &lt;li&gt;Download the RDF Extension and install it into the extensions directory of your Open Refine installation.&lt;/li&gt;
-  &lt;li&gt;Start Open Refine.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p class=&quot;bg-info&quot;&gt;For this walkthrough I downloaded a set of data from the &lt;a href=&quot;http://data.gov.uk/dataset/naptan&quot;&gt;National Public Transport Access Nodes (NaPTAN) available on data.gov.uk&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;create-a-new-project&quot;&gt;Create a new project&lt;/h3&gt;
-
-&lt;p&gt;Create a new project, select your spreadsheet and click &lt;strong&gt;Next&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p class=&quot;img-large&quot;&gt;&lt;img src=&quot;/assets/images/csv_to_rdf/createproj.png&quot; alt=&quot;Create a new Open Refine project&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This then shows you a preview of the data; depending on the content, you may need to set the encoding to a content type such as UTF-8 so that special characters are displayed correctly. Most of the default values are sufficient to confirm the creation of the project, so once you’ve checked these you can amend the name of the project if you wish and then click &lt;strong&gt;Create Project&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p class=&quot;img-large&quot;&gt;&lt;img src=&quot;/assets/images/csv_to_rdf/preview.png&quot; alt=&quot;Preview the spreadsheet data&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This then loads up all the data in Open Refine. From this point on, most of the magic happens using the RDF extension to map the values in the columns of the spreadsheet into RDF triple formats.&lt;/p&gt;
-
-&lt;h3 id=&quot;editing-the-rdf-skeleton&quot;&gt;Editing the RDF Skeleton&lt;/h3&gt;
-
-&lt;p&gt;To edit the RDF mappings select &lt;strong&gt;Edit RDF Skeleton&lt;/strong&gt; in the RDF drop down menu at the top right of the Open Refine screen.&lt;/p&gt;
-
-&lt;p class=&quot;img-small&quot;&gt;&lt;img src=&quot;/assets/images/csv_to_rdf/editrdfskeleton.png&quot; alt=&quot;Edit the RDF Skeleton&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This opens the RDF Schema Alignment pop up window, where we can set up how the semantic data will be produced from the flat grid data imported into the project.&lt;/p&gt;
-
-&lt;h4 id=&quot;uri-identities&quot;&gt;URI Identities&lt;/h4&gt;
-
-&lt;p&gt;The first step is to set up how each resource in your data will be addressable. Every resource must have a URI that can be used to link that resource to other resources both within this dataset and others anywhere on the web.&lt;/p&gt;
-
-&lt;p&gt;Assuming that we are hosting our human readable data interface on a website at the (example only) web address http://mytravelsite.com, we would want to build up URIs that are unique to each of the resources so that when someone visits the address of a resource they would be able to view all the properties of that resource. In the RDF Schema Alignment window, first click the edit link next to the Base URI. Set this to be the same base address as your data website.&lt;/p&gt;
-
-&lt;p class=&quot;img-medium&quot;&gt;&lt;img src=&quot;/assets/images/csv_to_rdf/base_uri.png&quot; alt=&quot;Edit the Base URI of your data&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;In our example data we can see that there are a couple of columns that look promising, AtcoCode and NaptanCode, to use as unique values in identity URIs. A sort on the columns show that all rows have AtcoCodes whilst some NaptanCodes are blank, and there are no duplicates in the AtcoCode column either, so we can use this column as a base for our URI identities.&lt;/p&gt;
-
-&lt;p&gt;To set up the URI used as the identity for each of your resources, select the AtcoCode column heading and check that the cell’s content is used “as a URI”.&lt;/p&gt;
-
-&lt;p class=&quot;img-medium&quot;&gt;&lt;img src=&quot;/assets/images/csv_to_rdf/id_uri.png&quot; alt=&quot;Set up the value to use as part of the resource URI&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;If the data in the cell is not already a valid URI, the RDF Skeleton uses the Base URI to create a URI identity. You can preview the URIs by clicking the preview/edit link.&lt;/p&gt;
-
-&lt;p class=&quot;img-medium&quot;&gt;&lt;img src=&quot;/assets/images/csv_to_rdf/id_uri_preview.png&quot; alt=&quot;Preview the resource URI&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;predicate-prefixes&quot;&gt;Predicate Prefixes&lt;/h4&gt;
-
-&lt;p&gt;The next step is to set up a few prefixes that we’ll be using for this example. As we’ll mostly be concerned with places and locations, we’ll set up prefixes for well-known vocabularies such as the W3C Basic Geo ontology, Geonames and Ordnance Survey Spatial Relations. We’ll also add a prefix for an ontology that will point to our own hosting, to be used when a value does not fit with those found in known ontologies.&lt;/p&gt;
-
-&lt;table class=&quot;table table-striped&quot;&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Prefix&lt;/td&gt;
-      &lt;td&gt;URI&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;http://www.geonames.org/ontology#&quot; target=&quot;_blank&quot; class=&quot;external&quot;&gt;gn&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code&gt;http://www.geonames.org/ontology#&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;http://www.w3.org/2003/01/geo/wgs84_pos#&quot; target=&quot;_blank&quot; class=&quot;external&quot;&gt;geo&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code&gt;http://www.w3.org/2003/01/geo/wgs84_pos#&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;http://data.ordnancesurvey.co.uk/ontology/spatialrelations/&quot; target=&quot;_blank&quot; class=&quot;external&quot;&gt;spacerel&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code&gt;http://data.ordnancesurvey.co.uk/ontology/spatialrelations/&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;http://mytravelsite.com/data/ont/&quot; target=&quot;_blank&quot; class=&quot;external&quot;&gt;mts&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code&gt;http://mytravelsite.com/data/ont/&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p class=&quot;img-large&quot;&gt;&lt;img src=&quot;/assets/images/csv_to_rdf/prefixes.png&quot; alt=&quot;Predicate prefixes&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;To add a prefix, click &lt;em&gt;manage prefixes&lt;/em&gt; to bring up the pop up window and then &lt;em&gt;Add Prefix&lt;/em&gt; to enter the extra prefixes. If the prefix chosen matches those found on prefix.cc then tabbing out of the prefix field will auto-fill the URI field.&lt;/p&gt;
-
-&lt;p class=&quot;img-medium&quot;&gt;&lt;img src=&quot;/assets/images/csv_to_rdf/prefixes_gn.png&quot; alt=&quot;Add a prefix&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;setting-up-predicates-and-values&quot;&gt;Setting up predicates and values&lt;/h4&gt;
-
-&lt;p&gt;To set up a mapping between a column’s value and a predicate from an ontology, click the &lt;em&gt;add property&lt;/em&gt; link and then click on the property itself to bring up a text field to enter the predicate. A type-ahead search helps with searching for known predicates from the loaded vocabularies entered in the previous step. Select &lt;code&gt;geo:lat&lt;/code&gt; and then hit the &lt;strong&gt;Add It&lt;/strong&gt; button.&lt;/p&gt;
-
-&lt;p class=&quot;img-large&quot;&gt;&lt;img src=&quot;/assets/images/csv_to_rdf/lookup.png&quot; alt=&quot;Add a predicate&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;After the predicate has been set, select &lt;strong&gt;Configure&lt;/strong&gt; to select the &lt;code&gt;Latitude&lt;/code&gt; column and set the cell’s content to mark it as a non-integer number.&lt;/p&gt;
-
-&lt;p class=&quot;img-medium&quot;&gt;&lt;img src=&quot;/assets/images/csv_to_rdf/lat.png&quot; alt=&quot;Set the predicate data type&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;We can then repeat this step to add in a few more properties to the mapping skeleton and select the RDF Preview tab to see how the mapping is taking shape.&lt;/p&gt;
-
-&lt;table class=&quot;table table-striped&quot;&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Predicate&lt;/td&gt;
-      &lt;td&gt;Cell&lt;/td&gt;
-      &lt;td&gt;Cell Content&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code&gt;spacerel:easting&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code&gt;Easting&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Integer number&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code&gt;spacerel:northing&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code&gt;Northing&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Integer number&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code&gt;gn:colloquialName&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code&gt;CommonName&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Text&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code&gt;gn:locatedIn&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code&gt;ParentLocalityName&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Language Based Text (en)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code&gt;mts:stopType&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code&gt;StopType&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Text&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p class=&quot;img-large&quot;&gt;&lt;img src=&quot;/assets/images/csv_to_rdf/rdf_preview.png&quot; alt=&quot;RDF Preview&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;exporting-semantic-data&quot;&gt;Exporting Semantic Data&lt;/h4&gt;
-
-&lt;p&gt;Exporting the data in a semantic data format is straightforward, simply select one of the “RDF as” options from the &lt;em&gt;Export&lt;/em&gt; menu.&lt;/p&gt;
-
-&lt;p class=&quot;img-small&quot;&gt;&lt;img src=&quot;/assets/images/csv_to_rdf/export.png&quot; alt=&quot;Export semantic data&quot; /&gt;&lt;/p&gt;
-
-&lt;p class=&quot;bg-warning&quot;&gt;Note: On large datasets the RDF Extension can struggle when it comes to exporting data as RDF. As mentioned earlier, for ongoing data management or very large datasets, it is far better to have a custom programme written to translate flat data to semantic data. However by working with a subset of your data in Open Refine, you can play around with the mappings to get a proper feel for semantic version of your data.&lt;/p&gt;
-
-&lt;p&gt;Exporting as Turtle opens a new tab in the browser showing the contents of the TTL file which you then save to your computer; exporting as RDF automatically downloads the RDF file.&lt;/p&gt;
-
-&lt;p class=&quot;img-large&quot;&gt;&lt;img src=&quot;/assets/images/csv_to_rdf/ttl.png&quot; alt=&quot;Exported Turtle data&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;summary&quot;&gt;Summary&lt;/h3&gt;
-
-&lt;p&gt;This post walks us through a very simple way of changing flat CSV data into semantic RDF data made up of subject URIs, along with predicates and objects that describe a resource’s properties and their values.&lt;/p&gt;
-
-&lt;p&gt;The RDF extension can also be used to link your resources to resources on other Linked Open Data sites using their reconciliation service. Whilst that is outside the scope of this post, you can find more information about &lt;a href=&quot;http://refine.deri.ie/docs&quot;&gt;how to link to external SPARQL Endpoints&lt;/a&gt; on the DERI website and this &lt;a href=&quot;https://www.youtube.com/watch?v=kn-YeDXR4R8&quot;&gt;youtube tutorial also runs through the basics to pull Linked Data into Open Refine&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Given that Open Refine and the RDF extension runs into memory issues when working with datasets of a few hundred thousand records, it is definitely recommended to only use this approach when first working out the proper mappings between your flat data and the final outline of the semantic RDF that you’ll be using to published your Open Data. For this purpose however, Open Refine and the RDF Extension is invaluable in the toolset for becoming more comfortable with working with semantic data.&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 13 Jul 2015 16:21:38 +0100</pubDate>
-        <link>http://networkedplanet.com/blog/2015/07/13/turning-flat-data-into-semantic-data-with-open-refine-and-the-rdf-extension.html</link>
-        <guid isPermaLink="true">http://networkedplanet.com/blog/2015/07/13/turning-flat-data-into-semantic-data-with-open-refine-and-the-rdf-extension.html</guid>
-        
-        <category>open refine</category>
-        
-        <category>rdf</category>
-        
-        <category>tutorial</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Introducing the Data Platform</title>
-        <description>&lt;p&gt;At Networked Planet we’ve been specialising in developing systems that help organisations classify and organise their content for over ten years. This has given us a lot of experience and insight into what works best when it comes to managing data of all sorts. Whilst the concept of Linked Open Data is not a new one (the concept has been around since Tim Berners Lee’s first imaginings of the World Wide Web), it’s taken a while for the best practises of exactly how to achieve the goals of a Web of Data to become bedded in.&lt;/p&gt;
-
-&lt;p&gt;Since Tim Berners Lee’s first coining of the term “Linked Data” back in 2006, a vast amount of progress has been made in the specifications of the key elements, notably RDF and SPARQL, but also supporting standards such as Dublin Core and VoID metadata standards that are useful in dataset description and discovery; and Schema.org’s wide-ranging RDF schema for describing a wide variety of data.&lt;/p&gt;
-
-&lt;p&gt;In 2012 we started work on BrightstarDB, the first native RDF triple store for the .NET platform. Completely schema free, it means you can add and integrate data of all shapes. Additionally, tools such as the BrightstarDB Entity Framework makes working with semantic data pain-free and incredibly quick to develop server, desktop and mobile applications using semantic data.&lt;/p&gt;
-
-&lt;p&gt;In recent times a number of organizations have started publishing more of their data online using the Linked Open Data principles. Much of the initial movement has been in government and sciences, but increasingly publishers, arts organizations, and user-generated content is being opened up. However, we feel that the rate of progress is still not fast enough.&lt;/p&gt;
-
-&lt;p&gt;In our view, one of the issues facing organisations who want to join the Web of Data is having user friendly tools to publish and manage the data they put online. This is where the Data Platform comes in. Integrated with the Orchard CMS website system, and using BrightstarDB to store RDF data, the Data Platform provides a simple solution for creating and uploading data into RDF datasets to be published on your website.&lt;/p&gt;
-
-&lt;p&gt;We believe that data should be published in a way that is accessible both to machines and human beings. That is why the Data Platform provides a range of widgets to enrich the user experience of browsing around your data, such as maps and charting widgets to make the data easy to digest, and text and image widgets to lay out the information in whatever way you choose. Each resource is also, of course, accessible as machine readable RDF, with an optional SPARQL query service, so that your website sits firmly in the Web of Data, the next generation of the World Wide Web.&lt;/p&gt;
-
-&lt;p&gt;For more information about the Data Platform, visit our [Data Platform mini-site][dp-site].&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 08 Jul 2015 16:21:38 +0100</pubDate>
-        <link>http://networkedplanet.com/blog/2015/07/08/introduction-to-the-data-platform.html</link>
-        <guid isPermaLink="true">http://networkedplanet.com/blog/2015/07/08/introduction-to-the-data-platform.html</guid>
-        
-        <category>data platform</category>
-        
-        <category>brightstardb</category>
         
         
       </item>
