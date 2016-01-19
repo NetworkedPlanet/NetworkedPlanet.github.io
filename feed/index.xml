@@ -6,9 +6,31 @@
 </description>
     <link>http://networkedplanet.com/</link>
     <atom:link href="http://networkedplanet.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 18 Jan 2016 13:04:54 +0000</pubDate>
-    <lastBuildDate>Mon, 18 Jan 2016 13:04:54 +0000</lastBuildDate>
-    <generator>Jekyll v2.4.0</generator>
+    <pubDate>Tue, 19 Jan 2016 10:59:00 +0000</pubDate>
+    <lastBuildDate>Tue, 19 Jan 2016 10:59:00 +0000</lastBuildDate>
+    <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Newsletter Issue 2 out now!</title>
+        <description>&lt;p&gt;The second issue of our email newsletter has hit the &lt;a href=&quot;http://networkedplanet.us11.list-manage.com/subscribe?u=62daac7ae19a90ef03ea3bd42&amp;amp;id=a797a2dd15&quot;&gt;mailing list&lt;/a&gt; inboxes. &lt;/p&gt;
+
+&lt;p&gt;We chat about our new short animation about Linked Open Data, our 3-part free webinar series where you can learn all about the fundamental technologies of Linked Data, our upcoming online CSV converter - “Level Up”, new product releases and interesting reports from the wider Web of Linked and Open Data.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://networkedplanet.us11.list-manage.com/subscribe?u=62daac7ae19a90ef03ea3bd42&amp;amp;id=a797a2dd15&quot;&gt;Sign up to our mailing list&lt;/a&gt; - we send newsletters roughly quarterly, possibly punctuated with the odd single-shot news item if we think it’s important!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://us11.campaign-archive2.com/?u=62daac7ae19a90ef03ea3bd42&amp;amp;id=a78b245052&amp;amp;e=&quot;&gt;Click here to read this issue&lt;/a&gt; in your browser, and &lt;a href=&quot;http://us11.campaign-archive1.com/home/?u=62daac7ae19a90ef03ea3bd42&amp;amp;id=a797a2dd15&quot;&gt;access the newsletter archive here&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 19 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://networkedplanet.com/blog/2016/01/19/newsletter-issue-2.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2016/01/19/newsletter-issue-2.html</guid>
+        
+        <category>newsletter</category>
+        
+        <category>mailing list</category>
+        
+        
+      </item>
     
       <item>
         <title>NetworkedPlanet Webinars</title>
@@ -573,6 +595,28 @@ future webinars when they are announced, &lt;a href=&quot;https://twitter.com/nw
       </item>
     
       <item>
+        <title>Newsletter Issue 1 out now!</title>
+        <description>&lt;p&gt;The first issue of our email newsletter is out! &lt;/p&gt;
+
+&lt;p&gt;Find out about our webinar series on Linked Data technologies, our Data Platform for publishing data both internally to your organisation or externally as Open Data, the Open Data Institute, new product releases and interesting reports from the wider Web of Linked and Open Data.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://networkedplanet.us11.list-manage.com/subscribe?u=62daac7ae19a90ef03ea3bd42&amp;amp;id=a797a2dd15&quot;&gt;Sign up to our mailing list&lt;/a&gt; - we send newsletters roughly quarterly, possibly punctuated with the odd single-shot news item if we think it’s important!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://us11.campaign-archive2.com/?u=62daac7ae19a90ef03ea3bd42&amp;amp;id=4b98e60d33&quot;&gt;Click here to read this issue&lt;/a&gt; in your browser.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 25 Sep 2015 00:00:00 +0100</pubDate>
+        <link>http://networkedplanet.com/blog/2015/09/25/newsletter-issue-1.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2015/09/25/newsletter-issue-1.html</guid>
+        
+        <category>newsletter</category>
+        
+        <category>mailing list</category>
+        
+        
+      </item>
+    
+      <item>
         <title>Data Platform 1.0 Released</title>
         <description>&lt;p&gt;&lt;img src=&quot;/assets/images/blog/dataplatform_logo_600.png&quot; alt=&quot;Data Platform Logo&quot; class=&quot;img-medium center-block img-responsive&quot; /&gt;&lt;/p&gt;
 
@@ -702,58 +746,6 @@ However, if you are not making any money from it and it’s just sitting in your
         <category>open data</category>
         
         <category>opinion</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>RDF and SPARQL Webinar 29/9</title>
-        <description>&lt;p&gt;We are pleased to announce our first training webinar, “Introduction to RDF and SPARQL”. As the name suggests,
-this is a short (1 hour) introduction to the fundamental technologies behind Linked Open Data. RDF is the 
-defacto standard format for publishing Linked Data and SPARQL is the primary query language used with RDF
-data. The webinar aims to give you an overview of the basic principles behind RDF and SPARQL to kickstart
-your learning about these technologies.&lt;/p&gt;
-
-&lt;p&gt;The webinar will be presented by Kal Ahmed who in addition to being the founder of NetworkedPlanet is also
-the lead developer of &lt;a href=&quot;http://brightstardb.com/&quot;&gt;BrightstarDB&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;This webinar is FREE, but places are limited.&lt;/p&gt;
-
-&lt;p&gt;&lt;a class=&quot;btn btn-primary btn-lg&quot; href=&quot;http://www.eventbrite.com/e/webinar-introduction-to-rdf-and-sparql-tickets-18018913054?aff=utm_source%3Deb_email%26utm_medium%3Demail%26utm_campaign%3Dnew_event_email?utm_term=eventurl_text&quot;&gt;Sign Up Here&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;We plan to follow this webinar up with others looking at Linked Data and Linked Open Data; BrightstarDB;
-and the [Data Platform] (http://dataplatform.co.uk/). If you would like to get a heads-up on these
-future webinars when they are announced, &lt;a href=&quot;https://twitter.com/nwplanet&quot;&gt;follow us on Twitter&lt;/a&gt; or &lt;a href=&quot;/#contact&quot;&gt;sign-up for the NetworkedPlanet Newsletter&lt;/a&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 06 Aug 2015 00:00:00 +0100</pubDate>
-        <link>http://networkedplanet.com/blog/2015/08/06/rdf-webinar-sept-29.html</link>
-        <guid isPermaLink="true">http://networkedplanet.com/blog/2015/08/06/rdf-webinar-sept-29.html</guid>
-        
-        <category>webinar</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>We are now part of the Open Data Institute member network</title>
-        <description>&lt;div class=&quot;pull-right&quot;&gt;
-&lt;script src=&quot;http://directory.theodi.org/members/ZC6408HJ/badge?size=large&amp;amp;align=right&amp;amp;colour=black&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
-&lt;/div&gt;
-
-&lt;p&gt;It goes without saying that we are huge supporters of the Open Data Institute (ODI), but from today we are now &lt;em&gt;official&lt;/em&gt; supporters of the ODI as part of their members network.&lt;/p&gt;
-
-&lt;p&gt;Founded by Sir Tim Berners-Lee (who created a little something known as the &lt;em&gt;World Wide Web&lt;/em&gt;) along with Sir Nigel Shadbolt - the ODI’s mission is to “&lt;a href=&quot;http://opendatainstitute.org/faq&quot;&gt;catalyse the evolution of an open data culture to create economic, environmental, and social value&lt;/a&gt;”.&lt;/p&gt;
-
-&lt;p&gt;We’re looking forward to hearing more about the development of best practice methods in the field of Open Data - exciting times!&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 15 Jul 2015 15:17:38 +0100</pubDate>
-        <link>http://networkedplanet.com/blog/2015/07/15/now-part-of-the-open-data-institute-members-network.html</link>
-        <guid isPermaLink="true">http://networkedplanet.com/blog/2015/07/15/now-part-of-the-open-data-institute-members-network.html</guid>
-        
-        <category>odi</category>
-        
-        <category>company news</category>
         
         
       </item>
