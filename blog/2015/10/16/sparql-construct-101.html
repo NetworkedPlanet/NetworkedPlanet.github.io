@@ -52,6 +52,9 @@
 			<a class="page-scroll" href="/#services">Services</a>
 		</li>
 		<li>
+			<a class="page-scroll" href="/#training">Training</a>
+		</li>
+		<li>
 			<a class="page-scroll" href="/#contact">Contact Us</a>
 		</li>
 		<li>
@@ -95,6 +98,7 @@
   </header>
 
   <article class="post-content">
+	
     <p>A SPARQL query can be written to return one of three things - SELECT returns a tabular set of results, ASK returns a simple boolean (true or false), and CONSTRUCT returns an RDF graph. For most human interaction with SPARQL endpoints we tend to prefer tables as they are just easier for us to grok, but if you are working with code that has an RDF parser available to it, then CONSTRUCT can really be your best friend and it is worth spending some time to understand how CONSTRUCT works and what cool sorts of things you can do with it.</p>
 
 <p>I’m going to walk through a few features of SPARQL CONSTRUCT using a really simple made-up sample file. If you would like to follow along, you can get the sample file I’m using from <a href="https://gist.github.com/kal/ee1260ceb462d8e0d5bb">this gist on GitHub</a>. You will need a triple-store to query too - if you don’t have one installed (and if you are on Windows), why not try out <a href="http://brightstardb.codeplex.com/">BrightstarDB</a>? BrightstarDB comes with a management application called Polaris which makes it easy to create a new store, import the file and run SPARQL queries. You can read about Polaris <a href="http://brightstardb.readthedocs.org/en/latest/Using_Polaris/">here in the BrightstarDB documentation</a>.</p>
@@ -523,7 +527,7 @@ SELECT ?txn, ?time, ?server WHERE {
         <div class="spacer">&nbsp;</div>
         <div class="row">
             <div class="col-xs-6">
-                <p>&copy; 2015 Networked Planet Limited.</p>
+                <p>&copy; 2016 Networked Planet Limited.</p>
             </div>
             <div class="col-xs-6">
                 <div class="pull-right">

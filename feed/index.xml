@@ -6,9 +6,66 @@
 </description>
     <link>http://networkedplanet.com/</link>
     <atom:link href="http://networkedplanet.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 21 Jan 2016 14:26:03 +0000</pubDate>
-    <lastBuildDate>Thu, 21 Jan 2016 14:26:03 +0000</lastBuildDate>
+    <pubDate>Mon, 25 Jan 2016 17:28:52 +0000</pubDate>
+    <lastBuildDate>Mon, 25 Jan 2016 17:28:52 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Don&#39;t Forget Metadata!</title>
+        <description>&lt;p&gt;I have many fond memories as a kid of our local libraries. I was fortunate to grow up a short walk away from
+what was at the time the &lt;a href=&quot;https://en.wikipedia.org/wiki/Birmingham_Central_Library&quot;&gt;largest non-national library in Europe&lt;/a&gt; 
+as well as a closer local library in a &lt;a href=&quot;https://en.wikipedia.org/wiki/Spring_Hill_Library&quot;&gt;grand
+red-brick Victorian building&lt;/a&gt;. 
+One of those memories is the card indexes. I loved the card index (yes,
+I was a metadata geek from an early age). Armed only with a question and some idea about keywords to 
+use you could riffle through wooden drawers full of pink, blue and beige cards and then wander off 
+to the stacks to find the answers. Magic stuff.&lt;/p&gt;
+
+&lt;p&gt;How does this translate when we are talking about data and datasets? Well, there are a number of existing 
+RDF ontologies that touch on the area of metadata, but probably the
+most well-known and widely used one for describing dataset metadata is &lt;a href=&quot;https://www.w3.org/TR/void/&quot;&gt;VoID&lt;/a&gt;.
+VoID provides you with the means to identify and describe datasets as well as to provide metadata
+ranging from contact and licensing information to example dataset resource URIs and patterns for accessing
+the content of the dataset.&lt;/p&gt;
+
+&lt;p&gt;The question is where to place this metadata? One obvious answer is to add the metadata in to 
+the RDF dataset that it describes. This is great for the user that has chosen to access that data; 
+but in this loose book/dataset analogy, metadata that is contained inside your dataset is equivalent to 
+that US Library of Congress metadata that you find inside the front cover of a book. &lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Dataset metadata should be the card index to all the open data you publish. 
+Without it being in a single central location, your users must aimlessly wander the shelves, pulling down dataset after 
+dataset in search of what they want.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;A better solution is to treat the metadata about datasets as a separate dataset in its own right. 
+Think of this as the downloadable / queryable card-index to your data library. Indeed the VoID recommendation
+goes as far as to &lt;a href=&quot;https://www.w3.org/TR/void/#discovery&quot;&gt;suggest&lt;/a&gt; that you use a “well-known” URL for the location of that dataset - sort of
+the equivalent of having your virtual card-index always just on the left as you come through the door (that was 
+the sound of an analogy getting pushed to breaking point).&lt;/p&gt;
+
+&lt;p&gt;Metadata management doesn’t have to be hard. Our &lt;a href=&quot;http://dataplatform.co.uk/&quot;&gt;Data Platform&lt;/a&gt; product has VoID 
+metadata management built-in so when you update the dataset the metadata stays in sync. But regardless of what 
+method you use to publish open data, it is important to recognize that your metadata is one of the key components
+to making your data discoverable.&lt;/p&gt;
+
+&lt;p&gt;Image by &lt;a href=&quot;http://www.flickr.com/photos/mamsy/&quot;&gt;http://www.flickr.com/photos/mamsy/&lt;/a&gt;, &lt;a href=&quot;http://creativecommons.org/licenses/by/2.0&quot;&gt;CC BY 2.0&lt;/a&gt;, via Wikimedia Commons&lt;/p&gt;
+</description>
+        <pubDate>Mon, 25 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://networkedplanet.com/blog/2016/01/25/dont-forget-metadata.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2016/01/25/dont-forget-metadata.html</guid>
+        
+        <category>open data</category>
+        
+        <category>metadata</category>
+        
+        <category>datasets</category>
+        
+        <category>VoID</category>
+        
+        
+      </item>
     
       <item>
         <title>Newsletter Issue 2 out now!</title>
@@ -37,24 +94,49 @@
         <description>&lt;p&gt;We are pleased to announce our second series of training webinars. Following on from the couple of successful webinars we presented
 last year, Season 2 of the NetworkedPlanet webinars is now three episodes long.&lt;/p&gt;
 
-&lt;p&gt;In the &lt;a href=&quot;https://www.eventbrite.co.uk/e/webinar-introduction-to-rdf-and-sparql-tickets-20856883500&quot;&gt;Introduction to RDF and SPARQL&lt;/a&gt;
-(4th Feb, 14:00-15:00 GMT) you will learn the technical fundamentals of linked open data. 
-This presentation focusses on the technical details of what exactly RDF is and how the SPARQL language allows you to query RDF data.&lt;/p&gt;
+&lt;div vocab=&quot;http://schema.org/&quot;&gt;
+&lt;div typeof=&quot;Event&quot;&gt;
+&lt;span property=&quot;description&quot;&gt;
+In the &lt;a href=&quot;https://www.eventbrite.co.uk/e/webinar-introduction-to-rdf-and-sparql-tickets-20856883500&quot; property=&quot;url&quot;&gt;&lt;span property=&quot;name&quot;&gt;Introduction to RDF and SPARQL&lt;/span&gt;&lt;/a&gt;
+(&lt;meta property=&quot;startDate&quot; content=&quot;2016-02-04T14:00:00Z&quot; /&gt;4th Feb, &lt;meta property=&quot;duration&quot; content=&quot;1H&quot; /&gt;14:00-15:00 GMT) you will learn the technical fundamentals of linked open data. 
+This presentation focusses on the technical details of what exactly RDF is and how the SPARQL language allows you to query RDF data.
+&lt;/span&gt;
+&lt;/div&gt;
 
-&lt;p&gt;The &lt;a href=&quot;https://www.eventbrite.co.uk/e/webinar-introduction-to-linked-data-tickets-20857152304&quot;&gt;Introduction to Linked Data&lt;/a&gt; 
-(18th Feb, 14:00-15:00 GMT) is a (mostly) non-technical presentation focussed on the what and why of Linked Data - what is Linked Data, what are 
+&lt;a class=&quot;btn btn-primary&quot; href=&quot;https://www.eventbrite.co.uk/e/webinar-introduction-to-rdf-and-sparql-tickets-20856883500&quot;&gt;Sign Up For RDF/SPARQL&lt;/a&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;div typeof=&quot;Event&quot;&gt;
+&lt;span property=&quot;description&quot;&gt;
+The &lt;a href=&quot;https://www.eventbrite.co.uk/e/webinar-introduction-to-linked-data-tickets-20857152304&quot; property=&quot;url&quot;&gt;&lt;span property=&quot;name&quot;&gt;Introduction to Linked Data&lt;/span&gt;&lt;/a&gt;
+(&lt;meta property=&quot;startDate&quot; content=&quot;2016-02-18T14:00:00Z&quot; /&gt;18th Feb, &lt;meta property=&quot;duration&quot; content=&quot;1H&quot; /&gt;14:00-15:00 GMT) is a (mostly) non-technical presentation focussed on the what and why of Linked Data - what is Linked Data, what are 
 the benefits of publishing and using Linked Data, what are the steps to take in publishing your own
-Linked Data either internally or externally.&lt;/p&gt;
+Linked Data either internally or externally.
+&lt;/span&gt;
+&lt;/div&gt;
 
-&lt;p&gt;Finally the &lt;a href=&quot;https://www.eventbrite.co.uk/e/webinar-sparql-101-tickets-20857308772&quot;&gt;SPARQL 101&lt;/a&gt; webinar (3rd March, 14:00-15:00 GMT) focusses on the SPARQL
+&lt;a class=&quot;btn btn-primary&quot; href=&quot;https://www.eventbrite.co.uk/e/webinar-introduction-to-linked-data-tickets-20857152304&quot;&gt;Sign Up For Linked Data&lt;/a&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;div typeof=&quot;Event&quot;&gt;
+&lt;span property=&quot;description&quot;&gt;
+The &lt;a href=&quot;https://www.eventbrite.co.uk/e/webinar-sparql-101-tickets-20857308772&quot; property=&quot;url&quot;&gt;&lt;span property=&quot;name&quot;&gt;SPARQL 101&lt;/span&gt;&lt;/a&gt; webinar 
+(&lt;meta property=&quot;startDate&quot; content=&quot;2016-03-03T14:00:00Z&quot; /&gt;3rd March, &lt;meta property=&quot;duration&quot; content=&quot;1H&quot; /&gt;14:00-15:00 GMT) focusses on the SPARQL
 query language for RDF. Building on what was learnt in the introduction webinar, this webinar goes into more detail about the query
 language and shows some examples of how to use SPARQL to explore datasets, extract salient information from them and create reports
-by aggregating data.&lt;/p&gt;
+by aggregating data.
+&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;a class=&quot;btn btn-primary&quot; href=&quot;https://www.eventbrite.co.uk/e/webinar-sparql-101-tickets-20857308772&quot;&gt;Sign Up For SPARQL 101&lt;/a&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;/div&gt;
 
 &lt;p&gt;All of these webinars will be an hour long, with about 45-50 minutes of presentation followed by some time for questions afterwards.
 The webinars will be presented by Kal Ahmed who in addition to being the founder of NetworkedPlanet is also the lead developer of &lt;a href=&quot;http://brightstardb.com/&quot;&gt;BrightstarDB&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;All of these webinars are FREE to attend, but places are limited - so be sure to register using the links above to assure your place!&lt;/p&gt;
+&lt;p&gt;These webinars are FREE to attend, but places are limited - so be sure to register using the links above to assure your place!&lt;/p&gt;
 
 &lt;p&gt;We are already planning Season 3 with possible additional episodes covering things such as &lt;a href=&quot;http://brightstardb.com/&quot;&gt;BrightstarDB&lt;/a&gt;;
 and the &lt;a href=&quot;http://dataplatform.co.uk/&quot;&gt;Data Platform&lt;/a&gt;. If you would like to get a heads-up on these
@@ -711,41 +793,6 @@ However, if you are not making any money from it and it’s just sitting in your
         <category>third sector</category>
         
         <category>charities</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Opening Up Your Data Shouldn&#39;t Cost The Earth</title>
-        <description>&lt;p&gt;An &lt;a href=&quot;http://www.scpr.org/news/2015/06/24/52343/how-much-do-open-data-portals-cost-so-cal-governme/&quot;&gt;interesting article by KPCC&lt;/a&gt; compares the varying cost of open data portals for different districts in Southern California. Two things draw some attention. First is the price - these data portals are not cheap to run, and in one case costs as much as $700 per 1000 residents. The second thing that draws some attention is the variance in cost which does not seem to be directly correlated with the number of datasets published. Ironically there is not much open data about the pricing of these open data portals. Tom Levine has done &lt;a href=&quot;https://thomaslevine.com/!/socrata-products/&quot;&gt;some stirling work&lt;/a&gt; in digging into the data that is available to attempt to determine just what sort of portal features each customer is using, as it is clearly these features that are the primary reason for the variance in pricing.&lt;/p&gt;
-
-&lt;p&gt;The authorities involved are certainly getting some great portals built, and obviously must feel that the cost to their taxpayers is fully justified. But surely it must be possible to publish open data without incurring costs that can run to hundreds of thousands of dollars per year ?  Here are our tips to publishing open data on a budget:&lt;/p&gt;
-
-&lt;h2 id=&quot;keep-it-simple-stupid&quot;&gt;Keep It Simple, Stupid&lt;/h2&gt;
-
-&lt;p&gt;It is tempting to go for the all-singing all-dancing fully featured data portal. But these features all add more development time and more cost to your solution. When the features are provided by a vendor they also tie you more closely to that vendor. Many of the Linked Open Data pioneers produce very simple, minimalist portals (take a look at the &lt;a href=&quot;http://bnb.data.bl.uk/doc/resource/009455497&quot;&gt;British Library’s BNB pages&lt;/a&gt; for example), but despite this minimalism, the data and the links provide real value. &lt;/p&gt;
-
-&lt;h2 id=&quot;you-dont-need-to-build-it-all&quot;&gt;You Don’t Need To Build It All&lt;/h2&gt;
-
-&lt;p&gt;A lot of the portals include snazzy visualizations and engaging interactivity allowing users to slice and dice and select data. However, by making your data open, and licensing it in a way that encourages independent development, it is equally possible to find that others are willing, and able to turn your raw data into a &lt;a href=&quot;http://findmeabook.herokuapp.com/&quot;&gt;useful application&lt;/a&gt; or a beautiful visualization.&lt;/p&gt;
-
-&lt;h2 id=&quot;avoid-data-lock-in&quot;&gt;Avoid Data Lock-In&lt;/h2&gt;
-
-&lt;p&gt;Whatever solution you use for publishing should be independent of the data you produce. This is where open data standards such as RDF play an important role. If you convert your data to a standard format such as RDF it is much easier to move data between platforms.&lt;/p&gt;
-
-&lt;h2 id=&quot;it-is-not-magic&quot;&gt;It Is Not Magic&lt;/h2&gt;
-
-&lt;p&gt;Most importantly, remember that no matter what the vendors tell you (us included!) if you can publish web pages, you can publish linked open data. True there are some technical differences and challenges; but this is true of all web publishing - no two projects are ever alike. But fundamentally you are taking data, converting it to a digestible form and putting it on the web. It’s not hard, and if done right you can have an inspirational, open data platform that you can be proud of for a fraction of the cost of a “data portal”.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 10 Aug 2015 00:00:00 +0100</pubDate>
-        <link>http://networkedplanet.com/blog/2015/08/10/opening-up-your-data.html</link>
-        <guid isPermaLink="true">http://networkedplanet.com/blog/2015/08/10/opening-up-your-data.html</guid>
-        
-        <category>linked data</category>
-        
-        <category>open data</category>
-        
-        <category>opinion</category>
         
         
       </item>

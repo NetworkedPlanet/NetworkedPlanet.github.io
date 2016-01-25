@@ -5653,6 +5653,10 @@ button.close {
   background-color: #fff;
   border: 1px solid #ccc; }
 
+.header-image {
+  margin-right: 1em;
+  margin-bottom: 0.5ex; }
+
 .navbar-brand {
   padding: 0px;
   padding-right: 40px; }
