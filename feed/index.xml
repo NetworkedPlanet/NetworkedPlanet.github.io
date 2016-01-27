@@ -5,8 +5,8 @@
     <description>Experts in Linked and Open Data Publishing</description>
     <link>http://networkedplanet.com/</link>
     <atom:link href="http://networkedplanet.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 26 Jan 2016 12:22:20 +0000</pubDate>
-    <lastBuildDate>Tue, 26 Jan 2016 12:22:20 +0000</lastBuildDate>
+    <pubDate>Wed, 27 Jan 2016 16:25:57 +0000</pubDate>
+    <lastBuildDate>Wed, 27 Jan 2016 16:25:57 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -94,7 +94,7 @@ to making your data discoverable.&lt;/p&gt;
 last year, Season 2 of the NetworkedPlanet webinars is now three episodes long.&lt;/p&gt;
 
 &lt;div vocab=&quot;http://schema.org/&quot;&gt;
-&lt;div typeof=&quot;Event&quot;&gt;
+&lt;div typeof=&quot;EducationEvent&quot;&gt;
 &lt;span property=&quot;description&quot;&gt;
 In the &lt;a href=&quot;https://www.eventbrite.co.uk/e/webinar-introduction-to-rdf-and-sparql-tickets-20856883500&quot; property=&quot;url&quot;&gt;&lt;span property=&quot;name&quot;&gt;Introduction to RDF and SPARQL&lt;/span&gt;&lt;/a&gt;
 (&lt;meta property=&quot;startDate&quot; content=&quot;2016-02-04T14:00:00Z&quot; /&gt;4th Feb, &lt;meta property=&quot;duration&quot; content=&quot;1H&quot; /&gt;14:00-15:00 GMT) you will learn the technical fundamentals of linked open data. 
@@ -105,7 +105,7 @@ This presentation focusses on the technical details of what exactly RDF is and h
 &lt;a class=&quot;btn btn-primary&quot; href=&quot;https://www.eventbrite.co.uk/e/webinar-introduction-to-rdf-and-sparql-tickets-20856883500&quot;&gt;Sign Up For RDF/SPARQL&lt;/a&gt;
 &lt;p&gt;&lt;/p&gt;
 
-&lt;div typeof=&quot;Event&quot;&gt;
+&lt;div typeof=&quot;EducationEvent&quot;&gt;
 &lt;span property=&quot;description&quot;&gt;
 The &lt;a href=&quot;https://www.eventbrite.co.uk/e/webinar-introduction-to-linked-data-tickets-20857152304&quot; property=&quot;url&quot;&gt;&lt;span property=&quot;name&quot;&gt;Introduction to Linked Data&lt;/span&gt;&lt;/a&gt;
 (&lt;meta property=&quot;startDate&quot; content=&quot;2016-02-18T14:00:00Z&quot; /&gt;18th Feb, &lt;meta property=&quot;duration&quot; content=&quot;1H&quot; /&gt;14:00-15:00 GMT) is a (mostly) non-technical presentation focussed on the what and why of Linked Data - what is Linked Data, what are 
@@ -117,9 +117,9 @@ Linked Data either internally or externally.
 &lt;a class=&quot;btn btn-primary&quot; href=&quot;https://www.eventbrite.co.uk/e/webinar-introduction-to-linked-data-tickets-20857152304&quot;&gt;Sign Up For Linked Data&lt;/a&gt;
 &lt;p&gt;&lt;/p&gt;
 
-&lt;div typeof=&quot;Event&quot;&gt;
+&lt;div typeof=&quot;EducationEvent&quot;&gt;
 &lt;span property=&quot;description&quot;&gt;
-The &lt;a href=&quot;https://www.eventbrite.co.uk/e/webinar-sparql-101-tickets-20857308772&quot; property=&quot;url&quot;&gt;&lt;span property=&quot;name&quot;&gt;SPARQL 101&lt;/span&gt;&lt;/a&gt; webinar 
+The &lt;a href=&quot;https://www.eventbrite.co.uk/e/webinar-sparql-101-tickets-20857308772&quot; property=&quot;url&quot;&gt;&lt;span property=&quot;name&quot;&gt;SPARQL 101&lt;/span&gt;&lt;/a&gt; webinar
 (&lt;meta property=&quot;startDate&quot; content=&quot;2016-03-10T14:00:00Z&quot; /&gt;10th March, &lt;meta property=&quot;duration&quot; content=&quot;1H&quot; /&gt;14:00-15:00 GMT) focusses on the SPARQL
 query language for RDF. Building on what was learnt in the introduction webinar, this webinar goes into more detail about the query
 language and shows some examples of how to use SPARQL to explore datasets, extract salient information from them and create reports

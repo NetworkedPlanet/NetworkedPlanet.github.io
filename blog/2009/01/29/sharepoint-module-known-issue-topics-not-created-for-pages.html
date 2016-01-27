@@ -7,20 +7,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>SharePoint Module Known Issue - Topics not created for Pages</title>
-    <meta name="description" content="Experts in Linked and Open Data Publishing">
+    <meta name="description" content="29 Jan 2009 - We recently received a bug report from one of our customers about the SharePoint Module not creating a topic when a n...">
+	<meta name="robots" content="NOODP">
 	
 	<!-- Twitter Summary Card  -->
 	
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:site" content="@nwplanet" />
 	<meta name="twitter:title" content="SharePoint Module Known Issue - Topics not created for Pages" />
-	<meta name="twitter:description" content="<p>We recently received a bug report from one of our customers about the SharePoint Module not creating a topic when a new page was created in a Page Library. Normally, topics are created whenever an item is added to a list using SharePoint’s ItemAdded event. However  in this case the ItemAdded event handler was failing and so the topic was not created. Further investigation revealed that the ItemAdded event handler was not receiving the correct event information - in particular the reference to the new list item was null. This means that our event handler cannot determine the identity of the new list item and so cannot create a topic.</p>
+	<meta name="twitter:description" content="We recently received a bug report from one of our customers about the SharePoint Module not creating a topic when a new page was created in a Page Library. Normally, topics are created whenever an item is added to a list using SharePoint’s ItemAdded event. However  in this case the ItemAdded event handler was failing and so the topic was not created. Further investigation revealed that the ItemAdded event handler was not receiving the correct event information - in particular the reference to the new list item was null. This means that our event handler cannot determine the identity of the new list item and so cannot create a topic.
 
 " />
 	
 	<!-- OpenGraph summary -->
 	<meta name="og:title" content="SharePoint Module Known Issue - Topics not created for Pages" />
-	<meta name="og:description" content="<p>We recently received a bug report from one of our customers about the SharePoint Module not creating a topic when a new page was created in a Page Library. Normally, topics are created whenever an item is added to a list using SharePoint’s ItemAdded event. However  in this case the ItemAdded event handler was failing and so the topic was not created. Further investigation revealed that the ItemAdded event handler was not receiving the correct event information - in particular the reference to the new list item was null. This means that our event handler cannot determine the identity of the new list item and so cannot create a topic.</p>
+	<meta name="og:description" content="We recently received a bug report from one of our customers about the SharePoint Module not creating a topic when a new page was created in a Page Library. Normally, topics are created whenever an item is added to a list using SharePoint’s ItemAdded event. However  in this case the ItemAdded event handler was failing and so the topic was not created. Further investigation revealed that the ItemAdded event handler was not receiving the correct event information - in particular the reference to the new list item was null. This means that our event handler cannot determine the identity of the new list item and so cannot create a topic.
 
 " />
 	
