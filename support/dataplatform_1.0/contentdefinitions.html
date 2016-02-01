@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Content Definitions &mdash; Data Platform Documentation 1.0.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Data Platform Documentation 1.0.0.0 documentation" href="index.html" />
+    <link rel="next" title="Custom Content Parts - Tutorial" href="customcontentparts.html" />
+    <link rel="prev" title="Movies Example" href="moviedata.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="content-definitions">
+<span id="content-defs"></span><h1>Content Definitions<a class="headerlink" href="#content-definitions" title="Permalink to this headline">¶</a></h1>
+<p>Content Definitions are used by Orchard CMS to build the display of different content types within the website. As Orchard is unaware of the different types of entities that can be contained within our datasets, we have introduced a mapping tool which hooks data of various types to content definitions that you can define within the admin panel.</p>
+<div class="section" id="creating-a-custom-content-definition">
+<h2>Creating a custom Content Definition<a class="headerlink" href="#creating-a-custom-content-definition" title="Permalink to this headline">¶</a></h2>
+<p>Navigate to the Orchard &#8220;Content Definition&#8221; section and click the &#8220;Create new type&#8221; button.</p>
+<p>Choose a name for the content definition, this also automatically creates a Content Type Id.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/contentdef1.png"><img alt="Create a new Orchard content definition" src="_images/contentdef1.png" style="width: 880.2px; height: 430.2px;" /></a>
+</div>
+</div>
+<div class="section" id="mapping-the-content-definition-to-a-data-entity">
+<h2>Mapping the content definition to a data entity<a class="headerlink" href="#mapping-the-content-definition-to-a-data-entity" title="Permalink to this headline">¶</a></h2>
+<p>After creating the content definition, you are redirected to the content parts selection screen. Here choose the &#8220;Data Platform Class Mapping&#8221; content part and then click Save.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/contentpartselection.png"><img alt="Add the Data Platform content part to the definition." src="_images/contentpartselection.png" style="width: 1152.0px; height: 690.3000000000001px;" /></a>
+</div>
+</div>
+<div class="section" id="setup-content-definition-properties">
+<h2>Setup content definition properties<a class="headerlink" href="#setup-content-definition-properties" title="Permalink to this headline">¶</a></h2>
+<p>Make sure to set these properies on the newly created content definition:</p>
+<ol class="arabic simple">
+<li>Deselect &#8220;Creatable&#8221;</li>
+<li>Deselect &#8220;Draftable&#8221;</li>
+<li>Expand the &#8220;Data Platform Class Mapping&#8221; and enter the full URI of the entity&#8217;s type (i.e. the value of the triple with the predicate <a class="reference external" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</a> )</li>
+<li>Click &#8220;Save&#8221;</li>
+</ol>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/contentdef_settings.png"><img alt="Set the properties on the content definition." src="_images/contentdef_settings.png" style="width: 1152.0px; height: 690.3000000000001px;" /></a>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Content Definitions</a><ul>
+<li><a class="reference internal" href="#creating-a-custom-content-definition">Creating a custom Content Definition</a></li>
+<li><a class="reference internal" href="#mapping-the-content-definition-to-a-data-entity">Mapping the content definition to a data entity</a></li>
+<li><a class="reference internal" href="#setup-content-definition-properties">Setup content definition properties</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="moviedata.html" title="previous chapter">Movies Example</a></li>
+      <li>Next: <a href="customcontentparts.html" title="next chapter">Custom Content Parts - Tutorial</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/contentdefinitions.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <div class="document"></div>
+
+  </body>
+</html>

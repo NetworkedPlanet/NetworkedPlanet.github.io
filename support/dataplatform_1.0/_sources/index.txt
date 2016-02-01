@@ -1,0 +1,36 @@
+.. Data Platform Documentation documentation master file, created by
+   sphinx-quickstart on Wed Mar 19 14:47:53 2014.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Data Platform Documentation
+=======================================================
+
+The Data Platform is developed by `Networked Planet <http://www.networkedplanet.com/>`_, a software company specialising in semantic data. Our Data Platform makes it incredibly easy for any company or organisation to host and describe datasets, with minimum fuss.
+
+The sections below outline the simple steps to set up the Data Platform, and there are links to more explanatory pages about the different features of the Data Platform.
+
+
+Table of Contents
+==================
+
+.. toctree::
+   :maxdepth: 2
+
+   System Requirements <prereq>
+   Installation of the Data Platform <installation>
+   main
+   datasets
+   querying
+   Example - A Movies Dataset <moviedata>
+   contentdefinitions
+   customcontentparts
+   troubleshooting
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+

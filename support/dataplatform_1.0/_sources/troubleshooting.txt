@@ -1,0 +1,54 @@
+=======================================================
+Troubleshooting
+=======================================================
+
+Uploading large files results in a blank page
+***********************************************
+
+Orchard CMS and .NET Web Applications set a limit on file uploads. To increase the maximumn allowed size, find the following section in the Web.Config file in the root of your Orchard website and edit as appropriate.
+
+	<security>
+		<requestFiltering>
+			<!-- Accept file uploads up to 64 MB. -->
+			<requestLimits maxAllowedContentLength="67108864" />
+		</requestFiltering>
+	</security>
+
+Datasets appear when a site is freshly created
+***********************************************
+
+The Data Platform will not delete any data stores automatically. If you have deleted an Orchard CMS site and then create a new one, when the Data Platform is installed it will check for the existence of a data store with the name **Data** and if found it will connect to it and any pre-existing datasets found within it.
+
+If you do not want to connect to the pre-existing store, you have two options:
+
+1. Delete the store manually from the server and then restart IIS and visit the main Data Platform page in Admin - this means the Data Platform will create a fresh store with no datasets within it.
+
+2. If using an embedded connection string for the connection to the BrightstarDB server - specify a new location for the stores directory.
+
+3. If using a REST connection string for the connection to the BrightstarDB server - set up a new server under a separate port in IIS and use the new address in the connection string.
+
+
+Datadump download file gets a 404 error
+***************************************
+
+Make sure that the web.config supplied in [[INSTALLDIR]]\\config\Download has been copied to the [[WEBROOT]]\\Download directory, and that the website IIS user has read and write access to the directory.
+
+Datadump download file gets a blank page
+***************************************
+
+Check to see that the N-Triples MIME type has been set in IIS for the website. The file extension is **.nt** and the MIME type is **application/n-triples**.
+
+.. figure:: /images/mimetype.png
+   :scale: 90 %
+   :alt: N-Triples MIME type
+   
+
+Check log files.
+***************************
+
+Always check the log files as a first step when troubleshooting - the problem is usually one of configuration set up incorrectly or another simple fix once the logs pinpoint the cause. 
+
+There are two main places to check for log files - the Orchard CMS logs (where entries from the Data Platform start with NetworkedPlanet.DataPlatform) or the BrightstarDB logs. 
+Please refer to the relevant online documentation for details about logging locations and how to change the level of logging. When troubleshooting it's advisable to adjust to DEBUG level, but as this produces a far higher output of logging it's not recommended for a standard setting on a production server.
+
+   

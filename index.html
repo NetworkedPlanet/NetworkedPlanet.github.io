@@ -66,6 +66,9 @@
 			<a class="page-scroll" href="#contact">Contact Us</a>
 		</li>
 		<li>
+			<a href="/support/">Support</a>
+		</li>
+		<li>
 			<a href="/blog/">Blog</a>
 		</li>
 	  </ul>
@@ -466,6 +469,12 @@ environment. BrightstarDB was created by the founders of NetworkedPlanet and is 
     $(document).ready(function() {
         $.cookieCuttr({cookieDeclineButton: true});
     });
+	$(window).on('activate.bs.scrollspy', function(e){
+		var matchLink = $("a[href^='#']", e.target);
+		if (matchLink.length) {
+			history.replaceState({}, "", matchLink.attr("href"));
+		}
+	});
     
     if (jQuery.cookie('cc_cookie_decline') == "cc_cookie_decline") {
         // do nothing

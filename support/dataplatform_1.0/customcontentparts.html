@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Custom Content Parts - Tutorial &mdash; Data Platform Documentation 1.0.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Data Platform Documentation 1.0.0.0 documentation" href="index.html" />
+    <link rel="next" title="Troubleshooting" href="troubleshooting.html" />
+    <link rel="prev" title="Content Definitions" href="contentdefinitions.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="custom-content-parts-tutorial">
+<h1>Custom Content Parts - Tutorial<a class="headerlink" href="#custom-content-parts-tutorial" title="Permalink to this headline">¶</a></h1>
+<p>You can create module projects to be included with your site; these projects contain custom content parts that can display segments of your data entities to display the data in different ways. This section shows you a full tutorial of how to create a module project containing a custom data display content part that can be packaged to include in your site.</p>
+<div class="section" id="create-a-module-project">
+<h2>Create a module project<a class="headerlink" href="#create-a-module-project" title="Permalink to this headline">¶</a></h2>
+<p>The first step is to create a project that will contain all the custom content parts for your site. On your development machine, ensure that the Orchard &#8220;Code Generation&#8221; module has been enabled. In windows explorer, navigate to the Orchard.Web root directory and select the &#8220;bin&#8221; folder. Shift-Right click on the folder and select &#8220;Open command window here&#8221;. This opens a command line window with the path already set to the Orchard.Web\bin folder.</p>
+<p>To start an Orchard command line, type:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">orchard</span><span class="o">.</span><span class="n">exe</span>
+</pre></div>
+</div>
+<p>You will be given the message &#8220;Initializing Orchard session...&#8221; Create a new module with the command:</p>
+<div class="highlight-python"><div class="highlight"><pre>codegen module [[Name of module]]
+</pre></div>
+</div>
+<p>Then open your solution and include the newly created project file (created in the Orchard.Web\Modules directory)</p>
+</div>
+<div class="section" id="modify-the-module-txt-file">
+<h2>Modify the module.txt file<a class="headerlink" href="#modify-the-module-txt-file" title="Permalink to this headline">¶</a></h2>
+<p>The most important amend to the generated module.txt file is to add a dependency to NetworkedPlanet.DataPlatform.Orchard. At the same time you can amend the name, description and other fields:</p>
+<div class="highlight-python"><div class="highlight"><pre>Name: Movie Content Parts
+AntiForgery: enabled
+Author: My organisation
+Website: http://www.myorganisation.net
+Version: 1.0
+OrchardVersion: 1.8
+Description: Adds custom content parts for movies to my Data Platform
+Dependencies: NetworkedPlanet.DataPlatform.Orchard
+Category: Data Publishing
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For the purposes of this walkthrough, we&#8217;ll use example data that contains information about movies. This content part will grab basic information about the movie (Release Date, Language, Official Website) and will be used on a page that will display movie information (the Movie resource has a <a class="reference internal" href="contentdefinitions.html#mapping"><span>Type set which has been mapped as explained earlier</span></a>).</p>
+</div>
+</div>
+<div class="section" id="create-a-model-for-this-content-part">
+<h2>1. Create a model for this Content Part<a class="headerlink" href="#create-a-model-for-this-content-part" title="Permalink to this headline">¶</a></h2>
+<p>The data that is displayed by the Content Part is stored in the BrightstarDB datastore rather than the Orchard CMS database, so we do not require a Content Record. However we still require a Content Part to drive the display, so we add a class named MovieAdditionalInfoPart.cs to the Models folder:</p>
+<div class="highlight-python"><div class="highlight"><pre>    public class MovieAdditionalInfoPart : ContentPart
+{
+
+    public DateTime ReleaseDate { get; set; }
+
+    public string Language { get; set; }
+
+    public string Duration { get; set; }
+
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-a-driver">
+<h2>2. Create a driver<a class="headerlink" href="#create-a-driver" title="Permalink to this headline">¶</a></h2>
+<p>Add a class named MovieAdditionalInfoDriver.cs to the Drivers folder (which you may need to create if the directory does not already exist):</p>
+<div class="highlight-python"><div class="highlight"><pre>public class MovieAdditionalInfoDriver : ContentPartDriver&lt;MovieAdditionalInfoPart&gt;
+{
+        private readonly IOrchardServices _orchardServices;
+        public ILogger Logger { get; set; }
+
+        public MovieAdditionalInfoDriver(IOrchardServices orchardServices)
+{
+    _orchardServices = orchardServices;
+}
+
+        protected override DriverResult Display(MovieAdditionalInfoPart part, string displayType, dynamic shapeHelper)
+        {
+
+        }
+}
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This driver does not need the Editor methods as this driver&#8217;s only purpose is to display data</p>
+</div>
+</div>
+<div class="section" id="add-project-references">
+<h2>3. Add project references<a class="headerlink" href="#add-project-references" title="Permalink to this headline">¶</a></h2>
+<p>Add two references to the DataPlatform assemblies by browsing to the bin directory of the Data Platform module and adding:</p>
+<blockquote>
+<div><ul class="simple">
+<li>NetworkedPlanet.DataPlatform.Orchard</li>
+<li>NetworkedPlanet.DataPlatform.ServiceInterface</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="add-code-to-the-driver">
+<h2>4. Add code to the driver<a class="headerlink" href="#add-code-to-the-driver" title="Permalink to this headline">¶</a></h2>
+<p>In the Display method, add the following to get the resource from HttpContext items:</p>
+<div class="highlight-python"><div class="highlight"><pre>var resourceModel = _orchardServices.WorkContext.HttpContext.Items[&quot;ResourceModel&quot;] as IStoreResource;
+if (resourceModel == null)
+{
+        Logger.Warning(&quot;No resource found for display&quot;);
+return null;
+}
+var releaseDate = ResourcePropertyHelper.GetDateTimeValue(resourceModel.Properties, &quot;http://schema.org/releaseDate&quot;);
+var language = ResourcePropertyHelper.GetStringValue(resourceModel.Properties, &quot;https://schema.org/inLanguage&quot;);
+var duration = ResourcePropertyHelper.GetStringValue(resourceModel.Properties, &quot;https://schema.org/duration&quot;);
+
+if(releaseDate != null) part.ReleaseDate = Convert.ToDateTime(releaseDate);
+part.Language = language;
+part.Duration = duration;
+
+return ContentShape(&quot;Parts_MovieAdditionalInfo&quot;,
+                        () =&gt; shapeHelper.Parts_MovieAdditionalInfo(Part: part));
+</pre></div>
+</div>
+</div>
+<div class="section" id="define-the-content-part-in-the-orchard-data-migrations-file">
+<h2>5. Define the Content Part in the Orchard Data Migrations file<a class="headerlink" href="#define-the-content-part-in-the-orchard-data-migrations-file" title="Permalink to this headline">¶</a></h2>
+<p>Create a new class named Migrations in the root of your project and inherit from DataMigrationImpl. We then add a definition that will allow this Content Part to be attachable to any Content Definition that is created in the Orchard CMS:</p>
+<div class="highlight-python"><div class="highlight"><pre>    public class Migrations : DataMigrationImpl
+{
+    public int Create()
+    {
+        ContentDefinitionManager.AlterPartDefinition(&quot;MovieAdditionalInfoPart&quot;, cfg =&gt; cfg
+           .Attachable()
+           .WithDescription(&quot;Displays release date, duration and language of the loaded movie resource&quot;));
+
+        return 1;
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-a-view">
+<h2>6. Add a view<a class="headerlink" href="#add-a-view" title="Permalink to this headline">¶</a></h2>
+<p>Create a file named MovieAdditionalInfo.cshtml in Views/Parts.:</p>
+<div class="highlight-python"><div class="highlight"><pre>    &lt;section id=&quot;movie-add-info&quot;&gt;
+@{
+    if (Model.Part != null)
+    {
+        &lt;dl&gt;
+            &lt;dt&gt;Release Date&lt;/dt&gt;
+                @if (Model.Part.ReleaseDate != null)
+                {
+                    &lt;dd&gt;@Model.Part.ReleaseDate&lt;/dd&gt;
+                }
+                else
+                {
+                    &lt;dd&gt;Unknown&lt;/dd&gt;
+                }
+            &lt;dt&gt;Language&lt;/dt&gt;
+                @if (!string.IsNullOrEmpty(Model.Part.Language))
+                {
+                    &lt;dd&gt;@Model.Part.Language&lt;/dd&gt;
+                }
+                else
+                {
+                    &lt;dd&gt;Unknown&lt;/dd&gt;
+                }
+            &lt;dt&gt;Duration&lt;/dt&gt;
+                @if (!string.IsNullOrEmpty(Model.Part.Duration))
+                {
+                    &lt;dd&gt;@Model.Part.Duration&lt;/dd&gt;
+                }
+                else
+                {
+                    &lt;dd&gt;Unknown&lt;/dd&gt;
+                }
+        &lt;/dl&gt;
+    }
+}
+
+    &lt;/section&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-the-placement">
+<h2>6. Set the Placement<a class="headerlink" href="#set-the-placement" title="Permalink to this headline">¶</a></h2>
+<p>Create a file named Placement.info in the root of the module project and add the following:</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;Placement&gt;
+  &lt;Place Parts_MovieAdditionalInfo=&quot;Content:5&quot;/&gt;
+&lt;/Placement&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="enable-the-module">
+<h2>7. Enable the module<a class="headerlink" href="#enable-the-module" title="Permalink to this headline">¶</a></h2>
+<p>Build and run your site solution to view your development site. Navigate to the Modules section and enable the module which can be found in the Data Publishing section.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/customcontentparts_enable.png"><img alt="Enable the module" src="_images/customcontentparts_enable.png" style="width: 600px;" /></a>
+</div>
+</div>
+<div class="section" id="add-part-to-content-definitions">
+<h2>7. Add part to content definitions<a class="headerlink" href="#add-part-to-content-definitions" title="Permalink to this headline">¶</a></h2>
+<p>You can now add the Content Part to content definitions you created in the previous section, <a class="reference internal" href="contentdefinitions.html#content-defs"><span>Content Definitions</span></a>.</p>
+<p>Navigate to the Content Definitions and click edit on the definition you want to add the part to. Select &#8220;Add Parts&#8221; and select the Sampling Point part from the list, then hit Save.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/contentdef_samplingpartsettings.png"><img alt="Set the correct predicates in the Sampling Point Part Settings" src="_images/contentdef_samplingpartsettings.png" style="width: 600px;" /></a>
+</div>
+<p>If you are unsure of the predicates and/or the full URI of the reference dataset, you can use the BrightstarDB explorer tool, Polaris, to query the data and find the correct values.</p>
+<p>Now any resources with the class matched in the &#8220;Data Platform Class Mapping&#8221; of the content definition, will display the Sampling Point content part to the user.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Custom Content Parts - Tutorial</a><ul>
+<li><a class="reference internal" href="#create-a-module-project">Create a module project</a></li>
+<li><a class="reference internal" href="#modify-the-module-txt-file">Modify the module.txt file</a></li>
+<li><a class="reference internal" href="#create-a-model-for-this-content-part">1. Create a model for this Content Part</a></li>
+<li><a class="reference internal" href="#create-a-driver">2. Create a driver</a></li>
+<li><a class="reference internal" href="#add-project-references">3. Add project references</a></li>
+<li><a class="reference internal" href="#add-code-to-the-driver">4. Add code to the driver</a></li>
+<li><a class="reference internal" href="#define-the-content-part-in-the-orchard-data-migrations-file">5. Define the Content Part in the Orchard Data Migrations file</a></li>
+<li><a class="reference internal" href="#add-a-view">6. Add a view</a></li>
+<li><a class="reference internal" href="#set-the-placement">6. Set the Placement</a></li>
+<li><a class="reference internal" href="#enable-the-module">7. Enable the module</a></li>
+<li><a class="reference internal" href="#add-part-to-content-definitions">7. Add part to content definitions</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="contentdefinitions.html" title="previous chapter">Content Definitions</a></li>
+      <li>Next: <a href="troubleshooting.html" title="next chapter">Troubleshooting</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/customcontentparts.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <div class="document"></div>
+
+  </body>
+</html>
