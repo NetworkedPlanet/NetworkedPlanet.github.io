@@ -120,7 +120,7 @@
 
 <h2 id="keep-it-simple-stupid">Keep It Simple, Stupid</h2>
 
-<p>It is tempting to go for the all-singing all-dancing fully featured data portal. But these features all add more development time and more cost to your solution. When the features are provided by a vendor they also tie you more closely to that vendor. Many of the Linked Open Data pioneers produce very simple, minimalist portals (take a look at the <a href="http://bnb.data.bl.uk/doc/resource/009455497">British Library’s BNB pages</a> for example), but despite this minimalism, the data and the links provide real value.</p>
+<p>It is tempting to go for the all-singing all-dancing fully featured data portal. But these features all add more development time and more cost to your solution. When the features are provided by a vendor they also tie you more closely to that vendor. Many of the Linked Open Data pioneers produce very simple, minimalist portals (take a look at the <a href="http://bnb.data.bl.uk/doc/resource/009455497">British Library’s BNB pages</a> for example), but despite this minimalism, the data and the links provide real value. </p>
 
 <h2 id="you-dont-need-to-build-it-all">You Don’t Need To Build It All</h2>
 
@@ -232,9 +232,7 @@
     })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 		 ga('create', 'UA-770913-1', 'auto', { 'allowLinker': true });
 		ga('require', 'linker');
-		ga('linker:autoLink', ['testing.networkedplanet.com']);
-		ga('linker:autoLink', ['levelup.networkedplanet.com']);
-		ga('linker:autoLink', ['support.networkedplanet.com']);
+		ga('linker:autoLink', ['levelup.networkedplanet.com', 'testing.networkedplanet.com', 'support.networkedplanet.com']);
 		ga('send', 'pageview');
 		
     }

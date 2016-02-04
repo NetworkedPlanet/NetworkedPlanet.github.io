@@ -5,8 +5,8 @@
     <description>Experts in Linked and Open Data Publishing</description>
     <link>http://networkedplanet.com/</link>
     <atom:link href="http://networkedplanet.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 01 Feb 2016 15:16:19 +0000</pubDate>
-    <lastBuildDate>Mon, 01 Feb 2016 15:16:19 +0000</lastBuildDate>
+    <pubDate>Thu, 04 Feb 2016 12:20:22 +0000</pubDate>
+    <lastBuildDate>Thu, 04 Feb 2016 12:20:22 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -30,7 +30,7 @@ the content of the dataset.&lt;/p&gt;
 &lt;p&gt;The question is where to place this metadata? One obvious answer is to add the metadata in to 
 the RDF dataset that it describes. This is great for the user that has chosen to access that data; 
 but in this loose book/dataset analogy, metadata that is contained inside your dataset is equivalent to 
-that US Library of Congress metadata that you find inside the front cover of a book.&lt;/p&gt;
+that US Library of Congress metadata that you find inside the front cover of a book. &lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Dataset metadata should be the card index to all the open data you publish. 
@@ -68,7 +68,7 @@ to making your data discoverable.&lt;/p&gt;
     
       <item>
         <title>Newsletter Issue 2 out now!</title>
-        <description>&lt;p&gt;The second issue of our email newsletter has hit the &lt;a href=&quot;http://networkedplanet.us11.list-manage.com/subscribe?u=62daac7ae19a90ef03ea3bd42&amp;amp;id=a797a2dd15&quot;&gt;mailing list&lt;/a&gt; inboxes.&lt;/p&gt;
+        <description>&lt;p&gt;The second issue of our email newsletter has hit the &lt;a href=&quot;http://networkedplanet.us11.list-manage.com/subscribe?u=62daac7ae19a90ef03ea3bd42&amp;amp;id=a797a2dd15&quot;&gt;mailing list&lt;/a&gt; inboxes. &lt;/p&gt;
 
 &lt;p&gt;We chat about our new short animation about Linked Open Data, our 3-part free webinar series where you can learn all about the fundamental technologies of Linked Data, our upcoming online CSV converter - “Level Up”, new product releases and interesting reports from the wider Web of Linked and Open Data.&lt;/p&gt;
 
@@ -162,7 +162,7 @@ future webinars when they are announced, &lt;a href=&quot;https://twitter.com/nw
 needs to be kept secure (such as personal information) through data that is shared between
 partner organisations all the way to data that is made available to all to use and reuse.&lt;/p&gt;
 
-&lt;p&gt;This nice, short video from the ODI explains the concepts of Closed, Shared and Open data.&lt;/p&gt;
+&lt;p&gt;This nice, short video from the ODI explains the concepts of Closed, Shared and Open data. &lt;/p&gt;
 
 &lt;iframe src=&quot;https://player.vimeo.com/video/125783029&quot; width=&quot;500&quot; height=&quot;281&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 &lt;p&gt;&lt;a href=&quot;https://vimeo.com/125783029&quot;&gt;Open / Shared / Closed: The world of data&lt;/a&gt; from &lt;a href=&quot;https://vimeo.com/theodiuk&quot;&gt;Open Data Institute&lt;/a&gt; on &lt;a href=&quot;https://vimeo.com&quot;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
@@ -608,13 +608,13 @@ SELECT ?txn, ?time, ?server WHERE {
 
 &lt;h3 id=&quot;making-open-data-suck-less&quot;&gt;Making Open Data Suck Less&lt;/h3&gt;
 
-&lt;p&gt;With a provocative title for a pitch, Chris Gutteridge led a session towards the end of day one aimed at trying to improve the quality of Open Data. There were quite a few laughs to be had whilst people threw in their pet hates, and then very interesting discussions about what we could do to help alleviate them. Common problems were the publishing of “open” data in custom file formats, having to get through download forms to get to the data and bad data itself (e.g. a column of measurements that change whether it was recorded in mm or inches, sometimes using only numerals). As the session wrapped up it was great to hear solutions being thrashed out - such as suggestions for content of documentation (giving a better description of the data itself and links to learn more about it, what format is the data in? does it require a special program? is there a free version of the program if so?). Another good suggestion was a central wiki-style encyclopedia, an idea tempered by the need for that to be managed and someone’s responsibility. However, Amanda from &lt;a href=&quot;http://theodi.org/&quot;&gt;the ODI&lt;/a&gt; did mention that it was an idea that kept coming up and so I look forward to hearing more from them about it.&lt;/p&gt;
+&lt;p&gt;With a provocative title for a pitch, Chris Gutteridge led a session towards the end of day one aimed at trying to improve the quality of Open Data. There were quite a few laughs to be had whilst people threw in their pet hates, and then very interesting discussions about what we could do to help alleviate them. Common problems were the publishing of “open” data in custom file formats, having to get through download forms to get to the data and bad data itself (e.g. a column of measurements that change whether it was recorded in mm or inches, sometimes using only numerals). As the session wrapped up it was great to hear solutions being thrashed out - such as suggestions for content of documentation (giving a better description of the data itself and links to learn more about it, what format is the data in? does it require a special program? is there a free version of the program if so?). Another good suggestion was a central wiki-style encyclopedia, an idea tempered by the need for that to be managed and someone’s responsibility. However, Amanda from &lt;a href=&quot;http://theodi.org/&quot;&gt;the ODI&lt;/a&gt; did mention that it was an idea that kept coming up and so I look forward to hearing more from them about it. &lt;/p&gt;
 
 &lt;h3 id=&quot;unkeynotes&quot;&gt;Unkeynotes&lt;/h3&gt;
 
 &lt;p&gt;Completely unplanned, there were two pitches that had such interest from everyone attending that the organisers helpfully did not place anyone else’s pitches at the same time. On day one it was bums on seats for a talk from Paul Maltby, Director of Data from the Cabinet Office. He gave an impassioned overview of the plans he and his team have to improve the way data is handled within the Cabinet Office. It will be interesting to keep track of the progress they make over the next year or so and whether the good intentions turn into published datasets.&lt;/p&gt;
 
-&lt;p&gt;John Murray’s session on spatial analysis queries led into a interesting discussions on personal perception of “place”, and on to who really “owns” addresses. As time ran out, this prompted a pitch for more on the debate - turning into day two’s unkeynote from Bob Barr with the full rundown “Address Wars” history. I can’t possibly summarise it all here, but we can only hope that &lt;a href=&quot;https://alpha.openaddressesuk.org/blog/2015/07/27/a-time-for-going-to-bed&quot;&gt;Open Addresses gets another boost to continue the amazing work they started&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;John Murray’s session on spatial analysis queries led into a interesting discussions on personal perception of “place”, and on to who really “owns” addresses. As time ran out, this prompted a pitch for more on the debate - turning into day two’s unkeynote from Bob Barr with the full rundown “Address Wars” history. I can’t possibly summarise it all here, but we can only hope that &lt;a href=&quot;https://alpha.openaddressesuk.org/blog/2015/07/27/a-time-for-going-to-bed&quot;&gt;Open Addresses gets another boost to continue the amazing work they started&lt;/a&gt;. &lt;/p&gt;
 
 &lt;h3 id=&quot;its-important-to-demystify-rdf&quot;&gt;It’s important to demystify RDF&lt;/h3&gt;
 
@@ -677,7 +677,7 @@ future webinars when they are announced, &lt;a href=&quot;https://twitter.com/nw
     
       <item>
         <title>Newsletter Issue 1 out now!</title>
-        <description>&lt;p&gt;The first issue of our email newsletter is out!&lt;/p&gt;
+        <description>&lt;p&gt;The first issue of our email newsletter is out! &lt;/p&gt;
 
 &lt;p&gt;Find out about our webinar series on Linked Data technologies, our Data Platform for publishing data both internally to your organisation or externally as Open Data, the Open Data Institute, new product releases and interesting reports from the wider Web of Linked and Open Data.&lt;/p&gt;
 
@@ -701,7 +701,7 @@ future webinars when they are announced, &lt;a href=&quot;https://twitter.com/nw
         <title>Data Platform 1.0 Released</title>
         <description>&lt;p&gt;&lt;img src=&quot;/assets/images/blog/dataplatform_logo_600.png&quot; alt=&quot;Data Platform Logo&quot; class=&quot;img-medium center-block img-responsive&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;We are delighted to announce the 1.0 release of the &lt;a href=&quot;http://dataplatform.co.uk/&quot;&gt;Data Platform&lt;/a&gt;. The Data Platform fulfils the need of an easy-to-use interface for managing and publishing datasets, without limiting the number of datasets or requests to the data you publish, and publishing standards-compliant, 5-star Linked Open Data.&lt;/p&gt;
+&lt;p&gt;We are delighted to announce the 1.0 release of the &lt;a href=&quot;http://dataplatform.co.uk/&quot;&gt;Data Platform&lt;/a&gt;. The Data Platform fulfils the need of an easy-to-use interface for managing and publishing datasets, without limiting the number of datasets or requests to the data you publish, and publishing standards-compliant, 5-star Linked Open Data. &lt;/p&gt;
 
 &lt;p&gt;Every organisation is different when it comes to managing the data they hold, here at NetworkedPlanet we can chat with you about the different types of data you manage, identify which parts are suitable for publishing as Open Data and outline the best processes to implement so that your organisation can be linked into the Web of Data.&lt;/p&gt;
 
@@ -730,23 +730,23 @@ future webinars when they are announced, &lt;a href=&quot;https://twitter.com/nw
     
       <item>
         <title>Sharing Data In The Third Sector</title>
-        <description>&lt;p&gt;Last week &lt;a href=&quot;http://bristol.girlgeekdinners.com/&quot;&gt;Bristol Girl Geek Dinners&lt;/a&gt; hosted another fantastic evening for nerds in the heart of Bristol. This month they brought Emma Prest of &lt;a href=&quot;http://www.datakind.org/chapters/datakind-uk/&quot;&gt;DataKind UK&lt;/a&gt; over from London to talk about their work. The first time I’d heard of DataKind was when BGG had published their event information, so I did some reading up on them.&lt;/p&gt;
+        <description>&lt;p&gt;Last week &lt;a href=&quot;http://bristol.girlgeekdinners.com/&quot;&gt;Bristol Girl Geek Dinners&lt;/a&gt; hosted another fantastic evening for nerds in the heart of Bristol. This month they brought Emma Prest of &lt;a href=&quot;http://www.datakind.org/chapters/datakind-uk/&quot;&gt;DataKind UK&lt;/a&gt; over from London to talk about their work. The first time I’d heard of DataKind was when BGG had published their event information, so I did some reading up on them. &lt;/p&gt;
 
 &lt;h2 id=&quot;data-dive-events-for-charities&quot;&gt;Data Dive events for charities&lt;/h2&gt;
 
 &lt;p&gt;DataKind bring together charities and data science volunteers at hackathon style “Data Dives”. They work with the charities in the lead up to the event to set out clear goals and prep, then over the course of a weekend DataKind brings together all the volunteers and everyone works together to achieve those goals. Needless to say I was really looking forward to hearing what Emma had to say about it all and I wasn’t disappointed.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;What a great idea!&lt;/em&gt; People with different specialisations coming together as a community for the social good is one I can utterly get behind. Charities collect a LOT of data about their cause - in order to show the social impacts of the problem and to try and better understand it to try and help eradicate the problem once and for all. Having these Data Dives gives the chance to look at this data in new and interesting ways, compare it to other datasets from overlapping sectors and see what new insights might be made.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;What a great idea!&lt;/em&gt; People with different specialisations coming together as a community for the social good is one I can utterly get behind. Charities collect a LOT of data about their cause - in order to show the social impacts of the problem and to try and better understand it to try and help eradicate the problem once and for all. Having these Data Dives gives the chance to look at this data in new and interesting ways, compare it to other datasets from overlapping sectors and see what new insights might be made. &lt;/p&gt;
 
 &lt;p&gt;Of course my personal enthusiasm is with ongoing data collaboration by publishing datasets, and so a lot of my questions and conversations during the evening did tend to drift towards Open Data. As always though, when talking about Linked Open Data and charities in the same conversation I ran into a particular bugbear of mine. The fact that organisations are very dubious about actually publishing that data as raw datasets. Now, when I hear that from commercial enterprises I actually have more patience than when I hear it from charities, even though the answers are the same. It really irks me. Gets my goat. Bothers me. I was having trouble unpicking why this is so here are my thoughts on it:&lt;/p&gt;
 
 &lt;h2 id=&quot;why-the-reluctance-to-publish-open-data&quot;&gt;Why the reluctance to publish Open Data?&lt;/h2&gt;
 
-&lt;p&gt;First off, and let’s get this out of the way early, I’m not talking here about &lt;strong&gt;personal&lt;/strong&gt; data or any data that could be linked to an individual. I’m talking about completely anonymised data that’s used by that charity to show that the problem exists, that it has knock on effects and that the work the charity does helps with the problem. Other charities (especially the smaller ones working at a more localised level with far less funds) will also find that information &lt;em&gt;incredibly useful&lt;/em&gt; and will be able to better help people in turn. Those smaller charities also collect data that they could publish themselves and then all the charities in that sector can start looking across those datasets to see trends and what’s helping or exacerbating the problem.&lt;/p&gt;
+&lt;p&gt;First off, and let’s get this out of the way early, I’m not talking here about &lt;strong&gt;personal&lt;/strong&gt; data or any data that could be linked to an individual. I’m talking about completely anonymised data that’s used by that charity to show that the problem exists, that it has knock on effects and that the work the charity does helps with the problem. Other charities (especially the smaller ones working at a more localised level with far less funds) will also find that information &lt;em&gt;incredibly useful&lt;/em&gt; and will be able to better help people in turn. Those smaller charities also collect data that they could publish themselves and then all the charities in that sector can start looking across those datasets to see trends and what’s helping or exacerbating the problem. &lt;/p&gt;
 
 &lt;p&gt;Not only does this mean that researchers and data scientists could look across the datasets supplied by charities from different sectors and ask new questions that wasn’t possible when the data was kept closed off, it also means that charities of all sizes can avoid wasting time and money duplicating analysis and research that has already been done.&lt;/p&gt;
 
-&lt;p&gt;The potential benefits of sharing data are really not difficult to see. So why the reluctance to publish all that raw data? One statement uttered last night has been ringing round my head “&lt;strong&gt;charities are in competition with each other&lt;/strong&gt;”.&lt;/p&gt;
+&lt;p&gt;The potential benefits of sharing data are really not difficult to see. So why the reluctance to publish all that raw data? One statement uttered last night has been ringing round my head “&lt;strong&gt;charities are in competition with each other&lt;/strong&gt;”. &lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/blog/seagulls_mine.gif&quot; alt=&quot;Animated gif of the seagulls from Finding Nemo standing on a rock in the sea all shouting &amp;quot;Mine!&amp;quot;&quot; class=&quot;img-medium center-block img-responsive&quot; /&gt;&lt;/p&gt;
 
@@ -773,7 +773,7 @@ However, if you are not making any money from it and it’s just sitting in your
 
 &lt;h3 id=&quot;people-arent-coming-to-us-for-the-information&quot;&gt;4. “People aren’t coming to &lt;em&gt;us&lt;/em&gt; for the information.”&lt;/h3&gt;
 
-&lt;p&gt;Firstly, someone &lt;strong&gt;is&lt;/strong&gt; still coming to you for the information - the developers. Secondly, your data isn’t static, you need to collect it over time and it’s up to you whether you release new data every hour, day, week, month or even year! Meaning that people &lt;em&gt;are&lt;/em&gt; coming back to you for the information - it’s just in a different format than you’re used to.&lt;/p&gt;
+&lt;p&gt;Firstly, someone &lt;strong&gt;is&lt;/strong&gt; still coming to you for the information - the developers. Secondly, your data isn’t static, you need to collect it over time and it’s up to you whether you release new data every hour, day, week, month or even year! Meaning that people &lt;em&gt;are&lt;/em&gt; coming back to you for the information - it’s just in a different format than you’re used to. &lt;/p&gt;
 
 &lt;h2 id=&quot;final-thoughts&quot;&gt;Final thoughts&lt;/h2&gt;
 

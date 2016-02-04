@@ -134,7 +134,7 @@
 
 <p>If you have code that uses the TMCore Web Service by binding directly to the WSDL files that came with TMCore05, your code should require no changes - we kept all of the operations in TMCore05 in the transition to TMCore07, however we have added some new features and if you use the Web Servie to perform updates on a topic map I would definitely recommend that you look at the new ProcessTransaction method. We have also made a significant change to the way that queries invoked through the Query method on the Web Service are configured and processed - again we strongly recommend that you look into this and update your Web.config file for the Web Service if you have some customised queries defined in it. If you wrote web service client code using the serviceclient.dll assembly however you will need to recompile and possibly to modify your code a little - we took the opportunity of TMCore07 to tidy up the class structure in serviceclient.dll a little and to add some new features and convenience methods (which you may want to look into if you are updating your code anyway).</p>
 
-<p>The TMCore TMRQL views and stored procedures in TMCore05 are also unchanged in TMCore07 so queries that worked against TMCore05 databases should return the same results when run against TMCore07. Although the script has expanded quite a lot, many of the additions are private stored procedures that are currently used by the web service ProcessTransaction operation. We can’t stress enough that you should NEVER rely on these stored procedures being stable from one release of TMCore to the next and that therefore you should NEVER make use of them in your own code or queries. If the stored procedure or view name starts with the prefix “tm_” (or “TM_”), it is a public part of the TMRQL spec and will remain constant at least for this major version of TMCore. Anything in the database that starts with “_tm” or “_TM” or indeed with any other characters, should be treated as private and prone to change or removal in any forthcoming minor release.</p>
+<p>The TMCore TMRQL views and stored procedures in TMCore05 are also unchanged in TMCore07 so queries that worked against TMCore05 databases should return the same results when run against TMCore07. Although the script has expanded quite a lot, many of the additions are private stored procedures that are currently used by the web service ProcessTransaction operation. We can’t stress enough that you should NEVER rely on these stored procedures being stable from one release of TMCore to the next and that therefore you should NEVER make use of them in your own code or queries. If the stored procedure or view name starts with the prefix “tm<em>” (or “TM</em>”), it is a public part of the TMRQL spec and will remain constant at least for this major version of TMCore. Anything in the database that starts with “_tm” or “_TM” or indeed with any other characters, should be treated as private and prone to change or removal in any forthcoming minor release.</p>
 
 <p>OK, thats enough for you upgraders. Lets join the newbies and see what is worth getting excited about in TMCore07.</p>
 
@@ -336,9 +336,7 @@ This has been a quick tour around the major new features of TMCore. We will have
     })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 		 ga('create', 'UA-770913-1', 'auto', { 'allowLinker': true });
 		ga('require', 'linker');
-		ga('linker:autoLink', ['testing.networkedplanet.com']);
-		ga('linker:autoLink', ['levelup.networkedplanet.com']);
-		ga('linker:autoLink', ['support.networkedplanet.com']);
+		ga('linker:autoLink', ['levelup.networkedplanet.com', 'testing.networkedplanet.com', 'support.networkedplanet.com']);
 		ga('send', 'pageview');
 		
     }
