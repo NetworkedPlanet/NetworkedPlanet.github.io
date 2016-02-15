@@ -5,9 +5,64 @@
     <description>Experts in Linked and Open Data Publishing</description>
     <link>http://networkedplanet.com/</link>
     <atom:link href="http://networkedplanet.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 04 Feb 2016 12:20:22 +0000</pubDate>
-    <lastBuildDate>Thu, 04 Feb 2016 12:20:22 +0000</lastBuildDate>
+    <pubDate>Mon, 15 Feb 2016 12:09:15 +0000</pubDate>
+    <lastBuildDate>Mon, 15 Feb 2016 12:09:15 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Level Up Your Data!</title>
+        <description>&lt;p&gt;There is a lot of buzz around the term “open data” at the moment, and rightly so! As more and more organisations open up their data, it builds a data-ecosystem of creative opportunities that are simply not possible when said data is locked away in private silos. There are &lt;a href=&quot;http://www.opendataenterprise.org/map/viz/index.html&quot;&gt;more and more cases being highlighted&lt;/a&gt; that show the power of open data, even more fantastic when you realise that the stories you hear about will only ever be a fraction of what is really using open data - data, by its very nature, is a behind-the-scenes kind of deal, and you most likely make use of it every data without being aware of it. &lt;/p&gt;
+
+&lt;p&gt;If you’ve been reading about open data you’ve most likely heard of &lt;a href=&quot;http://5stardata.info/en/&quot;&gt;Sir Tim Berners-Lee’s deployment scheme for open data&lt;/a&gt;. In short, &lt;em&gt;any&lt;/em&gt; data you release on the web under an open license is open data - anything! But it’s easy to see that whilst a PDF report released as open data might be useful for someone to read, it’s going to make someone’s job a LOT tougher if they want to build on the data contained within it in any useful way. &lt;/p&gt;
+
+&lt;p&gt;The differences between the subsequent levels follows exactly the same reasoning - an excel spreadsheet is a more structured way of presenting the data of the PDF report, which makes it more re-usable by the people who come to reuse it, but we’re still dealing with a propriatary format. The obvious next step is to convert that data to a non-propriatary format of structured data like CSV. Now you raw data on the web in a format that everyone can use - and we arrive at 3 star open data.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/levelup/5-star-steps.png&quot; alt=&quot;5 star open data&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Hang on, doesn’t this show 5 levels of open data?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Why yes! Yes it does! In the same way that CSV is by far an easier format to work with data than PDF, linked open data is another two steps “easier” to work with by formatting it as semantic data rather. What do I mean by semantic data? Well, instead of having tables and rows of values (that require a human to “know” what the table represents), we instead structure that data in a way that demonstrates that each of those records is a “Thing”; that Thing has a bunch of properties (such as length, name, colour, author - anything) and we follow the convention of each Thing having an identifier that is a URI. When you structure your data in this way it is luscious 4 star data, and if you choose to publish it under an open license and link those Things to other Things - wooo! 5 star open data!&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;You lost me at “semantic”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Ah yes, well, you’re not alone! Many people find it a difficult concept to grasp, I suspect this is one of the major reasons why so many organisations that publish open data find themselves stuck at the 3-star level. Whilst it can &lt;em&gt;feel&lt;/em&gt; like a big difference, the actual work taken to Level Up from 3-star to 4-star (and thereby making it possible to reach 5-star) is actually very small. By far the largest chunk of work in &lt;em&gt;any&lt;/em&gt; data publishing process is to clean the initial data and structure it well so that it can be published - this must be done even with CSV files (no one thanks you for “data fly tipping”). The bulk of the work is already done - a very small step is all that’s needed to take that CSV and make it delicious, addressable, RDF goodness.&lt;/p&gt;
+
+&lt;p&gt;Here at NetworkedPlanet we’ve been working with companies to semantically empower their data for over ten years, so we have learnt a few things along the way! One of which is that if you can see a way of future-proofing your tech development, and it’s within your means to do so, then do it! After chatting with people about linked data a pattern emerged and I noticed that people were getting bogged down in the psychology of semantic information architecture, and missed how simple the difference between CSV and RDF really is. &lt;a href=&quot;http://levelup.networkedplanet.com&quot;&gt;So we wrote an online converter to show you all how to get going&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/levelup/start_sm.png&quot; alt=&quot;Drag and drop CSV files to start the Level Up process&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It’s super simple - just drag and drop a CSV file (make note of the filesize limits!) or click to select a file for conversion. This uploads the file to our server (do read the terms and conditions!) and loads up the mapping page. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/levelup/map_sm.png&quot; alt=&quot;Map the column headings to RDF predicates&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This consists of showing you each of your CSV columns, with controls where you can select what data-types the column values are, or modify the URIs used as predicates, and so on. Don’t worry if you’re not sure what predicates are - we have webinars and blog posts about that coming up if you want to understand linked open data. For your first go, just leave all the defaults in, hit Convert, and download the resulting zip file that contains your 4-star data in different formats.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/levelup/success_sm.png&quot; alt=&quot;Done! Download your converted files as a zip of XML-RDF, N-Triples and Turtle files&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;From there you can have a play around with the converter to make your output even more pretty. Got some latitude and longitude values in your columns? Why not make use of the &lt;a href=&quot;https://www.w3.org/2003/01/geo/&quot;&gt;W3C Basic Geo vocab&lt;/a&gt; instead of the automagically created predicates? Set your datatypes so that numbers, dates and text in particular languages are specified as such in the output. Got a code for a resource over on another linked data portal? Use a URI template to turn the code into a valid link to that item - this is not just data &lt;strong&gt;on&lt;/strong&gt; the web, this is data &lt;strong&gt;in&lt;/strong&gt; the web.&lt;/p&gt;
+
+&lt;p class=&quot;text-center&quot;&gt;
+&lt;a class=&quot;btn-lg btn-primary&quot; href=&quot;http://levelup.networkedplanet.com&quot;&gt;Level Up your data now!&lt;/a&gt;
+&lt;/p&gt;
+</description>
+        <pubDate>Mon, 15 Feb 2016 00:00:00 +0000</pubDate>
+        <link>http://networkedplanet.com/blog/2016/02/15/level-up-your-data.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2016/02/15/level-up-your-data.html</guid>
+        
+        <category>csv</category>
+        
+        <category>rdf</category>
+        
+        <category>convert</category>
+        
+        <category>linked data</category>
+        
+        
+      </item>
     
       <item>
         <title>Don&#39;t Forget Metadata!</title>
@@ -724,74 +779,6 @@ future webinars when they are announced, &lt;a href=&quot;https://twitter.com/nw
         <category>releases</category>
         
         <category>data platform</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Sharing Data In The Third Sector</title>
-        <description>&lt;p&gt;Last week &lt;a href=&quot;http://bristol.girlgeekdinners.com/&quot;&gt;Bristol Girl Geek Dinners&lt;/a&gt; hosted another fantastic evening for nerds in the heart of Bristol. This month they brought Emma Prest of &lt;a href=&quot;http://www.datakind.org/chapters/datakind-uk/&quot;&gt;DataKind UK&lt;/a&gt; over from London to talk about their work. The first time I’d heard of DataKind was when BGG had published their event information, so I did some reading up on them. &lt;/p&gt;
-
-&lt;h2 id=&quot;data-dive-events-for-charities&quot;&gt;Data Dive events for charities&lt;/h2&gt;
-
-&lt;p&gt;DataKind bring together charities and data science volunteers at hackathon style “Data Dives”. They work with the charities in the lead up to the event to set out clear goals and prep, then over the course of a weekend DataKind brings together all the volunteers and everyone works together to achieve those goals. Needless to say I was really looking forward to hearing what Emma had to say about it all and I wasn’t disappointed.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;What a great idea!&lt;/em&gt; People with different specialisations coming together as a community for the social good is one I can utterly get behind. Charities collect a LOT of data about their cause - in order to show the social impacts of the problem and to try and better understand it to try and help eradicate the problem once and for all. Having these Data Dives gives the chance to look at this data in new and interesting ways, compare it to other datasets from overlapping sectors and see what new insights might be made. &lt;/p&gt;
-
-&lt;p&gt;Of course my personal enthusiasm is with ongoing data collaboration by publishing datasets, and so a lot of my questions and conversations during the evening did tend to drift towards Open Data. As always though, when talking about Linked Open Data and charities in the same conversation I ran into a particular bugbear of mine. The fact that organisations are very dubious about actually publishing that data as raw datasets. Now, when I hear that from commercial enterprises I actually have more patience than when I hear it from charities, even though the answers are the same. It really irks me. Gets my goat. Bothers me. I was having trouble unpicking why this is so here are my thoughts on it:&lt;/p&gt;
-
-&lt;h2 id=&quot;why-the-reluctance-to-publish-open-data&quot;&gt;Why the reluctance to publish Open Data?&lt;/h2&gt;
-
-&lt;p&gt;First off, and let’s get this out of the way early, I’m not talking here about &lt;strong&gt;personal&lt;/strong&gt; data or any data that could be linked to an individual. I’m talking about completely anonymised data that’s used by that charity to show that the problem exists, that it has knock on effects and that the work the charity does helps with the problem. Other charities (especially the smaller ones working at a more localised level with far less funds) will also find that information &lt;em&gt;incredibly useful&lt;/em&gt; and will be able to better help people in turn. Those smaller charities also collect data that they could publish themselves and then all the charities in that sector can start looking across those datasets to see trends and what’s helping or exacerbating the problem. &lt;/p&gt;
-
-&lt;p&gt;Not only does this mean that researchers and data scientists could look across the datasets supplied by charities from different sectors and ask new questions that wasn’t possible when the data was kept closed off, it also means that charities of all sizes can avoid wasting time and money duplicating analysis and research that has already been done.&lt;/p&gt;
-
-&lt;p&gt;The potential benefits of sharing data are really not difficult to see. So why the reluctance to publish all that raw data? One statement uttered last night has been ringing round my head “&lt;strong&gt;charities are in competition with each other&lt;/strong&gt;”. &lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/seagulls_mine.gif&quot; alt=&quot;Animated gif of the seagulls from Finding Nemo standing on a rock in the sea all shouting &amp;quot;Mine!&amp;quot;&quot; class=&quot;img-medium center-block img-responsive&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;And therein lies a real problem. There’s two parts to every charity - the side working to help with the problem, and the side that exists to find funding so that the organisation can continue to do the good work they’re doing. Obviously finding funding (whether it be through public donations, business sponsorships or government funding) is absolutely key to be able to continue the work that a charity does. But who wins when those two sides are in opposition to each other? One side wants to share information in order to better collaborate and advance the charity’s mission, after all that’s the raison d’être of the charity itself. The other side spends every hour trying to find money to keep going and finds it difficult to imagine that sharing data doesn’t automatically mean lost revenue (or potential revenue).&lt;/p&gt;
-
-&lt;p&gt;Whilst I can understand this fear of loss of control, I still wondered why I feel so personally aggrieved by it in these cases. And then it struck me - when I donate money to a charity, buy merchandise or volunteer my time - it’s because I’m supporting their cause, not the charity. I believe that they are doing everything they can to meet their mission statement. I thought that collaborating with people both within and outside of their sector would be one of those things, and so I find it extra frustrating.&lt;/p&gt;
-
-&lt;h2 id=&quot;tackling-the-common-concerns&quot;&gt;Tackling the common concerns&lt;/h2&gt;
-
-&lt;p&gt;Of course we can see the benefits of sharing data, and I want to leave this post in a solution-focused way, so how do we address the fear that by publishing data they will lose funding? I’ll address some typical concerns:&lt;/p&gt;
-
-&lt;h3 id=&quot;the-data-is-worth-money-and-by-publishing-it-were-giving-it-away-for-free&quot;&gt;1. “The data is worth money and by publishing it we’re giving it away for free.”&lt;/h3&gt;
-
-&lt;p&gt;If your data is currently bringing in money and is a revenue stream for a charity then by all means continue to do that! Some open data publishers choose to make a subset of their data free and require a license fee to access the full set of data. 
-However, if you are not making any money from it and it’s just sitting in your databases being queried for reports now and again, it’s possible that it’s worth far more in knowledge advancement than it is a viable source of income for your organisation. Charities should carefully weigh up the social cost of not publishing their data as well as the cost in terms of lost revenue, if in fact there was any revenue coming from it.&lt;/p&gt;
-
-&lt;h3 id=&quot;people-could-use-the-data-to-come-up-with-bad-science-claims-we-are-the-specialists-and-can-avoid-that&quot;&gt;2. “People could use the data to come up with ‘Bad Science’ claims. We are the specialists and can avoid that.”&lt;/h3&gt;
-
-&lt;p&gt;The best way to negate this is to have the data public so that it’s instantly provable that someone has made an error. It’s also possible that people could discover correlations between your data and others that you can use to improve your service. Discoveries that were impossible to make when the data was kept closed off.&lt;/p&gt;
-
-&lt;h3 id=&quot;if-someone-else-uses-the-data-in-some-app-that-becomes-popular-they-get-the-publicity-rather-than-us&quot;&gt;3. “If someone else uses the data in some app that becomes popular, they get the publicity rather than us.”&lt;/h3&gt;
-
-&lt;p&gt;As mentioned earlier, you could choose to require people to pay for commercial access, but this is where we start getting into the grey area of what’s the purpose of the charity. If by publishing data you enable someone to develop a great app, visualisation or research paper that furthers the aim of your organisation then that’s money saved because you didn’t need to use any resources or money to do that. There are many data licenses you can choose from and my second favourite is the &lt;a href=&quot;http://creativecommons.org/licenses/by/4.0/&quot;&gt;Attribution license&lt;/a&gt; - which means that anyone using the data must credit you as the source of that information. At the end of the day, a popular app can raise more awareness and gain more support for the cause and increase donations to the charity.&lt;/p&gt;
-
-&lt;h3 id=&quot;people-arent-coming-to-us-for-the-information&quot;&gt;4. “People aren’t coming to &lt;em&gt;us&lt;/em&gt; for the information.”&lt;/h3&gt;
-
-&lt;p&gt;Firstly, someone &lt;strong&gt;is&lt;/strong&gt; still coming to you for the information - the developers. Secondly, your data isn’t static, you need to collect it over time and it’s up to you whether you release new data every hour, day, week, month or even year! Meaning that people &lt;em&gt;are&lt;/em&gt; coming back to you for the information - it’s just in a different format than you’re used to. &lt;/p&gt;
-
-&lt;h2 id=&quot;final-thoughts&quot;&gt;Final thoughts&lt;/h2&gt;
-
-&lt;p&gt;DataKind is doing a fantastic job of bringing charities and data scientists together to look at how more power can be leveraged by the data the charities already have. A lot of the projects they list show the use of Open Data from various sources as part of the work, so it was disappointing to hear that not many charities have embraced the idea of publishing data in order to feedback into that pool. However, I do get the feeling that the tide is turning - most worries stem from not understanding the specifics of publishing data; as more people take the time to investigate rather than dismiss out of hand, we are starting to see more charities be interested in leading the way into the Web of Data.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 21 Sep 2015 14:17:38 +0100</pubDate>
-        <link>http://networkedplanet.com/blog/2015/09/21/sharing-data-in-the-third-sector.html</link>
-        <guid isPermaLink="true">http://networkedplanet.com/blog/2015/09/21/sharing-data-in-the-third-sector.html</guid>
-        
-        <category>linked data</category>
-        
-        <category>open data</category>
-        
-        <category>opinion</category>
-        
-        <category>third sector</category>
-        
-        <category>charities</category>
         
         
       </item>
