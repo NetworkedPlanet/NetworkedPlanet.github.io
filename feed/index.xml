@@ -5,13 +5,130 @@
     <description>Experts in Linked and Open Data Publishing</description>
     <link>http://networkedplanet.com/</link>
     <atom:link href="http://networkedplanet.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 16 Feb 2016 14:41:08 +0000</pubDate>
-    <lastBuildDate>Tue, 16 Feb 2016 14:41:08 +0000</lastBuildDate>
+    <pubDate>Wed, 17 Feb 2016 10:30:54 +0000</pubDate>
+    <lastBuildDate>Wed, 17 Feb 2016 10:30:54 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
+        <title>Linked Data 101 - What&#39;s a predicate?</title>
+        <description>&lt;p class=&quot;well text-center&quot;&gt;This article is part of the &lt;a href=&quot;/blog/tags/ld101-series/&quot;&gt;Linked Data 101 series&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;identifiers-for-context&quot;&gt;Identifiers for context&lt;/h2&gt;
+
+&lt;p&gt;Yesterday we took a look at &lt;a href=&quot;/blog/2016/02/16/linked-data-101-identifiers.html&quot;&gt;the use of URIs in linked data&lt;/a&gt;, we left off just as we were getting to a really interesting part - &lt;strong&gt;predicates&lt;/strong&gt;! &lt;/p&gt;
+
+&lt;p&gt;When we look at two disparate sources of information on the web, how do we decide that the two pieces have overlapping meanings, even when they are talking about different subjects, how do we know they contain information relevant to each other? Currently we need to do that process manually, or have extremely complex linguistic programs to try and replicate that work for us. &lt;/p&gt;
+
+&lt;p&gt;Let’s say I have some data that contains information about Wards, depending on the &lt;em&gt;context&lt;/em&gt; that information could be about rooms in a hospital, a division of a geographical area governed by councillors, or even a young person who has been appointed a guardian by a court. By using unique identifiers we have a way of making these differences in meaning explicit - and these identifiers are known as predicates.&lt;/p&gt;
+
+&lt;p&gt;Ever since the initial vision of the World Wide Web was dreamt of, the idea of being able to embed context and meaning into that published information has been part of that plan. It was put on a back-burner for the initial versions of the web, but that goal has never been forgotten. With linked data (or as I like to think of it - &lt;em&gt;linkable&lt;/em&gt; data) we use a unique identifier to explicitly describe the link between a Thing and its properties, and what unique identifiers do we use on the web? You guessed it - &lt;a href=&quot;/blog/2016/02/16/linked-data-101-identifiers.html&quot;&gt;URIs&lt;/a&gt;. &lt;/p&gt;
+
+&lt;p class=&quot;well pull-right lead&quot; style=&quot;width:320px; margin-left:1em;&quot;&gt;Many people see linked data as a subsequent step to open data - this could not be further from the truth!&lt;/p&gt;
+
+&lt;p&gt;Given the way the levels of &lt;em&gt;open&lt;/em&gt; data are promoted, it’s unsurprising that many people see linked data as a subsequent step that can only be taken after you’ve made a choice about whether to publish your data publicly - &lt;strong&gt;this could not be further from the truth&lt;/strong&gt;! 
+Rather than focus on how you plan to &lt;em&gt;publish&lt;/em&gt; your data - think of how you need to &lt;em&gt;use&lt;/em&gt; your data. Linked data makes it easier to consume external linked open datasets as well as merge and share data across departments even when staying private to your organisation, making it easier to spot trends and perform data analysis.&lt;/p&gt;
+
+&lt;h2 id=&quot;building-your-vocabulary&quot;&gt;Building your vocabulary&lt;/h2&gt;
+
+&lt;p style=&quot;clear:both;&quot;&gt;Now that we’re all caught up about WHY predicates, let’s look at the HOW. Here’s some simple CSV data and its presentation when structured as triples: &lt;/p&gt;
+
+&lt;pre&gt;
+ID,Event,Location - Lat,Location - Long,Date &amp;amp; Time
+EV890,Introduction To Linked Data,53.3957985,-1.5694953,13/7/2016 11:00:00 AM
+EV891,Query the Web of Data with SPARQL,53.2205365,-4.1601993,20/4/2016 7:00:00 PM
+EV892,Better data means easier collaboration,55.8555367,-4.3024977,3/8/2016 6:30:00 PM
+&lt;/pre&gt;
+
+&lt;p class=&quot;alert alert-info&quot;&gt;For an explanation of the structure of a triple, please read the &lt;a href=&quot;/blog/2016/02/16/linked-data-101-identifiers.html&quot;&gt;first part in this Linked Data 101 series&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;For my predicates I’ve chosen descriptive URIs much in the same way that I’d choose a table’s column headings.&lt;/p&gt;
+
+&lt;pre&gt;
+&amp;lt;http://example.org/events/EV890&amp;gt; &amp;lt;http://example.org/events/title&amp;gt; &quot;Introduction To Linked Data&quot; .
+&amp;lt;http://example.org/events/EV890&amp;gt; &amp;lt;http://example.org/events/latitude&amp;gt; &quot;53.3957985&quot; .
+&amp;lt;http://example.org/events/EV890&amp;gt; &amp;lt;http://example.org/events/longitude&amp;gt; &quot;-1.5694953&quot; .
+&amp;lt;http://example.org/events/EV890&amp;gt; &amp;lt;http://example.org/events/date&amp;gt; &quot;2016-07-13T11:00:00.0000000+00:00&quot;^^&amp;lt;http://www.w3.org/2001/XMLSchema#dateTime&amp;gt; .
+&amp;lt;http://example.org/events/EV891&amp;gt; &amp;lt;http://example.org/events/title&amp;gt; &quot;Query the Web of Data with SPARQL&quot; .
+&amp;lt;http://example.org/events/EV891&amp;gt; &amp;lt;http://example.org/events/latitude&amp;gt; &quot;53.2205365&quot; .
+&amp;lt;http://example.org/events/EV891&amp;gt; &amp;lt;http://example.org/events/longitude&amp;gt; &quot;-4.1601993&quot; .
+&amp;lt;http://example.org/events/EV891&amp;gt; &amp;lt;http://example.org/events/date&amp;gt; &quot;2016-04-20T19:00:00.0000000+00:00&quot;^^&amp;lt;http://www.w3.org/2001/XMLSchema#dateTime&amp;gt; .
+&amp;lt;http://example.org/events/EV892&amp;gt; &amp;lt;http://example.org/events/title&amp;gt; &quot;Better data means easier collaboration&quot; .
+&amp;lt;http://example.org/events/EV892&amp;gt; &amp;lt;http://example.org/events/latitude&amp;gt; &quot;55.8555367&quot; .
+&amp;lt;http://example.org/events/EV892&amp;gt; &amp;lt;http://example.org/events/longitude&amp;gt; &quot;-4.3024977&quot; .
+&amp;lt;http://example.org/events/EV892&amp;gt; &amp;lt;http://example.org/events/date&amp;gt; &quot;2016-08-03T18:30:00.0000000+00:00&quot;^^&amp;lt;http://www.w3.org/2001/XMLSchema#dateTime&amp;gt; .
+&lt;/pre&gt;
+
+&lt;p&gt;As it is, the data would be fine to publish on your internal or external data portal (using your portal’s address rather than example.org of course!). It’s 4 star data, meaning that not only is it in a non-proprietary format but that you’ve used URIs to denote your resources. Your data is now &lt;strong&gt;&lt;em&gt;linkable&lt;/em&gt;&lt;/strong&gt;, regardless of whether you choose to share it outside of your organisation. &lt;/p&gt;
+
+&lt;p&gt;Of course you want the set of predicates used in your data to be consistent across your organisation - and to do this you build a list of the predicates you use (along with some other useful terms) and put them in a &lt;strong&gt;vocabulary&lt;/strong&gt; which you can choose to keep private to your organisation, or - like the raw data itself - you can choose to publish these sets of terms to a wider audience.&lt;/p&gt;
+
+&lt;h2 id=&quot;using-shared-vocabularies&quot;&gt;Using shared vocabularies&lt;/h2&gt;
+
+&lt;p&gt;So how do we know that data from two different sources are talking about the same concepts? We do this by making use of &lt;strong&gt;shared vocabularies&lt;/strong&gt; - simply replace your predicate with the predicate from the published vocabulary. &lt;/p&gt;
+
+&lt;p&gt;A few examples of published open vocabularies are &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://semanticweb.org/wiki/Dublin_Core&quot;&gt;Dublin Core vocabulary&lt;/a&gt;. This is a vocabulary published by the Dublin Core Metadata Initiative used to describe information about documents - such as Title, Description, Creator, and so on - so you can see why it would be such a well used vocabulary. &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.geonames.org/ontology/documentation.html&quot;&gt;Geonames&lt;/a&gt;. This contains properties for describing places such as Name, Alternative Name, Population and suchlike. It’s worthwhile to note that while Geonames has many properties for describing places, for latitude and longitude it reuses the &lt;a href=&quot;https://www.w3.org/2003/01/geo/&quot;&gt;W3C Basic Geo vocabulary&lt;/a&gt;. &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://schema.org&quot;&gt;Schema.org&lt;/a&gt;. A hugely popular vocabulary (due to its support in Google, Microsoft and Yahoo) is  Many plugins for CMS website use the terms defined in Schema.org in order to embed the information in their webpages that they are talking about (for example) dates of events, and therefore when they appear on the search result they have additional useful information about upcoming events under their site name and description.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://data.ordnancesurvey.co.uk/ontology&quot;&gt;Ordnance Survey ontologies&lt;/a&gt;. A set of vocabularies for describing administrative areas of Great Britain, spatial relations, and more. &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I’ve chosen to use the &lt;a href=&quot;https://www.w3.org/2003/01/geo/&quot;&gt;Basic Geo Vocab&lt;/a&gt; to describe my latitude and longitude, and &lt;a href=&quot;https://schema.org/Event&quot;&gt;Schema.org&lt;/a&gt; to describe the other details of my event. This changes my RDF to:&lt;/p&gt;
+
+&lt;pre&gt;
+&amp;lt;http://example.org/events/EV890&amp;gt; &amp;lt;http://schema.org/name&amp;gt; &quot;Introduction To Linked Data&quot; .
+&amp;lt;http://example.org/events/EV890&amp;gt; &amp;lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&amp;gt; &quot;53.3957985&quot; .
+&amp;lt;http://example.org/events/EV890&amp;gt; &amp;lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&amp;gt; &quot;-1.5694953&quot; .
+&amp;lt;http://example.org/events/EV890&amp;gt; &amp;lt;http://schema.org/startDate&amp;gt; &quot;2016-07-13T11:00:00.0000000+00:00&quot;^^&amp;lt;http://www.w3.org/2001/XMLSchema#dateTime&amp;gt; .
+&amp;lt;http://example.org/events/EV891&amp;gt; &amp;lt;http://schema.org/name&amp;gt; &quot;Query the Web of Data with SPARQL&quot; .
+&amp;lt;http://example.org/events/EV891&amp;gt; &amp;lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&amp;gt; &quot;53.2205365&quot; .
+&amp;lt;http://example.org/events/EV891&amp;gt; &amp;lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&amp;gt; &quot;-4.1601993&quot; .
+&amp;lt;http://example.org/events/EV891&amp;gt; &amp;lt;http://schema.org/startDate&amp;gt; &quot;2016-04-20T19:00:00.0000000+00:00&quot;^^&amp;lt;http://www.w3.org/2001/XMLSchema#dateTime&amp;gt; .
+&amp;lt;http://example.org/events/EV892&amp;gt; &amp;lt;http://schema.org/name&amp;gt; &quot;Better data means easier collaboration&quot; .
+&amp;lt;http://example.org/events/EV892&amp;gt; &amp;lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&amp;gt; &quot;55.8555367&quot; .
+&amp;lt;http://example.org/events/EV892&amp;gt; &amp;lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&amp;gt; &quot;-4.3024977&quot; .
+&amp;lt;http://example.org/events/EV892&amp;gt; &amp;lt;http://schema.org/startDate&amp;gt; &quot;2016-08-03T18:30:00.0000000+00:00&quot;^^&amp;lt;http://www.w3.org/2001/XMLSchema#dateTime&amp;gt; .
+&lt;/pre&gt;
+
+&lt;p&gt;Now when I merge my data with other data sources using the same vocabulary, our events and locations merge with ease.&lt;/p&gt;
+
+&lt;h2 id=&quot;where-to-start&quot;&gt;Where to start?&lt;/h2&gt;
+
+&lt;p&gt;It’s all very well for me to talk about how I chose to use a couple of popular vocabularies and then plonked them in my data, but how are you going to know about these vocabularies in the first place, and what should influence your decision on which to use? Fear not, there are websites out there that help you find existing published vocabularies, such as &lt;a href=&quot;http://lov.okfn.org/dataset/lov&quot;&gt;LOV&lt;/a&gt;, you can reach out to the publishers of open data that you are consuming (such as local or national government) and ask them about their preferred vocabularies, and of course we would also suggest &lt;a href=&quot;http://networkedplanet.com/#contact&quot;&gt;getting in touch with your friendly linked data experts&lt;/a&gt; to ask for advice too (yes, that is indeed a link to our contact detail page, it had to be done!). &lt;/p&gt;
+
+&lt;p&gt;Can’t find a shared vocabulary that matches your needs? Consider taking your private vocabulary and publishing it as open data. That’s exactly what the Ordnance Survey chose to do, why wait for someone else to do it when you can lead the field?&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;I hope you’ve found this article informative! Please feel free to use the comments section with any feedback or questions. Next up in the series we’re going to take what we’ve learnt about identifiers and triples and use our &lt;a href=&quot;http://levelup.networkedplanet.com&quot;&gt;Level Up Csv to RDF converter&lt;/a&gt; to grab some boring flat data and give it a semantic boost. &lt;/p&gt;
+
+&lt;p class=&quot;well text-center&quot;&gt;This article is part of the &lt;a href=&quot;/blog/tags/ld101-series/&quot;&gt;Linked Data 101 series&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 17 Feb 2016 00:00:00 +0000</pubDate>
+        <link>http://networkedplanet.com/blog/2016/02/17/linked-data-101-predicates.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2016/02/17/linked-data-101-predicates.html</guid>
+        
+        <category>LD101 series</category>
+        
+        <category>linked data</category>
+        
+        <category>predicates</category>
+        
+        <category>vocabularies</category>
+        
+        <category>ontologies</category>
+        
+        
+      </item>
+    
+      <item>
         <title>Linked Data 101 - What&#39;s with all the URIs?</title>
-        <description>&lt;h2 id=&quot;ur-whatnow-&quot;&gt;UR-WhatNow ?&lt;/h2&gt;
+        <description>&lt;p class=&quot;well text-center&quot;&gt;This article is part of the &lt;a href=&quot;/blog/tags/ld101-series/&quot;&gt;Linked Data 101 series&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;ur-whatnow-&quot;&gt;UR-WhatNow ?&lt;/h2&gt;
 
 &lt;p&gt;URI is an acronym for &lt;strong&gt;Uniform Resource Identifier&lt;/strong&gt;, which is one of those whole names that tells you nothing at all. A URI is simply a particular way of writing a name for a thing. A common kind of URI is the URL (Uniform Resource &lt;strong&gt;Locator&lt;/strong&gt;) where that name is actually treated as an address and provides you with a way to look up the identified thing. The address of a webpage like this one is a URL.&lt;/p&gt;
 
@@ -74,7 +191,9 @@ In relational databases, the ID of one table (such as products) has a “primary
 
 &lt;p&gt;We can see why URIs must be used as subjects, and &lt;em&gt;can&lt;/em&gt; be objects, what about the predicates? Why not just use text labels to describe properties of a resource such as “stock level” or “manufacturer”? Well, without using URIs we would miss out on the core power of the Web of Data - a way of being able to embed our data with the information that we are talking about the same &lt;em&gt;concepts&lt;/em&gt; that another data publisher is describing in &lt;em&gt;their&lt;/em&gt; data. &lt;/p&gt;
 
-&lt;p&gt;That’s exactly what the second blog post in this series is going to concentrate on - predicates and vocabularies - stay tuned!&lt;/p&gt;
+&lt;p&gt;That’s exactly what the &lt;a href=&quot;/blog/2016/02/17/linked-data-101-predicates.html&quot;&gt;second blog post&lt;/a&gt; in this series is going to concentrate on - predicates and vocabularies - stay tuned!&lt;/p&gt;
+
+&lt;p class=&quot;well text-center&quot;&gt;This article is part of the &lt;a href=&quot;/blog/tags/ld101-series/&quot;&gt;Linked Data 101 series&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 16 Feb 2016 00:00:00 +0000</pubDate>
         <link>http://networkedplanet.com/blog/2016/02/16/linked-data-101-identifiers.html</link>
@@ -806,28 +925,6 @@ future webinars when they are announced, &lt;a href=&quot;https://twitter.com/nw
         <guid isPermaLink="true">http://networkedplanet.com/blog/2015/10/12/linked-data-webinar-oct-15.html</guid>
         
         <category>webinar</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Newsletter Issue 1 out now!</title>
-        <description>&lt;p&gt;The first issue of our email newsletter is out! &lt;/p&gt;
-
-&lt;p&gt;Find out about our webinar series on Linked Data technologies, our Data Platform for publishing data both internally to your organisation or externally as Open Data, the Open Data Institute, new product releases and interesting reports from the wider Web of Linked and Open Data.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://networkedplanet.us11.list-manage.com/subscribe?u=62daac7ae19a90ef03ea3bd42&amp;amp;id=a797a2dd15&quot;&gt;Sign up to our mailing list&lt;/a&gt; - we send newsletters roughly quarterly, possibly punctuated with the odd single-shot news item if we think it’s important!&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://us11.campaign-archive2.com/?u=62daac7ae19a90ef03ea3bd42&amp;amp;id=4b98e60d33&quot;&gt;Click here to read this issue&lt;/a&gt; in your browser.&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 25 Sep 2015 00:00:00 +0100</pubDate>
-        <link>http://networkedplanet.com/blog/2015/09/25/newsletter-issue-1.html</link>
-        <guid isPermaLink="true">http://networkedplanet.com/blog/2015/09/25/newsletter-issue-1.html</guid>
-        
-        <category>newsletter</category>
-        
-        <category>mailing list</category>
         
         
       </item>
