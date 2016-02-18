@@ -150,7 +150,7 @@
 
 <p>The default prefix uses our good friend, example.org, along with the uploaded filename. Whilst useful, my data portal is going to sit on an intranet for the fictional company - contoso - so I’m going to tweak it a little so that my prefix for the predicates becomes <code>http://data.contoso.com/environment/ontology/</code>. As I update the prefix, all the predicate URIs and the main identifier URI are updated too.</p>
 
-<p><img src="/assets/images/blog/linkeddata101/lu-prefix.png" alt="Update the prefix" width="800px" class="img-medium img-responsive center-block bordered-image" /></p>
+<p><img src="/assets/images/blog/linkeddata101/lu-prefix.PNG" alt="Update the prefix" width="800px" class="img-medium img-responsive center-block bordered-image" /></p>
 
 <h2 id="which-column-shall-i-use-as-the-identifier">Which column shall I use as the identifier?</h2>
 
@@ -158,7 +158,7 @@
 
 <p>Currently it’s using the prefix <code>http://data.contoso.com/environment/ontology/</code> and a row number tag <code>{rn}</code>. Firstly, I don’t want my resources to sit in the <code>/ontology/</code> namespace so I change that to <code>/allotments/</code>, given that I want to use my ID <code>GLA_ID</code> I edit the template to include a tag for <code>GLA_ID</code> instead. To protect myself against typos I use the <code>Tags</code> link to show me a drop down list of all available tags and select <code>GLA_ID</code>, which adds it to the end of my identifier template:</p>
 
-<p><img src="/assets/images/blog/linkeddata101/lu-identifiertemplate.png" alt="Update the identifier template" width="800px" class="img-medium img-responsive center-block bordered-image" /></p>
+<p><img src="/assets/images/blog/linkeddata101/lu-identifiertemplate.PNG" alt="Update the identifier template" width="800px" class="img-medium img-responsive center-block bordered-image" /></p>
 
 <h2 id="choosing-predicates-for-columns">Choosing predicates for columns</h2>
 
@@ -184,7 +184,7 @@
 
 <p>Straight off I can see that we can use the <a href="https://www.w3.org/2003/01/geo/">Basic Geo Vocab</a> for the lat/long values, and the <a href="http://data.ordnancesurvey.co.uk/ontology/spatialrelations/">OS Spatial Relations Ontology</a> for the easting and northing values. Let’s pop those in, and set their data types to whole number for easting/northing values and decimal number for latitude/longitude values.</p>
 
-<p><img src="/assets/images/blog/linkeddata101/lu-geo.png" alt="Choosing geo predicates" width="800px" class="img-medium img-responsive center-block bordered-image" /></p>
+<p><img src="/assets/images/blog/linkeddata101/lu-geo.PNG" alt="Choosing geo predicates" width="800px" class="img-medium img-responsive center-block bordered-image" /></p>
 
 <p>Now let’s have a look through the other columns, apologies in advance as I will jump around the list slightly rather than working top to bottom.</p>
 
@@ -299,25 +299,25 @@
 
 <p>That’s everything set up - all that’s left now is to hit the “Convert your CSV” button and let Level Up do its magic.</p>
 
-<p><img src="/assets/images/blog/linkeddata101/lu-convert.png" alt="Convert CSV to RDF" width="800px" class="img-medium img-responsive center-block bordered-image" /></p>
+<p><img src="/assets/images/blog/linkeddata101/lu-convert.PNG" alt="Convert CSV to RDF" width="800px" class="img-medium img-responsive center-block bordered-image" /></p>
 
 <p>Bam! We can now download our data -&gt;</p>
 
-<p><img src="/assets/images/blog/linkeddata101/lu-congrats.png" alt="Download your converted data" width="800px" class="img-medium img-responsive center-block bordered-image" /></p>
+<p><img src="/assets/images/blog/linkeddata101/lu-congrats.PNG" alt="Download your converted data" width="800px" class="img-medium img-responsive center-block bordered-image" /></p>
 
 <p>The downloaded zip file contains RDF in three different formats: N-Triples, Turtle and RDF-XML. Going into the various formats is outside the scope of this article, so here’s some segments of what to expect, plus a download of the zip file itself. </p>
 
 <p>** N-Triples - .nt **</p>
 
-<p><img src="/assets/images/blog/linkeddata101/lu-nt.png" alt="N-Triples Preview" width="800px" class="img-medium img-responsive center-block bordered-image" /></p>
+<p><img src="/assets/images/blog/linkeddata101/lu-nt.PNG" alt="N-Triples Preview" width="800px" class="img-medium img-responsive center-block bordered-image" /></p>
 
 <p>** Turtle - .ttl**</p>
 
-<p><img src="/assets/images/blog/linkeddata101/lu-ttl.png" alt="Turtle Preview" width="800px" class="img-medium img-responsive center-block bordered-image" /></p>
+<p><img src="/assets/images/blog/linkeddata101/lu-ttl.PNG" alt="Turtle Preview" width="800px" class="img-medium img-responsive center-block bordered-image" /></p>
 
 <p>** RDF-XML - .rdf**</p>
 
-<p><img src="/assets/images/blog/linkeddata101/lu-rdf.png" alt="RDF-XML Preview" width="800px" class="img-medium img-responsive center-block bordered-image" /></p>
+<p><img src="/assets/images/blog/linkeddata101/lu-rdf.PNG" alt="RDF-XML Preview" width="800px" class="img-medium img-responsive center-block bordered-image" /></p>
 
 <p class="text-center">
 <a class="btn btn-default" href="/assets/downloads/gla-allotment-locations-160218101935.zip">

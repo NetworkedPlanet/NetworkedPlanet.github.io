@@ -5,8 +5,8 @@
     <description>Experts in Linked and Open Data Publishing</description>
     <link>http://networkedplanet.com/</link>
     <atom:link href="http://networkedplanet.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 18 Feb 2016 11:12:38 +0000</pubDate>
-    <lastBuildDate>Thu, 18 Feb 2016 11:12:38 +0000</lastBuildDate>
+    <pubDate>Thu, 18 Feb 2016 14:47:40 +0000</pubDate>
+    <lastBuildDate>Thu, 18 Feb 2016 14:47:40 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -42,7 +42,7 @@
 
 &lt;p&gt;The default prefix uses our good friend, example.org, along with the uploaded filename. Whilst useful, my data portal is going to sit on an intranet for the fictional company - contoso - so I’m going to tweak it a little so that my prefix for the predicates becomes &lt;code&gt;http://data.contoso.com/environment/ontology/&lt;/code&gt;. As I update the prefix, all the predicate URIs and the main identifier URI are updated too.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/lu-prefix.png&quot; alt=&quot;Update the prefix&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/lu-prefix.PNG&quot; alt=&quot;Update the prefix&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;which-column-shall-i-use-as-the-identifier&quot;&gt;Which column shall I use as the identifier?&lt;/h2&gt;
 
@@ -50,7 +50,7 @@
 
 &lt;p&gt;Currently it’s using the prefix &lt;code&gt;http://data.contoso.com/environment/ontology/&lt;/code&gt; and a row number tag &lt;code&gt;{rn}&lt;/code&gt;. Firstly, I don’t want my resources to sit in the &lt;code&gt;/ontology/&lt;/code&gt; namespace so I change that to &lt;code&gt;/allotments/&lt;/code&gt;, given that I want to use my ID &lt;code&gt;GLA_ID&lt;/code&gt; I edit the template to include a tag for &lt;code&gt;GLA_ID&lt;/code&gt; instead. To protect myself against typos I use the &lt;code&gt;Tags&lt;/code&gt; link to show me a drop down list of all available tags and select &lt;code&gt;GLA_ID&lt;/code&gt;, which adds it to the end of my identifier template:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/lu-identifiertemplate.png&quot; alt=&quot;Update the identifier template&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/lu-identifiertemplate.PNG&quot; alt=&quot;Update the identifier template&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;choosing-predicates-for-columns&quot;&gt;Choosing predicates for columns&lt;/h2&gt;
 
@@ -76,7 +76,7 @@
 
 &lt;p&gt;Straight off I can see that we can use the &lt;a href=&quot;https://www.w3.org/2003/01/geo/&quot;&gt;Basic Geo Vocab&lt;/a&gt; for the lat/long values, and the &lt;a href=&quot;http://data.ordnancesurvey.co.uk/ontology/spatialrelations/&quot;&gt;OS Spatial Relations Ontology&lt;/a&gt; for the easting and northing values. Let’s pop those in, and set their data types to whole number for easting/northing values and decimal number for latitude/longitude values.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/lu-geo.png&quot; alt=&quot;Choosing geo predicates&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/lu-geo.PNG&quot; alt=&quot;Choosing geo predicates&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Now let’s have a look through the other columns, apologies in advance as I will jump around the list slightly rather than working top to bottom.&lt;/p&gt;
 
@@ -191,25 +191,25 @@
 
 &lt;p&gt;That’s everything set up - all that’s left now is to hit the “Convert your CSV” button and let Level Up do its magic.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/lu-convert.png&quot; alt=&quot;Convert CSV to RDF&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/lu-convert.PNG&quot; alt=&quot;Convert CSV to RDF&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Bam! We can now download our data -&amp;gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/lu-congrats.png&quot; alt=&quot;Download your converted data&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/lu-congrats.PNG&quot; alt=&quot;Download your converted data&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The downloaded zip file contains RDF in three different formats: N-Triples, Turtle and RDF-XML. Going into the various formats is outside the scope of this article, so here’s some segments of what to expect, plus a download of the zip file itself. &lt;/p&gt;
 
 &lt;p&gt;** N-Triples - .nt **&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/lu-nt.png&quot; alt=&quot;N-Triples Preview&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/lu-nt.PNG&quot; alt=&quot;N-Triples Preview&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;** Turtle - .ttl**&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/lu-ttl.png&quot; alt=&quot;Turtle Preview&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/lu-ttl.PNG&quot; alt=&quot;Turtle Preview&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;** RDF-XML - .rdf**&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/lu-rdf.png&quot; alt=&quot;RDF-XML Preview&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/lu-rdf.PNG&quot; alt=&quot;RDF-XML Preview&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
 
 &lt;p class=&quot;text-center&quot;&gt;
 &lt;a class=&quot;btn btn-default&quot; href=&quot;/assets/downloads/gla-allotment-locations-160218101935.zip&quot;&gt;
