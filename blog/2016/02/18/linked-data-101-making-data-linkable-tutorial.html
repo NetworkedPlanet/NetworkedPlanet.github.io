@@ -184,6 +184,10 @@
 
 <p><img src="/assets/images/blog/linkeddata101/lu-geo.PNG" alt="Choosing geo predicates" width="800px" class="img-medium img-responsive center-block bordered-image" /></p>
 
+<p class="alert alert-danger text-center">Whilst writing the <a href="/blog/2016/02/29/linked-data-101-querying.html">follow up blog post</a> to this article, which includes displaying data on a map, it became obvious that the <a href="http://data.london.gov.uk/dataset/allotment-locations/resource/b40c84cf-be67-4b99-bff4-c3ff08b37698#">raw data</a> had <strong>mislabelled</strong> the latitude and longitude values (and has them mixed up). This can also be seen in the preview data at the bottom Level Up converter page. This post has now been updated to make sure that our <em>outputted</em> data is in better shape. The moral of the story: always check for bad data and errors in what you have been supplied! </p>
+
+<p><img src="/assets/images/blog/linkeddata101/baddata.png" alt="Error found in the raw data" width="800px" class="img-medium img-responsive center-block bordered-image" /></p>
+
 <p>Now let’s have a look through the other columns, apologies in advance as I will jump around the list slightly rather than working top to bottom.</p>
 
 <h5 id="name"><strong>Name</strong></h5>
@@ -280,18 +284,19 @@
     </tr>
     <tr>
       <td>Latitude</td>
-      <td>http://www.w3.org/2003/01/geo/wgs84_pos#lat</td>
+      <td>http://www.w3.org/2003/01/geo/wgs84_pos#<strong>long</strong> ***</td>
       <td>Decimal number</td>
     </tr>
     <tr>
       <td>Longitude</td>
-      <td>http://www.w3.org/2003/01/geo/wgs84_pos#long</td>
+      <td>http://www.w3.org/2003/01/geo/wgs84_pos#<strong>lat</strong> ***</td>
       <td>Decimal number</td>
     </tr>
   </tbody>
 </table>
 
-<p class="small well">** The column set as the ID will not be added as a property, so we don’t need to concern ourselves with this predicate. If you want to use it in the identifier and have it as a property in the raw data, do not select it as the primary ID - simply use its tag in the identifier template.</p>
+<p class="small well">** The column set as the ID will not be added as a property, so we don’t need to concern ourselves with this predicate. If you want to use it in the identifier and have it as a property in the raw data, do not select it as the primary ID - simply use its tag in the identifier template. <br />
+*** See explanation above</p>
 
 <h2 id="convert">Convert!</h2>
 
@@ -318,7 +323,7 @@
 <p><img src="/assets/images/blog/linkeddata101/lu-rdf.PNG" alt="RDF-XML Preview" width="800px" class="img-medium img-responsive center-block bordered-image" /></p>
 
 <p class="text-center">
-<a class="btn btn-default" href="/assets/downloads/gla-allotment-locations-160218101935.zip">
+<a class="btn btn-default" href="/assets/downloads/gla-allotment-locations-160301140247.zip">
 <span class="glyphicon glyphicon-download-alt">
 Download zip file
 </span>
@@ -335,7 +340,7 @@ Download zip file
 <a class="btn-lg btn-primary" href="http://levelup.networkedplanet.com">Try it yourself at Level Up!</a>
 </p>
 
-<p>Next in the series we’ll be taking a look at how to query linked data. Don’t forget we also run webinars and training throughout the year. See you next time!</p>
+<p>Next in the series we’ll be taking a look at <a href="/blog/2016/02/29/linked-data-101-querying.html">how to query linked data</a>. Don’t forget we also run webinars and training throughout the year. See you next time!</p>
 
 <p class="well text-center">This article is part of the <a href="/blog/tags/ld101-series/">Linked Data 101 series</a></p>
 
