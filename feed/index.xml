@@ -5,12 +5,12 @@
     <description>Experts in Linked and Open Data Publishing</description>
     <link>http://networkedplanet.com/</link>
     <atom:link href="http://networkedplanet.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 01 Mar 2016 16:31:59 +0000</pubDate>
-    <lastBuildDate>Tue, 01 Mar 2016 16:31:59 +0000</lastBuildDate>
+    <pubDate>Tue, 01 Mar 2016 16:35:05 +0000</pubDate>
+    <lastBuildDate>Tue, 01 Mar 2016 16:35:05 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
-        <title>Crowdsourcing error checking</title>
+        <title>Open data feedback at work!</title>
         <description>&lt;p&gt;Whilst finishing off my article on &lt;a href=&quot;/blog/2016/02/29/linked-data-101-querying.html&quot;&gt;querying linked data&lt;/a&gt;, I decided it would be nice to end with something a little more tangible than simply another SPARQL query. I decided a nice map showing the data that I’d converted from CSV to RDF would do the trick. &lt;/p&gt;
 
 &lt;p&gt;Whilst it was quick work to display a map using OpenStreetMap tiles and Leaflet.js, something was peculiar - the map markers were nowhere to be seen, and scrolling out found them off the coast of Somalia! &lt;/p&gt;
@@ -38,8 +38,8 @@
 &lt;p class=&quot;text-center img-caption&quot;&gt;You rock!&lt;/p&gt;
 </description>
         <pubDate>Tue, 01 Mar 2016 00:00:00 +0000</pubDate>
-        <link>http://networkedplanet.com/blog/2016/03/01/other-people-check-your-data.html</link>
-        <guid isPermaLink="true">http://networkedplanet.com/blog/2016/03/01/other-people-check-your-data.html</guid>
+        <link>http://networkedplanet.com/blog/2016/03/01/open-data-feedback-at-work.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2016/03/01/open-data-feedback-at-work.html</guid>
         
         <category>open data</category>
         
