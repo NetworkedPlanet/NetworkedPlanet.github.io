@@ -5,9 +5,46 @@
     <description>Experts in Linked and Open Data Publishing</description>
     <link>http://networkedplanet.com/</link>
     <atom:link href="http://networkedplanet.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 01 Mar 2016 15:25:13 +0000</pubDate>
-    <lastBuildDate>Tue, 01 Mar 2016 15:25:13 +0000</lastBuildDate>
+    <pubDate>Tue, 01 Mar 2016 16:31:59 +0000</pubDate>
+    <lastBuildDate>Tue, 01 Mar 2016 16:31:59 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Crowdsourcing error checking</title>
+        <description>&lt;p&gt;Whilst finishing off my article on &lt;a href=&quot;/blog/2016/02/29/linked-data-101-querying.html&quot;&gt;querying linked data&lt;/a&gt;, I decided it would be nice to end with something a little more tangible than simply another SPARQL query. I decided a nice map showing the data that I’d converted from CSV to RDF would do the trick. &lt;/p&gt;
+
+&lt;p&gt;Whilst it was quick work to display a map using OpenStreetMap tiles and Leaflet.js, something was peculiar - the map markers were nowhere to be seen, and scrolling out found them off the coast of Somalia! &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/datafix/badmap.png&quot; alt=&quot;London allotments in the seas off the coast of Somalia&quot; width=&quot;750px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;text-center img-caption&quot;&gt;&lt;em&gt;These allotments would have problems with damp&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I started tracing back through my steps and found the culprit in the original CSV file - the headings had been mixed up for the longitude and latitude. I headed back to the London Datastore to double check and yes, that was the way in which the data had been published.&lt;/p&gt;
+
+&lt;p&gt;Clicking over to their contact page I quickly fired off an e-mail to let them know of the error, and in the matter of a mere &lt;strong&gt;20 minutes&lt;/strong&gt; I had received an email back saying that the data had been fixed.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/datafix/goodmap.png&quot; alt=&quot;London allotments in Walthamstow&quot; width=&quot;750px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;text-center img-caption&quot;&gt;&lt;em&gt;That’s more like it!&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;It’s very easy to let simple errors slip by, I know what ranges UK latitudes and longitudes should be and I didn’t spot it even though the &lt;a href=&quot;http://levelup.networkedplanet.com/&quot;&gt;Level Up converter&lt;/a&gt; shows a preview of the original CSV. When working with lots and lots of values it’s easy for things like this to get through and it was the mapping visualisation that made it obvious.&lt;/p&gt;
+
+&lt;p&gt;What’s really great is it also shows another benefit of open data, the community aspect of keeping your raw data error-free. Each user of an open dataset has a vested interest in that data being correct. In my case, I wanted it to be able to demonstrate a conversion to RDF, but it could &lt;em&gt;easily&lt;/em&gt; be developers or users of an app that use your data in their offerings.&lt;/p&gt;
+
+&lt;p&gt;So a massive shout out to &lt;a href=&quot;https://twitter.com/LDN_data&quot; title=&quot;London Datastore Twitter&quot;&gt;@ldn_data&lt;/a&gt; for their super fast response in getting the data sorted!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://gifrific.com/wp-content/uploads/2012/04/Tina-Fey-giving-herself-high-five.gif&quot; alt=&quot;Gif: liz lemon high five&quot; width=&quot;350px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;text-center img-caption&quot;&gt;You rock!&lt;/p&gt;
+</description>
+        <pubDate>Tue, 01 Mar 2016 00:00:00 +0000</pubDate>
+        <link>http://networkedplanet.com/blog/2016/03/01/other-people-check-your-data.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2016/03/01/other-people-check-your-data.html</guid>
+        
+        <category>open data</category>
+        
+        
+      </item>
     
       <item>
         <title>Linked Data 101 - Querying data with SPARQL</title>
@@ -1022,30 +1059,6 @@ future webinars when they are announced, &lt;a href=&quot;https://twitter.com/nw
         <category>sparql</category>
         
         <category>linked data</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Closed / Shared / Open</title>
-        <description>&lt;p&gt;While we are great fans of Open Data, it is just one part of a spectrum from data that
-needs to be kept secure (such as personal information) through data that is shared between
-partner organisations all the way to data that is made available to all to use and reuse.&lt;/p&gt;
-
-&lt;p&gt;This nice, short video from the ODI explains the concepts of Closed, Shared and Open data. &lt;/p&gt;
-
-&lt;iframe src=&quot;https://player.vimeo.com/video/125783029&quot; width=&quot;500&quot; height=&quot;281&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-&lt;p&gt;&lt;a href=&quot;https://vimeo.com/125783029&quot;&gt;Open / Shared / Closed: The world of data&lt;/a&gt; from &lt;a href=&quot;https://vimeo.com/theodiuk&quot;&gt;Open Data Institute&lt;/a&gt; on &lt;a href=&quot;https://vimeo.com&quot;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 18 Jan 2016 00:00:00 +0000</pubDate>
-        <link>http://networkedplanet.com/blog/2016/01/18/closed-shared-open.html</link>
-        <guid isPermaLink="true">http://networkedplanet.com/blog/2016/01/18/closed-shared-open.html</guid>
-        
-        <category>odi</category>
-        
-        <category>open data</category>
-        
-        <category>video</category>
         
         
       </item>
