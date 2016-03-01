@@ -5,8 +5,8 @@
     <description>Experts in Linked and Open Data Publishing</description>
     <link>http://networkedplanet.com/</link>
     <atom:link href="http://networkedplanet.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 01 Mar 2016 14:32:00 +0000</pubDate>
-    <lastBuildDate>Tue, 01 Mar 2016 14:32:00 +0000</lastBuildDate>
+    <pubDate>Tue, 01 Mar 2016 13:39:30 +0000</pubDate>
+    <lastBuildDate>Tue, 01 Mar 2016 13:39:30 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -211,7 +211,7 @@ LIMIT 5
 &lt;p&gt;If we only want or need particular values, we can replace the &lt;code&gt;SELECT *&lt;/code&gt; and be more specific:&lt;/p&gt;
 
 &lt;pre&gt;
-SELECT ?label ?long ?lat
+SELECT ?label ?lat ?long
 WHERE
 { 
 ?s &amp;lt;http://data.contoso.com/environment/ontology/suppliedPostcode&amp;gt; &quot;E17&quot; .
@@ -248,7 +248,7 @@ var markers = [
 	{&quot;label&quot;:&quot;Willow Tree&quot;, &quot;long&quot;:-0.018091, &quot;lat&quot;:51.605109}
 ];
 
-var map = L.map(&#39;map&#39;).setView([51.58693, -0.04], 12);
+var map = L.map(&#39;map&#39;).setView([51.58693, -0.0333882], 12);
 
 var tiles = L.tileLayer(&#39;http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png&#39;, {
 	maxZoom: 19,
@@ -266,7 +266,7 @@ for(var i = 0; i &amp;lt; markers.length; i++) {
 
 &lt;p&gt;The queries above are probably the most straightforward (and useful!) queries to learn to get started with SPARQL and so this is where we’ll leave it for our Linked Data 101 series. &lt;/p&gt;
 
-&lt;p&gt;As with any data querying language there’s various levels you may want to take your SPARQL skills up to. A good place to start is our &lt;a href=&quot;/blog/2016/01/18/linked-data-webinars-season-2.html&quot;&gt;free 1 hour SPARQL 101 webinar&lt;/a&gt; - the next one is being held on &lt;a href=&quot;https://www.eventbrite.co.uk/e/webinar-sparql-101-tickets-20857308772&quot; title=&quot;Register for our free SPARQL webinar&quot;&gt;March 10th&lt;/a&gt;. As always &lt;a href=&quot;/blog/tags/sparql/&quot;&gt;look our for posts&lt;/a&gt; right here on the blog!&lt;/p&gt;
+&lt;p&gt;As with any data querying language there’s various levels you may want to take your SPARQL skills up to. A good place to start is our &lt;a href=&quot;/blog/2016/01/18/linked-data-webinars-season-2.html&quot;&gt;free 1 hour SPARQL 101 webinar&lt;/a&gt; - the next one is being held on March 10th. As always &lt;a href=&quot;/blog/tags/sparql/&quot;&gt;look our for posts&lt;/a&gt; right here on the blog!&lt;/p&gt;
 
 &lt;p class=&quot;well text-center&quot;&gt;This article is part of the &lt;a href=&quot;/blog/tags/ld101-series/&quot;&gt;Linked Data 101 series&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -453,10 +453,6 @@ for(var i = 0; i &amp;lt; markers.length; i++) {
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/lu-geo.PNG&quot; alt=&quot;Choosing geo predicates&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
 
-&lt;p class=&quot;alert alert-danger text-center&quot;&gt;Whilst writing the &lt;a href=&quot;/blog/2016/02/29/linked-data-101-querying.html&quot;&gt;follow up blog post&lt;/a&gt; to this article, which includes displaying data on a map, it became obvious that the &lt;a href=&quot;http://data.london.gov.uk/dataset/allotment-locations/resource/b40c84cf-be67-4b99-bff4-c3ff08b37698#&quot;&gt;raw data&lt;/a&gt; had &lt;strong&gt;mislabelled&lt;/strong&gt; the latitude and longitude values (and has them mixed up). This can also be seen in the preview data at the bottom Level Up converter page. This post has now been updated to make sure that our &lt;em&gt;outputted&lt;/em&gt; data is in better shape. The moral of the story: always check for bad data and errors in what you have been supplied! &lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/baddata.png&quot; alt=&quot;Error found in the raw data&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
 &lt;p&gt;Now let’s have a look through the other columns, apologies in advance as I will jump around the list slightly rather than working top to bottom.&lt;/p&gt;
 
 &lt;h5 id=&quot;name&quot;&gt;&lt;strong&gt;Name&lt;/strong&gt;&lt;/h5&gt;
@@ -553,19 +549,18 @@ for(var i = 0; i &amp;lt; markers.length; i++) {
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;Latitude&lt;/td&gt;
-      &lt;td&gt;http://www.w3.org/2003/01/geo/wgs84_pos#&lt;strong&gt;long&lt;/strong&gt; ***&lt;/td&gt;
+      &lt;td&gt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&lt;/td&gt;
       &lt;td&gt;Decimal number&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;Longitude&lt;/td&gt;
-      &lt;td&gt;http://www.w3.org/2003/01/geo/wgs84_pos#&lt;strong&gt;lat&lt;/strong&gt; ***&lt;/td&gt;
+      &lt;td&gt;http://www.w3.org/2003/01/geo/wgs84_pos#long&lt;/td&gt;
       &lt;td&gt;Decimal number&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p class=&quot;small well&quot;&gt;** The column set as the ID will not be added as a property, so we don’t need to concern ourselves with this predicate. If you want to use it in the identifier and have it as a property in the raw data, do not select it as the primary ID - simply use its tag in the identifier template. &lt;br /&gt;
-*** See explanation above&lt;/p&gt;
+&lt;p class=&quot;small well&quot;&gt;** The column set as the ID will not be added as a property, so we don’t need to concern ourselves with this predicate. If you want to use it in the identifier and have it as a property in the raw data, do not select it as the primary ID - simply use its tag in the identifier template.&lt;/p&gt;
 
 &lt;h2 id=&quot;convert&quot;&gt;Convert!&lt;/h2&gt;
 
@@ -592,7 +587,7 @@ for(var i = 0; i &amp;lt; markers.length; i++) {
 &lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/lu-rdf.PNG&quot; alt=&quot;RDF-XML Preview&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
 
 &lt;p class=&quot;text-center&quot;&gt;
-&lt;a class=&quot;btn btn-default&quot; href=&quot;/assets/downloads/gla-allotment-locations-160301140247.zip&quot;&gt;
+&lt;a class=&quot;btn btn-default&quot; href=&quot;/assets/downloads/gla-allotment-locations-160218101935.zip&quot;&gt;
 &lt;span class=&quot;glyphicon glyphicon-download-alt&quot;&gt;
 Download zip file
 &lt;/span&gt;
@@ -609,7 +604,7 @@ Download zip file
 &lt;a class=&quot;btn-lg btn-primary&quot; href=&quot;http://levelup.networkedplanet.com&quot;&gt;Try it yourself at Level Up!&lt;/a&gt;
 &lt;/p&gt;
 
-&lt;p&gt;Next in the series we’ll be taking a look at &lt;a href=&quot;/blog/2016/02/29/linked-data-101-querying.html&quot;&gt;how to query linked data&lt;/a&gt;. Don’t forget we also run webinars and training throughout the year. See you next time!&lt;/p&gt;
+&lt;p&gt;Next in the series we’ll be taking a look at how to query linked data. Don’t forget we also run webinars and training throughout the year. See you next time!&lt;/p&gt;
 
 &lt;p class=&quot;well text-center&quot;&gt;This article is part of the &lt;a href=&quot;/blog/tags/ld101-series/&quot;&gt;Linked Data 101 series&lt;/a&gt;&lt;/p&gt;
 </description>
