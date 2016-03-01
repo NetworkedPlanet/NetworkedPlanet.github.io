@@ -5,9 +5,283 @@
     <description>Experts in Linked and Open Data Publishing</description>
     <link>http://networkedplanet.com/</link>
     <atom:link href="http://networkedplanet.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 24 Feb 2016 09:28:50 +0000</pubDate>
-    <lastBuildDate>Wed, 24 Feb 2016 09:28:50 +0000</lastBuildDate>
+    <pubDate>Tue, 01 Mar 2016 13:39:30 +0000</pubDate>
+    <lastBuildDate>Tue, 01 Mar 2016 13:39:30 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Linked Data 101 - Querying data with SPARQL</title>
+        <description>&lt;p class=&quot;well text-center&quot;&gt;This article is part of the &lt;a href=&quot;/blog/tags/ld101-series/&quot;&gt;Linked Data 101 series&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;previously&quot;&gt;Previously…&lt;/h2&gt;
+
+&lt;p&gt;So far in the Linked Data 101 series, we looked first at &lt;a href=&quot;/blog/2016/02/16/linked-data-101-identifiers.html&quot;&gt;why we use URIs as identifiers&lt;/a&gt;, and then moved on to looking at &lt;a href=&quot;/blog/2016/02/17/linked-data-101-predicates.html&quot;&gt;predicates&lt;/a&gt; in the second article. The third article had a walk-through of taking CSV data and &lt;a href=&quot;/blog/2016/02/18/linked-data-101-making-data-linkable-tutorial.html&quot;&gt;using Level Up online CSV to RDF converter&lt;/a&gt; to structure the data ready for the Web of Data.&lt;/p&gt;
+
+&lt;p&gt;Now that we’ve got some RDF from Level Up, I’ll show you how to get started with some simple queries on that data. &lt;/p&gt;
+
+&lt;h2 id=&quot;brightstardb&quot;&gt;BrightstarDB&lt;/h2&gt;
+
+&lt;p&gt;There are various RDF data stores available for different platforms and with various offerings in terms of management tools. For the purpose of this article I’m going to use &lt;a href=&quot;http://brightstardb.com/&quot;&gt;BrightstarDB&lt;/a&gt; as it’s a native .NET triple store (and cross-platform friendly), it’s open source, and also it’s &lt;a href=&quot;http://networkedplanet.com/#products&quot;&gt;ours&lt;/a&gt;! &lt;/p&gt;
+
+&lt;p&gt;Installing BrightstarDB is very simple, grab the &lt;a href=&quot;http://brightstardb.codeplex.com/&quot;&gt;latest release&lt;/a&gt; and then fire up the installer.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/pol-install2.png&quot; alt=&quot;BrightstarDB installation&quot; width=&quot;550px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;alert alert-info text-center&quot;&gt;Full documentation about installing and developing with BrightstarDB as well as using Polaris, is available online at &lt;a href=&quot;http://brightstardb.readthedocs.org/en/latest/&quot;&gt;BrightstarDB documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;polaris&quot;&gt;Polaris&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/pol-icon.png&quot; alt=&quot;Polaris icon&quot; width=&quot;120px&quot; class=&quot;img-medium img-responsive pull-left gap-right-dbl gap-bottom bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Polaris is a Windows desktop application that allows a user to manage various aspects of local and remote BrightstarDB servers. Using Polaris you can:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Create and delete stores on the server&lt;/li&gt;
+  &lt;li&gt;Import N-Triples or N-Quads files into a store&lt;/li&gt;
+  &lt;li&gt;Run a SPARQL query against a store&lt;/li&gt;
+  &lt;li&gt;Run an update transaction against a store&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p style=&quot;clear:both;&quot;&gt;We’re going to concentrate on creating a store, importing our triples and then doing simple queries on it.&lt;/p&gt;
+
+&lt;h2 id=&quot;create-a-connection&quot;&gt;Create a connection&lt;/h2&gt;
+
+&lt;p&gt;We can use different protocols - Embedded and REST - for connecting to the BrightstarDB server now installed on our machine. We’re going to use the embedded protocol*:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Select File &amp;gt; New Connection&lt;/li&gt;
+  &lt;li&gt;Enter “Embedded” as the Connection Name&lt;/li&gt;
+  &lt;li&gt;Select “Embedded” as the Connection Type&lt;/li&gt;
+  &lt;li&gt;Select a file path to use as the stores directory**&lt;/li&gt;
+  &lt;li&gt;Click OK&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;* If you prefer to run the BrightstarDB service a different way, you can &lt;a href=&quot;http://brightstardb.readthedocs.org/en/latest/Running_BrightstarDB/#&quot;&gt;read more in the documentation here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;** Make sure you have enough security access rights to read and write to that location&lt;/p&gt;
+
+&lt;h2 id=&quot;create-a-data-store&quot;&gt;Create a data store&lt;/h2&gt;
+
+&lt;p&gt;To create a data store select the new &lt;em&gt;“Embedded”&lt;/em&gt; connection and select Server &amp;gt; New Store.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/pol-newstore.png&quot; alt=&quot;Create a data store in Polaris&quot; width=&quot;550px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The Store Name field is pre-filled with a randomly generated name, so let’s change it to something more memorable - &lt;em&gt;Allotments&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Then we’re going to take the &lt;a href=&quot;/blog/2016/02/18/linked-data-101-making-data-linkable-tutorial.html&quot;&gt;RDF data produced in the last article&lt;/a&gt; (a download is available on that page) and upload it to our store.&lt;/p&gt;
+
+&lt;h2 id=&quot;importing-data&quot;&gt;Importing data&lt;/h2&gt;
+
+&lt;p&gt;As we’ve got BrightstarDB installed on our local machine, we’re going to run a Local Import (there are &lt;a href=&quot;http://brightstardb.readthedocs.org/en/latest/Using_Polaris/#importing-data&quot;&gt;more options for importing data&lt;/a&gt; depending on your server set up).&lt;/p&gt;
+
+&lt;p&gt;Unzip the data download produced by the Level Up converter. This gives you the same data in three different formats - N-Triples, RDF-XML and Turtle. Polaris can import any of these formats (along with N-Quads, RDF/JSON and Notation3), so I’m choosing to import the N-Triples file.&lt;/p&gt;
+
+&lt;p&gt;Select the &lt;em&gt;Allotments&lt;/em&gt; store from the connections list, then choose Store &amp;gt; New &amp;gt; Import Job.&lt;/p&gt;
+
+&lt;p&gt;We’re not concerned about specific graph names at this point so we simply select our N-Triples file using the file explorer dialog and click Start.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/pol-import.png&quot; alt=&quot;Import data using Polaris&quot; width=&quot;550px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;alert alert-info&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; Local import is not recommended for large data files. If the file you try to import exceeds 50MB in size a warning will be displayed. &lt;a href=&quot;http://brightstardb.readthedocs.org/en/latest/Using_Polaris/#importing-data&quot;&gt;Read more information in the docs&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;select-all&quot;&gt;Select All&lt;/h2&gt;
+
+&lt;p&gt;The first query we’re going to do is a simple “Select All” so that we can view all the triples in Polaris. Right-click the &lt;em&gt;“Allotments”&lt;/em&gt; store and select New &amp;gt; SPARQL query.&lt;/p&gt;
+
+&lt;p&gt;Enter the query below in the Query field and then press F5 (or hit the “Run” icon button)&lt;/p&gt;
+
+&lt;pre&gt;SELECT *
+WHERE
+{ ?s ?p ?o }&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/pol-selectall1.png&quot; alt=&quot;SPARQL Select All query&quot; width=&quot;750px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I’ve chosen &lt;code&gt;?s&lt;/code&gt;, &lt;code&gt;?p&lt;/code&gt; and &lt;code&gt;?o&lt;/code&gt; for my variable names for the three parts of the triples - subject, predicate and object - you may choose to use different variable names. For example the below is the exact same query:&lt;/p&gt;
+
+&lt;pre&gt;SELECT *
+WHERE
+{ ?id ?property ?value }&lt;/pre&gt;
+
+&lt;p&gt;Flipping the tabs we can view the data in a results table or an XML view.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/pol-selectall2.png&quot; alt=&quot;SPARQL Select All results table&quot; width=&quot;750px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/pol-selectall3.png&quot; alt=&quot;SPARQL Select All results XML&quot; width=&quot;750px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;query-all-triples-for-a-particular-resource&quot;&gt;Query: all triples for a particular resource&lt;/h2&gt;
+&lt;p&gt;To view all the triples for a particular resource, we enter its identifier into the query, like so:&lt;/p&gt;
+
+&lt;pre&gt;SELECT *
+WHERE
+{ &amp;lt;http://data.contoso.com/environment/allotments/358&amp;gt; ?p ?o }&lt;/pre&gt;
+
+&lt;p&gt;This is similar to saying “Get me all the predicates and objects that have this identifier as their subject.”&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/pol-filter-id.png&quot; alt=&quot;SPARQL Get triples for a particular resource&quot; width=&quot;750px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;query-all-resources-using-a-particular-predicate&quot;&gt;Query: all resources using a particular predicate&lt;/h2&gt;
+
+&lt;p&gt;Similarly, we can view all the resources that use a particular predicate and their values by entering the query below.&lt;/p&gt;
+
+&lt;pre&gt;
+SELECT *
+WHERE
+{ ?s &amp;lt;http://data.contoso.com/environment/ontology/facilities&amp;gt; ?o }
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/pol-filter-pred.png&quot; alt=&quot;SPARQL Get triples for a particular predicate&quot; width=&quot;750px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As you can see, not all resources had properties using this predicate and so only 18 results are returned - showing the subject and object parts of the triples.&lt;/p&gt;
+
+&lt;h2 id=&quot;query-all-resources-using-a-particular-value&quot;&gt;Query: all resources using a particular value&lt;/h2&gt;
+
+&lt;p&gt;Let’s look up some resources that have entered a certain value as the object of their “supplied postcode” triple.&lt;/p&gt;
+
+&lt;pre&gt;
+SELECT *
+WHERE
+{ ?s &amp;lt;http://data.contoso.com/environment/ontology/suppliedPostcode&amp;gt; &quot;E17&quot; }
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/pol-filter-val1.png&quot; alt=&quot;SPARQL Get triples using a particular value&quot; width=&quot;750px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This brings back 12 records, but as you can see we only have their identifiers (the predicate and object part of the triples have been supplied in the query), in order to return more information about those resources we need to ask for more in the query.&lt;/p&gt;
+
+&lt;pre&gt;
+SELECT *
+WHERE
+{ 
+?s &amp;lt;http://data.contoso.com/environment/ontology/suppliedPostcode&amp;gt; &quot;E17&quot; .
+?s ?p ?o
+}
+&lt;/pre&gt;
+
+&lt;p&gt;The first line of our query retrieves subjects using “E17” with the &lt;code&gt;&amp;lt;http://data.contoso.com/environment/ontology/suppliedPostcode&amp;gt;&lt;/code&gt; predicate, and the second retrieves all triples that link to those subjects.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/pol-filter-val2.png&quot; alt=&quot;SPARQL Get triples using a particular value&quot; width=&quot;750px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Perhaps we don’t want &lt;strong&gt;all&lt;/strong&gt; the triples associated with the given subjects, but instead want to simply return one other value - we can modify the query like so:&lt;/p&gt;
+
+&lt;pre&gt;
+SELECT *
+WHERE
+{ 
+?s &amp;lt;http://data.contoso.com/environment/ontology/suppliedPostcode&amp;gt; &quot;E17&quot; .
+?s &amp;lt;http://www.w3.org/2000/01/rdf-schema#label&amp;gt; ?o .
+}
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/pol-filter-val3.png&quot; alt=&quot;SPARQL Get triples using a particular value&quot; width=&quot;750px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;ordering-results&quot;&gt;Ordering results&lt;/h2&gt;
+
+&lt;p&gt;We can order those results by using the &lt;code&gt;ORDER BY&lt;/code&gt; phrase:&lt;/p&gt;
+
+&lt;pre&gt;
+SELECT *
+WHERE
+{ 
+?s &amp;lt;http://data.contoso.com/environment/ontology/suppliedPostcode&amp;gt; &quot;E17&quot; .
+?s &amp;lt;http://www.w3.org/2000/01/rdf-schema#label&amp;gt; ?label .
+}
+ORDER BY ?label
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/pol-order.png&quot; alt=&quot;SPARQL Order by&quot; width=&quot;750px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;limiting-the-number-returned&quot;&gt;Limiting the number returned&lt;/h2&gt;
+
+&lt;p&gt;Only want the top 5? We simply add a &lt;code&gt;LIMIT&lt;/code&gt; phrase to the SPARQL statement:&lt;/p&gt;
+
+&lt;pre&gt;
+SELECT *
+WHERE
+{ 
+?s &amp;lt;http://data.contoso.com/environment/ontology/suppliedPostcode&amp;gt; &quot;E17&quot; .
+?s &amp;lt;http://www.w3.org/2000/01/rdf-schema#label&amp;gt; ?label .
+}
+ORDER BY ?label
+LIMIT 5
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/pol-limit.png&quot; alt=&quot;SPARQL Limit the number of results returned&quot; width=&quot;750px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;only-returning-particular-values&quot;&gt;Only returning particular values&lt;/h2&gt;
+
+&lt;p&gt;If we only want or need particular values, we can replace the &lt;code&gt;SELECT *&lt;/code&gt; and be more specific:&lt;/p&gt;
+
+&lt;pre&gt;
+SELECT ?label ?lat ?long
+WHERE
+{ 
+?s &amp;lt;http://data.contoso.com/environment/ontology/suppliedPostcode&amp;gt; &quot;E17&quot; .
+?s &amp;lt;http://www.w3.org/2000/01/rdf-schema#label&amp;gt; ?label .
+?s &amp;lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&amp;gt; ?lat . 
+?s &amp;lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&amp;gt; ?long . 
+}
+ORDER BY ?label
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/pol-values.png&quot; alt=&quot;SPARQL Select which values to include&quot; width=&quot;750px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;making-use-of-the-data&quot;&gt;Making use of the data&lt;/h2&gt;
+
+&lt;p&gt;You can see by the returned values how easily they can be visualised. Using &lt;a href=&quot;https://www.openstreetmap.org/&quot;&gt;OpenStreetMap&lt;/a&gt; (a free editable map of the world available as open data) and the open source &lt;a href=&quot;http://leafletjs.com&quot;&gt;Leaflet.js&lt;/a&gt; we can quickly place the pinpoints to view on a map using the javascript code:&lt;/p&gt;
+
+&lt;div id=&quot;map&quot;&gt;
+
+&lt;/div&gt;
+
+&lt;pre&gt;
+var markers = [
+    {&quot;label&quot;:&quot;Cheshire Fields&quot;, &quot;long&quot;:-0.038715, &quot;lat&quot;:51.576236},
+	{&quot;label&quot;:&quot;Chestnuts Farm&quot;, &quot;long&quot;:-0.014994, &quot;lat&quot;:51.592189},
+	{&quot;label&quot;:&quot;Forest Road&quot;, &quot;long&quot;:0.005339, &quot;lat&quot;:51.591496},
+	{&quot;label&quot;:&quot;Hale End Road&quot;, &quot;long&quot;:-0.000226, &quot;lat&quot;:51.596406},
+	{&quot;label&quot;:&quot;Higham Hill Common&quot;, &quot;long&quot;:-0.02978, &quot;lat&quot;:51.593777},
+	{&quot;label&quot;:&quot;Honeybone&quot;, &quot;long&quot;:-0.033135, &quot;lat&quot;:51.577039},
+	{&quot;label&quot;:&quot;Low Hall Farm&quot;, &quot;long&quot;:-0.033687, &quot;lat&quot;:51.571343},
+	{&quot;label&quot;:&quot;Low Hall Lane&quot;, &quot;long&quot;:-0.032928, &quot;lat&quot;:51.576619},
+	{&quot;label&quot;:&quot;Markhouse Common&quot;, &quot;long&quot;:-0.026112, &quot;lat&quot;:51.576161},
+	{&quot;label&quot;:&quot;Sinnott Road&quot;, &quot;long&quot;:-0.041737, &quot;lat&quot;:51.598899},
+	{&quot;label&quot;:&quot;Trencherfield&quot;, &quot;long&quot;:-0.040005, &quot;lat&quot;:51.596741},
+	{&quot;label&quot;:&quot;Willow Tree&quot;, &quot;long&quot;:-0.018091, &quot;lat&quot;:51.605109}
+];
+
+var map = L.map(&#39;map&#39;).setView([51.58693, -0.0333882], 12);
+
+var tiles = L.tileLayer(&#39;http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png&#39;, {
+	maxZoom: 19,
+	attribution: &#39;&amp;copy; &lt;a href=&quot;http://www.openstreetmap.org/copyright&quot;&gt;OpenStreetMap&lt;/a&gt;&#39;
+}).addTo(map);
+
+for(var i = 0; i &amp;lt; markers.length; i++) {
+	var m = markers[i];
+	var marker = L.marker([m.lat, m.long]).addTo(map);
+    marker.bindPopup(m.label);
+}
+&lt;/pre&gt;
+
+&lt;h2 id=&quot;learning-more-sparql&quot;&gt;Learning more SPARQL&lt;/h2&gt;
+
+&lt;p&gt;The queries above are probably the most straightforward (and useful!) queries to learn to get started with SPARQL and so this is where we’ll leave it for our Linked Data 101 series. &lt;/p&gt;
+
+&lt;p&gt;As with any data querying language there’s various levels you may want to take your SPARQL skills up to. A good place to start is our &lt;a href=&quot;/blog/2016/01/18/linked-data-webinars-season-2.html&quot;&gt;free 1 hour SPARQL 101 webinar&lt;/a&gt; - the next one is being held on March 10th. As always &lt;a href=&quot;/blog/tags/sparql/&quot;&gt;look our for posts&lt;/a&gt; right here on the blog!&lt;/p&gt;
+
+&lt;p class=&quot;well text-center&quot;&gt;This article is part of the &lt;a href=&quot;/blog/tags/ld101-series/&quot;&gt;Linked Data 101 series&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 29 Feb 2016 00:00:00 +0000</pubDate>
+        <link>http://networkedplanet.com/blog/2016/02/29/linked-data-101-querying.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2016/02/29/linked-data-101-querying.html</guid>
+        
+        <category>LD101 series</category>
+        
+        <category>linked data</category>
+        
+        <category>sparql</category>
+        
+        
+      </item>
     
       <item>
         <title>Linked Data - a short presentation</title>
@@ -330,7 +604,7 @@ Download zip file
 &lt;a class=&quot;btn-lg btn-primary&quot; href=&quot;http://levelup.networkedplanet.com&quot;&gt;Try it yourself at Level Up!&lt;/a&gt;
 &lt;/p&gt;
 
-&lt;p&gt;Next in the series we’ll be taking a quick look at a few more linked data concepts - such as Types, and don’t forget we also run webinars and training throughout the year. See you next time!&lt;/p&gt;
+&lt;p&gt;Next in the series we’ll be taking a look at how to query linked data. Don’t forget we also run webinars and training throughout the year. See you next time!&lt;/p&gt;
 
 &lt;p class=&quot;well text-center&quot;&gt;This article is part of the &lt;a href=&quot;/blog/tags/ld101-series/&quot;&gt;Linked Data 101 series&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -770,403 +1044,6 @@ partner organisations all the way to data that is made available to all to use a
         <category>open data</category>
         
         <category>video</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>SPARQL CONSTRUCT 101</title>
-        <description>&lt;p&gt;A SPARQL query can be written to return one of three things - SELECT returns a tabular set of results, ASK returns a simple boolean (true or false), and CONSTRUCT returns an RDF graph. For most human interaction with SPARQL endpoints we tend to prefer tables as they are just easier for us to grok, but if you are working with code that has an RDF parser available to it, then CONSTRUCT can really be your best friend and it is worth spending some time to understand how CONSTRUCT works and what cool sorts of things you can do with it.&lt;/p&gt;
-
-&lt;p&gt;I’m going to walk through a few features of SPARQL CONSTRUCT using a really simple made-up sample file. If you would like to follow along, you can get the sample file I’m using from &lt;a href=&quot;https://gist.github.com/kal/ee1260ceb462d8e0d5bb&quot;&gt;this gist on GitHub&lt;/a&gt;. You will need a triple-store to query too - if you don’t have one installed (and if you are on Windows), why not try out &lt;a href=&quot;http://brightstardb.codeplex.com/&quot;&gt;BrightstarDB&lt;/a&gt;? BrightstarDB comes with a management application called Polaris which makes it easy to create a new store, import the file and run SPARQL queries. You can read about Polaris &lt;a href=&quot;http://brightstardb.readthedocs.org/en/latest/Using_Polaris/&quot;&gt;here in the BrightstarDB documentation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The sample dataset I’ve produced is really simple, it lists 13 imaginary server transaction logs. Each transaction log records the server that processed the transaction, the date/time that the transaction was processed and the status code of the transaction (just for fun there are some failed transactions in there).&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Lets start with a really simple query to just list out the transactions in a table. For a table result we use a SELECT query::&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;PREFIX log: &amp;lt;http://example.org/ont/transaction-log/&amp;gt;
-SELECT ?txn WHERE { ?txn a log:Transaction . }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;SPARQL is based on matching patterns in the graph, so this simple query finds all triples
-that match a pattern &lt;code&gt;{something} rdf:type log:Transaction&lt;/code&gt; (&lt;code&gt;a&lt;/code&gt; is just short-hand for rdf:type, you will see it is also used in the sample file). Then all of the values that match
-{something} are assigned (in SPARQL-parlance &lt;strong&gt;bound&lt;/strong&gt;) to the variable ?txt. Each match found
-results in a separate row in our results table. As this sample file contains 13 transaction logs,
-the query will return a table with a single column and 13 rows like this:&lt;/p&gt;
-
-&lt;table class=&quot;table table-striped&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;?txn&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/134&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/135&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/130&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/131&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/132&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/133&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/129&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/128&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/125&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/124&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/127&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/126&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/123&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;You can see that the results are not in the same order that they were specified in the source file, or even in order of their value - to order our results we would need to explicitly specify that in our query.&lt;/p&gt;
-
-&lt;p&gt;Let’s suppose our challenge is to list transactions grouped together by the server that they are processed on. First we need to add the server itself to our triple pattern in the query:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;PREFIX log: &amp;lt;http://example.org/ont/transaction-log/&amp;gt;
-SELECT * WHERE { 
-    ?txn a log:Transaction . 
-    ?txn log:processedBy ?server
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I’m still using a &lt;code&gt;SELECT&lt;/code&gt; at the moment so that you can see more easily what is going on, but notice that I’ve changed the bit after the &lt;code&gt;SELECT&lt;/code&gt; to be &lt;code&gt;*&lt;/code&gt;. &lt;code&gt;SELECT *&lt;/code&gt; simply selects all of the variables in the pattern part of the query. Often in a query you will have variables in the pattern that are not useful in the results; but when exploring data and when debugging queries that are not returning the expected results I often switch from &lt;code&gt;SELECT ?v1 ?v2&lt;/code&gt; to &lt;code&gt;SELECT *&lt;/code&gt; so that I can see all of the variables.&lt;/p&gt;
-
-&lt;p&gt;Now we have two columns in our results:&lt;/p&gt;
-
-&lt;table class=&quot;table table-striped&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;?txn&lt;/th&gt;
-      &lt;th&gt;?server&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/130&lt;/td&gt;
-      &lt;td&gt;http://example.org/data/server/B&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/135&lt;/td&gt;
-      &lt;td&gt;http://example.org/data/server/A&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/134&lt;/td&gt;
-      &lt;td&gt;http://example.org/data/server/C&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/129&lt;/td&gt;
-      &lt;td&gt;http://example.org/data/server/A&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/131&lt;/td&gt;
-      &lt;td&gt;http://example.org/data/server/C&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/128&lt;/td&gt;
-      &lt;td&gt;http://example.org/data/server/C&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/125&lt;/td&gt;
-      &lt;td&gt;http://example.org/data/server/C&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/124&lt;/td&gt;
-      &lt;td&gt;http://example.org/data/server/B&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/127&lt;/td&gt;
-      &lt;td&gt;http://example.org/data/server/B&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/126&lt;/td&gt;
-      &lt;td&gt;http://example.org/data/server/A&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/123&lt;/td&gt;
-      &lt;td&gt;http://example.org/data/server/A&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/132&lt;/td&gt;
-      &lt;td&gt;http://example.org/data/server/A&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/133&lt;/td&gt;
-      &lt;td&gt;http://example.org/data/server/B&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;If we were sticking with SELECT I would go for using a SORT now to sort by server which effectively gives us a form of grouping:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;PREFIX log: &amp;lt;http://example.org/ont/transaction-log/&amp;gt;
-SELECT * WHERE { 
-    ?txn a log:Transaction . 
-    ?txn log:processedBy ?server
-} ORDER BY ?server
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Resulting in:&lt;/p&gt;
-
-&lt;table class=&quot;table table-striped&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;?txn&lt;/th&gt;
-      &lt;th&gt;?server&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/135&lt;/td&gt;
-      &lt;td&gt;http://example.org/data/server/A&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/132&lt;/td&gt;
-      &lt;td&gt;http://example.org/data/server/A&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/129&lt;/td&gt;
-      &lt;td&gt;http://example.org/data/server/A&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/126&lt;/td&gt;
-      &lt;td&gt;http://example.org/data/server/A&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/123&lt;/td&gt;
-      &lt;td&gt;http://example.org/data/server/A&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/130&lt;/td&gt;
-      &lt;td&gt;http://example.org/data/server/B&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/133&lt;/td&gt;
-      &lt;td&gt;http://example.org/data/server/B&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/124&lt;/td&gt;
-      &lt;td&gt;http://example.org/data/server/B&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/127&lt;/td&gt;
-      &lt;td&gt;http://example.org/data/server/B&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/134&lt;/td&gt;
-      &lt;td&gt;http://example.org/data/server/C&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/131&lt;/td&gt;
-      &lt;td&gt;http://example.org/data/server/C&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/128&lt;/td&gt;
-      &lt;td&gt;http://example.org/data/server/C&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/125&lt;/td&gt;
-      &lt;td&gt;http://example.org/data/server/C&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;To process this sort of result I would still need to do some basic grouping work on the client - I would loop through the rows checking when the &lt;code&gt;?server&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;But if my client code can handle RDF then I can instead use a CONSTRUCT with these results to build a little RDF graph that I can process. CONSTRUCT works by defining a second pattern 
-that looks a lot like the pattern in the WHERE part of the query. Here is a simple example:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;PREFIX log: &amp;lt;http://example.org/ont/transaction-log/&amp;gt;
-CONSTRUCT {
-    ?server log:processed ?txn .
-}
-WHERE { 
-    ?txn a log:Transaction . 
-    ?txn log:processedBy ?server
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The best way to visualize how CONSTRUCT works is to imagine that the SPARQL query processor first executes the WHERE part with a SELECT * so that it has a table of all the matches and access to all of the variables you used in the WHERE pattern. Then it loops through those rows one at a time and it generates triples by replacing the value found for each variable into the pattern you have provided in the CONSTRUCT.
- So when processing this sample query above it might find that the first row of the results table is:&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;?txn&lt;/th&gt;
-      &lt;th&gt;?server&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;http://example.org/data/transaction/135&lt;/td&gt;
-      &lt;td&gt;http://example.org/data/server/A&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Resulting in the generation of a single triple:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;http://example.org/data/server/A&amp;gt; log:processed &amp;lt;http://example.org/data/transaction/135&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;And here is our first cool thing about CONSTRUCT.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;You are not restricted to using the predicates and types that you are querying&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Effectively this means in CONSTRUCT you can build exactly the shape of RDF data that you want to process on the client. In my example, if I want to group the transactions together by the server that they are on, then the way that information is presented in the data is “backwards”. Sure I can query it backwards if I want to, but its more intuitive (to me at least) to restructure the results so that the server is the subject and the transaction log the object of the triples in my result graph.&lt;/p&gt;
-
-&lt;p&gt;As the rest of the results are processed more triples get added to the result graph. And this is the second cool thing about CONSTRUCT.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Duplicates get merged&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;So at the end of processing the results, my RDF graph looks like this (excuse the ASCII art):&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;           log:processed
-server:A +----------------&amp;gt; txn:132
-         | log:processed
-         +----------------&amp;gt; txn:135
-         |
-        ...
-         
-           log:processed
-server:B +----------------&amp;gt; txn:130
-         | log:processed
-         +----------------&amp;gt; txn:133
-         |
-        ...
-
-           log:processed
-server:C +----------------&amp;gt; txn:134
-         | log:processed
-         +----------------&amp;gt; txn:131
-         |
-        ...
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;If you are using Polaris to follow along here, you will find the results in RDF/XML on the &lt;code&gt;Results XML&lt;/code&gt; tab in the query window.&lt;/p&gt;
-
-&lt;p&gt;When processing these results on the client we may have a little problem though. How do we know which servers are included in our results ? If we know beforehand the full list of servers we might expect in the results then we could just iterate that list and ask for the log:processed triples for each one, but that’s not going to work if we have no prior knowledge (or if someone
-adds another server). What we need instead is some way to mark our “entry points” into the results graph. As this is just RDF, the answer is of course “add another triple”. One way to tackle this would be to mark the servers out by adding an rdf:type to them:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;PREFIX log: &amp;lt;http://example.org/ont/transaction-log/&amp;gt;
-CONSTRUCT {
-    ?server a log:Server .
-    ?server log:processed ?txn .
-}
-WHERE { 
-    ?txn a log:Transaction . 
-    ?txn log:processedBy ?server
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Again we are using the ability to define types and predicates in our CONSTRUCT pattern that do not (necessarily) exist in the source data. We are also taking advantage of the fact that RDF automatically eliminates duplicate statements, so our results will only actually contain one &lt;code&gt;rdf:type&lt;/code&gt; statement for each server, and not 13 as you might think at first glance. The final RDF graph would be something like:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;log:Server
-    ^  rdf:type           log:processed
-    |&amp;lt;-------  server:A +----------------&amp;gt; txn:132
-    |                   | log:processed
-    |                   +----------------&amp;gt; txn:135
-    |                   |
-    |                  ...
-    |    
-    |  rdf:type            log:processed
-    +&amp;lt;--------- server:B +----------------&amp;gt; txn:130
-    |                    | log:processed
-    |                    +----------------&amp;gt; txn:133
-    |                    |
-    |                   ...
-    |           
-    |  rdf:type            log:processed
-    +&amp;lt;--------- server:C +----------------&amp;gt; txn:134
-                         | log:processed
-                         +----------------&amp;gt; txn:131
-                         |
-                        ...
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;So now our code to process this result can just look for &lt;code&gt;log:Server&lt;/code&gt; and find all resources connected to it by an rdf:type predicate to list out the servers, then follow the &lt;code&gt;log:processed&lt;/code&gt; predicate for each server to list out the transactions for that server.&lt;/p&gt;
-
-&lt;p&gt;Hopefully what you can also see is that the graph view of results also makes it inherently far easier to work with queries that return items with lists of values for a given property. Because the SPARQL SELECT is restricted to a tabular result, you end up with one row for every possible combination of values which can lead to a massive explosion in the number of rows if you are dealing with complex data structures with several repeated properties. CONSTRUCT gets you out of that hole quite nicely because you are generating a graph from a graph rather than having to try and flatten everything out into a table.&lt;/p&gt;
-
-&lt;p&gt;One issue that does come up with the use of CONSTRUCT however is that of sorting. The RDF graph created by a CONSTRUCT query is, just like any other RDF graph, an unordered collection of triples. So if you need your results in sorted order, you will need to do that on the client. So this is the third really cool thing about using CONSTRUCT.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;You can use SPARQL on the client-side to slice and dice results from the server&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Personally I find the easiest way to do this is to use a secondary SPARQL query on the client that queries just the RDF graph that is returned from the server. It may sound odd to do this, but in effect you are using the server to deliver you a chunk of data as an RDF graph and then the client to extract the final results from that chunk. Sometimes you will want to do the sorting on both the client and the server - a good example of this would be asking for ordered, paged results. As an example, lets say that we want the first 10 transaction logs sorted by date/time. On the server we would need a CONSTRUCT query like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;PREFIX log: &amp;lt;http://example.org/ont/transaction-log/&amp;gt;
-CONSTRUCT {
-    ?server a log:Server .
-    ?server log:processed ?txn .
-	?txn log:processedAt ?procTime
-}
-WHERE { 
-    ?txn a log:Transaction . 
-    ?txn log:processedBy ?server .
-	?txn log:processedAt ?procTime .
-} ORDER BY ?procTime LIMIT 10
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The ORDER BY is needed on the server side because we want to ensure a consistent sort order when paging through the results. The LIMIT restricts us to the first 10 results. If you replace the &lt;code&gt;CONSTRUCT { ... }&lt;/code&gt; with &lt;code&gt;SELECT *&lt;/code&gt; and re-run the query you will see that the results table is sorted but because CONSTRUCT is generating a graph, that sorting gets lost. To reconstruct the correct order on the client we could just grovel through the RDF graph and do the sorting using standard programming language constructs; but if we have SPARQL capability on the client we can make life easy for ourselves by using a SELECT to pull out our results in the required order. On the client we might use a query like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;PREFIX log: &amp;lt;http://example.org/ont/transaction-log/&amp;gt;
-SELECT ?txn, ?time, ?server WHERE {
-	?server log:processed ?txn .
-	?txn log:processedAt ?time .
-} ORDER BY ?time
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Note: we don’t need the LIMIT here because we only pulled 10 results from the server.&lt;/p&gt;
-
-&lt;p&gt;OK, for this simple example data using a CONSTRUCT in this way is just overhead; but if you imagine needing to retrieve more complex data where each transaction has one or more repeated properties then CONSTRUCT really is the way to go.&lt;/p&gt;
-
-&lt;p&gt;This sort of pattern of pulling a graph from the server and querying it on the client can become really useful in a variety of circumstances. It allows you to hit the server up once for a bunch of data and then selectively extract slices of that data on the client side in response to user input or other UI requirements rather than having to constantly hit the server with lots of smaller queries; it also allows you to incrementally build up a local in-memory cache of data from the server - again with the potential to reduce the number of server round-trips you need to make.&lt;/p&gt;
-
-&lt;p&gt;I hope this post has given you a bit of an insight into CONSTRUCT and has you hunting around for an RDF processing library for your chosen programming language! If you are on .NET, check out &lt;a href=&quot;http://dotnetrdf.org/&quot;&gt;DotNetRDF&lt;/a&gt;; Pythonistas should use &lt;a href=&quot;https://pypi.python.org/pypi/rdflib?&quot;&gt;rdflib&lt;/a&gt;; libraries are also available for many other languages that I don’t personally use - &lt;a href=&quot;https://duckduckgo.com/?q=rdf+library&quot;&gt;DuckDuckGo is your friend&lt;/a&gt;!&lt;/p&gt;
-
-&lt;p&gt;If you have any thoughts or questions or would like to share your own cool CONSTRUCT tips, hit us up in the comments below!&lt;/p&gt;
-</description>
-        <pubDate>Fri, 16 Oct 2015 14:41:38 +0100</pubDate>
-        <link>http://networkedplanet.com/blog/2015/10/16/sparql-construct-101.html</link>
-        <guid isPermaLink="true">http://networkedplanet.com/blog/2015/10/16/sparql-construct-101.html</guid>
-        
-        <category>rdf</category>
-        
-        <category>sparql</category>
-        
-        <category>tutorial</category>
         
         
       </item>
