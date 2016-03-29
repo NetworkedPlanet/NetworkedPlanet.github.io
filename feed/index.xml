@@ -5,9 +5,31 @@
     <description>Experts in Linked and Open Data Publishing</description>
     <link>http://networkedplanet.com/</link>
     <atom:link href="http://networkedplanet.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 01 Mar 2016 16:40:29 +0000</pubDate>
-    <lastBuildDate>Tue, 01 Mar 2016 16:40:29 +0000</lastBuildDate>
+    <pubDate>Tue, 29 Mar 2016 18:30:23 +0100</pubDate>
+    <lastBuildDate>Tue, 29 Mar 2016 18:30:23 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Newsletter Issue 3 hits the inboxes</title>
+        <description>&lt;p&gt;The third issue of our email newsletter has hit the &lt;a href=&quot;http://networkedplanet.us11.list-manage.com/subscribe?u=62daac7ae19a90ef03ea3bd42&amp;amp;id=a797a2dd15&quot;&gt;mailing list&lt;/a&gt; inboxes. &lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://us11.campaign-archive1.com/?u=62daac7ae19a90ef03ea3bd42&amp;amp;id=e7d12c0b8a&quot;&gt;Click here to read this issue&lt;/a&gt; in your browser, and &lt;a href=&quot;http://us11.campaign-archive1.com/home/?u=62daac7ae19a90ef03ea3bd42&amp;amp;id=a797a2dd15&quot;&gt;access the newsletter archive here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://networkedplanet.us11.list-manage.com/subscribe?u=62daac7ae19a90ef03ea3bd42&amp;amp;id=a797a2dd15&quot;&gt;Sign up to our mailing list&lt;/a&gt; - we send newsletters roughly quarterly, possibly punctuated with the odd single-shot news item if we think it’s important!&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 29 Mar 2016 00:00:00 +0100</pubDate>
+        <link>http://networkedplanet.com/blog/2016/03/29/newsletter-issue-3.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2016/03/29/newsletter-issue-3.html</guid>
+        
+        <category>newsletter</category>
+        
+        <category>mailing list</category>
+        
+        
+      </item>
     
       <item>
         <title>Open data feedback at work!</title>
@@ -991,74 +1013,6 @@ to making your data discoverable.&lt;/p&gt;
         <category>newsletter</category>
         
         <category>mailing list</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>NetworkedPlanet Webinars</title>
-        <description>&lt;p&gt;We are pleased to announce our second series of training webinars. Following on from the couple of successful webinars we presented
-last year, Season 2 of the NetworkedPlanet webinars is now three episodes long.&lt;/p&gt;
-
-&lt;div vocab=&quot;http://schema.org/&quot;&gt;
-&lt;div typeof=&quot;EducationEvent&quot;&gt;
-&lt;span property=&quot;description&quot;&gt;
-In the &lt;a href=&quot;https://www.eventbrite.co.uk/e/webinar-introduction-to-rdf-and-sparql-tickets-20856883500&quot; onclick=&quot;trackOutboundLink(&#39;https://www.eventbrite.co.uk/e/webinar-introduction-to-rdf-and-sparql-tickets-20856883500&#39;); return false;&quot; property=&quot;url&quot;&gt;&lt;span property=&quot;name&quot;&gt;Introduction to RDF and SPARQL&lt;/span&gt;&lt;/a&gt;
-(&lt;meta property=&quot;startDate&quot; content=&quot;2016-02-04T14:00:00Z&quot; /&gt;4th Feb, &lt;meta property=&quot;duration&quot; content=&quot;1H&quot; /&gt;14:00-15:00 GMT) you will learn the technical fundamentals of linked open data. 
-This presentation focusses on the technical details of what exactly RDF is and how the SPARQL language allows you to query RDF data.
-&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;a class=&quot;btn btn-primary&quot; href=&quot;https://www.eventbrite.co.uk/e/webinar-introduction-to-rdf-and-sparql-tickets-20856883500&quot; onclick=&quot;trackOutboundLink(&#39;https://www.eventbrite.co.uk/e/webinar-introduction-to-rdf-and-sparql-tickets-20856883500&#39;); return false;&quot;&gt;Sign Up For RDF/SPARQL&lt;/a&gt;
-&lt;p&gt;&lt;/p&gt;
-
-&lt;div typeof=&quot;EducationEvent&quot;&gt;
-&lt;span property=&quot;description&quot;&gt;
-The &lt;a href=&quot;https://www.eventbrite.co.uk/e/webinar-introduction-to-linked-data-tickets-20857152304&quot; onclick=&quot;trackOutboundLink(&#39;https://www.eventbrite.co.uk/e/webinar-introduction-to-linked-data-tickets-20857152304&#39;); return false;&quot; property=&quot;url&quot;&gt;&lt;span property=&quot;name&quot;&gt;Introduction to Linked Data&lt;/span&gt;&lt;/a&gt;
-(&lt;meta property=&quot;startDate&quot; content=&quot;2016-02-18T14:00:00Z&quot; /&gt;18th Feb, &lt;meta property=&quot;duration&quot; content=&quot;1H&quot; /&gt;14:00-15:00 GMT) is a (mostly) non-technical presentation focussed on the what and why of Linked Data - what is Linked Data, what are 
-the benefits of publishing and using Linked Data, what are the steps to take in publishing your own
-Linked Data either internally or externally.
-&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;a class=&quot;btn btn-primary&quot; href=&quot;https://www.eventbrite.co.uk/e/webinar-introduction-to-linked-data-tickets-20857152304&quot; onclick=&quot;trackOutboundLink(&#39;https://www.eventbrite.co.uk/e/webinar-introduction-to-linked-data-tickets-20857152304&#39;); return false;&quot;&gt;Sign Up For Linked Data&lt;/a&gt;
-&lt;p&gt;&lt;/p&gt;
-
-&lt;div typeof=&quot;EducationEvent&quot;&gt;
-&lt;span property=&quot;description&quot;&gt;
-The &lt;a href=&quot;https://www.eventbrite.co.uk/e/webinar-sparql-101-tickets-20857308772&quot; onclick=&quot;trackOutboundLink(&#39;https://www.eventbrite.co.uk/e/webinar-sparql-101-tickets-20857308772&#39;); return false;&quot; property=&quot;url&quot;&gt;&lt;span property=&quot;name&quot;&gt;SPARQL 101&lt;/span&gt;&lt;/a&gt; webinar
-(&lt;meta property=&quot;startDate&quot; content=&quot;2016-03-10T14:00:00Z&quot; /&gt;10th March, &lt;meta property=&quot;duration&quot; content=&quot;1H&quot; /&gt;14:00-15:00 GMT) focusses on the SPARQL
-query language for RDF. Building on what was learnt in the introduction webinar, this webinar goes into more detail about the query
-language and shows some examples of how to use SPARQL to explore datasets, extract salient information from them and create reports
-by aggregating data.
-&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;a class=&quot;btn btn-primary&quot; href=&quot;https://www.eventbrite.co.uk/e/webinar-sparql-101-tickets-20857308772&quot; onclick=&quot;trackOutboundLink(&#39;https://www.eventbrite.co.uk/e/webinar-sparql-101-tickets-20857308772&#39;); return false;&quot;&gt;Sign Up For SPARQL 101&lt;/a&gt;
-&lt;p&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
-&lt;p&gt;All of these webinars will be an hour long, with about 45-50 minutes of presentation followed by some time for questions afterwards.
-The webinars will be presented by Kal Ahmed who in addition to being the founder of NetworkedPlanet is also the lead developer of &lt;a href=&quot;http://brightstardb.com/&quot;&gt;BrightstarDB&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;These webinars are FREE to attend, but places are limited - so be sure to register using the links above to assure your place!&lt;/p&gt;
-
-&lt;p&gt;We are already planning Season 3 with possible additional episodes covering things such as &lt;a href=&quot;http://brightstardb.com/&quot;&gt;BrightstarDB&lt;/a&gt;;
-and the &lt;a href=&quot;http://dataplatform.co.uk/&quot;&gt;Data Platform&lt;/a&gt;. If you would like to get a heads-up on these
-future webinars when they are announced, &lt;a href=&quot;https://twitter.com/nwplanet&quot;&gt;follow us on Twitter&lt;/a&gt; or &lt;a href=&quot;/#contact&quot;&gt;sign-up for the NetworkedPlanet Newsletter&lt;/a&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 18 Jan 2016 00:00:00 +0000</pubDate>
-        <link>http://networkedplanet.com/blog/2016/01/18/linked-data-webinars-season-2.html</link>
-        <guid isPermaLink="true">http://networkedplanet.com/blog/2016/01/18/linked-data-webinars-season-2.html</guid>
-        
-        <category>webinar</category>
-        
-        <category>rdf</category>
-        
-        <category>sparql</category>
-        
-        <category>linked data</category>
         
         
       </item>
