@@ -5,9 +5,66 @@
     <description>Experts in Linked and Open Data Publishing</description>
     <link>http://networkedplanet.com/</link>
     <atom:link href="http://networkedplanet.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 29 Mar 2016 18:30:23 +0100</pubDate>
-    <lastBuildDate>Tue, 29 Mar 2016 18:30:23 +0100</lastBuildDate>
+    <pubDate>Tue, 17 May 2016 16:59:59 +0100</pubDate>
+    <lastBuildDate>Tue, 17 May 2016 16:59:59 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Open Data Camp 3 - Bristol fashion</title>
+        <description>&lt;p&gt;Last year I blogged about just how &lt;a href=&quot;/blog/2015/10/13/open-data-camp.html&quot;&gt;impressed I was with Open Data Camp 2&lt;/a&gt;, a free unconference that was held in Manchester. The &lt;strong&gt;un-&lt;/strong&gt;conference format of Open Data Camp (or &lt;a href=&quot;https://twitter.com/search?q=%23odcamp&amp;amp;src=typd&quot;&gt;#odcamp&lt;/a&gt; as you’ll find people hashtagging) means that each day starts with attendees pitching suggestions for topics, which are then organised into a day incredibly interesting sessions.&lt;/p&gt;
+
+&lt;p&gt;At the end of ODCamp2, there was a call out for suggestions for host volunteers and I quickly started working on a two-pronged attack that consisted largely of pestering the ODCamp organisers and also doing a lot of arm-waving back in Bristol to enthuse about what was so great about ODCamp itself.&lt;/p&gt;
+
+&lt;h3 id=&quot;local-heroes&quot;&gt;Local heroes&lt;/h3&gt;
+
+&lt;p&gt;Luckily for us, there’s an active data geek group in Bristol in the form of &lt;a href=&quot;http://www.meetup.com/south-west-data/&quot;&gt;South West Data&lt;/a&gt; who were instrumental in securing the amazing &lt;a href=&quot;http://www.watershed.co.uk/&quot;&gt;Watershed&lt;/a&gt; as the venue, and through chats at the South West Data meetups,  Bristol City Council’s &lt;a href=&quot;http://www.connectingbristol.org/&quot;&gt;Connecting Bristol&lt;/a&gt; got on board with crucial support and sponsorship early on too. ODCamp makes use of several break-out spaces for sessions, and so again we were really lucky to have the support of &lt;a href=&quot;http://www.watershed.co.uk/pmstudio/&quot;&gt;Pervasive Media Studios&lt;/a&gt;, who allowed us to use their neighbouring meeting spaces next door to the Watershed. &lt;/p&gt;
+
+&lt;p&gt;So a big hat-tip to &lt;strong&gt;Katherine Rooney&lt;/strong&gt; (Connecting Bristol), &lt;strong&gt;Kev Kirkland&lt;/strong&gt; (Data Unity, SWData organiser &amp;amp; resident at Pervasive Media Studios), &lt;strong&gt;Simon Price&lt;/strong&gt; (University of Bristol &amp;amp; SWData organiser) and &lt;strong&gt;Angharad Stone&lt;/strong&gt; (Environment Agency) without whose help ODCamp3 may have never made it to Bristol.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-weekend-in-brief&quot;&gt;The weekend in brief&lt;/h3&gt;
+
+&lt;p&gt;I could wax lyrical about the content of ODCamp - but instead I’ll direct you to this &lt;a href=&quot;https://storify.com/RnROrganisation/open-data-camp-3-mostly-in-pics&quot;&gt;storify of the weekend&lt;/a&gt; from &lt;a href=&quot;http://www.rnrorganisation.co.uk/&quot;&gt;RnR Organisation&lt;/a&gt; - it gives a great overview of what you miss out on when you miss an ODCamp!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://drawnalism.com/&quot;&gt;Drawnalism&lt;/a&gt; was in attendance again, this time with two illustrators &lt;em&gt;and&lt;/em&gt; two live-bloggers. You can see the results of the blogging over on &lt;a href=&quot;http://odcamp.org.uk&quot;&gt;odcamp.org.uk&lt;/a&gt; as well as the illustrations, but I’ll pull a few here to give you a taster.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/odcamp3/OpenDataForNewbies.jpg&quot; alt=&quot;Open Data For Newbies - Drawnalism illustration of session content&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/odcamp3/ODCamp-Day-Two_3.jpg&quot; alt=&quot;Beyond the Hack - Drawnalism illustration of session content&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/odcamp3/New-Doc-12_1.jpg&quot; alt=&quot;Data Platform Requirements - Drawnalism illustration of session content&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Check out the ODCamp website for links to more blog posts from attendees, session notes taken throughout the meetings, live blogs and illustrations.&lt;/p&gt;
+
+&lt;h3 id=&quot;odcamp-4&quot;&gt;ODCamp 4&lt;/h3&gt;
+
+&lt;p&gt;I can’t stress enough how enjoyable it is to attend an ODCamp, the organisers have the perfect balance of hands-on to keep things moving and sessions on track, and hands-off enough to allow the conference to be built by the people, for the people. Please do sign up for updates and make sure you’re following all the usual channels to hear where and when the next ODCamp will be held.&lt;/p&gt;
+
+&lt;p&gt;If you’d like ODcamp to come to your city, here’s my 3 top tips:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Find a potential local venue. It needs to be accessible (no stairs without lifts etc), fairly easy to get to from the local public transport hub (train/bus station) and has a main room that can hold around 60-80 people, with 4 or so smaller break-out spaces that hold 15-20 people (varying sizes are OK)&lt;/li&gt;
+  &lt;li&gt;Enlist the support of other local meet up groups. It’s really difficult to do everything without other local enthusiasts - connect with people and team up&lt;/li&gt;
+  &lt;li&gt;Let the ODCamp organisers know that you’re out trying to find venues and people, if they’re in the dark the next location might get decided while you’re out building support!&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;until-next-time&quot;&gt;Until next time!&lt;/h3&gt;
+
+&lt;p&gt;For more on ODCamp, do check out their website and twitter. We’re &lt;em&gt;very&lt;/em&gt; much looking forward to the next one, wherever that may be! &lt;/p&gt;
+</description>
+        <pubDate>Tue, 17 May 2016 00:00:00 +0100</pubDate>
+        <link>http://networkedplanet.com/blog/2016/05/17/odcamp3-bristol.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2016/05/17/odcamp3-bristol.html</guid>
+        
+        <category>linked data</category>
+        
+        <category>open data</category>
+        
+        <category>opinion</category>
+        
+        <category>conference</category>
+        
+        
+      </item>
     
       <item>
         <title>Newsletter Issue 3 hits the inboxes</title>
@@ -991,28 +1048,6 @@ to making your data discoverable.&lt;/p&gt;
         <category>datasets</category>
         
         <category>VoID</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Newsletter Issue 2 out now!</title>
-        <description>&lt;p&gt;The second issue of our email newsletter has hit the &lt;a href=&quot;http://networkedplanet.us11.list-manage.com/subscribe?u=62daac7ae19a90ef03ea3bd42&amp;amp;id=a797a2dd15&quot;&gt;mailing list&lt;/a&gt; inboxes. &lt;/p&gt;
-
-&lt;p&gt;We chat about our new short animation about Linked Open Data, our 3-part free webinar series where you can learn all about the fundamental technologies of Linked Data, our upcoming online CSV converter - “Level Up”, new product releases and interesting reports from the wider Web of Linked and Open Data.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://networkedplanet.us11.list-manage.com/subscribe?u=62daac7ae19a90ef03ea3bd42&amp;amp;id=a797a2dd15&quot;&gt;Sign up to our mailing list&lt;/a&gt; - we send newsletters roughly quarterly, possibly punctuated with the odd single-shot news item if we think it’s important!&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://us11.campaign-archive2.com/?u=62daac7ae19a90ef03ea3bd42&amp;amp;id=a78b245052&amp;amp;e=&quot;&gt;Click here to read this issue&lt;/a&gt; in your browser, and &lt;a href=&quot;http://us11.campaign-archive1.com/home/?u=62daac7ae19a90ef03ea3bd42&amp;amp;id=a797a2dd15&quot;&gt;access the newsletter archive here&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 19 Jan 2016 00:00:00 +0000</pubDate>
-        <link>http://networkedplanet.com/blog/2016/01/19/newsletter-issue-2.html</link>
-        <guid isPermaLink="true">http://networkedplanet.com/blog/2016/01/19/newsletter-issue-2.html</guid>
-        
-        <category>newsletter</category>
-        
-        <category>mailing list</category>
         
         
       </item>
