@@ -5,9 +5,36 @@
     <description>Experts in Linked and Open Data Publishing</description>
     <link>http://networkedplanet.com/</link>
     <atom:link href="http://networkedplanet.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 17 May 2016 16:59:59 +0100</pubDate>
-    <lastBuildDate>Tue, 17 May 2016 16:59:59 +0100</lastBuildDate>
+    <pubDate>Wed, 18 May 2016 10:10:19 +0100</pubDate>
+    <lastBuildDate>Wed, 18 May 2016 10:10:19 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Bristol GGD Talk - June 22nd</title>
+        <description>&lt;p&gt;Girl Geeks Dinners are monthly events where (predominantly) women meet to network and watch talks over a huge range of tech subjects. When thinking about the best way to present a talk on linked (and open) data, the first thing I thought about was that to do a technical explanation would already be too bamboozling for a mixed crowd. What I needed was to do something more along the lines of our &lt;a href=&quot;https://www.youtube.com/watch?v=EbpRofMqzF0&quot;&gt;World of Linked Open Data video&lt;/a&gt;. With that in mind, I decided that rather than do a whole hour on the tech of linked and open data, I’d ask along some local data heroes. After first doing a #101 style talk about what linked and open data is, I’ll introduce &lt;strong&gt;Martha King&lt;/strong&gt;, who’s doing incredibly interesting work at Knowle West Media centre. There they have been investigating how tech and data can improve the lives of those who live here in Bristol by making use of sensor technology. Finishing up the talks will be &lt;strong&gt;Katherine Rooney&lt;/strong&gt;, project manager for the open data efforts of Connecting Bristol at Bristol City Council. She’ll be talking about the various projects that are already going on in Bristol and also explaining what the local &lt;a href=&quot;https://theodi.org/nodes&quot;&gt;ODI Node&lt;/a&gt; is doing and how to get involved.&lt;/p&gt;
+
+&lt;p&gt;After the talks (each only around 15 mins), we’ll have space for a Q&amp;amp;A session before the usual community notices and chatting. &lt;/p&gt;
+
+&lt;p&gt;All the details you need are on the &lt;a href=&quot;http://bristol.girlgeekdinners.com/2016/05/17/ggd52-the-world-of-linked-open-data/&quot;&gt;Bristol Girl Geeks’ website&lt;/a&gt; and you can sign up (spaces are limited) on &lt;a href=&quot;http://www.meetup.com/Bristol-Girl-Geek-Dinners/events/231193829/&quot;&gt;BGGD Meetup.com&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 18 May 2016 00:00:00 +0100</pubDate>
+        <link>http://networkedplanet.com/blog/2016/05/18/bristol-girl-geek-dinner.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2016/05/18/bristol-girl-geek-dinner.html</guid>
+        
+        <category>linked data</category>
+        
+        <category>open data</category>
+        
+        <category>talk</category>
+        
+        <category>networking</category>
+        
+        <category>girl geeks</category>
+        
+        <category>bristol</category>
+        
+        
+      </item>
     
       <item>
         <title>Open Data Camp 3 - Bristol fashion</title>
@@ -991,63 +1018,6 @@ In relational databases, the ID of one table (such as products) has a “primary
         <category>convert</category>
         
         <category>linked data</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Don&#39;t Forget Metadata!</title>
-        <description>&lt;p&gt;I have many fond memories as a kid of our local libraries. I was fortunate to grow up a short walk away from
-what was at the time the &lt;a href=&quot;https://en.wikipedia.org/wiki/Birmingham_Central_Library&quot;&gt;largest non-national library in Europe&lt;/a&gt; 
-as well as a closer local library in a &lt;a href=&quot;https://en.wikipedia.org/wiki/Spring_Hill_Library&quot;&gt;grand
-red-brick Victorian building&lt;/a&gt;. 
-One of those memories is the card indexes. I loved the card index (yes,
-I was a metadata geek from an early age). Armed only with a question and some idea about keywords to 
-use you could riffle through wooden drawers full of pink, blue and beige cards and then wander off 
-to the stacks to find the answers. Magic stuff.&lt;/p&gt;
-
-&lt;p&gt;How does this translate when we are talking about data and datasets? Well, there are a number of existing 
-RDF ontologies that touch on the area of metadata, but probably the
-most well-known and widely used one for describing dataset metadata is &lt;a href=&quot;https://www.w3.org/TR/void/&quot;&gt;VoID&lt;/a&gt;.
-VoID provides you with the means to identify and describe datasets as well as to provide metadata
-ranging from contact and licensing information to example dataset resource URIs and patterns for accessing
-the content of the dataset.&lt;/p&gt;
-
-&lt;p&gt;The question is where to place this metadata? One obvious answer is to add the metadata in to 
-the RDF dataset that it describes. This is great for the user that has chosen to access that data; 
-but in this loose book/dataset analogy, metadata that is contained inside your dataset is equivalent to 
-that US Library of Congress metadata that you find inside the front cover of a book. &lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Dataset metadata should be the card index to all the open data you publish. 
-Without it being in a single central location, your users must aimlessly wander the shelves, pulling down dataset after 
-dataset in search of what they want.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;A better solution is to treat the metadata about datasets as a separate dataset in its own right. 
-Think of this as the downloadable / queryable card-index to your data library. Indeed the VoID recommendation
-goes as far as to &lt;a href=&quot;https://www.w3.org/TR/void/#discovery&quot;&gt;suggest&lt;/a&gt; that you use a “well-known” URL for the location of that dataset - sort of
-the equivalent of having your virtual card-index always just on the left as you come through the door (that was 
-the sound of an analogy getting pushed to breaking point).&lt;/p&gt;
-
-&lt;p&gt;Metadata management doesn’t have to be hard. Our &lt;a href=&quot;http://dataplatform.co.uk/&quot;&gt;Data Platform&lt;/a&gt; product has VoID 
-metadata management built-in so when you update the dataset the metadata stays in sync. But regardless of what 
-method you use to publish open data, it is important to recognize that your metadata is one of the key components
-to making your data discoverable.&lt;/p&gt;
-
-&lt;p&gt;Image by &lt;a href=&quot;http://www.flickr.com/photos/mamsy/&quot;&gt;http://www.flickr.com/photos/mamsy/&lt;/a&gt;, &lt;a href=&quot;http://creativecommons.org/licenses/by/2.0&quot;&gt;CC BY 2.0&lt;/a&gt;, via Wikimedia Commons&lt;/p&gt;
-</description>
-        <pubDate>Mon, 25 Jan 2016 00:00:00 +0000</pubDate>
-        <link>http://networkedplanet.com/blog/2016/01/25/dont-forget-metadata.html</link>
-        <guid isPermaLink="true">http://networkedplanet.com/blog/2016/01/25/dont-forget-metadata.html</guid>
-        
-        <category>open data</category>
-        
-        <category>metadata</category>
-        
-        <category>datasets</category>
-        
-        <category>VoID</category>
         
         
       </item>
