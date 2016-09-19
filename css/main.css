@@ -5771,6 +5771,10 @@ address {
   margin-right: auto;
   display: inline-block; }
 
+blockquote {
+  font-size: 1em;
+  font-style: italic; }
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
