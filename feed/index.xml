@@ -5,9 +5,60 @@
     <description>Experts in Linked and Open Data Publishing</description>
     <link>http://networkedplanet.com/</link>
     <atom:link href="http://networkedplanet.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 19 Sep 2016 14:09:16 +0100</pubDate>
-    <lastBuildDate>Mon, 19 Sep 2016 14:09:16 +0100</lastBuildDate>
+    <pubDate>Wed, 21 Sep 2016 14:48:13 +0100</pubDate>
+    <lastBuildDate>Wed, 21 Sep 2016 14:48:13 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Partners Sought in Data-for-Good Project</title>
+        <description>&lt;h2 id=&quot;launching-a-new-series-of-tools-to-help-find-the-solutions-to-the-worlds-problems&quot;&gt;Launching a new series of tools to help find the solutions to the world’s problems&lt;/h2&gt;
+
+&lt;h3 id=&quot;announcement-partners-sought-in-data-for-good-project&quot;&gt;Announcement: Partners Sought in Data-for-Good Project&lt;/h3&gt;
+
+&lt;p&gt;This month, NetworkedPlanet has turned a corner. Our company has long managed data, and we are among the vanguard in managing open-linked data, globally.  The world of big data focuses largely on for-profit and consumer insights. We, however, are turning our sights to social problems and the organisations who want to use data-for-good.&lt;/p&gt;
+
+&lt;p&gt;Do you want to join us?  &lt;/p&gt;
+
+&lt;p&gt;We are looking for organisations that seek to solve a social, health, or environmental problem, and understand that more data can lead to innovation and insights.  We intend to design bespoke systems to use linkable data from various locations and sectors to provide the cause with a powerful new tool.&lt;/p&gt;
+
+&lt;p&gt;We are interested in projects that aim to: relieve suffering; improves the health of the environment; or address disease.  We are especially interested in projects that have more than one sector of interest in terms of data (for example, environmental data and health data, or law enforcement and social data).&lt;/p&gt;
+
+&lt;p&gt;We will review letters of interest in early November and meet with prospective partners in late November (2016). Meetings may be held via Goto Meeting, if you are based outside of the UK. &lt;/p&gt;
+
+&lt;p&gt;To be considered, please send a short letter explaining the interests of your organisation, and providing contact details, to: Lea@networkedplanet.com before 29 October 2016.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;networkedplanet-est-buscando-socios-en-el-desarrollo-de-nuevas-herramientas-para-la-investigacin&quot;&gt;NetworkedPlanet está buscando socios en el desarrollo de nuevas herramientas para la investigación.&lt;/h2&gt;
+
+&lt;h3 id=&quot;queremos-anunciar-un-proyecto-para-utilizar-los-datos-para-buenos-fines-sociales&quot;&gt;Queremos anunciar: Un proyecto para utilizar los datos para buenos fines sociales&lt;/h3&gt;
+
+&lt;p&gt;Este mes, NetworkedPlanet (de Gran Bretaña) anuncia una nueva dirección. NetworkedPlanet conseguido datos, y que se encuentran entre la vanguardia en la gestión de los datos ligados y abiertas. &lt;/p&gt;
+
+&lt;p&gt;Mientras que el mundo de los grandes datos se centra principalmente en los conocimientos con fines de lucro y de consumo, nos volvemos nuestra mirada a los problemas sociales y las organizaciones que deseen utilizar los datos para la buena. &lt;/p&gt;
+
+&lt;p&gt;¿Desea Su organización unirse a nosotros? &lt;/p&gt;
+
+&lt;p&gt;Buscamos a las organizaciones que tratan de resolver un problema del ambiente, de la salud, o la sociedad, y la organización entienden que un mayor número de datos pueden conducir a la innovación y las ideas. Tenemos la intención de diseñar sistemas a medida para utilizar los datos vinculables de varios lugares y sectores para proporcionar la causa con una nueva y poderosa herramienta. &lt;/p&gt;
+
+&lt;p&gt;Estamos interesados ​​en proyectos que tienen como objetivo: aliviar el sufrimiento; mejora la salud del medio ambiente; o tratar la enfermedad. Estamos especialmente interesados ​​en proyectos que tengan más de un sector de interés en términos de datos (por ejemplo, los datos ambientales y de salud, o por la policía y los datos sociales). &lt;/p&gt;
+
+&lt;p&gt;Vamos a revisar las cartas de interés a principios de noviembre y se reunirá con los posibles socios a finales de noviembre (2016). Las reuniones podrán ocurer mediante ‘GOTO meeting’ si se basan fuera del Reino Unido. &lt;/p&gt;
+
+&lt;p&gt;Para ser considerado, por favor envíe una breve carta explicando los intereses de su organización, y con todos los detalles de contacto, a: Lea@networkedplanet.com antes del 29 de octubre de 2016.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 21 Sep 2016 00:00:00 +0100</pubDate>
+        <link>http://networkedplanet.com/blog/2016/09/21/partners-sought-in-data-for-good-project.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2016/09/21/partners-sought-in-data-for-good-project.html</guid>
+        
+        <category>projects</category>
+        
+        <category>data for good</category>
+        
+        <category>partners</category>
+        
+        
+      </item>
     
       <item>
         <title>Proudly sponsoring - How can public data and information support Bristol charities?</title>
@@ -919,90 +970,6 @@ EV892,Better data means easier collaboration,55.8555367,-4.3024977,3/8/2016 6:30
         <category>vocabularies</category>
         
         <category>ontologies</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Linked Data 101 - What&#39;s with all the URIs?</title>
-        <description>&lt;p class=&quot;well text-center&quot;&gt;This article is part of the &lt;a href=&quot;/blog/tags/ld101-series/&quot;&gt;Linked Data 101 series&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;ur-whatnow-&quot;&gt;UR-WhatNow ?&lt;/h2&gt;
-
-&lt;p&gt;URI is an acronym for &lt;strong&gt;Uniform Resource Identifier&lt;/strong&gt;, which is one of those whole names that tells you nothing at all. A URI is simply a particular way of writing a name for a thing. A common kind of URI is the URL (Uniform Resource &lt;strong&gt;Locator&lt;/strong&gt;) where that name is actually treated as an address and provides you with a way to look up the identified thing. The address of a webpage like this one is a URL.&lt;/p&gt;
-
-&lt;p&gt;People are so used to seeing tabular data with numerical IDs, and so used to only ever seeing URIs as “things you click on to go to a website” - that the use of URIs as data record identifiers can be a stumbling block for a lot of people when we talk about linked data. Don’t worry, you’re not alone! Let’s just take baby steps through the idea of using URIs, and by the end of the post you shouldn’t still have that nagging feeling of confusion when you see URIs all over the place in linked data.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-identifier&quot;&gt;The identifier&lt;/h2&gt;
-
-&lt;p&gt;Each record in your data needs some way to identify it, we might be used to seeing this as a numerical ID or a more complex code, but we all are comfortable with the idea that in order to group all the values that attach to a record (e.g. title, description, location) we need a way to identify that record as a “thing”. 
-In relational databases, the ID of one table (such as products) has a “primary key” that is then referred to as a foreign key from another table, thereby linking the two records. &lt;/p&gt;
-
-&lt;p&gt;It makes sense then, that in the far wider Web of Data, using URIs as those primary and foreign keys makes complete sense. Arbitrary codes or numbers have no way of containing the information needed to locate that data on the web. In particular it makes a whole load of sense to use HTTP URIs for a couple of reasons. Firstly HTTP URIs form a neat, globally managed system where you can buy a domain and then manage the content of that domain as you see fit. As long as everyone sticks to the rule of only creating new URIs in domains that they control you can happily make new URIs under the domains that you control without having to worry about name clashes. Secondly HTTP is also a &lt;strong&gt;protocol&lt;/strong&gt; - it defines a way in which an application can take the HTTP identifier and use it to request some information from a server - and this is where the Web part of the Web of Data happens.&lt;/p&gt;
-
-&lt;h2 id=&quot;im-just-making-up-web-addresses&quot;&gt;404 - I’m just making up web addresses!&lt;/h2&gt;
-
-&lt;p&gt;In most tutorials and walkthroughs you’ll find people using identifiers such as &lt;code&gt;http://data.example.org/category/pets&lt;/code&gt; or similar. Yep, they don’t “go anywhere” if you put them into your web browser. In a sense, that is perfectly fine, the URI is an identifier not an address.&lt;/p&gt;
-
-&lt;p&gt;However, if your goal is to populate a Linked Data browser on an open data portal then of course you’ll need to use your data portal’s address as the root domain, the rest of the URI depends on how you’d like to present your resources to the outside world. If you &lt;em&gt;really&lt;/em&gt; want you could present every resource you keep &lt;code&gt;http://yourdataportal/1&lt;/code&gt;, &lt;code&gt;http://yourdataportal/2&lt;/code&gt;, &lt;code&gt;http://yourdataportal/3&lt;/code&gt;, &lt;code&gt;http://yourdataportal/4&lt;/code&gt; etc, but I strongly advise against it! You’ll find it a lot easier to navigate and work with your data using URIs that are fairly easy to read by humans as well as computers.&lt;/p&gt;
-
-&lt;h2 id=&quot;uris-are-everywhere&quot;&gt;URIs are everywhere&lt;/h2&gt;
-
-&lt;p&gt;You’ll have seen that the RDF is made up of triples:&lt;/p&gt;
-
-&lt;table class=&quot;table&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Subject&lt;/th&gt;
-      &lt;th&gt;Predicate&lt;/th&gt;
-      &lt;th&gt;Object&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;The identifier&lt;/td&gt;
-      &lt;td&gt;The link between the identifier and some property of the resource&lt;/td&gt;
-      &lt;td&gt;The value of the property&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Must be a URI&lt;/td&gt;
-      &lt;td&gt;Must be a URI&lt;/td&gt;
-      &lt;td&gt;Can be a literal or a URI&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Think of how you read information out of an Excel spreadsheet. For example, if I want to find the stock level of a product, I look up the product, read along the column headers until I see the column for stock level, then read the relevant value out of that column for the product’s record.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/csv-to-predicates.png&quot; alt=&quot;reading triples from tabular data&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;In this example the triple would look something like:&lt;/p&gt;
-
-&lt;pre&gt;
-&amp;lt;http://data.example.org/products/LD12955AD&amp;gt; &amp;lt;http://data.example.org/stockLevel&amp;gt; &quot;110&quot;^^&amp;lt;http://www.w3.org/2001/XMLSchema#integer&amp;gt;
-&lt;/pre&gt;
-
-&lt;p&gt;The way we are writing triples here, the three parts are separated from each other by spaces and angle-brackets (&amp;lt;&amp;gt;) are used to wrap URI identifiers. You will also see that the value at the end of the line (“249”) is followed by a double-caret (^^) and another URI - this last URI is specifying the &lt;strong&gt;data type&lt;/strong&gt; of the value. In effect saying that the string “249” should be processed as an integer. This is an example of a triple with a literal (in this case the literal is the integer value 249). We can also create triples that have a URI as the object:&lt;/p&gt;
-
-&lt;pre&gt;
-&amp;lt;http://data.example.org/products/LD12955AD&amp;gt; &amp;lt;http://data.example.org/manufacturer&amp;gt; &amp;lt;http://contoso.com/#company&amp;gt;
-&lt;/pre&gt;
-
-&lt;p&gt;We can see why URIs must be used as subjects, and &lt;em&gt;can&lt;/em&gt; be objects, what about the predicates? Why not just use text labels to describe properties of a resource such as “stock level” or “manufacturer”? Well, without using URIs we would miss out on the core power of the Web of Data - a way of being able to embed our data with the information that we are talking about the same &lt;em&gt;concepts&lt;/em&gt; that another data publisher is describing in &lt;em&gt;their&lt;/em&gt; data. &lt;/p&gt;
-
-&lt;p&gt;That’s exactly what the &lt;a href=&quot;/blog/2016/02/17/linked-data-101-predicates.html&quot;&gt;second blog post&lt;/a&gt; in this series is going to concentrate on - predicates and vocabularies - stay tuned!&lt;/p&gt;
-
-&lt;p class=&quot;well text-center&quot;&gt;This article is part of the &lt;a href=&quot;/blog/tags/ld101-series/&quot;&gt;Linked Data 101 series&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Tue, 16 Feb 2016 00:00:00 +0000</pubDate>
-        <link>http://networkedplanet.com/blog/2016/02/16/linked-data-101-identifiers.html</link>
-        <guid isPermaLink="true">http://networkedplanet.com/blog/2016/02/16/linked-data-101-identifiers.html</guid>
-        
-        <category>LD101 series</category>
-        
-        <category>linked data</category>
-        
-        <category>identifiers</category>
         
         
       </item>
