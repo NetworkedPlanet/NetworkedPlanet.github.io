@@ -5,9 +5,35 @@
     <description>Experts in Linked and Open Data Publishing</description>
     <link>http://networkedplanet.com/</link>
     <atom:link href="http://networkedplanet.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 11 Oct 2016 16:13:59 +0100</pubDate>
-    <lastBuildDate>Tue, 11 Oct 2016 16:13:59 +0100</lastBuildDate>
+    <pubDate>Mon, 24 Oct 2016 14:41:47 +0100</pubDate>
+    <lastBuildDate>Mon, 24 Oct 2016 14:41:47 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Key Data Innovations to Insure Your Organisation Survives and Thrives</title>
+        <description>&lt;p&gt;Charity leaders will learn about data protection and how to lead organisations toward better collection and use of data at our workshop at the National Council of Voluntary Organisations in London on the 10th of November. &lt;/p&gt;
+
+&lt;p&gt;We will review and explore data protection and privacy laws to gain a comfort level that allows participants to lead, wisely, onward, before we delve into new priorities for data collection and use.&lt;/p&gt;
+
+&lt;p&gt;This will be a true workshop, allowing participants to gain a solid footing on issues that often result in wasted time and energy at charities. The goal is to equip leaders to empower their staff toward the big goals of the organisation - making major gains in efforts to create a better world.  &lt;/p&gt;
+
+&lt;p class=&quot;text-center&quot;&gt;
+&lt;a class=&quot;btn btn-primary&quot; href=&quot;https://www.eventbrite.co.uk/e/greater-success-for-charities-through-data-innovations-tickets-28288000170&quot; onclick=&quot;trackOutboundLink(&#39;https://www.eventbrite.co.uk/e/greater-success-for-charities-through-data-innovations-tickets-28288000170&#39;); return false;&quot;&gt;Sign Up Via Eventbrite&lt;/a&gt;
+&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 24 Oct 2016 00:00:00 +0100</pubDate>
+        <link>http://networkedplanet.com/blog/2016/10/24/key-data-innovations.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2016/10/24/key-data-innovations.html</guid>
+        
+        <category>open data</category>
+        
+        <category>impact</category>
+        
+        <category>charities</category>
+        
+        
+      </item>
     
       <item>
         <title>Measuring the Impact of Open Data</title>
@@ -638,245 +664,6 @@ for(var i = 0; i &amp;lt; markers.length; i++) {
         <category>linked data</category>
         
         <category>presentation</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Linked Data 101 - Making data linkable - tutorial</title>
-        <description>&lt;p class=&quot;well text-center&quot;&gt;This article is part of the &lt;a href=&quot;/blog/tags/ld101-series/&quot;&gt;Linked Data 101 series&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Now that we’re a lot more comfortable with &lt;a href=&quot;/blog/2016/02/16/linked-data-101-identifiers.html&quot;&gt;identifiers&lt;/a&gt; and &lt;a href=&quot;/blog/2016/02/17/linked-data-101-predicates.html&quot;&gt;predicates&lt;/a&gt;, let’s have a play around with some old-school CSV and give it a linked data boost with &lt;a href=&quot;http://levelup.networkedplanet.com&quot;&gt;Level Up&lt;/a&gt; - our free online converter.&lt;/p&gt;
-
-&lt;h2 id=&quot;easy-peasy-upload&quot;&gt;Easy-peasy upload&lt;/h2&gt;
-
-&lt;p&gt;For the purpose of this walkthrough I’m going to grab a dataset from the &lt;a href=&quot;http://data.london.gov.uk/&quot;&gt;London Datastore&lt;/a&gt; - the dataset I chose contains allotment details, which is published under an &lt;a href=&quot;http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2/&quot;&gt;Open License&lt;/a&gt; and is in CSV format. To get started, &lt;a href=&quot;http://data.london.gov.uk/dataset/allotment-locations&quot;&gt;download the dataset&lt;/a&gt; and open the &lt;a href=&quot;http://levelup.networkedplanet.com&quot;&gt;Level Up homepage&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Uploading the CSV file is a simple case of either dragging the file into the upload area, or clicking the upload area to open a file selection window.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/lu-upload.png&quot; alt=&quot;upload a CSV dataset to the Level Up converter&quot; width=&quot;600px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;default-configuration&quot;&gt;Default configuration&lt;/h2&gt;
-
-&lt;p&gt;As we saw on the previous blog posts in the &lt;a href=&quot;/blog/tags/ld101-series/&quot;&gt;series&lt;/a&gt;, the basic steps in structuring flat data into semantic data is the use of URIs as identifiers and predicates. Level Up automatically sets up the converter with a set of URIs, so if you want to skip ahead and hit “Convert your CSV” then go for it! In the rest of this post we’ll take a look at changing those URIs to make them a bit more useful.&lt;/p&gt;
-
-&lt;div class=&quot;well text-center&quot;&gt;
-    &lt;div class=&quot;row&quot;&gt;
-        &lt;div class=&quot;col-md-6&quot;&gt;
-            &lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/lu-map1.png&quot; alt=&quot;Automatically generated identifiers and predicates&quot; width=&quot;450px&quot; class=&quot;img-medium img-responsive bordered-image&quot; /&gt;&lt;/a&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;col-md-6&quot;&gt;
-            &lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/lu-map2.png&quot; alt=&quot;Automatically generated identifiers and predicates&quot; width=&quot;450px&quot; class=&quot;img-medium img-responsive bordered-image&quot; /&gt;&lt;/a&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;choosing-a-prefix&quot;&gt;Choosing a prefix&lt;/h2&gt;
-
-&lt;p&gt;The default prefix uses our good friend, example.org, along with the uploaded filename. Whilst useful, my data portal is going to sit on an intranet for the fictional company - contoso - so I’m going to tweak it a little so that my prefix for the predicates becomes &lt;code&gt;http://data.contoso.com/environment/ontology/&lt;/code&gt;. As I update the prefix, all the predicate URIs and the main identifier URI are updated too.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/lu-prefix.PNG&quot; alt=&quot;Update the prefix&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;which-column-shall-i-use-as-the-identifier&quot;&gt;Which column shall I use as the identifier?&lt;/h2&gt;
-
-&lt;p&gt;I can see from both the column name and the preview data at the bottom of the page that the &lt;code&gt;GLA_ID&lt;/code&gt; column contains a numeric identifier for each record, so I select the “ID” radio button next to &lt;code&gt;GLA_ID&lt;/code&gt; and as that column contains a number rather than a valid URI I scroll down to check out what my identifier template is looking like.&lt;/p&gt;
-
-&lt;p&gt;Currently it’s using the prefix &lt;code&gt;http://data.contoso.com/environment/ontology/&lt;/code&gt; and a row number tag &lt;code&gt;{rn}&lt;/code&gt;. Firstly, I don’t want my resources to sit in the &lt;code&gt;/ontology/&lt;/code&gt; namespace so I change that to &lt;code&gt;/allotments/&lt;/code&gt;, given that I want to use my ID &lt;code&gt;GLA_ID&lt;/code&gt; I edit the template to include a tag for &lt;code&gt;GLA_ID&lt;/code&gt; instead. To protect myself against typos I use the &lt;code&gt;Tags&lt;/code&gt; link to show me a drop down list of all available tags and select &lt;code&gt;GLA_ID&lt;/code&gt;, which adds it to the end of my identifier template:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/lu-identifiertemplate.PNG&quot; alt=&quot;Update the identifier template&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;choosing-predicates-for-columns&quot;&gt;Choosing predicates for columns&lt;/h2&gt;
-
-&lt;p&gt;Now we move on to the predicates, Level Up has chosen some default predicates for me based on my prefix and the column name, but I’m going to have a quick scan through my columns and see if anything obvious jumps out at me. Here’s a list of the columns shown:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;GLA_ID &lt;/li&gt;
-  &lt;li&gt;Borough_Ref&lt;/li&gt;
-  &lt;li&gt;Name&lt;/li&gt;
-  &lt;li&gt;Location&lt;/li&gt;
-  &lt;li&gt;SuppliedPostcode&lt;/li&gt;
-  &lt;li&gt;NearestPostcode&lt;/li&gt;
-  &lt;li&gt;Borough&lt;/li&gt;
-  &lt;li&gt;Organisation&lt;/li&gt;
-  &lt;li&gt;Facilities&lt;/li&gt;
-  &lt;li&gt;Grade&lt;/li&gt;
-  &lt;li&gt;Comments&lt;/li&gt;
-  &lt;li&gt;Easting&lt;/li&gt;
-  &lt;li&gt;Northing&lt;/li&gt;
-  &lt;li&gt;Latitude&lt;/li&gt;
-  &lt;li&gt;Longitude&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Straight off I can see that we can use the &lt;a href=&quot;https://www.w3.org/2003/01/geo/&quot;&gt;Basic Geo Vocab&lt;/a&gt; for the lat/long values, and the &lt;a href=&quot;http://data.ordnancesurvey.co.uk/ontology/spatialrelations/&quot;&gt;OS Spatial Relations Ontology&lt;/a&gt; for the easting and northing values. Let’s pop those in, and set their data types to whole number for easting/northing values and decimal number for latitude/longitude values.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/lu-geo.PNG&quot; alt=&quot;Choosing geo predicates&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Now let’s have a look through the other columns, apologies in advance as I will jump around the list slightly rather than working top to bottom.&lt;/p&gt;
-
-&lt;h5 id=&quot;name&quot;&gt;&lt;strong&gt;Name&lt;/strong&gt;&lt;/h5&gt;
-&lt;p&gt;The next “easiest” column I can see is &lt;code&gt;Name&lt;/code&gt;. In most cases when choosing a predicate for a label or name of a Thing (when we’re not working from a specific vocabulary that defines a label predicate) we tend to choose between the &lt;a href=&quot;https://www.w3.org/TR/2004/REC-rdf-schema-20040210/&quot;&gt;RDF Schema&lt;/a&gt;’s “label” and &lt;a href=&quot;http://dublincore.org/documents/2012/06/14/dcmi-terms/&quot;&gt;Dublin Core&lt;/a&gt;’s “title” (or &lt;a href=&quot;http://xmlns.com/foaf/spec/&quot;&gt;FOAF&lt;/a&gt; for people, group or organisation names). I believe label is more accurate than title in this case, so I’m using &lt;code&gt;http://www.w3.org/2000/01/rdf-schema#label&lt;/code&gt;. &lt;/p&gt;
-
-&lt;h5 id=&quot;organisation&quot;&gt;&lt;strong&gt;Organisation&lt;/strong&gt;&lt;/h5&gt;
-&lt;p&gt;Looking through the raw data I can see that it’s not always filled out, and when it is it’s in an inconsistent manner. The context is also not fully clear and so I’m going to keep it within my domain for now and change the predicate to &lt;code&gt;http://data.contoso.com/environment/ontology/associatedOrganisation&lt;/code&gt; - if it’s needed in the future we can clarify whether the organisations are the owners, managers or similar and update our data at a later date. &lt;/p&gt;
-
-&lt;h5 id=&quot;boroughref-and-borough&quot;&gt;&lt;strong&gt;Borough_Ref and Borough&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;p&gt;These look like some likely candidates to appear in a shared vocabulary, and yep - the OS Admin Geo Ontology comes back with a hit - both for &lt;a href=&quot;http://data.ordnancesurvey.co.uk/ontology/Borough&quot;&gt;Borough&lt;/a&gt; and &lt;a href=&quot;http://data.ordnancesurvey.co.uk/ontology/admingeo/LondonBorough&quot;&gt;London Borough&lt;/a&gt;*. However, the hits are &lt;strong&gt;classes&lt;/strong&gt; rather than properties (more on this in an upcoming blogpost) so I don’t want to use those identifiers as predicates. As with Organisation, I’m going to tweak the default predicates very slightly to use the more common practise of writing property URIs using camel case: &lt;code&gt;http://data.contoso.com/environment/ontology/boroughRef&lt;/code&gt; and &lt;code&gt;http://data.contoso.com/environment/ontology/borough&lt;/code&gt;. As the &lt;code&gt;Borough_Ref&lt;/code&gt; is a numerical value in the raw data I set the datatype for that column to whole number.&lt;/p&gt;
-
-&lt;p class=&quot;small well&quot;&gt;* Whilst outside the scope of this walkthrough, we would want to check that this is accurate based on the &lt;em&gt;contents&lt;/em&gt; of the raw data, quite often a column heading will give the impression that all of its contents are, for example, London Boroughs, when in reality the data may be a mix of Wards, Boroughs and other administrative breakdowns of areas.&lt;/p&gt;
-
-&lt;h5 id=&quot;location--suppliedpostcode--nearestpostcode--facilities--grades--comments&quot;&gt;&lt;strong&gt;Location / SuppliedPostcode / NearestPostcode / Facilities / Grades / Comments&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;p&gt;The rest of the columns I leave the predicates as they are (whilst tweaking into camel case). &lt;code&gt;Location&lt;/code&gt;, &lt;code&gt;Features&lt;/code&gt;, and &lt;code&gt;Comments&lt;/code&gt; often contain text content in English e.g. “between the railway tracks north of Thayers Farm Road” so I’m going to set the data type to text and select UK English by using the typeahead language selector.&lt;/p&gt;
-
-&lt;p&gt;To summarise, we now have a set of predicates that looks like this:&lt;/p&gt;
-
-&lt;table class=&quot;table&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Column&lt;/th&gt;
-      &lt;th&gt;Predicate&lt;/th&gt;
-      &lt;th&gt;Data Type&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;GLA_ID (ID)&lt;/td&gt;
-      &lt;td&gt;http://data.contoso.com/environment/ontology/GLA_ID **&lt;/td&gt;
-      &lt;td&gt;&lt;em&gt;default&lt;/em&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Borough_Ref&lt;/td&gt;
-      &lt;td&gt;http://data.contoso.com/environment/ontology/boroughRef&lt;/td&gt;
-      &lt;td&gt;Whole number&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Name&lt;/td&gt;
-      &lt;td&gt;http://www.w3.org/2000/01/rdf-schema#label&lt;/td&gt;
-      &lt;td&gt;&lt;em&gt;default&lt;/em&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Location&lt;/td&gt;
-      &lt;td&gt;http://data.contoso.com/environment/ontology/location&lt;/td&gt;
-      &lt;td&gt;Text - English (United Kingdom)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;SuppliedPostcode&lt;/td&gt;
-      &lt;td&gt;http://data.contoso.com/environment/ontology/suppliedPostcode&lt;/td&gt;
-      &lt;td&gt;&lt;em&gt;default&lt;/em&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;NearestPostcode&lt;/td&gt;
-      &lt;td&gt;http://data.contoso.com/environment/ontology/nearestPostcode&lt;/td&gt;
-      &lt;td&gt;&lt;em&gt;default&lt;/em&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Borough&lt;/td&gt;
-      &lt;td&gt;http://data.contoso.com/environment/ontology/borough&lt;/td&gt;
-      &lt;td&gt;&lt;em&gt;default&lt;/em&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Organisation&lt;/td&gt;
-      &lt;td&gt;http://data.contoso.com/environment/ontology/associatedOrganisation&lt;/td&gt;
-      &lt;td&gt;&lt;em&gt;default&lt;/em&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Facilities&lt;/td&gt;
-      &lt;td&gt;http://data.contoso.com/environment/ontology/facilities&lt;/td&gt;
-      &lt;td&gt;Text - English (United Kingdom)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Grade&lt;/td&gt;
-      &lt;td&gt;http://data.contoso.com/environment/ontology/grade&lt;/td&gt;
-      &lt;td&gt;&lt;em&gt;default&lt;/em&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Comments&lt;/td&gt;
-      &lt;td&gt;http://data.contoso.com/environment/ontology/comments&lt;/td&gt;
-      &lt;td&gt;Text - English (United Kingdom)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Easting&lt;/td&gt;
-      &lt;td&gt;http://data.ordnancesurvey.co.uk/ontology/spatialrelations/easting&lt;/td&gt;
-      &lt;td&gt;Whole number&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Northing&lt;/td&gt;
-      &lt;td&gt;http://data.ordnancesurvey.co.uk/ontology/spatialrelations/northing&lt;/td&gt;
-      &lt;td&gt;Whole number&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Latitude&lt;/td&gt;
-      &lt;td&gt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&lt;/td&gt;
-      &lt;td&gt;Decimal number&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Longitude&lt;/td&gt;
-      &lt;td&gt;http://www.w3.org/2003/01/geo/wgs84_pos#long&lt;/td&gt;
-      &lt;td&gt;Decimal number&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p class=&quot;small well&quot;&gt;** The column set as the ID will not be added as a property, so we don’t need to concern ourselves with this predicate. If you want to use it in the identifier and have it as a property in the raw data, do not select it as the primary ID - simply use its tag in the identifier template.   &lt;/p&gt;
-
-&lt;h2 id=&quot;convert&quot;&gt;Convert!&lt;/h2&gt;
-
-&lt;p&gt;That’s everything set up - all that’s left now is to hit the “Convert your CSV” button and let Level Up do its magic.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/lu-convert.PNG&quot; alt=&quot;Convert CSV to RDF&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Bam! We can now download our data -&amp;gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/lu-congrats.PNG&quot; alt=&quot;Download your converted data&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The downloaded zip file contains RDF in three different formats: N-Triples, Turtle and RDF-XML. Going into the various formats is outside the scope of this article, so here’s some segments of what to expect, plus a download of the zip file itself. &lt;/p&gt;
-
-&lt;p&gt;** N-Triples - .nt **&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/lu-nt.PNG&quot; alt=&quot;N-Triples Preview&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;** Turtle - .ttl**&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/lu-ttl.PNG&quot; alt=&quot;Turtle Preview&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;** RDF-XML - .rdf**&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/linkeddata101/lu-rdf.PNG&quot; alt=&quot;RDF-XML Preview&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p class=&quot;text-center&quot;&gt;
-&lt;a class=&quot;btn btn-default&quot; href=&quot;/assets/downloads/gla-allotment-locations-160301152200.zip&quot;&gt;
-&lt;span class=&quot;glyphicon glyphicon-download-alt&quot;&gt;
-Download zip file
-&lt;/span&gt;
-&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;h2 id=&quot;all-done&quot;&gt;All done!&lt;/h2&gt;
-
-&lt;p&gt;This article has guided you through the process of using &lt;a href=&quot;http://levelup.networkedplanet.com&quot;&gt;Level Up&lt;/a&gt; to convert CSV into 4-star linked data. In a real world scenario, this would be one step in a project which would start by looking at your data and first mapping out your own vocabulary of predicates.&lt;/p&gt;
-
-&lt;p&gt;Level Up is in beta release so please do let us know if you have &lt;a href=&quot;http://levelup.networkedplanet.com/feedback&quot;&gt;suggestions or feedback&lt;/a&gt; or &lt;a href=&quot;/#contact&quot;&gt;a copy of the converter software to run in house&lt;/a&gt; (important if you are working with personal data).&lt;/p&gt;
-
-&lt;p class=&quot;text-center&quot;&gt;
-&lt;a class=&quot;btn-lg btn-primary&quot; href=&quot;http://levelup.networkedplanet.com&quot;&gt;Try it yourself at Level Up!&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;Next in the series we’ll be taking a look at &lt;a href=&quot;/blog/2016/02/29/linked-data-101-querying.html&quot;&gt;how to query linked data&lt;/a&gt;. Don’t forget we also run webinars and training throughout the year. See you next time!&lt;/p&gt;
-
-&lt;p class=&quot;well text-center&quot;&gt;This article is part of the &lt;a href=&quot;/blog/tags/ld101-series/&quot;&gt;Linked Data 101 series&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 18 Feb 2016 00:00:00 +0000</pubDate>
-        <link>http://networkedplanet.com/blog/2016/02/18/linked-data-101-making-data-linkable-tutorial.html</link>
-        <guid isPermaLink="true">http://networkedplanet.com/blog/2016/02/18/linked-data-101-making-data-linkable-tutorial.html</guid>
-        
-        <category>LD101 series</category>
-        
-        <category>linked data</category>
-        
-        <category>level up</category>
-        
-        <category>csv conversion</category>
         
         
       </item>
