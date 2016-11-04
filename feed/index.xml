@@ -5,12 +5,39 @@
     <description>Experts in Linked and Open Data Publishing</description>
     <link>http://networkedplanet.com/</link>
     <atom:link href="http://networkedplanet.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 24 Oct 2016 14:41:47 +0100</pubDate>
-    <lastBuildDate>Mon, 24 Oct 2016 14:41:47 +0100</lastBuildDate>
-    <generator>Jekyll v2.5.3</generator>
+    <pubDate>Fri, 04 Nov 2016 11:10:18 +0000</pubDate>
+    <lastBuildDate>Fri, 04 Nov 2016 11:10:18 +0000</lastBuildDate>
+    <generator>Jekyll v2.4.0</generator>
     
       <item>
-        <title>Key Data Innovations to Insure Your Organisation Survives and Thrives</title>
+        <title>5 Keys to a Successful Data Strategy for Charities</title>
+        <description>&lt;p&gt;This one hour presentation by Lea is aimed at board members, directors, managers and leaders of charities, non-profits and social enterprises. Starting with the challenges that these organisations face around the collection, processing and use of data; the presentation describes the key ways in which leaders can effectively define and implement a data strategy and promote evidence informed decision making within their organisation. &lt;/p&gt;
+
+&lt;p&gt;This video is also a useful introduction to concepts that we will delve into in much more detail in our &lt;a href=&quot;/blog/2016/10/24/key-data-innovations.html&quot;&gt;forthcoming workshop&lt;/a&gt; at the National Council of Voluntary Organisations in London on the 10th of November. &lt;/p&gt;
+
+&lt;div class=&quot;row&quot; id=&quot;row-3&quot;&gt;
+	&lt;div class=&quot;col-sm-6 col-md-offset-3&quot;&gt;
+		&lt;div class=&quot;embed-responsive embed-responsive-16by9&quot;&gt;
+			&lt;iframe class=&quot;embed-responsive-item&quot; src=&quot;https://www.youtube.com/embed/GYY9C1DCaO8&quot;&gt;&lt;/iframe&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Fri, 04 Nov 2016 00:00:00 +0000</pubDate>
+        <link>http://networkedplanet.com/blog/2016/11/04/successful-data-strategy.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2016/11/04/successful-data-strategy.html</guid>
+        
+        <category>open data</category>
+        
+        <category>impact</category>
+        
+        <category>charities</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Key Data Innovations to Ensure Your Organisation Survives and Thrives</title>
         <description>&lt;p&gt;Charity leaders will learn about data protection and how to lead organisations toward better collection and use of data at our workshop at the National Council of Voluntary Organisations in London on the 10th of November. &lt;/p&gt;
 
 &lt;p&gt;We will review and explore data protection and privacy laws to gain a comfort level that allows participants to lead, wisely, onward, before we delve into new priorities for data collection and use.&lt;/p&gt;
@@ -563,107 +590,6 @@ for(var i = 0; i &amp;lt; markers.length; i++) {
         <category>linked data</category>
         
         <category>sparql</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Linked Data - a short presentation</title>
-        <description>&lt;p&gt;When John Kellas from &lt;a href=&quot;http://www.bristolhealthpartners.org.uk/&quot;&gt;Bristol Health Partners&lt;/a&gt; asked me to come along to an event they and &lt;a href=&quot;https://www.thersa.org/fellowship/in-your-area/regions/west/&quot;&gt;RSA West&lt;/a&gt; were organising and talk about linked data and its benefits I was more than happy to say yes. &lt;/p&gt;
-
-&lt;p&gt;The event was a series of “lightning talks” to inspire discussion around the theme “&lt;a href=&quot;https://www.eventbrite.co.uk/e/health-data-and-the-public-good-tickets-20692819781#&quot;&gt;Health, Data and the Public Good&lt;/a&gt;”. Here are the slides and notes from the talk:&lt;/p&gt;
-
-&lt;p style=&quot;clear:both;&quot;&gt;&lt;img src=&quot;/assets/images/blog/hdpg_pres/Slide1.PNG&quot; alt=&quot;Slide 1 - Let computers do the work - enabling collaboration with linked data&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/hdpg_pres/Slide2.PNG&quot; alt=&quot;Slide 2 - NetworkedPlanet - Jen Williams - twitter @nwplanet&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This is a very short introduction to linked data. If you’ve not heard the term linked data before, that’s OK as I’m not going to go into super-technical detail, if you have heard the term before but only in relation to the 4th and 5th levels of &lt;strong&gt;open data&lt;/strong&gt;, then I need you to put what you’ve heard about it to one side for five minutes.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/hdpg_pres/Slide4.PNG&quot; alt=&quot;Slide 4 - Linked data does not equal open data - venn diagram with linked open data in centre&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;A common mistake is to confuse &lt;strong&gt;linked data&lt;/strong&gt; with &lt;strong&gt;open data&lt;/strong&gt;. Whilst there is a sweet spot in the centre where we published linked data under and open license and it becomes &lt;strong&gt;linked open data&lt;/strong&gt;, they are not one in the same, and one is not a prerequisite of the other.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/hdpg_pres/Slide5.PNG&quot; alt=&quot;Slide 5 - Linked data does not equal open data - venn diagram hiding linked open data from centre&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;There are cases where you either not choose to, or &lt;em&gt;should&lt;/em&gt; not publish data publicly; for the purpose of this presentation, let’s assume the plan for our data is never to publish it externally. So why would we still be interested in learning about linked data?&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/hdpg_pres/Slide6.PNG&quot; alt=&quot;Slide 6 - working with data: retrieve the data, find where it intersects, reformat to be workable. picture of different data sources.&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Let’s take an example where we have collected some interesting survey data. Whilst there are some cases where you simply publish a survey’s findings in a report, in almost all cases in order for that report to have impact you will need to compare your collected data with data from both internal and external source.&lt;/p&gt;
-
-&lt;p&gt;For example:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;private datasets belonging to your organisation&lt;/li&gt;
-  &lt;li&gt;open datasets from other organisations&lt;/li&gt;
-  &lt;li&gt;shared datasets from organisations with which you have data sharing agreements, or pay for a license to access their data&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;What’s the process? You have to retrieve the data, make sure you can view the data (what format is it in?), see whether there are any places in which the data intersects, and then reformat the data so that those intersections can merge your datasets together. Then you are ready to &lt;strong&gt;start&lt;/strong&gt; analysing the data.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/hdpg_pres/Slide7.PNG&quot; alt=&quot;Slide 7 - Q: What can we do to make this process easier?&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;What we need is a way of minimising the amount of time spent on this coordination of datasets, whilst maximising the potential for collaboration.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/hdpg_pres/Slide8.PNG&quot; alt=&quot;Slide 8 - A: Structure our data so that computers can do this work for us&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This is where linked data comes to the rescue! &lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/hdpg_pres/Slide9.PNG&quot; alt=&quot;Slide 9 - For example the word Ward can have different meanings: a hospital ward, an administrative area, or a ward of the court. The standards of linked data use identifiers to explicitly state the meaning within the raw data itself&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Linked data is the set of standards for structuring data in a way that explicitly defines subjects and context within the raw data itself - not in column headers and not in external documentation or metadata files. &lt;/p&gt;
-
-&lt;p&gt;If those datasets (from the earlier slide) each had column headers for “Ward” how do we decide that they have matching meanings? Currently we need to do that process manually, or have extremely complex linguistic programs to try and replicate that work for us. &lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/hdpg_pres/Slide10.PNG&quot; alt=&quot;Slide 10 - a simple CSV example&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;How do we harness this power? - By agreeing to use the same terms when talking about the same concepts in our data. &lt;/p&gt;
-
-&lt;p&gt;We already acknowledge that shared taxonomies are a good thing (using SNOMED-CT or ICD classifications for example). Using a common vocabulary for our data extending this principle to data itself so that the properties and types of the things that we are talking about can be more readily understood, not only by people reading it, but also by the machines that process it.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/hdpg_pres/Slide11.PNG&quot; alt=&quot;Slide 11 - the CSV data as RDF triples&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Published shared vocabularies are already out there in use on the Linked Data Web. Such as:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;DCMI&lt;/strong&gt; for describing basic information about resources, such as title, creator, description, format etc&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Basic Geo&lt;/strong&gt; for latitude and longitude values&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Geonames&lt;/strong&gt; for describing information about places such as postal code, parent country, population etc&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;RDF Data Cube Vocabulary&lt;/strong&gt; for describing multi-dimensional statistic data &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;FOAF&lt;/strong&gt; for describing people, groups and organisations and there relationships to each other&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Ordnance Survey ontologies&lt;/strong&gt; for describing UK geography&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;BioOntology&lt;/strong&gt; for describing clinical terms as defined by the SNOMED-CT ontology &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/hdpg_pres/Slide12.PNG&quot; alt=&quot;Slide 12&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Let’s have a (very) quick look at what linked data can look like in the form of RDF. First we have some simple CSV (Comma Separated Values) tabular data and we’re going to see what that would look like in the form of &lt;strong&gt;triples&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/hdpg_pres/Slide13.PNG&quot; alt=&quot;Slide 13&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Here we can see that each record/row from that table has been split into a number of “triples” - each triple describes a property of the record/row/resource. As my data from the CSV was about events, I chose to use predicates from the schema.org vocabulary for my event title and date, and I used the Basic Geo Vocab to describe my latitude and longitude values. &lt;/p&gt;
-
-&lt;p&gt;There’s not enough time in this introductory talk to go into this further, so do check out our blog on networkedplanet.com where there are some easy to digest “Linked Data 101” posts that talk about these &lt;a href=&quot;/blog/2016/02/16/linked-data-101-identifiers.html&quot;&gt;identifiers&lt;/a&gt; and &lt;a href=&quot;/blog/2016/02/17/linked-data-101-predicates.html&quot;&gt;predicates&lt;/a&gt; and demystify them for you! &lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/hdpg_pres/Slide14.PNG&quot; alt=&quot;Slide 14 - Rome wasn&#39;t built in a day&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The main take-away point here, and it’s a really important one, is that this is not a pie-in-the-sky, “wouldn’t it be nice if…” idea. The Web of Data is out there, and it’s about making use of it to speed up your own processes. &lt;/p&gt;
-
-&lt;p&gt;It’s not a magically answer to all your problems but it &lt;strong&gt;does&lt;/strong&gt; let computers take over one part of your data processes. By following open standards in the way you handle and structure your data, you protect yourself from being locked into bespoke software written for you or supplied by vendors who write their own rules which then don’t “fit” with how other people choose to handle data - leaving all this data locked away in silos and all the work on you.&lt;/p&gt;
-
-&lt;p&gt;You don’t have to have your entire knowledge domain mapped out in a huge taxonomy to get going. Start small (let project goals guide you in what’s needed &lt;strong&gt;now&lt;/strong&gt;) and adopt an agile approach in iteratively adding to the vocabulary you use for your linked data.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/hdpg_pres/Slide15.PNG&quot; alt=&quot;Slide 15&quot; width=&quot;800px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p class=&quot;well text-center&quot;&gt;This presentation was given at Bristol Health Partner’s event Health, Data and the Public Good on Monday 22nd February, 2016. If you’d like to learn more about linked data, check out our &lt;a href=&quot;/blog/tags/ld101-series/&quot;&gt;Linked Data 101 series&lt;/a&gt; to get started, or get in touch as we offer training and guidance customised to each organisation’s data needs.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 23 Feb 2016 00:00:00 +0000</pubDate>
-        <link>http://networkedplanet.com/blog/2016/02/23/linked-data-intro-presentation.html</link>
-        <guid isPermaLink="true">http://networkedplanet.com/blog/2016/02/23/linked-data-intro-presentation.html</guid>
-        
-        <category>linked data</category>
-        
-        <category>presentation</category>
         
         
       </item>
