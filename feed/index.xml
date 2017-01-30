@@ -5,9 +5,41 @@
     <description>Experts in Linked and Open Data Publishing</description>
     <link>http://networkedplanet.com/</link>
     <atom:link href="http://networkedplanet.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 30 Jan 2017 13:31:43 +0000</pubDate>
-    <lastBuildDate>Mon, 30 Jan 2017 13:31:43 +0000</lastBuildDate>
+    <pubDate>Mon, 30 Jan 2017 15:12:17 +0000</pubDate>
+    <lastBuildDate>Mon, 30 Jan 2017 15:12:17 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>I see co-producers and stakeholders... everywhere.</title>
+        <description>&lt;p&gt;&lt;em&gt;This blogpost was originally posted on &lt;a href=&quot;http://e-voice.org.uk/twadata/blog/one-entry?entry_id=28325666&quot;&gt;The Way Ahead - Data Theme blog&lt;/a&gt; and is republished here in full&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Since our last meeting, Kate and I have been travelling to meetings and events around London. We have much more to do, but we want to update you on the stakeholders/co-producers with which we have engaged and who we hope to engage much more.&lt;/p&gt;
+
+&lt;p&gt;From volunteer sector leaders we learned that funding is often given by charitable people or groups which are not listed as organisations.  We have been asked to try to find ways to include data about these funders, which is seen as a challenge by all, but may become a great project for our data collection and sharing entity.&lt;/p&gt;
+
+&lt;p&gt;We have put our vision of the ‘hub’ into a sort of paused-for-additional information state, as we’ve found other organisations which are working toward very similar goals.  These include the &lt;a href=&quot;http://www.nesta.org.uk/blog/london-office-data-analytics-pilot-now-hard-part&quot;&gt;London Boroughs’ Data Partnership&lt;/a&gt; and the &lt;a href=&quot;https://data.london.gov.uk/dataset/london-office-of-data-analytics&quot;&gt;London Office of Data Analytics&lt;/a&gt;. We hope to speak with the parties involved in leading these efforts soon.&lt;/p&gt;
+
+&lt;p&gt;We have made contact with local academia, at the &lt;a href=&quot;https://eppi.ioe.ac.uk/cms/&quot;&gt;EPPI-Centre&lt;/a&gt;, and they agree that collaborating makes good sense. Tentatively, in addition to providing links to systematic reviews for use by organisations, we hope to include some brief and helpful tutorials on how to search for and find the right research for whatever project for which one works.&lt;/p&gt;
+
+&lt;p&gt;We have met with the GLA and the London Council, who have helped us identify several needs related to information sharing within the various government offices across the city. They have both been eager to help and be part of collaborating.&lt;/p&gt;
+
+&lt;p&gt;We still want to meet with the engagement officers of as many CCGs as possible, Ipsos Mori (or similar), education data users and providers, and we are reaching out to various communities through a request to the EU National Institutes for Culture.&lt;/p&gt;
+
+&lt;p&gt;We will update again! Stay tuned.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 30 Jan 2017 15:17:38 +0000</pubDate>
+        <link>http://networkedplanet.com/blog/2017/01/30/i-see-stakeholders.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2017/01/30/i-see-stakeholders.html</guid>
+        
+        <category>the way ahead</category>
+        
+        <category>impact</category>
+        
+        <category>charities</category>
+        
+        
+      </item>
     
       <item>
         <title>Open Data Camp 4</title>
@@ -19,11 +51,11 @@
 
 &lt;div style=&quot;clear:both;&quot;&gt;&amp;nbsp;&lt;/div&gt;
 
-&lt;p&gt;ODCamp is a free &lt;strong&gt;un-&lt;/strong&gt;conference. Unconferences are a particular format of event that doesn’t pre-plan a programme of sessions. Instead, session ideas are “pitched” by the attendees at the start of the day and then, using a show of hands to judge size of space required, pens, and sticky notes, the volunteer crew (called “camp-makers” at ODCamp) create the programme for the day. ODCamp covers costs by offering various sponsorship levels, &lt;a href=&quot;http://odcamp.org.uk/sponsors-feb-2017/&quot;&gt;the sponsors helping make ODCamp4 happen is available here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;ODCamp is a free &lt;strong&gt;un-&lt;/strong&gt;conference. Unconferences are a particular format of event that doesn’t pre-plan a programme of sessions. Instead, session ideas are “pitched” by the attendees at the start of the day and then, using a show of hands to judge size of space required, pens, and sticky notes, the volunteer crew (called “camp-makers” at ODCamp) create the programme for the day. ODCamp covers costs by offering various sponsorship levels, &lt;a href=&quot;http://odcamp.org.uk/sponsors-feb-2017/&quot;&gt;the list of sponsors helping make ODCamp4 happen is available here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/blog/odcamp4/odc3_sessionboard.jpg&quot; alt=&quot;Creating the  session schedule&quot; height=&quot;426px&quot; width=&quot;640px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;At my first ODCamp I didn’t plan on pitching a session, but over the course of the first day and chats in the evening afterwards, I realised that a small session on converting CSV data formats to RDF link data formats might be useful to a few people. I pitched it on the Sunday morning, and that afternoon ran a small workshop messing about with Open Refine to show people how you get from CSV to RDF as basically a “demystifying RDF” workshop.&lt;/p&gt;
+&lt;p&gt;At my first ODCamp I didn’t plan on pitching a session, but over the course of the first day and chats in the evening afterwards, I realised that a small session on converting CSV data formats to RDF linked data formats might be useful to a few people. I pitched it on the Sunday morning, and that afternoon ran a small workshop messing about with Open Refine to show people how you get from CSV to RDF as basically a “demystifying RDF” workshop.&lt;/p&gt;
 
 &lt;p&gt;The structure of ODCamp massively appeals to me because the content is so obviously influenced by the attendees. The organising team have a really good balance of hands-on when it comes to keeping the event flowing and dealing with all the logistics, whilst staying more hands-off to allow the content and discussions to grow organically. Sessions might be round-circle discussions, presentations about tools or projects, building and making of new projects, all kinds of things! You don’t have to pitch a session based on your own subject-knowledge, sessions can be pitched around a question or topic that you want to know more about, and the “pitch” becomes a shout out for other attendees with more knowledge in that area to share in a session.&lt;/p&gt;
 
@@ -342,28 +374,6 @@ and promote evidence informed decision making within their organisation. &lt;/p&
         <category>odcamp</category>
         
         <category>events</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Newsletter Issue 3 hits the inboxes</title>
-        <description>&lt;p&gt;The third issue of our email newsletter has hit the &lt;a href=&quot;http://networkedplanet.us11.list-manage.com/subscribe?u=62daac7ae19a90ef03ea3bd42&amp;amp;id=a797a2dd15&quot;&gt;mailing list&lt;/a&gt; inboxes. &lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://us11.campaign-archive1.com/?u=62daac7ae19a90ef03ea3bd42&amp;amp;id=e7d12c0b8a&quot;&gt;Click here to read this issue&lt;/a&gt; in your browser, and &lt;a href=&quot;http://us11.campaign-archive1.com/home/?u=62daac7ae19a90ef03ea3bd42&amp;amp;id=a797a2dd15&quot;&gt;access the newsletter archive here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://networkedplanet.us11.list-manage.com/subscribe?u=62daac7ae19a90ef03ea3bd42&amp;amp;id=a797a2dd15&quot;&gt;Sign up to our mailing list&lt;/a&gt; - we send newsletters roughly quarterly, possibly punctuated with the odd single-shot news item if we think it’s important!&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 29 Mar 2016 00:00:00 +0100</pubDate>
-        <link>http://networkedplanet.com/blog/2016/03/29/newsletter-issue-3.html</link>
-        <guid isPermaLink="true">http://networkedplanet.com/blog/2016/03/29/newsletter-issue-3.html</guid>
-        
-        <category>newsletter</category>
-        
-        <category>mailing list</category>
         
         
       </item>
