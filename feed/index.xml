@@ -5,9 +5,57 @@
     <description>Experts in Linked and Open Data Publishing</description>
     <link>http://networkedplanet.com/</link>
     <atom:link href="http://networkedplanet.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 14 Dec 2016 16:47:09 +0000</pubDate>
-    <lastBuildDate>Wed, 14 Dec 2016 16:47:09 +0000</lastBuildDate>
+    <pubDate>Mon, 30 Jan 2017 13:31:43 +0000</pubDate>
+    <lastBuildDate>Mon, 30 Jan 2017 13:31:43 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Open Data Camp 4</title>
+        <description>&lt;p&gt;Only a few weeks to go! &lt;a href=&quot;http://odcamp.org.uk/announcing-open-data-camp-4/&quot;&gt;Open Data Camp numero 4&lt;/a&gt; is being held at the Pierhead in Cardiff on the Saturday and Sunday, 25-26th of February. ODCamp instantly became my favourite data focused event after I attended the second ODCamp in Manchester and then helped bring it to Bristol for ODCamp3. You can read my &lt;a href=&quot;#&quot;&gt;other blog posts&lt;/a&gt; if you want to dive deep into my ODCamp journey. &lt;/p&gt;
+
+&lt;p&gt;Since volunteering with the ODCamp organising committee for the Bristol event, I was invited to remain on the organising team to help make future ODCamps happen. I was more than happy to accept and am really delighted to be part of a team made up of such friendly, proactive humans. NetworkedPlanet were proud to be one of the key sponsors of ODCamp3 in Bristol, and remain committed to sponsoring ODCamp4 and future events as we are so impressed with the team’s ability to foster an environment that nurtures forward-thinking ideas and debate surrounding production and consumption of open data in the UK.&lt;/p&gt;
+
+&lt;p&gt;Enough of my gushing about the people who run and attend ODCamps - if you’ve not been to one then here’s a quick run down…&lt;/p&gt;
+
+&lt;div style=&quot;clear:both;&quot;&gt;&amp;nbsp;&lt;/div&gt;
+
+&lt;p&gt;ODCamp is a free &lt;strong&gt;un-&lt;/strong&gt;conference. Unconferences are a particular format of event that doesn’t pre-plan a programme of sessions. Instead, session ideas are “pitched” by the attendees at the start of the day and then, using a show of hands to judge size of space required, pens, and sticky notes, the volunteer crew (called “camp-makers” at ODCamp) create the programme for the day. ODCamp covers costs by offering various sponsorship levels, &lt;a href=&quot;http://odcamp.org.uk/sponsors-feb-2017/&quot;&gt;the sponsors helping make ODCamp4 happen is available here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/odcamp4/odc3_sessionboard.jpg&quot; alt=&quot;Creating the  session schedule&quot; height=&quot;426px&quot; width=&quot;640px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;At my first ODCamp I didn’t plan on pitching a session, but over the course of the first day and chats in the evening afterwards, I realised that a small session on converting CSV data formats to RDF link data formats might be useful to a few people. I pitched it on the Sunday morning, and that afternoon ran a small workshop messing about with Open Refine to show people how you get from CSV to RDF as basically a “demystifying RDF” workshop.&lt;/p&gt;
+
+&lt;p&gt;The structure of ODCamp massively appeals to me because the content is so obviously influenced by the attendees. The organising team have a really good balance of hands-on when it comes to keeping the event flowing and dealing with all the logistics, whilst staying more hands-off to allow the content and discussions to grow organically. Sessions might be round-circle discussions, presentations about tools or projects, building and making of new projects, all kinds of things! You don’t have to pitch a session based on your own subject-knowledge, sessions can be pitched around a question or topic that you want to know more about, and the “pitch” becomes a shout out for other attendees with more knowledge in that area to share in a session.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/odcamp4/odc3_breakoutspaces.jpg&quot; alt=&quot;Break out spaces&quot; height=&quot;426px&quot; width=&quot;640px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The hardest thing is to choose which sessions to go to, you will undoubtedly have 2 or more sessions that you want to attend at the same time. Luckily ODCamp encourages people to move between sessions instead of feeling they must remain for the entirety of one, and this way you can dip in to more than one interesting session (a top tip is to follow the &lt;a href=&quot;https://twitter.com/hashtag/odcamp?src=hash&quot;&gt;live-tweeting&lt;/a&gt; from attendees in other sessions). Some sessions also get covered by the amazing talents at &lt;a href=&quot;https://drawnalism.com/&quot;&gt;Drawnalism&lt;/a&gt;, who live-draw infographics of key points from session content, which are then tacked up around the main room for all to benefit from.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/odcamp4/odc3_livedrawing.jpg&quot; alt=&quot;Live drawing capture the key points from sessions&quot; height=&quot;426px&quot; width=&quot;640px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ODCamp releases the free tickets in batches, and each batch “sells out” in a matter of minutes. Those who are unable to attend are &lt;strong&gt;strongly encouraged&lt;/strong&gt; to update their registration so that others can make it in their place. ODCamp4 is already at full capacity but there may well be extra releases if there have been any cancellations, so set your twitter feed to give you notifications from &lt;a href=&quot;https://twitter.com/ODcamp&quot;&gt;@ODCamp&lt;/a&gt; if you’ve not already secured a ticket.&lt;/p&gt;
+
+&lt;p&gt;If you’ve already got a ticket then I’ll see you there, if you miss out this time, ODCamp5 will be along before you know it.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/odcamp4/odc3_finalsession.jpg&quot; alt=&quot;Open Data Camp - Bristol&quot; height=&quot;426px&quot; width=&quot;640px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;All photos used in this post are by &lt;a href=&quot;https://www.flickr.com/photos/wnbishop/sets/72157668368192166/&quot;&gt;Nigel Bishop&lt;/a&gt;, licensed &lt;a href=&quot;https://creativecommons.org/licenses/by-nc/2.0/&quot;&gt;CC BY-NC 2.0&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 30 Jan 2017 13:17:38 +0000</pubDate>
+        <link>http://networkedplanet.com/blog/2017/01/30/open-data-camp-4-cardiff.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2017/01/30/open-data-camp-4-cardiff.html</guid>
+        
+        <category>open data</category>
+        
+        <category>unconference</category>
+        
+        <category>odcamp</category>
+        
+        <category>events</category>
+        
+        
+      </item>
     
       <item>
         <title>The Way Ahead for London</title>
@@ -291,6 +339,10 @@ and promote evidence informed decision making within their organisation. &lt;/p&
         
         <category>conference</category>
         
+        <category>odcamp</category>
+        
+        <category>events</category>
+        
         
       </item>
     
@@ -312,43 +364,6 @@ and promote evidence informed decision making within their organisation. &lt;/p&
         <category>newsletter</category>
         
         <category>mailing list</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Open data feedback at work!</title>
-        <description>&lt;p&gt;Whilst finishing off my article on &lt;a href=&quot;/blog/2016/02/29/linked-data-101-querying.html&quot;&gt;querying linked data&lt;/a&gt;, I decided it would be nice to end with something a little more tangible than simply another SPARQL query. I decided a nice map showing the data that I’d converted from CSV to RDF would do the trick. &lt;/p&gt;
-
-&lt;p&gt;Whilst it was quick work to display a map using OpenStreetMap tiles and Leaflet.js, something was peculiar - the map markers were nowhere to be seen, and scrolling out found them off the coast of Somalia! &lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/datafix/badmap.png&quot; alt=&quot;London allotments in the seas off the coast of Somalia&quot; width=&quot;750px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p class=&quot;text-center img-caption&quot;&gt;&lt;em&gt;These allotments would have problems with damp&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;I started tracing back through my steps and found the culprit in the original CSV file - the headings had been mixed up for the longitude and latitude. I headed back to the London Datastore to double check and yes, that was the way in which the data had been published.&lt;/p&gt;
-
-&lt;p&gt;Clicking over to their contact page I quickly fired off an e-mail to let them know of the error, and in the matter of a mere &lt;strong&gt;20 minutes&lt;/strong&gt; I had received an email back saying that the data had been fixed.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/datafix/goodmap.png&quot; alt=&quot;London allotments in Walthamstow&quot; width=&quot;750px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p class=&quot;text-center img-caption&quot;&gt;&lt;em&gt;That’s more like it!&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;It’s very easy to let simple errors slip by, I know what ranges UK latitudes and longitudes should be and I didn’t spot it even though the &lt;a href=&quot;http://levelup.networkedplanet.com/&quot;&gt;Level Up converter&lt;/a&gt; shows a preview of the original CSV. When working with lots and lots of values it’s easy for things like this to get through and it was the mapping visualisation that made it obvious.&lt;/p&gt;
-
-&lt;p&gt;What’s really great is it also shows another benefit of open data, the community aspect of keeping your raw data error-free. Each user of an open dataset has a vested interest in that data being correct. In my case, I wanted it to be able to demonstrate a conversion to RDF, but it could &lt;em&gt;easily&lt;/em&gt; be developers or users of an app that use your data in their offerings.&lt;/p&gt;
-
-&lt;p&gt;So a massive shout out to &lt;a href=&quot;https://twitter.com/LDN_data&quot; title=&quot;London Datastore Twitter&quot;&gt;@ldn_data&lt;/a&gt; for their super fast response in getting the data sorted!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://gifrific.com/wp-content/uploads/2012/04/Tina-Fey-giving-herself-high-five.gif&quot; alt=&quot;Gif: liz lemon high five&quot; width=&quot;350px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p class=&quot;text-center img-caption&quot;&gt;&lt;em&gt;You rock!&lt;/em&gt;&lt;/p&gt;
-</description>
-        <pubDate>Tue, 01 Mar 2016 00:00:00 +0000</pubDate>
-        <link>http://networkedplanet.com/blog/2016/03/01/open-data-feedback-at-work.html</link>
-        <guid isPermaLink="true">http://networkedplanet.com/blog/2016/03/01/open-data-feedback-at-work.html</guid>
-        
-        <category>open data</category>
         
         
       </item>
