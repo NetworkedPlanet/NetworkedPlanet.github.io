@@ -5,9 +5,61 @@
     <description>Experts in Linked and Open Data Publishing</description>
     <link>http://networkedplanet.com/</link>
     <atom:link href="http://networkedplanet.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 15 Feb 2017 11:05:26 +0000</pubDate>
-    <lastBuildDate>Wed, 15 Feb 2017 11:05:26 +0000</lastBuildDate>
+    <pubDate>Wed, 22 Feb 2017 12:53:39 +0000</pubDate>
+    <lastBuildDate>Wed, 22 Feb 2017 12:53:39 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Co-operative Thinking</title>
+        <description>&lt;p&gt;First, a confession: I went along to Open:2017 without a very clear idea about what a platform co-operative really was. I had been asked to get involved due to my work relating to Linked Data, and whilst I had read up a little bit on platform co-ops I only really had a vague idea that it was “sort of like doing something like AirBnB or Uber but without exploiting those using the platform”. &lt;/p&gt;
+
+&lt;p&gt;I came away not only with a clearer idea of what a platform co-op is (I’ll get into that in a minute), but also with a real hunger for finding a way of adopting this approach in future projects. So what is this approach? Most people are aware of co-operatives - where groups of people have come together to form an entity to manage something like a building or buildings to live in (housing co-ops), a business (worker co-ops) or a food shop or cafe (consumer co-ops), amongst other things. What they all have in common is the drive to create entities where the people who take part in that co-op can become members who actively participate (if they wish) in the running of the co-op itself. Any profits are then shared amongst the members and/or ploughed back into the co-op itself.&lt;/p&gt;
+
+&lt;p&gt;With platform co-operatives, instead of members coming together around a physical building or a business that’s usually fairly localised, the “hub” is a digital platform. For example, &lt;a href=&quot;https://www.stocksy.com/&quot;&gt;Stocksy&lt;/a&gt; is a stock photography platform that’s owned and run by all of their photographers. I must admit I still get a bit confused as to why they went with “platform co-operative” rather than “digital co-operative”, but then again I also complain that calling things “digital” isn’t specific enough, so I admit I’m difficult to please!&lt;/p&gt;
+
+&lt;p&gt;Rather than me continue to badly explain co-operatives and platform co-ops, here’s a few links to read up some more if you’re interested.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://open.coop/2016/12/02/introduction-platform-co-ops/&quot;&gt;An introduction to Platform co-ops&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ioo.coop/&quot;&gt;The Internet of Ownership&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://open.coop/2016/12/02/platform-co-ops-definition-history/&quot;&gt;Platform Co-ops – Definition and history&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://discuss.open.coop/t/where-do-you-draw-the-line-on-what-constitutes-a-platform-co-op/21&quot;&gt;Where do you draw the line on what constitutes a platform co-op? (Discussion)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/British_co-operative_movement&quot;&gt;The British co-operative movement&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.uk.coop/about/about-co-operatives-uk&quot;&gt;Co-operatives UK&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Back to the conference, the first session I took part in was a panel with Tim Davies (&lt;a href=&quot;http://www.opendataservices.coop/&quot;&gt;Open Data Services Co-op&lt;/a&gt;) and Karin Christiansen (&lt;a href=&quot;https://okfn.org/&quot;&gt;Open Knowledge Foundation&lt;/a&gt;) called “From data slaves to data citizens”. The session was intended to be a discussion around open data, but ended up being primarily about user’s fear of the intentions and uses of data collected by platforms that had become so monolithic that it was difficult to have a digital presence without signing up to their services. The second session I was helping to present focused on content from Matt Wallis from the &lt;a href=&quot;http://solidarityeconomics.org/&quot;&gt;Institute of Solidarity Economics&lt;/a&gt; who have adopted a Linked Data focused approach to their &lt;a href=&quot;http://solidarityeconomics.org/our-work/internal-projects/&quot;&gt;data infrastructure&lt;/a&gt;. I was really pleased to see that a large proportion of the attendees were comfortable with Linked Data already. My gut feeling is that in this environment filled with people working with such commitment to collaboration and information sharing, Linked Data is obviously not new to them, as it provides the standard for collaborating effectively at a data management and sharing level.&lt;/p&gt;
+
+&lt;p&gt;The final session I was directly involved with was “Designing interoperable apps for the open app ecosystem”, a lengthy 2 hour workshop session led by Laura Hilliger, Enric Senebre Hidalgo and Ricard Espelt. They did a great job facilitating the structure, creating smaller discussion groups over particular topics brainstormed at the start of the session. The discussion continues over at &lt;a href=&quot;https://discuss.open.coop/t/open-2017-designing-interoperable-apps-for-the-open-app-ecosystem/58&quot;&gt;discuss.open.coop&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;A pitch idea bubbling for &lt;a href=&quot;https://twitter.com/ODcamp&quot;&gt;@ODcamp&lt;/a&gt; after &lt;a href=&quot;https://twitter.com/hashtag/opencoop?src=hash&quot;&gt;#opencoop&lt;/a&gt; - &amp;quot;how can platform co-ops benefit the open data ecosystem?&amp;quot; &lt;a href=&quot;https://twitter.com/hashtag/crosspollination?src=hash&quot;&gt;#crosspollination&lt;/a&gt;&lt;/p&gt;&amp;mdash; Networked Planet (@nwplanet) &lt;a href=&quot;https://twitter.com/nwplanet/status/832970665565224960&quot;&gt;February 18, 2017&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;So what next? Well, my mind is buzzing about all sort of things. From the interoperable apps session, I’d love to hear about people pushing forward with publishing open data vocabularies for use in linked data publishing. Oli from Open Co-op is hoping to rekindle the Collaborative Technology Alliance’s efforts (more info &lt;a href=&quot;https://discuss.open.coop/t/open-2017-designing-interoperable-apps-for-the-open-app-ecosystem/58&quot;&gt;here&lt;/a&gt;), and I’m interested to see if linked data plays a part in that. &lt;/p&gt;
+
+&lt;p&gt;Specifically about platform co-ops, I’m wondering if our new cloud service that goes live in alpha/preview mode this weekend would be suitable for a platform co-operative, and what the logistics of that would be. The value systems certainly align, but would the administrative needs fit? I don’t know yet but I’m going to continue to delve deeper to answer my questions around that. In a &lt;em&gt;very&lt;/em&gt; timely blog post from the ODI, Tom Sasse asks the question &lt;a href=&quot;http://theodi.org/news/how-can-open-data-portals-become-sustainable-new-report-makes-recommendations-from-design-to-evaluation&quot;&gt;“How can open data portals become sustainable?”&lt;/a&gt; - perhaps platform co-operatives hold the answer. I’m hoping others may want to discuss this sort of thing with me at &lt;a href=&quot;http://odcamp.org.uk/&quot;&gt;ODCamp&lt;/a&gt; this weekend, so expect a pitch from me around this subject.&lt;/p&gt;
+
+&lt;p&gt;As you can tell, I’ve come away from Open:2017 with a lot of questions buzzing around my head, but also a real sense of purpose and positivity. I’d really like to spread the word about the people who attended and their projects and platforms, however I don’t currently have a full list, as a starting point here’s the &lt;a href=&quot;https://twitter.com/open_coop/lists/open-2017-contributors/members&quot;&gt;twitter list of contributors to the conference&lt;/a&gt; (those involved in panels and presenting sessions). If you were at the conference please feel free to add details and pointers to your work in the comments below.&lt;/p&gt;
+
+&lt;p&gt;I hope there’s an Open:2018, it was a fantastic event. Keep an eye on what &lt;a href=&quot;https://open.coop/&quot;&gt;Open Co-op&lt;/a&gt; do next!&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 22 Feb 2017 12:17:38 +0000</pubDate>
+        <link>http://networkedplanet.com/blog/2017/02/22/co-operative-thinking.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2017/02/22/co-operative-thinking.html</guid>
+        
+        <category>conference</category>
+        
+        <category>events</category>
+        
+        <category>collaborative economy</category>
+        
+        <category>platform cooperatives</category>
+        
+        <category>linked data</category>
+        
+        
+      </item>
     
       <item>
         <title>Open 2017 Platform Co-operatives</title>
@@ -314,46 +366,6 @@ and promote evidence informed decision making within their organisation. &lt;/p&
         <category>data for good</category>
         
         <category>partners</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Proudly sponsoring - How can public data and information support Bristol charities?</title>
-        <description>&lt;p&gt;Many who work in technology are aware of the untapped potential of data to increase the impact of the charity sector. Those who work in voluntary organisations could benefit from this knowledge but are often restricted by resources in what they can achieve. &lt;/p&gt;
-
-&lt;p&gt;The &lt;a href=&quot;http://bristol.theodi.org/&quot;&gt;ODI Bristol&lt;/a&gt; and &lt;a href=&quot;http://www.voscur.org/&quot;&gt;Voscur&lt;/a&gt; have joined forces to run a workshop to bridge this gap. &lt;/p&gt;
-
-&lt;p&gt;We’re very proud to be sponsoring this event so that these very important conversations can happen!&lt;/p&gt;
-
-&lt;p&gt;The afternoon workshop will be taking place on &lt;strong&gt;1pm on Thursday 13th October at Hamilton House on Stokes Croft, Bristol&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;div class=&quot;text-center&quot; style=&quot;margin-bottom:1em;&quot;&gt;&lt;a class=&quot;btn btn-primary&quot; href=&quot;https://www.eventbrite.co.uk/e/how-can-public-data-and-information-support-bristol-charities-registration-27213285670&quot;&gt;More Info &amp;amp; Sign Up For Event&lt;/a&gt;&lt;/div&gt;
-
-&lt;p&gt;Recently, the Nominet Trust published an in-depth review on &lt;a href=&quot;http://www.nominettrust.org.uk/knowledge-centre/articles/open-data-and-charities&quot;&gt;“Open Data and Charities”&lt;/a&gt;, setting out to explain the ways in which open data is increasingly coming in to play a role in the charitable sector:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Existing open government data can be used by charities to add value to their work, to target services better, to improve advocacy and fundraising, and to support knowledge sharing and collaboration between different charities and agencies. Crowdsourcing of open data also offers a new way for charities to gather intelligence, and a wide range of freely available online tools can support charities to analyse open data resources. Realising the potential of open data will require charities to meet a number of technical and organisational challenges. Indeed many charities will need to address key issues relating to open data, whether they choose to pursue benefits from open data or not.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Overcoming the challenges faced by resource-restricted organisations is one of our main concerns at Networked Planet, and we believe that to effectively do this the direction must be set by those who are working in the field. We feel that conversations that start from the ground-up are extremely important in the ongoing conversation about furthering the impact of open data, and are happy to be supporting this event both as a sponsor and also the facilitation of the workshop through Jen’s work in the ODI Bristol steering group.&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 19 Sep 2016 00:00:00 +0100</pubDate>
-        <link>http://networkedplanet.com/blog/2016/09/19/odi-bristol-voscur.html</link>
-        <guid isPermaLink="true">http://networkedplanet.com/blog/2016/09/19/odi-bristol-voscur.html</guid>
-        
-        <category>odi bristol</category>
-        
-        <category>voscur</category>
-        
-        <category>open data</category>
-        
-        <category>workshop</category>
-        
-        <category>charities</category>
-        
-        <category>vcs</category>
         
         
       </item>
