@@ -5,9 +5,66 @@
     <description>Experts in Linked and Open Data Publishing</description>
     <link>http://networkedplanet.com/</link>
     <atom:link href="http://networkedplanet.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 22 Feb 2017 12:53:39 +0000</pubDate>
-    <lastBuildDate>Wed, 22 Feb 2017 12:53:39 +0000</lastBuildDate>
+    <pubDate>Tue, 28 Feb 2017 12:54:12 +0000</pubDate>
+    <lastBuildDate>Tue, 28 Feb 2017 12:54:12 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Introducing DataDock</title>
+        <description>&lt;p&gt;So you want to publish some data, what do you do next? As we’ve mentioned before, &lt;a href=&quot;/blog/2015/08/10/opening-up-your-data.html&quot;&gt;publishing data shouldn’t cost the earth&lt;/a&gt;, but that there are some technical challenges to be faced when we want that data to be discoverable, accessible and usable. &lt;/p&gt;
+
+&lt;p&gt;Of course, technical challenges mean resource challenges; even when data publishing software is free or open-source, it can mean that you require someone with the technical know-how to set it all up (and keep it running), and the resources to run the server to hold the software. In so many cases, these technical and resource challenges basically block individuals and smaller organisations from being able to publish data effectively or at all.&lt;/p&gt;
+
+&lt;p&gt;We believe that taking your first steps in publishing your data shouldn’t be this hard. We have the technical skills and expertise in data publishing standards to be able to provide that publishing service in a way that eliminates those barriers. Over the last few months we’ve been building the answer to those challenges, and we’ve called it DataDock. We’ve now &lt;a href=&quot;http://datadock.io&quot;&gt;released it as a preview edition&lt;/a&gt;, which means that it’s ready to be used by the open data community, and that we’ll be collecting feedback while we work on some additional features over the coming months.&lt;/p&gt;
+
+&lt;h3 id=&quot;have-a-deep-dive-data-portal-in-a-matter-of-minutes&quot;&gt;Have a deep-dive data portal in a matter of minutes&lt;/h3&gt;
+
+&lt;p&gt;Choose your spreadsheet, select a license, then let DataDock do all the magic. &lt;/p&gt;
+
+&lt;p&gt;That magic provides you with a data portal home page, which lists a dataset for each of your spreadsheets. The data portal shows useful information about each dataset and clear licensing information, along with links to download the original spreadsheet and the data in other formats. You can also click into the dataset itself, as DataDock creates pages for every record in your data, allowing you to deep-dive into your published data.&lt;/p&gt;
+
+&lt;h3 id=&quot;dont-worry-about-the-techno-babble&quot;&gt;Don’t worry about the techno-babble&lt;/h3&gt;
+
+&lt;p&gt;One of our main aims is to try and eliminate as much as possible all the jargon and techno-babble surrounding data publishing. DataDock handles the magic, freeing you up to concentrate on the data itself&lt;/p&gt;
+
+&lt;h3 id=&quot;keep-hold-of-your-data&quot;&gt;Keep hold of your data&lt;/h3&gt;
+
+&lt;p&gt;All the standards-compliant data produced by DataDock is published to your GitHub account. You can turn off DataDock’s access any time you wish, and keep all the data it produced.&lt;/p&gt;
+
+&lt;h3 id=&quot;cloud-based&quot;&gt;Cloud-based&lt;/h3&gt;
+
+&lt;p&gt;No need to buy web-hosting, DataDock sits in the cloud and we will always provide free accounts.&lt;/p&gt;
+
+&lt;h3 id=&quot;get-involved&quot;&gt;Get involved&lt;/h3&gt;
+
+&lt;p&gt;We’ve got hundreds of ideas for enhancements and features for DataDock, and we’d like to work on the things you want most. Get involved on by requesting features or up-voting existing requests on our &lt;a href=&quot;https://github.com/NetworkedPlanet/datadock/issues&quot;&gt;DataDock support site&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;its-for-the-geeks-too&quot;&gt;It’s for the geeks too&lt;/h3&gt;
+
+&lt;p&gt;But we don’t want to bore you with that right now. Standards geeks and linked data nerds will be interested in reading the follow ups to this blog post to learn more about the CSVW and 5-star linked data standards that are at the core of DataDock’s internal systems.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;If you’re interested in having a play around, head on over to &lt;a href=&quot;http://datadock.io&quot;&gt;DataDock.io&lt;/a&gt; and check it out. We’d love to hear from you about what you’d like it to do in the future. Upgrades to DataDock won’t effect the data you’ve published, they’ll simply add features to your future uploads, so feel free to get stuck in even at this preview stage. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/datadock/DataDock_ColourTrans.png&quot; alt=&quot;DataDock logo&quot; height=&quot;149px&quot; width=&quot;400px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 28 Feb 2017 10:00:00 +0000</pubDate>
+        <link>http://networkedplanet.com/blog/2017/02/28/introducing-datadock.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2017/02/28/introducing-datadock.html</guid>
+        
+        <category>datadock</category>
+        
+        <category>free data publishing</category>
+        
+        <category>linked data</category>
+        
+        <category>cloud service</category>
+        
+        <category>github</category>
+        
+        
+      </item>
     
       <item>
         <title>Co-operative Thinking</title>
@@ -315,57 +372,6 @@ and promote evidence informed decision making within their organisation. &lt;/p&
         <category>open data</category>
         
         <category>impact</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Partners Sought in Data-for-Good Project</title>
-        <description>&lt;h2 id=&quot;launching-a-new-series-of-tools-to-help-find-the-solutions-to-the-worlds-problems&quot;&gt;Launching a new series of tools to help find the solutions to the world’s problems&lt;/h2&gt;
-
-&lt;h3 id=&quot;announcement-partners-sought-in-data-for-good-project&quot;&gt;Announcement: Partners Sought in Data-for-Good Project&lt;/h3&gt;
-
-&lt;p&gt;This month, NetworkedPlanet has turned a corner. Our company has long managed data, and we are among the vanguard in managing open-linked data, globally.  The world of big data focuses largely on for-profit and consumer insights. We, however, are turning our sights to social problems and the organisations who want to use data-for-good.&lt;/p&gt;
-
-&lt;p&gt;Do you want to join us?  &lt;/p&gt;
-
-&lt;p&gt;We are looking for organisations that seek to solve a social, health, or environmental problem, and understand that more data can lead to innovation and insights.  We intend to design bespoke systems to use linkable data from various locations and sectors to provide the cause with a powerful new tool.&lt;/p&gt;
-
-&lt;p&gt;We are interested in projects that aim to: relieve suffering; improves the health of the environment; or address disease.  We are especially interested in projects that have more than one sector of interest in terms of data (for example, environmental data and health data, or law enforcement and social data).&lt;/p&gt;
-
-&lt;p&gt;We will review letters of interest in early November and meet with prospective partners in late November (2016). Meetings may be held via Goto Meeting, if you are based outside of the UK. &lt;/p&gt;
-
-&lt;p&gt;To be considered, please send a short letter explaining the interests of your organisation, and providing contact details, to: Lea@networkedplanet.com before 29 October 2016.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;networkedplanet-est-buscando-socios-en-el-desarrollo-de-nuevas-herramientas-para-la-investigacin&quot;&gt;NetworkedPlanet está buscando socios en el desarrollo de nuevas herramientas para la investigación.&lt;/h2&gt;
-
-&lt;h3 id=&quot;queremos-anunciar-un-proyecto-para-utilizar-los-datos-para-buenos-fines-sociales&quot;&gt;Queremos anunciar: Un proyecto para utilizar los datos para buenos fines sociales&lt;/h3&gt;
-
-&lt;p&gt;Este mes, NetworkedPlanet (de Gran Bretaña) anuncia una nueva dirección. NetworkedPlanet conseguido datos, y que se encuentran entre la vanguardia en la gestión de los datos ligados y abiertas. &lt;/p&gt;
-
-&lt;p&gt;Mientras que el mundo de los grandes datos se centra principalmente en los conocimientos con fines de lucro y de consumo, nos volvemos nuestra mirada a los problemas sociales y las organizaciones que deseen utilizar los datos para la buena. &lt;/p&gt;
-
-&lt;p&gt;¿Desea Su organización unirse a nosotros? &lt;/p&gt;
-
-&lt;p&gt;Buscamos a las organizaciones que tratan de resolver un problema del ambiente, de la salud, o la sociedad, y la organización entienden que un mayor número de datos pueden conducir a la innovación y las ideas. Tenemos la intención de diseñar sistemas a medida para utilizar los datos vinculables de varios lugares y sectores para proporcionar la causa con una nueva y poderosa herramienta. &lt;/p&gt;
-
-&lt;p&gt;Estamos interesados ​​en proyectos que tienen como objetivo: aliviar el sufrimiento; mejora la salud del medio ambiente; o tratar la enfermedad. Estamos especialmente interesados ​​en proyectos que tengan más de un sector de interés en términos de datos (por ejemplo, los datos ambientales y de salud, o por la policía y los datos sociales). &lt;/p&gt;
-
-&lt;p&gt;Vamos a revisar las cartas de interés a principios de noviembre y se reunirá con los posibles socios a finales de noviembre (2016). Las reuniones podrán ocurer mediante ‘GOTO meeting’ si se basan fuera del Reino Unido. &lt;/p&gt;
-
-&lt;p&gt;Para ser considerado, por favor envíe una breve carta explicando los intereses de su organización, y con todos los detalles de contacto, a: Lea@networkedplanet.com antes del 29 de octubre de 2016.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 21 Sep 2016 00:00:00 +0100</pubDate>
-        <link>http://networkedplanet.com/blog/2016/09/21/partners-sought-in-data-for-good-project.html</link>
-        <guid isPermaLink="true">http://networkedplanet.com/blog/2016/09/21/partners-sought-in-data-for-good-project.html</guid>
-        
-        <category>projects</category>
-        
-        <category>data for good</category>
-        
-        <category>partners</category>
         
         
       </item>
