@@ -5,9 +5,93 @@
     <description>Experts in Linked and Open Data Publishing</description>
     <link>http://networkedplanet.com/</link>
     <atom:link href="http://networkedplanet.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 28 Feb 2017 12:54:12 +0000</pubDate>
-    <lastBuildDate>Tue, 28 Feb 2017 12:54:12 +0000</lastBuildDate>
+    <pubDate>Wed, 01 Mar 2017 12:08:11 +0000</pubDate>
+    <lastBuildDate>Wed, 01 Mar 2017 12:08:11 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Connecting the dots in your data</title>
+        <description>&lt;p&gt;Before I get stuck into the more technical aspects of DataDock, I’d like to first show a little example of one of the benefits of having a deep-dive data portal, over that of a catalog of datasets. If you’ve not yet read it, have a look at our &lt;a href=&quot;/blog/2017/02/28/introducing-datadock.html&quot;&gt;Introduction to DataDock&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Many data publishing platforms provide a list of the datasets you’ve published. Good ones will include additional information about that dataset (this is known as the metadata). Simplistic catalog offerings, however, can;t display the information from multiple datasets without additional visualisation modules that need to be manually configured to display information from disparate datasets.&lt;/p&gt;
+
+&lt;p&gt;By choosing identifiers when you upload data to DataDock, you can upload additional information that pertains to those records later on, and your data portal will automatically group that information together for display in the data portal.&lt;/p&gt;
+
+&lt;p&gt;This is best explained in a walk-through of connecting up three datasets I added to my own data portal.&lt;/p&gt;
+
+&lt;h3 id=&quot;selecting-the-data&quot;&gt;Selecting the data&lt;/h3&gt;
+
+&lt;p&gt;First I went on the hunt for some open data that would be useful to show this functionality. I found an &lt;a href=&quot;https://opendata.bristol.gov.uk/Land-Use/Bristol-Monuments/nyj9-igak&quot;&gt;interesting dataset detailing archaeological / historic structures&lt;/a&gt; on the Bristol City Council’s beta open data platform. It’s published under a &lt;a href=&quot;https://creativecommons.org/publicdomain/zero/1.0/legalcode&quot;&gt;public domain (CC-0) license&lt;/a&gt; meaning I have the right to reproduce it elsewhere. The dataset was available in CSV (comma separated value) format and most importantly it also included a &lt;strong&gt;Monument Record Number&lt;/strong&gt; that I quickly checked that there were no duplicates or missing values - perfect for use as the DataDock identifier for each record.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/datadock/bristol_monuments_preview.png&quot; alt=&quot;A screenshot of the data preview of the Bristol Monuments data&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;uploading-to-datadock&quot;&gt;Uploading to DataDock&lt;/h3&gt;
+
+&lt;p&gt;By default, DataDock produces identifiers for each of the records in your spreadsheet using the row number, but to be able to add extra information in the future, we want an identifier that will work across datasets. As mentioned above, I’d seen that the &lt;code&gt;MONUMENT_RECORD_NO&lt;/code&gt; suited an identifier and so I selected this from the drop-down list. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/datadock/bristol_monuments_identifiers.png&quot; alt=&quot;Selecting the identifier&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;viewing-the-data&quot;&gt;Viewing the data&lt;/h3&gt;
+
+&lt;p&gt;Once the import job was completed, I can use the buttons on my dashboard to view my data portal, and dive into the data using the &lt;code&gt;exampleResource&lt;/code&gt; links. See how the fact I selected the Monument Record Number has affected the addresses of the records in the data:&lt;/p&gt;
+
+&lt;p&gt;http://datadock.io/jennet/odcamp-demo/id/resource/&lt;strong&gt;monument_record_no&lt;/strong&gt;/1054M&lt;/p&gt;
+
+&lt;p&gt;Navigating to this record in a web browser shows us all the information pertaining to that record. This is known as the “resource page” for a particular record in your dataset.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/datadock/bristol_monuments_resource.png&quot; alt=&quot;The resource page for a single record from the dataset&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;merging-data-from-a-different-dataset&quot;&gt;Merging data from a different dataset&lt;/h3&gt;
+
+&lt;p&gt;I had a second spreadsheet that contained the specific latitude and longitude of each monument, along with the monument record number of course. I wanted to add this data as the original data only listed the location as a combined field of (lat, long). 
+ During the upload of the second spreadsheet I again selected the &lt;code&gt;MONUMENT_RECORD_NO&lt;/code&gt; as my DataDock identifier. Once the import job had completed I can refresh the resource page and see that my additional data from the separate dataset is shown on the same page.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/datadock/bristol_monuments_resource2.png&quot; alt=&quot;The resource page now showing additional data from the second dataset&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;connecting-the-dots---linking-in&quot;&gt;Connecting the dots - linking in&lt;/h3&gt;
+
+&lt;p&gt;We can also use those same identifiers to link &lt;strong&gt;into&lt;/strong&gt; the resources that we’ve published through other datasets. To demonstrate this I wrote a dummy survey report noting “damage” to the monuments. In the survey data we use the addresses of the monument resources instead of their number or name.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/datadock/dummy_damage.png&quot; alt=&quot;Dummy damage report&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This time I choose the damage report ID as my identifier, and upload the dataset for conversion and publishing.&lt;/p&gt;
+
+&lt;h3 id=&quot;data-catalog&quot;&gt;Data catalog&lt;/h3&gt;
+
+&lt;p&gt;Throughout this process this has also meant that each dataset has been added to the dataset catalog on my data portal landing page. The data catalog lists each of my datasets along with any other information I added during upload, such as the license, a title, description, and keyword tags. It also shows the data download links for the complete dataset.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/datadock/data_catalog.png&quot; alt=&quot;Data catalog lisr&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;But more interesting is how the data from these separate datasets can appear in a single web resource through the use of identifiers and we can see how even data that points &lt;em&gt;to&lt;/em&gt; the resource can be shown on that resource page too.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/datadock/bristol_monuments_resource3.png&quot; alt=&quot;The resource page now showing incoming links from the third dataset&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;I hope you’ve found this simple walkthrough helpful in demonstrating the benefits of being able to connect your data. We’re able to explore data in a way that goes beyond the boundaries of each separate dataset or spreadsheet is their source. Identifiers are the key concept in this way of thinking about connecting data. If you’re interested in having a play around, head on over to &lt;a href=&quot;http://datadock.io&quot;&gt;DataDock.io&lt;/a&gt; and check it out.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/datadock/DataDock_ColourTrans.png&quot; alt=&quot;DataDock logo&quot; height=&quot;149px&quot; width=&quot;400px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;well text-center&quot;&gt;This article is part of the &lt;a href=&quot;/blog/tags/datadock-intro/&quot;&gt;Data Dock Intro series&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 01 Mar 2017 10:00:00 +0000</pubDate>
+        <link>http://networkedplanet.com/blog/2017/03/01/connecting-the-dots.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2017/03/01/connecting-the-dots.html</guid>
+        
+        <category>datadock</category>
+        
+        <category>free data publishing</category>
+        
+        <category>linked data</category>
+        
+        <category>datadock-intro</category>
+        
+        <category>walkthrough</category>
+        
+        <category>tutorial</category>
+        
+        
+      </item>
     
       <item>
         <title>Introducing DataDock</title>
@@ -48,6 +132,8 @@
 &lt;p&gt;If you’re interested in having a play around, head on over to &lt;a href=&quot;http://datadock.io&quot;&gt;DataDock.io&lt;/a&gt; and check it out. We’d love to hear from you about what you’d like it to do in the future. Upgrades to DataDock won’t effect the data you’ve published, they’ll simply add features to your future uploads, so feel free to get stuck in even at this preview stage. &lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/blog/datadock/DataDock_ColourTrans.png&quot; alt=&quot;DataDock logo&quot; height=&quot;149px&quot; width=&quot;400px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;well text-center&quot;&gt;This article is part of the &lt;a href=&quot;/blog/tags/datadock-intro/&quot;&gt;Data Dock Intro series&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 28 Feb 2017 10:00:00 +0000</pubDate>
         <link>http://networkedplanet.com/blog/2017/02/28/introducing-datadock.html</link>
@@ -62,6 +148,8 @@
         <category>cloud service</category>
         
         <category>github</category>
+        
+        <category>datadock-intro</category>
         
         
       </item>
@@ -350,28 +438,6 @@ and promote evidence informed decision making within their organisation. &lt;/p&
         <category>impact</category>
         
         <category>charities</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Measuring the Impact of Open Data</title>
-        <description>&lt;p&gt;I was happy to find widespread agreement about our ideas for the need to measure impact of open data policies, at the &lt;a href=&quot;http://opendatacon.org/&quot;&gt;International Open Data Conference&lt;/a&gt; last week.&lt;/p&gt;
-
-&lt;p&gt;It is my opinion that we can better guide organisations into a proper data stewardship plan, if we have some way of valuing the various parts of the plan.  I know, some of you are thinking that this will rain on the parade, but measuring the impact of open data policies will not be uneventful.  Wandering into this new field of impact and benefit analysis will be full of excitement and surprises.  &lt;/p&gt;
-
-&lt;p&gt;Our first evaluations will begin to answer questions about what is already valuable and what indicators are helpful for determining the value of an open data set.  We won’t be alone in the conversation, and the field won’t stop growing and developing.  Studying the value, though, will help organisations make better decisions and invest more meaningfully in sharing data and learning.&lt;/p&gt;
-
-&lt;p&gt;Any thoughts on this? Use the comments section below for further discussion.&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 11 Oct 2016 00:00:00 +0100</pubDate>
-        <link>http://networkedplanet.com/blog/2016/10/11/measuring-the-impact-of-open-data.html</link>
-        <guid isPermaLink="true">http://networkedplanet.com/blog/2016/10/11/measuring-the-impact-of-open-data.html</guid>
-        
-        <category>open data</category>
-        
-        <category>impact</category>
         
         
       </item>
