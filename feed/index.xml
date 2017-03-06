@@ -5,8 +5,8 @@
     <description>Experts in Linked and Open Data Publishing</description>
     <link>http://networkedplanet.com/</link>
     <atom:link href="http://networkedplanet.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 06 Mar 2017 11:16:39 +0000</pubDate>
-    <lastBuildDate>Mon, 06 Mar 2017 11:16:39 +0000</lastBuildDate>
+    <pubDate>Mon, 06 Mar 2017 15:14:16 +0000</pubDate>
+    <lastBuildDate>Mon, 06 Mar 2017 15:14:16 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -19,13 +19,11 @@
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/blog/datadock/csvw/columns.png&quot; alt=&quot;CSV columns list&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;The W3C’s &lt;a href=&quot;https://www.w3.org/2013/csvw/wiki/Main_Page&quot;&gt;CSV on the Web Working Group&lt;/a&gt; publish specifications relating to describing tabular data. This makes it the obvious choice for us to adopt this standard when we pull the CSV into the DataDock processing pipeline.&lt;/p&gt;
+&lt;p&gt;The W3C’s &lt;a href=&quot;https://www.w3.org/2013/csvw/wiki/Main_Page&quot;&gt;CSV on the Web Working Group&lt;/a&gt; developed specifications relating to describing tabular data. This makes it the obvious choice for us to adopt this standard when we pull the CSV into the DataDock processing pipeline. There is now a &lt;a href=&quot;https://www.w3.org/community/csvw/&quot;&gt;W3C CSV on the Web Community Group that is open to all&lt;/a&gt;, where there is a focus on discussion and support for implementors, publishers and spec developers to share experience with CSVW and related ideas. &lt;/p&gt;
 
-&lt;p&gt;A shortened example of one of the &lt;a href=&quot;https://github.com/jennet/odcamp-demo/blob/gh-pages/csv/Bristol_Monuments.csv/Bristol_Monuments.csv-metadata.json&quot;&gt;metadata JSON files&lt;/a&gt; produced during the import of a CSV into DataDock is shown below:&lt;/p&gt;
+&lt;p&gt;Using the CSVW specification, DataDock takes the information entered by the user (e.g. title / description / selected license) and combines it with the list of columns to produce a metadata JSON file. An example of one of the &lt;a href=&quot;https://github.com/jennet/odcamp-demo/blob/gh-pages/csv/Bristol_Monuments.csv/Bristol_Monuments.csv-metadata.json&quot;&gt;metadata JSON files&lt;/a&gt; produced during the import of a CSV into DataDock is shown below (the example below only shows the first four of the columns for brevity):&lt;/p&gt;
 
 &lt;script src=&quot;https://gist.github.com/jennet/1b681faa594f86a2a417302c96600575.js&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;As you can see, dataset information such as the title, description, license and keywords are included in the metadata.json file, as well as a list of objects that describe each of the columns (the example above only shows the first four of the columns for brevity). &lt;/p&gt;
 
 &lt;p&gt;In its current release, DataDock auto-creates the column definitions, creating the machine-friendly &lt;code&gt;name&lt;/code&gt;, and &lt;code&gt;property_url&lt;/code&gt; from each column’s header value, which is set as the initial value in &lt;code&gt;titles&lt;/code&gt;. DataDock currently asks for user input only when it comes to the column’s &lt;code&gt;datatype&lt;/code&gt;, although it does make a simple guess at the datatype based on the values of the first non-header row of the selected CSV. Future upgrades to the DataDock platform will make use of the more extended definitions of the CSVW standard.&lt;/p&gt;
 
