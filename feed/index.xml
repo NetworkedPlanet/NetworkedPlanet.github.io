@@ -5,9 +5,62 @@
     <description>Experts in Linked and Open Data Publishing</description>
     <link>http://networkedplanet.com/</link>
     <atom:link href="http://networkedplanet.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 01 Mar 2017 12:08:11 +0000</pubDate>
-    <lastBuildDate>Wed, 01 Mar 2017 12:08:11 +0000</lastBuildDate>
+    <pubDate>Mon, 06 Mar 2017 11:16:39 +0000</pubDate>
+    <lastBuildDate>Mon, 06 Mar 2017 11:16:39 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>DataDock and CSVW</title>
+        <description>&lt;p&gt;When we publish anything on the web it should go without saying that in order for that distributed information to be usable, we must adhere to standards when we publish it. If everyone had their own way of marking some text in a web page to be &lt;strong&gt;bold&lt;/strong&gt;, web page browsers would have an impossible task of displaying that text in the way it was meant to be shown. That’s why we have the standard markup language of &lt;a href=&quot;https://www.w3.org/html/&quot;&gt;HTML&lt;/a&gt; to enable everyone to publish web pages.&lt;/p&gt;
+
+&lt;p&gt;Similarly, when we publish data on the web we should look to standards to ensure consistency and interoperability between distributed data publishers and any applications that need to pull that data into their systems. DataDock currently makes use of two main recommended approaches to publishing data on the web - “CSV on the Web” (CSVW) and Linked Data. This blog post will concentrate on CSVW and there will be a follow up for those interested in Linked Data.&lt;/p&gt;
+
+&lt;p&gt;The first stage in &lt;a href=&quot;http://datadock.io&quot;&gt;DataDock&lt;/a&gt;’s processing pipeline is to take a &lt;abbr title=&quot;Comma Separated Values&quot;&gt;CSV&lt;/abbr&gt; file of tabular data, and open it to allow the DataDock user some basic control over how that data should be processed. Whilst the current amount of user control over the CSV processing is straightforward datatype selection of the different columns, we will be rapidly expanding DataDock’s abilities to allow more user control over defining the structure of the CSV they are publishing.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/datadock/csvw/columns.png&quot; alt=&quot;CSV columns list&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The W3C’s &lt;a href=&quot;https://www.w3.org/2013/csvw/wiki/Main_Page&quot;&gt;CSV on the Web Working Group&lt;/a&gt; publish specifications relating to describing tabular data. This makes it the obvious choice for us to adopt this standard when we pull the CSV into the DataDock processing pipeline.&lt;/p&gt;
+
+&lt;p&gt;A shortened example of one of the &lt;a href=&quot;https://github.com/jennet/odcamp-demo/blob/gh-pages/csv/Bristol_Monuments.csv/Bristol_Monuments.csv-metadata.json&quot;&gt;metadata JSON files&lt;/a&gt; produced during the import of a CSV into DataDock is shown below:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/jennet/1b681faa594f86a2a417302c96600575.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;As you can see, dataset information such as the title, description, license and keywords are included in the metadata.json file, as well as a list of objects that describe each of the columns (the example above only shows the first four of the columns for brevity). &lt;/p&gt;
+
+&lt;p&gt;In its current release, DataDock auto-creates the column definitions, creating the machine-friendly &lt;code&gt;name&lt;/code&gt;, and &lt;code&gt;property_url&lt;/code&gt; from each column’s header value, which is set as the initial value in &lt;code&gt;titles&lt;/code&gt;. DataDock currently asks for user input only when it comes to the column’s &lt;code&gt;datatype&lt;/code&gt;, although it does make a simple guess at the datatype based on the values of the first non-header row of the selected CSV. Future upgrades to the DataDock platform will make use of the more extended definitions of the CSVW standard.&lt;/p&gt;
+
+&lt;p&gt;After the CSVW metadata file has been created, DataDock’s conversion process uses the metadata file to generate &lt;abbr title=&quot;Resource Description Framework&quot;&gt;RDF&lt;/abbr&gt; linked data. The DataDock then uses the linked data to generate the pages for the data portal, and publishes all this to the user’s target GitHub repository.&lt;/p&gt;
+
+&lt;p&gt;Each DataDock repository has a “csv” directory that contains a sub-directory for each dataset. This contains the original CSV upload along with its CSVW metadata JSON file. You can find the CSV and CSVW metadata relating to the examples from the &lt;a href=&quot;/blog/2017/03/01/connecting-the-dots.html&quot;&gt;previous blog post&lt;/a&gt; on &lt;a href=&quot;https://github.com/jennet/odcamp-demo/tree/gh-pages/csv/Bristol_Monuments.csv&quot;&gt;my GitHub repo here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;For those who want to learn a bit more about CSVW, &lt;a href=&quot;http://greggkellogg.net/%3Fp%3D293&quot;&gt;a more in-depth blog post is available by Gregg Kellogg&lt;/a&gt;, or if you’re a documentation geek then feel free to dive into the &lt;a href=&quot;https://www.w3.org/2013/csvw/wiki/Main_Page&quot;&gt;recommendations and notes published by the CSVW working group&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It’s possible that future versions of the DataDock will include an API layer, and that this may handle more complex CSV processing using supplied metadata files. If that’s something that you would be interested in, &lt;a href=&quot;https://github.com/NetworkedPlanet/datadock/issues&quot;&gt;make it known as a feature request&lt;/a&gt; on our support site.&lt;/p&gt;
+
+&lt;p&gt;The next blog post will dive into the linked data part of the publishing pipeline. It’s that side of things that the most exciting for me personally, because as we add enhancements to the CSVW &lt;code&gt;property_url&lt;/code&gt; definition user control, we can add features to publish and reuse standard vocabulary terms to define the data published from disparate sources - whilst keeping this standard of data publishing free and as easy as possible for non-technical people to use.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/datadock/DataDock_ColourTrans.png&quot; alt=&quot;DataDock logo&quot; height=&quot;149px&quot; width=&quot;400px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;well text-center&quot;&gt;This article is part of the &lt;a href=&quot;/blog/tags/datadock-intro/&quot;&gt;Data Dock Intro series&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 01 Mar 2017 10:00:00 +0000</pubDate>
+        <link>http://networkedplanet.com/blog/2017/03/01/datadock-and-csvw.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2017/03/01/datadock-and-csvw.html</guid>
+        
+        <category>datadock</category>
+        
+        <category>free data publishing</category>
+        
+        <category>standards</category>
+        
+        <category>csvw</category>
+        
+        <category>datadock-intro</category>
+        
+        
+      </item>
     
       <item>
         <title>Connecting the dots in your data</title>
@@ -406,32 +459,6 @@ and promote evidence informed decision making within their organisation. &lt;/p&
         <pubDate>Fri, 04 Nov 2016 00:00:00 +0000</pubDate>
         <link>http://networkedplanet.com/blog/2016/11/04/successful-data-strategy.html</link>
         <guid isPermaLink="true">http://networkedplanet.com/blog/2016/11/04/successful-data-strategy.html</guid>
-        
-        <category>open data</category>
-        
-        <category>impact</category>
-        
-        <category>charities</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Key Data Innovations to Ensure Your Organisation Survives and Thrives</title>
-        <description>&lt;p&gt;Charity leaders will learn about data protection and how to lead organisations toward better collection and use of data at our workshop at the National Council of Voluntary Organisations in London on the 10th of November. &lt;/p&gt;
-
-&lt;p&gt;We will review and explore data protection and privacy laws to gain a comfort level that allows participants to lead, wisely, onward, before we delve into new priorities for data collection and use.&lt;/p&gt;
-
-&lt;p&gt;This will be a true workshop, allowing participants to gain a solid footing on issues that often result in wasted time and energy at charities. The goal is to equip leaders to empower their staff toward the big goals of the organisation - making major gains in efforts to create a better world.  &lt;/p&gt;
-
-&lt;p class=&quot;text-center&quot;&gt;
-&lt;a class=&quot;btn btn-primary&quot; href=&quot;https://www.eventbrite.co.uk/e/greater-success-for-charities-through-data-innovations-tickets-28288000170&quot; onclick=&quot;trackOutboundLink(&#39;https://www.eventbrite.co.uk/e/greater-success-for-charities-through-data-innovations-tickets-28288000170&#39;); return false;&quot;&gt;Sign Up Via Eventbrite&lt;/a&gt;
-&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 24 Oct 2016 00:00:00 +0100</pubDate>
-        <link>http://networkedplanet.com/blog/2016/10/24/key-data-innovations.html</link>
-        <guid isPermaLink="true">http://networkedplanet.com/blog/2016/10/24/key-data-innovations.html</guid>
         
         <category>open data</category>
         
