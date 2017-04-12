@@ -5844,6 +5844,7 @@ address {
   display: inline-block; }
 
 blockquote {
+  padding: 20px 40px;
   font-size: 1em;
   font-style: italic; }
 
