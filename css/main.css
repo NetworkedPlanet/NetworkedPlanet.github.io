@@ -5848,6 +5848,9 @@ blockquote {
   font-size: 1em;
   font-style: italic; }
 
+.table {
+  background: #fff; }
+
 /* History timeline styles
 -------------------------------------------------- */
 .timeline ul li {

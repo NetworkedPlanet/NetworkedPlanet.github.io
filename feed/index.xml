@@ -5,9 +5,102 @@
     <description>Experts in Linked and Open Data Publishing</description>
     <link>http://networkedplanet.com/</link>
     <atom:link href="http://networkedplanet.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 13 Apr 2017 11:56:21 +0100</pubDate>
-    <lastBuildDate>Thu, 13 Apr 2017 11:56:21 +0100</lastBuildDate>
+    <pubDate>Thu, 20 Apr 2017 16:20:21 +0100</pubDate>
+    <lastBuildDate>Thu, 20 Apr 2017 16:20:21 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Stakeholder Engagement in Data Sharing</title>
+        <description>&lt;p&gt;I’ve been working on a project called The Way Ahead: The Future of Support for London’s Civil Society for the last few months&lt;sup&gt;1&lt;/sup&gt;. It offered a chance to work on designing a great data sharing strategy (foundation). &lt;/p&gt;
+
+&lt;p&gt;The project started by meeting people from “civil society” organisations in London. Many of these organisations are very small or operate in only a single community. It was really nice to meet them and work with them, but raised this odd conundrum of how I introduce myself. I find it difficult to briefly reveal the full range of my consultancies. When I introduce myself as a Data Strategist, I think some people take an impression that I am unlike other social researchers - maybe people assume that I am purely interested in numbers and tech. If I introduce myself as an impact evaluator, they don’t understand why I focus on data and getting the use of tech right. The truth is, I am a mathsy, techy, social scientist. Data strategy, for me, begins with the messiness of humanity. I relish the imperfect and human side of social science, and in social science practice, I press to work as much as possible with stakeholders, because it helps figure out how to best understand and organise data issues. It isn’t something that a lot of organisations expect of a data strategist, but data strategy is like any other evidence-based practice - it is best when stakeholders are involved.&lt;/p&gt;
+
+&lt;p&gt;Let’s explore the way stakeholder engagement can make data richer. I will use myself as an easy and available example. I was a stakeholder engaged in the process of developing The Way Ahead. Like experimenting with inoculation&lt;sup&gt;2&lt;/sup&gt;, though, I’ll be careful.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The first question for me as a researcher and data strategist is who are the stakeholders… today?&lt;/strong&gt; Why “today”? Because when pulling together a data strategy for ongoing, multi-issue, research data, the answer changes constantly. One day, we consider the end beneficiary, and another day we are consider data users. At another moment, we might consider data providers. &lt;/p&gt;
+
+&lt;p&gt;All of the categories of stakeholders are full of diversity. The end beneficiary can be anyone who has any contact with the issues affected by civil society. That really includes everyone I can think of – a real cradle-to-grave range… with billions of different experiences. It includes settled residents, commuters (like me), visitors, and internationals who may never be physically in London, men, women, every sexual orientation, every look, every language, every ability, every happiness, and every sadness. It even includes pets, wildlife, and the environment. I can go on for ages, here. I am just one of a near infinite number of stakeholders. Today, I am commuter, adult, woman, parent, educated, fortunate, English-speaking, literate, and working remotely via the internet. I can’t afford to live in London. I’m not a British citizen. I can see and hear and walk. I have seasonal allergies.  Any of these traits might make me a stakeholder in a research project in London. Likewise, they might exclude me as a stakeholder.&lt;/p&gt;
+
+&lt;p&gt;Now, get this: If we just consider me as a commuter, and do a few seconds internet search for, “data about London commuters,” we get a report from two years ago. It is from the Greater London Authority. It summarizes some statistics calculated from the 2011 census data&lt;sup&gt;3&lt;/sup&gt;. This is what it says about commuters, in brief:&lt;/p&gt;
+
+&lt;table class=&quot;table table-bordered&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Sentences in the 2011 Census Data about Commuters&lt;/th&gt;
+      &lt;th&gt;How typical am I of these stakeholders? Why does it matter?&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;18 per cent of people who worked in London commute from outside the capital.&lt;/td&gt;
+      &lt;td&gt;I am not alone. I am part of a minority. It is a significant part of the workforce, though.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Those who commuted-in were more likely to be male, in managerial/professional occupations, and more likely to work in Finance/Insurance or Public Administration than their London-resident counterparts.&lt;/td&gt;
+      &lt;td&gt;Oh, well, I am not totally typical. This is good to know. Sometimes, my view or need, as a stakeholder, will reflect a different gender-experience, a different income stream, etc., than most of the rest of the group.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;On average, commuters are older than those who lived and worked in London.&lt;/td&gt;
+      &lt;td&gt;(First thought: Aargh. Don’t remind me.) More reasoned thought: Interesting, I am sure we have some age-related issues to consider sometimes. (Like how much more awesome we are as we age!)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Individuals living outside London were more likely to commute to the capital for work if they reported non-White British ethnicity. Those with Black ethnicity were five times more likely than their White British counterparts to commute to London.&lt;/td&gt;
+      &lt;td&gt;I am not British - related to this lack of native-experience is that the term “Black Ethnicity” doesn’t really make any sense to me. I might miss lots of local meanings to common English words. I might not always understand or communicate as clearly as a native Britain.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;In the week before census those working in London travelled a total of 39.7 million miles&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;from their residences to their work. Assuming that this distance was travelled twice a day, in a five day week London workers commuted the equivalent of travelling from Earth to the Sun and back.&lt;/td&gt;
+      &lt;td&gt;This could spark loads of snarky remarks from me, but seriously, it underscores that considering commuters is reasonable, as this is a big number of miles travelled.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;As you can see in my chart above, I want to know about stakeholders, but I must be careful not to assume they are representative of the wider audience/target/group. Collecting information from stakeholders does not necessarily mean that it is true, but more that there are times when it seems true to the stakeholder (I would not describe myself as older, for example). Stakeholders are always individuals. Few individuals are perfect samples of any group, unless it is a group of one. One of the reasons we get to know stakeholders, though, is to decide what issues to look into further. The data is best, when it has actual individuals, participating as stakeholders, and good quantitative data, letting us check the weight we give to the guidance of the stakeholder. When I find that there is a barrier to certain stakeholders showing up in the data, then I have to really dig in and figure out how to remedy the exclusion, and be open to the fact that the quantitative data is faulty in some ways. Improving granularity, or what we can see in the detail of data, sometimes means we are simply describing a section of the data that is missing. Understanding and communicating the complexity of the data adds real value to the analysis and findings of any report. &lt;/p&gt;
+
+&lt;p&gt;We have countless examples of how more granular data allows us to find insights that really change peoples lives for the better, and I soon become really excited, when I consider the possibilities of who the stakeholder is! Let’s consider the wide breadth of London data stakeholders again. Who might my work affect? Maybe we will design a strategy that ends up helping a young person escape violence and grow up feeling safe in London! Or maybe we’ll help create the solution for a working parent who needs to take a sick child to the doctor during a break from work! Maybe we’ll manage to create the right data strategy for cyclists to ride through London without risk of being in a fatal accident! This is why I love my job! There are endless ways that my little part of strategising can help create awesomeness in a place.  &lt;/p&gt;
+
+&lt;p&gt;There are other stakeholders, who are not end-beneficiaries. When we move up the chain (away from the beneficiary and toward the digital information), we encounter the social workers, the housing providers, the stalkers (who might want data for destructive reasons), the police, the policy analysts, the politicians, the app developers, the data visualisation professionals, and on and on. Each problem brings a different collection of data users and providers. Sometimes that means we will want the data to be held in a different way and shared in a different way.&lt;/p&gt;
+
+&lt;p&gt;Stakeholders are everywhere. It can seem overwhelming. We’re able to decide who are the stakeholders of the moment and narrow our list by focusing our work on one problem/issue at a time. Like: how do we solve the problem of inequality between men and women (or White British and Black Ethnicity) in  managerial and professional roles, in London’s financial sector? Who are the stakeholders? How can they help design our research? What barriers to their involvement do we know of? Where should meetings and working groups convene? Etc. &lt;/p&gt;
+
+&lt;p&gt;In The Way Ahead report, we recommended a plan that allows for constant stakeholder engagement, problem focus, and flexibility. It will seem very un-techy to many readers, because the tech comes secondarily to getting the data strategy right, and a good data strategy begins with stakeholder engagement!  &lt;/p&gt;
+
+&lt;p&gt;When the report is published, you can see it at: &lt;a href=&quot;http://www.lvsc.org.uk/programmes/the-way-ahead.aspx&quot;&gt;http://www.lvsc.org.uk/programmes/the-way-ahead.aspx&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p class=&quot;well text-center&quot;&gt;More &lt;a href=&quot;/blog/tags/the-way-ahead/&quot;&gt;The Way Ahead&lt;/a&gt; articles&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;footnotes&quot;&gt;Footnotes&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;I cannot give the impression that I did anything alone in this project. I had a great time working closely with Kate White (of Superhighways) and dozens of collaborators. &lt;/li&gt;
+  &lt;li&gt;Sort of like &lt;a href=&quot;https://en.wikipedia.org/wiki/Lady_Mary_Wortley_Montagu&quot;&gt;Lady Mary Wortley Montagu&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;I am not going to discuss the age of the data. There are other places to get information that allows for improvement of the data. That is a discussion for another day.&lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Thu, 20 Apr 2017 17:00:00 +0100</pubDate>
+        <link>http://networkedplanet.com/blog/2017/04/20/who-is-a-stakeholder.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2017/04/20/who-is-a-stakeholder.html</guid>
+        
+        <category>the way ahead</category>
+        
+        <category>collaboration</category>
+        
+        <category>stakeholders</category>
+        
+        <category>data</category>
+        
+        <category>charities</category>
+        
+        <category>london</category>
+        
+        
+      </item>
     
       <item>
         <title>Working from home survey</title>
@@ -414,54 +507,6 @@ For the event details and to register please &lt;a href=&quot;https://www.eventb
         <category>impact</category>
         
         <category>charities</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Open Data Camp 4</title>
-        <description>&lt;p&gt;Only a few weeks to go! &lt;a href=&quot;http://odcamp.org.uk/announcing-open-data-camp-4/&quot;&gt;Open Data Camp numero 4&lt;/a&gt; is being held at the Pierhead in Cardiff on the Saturday and Sunday, 25-26th of February. ODCamp instantly became my favourite data focused event after I attended the second ODCamp in Manchester and then helped bring it to Bristol for ODCamp3. You can read my &lt;a href=&quot;#&quot;&gt;other blog posts&lt;/a&gt; if you want to dive deep into my ODCamp journey. &lt;/p&gt;
-
-&lt;p&gt;Since volunteering with the ODCamp organising committee for the Bristol event, I was invited to remain on the organising team to help make future ODCamps happen. I was more than happy to accept and am really delighted to be part of a team made up of such friendly, proactive humans. NetworkedPlanet were proud to be one of the key sponsors of ODCamp3 in Bristol, and remain committed to sponsoring ODCamp4 and future events as we are so impressed with the team’s ability to foster an environment that nurtures forward-thinking ideas and debate surrounding production and consumption of open data in the UK.&lt;/p&gt;
-
-&lt;p&gt;Enough of my gushing about the people who run and attend ODCamps - if you’ve not been to one then here’s a quick run down…&lt;/p&gt;
-
-&lt;div style=&quot;clear:both;&quot;&gt;&amp;nbsp;&lt;/div&gt;
-
-&lt;p&gt;ODCamp is a free &lt;strong&gt;un-&lt;/strong&gt;conference. Unconferences are a particular format of event that doesn’t pre-plan a programme of sessions. Instead, session ideas are “pitched” by the attendees at the start of the day and then, using a show of hands to judge size of space required, pens, and sticky notes, the volunteer crew (called “camp-makers” at ODCamp) create the programme for the day. ODCamp covers costs by offering various sponsorship levels, &lt;a href=&quot;http://odcamp.org.uk/sponsors-feb-2017/&quot;&gt;the list of sponsors helping make ODCamp4 happen is available here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/odcamp4/odc3_sessionboard.jpg&quot; alt=&quot;Creating the  session schedule&quot; height=&quot;426px&quot; width=&quot;640px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;At my first ODCamp I didn’t plan on pitching a session, but over the course of the first day and chats in the evening afterwards, I realised that a small session on converting CSV data formats to RDF linked data formats might be useful to a few people. I pitched it on the Sunday morning, and that afternoon ran a small workshop messing about with Open Refine to show people how you get from CSV to RDF as basically a “demystifying RDF” workshop.&lt;/p&gt;
-
-&lt;p&gt;The structure of ODCamp massively appeals to me because the content is so obviously influenced by the attendees. The organising team have a really good balance of hands-on when it comes to keeping the event flowing and dealing with all the logistics, whilst staying more hands-off to allow the content and discussions to grow organically. Sessions might be round-circle discussions, presentations about tools or projects, building and making of new projects, all kinds of things! You don’t have to pitch a session based on your own subject-knowledge, sessions can be pitched around a question or topic that you want to know more about, and the “pitch” becomes a shout out for other attendees with more knowledge in that area to share in a session.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/odcamp4/odc3_breakoutspaces.jpg&quot; alt=&quot;Break out spaces&quot; height=&quot;426px&quot; width=&quot;640px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The hardest thing is to choose which sessions to go to, you will undoubtedly have 2 or more sessions that you want to attend at the same time. Luckily ODCamp encourages people to move between sessions instead of feeling they must remain for the entirety of one, and this way you can dip in to more than one interesting session (a top tip is to follow the &lt;a href=&quot;https://twitter.com/hashtag/odcamp?src=hash&quot;&gt;live-tweeting&lt;/a&gt; from attendees in other sessions). Some sessions also get covered by the amazing talents at &lt;a href=&quot;https://drawnalism.com/&quot;&gt;Drawnalism&lt;/a&gt;, who live-draw infographics of key points from session content, which are then tacked up around the main room for all to benefit from.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/odcamp4/odc3_livedrawing.jpg&quot; alt=&quot;Live drawing capture the key points from sessions&quot; height=&quot;426px&quot; width=&quot;640px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;ODCamp releases the free tickets in batches, and each batch “sells out” in a matter of minutes. Those who are unable to attend are &lt;strong&gt;strongly encouraged&lt;/strong&gt; to update their registration so that others can make it in their place. ODCamp4 is already at full capacity but there may well be extra releases if there have been any cancellations, so set your twitter feed to give you notifications from &lt;a href=&quot;https://twitter.com/ODcamp&quot;&gt;@ODCamp&lt;/a&gt; if you’ve not already secured a ticket.&lt;/p&gt;
-
-&lt;p&gt;If you’ve already got a ticket then I’ll see you there, if you miss out this time, ODCamp5 will be along before you know it.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/odcamp4/odc3_finalsession.jpg&quot; alt=&quot;Open Data Camp - Bristol&quot; height=&quot;426px&quot; width=&quot;640px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;All photos used in this post are by &lt;a href=&quot;https://www.flickr.com/photos/wnbishop/sets/72157668368192166/&quot;&gt;Nigel Bishop&lt;/a&gt;, licensed &lt;a href=&quot;https://creativecommons.org/licenses/by-nc/2.0/&quot;&gt;CC BY-NC 2.0&lt;/a&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 30 Jan 2017 13:17:38 +0000</pubDate>
-        <link>http://networkedplanet.com/blog/2017/01/30/open-data-camp-4-cardiff.html</link>
-        <guid isPermaLink="true">http://networkedplanet.com/blog/2017/01/30/open-data-camp-4-cardiff.html</guid>
-        
-        <category>open data</category>
-        
-        <category>unconference</category>
-        
-        <category>odcamp</category>
-        
-        <category>events</category>
         
         
       </item>
