@@ -5,8 +5,8 @@
     <description>Experts in Linked and Open Data Publishing</description>
     <link>http://networkedplanet.com/</link>
     <atom:link href="http://networkedplanet.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 27 Jun 2017 13:51:00 +0100</pubDate>
-    <lastBuildDate>Tue, 27 Jun 2017 13:51:00 +0100</lastBuildDate>
+    <pubDate>Tue, 27 Jun 2017 14:40:03 +0100</pubDate>
+    <lastBuildDate>Tue, 27 Jun 2017 14:40:03 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -62,7 +62,23 @@
 &lt;a class=&quot;btn btn-primary  btn-lg&quot; href=&quot;https://www.eventbrite.co.uk/e/evaluation-data-protection-and-innovation-tickets-35720334482?ref=ebtnebregn&quot; onclick=&quot;trackOutboundLink(&#39;https://www.eventbrite.co.uk/e/evaluation-data-protection-and-innovation-tickets-35720334482?ref=ebtnebregn&#39;); return false;&quot;&gt;Sign Up On Eventbrite&lt;/a&gt;
 &lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/tsip/tsip_logo.jpg&quot; alt=&quot;TSIP&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+&lt;table class=&quot;imgtable&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;/assets/images/blog/tsip/tsip_logo.jpg&quot; alt=&quot;TSIP&quot; class=&quot;img-medium img-responsive bordered-image&quot; /&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;/assets/images/blog/tsip/digi_catapult_logo.png&quot; alt=&quot;TSIP&quot; class=&quot;img-medium img-responsive bordered-image&quot; /&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;/assets/images/blog/tsip/Networked_Planet_logo.png&quot; alt=&quot;Networked Planet&quot; class=&quot;img-medium img-responsive bordered-image&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
 </description>
         <pubDate>Tue, 27 Jun 2017 14:00:00 +0100</pubDate>
         <link>http://networkedplanet.com/blog/2017/06/27/evaluation-data-protection-and-innovation.html</link>
