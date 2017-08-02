@@ -5,9 +5,70 @@
     <description>Experts in Linked and Open Data Publishing</description>
     <link>http://networkedplanet.com/</link>
     <atom:link href="http://networkedplanet.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 28 Jun 2017 09:26:26 +0100</pubDate>
-    <lastBuildDate>Wed, 28 Jun 2017 09:26:26 +0100</lastBuildDate>
+    <pubDate>Wed, 02 Aug 2017 17:14:29 +0100</pubDate>
+    <lastBuildDate>Wed, 02 Aug 2017 17:14:29 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Flipping The Data Hierarchy - Disrupting the Charity and Academic Sectors</title>
+        <description>&lt;p&gt;&lt;a href=&quot;http://networkedplanet.com/&quot;&gt;NetworkedPlanet&lt;/a&gt; seeks to alleviate suffering in the world by helping find solutions to persistent problems with sensible open and linked data and technology. We are confident that charities and others can succeed better and find new insights in high quality, shared datasets. We know that good datasets can be much more useful when open and discoverable by others and/or at other times.&lt;/p&gt;
+
+&lt;p&gt;To build the best open datasets, studies show that stakeholder involvement is key, and it has always been at the heart of what we do. I have written a few pieces on the nature of stakeholder involvement. Today, I want to explain the vision of the future with a web of data that is built by stakeholders.  &lt;/p&gt;
+
+&lt;p&gt;Having a &lt;a href=&quot;https://www.w3.org/2013/data/&quot;&gt;web of useful data&lt;/a&gt; will disrupt the current structures of the &lt;a href=&quot;https://en.oxforddictionaries.com/definition/third_sector&quot;&gt;third sector&lt;/a&gt;, charities, government, and &lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_academic_databases_and_search_engines&quot;&gt;academia&lt;/a&gt;, because stakeholders will not be paid simple lip-service, but will drive research and data collection. It is a cultural change that has been developing slowly, and many important factors are now in place.&lt;/p&gt;
+
+&lt;p&gt;In a &lt;a href=&quot;https://ourworldindata.org/literacy/&quot;&gt;world of better educated people&lt;/a&gt;, which we now have, it is not necessary to shield good data from the public&lt;sup&gt;1&lt;/sup&gt;. Further, due to the changes in the methods of production and education, many people are (and will increasingly be) highly skilled in data science, numeracy, and technology. Numerous studies have already found that involving stakeholders in research improves the quality of the research, and the same appears to be true for the quality of data sets and open data.  As the saying goes, “Two (hundred) heads is better than one.”&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/disrupt/planet.png&quot; alt=&quot;Graphic of linked icons connected around the earth&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In this enlightened new world, academic researchers and statisticians will be asked to interact with data that is collected from a different perspective. Academic funding (and therefore careers) will depend on interactions with the stakeholder data collaboratives, rather than only interactions with other academics, because academic journals and research funders will demand proof of stakeholder involvement and open data. The growing openness of research and research data means that social workers and programme delivery staff at charities will be (are) empowered to understand more fully the reasoning of policies, procedures, and programme delivery. Analysts and service delivery personnel of government are already finding that, in order to keep up, they must work together with the data-hungry public&lt;sup&gt;2&lt;/sup&gt;. There is some promise that these change will push political agendas to the margins of day-to-day governance.&lt;/p&gt;
+
+&lt;p&gt;One can see how the core practices in social work and academia will change. Hierarchies will be (are being) disrupted. Large scale production and usage of open and linked data to solve social problems requires dramatic inclusion and agility. The pace of change will (is), no doubt, cause (causing) pain points. (We may be feeling these in the tight elections and shifting journalistic landscape of today.) &lt;/p&gt;
+
+&lt;p&gt;Imagine a different hierarchy that focuses on being evidence-based in designing programmes and interventions. Social scientists, statisticians, and data scientists, will work for social workers to design programmes that remedy social ills and leave communities with a need to teach about the history of suffering (because most will not be subject to it). There might even be interventions planned for highly privileged groups, who are shown to lack knowledge of how one’s “first world choices” &lt;/p&gt;
+
+&lt;p&gt;Currently, many social programmes are the result of various practices - some scientific, and some purely theoretical (or political). Too often, management fails to put faith in social science and research and relies only on political jargon and a fleeting understanding of the causes and cures to socially caused suffering. Adhering to a dogma, rather than knowing that society is always changing and constantly gathering evidence to measure what has changed, can make staff afraid to question the data, and suffocate innovation. Programme staff may see their role as only a repetitive function -serving the same victims of the same perpetrators, and not stopping to ask questions that lead to finding solutions. For example: a few weeks ago, a young woman who works for a domestic violence charity in fundraising was aghast when I suggested that we could try to work with survivors of domestic abuse to design a data strategy to end &lt;a href=&quot;https://www.justice.gov/ovw/domestic-violence#dv&quot;&gt;domestic violence&lt;/a&gt;. She said something really troubling to me (as a professional who has worked to end domestic violence for more than 20 years). She said, “We can’t do it. We can never end domestic violence. It will always exist.”  I was stunned into absolute silence. I had assumed that young people in the field had knowledge of all the progress we’ve made as we have studied and tested interventions and studied and reiterated, ect… The international movement to end domestic violence has ended a great deal of domestic violence, in many contexts. A lot of women and children survived because of evidence based policy changes. There is no reason to think (I believe) that we can’t really wipe it out, but we have to persist at a scientific level. Keep studying → look at more data → research more → learn → collect more data → review → reiterate → etc. We can find insight today in all the data we collect and keep in silos (or in paper files), and in medical, court, police, and, even, shelter records. We can add data from all over the world, and find rich insights. We can find critical moments, actions, failures - all from data we already have, but are not sharing. If we (data scientists, technology developers, doctors/farmers and patients) can overcome problems of intense weather and complex health problems (which we do more and more), why can’t we also overcome problems that involve some mentality/mental health and social power confluences?&lt;/p&gt;
+
+&lt;p&gt;When I recovered from my shock over what the young woman said, I turned to a favourite letter of Rosalind Franklin, who faced the complexity of researching the existence of DNA. She wrote: &lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;… you look at science (or at least talk of it) as some sort of demoralizing invention of man, something apart from real life, and which must be cautiously guarded and kept separate from everyday existence. But &lt;strong&gt;science and everyday life cannot and should not be separated&lt;/strong&gt;. Science, for me, gives a partial explanation of life. In so far as it goes, it is based on fact, experience and experiment. Your theories are those which you and many other people find easiest and pleasantest to believe, but so far as I can see, they have no foundation other than they leaf to a pleasanter view of life (and an exaggerated idea of our own importance)… - &lt;a href=&quot;https://profiles.nlm.nih.gov/ps/retrieve/Narrative/KR/p-nid/183&quot;&gt;Letter to Ellis Franklin&lt;/a&gt;, mid-1900s&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Jump forward, to today, with me. Google Cloud and Amazon Web Services recently hosted big events in London, and each of them has a “your organisational culture will change” component to their new cloud-based offers. They are using exactly the same messages we have been using in the Evidence-Based-Policy community for years&lt;sup&gt;3&lt;/sup&gt;, and before that, Critical Studies (as an academic field) identified the needs for cultural shifts to enable logical decisions for society. I am really happy to see that the world of tech (or at least some of the most visionary leaders) have understood that being evidence-based, or using science, means that we have to change the hierarchies in organisations (some members will no longer “feel exaggerated ideas of our own importance”), and we have to make people comfortable with a new foundation of respect between different people in different roles in (and not in) our organisations.&lt;/p&gt;
+
+&lt;p&gt;I am launching some collaborative open data projects (as are others), now, and they begin with the notion that, if we want to collect a lot of data and we want it to be the right data, then we must involve many stakeholders. They will work with analysts to figure out what is important to capture and both types of participants will work (together) to capture high quality data. Stakeholders and analysts can surprise each other with insights found over a beautiful, high quality data set. It is a really cool new world, which does require bravery and respect.&lt;/p&gt;
+
+&lt;p&gt;Note: Contact &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#108;&amp;#101;&amp;#097;&amp;#064;&amp;#110;&amp;#101;&amp;#116;&amp;#119;&amp;#111;&amp;#114;&amp;#107;&amp;#101;&amp;#100;&amp;#112;&amp;#108;&amp;#097;&amp;#110;&amp;#101;&amp;#116;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;&amp;#108;&amp;#101;&amp;#097;&amp;#064;&amp;#110;&amp;#101;&amp;#116;&amp;#119;&amp;#111;&amp;#114;&amp;#107;&amp;#101;&amp;#100;&amp;#112;&amp;#108;&amp;#097;&amp;#110;&amp;#101;&amp;#116;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&lt;/a&gt;, if you are interested in planning a collaborative data project.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.linkedin.com/in/lea-gorgulu-webb-461a8114/&quot;&gt;Lea&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Not that it was necessary before, either, but the past is the past. I am focused on moving into the future, and doing it better than leaders of the past.&lt;/li&gt;
+  &lt;li&gt;See, for example a report I worked on for The Way Ahead for Civil Society in London: Data Sharing, at: &lt;a href=&quot;http://thewayahead.london/sites/default/files/uploads/DataSharingforTheWayAheadFinalReport100417.pdf&quot;&gt;http://thewayahead.london/sites/default/files/uploads/DataSharingforTheWayAheadFinalReport100417.pdf&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I honestly wondered if one of the Google gurus used my little webinar from last autumn. &lt;a href=&quot;https://goo.gl/BfCHx5&quot;&gt;https://goo.gl/BfCHx5&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Wed, 02 Aug 2017 11:00:00 +0100</pubDate>
+        <link>http://networkedplanet.com/blog/2017/08/02/flipping-the-data-hierarchy.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2017/08/02/flipping-the-data-hierarchy.html</guid>
+        
+        <category>charity</category>
+        
+        <category>academic</category>
+        
+        <category>open data</category>
+        
+        <category>collaboration</category>
+        
+        <category>linked data</category>
+        
+        <category>stakeholders</category>
+        
+        
+      </item>
     
       <item>
         <title>Evaluation, Data Protection and Innovation Workshop</title>
@@ -541,50 +602,6 @@
         <category>platform cooperatives</category>
         
         <category>linked data</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Open 2017 Platform Co-operatives</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;By providing a viable alternative to the standard internet business model based on monopoly and extraction, platform cooperatives provide a template for a new type of organisation – forming the building blocks for a new economy. &lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I’m very much looking forward to Open:2017 which is being held tomorrow and Friday at Goldsmiths in South London. The subjects of the various sessions looks so interesting I think I’ll find it difficult to choose what to attend!&lt;/p&gt;
-
-&lt;p&gt;I’m on a few of the panels, so at least I know a few of the subjects that I’ll get to participate in discussions about. I was very happy to hear from the organisers that they are fighting hard to avoid “Death By Powerpoint”, so expect panels and discussions and audience discussion instead of a single person droning on at you for an hour.&lt;/p&gt;
-
-&lt;p&gt;My sessions are:&lt;/p&gt;
-
-&lt;h3 id=&quot;from-data-slaves-to-data-citizens&quot;&gt;From data slaves to data citizens&lt;/h3&gt;
-
-&lt;p&gt;Thursday 4:15pm&lt;/p&gt;
-
-&lt;h3 id=&quot;linked-open-data-for-the-solidarity-economy&quot;&gt;Linked open data for the solidarity economy&lt;/h3&gt;
-
-&lt;p&gt;Friday 11:20am&lt;/p&gt;
-
-&lt;h3 id=&quot;working-session-designing-interoperable-apps-for-the-open-app-ecosystem&quot;&gt;Working session: Designing interoperable apps for the open app ecosystem&lt;/h3&gt;
-
-&lt;p&gt;Friday 2pm&lt;/p&gt;
-
-&lt;p&gt;If you want to know more, &lt;a href=&quot;https://open.coop/2016/12/02/introduction-platform-co-ops/&quot;&gt;this blogpost introducing the concept of platform cooperatives&lt;/a&gt; is a great starting point, and you can see the &lt;a href=&quot;https://2017.open.coop/programme/&quot;&gt;full programme here&lt;/a&gt;. &lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/opc/jen.jpg&quot; alt=&quot;Contributor&quot; height=&quot;375px&quot; width=&quot;750px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 15 Feb 2017 10:17:38 +0000</pubDate>
-        <link>http://networkedplanet.com/blog/2017/02/15/open-platform-coop.html</link>
-        <guid isPermaLink="true">http://networkedplanet.com/blog/2017/02/15/open-platform-coop.html</guid>
-        
-        <category>conference</category>
-        
-        <category>events</category>
-        
-        <category>collaborative economy</category>
-        
-        <category>platform cooperatives</category>
         
         
       </item>
