@@ -5738,6 +5738,10 @@ button.close {
 #social a[class*="tumblr"] span {
   background: #32506d; }
 
+dd {
+  margin-bottom: 0.5em;
+  margin-left: 1em; }
+
 .navbar-brand {
   padding: 0px;
   padding-right: 40px; }
@@ -5811,25 +5815,31 @@ button.close {
   -webkit-transform: translateY(-100%);
   transform: translateY(-100%); }
 
+h2 {
+  font-family: Cabin, san-serif; }
+
 .caption h2 {
   font-size: 1.1em;
   padding: 10px;
   margin: 0;
   text-transform: capitalize; }
 
-.pending h2 {
-  /* font-family: Georgia, Baskerville, "Baskerville Old Face", "Goudy Old Style", Garamond, "Times New Roman", serif; */
-  font-family: Cabin, san-serif; }
-
-.pending .home-mid-row {
+.home-mid-row {
   background: #fff;
   padding: 1em 0;
   margin: 1em 0; }
 
-.pending .cta img {
+.draft .cta a {
+  color: #000; }
+
+.draft .cta a:hover {
+  color: #ea9417;
+  text-decoration: none; }
+
+.draft .cta img {
   height: 200px; }
 
-.pending .about {
+.draft .about {
   padding-top: 2em; }
 
 .homepage #row-2 h2,
