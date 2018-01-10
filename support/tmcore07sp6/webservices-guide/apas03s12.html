@@ -1,0 +1,214 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Examples</title><link rel="stylesheet" href="../doc.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><link rel="start" href="index.html" title="TMCore Web Services Guide"><link rel="up" href="apas03.html" title="Topic Map Transaction Schema"><link rel="prev" href="apas03s11.html" title="DeleteAssociation Element"><link rel="next" href="apas04.html" title="NPCL XML Schema"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="pageheader"><table class="logo" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td><span class="networked">Networked</span><span class="planet">Planet</span></td><td align="right"><span class="title">TMCore Web Services Guide</span></td></tr></table></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Examples</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="apas03s11.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><th width="60%" align="center">Topic Map Transaction Schema</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="apas04.html"><img src="../graphics/next.png" alt="Next"></a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e3821"></a>Examples</h4></div></div></div><div class="example"><a name="d0e3824"></a><p class="title"><b>Example&nbsp;A.3.&nbsp;Creating a Topic</b></p><p>The following example shows how a topic can be created and
+          populated with identifiers, names and occurrences. Note that you can
+          refer to typing topics either by their database object identifier or
+          by their PSI.</p><pre class="programlisting">&lt;txn:TopicMapTransaction&gt;
+  &lt;txn:CreateTopic id="ctop1"&gt;
+    &lt;tmd:topic&gt;
+      &lt;tmd:subjectIdentifiers&gt;
+        &lt;tmd:locator href="http://www.networkedplanet.com/psi/employees/1234"/&gt;
+      &lt;/tmd:subjectIdentifiers&gt;
+      &lt;tmd:topicTypes&gt;
+        &lt;tmd:type psi="http://www.networkedplanet.com/psi/employee"/&gt;
+      &lt;/tmd:topicTypes&gt;
+      &lt;tmd:names&gt;
+        &lt;tmd:name&gt;
+          &lt;tmd:namestring&gt;John Smith&lt;/tmd:namestring&gt;
+          &lt;tmd:variants&gt;
+            &lt;tmd:variant&gt;
+              &lt;tmd:namestring&gt;SMITH, JOHN&lt;/tmd:namestring&gt;
+              &lt;tmd:scope&gt;
+                &lt;tmd:topicref psi="http://www.topicmaps.org/xtm/1.0/core.xtm#sort"/&gt;
+              &lt;/tmd:scope&gt;
+            &lt;/tmd:variant&gt;
+          &lt;/tmd:variants&gt;
+        &lt;/tmd:name&gt;
+      &lt;/tmd:names&gt;
+      &lt;tmd:occurrences&gt;
+        &lt;tmd:occurrence&gt;
+          &lt;tmd:type psi="http://www.networkedplanet.com/psi/date-of-birth"/&gt;
+          &lt;tmd:resourcedata&gt;1963-01-28&lt;/tmd:resourcedata&gt;
+        &lt;/tmd:occurrence&gt;
+      &lt;/tmd:occurrences&gt;
+    &lt;/tmd:topic&gt;
+  &lt;/txn:CreateTopic&gt;
+&lt;/txn:TopicMapTransaction&gt;</pre></div><div class="example"><a name="d0e3831"></a><p class="title"><b>Example&nbsp;A.4.&nbsp;Deleting a Topic</b></p><p>To delete a topic you only need to know its database object
+          identifier or one of its subject identifiers. The following example
+          shows how to delete a topic by specifying its subject
+          identifier.</p><pre class="programlisting">&lt;txn:TopicMapTransaction&gt;
+  &lt;txn:DeleteTopic id="deltop1"&gt;
+    &lt;tmd:topic subjectIdentifier="http://www.networkedplanet.com/psi/employees/1234"/&gt;
+  &lt;/txn:DeleteTopic&gt;
+&lt;/txn:TopicMapTransaction&gt;</pre></div><div class="example"><a name="d0e3838"></a><p class="title"><b>Example&nbsp;A.5.&nbsp;Adding an Name, Occurrence or Identifier to a Topic</b></p><p>To add a name, occurrence or identifier to a topic, you need
+          to specify the topic's database object identifier or one of its
+          subject identifiers. You do not need to know the rest of the content
+          of the topic. The example below adds a contact telephone number as
+          an occurrence to a previously created topic using the topic's
+          subject identifier to locate it.</p><pre class="programlisting">&lt;txn:TopicMapTransaction&gt;
+  &lt;txn:CreateTopicProperty id="delprop1"&gt;
+    &lt;tmd:topic subjectIdentifier="http://www.networkedplanet.com/psi/employees/1234"&gt;
+      &lt;tmd:occurrences&gt;
+        &lt;tmd:occurrence&gt;
+          &lt;tmd:type psi="http://www.networkedplanet.com/psi/contact-tel"/&gt;
+          &lt;tmd:resourcedata&gt;0123 456 7890&lt;/tmd:resourcedata&gt;
+        &lt;/tmd:occurrence&gt;
+      &lt;/tmd:occurrences&gt;
+    &lt;/tmd:topic&gt;
+  &lt;/txn:CreateTopicProperty&gt;
+&lt;/txn:TopicMapTransaction&gt;</pre></div><div class="example"><a name="d0e3845"></a><p class="title"><b>Example&nbsp;A.6.&nbsp;A Simple CreateAssociation Example</b></p><p>In this example, the database object identifiers of the topics
+          that participate in the association and of the topics that define
+          the association type and roles are all known in advance:</p><pre class="programlisting">&lt;txn:TopicMapTransaction&gt;
+  &lt;txn:CreateAssociation id="ca1"&gt;
+    &lt;tmd:association&gt;
+      &lt;tmd:type oid="123"/&gt;
+      &lt;tmd:role&gt;
+        &lt;tmd:roleType oid="124"/&gt;
+        &lt;tmd:player oid="2001"/&gt;
+      &lt;/tmd:role&gt;
+      &lt;tmd:role&gt;
+        &lt;tmd:roleType oid="125"/&gt;
+        &lt;tmd:player oid="2002"/&gt;
+      &lt;/tmd:role&gt;
+    &lt;/tmd:association&gt;
+  &lt;/txn:CreateAssociation&gt;
+&lt;/txn:TopicMapTransaction&gt;      </pre></div><div class="example"><a name="d0e3852"></a><p class="title"><b>Example&nbsp;A.7.&nbsp;Using PSI References</b></p><p>The following example shows how database object identifier
+          references and PSI references can be easily mixed together in the
+          creation of an association. PSI references are often most useful for
+          identifying topic types and fixed category lists in a topic
+          map.</p><pre class="programlisting">&lt;txn:TopicMapTransaction&gt;
+  &lt;txn:CreateAssociation id="ca2"&gt;
+    &lt;tmd:association&gt;
+      &lt;tmd:type psi="http://psi.example.com/event-has-location"/&gt;
+      &lt;tmd:role&gt;
+        &lt;tmd:roleType oid="http://psi.example.com/event-has-location-target"/&gt;
+        &lt;tmd:player oid="http://psi.example.com/cities/london"/&gt;
+      &lt;/tmd:role&gt;
+      &lt;tmd:role&gt;
+        &lt;tmd:roleType oid="http://psi.example.com/event-has-location-source"/&gt;
+        &lt;tmd:player oid="2002"/&gt;
+      &lt;/tmd:role&gt;
+    &lt;/tmd:association&gt;
+  &lt;/txn:CreateAssociation&gt;
+&lt;/txn:TopicMapTransaction&gt;      </pre></div><div class="example"><a name="d0e3859"></a><p class="title"><b>Example&nbsp;A.8.&nbsp;Combining Actions</b></p><p>Multiple actions can be combined into a single transactional
+          update. New topics can be assigned an internal object identifier
+          that is valid only for references made from other actions in the
+          same transaction. This allows a new topic to be included in new
+          associations or used as a topic type or scope without having to make
+          two separate transactions.</p><p>The following example shows how two topics are created and
+          connected together in an association all as part of a single
+          transaction.</p><pre class="programlisting">&lt;txn:TopicMapTransaction&gt;
+  &lt;!-- Create a topic for Bart --&gt;
+  &lt;txn:CreateTopic id="create-bart"&gt;
+    &lt;tmd:topic oid="bart"&gt;
+      &lt;tmd:names&gt;
+        &lt;tmd:name&gt;
+          &lt;tmd:namestring&gt;Bart Simpson&lt;/tmd:namestring&gt;
+        &lt;/tmd:name&gt;
+      &lt;/tmd:names&gt;
+    &lt;/tmd:topic&gt;
+  &lt;/txn:CreateTopic&gt;
+  &lt;!-- Create a topic for Homer --&gt;
+  &lt;txn:CreateTopic id="create-homer"&gt;
+    &lt;tmd:topic oid="homer"&gt;
+      &lt;tmd:names&gt;
+        &lt;tmd:name&gt;
+          &lt;tmd:namestring&gt;Homer Simpson&lt;/tmd:namestring&gt;
+        &lt;/tmd:name&gt;
+      &lt;/tmd:names&gt;
+    &lt;/tmd:topic&gt;
+  &lt;/txn:CreateTopic&gt;
+  &lt;!-- Create a parent-child association between them --&gt;
+  &lt;txn:CreateAssociation id="create-assoc-1"&gt;
+    &lt;tmd:association&gt;
+      &lt;tmd:type psi="http://psi.example.com/parent-child"/&gt;
+      &lt;tmd:role&gt;
+        &lt;tmd:roletype psi="http://psi.example.com/parent"/&gt;
+        &lt;tmd:player tref="homer"/&gt;
+      &lt;/tmd:role&gt;
+      &lt;tmd:role&gt;
+        &lt;tmd:roletype psi="http://psi.example.com/child"/&gt;
+        &lt;tmd:player tref="bart"/&gt;
+      &lt;/tmd:role&gt;
+    &lt;/tmd:association&gt;
+  &lt;/txn:CreateAssociation&gt;
+&lt;/txn:TopicMapTransaction&gt;</pre><div class="warning"><h3 class="title">Warning</h3><p>There is one restriction on the OIDs used for newly
+              created topics. The processor will check any
+              <code class="sgmltag-element">tref</code> attribute value to see if it is a valid
+              database object identifier, before looking for internal
+              references assigned by CreateTopic actions. Therefore the object
+              identifier assigned to new topics must not be in a form that can
+              be recognised as a database object identifier. A database object
+              identifier is an integer string, so any string that contains at
+              least one non-numeric character can be used as an internal
+              identifier for a new topic.</p></div></div><div class="example"><a name="d0e3875"></a><p class="title"><b>Example&nbsp;A.9.&nbsp;Changing an Name, Occurrence or Identifier</b></p><p>Changing a single name, occurrence or identifier without
+          modifying the other properties of a topic can be done by deleting
+          the value to be changed and specifying a new value as part of a
+          single transaction. If you know the database object identifier of
+          the item to be deleted, you can use that to reference the item to be
+          deleted. Otherwise you can specify the value of the item to be
+          deleted (including its type and any scoping topics). The example
+          below shows changing the contact telephone number created in the
+          previous example, and deleting a name with the database object
+          identifier "9987".</p><pre class="programlisting">&lt;txn:TopicMapTransaction&gt;
+  &lt;txn:DeleteTopicProperty id="op01"&gt;
+    &lt;tmd:topic psi="http://www.networkedplanet.com/psi/employees/1234"&gt;
+      &lt;tmd:names&gt;
+        &lt;!-- delete a name by specifying its object identifier --&gt;
+        &lt;tmd:name oid="9987"/&gt;
+      &lt;/tmd:names&gt;
+      &lt;tmd:occurrences&gt;
+        &lt;!-- delete an occurrence by specifying its value --&gt;
+        &lt;tmd:occurrence&gt;
+          &lt;tmd:type psi="http://www.networkedplanet.com/psi/contact-tel"/&gt;
+          &lt;tmd:resourcedata&gt;0123 456 7890&lt;/tmd:resourcedata&gt;
+        &lt;/tmd:occurrence&gt;
+      &lt;/tmd:occurrences&gt;
+    &lt;/tmd:topic&gt;
+  &lt;/txn:DeleteTopicProperty&gt;
+  &lt;txn:CreateTopicProperty id="op02"&gt;
+    &lt;tmd:topic psi="http://www.networkedplanet.com/psi/employees/1234"&gt;
+      &lt;tmd:occurrences&gt;
+        &lt;!-- Add a new occurrence --&gt;
+        &lt;tmd:occurrence&gt;
+          &lt;tmd:type psi="http://www.networkedplanet.com/psi/contact-tel"/&gt;
+          &lt;tmd:resourcedata&gt;0123 554 5555&lt;/tmd:resourcedata&gt;
+        &lt;/tmd:occurrence&gt;
+      &lt;/tmd:occurrences&gt;
+    &lt;/tmd:topic&gt;
+  &lt;/txn:CreateTopicProperty&gt;
+&lt;/txn:TopicMapTransaction&gt;      </pre></div><div class="example"><a name="d0e3882"></a><p class="title"><b>Example&nbsp;A.10.&nbsp;Replacing an Occurrence</b></p><p>By using the wildcard string matching operators, you can also
+          maintain a single occurrence of a given type (or a single name or
+          variant in a given scope) by issuing a DeleteTopicProperty
+          specifying the string match using the % wildcard, followed by a
+          CreateTopicProperty operation. The example below shows this in
+          operation - first, all occurrences of the type
+          "http://www.networkedplanet.com/psi/contact-tel" are deleted from
+          the topic, and then a single new occurrence is created.</p><pre class="programlisting">&lt;txn:TopicMapTransaction&gt;
+  &lt;txn:DeleteTopicProperty id="op01"&gt;
+    &lt;tmd:topic psi="http://www.networkedplanet.com/psi/employees/1234"&gt;
+      &lt;tmd:names&gt;
+        &lt;!-- delete a name by specifying its object identifier --&gt;
+        &lt;tmd:name oid="9987"/&gt;
+      &lt;/tmd:names&gt;
+      &lt;tmd:occurrences&gt;
+        &lt;!-- delete all occurrences of a given type by specifying a wildcard value match --&gt;
+        &lt;tmd:occurrence&gt;
+          &lt;tmd:type psi="http://www.networkedplanet.com/psi/contact-tel"/&gt;
+          &lt;tmd:resourcedata&gt;%&lt;/tmd:resourcedata&gt;
+        &lt;/tmd:occurrence&gt;
+      &lt;/tmd:occurrences&gt;
+    &lt;/tmd:topic&gt;
+  &lt;/txn:DeleteTopicProperty&gt;
+  &lt;txn:CreateTopicProperty id="op02"&gt;
+    &lt;tmd:topic psi="http://www.networkedplanet.com/psi/employees/1234"&gt;
+      &lt;tmd:occurrences&gt;
+        &lt;!-- Add a new occurrence --&gt;
+        &lt;tmd:occurrence&gt;
+          &lt;tmd:type psi="http://www.networkedplanet.com/psi/contact-tel"/&gt;
+          &lt;tmd:resourcedata&gt;0123 554 5555&lt;/tmd:resourcedata&gt;
+        &lt;/tmd:occurrence&gt;
+      &lt;/tmd:occurrences&gt;
+    &lt;/tmd:topic&gt;
+  &lt;/txn:CreateTopicProperty&gt;
+&lt;/txn:TopicMapTransaction&gt;      </pre></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="apas03s11.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="apas03.html"><img src="../graphics/up.png" alt="Up"></a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="apas04.html"><img src="../graphics/next.png" alt="Next"></a></td></tr><tr><td width="40%" align="left" valign="top"><code class="sgmltag-element">DeleteAssociation</code> Element&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html"><img src="../graphics/home.png" alt="Home"></a></td><td width="40%" align="right" valign="top">&nbsp;NPCL XML Schema</td></tr></table></div></body></html>

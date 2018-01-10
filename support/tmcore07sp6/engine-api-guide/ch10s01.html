@@ -1,0 +1,26 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Introduction</title><link rel="stylesheet" href="../doc.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><link rel="start" href="index.html" title="TMCore Engine API Guide"><link rel="up" href="ch10.html" title="Chapter&nbsp;10.&nbsp;Fast Topic Map Updates with the TransactionalPersistenceManager"><link rel="prev" href="ch10.html" title="Chapter&nbsp;10.&nbsp;Fast Topic Map Updates with the TransactionalPersistenceManager"><link rel="next" href="ch10s02.html" title="Transactional API Usage"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="pageheader"><table class="logo" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td><span class="networked">Networked</span><span class="planet">Planet</span></td><td align="right"><span class="title">TMCore Engine API Guide</span></td></tr></table></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Introduction</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch10.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><th width="60%" align="center">Chapter&nbsp;10.&nbsp;Fast Topic Map Updates with the TransactionalPersistenceManager</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch10s02.html"><img src="../graphics/next.png" alt="Next"></a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e2913"></a>Introduction</h2></div></div></div><p>
+      The TMAPI-based interfaces such as ITopic, IAssociation and so on provide
+      methods for both topic map read and update. These interfaces are relatively
+      efficient when the topics and associations you access are small and / or
+      you are modifying all of the topic or association structure. This is because
+      the implementations of these classes retrieve the entire topic or association
+      from the database, perform any modifications locally and then only return
+      the state to the database when you call the Save() method.
+    </p><p>
+      However there
+      are many cases where an application is required to only perform some
+      relatively small incremental update on a large number of topics or
+      associations in a database and in those cases, the overhead of retrieving
+      the entire structure for an ITopic or IAssociation instance from the database
+      can cause performance problems. For these circumstances we have provided
+      a transaction-oriented API for topic map updates.
+    </p><p>
+      Unlike TMAPI which deals with objects and object states, the transactional
+      API deals with operations on a topic map. Each operation in the transactional
+      API is processed by a database stored procedure call which updates some
+      part of a topic or association. Individual calls are therefore processed
+      much more quickly than if the equivalent operation was implemented using
+      TMAPI.
+    </p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch10.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch10.html"><img src="../graphics/up.png" alt="Up"></a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch10s02.html"><img src="../graphics/next.png" alt="Next"></a></td></tr><tr><td width="40%" align="left" valign="top">Chapter&nbsp;10.&nbsp;Fast Topic Map Updates with the TransactionalPersistenceManager&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html"><img src="../graphics/home.png" alt="Home"></a></td><td width="40%" align="right" valign="top">&nbsp;Transactional API Usage</td></tr></table></div></body></html>

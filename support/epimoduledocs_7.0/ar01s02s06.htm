@@ -1,0 +1,95 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Specifying Pickers in the Classification Editor</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?ar01s02s06.htm"; }
+  else { parent.quicksync('a4.1.6'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Specifying Pickers in the Classification Editor</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="ar01s02s05.htm">Previous</a>&nbsp;
+     <a href="ar01s02s07.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p class="p_Notes"><span class="f_Notes">The following information applies only to the legacy editing mode in CMS 7. The new editor always displays the three standard pickers.</span></p>
+<p>Site administrators have the ability to configure the pickers that are presented in the classification editor. By default there are three pickers presented:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 10px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><span style="font-size: 12pt; font-family: 'Times New Roman'; color: #000000;">1.</span></td><td><span class="f_InlineCode">SelectTopicFromInstanceList</span> - the "Topics List" tab.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 10px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><span style="font-size: 12pt; font-family: 'Times New Roman'; color: #000000;">2.</span></td><td><span class="f_InlineCode">HierarchyPicker</span> - the "Hierarchy Picker" tab.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 10px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><span style="font-size: 12pt; font-family: 'Times New Roman'; color: #000000;">3.</span></td><td><span class="f_InlineCode">IDPicker</span> - the "ID Picker" tab.</td></tr></table></div><p>Each picker name is a Javascript class. If you write your own pickers, you can add them to this list.</p>
+<p>This list may be globally configured by setting the <span class="f_InlineCode"><a href="np_tm_defaultpickerlist.htm">NP_TM_DefaultPickerList</a></span> configuration variable to a comma delimited list of pickers. The default value is:</p>
+<p><span class="f_InlineCode">SelectTopicFromInstanceList,HierarchyPicker,IDPicker</span></p>
+<p>So to remove the ID Picker you would add a line to the <span class="f_InlineCode">web.config</span> application settings section as follows:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;add&nbsp;key="NP_TM_DefaultPickerList"&nbsp;value="SelectTopicFromInstanceList,HierarchyPicker"/&gt;</span></p>
+<p>Site administrators may also define the pickers available for specified roles using an NPCL Extension on the source role.</p>
+<p>The NPCL extension value should be of type <span class="f_InlineCode">http://psi.networkedplanet.com/extensions/episervermodule/allowedPickers</span> and takes the same format as the application configuration, i.e. a comma delimited list.</p>
+<p>Therefore if you wanted to restrict the pickers to just the ID Picker when classifying a Document against a Theme, where the association is constructed as follows:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 10px 0px;"><table cellspacing="0" cellpadding="3" border="1" style="border: solid 2px #000000; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p>Topic Map Construct</p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p>Subject Identifier</p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p>Role Playing Type</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p>Association Type</p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p>http://psi.networkedplanet.com/assocs/DocumentHasTheme</p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p>&nbsp;</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p>Source Role Type</p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p>http://psi.networkedplanet.com/assocs/DocumentHasThemeSource</p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p>Document</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p>Target Role Type</p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p>http://psi.networkedplanet.com/assocs/DocumentHasThemeTarget</p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p>Theme</p>
+</td>
+</tr>
+</table>
+</div>
+<p>Then you would apply the NPCL extension to the<span class="f_InlineCode"> http://psi.networkedplanet.com/assocs/DocumentHasThemeSource</span> role as this is the identifier of the role played by the Document in the association.</p>
+
+</td></tr></table>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Defining Schema Constants</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?defining_schema_constants.htm"; }
+  else { parent.quicksync('a6.4.3');  parent.track('topic', location.href);}
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Defining Schema Constants</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="api_class_overview.htm">Previous</a>&nbsp;
+     <a href="creating_a_schema.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>This is not a required step, but it is considered best practice. When working with topic maps and schemas you will quickly find that URI identifiers are extremely important. For this reason we recommend that rather than retyping full URIs everywhere that they are needed in method calls you instead create a single list of constants. This approach saves a lot of repeated typing and the possibility of typing mistakes causing difficult to track down problems. At the very least your constants file should include all the identifiers for the types in your schema, but it could also be used to hold identifiers for key topics in the topic map (e.g. the URI identifiers assigned to hierarchies for example).</p>
+<p>&nbsp;</p>
+<p><span style="font-family: 'Consolas'; color: #0000ff;"> &nbsp; &nbsp;internal</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #0000ff;">class</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #2b91af;">SchemaConstants</span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp;{</span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Consolas'; color: #0000ff;">public</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #0000ff;">const</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #0000ff;">string</span><span style="font-family: 'Consolas';"> SchemaBase = </span><span style="font-family: 'Consolas'; color: #a31515;">"http://www.networkedplanet.com/business-ontology/types/"</span><span style="font-family: 'Consolas';">;</span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Consolas'; color: #0000ff;">public</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #0000ff;">const</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #0000ff;">string</span><span style="font-family: 'Consolas';"> Person = SchemaBase + </span><span style="font-family: 'Consolas'; color: #a31515;">"person"</span><span style="font-family: 'Consolas';">;</span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Consolas'; color: #0000ff;">public</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #0000ff;">const</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #0000ff;">string</span><span style="font-family: 'Consolas';"> Product = SchemaBase + </span><span style="font-family: 'Consolas'; color: #a31515;">"product"</span><span style="font-family: 'Consolas';">;</span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Consolas'; color: #0000ff;">public</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #0000ff;">const</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #0000ff;">string</span><span style="font-family: 'Consolas';"> Company = SchemaBase + </span><span style="font-family: 'Consolas'; color: #a31515;">"company"</span><span style="font-family: 'Consolas';">;</span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Consolas'; color: #0000ff;">public</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #0000ff;">const</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #0000ff;">string</span><span style="font-family: 'Consolas';"> WorksFor = SchemaBase + </span><span style="font-family: 'Consolas'; color: #a31515;">"worksFor"</span><span style="font-family: 'Consolas';">;</span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Consolas'; color: #0000ff;">public</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #0000ff;">const</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #0000ff;">string</span><span style="font-family: 'Consolas';"> Employer = SchemaBase + </span><span style="font-family: 'Consolas'; color: #a31515;">"employer"</span><span style="font-family: 'Consolas';">;</span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Consolas'; color: #0000ff;">public</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #0000ff;">const</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #0000ff;">string</span><span style="font-family: 'Consolas';"> Employee = SchemaBase + </span><span style="font-family: 'Consolas'; color: #a31515;">"employee"</span><span style="font-family: 'Consolas';">;</span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Consolas'; color: #0000ff;">public</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #0000ff;">const</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #0000ff;">string</span><span style="font-family: 'Consolas';"> Manages = SchemaBase + </span><span style="font-family: 'Consolas'; color: #a31515;">"manages"</span><span style="font-family: 'Consolas';">;</span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Consolas'; color: #0000ff;">public</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #0000ff;">const</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #0000ff;">string</span><span style="font-family: 'Consolas';"> Manager = SchemaBase + </span><span style="font-family: 'Consolas'; color: #a31515;">"manager"</span><span style="font-family: 'Consolas';">;</span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Consolas'; color: #0000ff;">public</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #0000ff;">const</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #0000ff;">string</span><span style="font-family: 'Consolas';"> Minion = SchemaBase + </span><span style="font-family: 'Consolas'; color: #a31515;">"minion"</span><span style="font-family: 'Consolas';">;</span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Consolas'; color: #0000ff;">public</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #0000ff;">const</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #0000ff;">string</span><span style="font-family: 'Consolas';"> FriendOf = SchemaBase + </span><span style="font-family: 'Consolas'; color: #a31515;">"friendOf"</span><span style="font-family: 'Consolas';">;</span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Consolas'; color: #0000ff;">public</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #0000ff;">const</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #0000ff;">string</span><span style="font-family: 'Consolas';"> Friend = SchemaBase + </span><span style="font-family: 'Consolas'; color: #a31515;">"friend"</span><span style="font-family: 'Consolas';">;</span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Consolas'; color: #0000ff;">public</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #0000ff;">const</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #0000ff;">string</span><span style="font-family: 'Consolas';"> Age = SchemaBase + </span><span style="font-family: 'Consolas'; color: #a31515;">"age"</span><span style="font-family: 'Consolas';">;</span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Consolas'; color: #0000ff;">public</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #0000ff;">const</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #0000ff;">string</span><span style="font-family: 'Consolas';"> Weight = SchemaBase + </span><span style="font-family: 'Consolas'; color: #a31515;">"weight"</span><span style="font-family: 'Consolas';">;</span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Consolas'; color: #0000ff;">public</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #0000ff;">const</span><span style="font-family: 'Consolas';"> </span><span style="font-family: 'Consolas'; color: #0000ff;">string</span><span style="font-family: 'Consolas';"> Description = SchemaBase + </span><span style="font-family: 'Consolas'; color: #a31515;">"description"</span><span style="font-family: 'Consolas';">;</span></p>
+<p><span style="font-family: 'Consolas';"> &nbsp; &nbsp;}</span></p>
+<p>&nbsp;</p>
+
+</td></tr></table>
+
+</body>
+</html>

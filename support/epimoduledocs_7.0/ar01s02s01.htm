@@ -1,0 +1,117 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Mapping Page Types to Topic Types</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?ar01s02s01.htm"; }
+  else { parent.quicksync('a4.1.1'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Mapping Page Types to Topic Types</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="ar01s02.htm">Previous</a>&nbsp;
+     <a href="ar01s02s02.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>An EPiServer administrator is responsible for mapping EPiServer page types to TMCore topic types. This is done by creating a property on the page type as follows (this is also described the installation guide):</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 10px 0px;"><table cellspacing="0" cellpadding="3" border="1" style="border: solid 2px #000000; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: solid 1px #000000;"><p>Type</p>
+</td>
+<td valign="top" style="border: solid 1px #000000;"><p><span style="font-style: italic;">String (&lt;=255)</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: solid 1px #000000;"><p>Name</p>
+</td>
+<td valign="top" style="border: solid 1px #000000;"><p><span class="f_InlineCode" style="font-style: italic;">nptopictype</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: solid 1px #000000;"><p>Default Value</p>
+</td>
+<td valign="top" style="border: solid 1px #000000;"><p>The subject identifier of the topic type. For example: <span class="f_InlineCode" style="font-style: italic;">http://psi.networkedplanet.com/types/Person</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: solid 1px #000000;"><p>Value must be entered</p>
+</td>
+<td valign="top" style="border: solid 1px #000000;"><p>Checked</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: solid 1px #000000;"><p>Searchable property</p>
+</td>
+<td valign="top" style="border: solid 1px #000000;"><p>Unchecked</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: solid 1px #000000;"><p>Unique value per language</p>
+</td>
+<td valign="top" style="border: solid 1px #000000;"><p>Unchecked</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: solid 1px #000000;"><p>Display In Edit Mode</p>
+</td>
+<td valign="top" style="border: solid 1px #000000;"><p>Unchecked</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: solid 1px #000000;"><p>Field Name</p>
+</td>
+<td valign="top" style="border: solid 1px #000000;"><p><span style="font-style: italic;">Instance of Topic</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: solid 1px #000000;"><p>Help Text</p>
+</td>
+<td valign="top" style="border: solid 1px #000000;"><p><span style="font-style: italic;">The subject identifier of the topic type for this page.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: solid 1px #000000;"><p>Tab</p>
+</td>
+<td valign="top" style="border: solid 1px #000000;"><p><span style="font-style: italic;">Settings</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Notes"><span class="f_Notes">The name of the field shown, </span><span class="f_InlineCode">nptopictype</span><span class="f_Notes"> is the default value. If you modify the value of the </span><span class="f_InlineCode"><a href="np_tm_topictype.htm">NP_TM_TopicType</a></span><span class="f_Notes"> configuration parameter then the field name must be set to the value of this parameter.</span></p>
+<p class="p_Notes"><span class="f_Notes">The subject identifier for a topic type can be found by using TMEditor to access the topic map. Search for the type by name, select the topic and the subject identifier(s) for the topic are shown on the Identifiers tab. If a topic type has multiple subject identifiers you should only enter one here. It does not matter which one you pick but we recommend keeping some consistency over the form of the subject identifiers (e.g. making sure they all start with the same prefix string).</span></p>
+<p>Editors will typically not be allowed to change the value of this field as you will want a one-to-one mapping between page type and topic type.</p>
+<p>If a page type does not contain a field of this description then no topics will be created for instances of that page type. This is convenient way to exclude specific page types from representation in the topic map. If an editor attempts to classify a page which does not have a topic created for it, then they will receive the error message: Topic cannot be loaded! when clicking the tab.</p>
+
+</td></tr></table>
+
+</body>
+</html>

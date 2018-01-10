@@ -1,0 +1,365 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Constraint Topics</title><link rel="stylesheet" href="../doc.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><link rel="start" href="index.html" title="TMCore Engine API Guide"><link rel="up" href="ch11s03.html" title="NPCL Topic Map Ontology"><link rel="prev" href="ch11s03s01.html" title="NPCL Meta Types"><link rel="next" href="ch12.html" title="Chapter&nbsp;12.&nbsp;The NPCL Constraints API"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="pageheader"><table class="logo" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td><span class="networked">Networked</span><span class="planet">Planet</span></td><td align="right"><span class="title">TMCore Engine API Guide</span></td></tr></table></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Constraint Topics</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch11s03s01.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><th width="60%" align="center">NPCL Topic Map Ontology</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch12.html"><img src="../graphics/next.png" alt="Next"></a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e3811"></a>Constraint Topics</h3></div></div></div><p>Constraints in NPCL are always represented as topics. Constraint
+      topics are typed using the following NPCL-defined topic types.</p><div class="table"><a name="d0e3816"></a><p class="title"><b>Table&nbsp;11.3.&nbsp;NPCL Constraint Topic Types</b></p><table summary="NPCL Constraint Topic Types" cellspacing="0" cellpadding="3" border="1"><colgroup><col><col><col></colgroup><thead><tr><th align="center">Constraint Type</th><th align="center">Relative PSI</th><th align="center">Description</th></tr></thead><tbody><tr><td>Occurrence Constraint</td><td><code class="uri">constraints/occurrence-constraint</code></td><td>Constraints of this type define the types of occurrences
+              that are allowed on specific types of topic.</td></tr><tr><td>Role Player Constraint</td><td><code class="uri">constraints/role-player-constraint</code></td><td>Constraints of this type define the types of association
+              roles that can be played by specific types of topic.</td></tr><tr><td>Association Role Constraint</td><td><code class="uri">constraint/association-role-constraint</code></td><td>Constraints of this type define the types of association
+              roles that can be present in associations of a specific
+              type.</td></tr></tbody></table></div><div class="note"><h3 class="title">Note</h3><p>Relative PSIs are shown relative to the URI
+        <code class="uri">http://www.networkedplanet.com/psi/npcl/</code></p></div><p>Each constraint topic is connected to two or more typing topics
+      using associations as described in the sections below.</p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e3860"></a>Constraint Facets</h4></div></div></div><p>Every constraint has two facets. The Minimum Cardinality Facet
+        specifies the minimum number of times that the relationship defined by
+        the constraint should occur for each instance that it applies to. The
+        Maximum Cardinality Facet specifies the maximum number of times that
+        the relationship should occur. The table below makes this clearer for
+        each constraint type.</p><div class="table"><a name="d0e3865"></a><p class="title"><b>Table&nbsp;11.4.&nbsp;Minimum And Maximum Cardinality Facet Meanings</b></p><table summary="Minimum And Maximum Cardinality Facet Meanings" cellspacing="0" cellpadding="3" border="1"><colgroup><col><col></colgroup><thead><tr><th align="center">Constraint Type</th><th align="center">Minimum / Maximum Cardinality Facet
+                Controls</th></tr></thead><tbody><tr><td>Occurrence Constraint</td><td>The number of occurrences of a specific type that
+                should occur on each topic of a specific type.</td></tr><tr><td>Role Player Constraint</td><td>The number of times a topic of a specific type can play
+                a role of a specific type (optionally specific to one
+                association type).</td></tr><tr><td>Association Role Constraint</td><td>The number of times a role of a specific type can
+                appear in an association of a specific type.</td></tr></tbody></table></div><p>These facets are specified by adding occurrences to the
+        constraint topic. The occurrence type for a Minimum Occurrence Facet
+        must have the subject identifier
+        <code class="uri">http://www.networkedplanet.com/psi/npcl/facets/minimum-cardinality-facet</code>.
+        The occurrence type for a Maximum Occurrence Facet must have the
+        subject identifier
+        <code class="uri">http://www.networkedplanet.com/psi/npcl/facets/maximum-cardinality-facet</code>.</p><p>The Association Role Constraint also allows an Arc Label Facet
+        where the facet value is a name for the association when viewed from
+        the context of the role player. This facet value is NOT specified as
+        an occurrence in XTM. Instead we use the common Topic Maps convention
+        of specifying an arc label for an association using a base name on the
+        association type, scoped by the role type. This is shown in the
+        following example. To save space, the topics and associations that
+        define the Association Role Constraints themselves are not shown (but
+        a full example of this is given later in this chapter):</p><div class="example"><a name="d0e3901"></a><p class="title"><b>Example&nbsp;11.5.&nbsp;The Arc Label Facet Expressed in XTM Syntax</b></p><pre class="programlisting">&lt;xtm:topicMap xmlns:xtm="..."&gt;
+
+  &lt;xtm:topic id="employment"&gt;
+    &lt;xtm:instanceOf&gt;
+      &lt;xtm:subjectIndicatorRef xlink:href="http://www.networkedplanet.com/psi/npcl/meta-types/association-type" /&gt;
+    &lt;/xtm:instanceOf&gt;
+    &lt;xtm:subjectIdentity&gt;
+      &lt;xtm:subjectIndicatorRef xlink:href="http://www.networkedplanet.com/npcl/tests/employment" /&gt;
+    &lt;/xtm:subjectIdentity&gt;
+    &lt;xtm:baseName&gt;
+      &lt;xtm:baseNameString&gt;Employment&lt;/xtm:baseNameString&gt;
+    &lt;/xtm:baseName&gt;
+
+    &lt;!-- Arc Label for the Employee Association Role --&gt;
+    &lt;xtm:baseName&gt;
+      &lt;xtm:scope&gt;&lt;xtm:topicRef xlink:href="#employee"/&gt;&lt;/xtm:scope&gt;
+      &lt;xtm:baseNameString&gt;Works For&lt;/xtm:baseNameString&gt;
+    &lt;/xtm:baseName&gt;
+
+    &lt;!-- Arc Label for the Employer Association Role --&gt;
+    &lt;xtm:baseName&gt;
+      &lt;xtm:scope&gt;&lt;xtm:topicRef xlink:href="#employer"/&gt;&lt;/xtm:scope&gt;
+      &lt;xtm:baseNameString&gt;Employs&lt;/xtm:baseNameString&gt;
+    &lt;/xtm:baseName&gt;
+  &lt;/xtm:topic&gt;
+
+  &lt;xtm:topic id="employer"&gt;
+    &lt;xtm:instanceOf&gt;
+      &lt;xtm:subjectIndicatorRef xlink:href="http://www.networkedplanet.com/psi/npcl/meta-types/association-role-type" /&gt;
+    &lt;/xtm:instanceOf&gt;
+    &lt;xtm:subjectIdentity&gt;
+      &lt;xtm:subjectIndicatorRef xlink:href="http://www.networkedplanet.com/npcl/tests/employer" /&gt;
+    &lt;/xtm:subjectIdentity&gt;
+    &lt;xtm:baseName&gt;
+      &lt;xtm:baseNameString&gt;Employer&lt;/xtm:baseNameString&gt;
+    &lt;/xtm:baseName&gt;
+  &lt;/xtm:topic&gt;
+
+  &lt;xtm:topic id="employee"&gt;
+    &lt;xtm:instanceOf&gt;
+      &lt;xtm:subjectIndicatorRef xlink:href="http://www.networkedplanet.com/psi/npcl/meta-types/association-role-type" /&gt;
+    &lt;/xtm:instanceOf&gt;
+    &lt;xtm:subjectIdentity&gt;
+      &lt;xtm:subjectIndicatorRef xlink:href="http://www.networkedplanet.com/npcl/tests/employee" /&gt;
+    &lt;/xtm:subjectIdentity&gt;
+    &lt;xtm:baseName&gt;
+      &lt;xtm:baseNameString&gt;Employee&lt;/xtm:baseNameString&gt;
+    &lt;/xtm:baseName&gt;
+  &lt;/xtm:topic&gt;
+
+&lt;/xtm:topicMap&gt;</pre></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e3906"></a>Specifying An Occurrence Constraint</h4></div></div></div><p>An Occurrence Constraint represents a restriction on the
+        presence of occurrences of a defined type on topics of a defined type.
+        Every Occurence Constraint must participate in the following
+        associations.</p><div class="table"><a name="d0e3911"></a><p class="title"><b>Table&nbsp;11.5.&nbsp;Associations Required To Specify An Occurrence
+          Constraint</b></p><table summary="Associations Required To Specify An Occurrence&#xA;          Constraint" cellspacing="0" cellpadding="3" border="1"><colgroup><col><col><col><col></colgroup><thead><tr><th align="center">Association Type (Relative PSI)</th><th align="center">Constraint Role Type (Relative
+                PSI)</th><th align="center">Target Role Type (Relative PSI)</th><th align="center">Target Topic Type (Relative PSI)</th></tr></thead><tbody><tr><td>Occurrence Constraint Applies To Topic Type
+                (<code class="uri">constraints/oc-applies-to-tt</code>)</td><td>Occurrence Constraint Applies To Topic Type Source Role
+                (<code class="uri">constraint/oc-applies-to-tt-source</code>)</td><td>Occurrence Constraint Applies To Topic Type Target Role
+                (<code class="uri">constraints/oc-applies-to-tt-target</code>)</td><td>Topic Type (<code class="uri">meta-types/topic-type</code>)</td></tr><tr><td>Occurrence Constraint Allows Occurrence Type
+                (<code class="uri">constraints/oc-allows-ot</code>)</td><td>Occurrence Constraint Allows Occurrence Type Source
+                Role (<code class="uri">constraints/oc-allows-ot-source</code>)</td><td>Occurrence Constraint Allows Occurrence Type Target
+                Role (<code class="uri">constraints/oc-allows-ot-target</code>)</td><td>Occurrence Type
+                (<code class="uri">meta-types/occurrence-type</code>)</td></tr></tbody></table></div><div class="example"><a name="d0e3968"></a><p class="title"><b>Example&nbsp;11.6.&nbsp;Example Occurrence Constraint</b></p><p>The following example shows an occurrence constraint that
+          specifies that every Person topic has a single, optional Age
+          occurrence.</p><pre class="programlisting">&lt;xtm:topicMap xmlns:xtm="..." xmlns:xlink="..."&gt;
+
+  &lt;!-- Not shown : Definitions of person and age topics. --&gt;
+
+  &lt;!-- Person-Age Occcurrence Constraint --&gt;
+  &lt;xtm:topic id="person-age-constraint"&gt;
+    &lt;xtm:instanceOf&gt;
+      &lt;xtm:subjectIndicatorRef 
+           xlink:href="http://www.networkedplanet.com/psi/npcl/constraints/occurrence-constraint"/&gt;
+    &lt;/xtm:instanceOf&gt;
+    &lt;!-- Person must have 0 or 1 Age occurrence --&gt;
+    &lt;xtm:occurrence&gt;
+      &lt;xtm:instanceOf&gt;
+        &lt;xtm:subjectIndicatorRef 
+             xlink:href="http://www.networkedplanet.com/psi/npcl/facets/minimum-cardinality-facet"/&gt;
+      &lt;/xtm:instanceOf&gt;
+      &lt;xtm:resourceData&gt;0&lt;/xtm:resourceData&gt;
+    &lt;/xtm:occurrence&gt;
+    &lt;xtm:occurrence&gt;
+      &lt;xtm:instanceOf&gt;
+        &lt;xtm:subjectIndicatorRef 
+             xlink:href="http://www.networkedplanet.com/psi/npcl/facets/maximum-cardinality-facet"/&gt;
+      &lt;/xtm:instanceOf&gt;
+      &lt;xtm:resourceData&gt;1&lt;/xtm:resourceData&gt;
+    &lt;/xtm:occurrence&gt;
+  &lt;/xtm:topic&gt;
+
+  &lt;!-- Person-Age constraint applies to Person topic type --&gt;
+  &lt;xtm:association&gt;
+    &lt;xtm:instanceOf&gt;
+      &lt;xtm:subjectIndicatorRef 
+           xlink:href="http://www.networkedplanet.com/psi/npcl/constraints/oc-applies-to-tt"/&gt;
+    &lt;/xtm:instanceOf&gt;
+    &lt;xtm:member&gt;
+      &lt;xtm:roleSpec&gt;
+        &lt;xtm:subjectIndicatorRef 
+             xlink:href="http://www.networkedplanet.com/psi/npcl/constraints/oc-applies-to-tt-source"/&gt;
+      &lt;/xtm:roleSpec&gt;
+      &lt;xtm:topicRef xlink:href="#person-age-constraint"/&gt;
+    &lt;/xtm:member&gt;
+    &lt;xtm:member&gt;
+      &lt;xtm:roleSpec&gt;
+        &lt;xtm:subjectIndicatorRef 
+             xlink:href="http://www.networkedplanet.com/psi/npcl/constraints/oc-applies-to-tt-target"/&gt;
+      &lt;/xtm:roleSpec&gt;
+      &lt;xtm:topicRef xlink:href="#person"/&gt;
+    &lt;/xtm:member&gt;
+  &lt;/xtm:association&gt;
+
+  &lt;!-- Person-Age constraint constrains occurrences of type Age --&gt;
+  &lt;xtm:association&gt;
+    &lt;xtm:instanceOf&gt;
+      &lt;xtm:subjectIndicatorRef 
+           xlink:href="http://www.networkedplanet.com/psi/npcl/constraints/oc-allows-ot"/&gt;
+    &lt;/xtm:instanceOf&gt;
+    &lt;xtm:member&gt;
+      &lt;xtm:roleSpec&gt;
+        &lt;xtm:subjectIndicatorRef 
+             xlink:href="http://www.networkedplanet.com/psi/npcl/constraints/oc-allows-ot-source"/&gt;
+      &lt;/xtm:roleSpec&gt;
+      &lt;xtm:topicRef xlink:href="#person-age-constraint"/&gt;
+    &lt;/xtm:member&gt;
+    &lt;xtm:member&gt;
+      &lt;xtm:roleSpec&gt;
+        &lt;xtm:subjectIndicatorRef 
+             xlink:href="http://www.networkedplanet.com/psi/npcl/constraints/oc-allows-ot-target"/&gt;
+      &lt;/xtm:roleSpec&gt;
+      &lt;xtm:topicRef xlink:href="#age"/&gt;
+    &lt;/xtm:member&gt;
+  &lt;/xtm:association&gt;
+
+&lt;/xtm:topicMap&gt;</pre></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e3975"></a>Specifying A Role Player Constraint</h4></div></div></div><p>A Role Player Constraint represents a relationship between a
+        topic type and an association role type that specifies the number of
+        times a topic of the topic type can play a role of the association
+        role type. A third, optional, element of this constraint is an
+        association type. If present, then the constraint applies only to the
+        number of times a topic of the topic type can play a role of the
+        association role type in an association of the association type. These
+        three elements of the constraint are indicated by three separate
+        association types as shown in the following table.</p><div class="table"><a name="d0e3980"></a><p class="title"><b>Table&nbsp;11.6.&nbsp;Associations Used To Specify A Role Player Constraint</b></p><table summary="Associations Used To Specify A Role Player Constraint" cellspacing="0" cellpadding="3" border="1"><colgroup><col><col><col><col></colgroup><thead><tr><th align="center">Association Type (Relative PSI)</th><th align="center">Constraint Role Type (Relative
+                PSI)</th><th align="center">Target Role Type (Relative PSI)</th><th align="center">Target Topic Type (Relative PSI)</th></tr></thead><tbody><tr><td>Role Player Constraint Applies To Topic Type
+                (<code class="uri">constraints/rpc-applies-to-tt</code>)</td><td>Role Player Constraint Applies To Topic Type Source
+                Role (<code class="uri">constraint/rpc-applies-to-tt-source</code>)</td><td>Role Player Constraint Applies To Topic Type Target
+                Role (<code class="uri">constraints/rpc-applies-to-tt-target</code>)</td><td>Topic Type (<code class="uri">meta-types/topic-type</code>)</td></tr><tr><td>Role Player Constraint Allows Role Type
+                (<code class="uri">constraints/rpc-allows-rt</code>)</td><td>Role Player Constraint Allows Role Type Source Role
+                (<code class="uri">constraints/rpc-allows-rt-source</code>)</td><td>Role Player Constraint Allows Role Type Target Role
+                (<code class="uri">constraints/rpc-allows-rt-target</code>)</td><td>Association Role Type
+                (<code class="uri">meta-types/association-role-type</code>)</td></tr><tr><td>Role Player Constraint Allows Association Type
+                (<code class="uri">constraints/rpc-allows-at</code>)</td><td>Role Player Constraint Allows Association Type Source
+                Role (<code class="uri">constraints/rpc-allows-at-source</code>)</td><td>Role Player Constraint Allows Association Type Target
+                Role (<code class="uri">constraints/rpc-allows-at-target</code>)</td><td>Association Type
+                (<code class="uri">meta-types/association-type</code>)</td></tr></tbody></table></div><div class="example"><a name="d0e4058"></a><p class="title"><b>Example&nbsp;11.7.&nbsp;A Role Player Constraint Specified In XTM</b></p><p>The following example shows a single Role Player Constraint
+          that says that a topic of type "person" can play the role of type
+          "employee" in an association of type "employment". Note that no
+          minimum or maximum cardinality is specified for the constraint. This
+          means that the default cardinalities will be applied (0 for minimum
+          cardinality and unbounded for maximum cardinality).</p><pre class="programlisting">&lt;xtm:topicMap xmlns:xtm="..." xmlns:xlink="..."&gt;
+
+  &lt;!-- Not shown: Definitions of person, employee and employment topics --&gt;
+
+  &lt;!-- Person-Employee Role Player Constraint --&gt;
+  &lt;xtm:topic id="person-employee-constraint"&gt;
+    &lt;xtm:instanceOf&gt;
+      &lt;xtm:subjectIndicatorRef 
+           xlink:href="http://www.networkedplanet.com/psi/npcl/constraints/role-player-constraint"/&gt;
+    &lt;/xtm:instanceOf&gt;
+  &lt;/xtm:topic&gt;
+
+  &lt;!-- Person-Employee constraint applies to Person topic type --&gt;
+  &lt;xtm:association&gt;
+    &lt;xtm:instanceOf&gt;
+      &lt;xtm:subjectIndicatorRef 
+           xlink:href="http://www.networkedplanet.com/psi/npcl/constraints/rpc-applies-to-tt"/&gt;
+    &lt;/xtm:instanceOf&gt;
+    &lt;xtm:member&gt;
+      &lt;xtm:roleSpec&gt;
+        &lt;xtm:subjectIndicatorRef 
+             xlink:href="http://www.networkedplanet.com/psi/npcl/constraints/rpc-applies-to-tt-source"/&gt;
+      &lt;/xtm:roleSpec&gt;
+      &lt;xtm:topicRef xlink:href="#person-employee-constraint"/&gt;
+    &lt;/xtm:member&gt;
+    &lt;xtm:member&gt;
+      &lt;xtm:roleSpec&gt;
+        &lt;xtm:subjectIndicatorRef 
+             xlink:href="http://www.networkedplanet.com/psi/npcl/constraints/rpc-applies-to-tt-target"/&gt;
+      &lt;/xtm:roleSpec&gt;
+      &lt;xtm:topicRef xlink:href="#person"/&gt;
+    &lt;/xtm:member&gt;
+  &lt;/xtm:association&gt;
+
+  &lt;!-- Person-Employee constraint constrains roles of type Employee --&gt;
+  &lt;xtm:association&gt;
+    &lt;xtm:instanceOf&gt;
+      &lt;xtm:subjectIndicatorRef 
+           xlink:href="http://www.networkedplanet.com/psi/npcl/constraints/rpc-allows-rt"/&gt;
+    &lt;/xtm:instanceOf&gt;
+    &lt;xtm:member&gt;
+      &lt;xtm:roleSpec&gt;
+        &lt;xtm:subjectIndicatorRef 
+             xlink:href="http://www.networkedplanet.com/psi/npcl/constraints/rpc-allows-rt-source"/&gt;
+      &lt;/xtm:roleSpec&gt;
+      &lt;xtm:topicRef xlink:href="#person-employee-constraint"/&gt;
+    &lt;/xtm:member&gt;
+    &lt;xtm:member&gt;
+      &lt;xtm:roleSpec&gt;
+        &lt;xtm:subjectIndicatorRef 
+             xlink:href="http://www.networkedplanet.com/psi/npcl/constraints/rpc-allows-rt-target"/&gt;
+      &lt;/xtm:roleSpec&gt;
+      &lt;xtm:topicRef xlink:href="#employee"/&gt;
+    &lt;/xtm:member&gt;
+  &lt;/xtm:association&gt;
+
+  &lt;!-- Person-Employee constraint constrains roles in associations of type Employment --&gt;
+  &lt;xtm:association&gt;
+    &lt;xtm:instanceOf&gt;
+      &lt;xtm:subjectIndicatorRef 
+           xlink:href="http://www.networkedplanet.com/psi/npcl/constraints/rpc-allows-at"/&gt;
+    &lt;/xtm:instanceOf&gt;
+    &lt;xtm:member&gt;
+      &lt;xtm:roleSpec&gt;
+        &lt;xtm:subjectIndicatorRef 
+             xlink:href="http://www.networkedplanet.com/psi/npcl/constraints/rpc-allows-at-source"/&gt;
+      &lt;/xtm:roleSpec&gt;
+      &lt;xtm:topicRef xlink:href="#person-employee-constraint"/&gt;
+    &lt;/xtm:member&gt;
+    &lt;xtm:member&gt;
+      &lt;xtm:roleSpec&gt;
+        &lt;xtm:subjectIndicatorRef 
+             xlink:href="http://www.networkedplanet.com/psi/npcl/constraints/rpc-allows-at-target"/&gt;
+      &lt;/xtm:roleSpec&gt;
+      &lt;xtm:topicRef xlink:href="#employment"/&gt;
+    &lt;/xtm:member&gt;
+  &lt;/xtm:association&gt;
+
+&lt;/xtm:topicMap&gt;</pre></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e4065"></a>Specifying An Association Role Constraint</h4></div></div></div><p>An Association Role Constraint specifies a relationship between
+        an association type and an association role type that defines how many
+        roles of the association role type can appear on an association of the
+        association type. To specify an Association Role Constraint, two
+        associations are required, one between the constraint topic and the
+        association type topic and one between the constraint topic and the
+        association role type topic. The table below provides details of the
+        associations required.</p><div class="table"><a name="d0e4070"></a><p class="title"><b>Table&nbsp;11.7.&nbsp;Associations Required To Specify An Association Role
+          Constraint</b></p><table summary="Associations Required To Specify An Association Role&#xA;          Constraint" cellspacing="0" cellpadding="3" border="1"><colgroup><col><col><col><col></colgroup><thead><tr><th align="center">Association Type (Relative PSI)</th><th align="center">Constraint Role Type (Relative
+                PSI)</th><th align="center">Target Role Type (Relative PSI)</th><th align="center">Target Topic Type (Relative PSI)</th></tr></thead><tbody><tr><td>Association Role Constraint Applies To Association Type
+                (<code class="uri">constraints/arc-applies-to-at</code>)</td><td>Association Role Constraint Applies To Association Type
+                Source Role
+                (<code class="uri">constraint/arc-applies-to-at-source</code>)</td><td>Association Role Constraint Applies To Association Type
+                Target Role
+                (<code class="uri">constraints/arc-applies-to-at-target</code>)</td><td>Association Type
+                (<code class="uri">meta-types/association-type</code>)</td></tr><tr><td>Association Role Constraint Allows Role Type
+                (<code class="uri">constraints/arc-allows-rt</code>)</td><td>Association Role Constraint Allows Role Type Source
+                Role (<code class="uri">constraints/arc-allows-rt-source</code>)</td><td>Association Role Constraint Allows Role Type Target
+                Role (<code class="uri">constraints/arc-allows-rt-target</code>)</td><td>Association Role Type
+                (<code class="uri">meta-types/association-role-type</code>)</td></tr></tbody></table></div><div class="example"><a name="d0e4127"></a><p class="title"><b>Example&nbsp;11.8.&nbsp;An Association Role Constraint in XTM</b></p><p>The following example shows how to specify an Association Role
+          Constraint in XTM syntax. The example shows a constraint the
+          requires an association of type "employment" to have exactly one
+          role of type "employee".</p><pre class="programlisting">&lt;xtm:topicMap xmlns:xtm="..." xmlns:xlink="..."&gt;
+
+  &lt;!-- Not defined : The topics employment and employee. --&gt;
+
+  &lt;!-- Employment-Employee Constraint. --&gt;
+  &lt;topic id="employment-employee-constraint"&gt;
+    &lt;xtm:instanceOf&gt;
+      &lt;xtm:subjectIndicatorRef 
+           xlink:href="http://www.networkedplanet.com/psi/npcl/constraints/association-role-constraint"/&gt;
+    &lt;/xtm:instanceOf&gt;
+    &lt;!-- Employment association must have exactly 1 employee role --&gt;
+    &lt;xtm:occurrence&gt;
+      &lt;xtm:instanceOf&gt;
+        &lt;xtm:subjectIndicatorRef 
+             xlink:href="http://www.networkedplanet.com/psi/npcl/facets/minimum-cardinality-facet"/&gt;
+      &lt;/xtm:instanceOf&gt;
+      &lt;xtm:resourceData&gt;1&lt;/xtm:resourceData&gt;
+    &lt;/xtm:occurrence&gt;
+    &lt;xtm:occurrence&gt;
+      &lt;xtm:instanceOf&gt;
+        &lt;xtm:subjectIndicatorRef 
+             xlink:href="http://www.networkedplanet.com/psi/npcl/facets/maximum-cardinality-facet"/&gt;
+      &lt;/xtm:instanceOf&gt;
+      &lt;xtm:resourceData&gt;1&lt;/xtm:resourceData&gt;
+    &lt;/xtm:occurrence&gt;
+  &lt;/topic&gt;
+
+  &lt;!-- Employment-Employee constraint applies to Employment association type --&gt;
+  &lt;xtm:association&gt;
+    &lt;xtm:instanceOf&gt;
+      &lt;xtm:subjectIndicatorRef 
+           xlink:href="http://www.networkedplanet.com/psi/npcl/constraints/arc-applies-to-at"/&gt;
+    &lt;/xtm:instanceOf&gt;
+    &lt;xtm:member&gt;
+      &lt;xtm:roleSpec&gt;
+        &lt;xtm:subjectIndicatorRef 
+             xlink:href="http://www.networkedplanet.com/psi/npcl/constraints/arcc-applies-to-at-source"/&gt;
+      &lt;/xtm:roleSpec&gt;
+      &lt;xtm:topicRef xlink:href="#employment-employee-constraint"/&gt;
+    &lt;/xtm:member&gt;
+    &lt;xtm:member&gt;
+      &lt;xtm:roleSpec&gt;
+        &lt;xtm:subjectIndicatorRef 
+             xlink:href="http://www.networkedplanet.com/psi/npcl/constraints/arc-applies-to-at-target"/&gt;
+      &lt;/xtm:roleSpec&gt;
+      &lt;xtm:topicRef xlink:href="#employment"/&gt;
+    &lt;/xtm:member&gt;
+  &lt;/xtm:association&gt;
+
+  &lt;!-- Employment-Employee constraint constrains roles of type employee --&gt;
+  &lt;xtm:association&gt;
+    &lt;xtm:instanceOf&gt;
+      &lt;xtm:subjectIndicatorRef 
+           xlink:href="http://www.networkedplanet.com/psi/npcl/constraints/arc-allows-rt"/&gt;
+    &lt;/xtm:instanceOf&gt;
+    &lt;xtm:member&gt;
+      &lt;xtm:roleSpec&gt;
+        &lt;xtm:subjectIndicatorRef 
+             xlink:href="http://www.networkedplanet.com/psi/npcl/constraints/arc-allows-rt-source"/&gt;
+      &lt;/xtm:roleSpec&gt;
+      &lt;xtm:topicRef xlink:href="#employment-employee-constraint"/&gt;
+    &lt;/xtm:member&gt;
+    &lt;xtm:member&gt;
+      &lt;xtm:roleSpec&gt;
+        &lt;xtm:subjectIndicatorRef 
+             xlink:href="http://www.networkedplanet.com/psi/npcl/constraints/arc-allows-rt-target"/&gt;
+      &lt;/xtm:roleSpec&gt;
+      &lt;xtm:topicRef xlink:href="#employee"/&gt;
+    &lt;/xtm:member&gt;
+  &lt;/xtm:association&gt;
+
+&lt;/xtm:topicMap&gt;</pre></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch11s03s01.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch11s03.html"><img src="../graphics/up.png" alt="Up"></a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch12.html"><img src="../graphics/next.png" alt="Next"></a></td></tr><tr><td width="40%" align="left" valign="top">NPCL Meta Types&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html"><img src="../graphics/home.png" alt="Home"></a></td><td width="40%" align="right" valign="top">&nbsp;Chapter&nbsp;12.&nbsp;The NPCL Constraints API</td></tr></table></div></body></html>

@@ -1,0 +1,59 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Multiple Front-End Deployment</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?multiple_front_end_deployment.htm"; }
+  else { parent.quicksync('a2.2.2.3');  parent.track('topic', location.href);}
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Multiple Front-End Deployment</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="single_front_end_deployment.htm">Previous</a>&nbsp;
+     <a href="granting_database_access.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div><div style="width:854px;padding:0px"><img src="multiplefrontendserver.png" width="854" height="552" border="0" alt="Multiple Front End Servers" title="Multiple Front End Servers"><p style="text-align:center"><span class="f_ImageCaption">Multiple Front End Servers</span></p></div></div>
+<p>&nbsp;</p>
+<p>In this configuration, further scaling is achieved by providing multiple front-end servers to manage requests to the Web3 portal and web services. A load-balancer can be used to spread requests to a single logical web address across multiple physical machines. </p>
+<p>&nbsp;</p>
+<p>As also shown in the diagram it is possible to also configure a separate machine to run only the Web3 windows services to provide overflow capacity for processing long-running jobs. This can be useful if you have a large number of editors working simultaneously on the topic map server. You can also disable the Jobs Service on the front-end servers that run the Web3 portal and web services, however doing this can lead to a bottleneck in the processing of update transactions and an apparent slowing of the server to editors, so it is only recommended as an approach if you have a large number of readers and a small number of writers to the topic map system.</p>
+<p>&nbsp;</p>
+<p>This configuration can be installed by one of the following processes:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="15"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">1)</span></td><td>If you have administrative access to the database server:</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="15"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">a)</span></td><td>Run the Full Server installation on the first front-end server in the server farm. </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 30px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="15"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">i)</span></td><td>When prompted for database details, enter the address of the remote database server. </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 30px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="15"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">ii)</span></td><td>When prompted for service user details enter the identity of a domain user. The installer will run the necessary scripts to grant that user access to the Web3 databases on the database server.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="15"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">b)</span></td><td>Run the Front-End Server Installation on each of the other front-end servers</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 30px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="15"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">i)</span></td><td>When prompted for service user details use the same user(s) details as you provided for the first server.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="15"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">2)</span></td><td>If the database server is managed by a separate administrator:</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="15"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">a)</span></td><td>The Database administrator runs the Database Server Installation on the database server or some other machine connected to the database server.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="15"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">b)</span></td><td>The Database administrator <a href="granting_database_access.htm">grants access</a> to the Web3 databases to a domain user (or domain users) that will be used as the identity for running the Web3 windows services and web application pool</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 15px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="15"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">c)</span></td><td>The Web administrator runs the Front-End Server installation on each of the front-end servers.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 30px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="15"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">i)</span></td><td>When prompted for the identity for the Web3 windows services and web application pool, enter the identity of the users granted access by the Database administrator.</td></tr></table></div><p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Please note: under the licensing terms for the Web3 platform, one license is required for each front-end server installed (running either web application, Windows services or both).</p>
+
+</td></tr></table>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>topicType Element</title><link rel="stylesheet" href="../doc.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><link rel="start" href="index.html" title="TMCore Web Services Guide"><link rel="up" href="apas05.html" title="NPCL Forms XML Schema"><link rel="prev" href="apas05s03.html" title="schema Element"><link rel="next" href="apas05s05.html" title="extension Element"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="pageheader"><table class="logo" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td><span class="networked">Networked</span><span class="planet">Planet</span></td><td align="right"><span class="title">TMCore Web Services Guide</span></td></tr></table></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"><code class="sgmltag-element">topicType</code> Element</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="apas05s03.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><th width="60%" align="center">NPCL Forms XML Schema</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="apas05s05.html"><img src="../graphics/next.png" alt="Next"></a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e4410"></a><code class="sgmltag-element">topicType</code> Element</h4></div></div></div><p>The <code class="sgmltag-element">topicType</code> element contains the schema
+        information relating to a single topic type in the NPCL schema. This
+        element has the following syntax:</p><pre class="programlisting">&lt;nf:topicType id="..." isAbstract="<em class="replaceable"><code>true|false</code></em>"&gt;
+  &lt;nf:subjectIdentifier&gt; <em class="replaceable"><code>PSI</code></em> &lt;/nf:subjectIdentifier&gt;
+  &lt;nf:displayName&gt; <em class="replaceable"><code>NAME</code></em> &lt;/nf:displayName&gt;
+  &lt;nf:extension ... &gt; ... &lt;/nf:extension&gt;
+  &lt;nf:occurrenceField ... &gt; ... &lt;/nf:occurrenceField&gt;
+  &lt;nf:associationField ... &gt; ... &lt;/nf:associationField&gt;
+  ...
+&lt;/topicType&gt;</pre><div class="variablelist"><dl><dt><span class="term">nf:topicType/@id</span></dt><dd><p>Contains the ID value for the topic type described by this
+              element. If the forms schema is being retrieved from a topic map
+              stored inside a TMCore database, then the value of this
+              attribute will be the database OID of the topic that defines the
+              topic type.</p></dd><dt><span class="term">nf:topicType/@isAbtract</span></dt><dd><p>A boolean value that indicates if the topic type described
+              by this element is marked in the schemas a being abstract.
+              Typically a GUI should not allow end-users to create instances
+              of topic types that are marked as abstract.</p></dd><dt><span class="term">nf:topicType/nf:subjectIdentifier</span></dt><dd><p>Contains a single subject identifier for this topic type.
+              This element is OPTIONAL and REPEATABLE.</p></dd><dt><span class="term">nf:topicType/nf:displayName</span></dt><dd><p>Contains a displayable name for the topic type. This
+              element is OPTIONAL and NON-REPEATABLE.</p></dd><dt><span class="term">nf:topicType/nf:extension</span></dt><dd><p>Contains a single schema extension value for the topic
+              type. Extension values allow additional constraint or display
+              information to be communicated to applications using the NPCL
+              schema extension mechanism. This element is OPTIONAL and
+              REPEATABLE.</p></dd><dt><span class="term">nf:topicType/nf:occurrenceField</span></dt><dd><p>Contains schema information that constrains creation of
+              occurrences of a specific type on topics of this type. This
+              element is OPTIONAL and REPEATABLE.</p></dd><dt><span class="term">nf:topicType/nf:associationField</span></dt><dd><p>Contains schema information that constrains the creation
+              of associations between topics of this type and other topics in
+              the topic map. Each <code class="sgmltag-element">associationField</code> element
+              describes the constraints applying to a particular type of role
+              that can be played by topics of this type, or a particular role
+              type and parent association type combination. This element is
+              OPTIONAL and REPEATABLE</p></dd><dt><span class="term">nf:topicType/{##other}</span></dt><dd><p>An extension point in the NPCL Forms XML Schema which
+              allows any number of elements from any namespace other than the
+              NPCL Forms XML Schema namespace to appear as the last child
+              elements of a <code class="sgmltag-element">topicType</code> element.</p></dd></dl></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="apas05s03.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="apas05.html"><img src="../graphics/up.png" alt="Up"></a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="apas05s05.html"><img src="../graphics/next.png" alt="Next"></a></td></tr><tr><td width="40%" align="left" valign="top"><code class="sgmltag-element">schema</code> Element&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html"><img src="../graphics/home.png" alt="Home"></a></td><td width="40%" align="right" valign="top">&nbsp;<code class="sgmltag-element">extension</code> Element</td></tr></table></div></body></html>

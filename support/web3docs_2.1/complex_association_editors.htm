@@ -1,0 +1,66 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Complex Association Editors</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?complex_association_editors.htm"; }
+  else { parent.quicksync('a5.12.5');  parent.track('topic', location.href);}
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Complex Association Editors</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="binary_association_editors.htm">Previous</a>&nbsp;
+     <a href="arc_editors.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>When the topic map schema defines an association template with more than two roles to it, the topic map editor uses the Complex Association Editor to allow you to create and modify these associations. The Complex Association Editor control displays each association that matches the template as a separate entry and nested within that it shows each of the role types defined in the template as separate sub-entries. For each role type, there is a list of the topics that play that role type which you can add to and remove from using the same controls as are found on the Binary Association Editor.</p>
+<p>The screenshot below shows a Complex Association Editor with one new association added but not yet completed.</p>
+<div><div style="width:978px;padding:0px"><img src="complex_assoc_1.png" width="978" height="348" border="0" alt="Complex Assocication Editor with a single incomplete association" title="Complex Assocication Editor with a single incomplete association"><p style="text-align:center"><span class="f_ImageCaption">Complex Assocication Editor with a single incomplete association</span></p></div></div>
+<p>The title of the Complex Association Editor shows the name of the association type and the name of the default role that the current topic will occupy. In this case the association type is "Employment" and the current topic ("Bloggs Bathrooms") occupies the role "Employer". Note that it is not possible to remove the current topic topic from this default role.</p>
+<p>The Complex Association Editor can manage a list of associations that match the same template. To add a new association to the list, click on the Add New Association button. To delete an association click on the <img src="jquery_blacktrashicon.png" width="13" height="16" border="0" alt="jquery_blacktrashicon"> icon in the left-hand column of the editor. To restore an association previously marked for deletion, click on the <img src="jquery_blackrestoreicon.png" width="12" height="10" border="0" alt="jquery_blackrestoreicon"> next to the association in the left-hand column. Note that associations marked for deletion can only be restored before saving the topic - once the topic is saved the associations are deleted forever. </p>
+<p>Each association in the list of associations is displayed as a series of topic lists, one for each role type in the association. At the top of the list the requirements for that role are shown. If the requirements are met, the message is shown as an informational message, if the requirements are not met they are displayed as a red error message. Each topic list provides three different ways to add new topics to the list.</p>
+<p class="p_SectionHeading"><span class="f_SectionHeading">Type-ahead Search</span></p>
+<p>If you know the label of the topic you want to add you can start typing it into the text box in the editor. As you type (two or more characters are required), possible matches are displayed underneath the text box, you can click on one of these to select it and add it to the list.</p>
+<p><img src="complex_assoc_typeahead.png" width="445" height="192" border="0" alt="complex_assoc_typeahead"></p>
+<p class="p_SectionHeading"><span class="f_SectionHeading">Topic Picker</span></p>
+<p>For more focussed searching and browsing than the simple type-ahead box a full set of topic pickers are automatically attached to each topic list in the Complex Association Editor. These pickers can be displayed by clicking on the <span style="font-weight: bold;">...</span> button.</p>
+<p><img src="complex_assoc_picker.png" width="404" height="328" border="0" alt="complex_assoc_picker"></p>
+<p class="p_SectionHeading"><span class="f_SectionHeading">Create New Topic</span></p>
+<p class="p_SectionHeading">If you cannot find the topic you wanted to add, you can create a new one by clicking on the <span style="font-weight: bold;">Create New</span> button. This will bring up a dialog that allows you to select the type of topic to create (you will only be allowed to choose from those types of topics that are allowed by the association template), and enter a label for it. The Auto-Edit checkbox determines what happens after you click OK in the dialog box. If Auto-Edit is not checked (default), the new topic is simply added to the topic list. If Auto-Edit is checked, then the new topic gets opened in a new Topic Editor window that stacks on top of the current Topic Editor. You can then edit other labels, properties and related topics for that new topic and when you click Save (or Cancel) the editor disappears off the top of the stack and you can continue editing the topic you were originally on. This stacking can go on to any depth you like (so you can create and edit a new topic from within a new topic and so on).</p>
+<p class="p_SectionHeading"><span class="f_SectionHeading">Managing the Topic Lists</span></p>
+<p>The screenshot below shows a completed Complex Association Editor entry. Clicking on the <img src="jquery_blacktrashicon.png" width="13" height="16" border="0" alt="jquery_blacktrashicon"> icon next to a topic will mark that topic for deletion from the role, the topic can be restored to the role by clicking on the <img src="jquery_blackrestoreicon.png" width="12" height="10" border="0" alt="jquery_blackrestoreicon"> icon. You can also view the topic by clicking on the &nbsp;icon. Holding down the Alt key while clicking on the &nbsp;icon will display the topic in a new window.</p>
+<div><div style="width:542px;padding:0px"><img src="complex_assoc_2.png" width="542" height="393" border="0" alt="Complex Association Editor with completed association" title="Complex Association Editor with completed association"><p style="text-align:center"><span class="f_ImageCaption">Complex Association Editor with completed association</span></p></div></div>
+
+</td></tr></table>
+
+</body>
+</html>

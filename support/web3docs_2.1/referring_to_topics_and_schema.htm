@@ -1,0 +1,74 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Referring to Topics and Schema Types</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?referring_to_topics_and_schema.htm"; }
+  else { parent.quicksync('a6.5.1');  parent.track('topic', location.href);}
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Referring to Topics and Schema Types</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="querying_with_sparql.htm">Previous</a>&nbsp;
+     <a href="finding_instances_of_a_type.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>SPARQL queries are built from a number of triple patterns. Each triple pattern defines a subject, predicate and object that the query must match where any of those three items could be a variable. When querying the Web3 Platform, topics, associations and topic properties are normally used as the subject (or occasionally the object) of SPARQL triple patterns. Schema types are normally used as the predicate in a SPARQL triple pattern.</p>
+<p>&nbsp;</p>
+<p class="p_Heading1"><span class="f_Heading1">To Refer to an Item in a Topic Map</span></p>
+<p>A specific topic, association or topic property can be referenced directly by their address in the Web3 Platform's REST interface. For example the following query finds the labels of a specific topic referenced by its address (for brevity the GUIDs in the URL have been shortened:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">SELECT&nbsp;?l&nbsp;WHERE&nbsp;{</span><br>
+<span class="f_CodeExample">&nbsp;&nbsp;&lt;<a href="http://localhost/web3/topicmaps/123.../topics/456..." target="_blank" onclick="return HMTrackTopiclink(this);" class="weblink">http://localhost/web3/topicmaps/123.../topics/456...</a>&gt;&nbsp;tms:label&nbsp;?l</span><br>
+<span class="f_CodeExample">}</span></p>
+<p>A topic can also be referenced by using one of its subject identifiers rather than its address.</p>
+<p>&nbsp;</p>
+<p>NOTE: When a topic is returned as part of a results set, the URLs returned in the results are always the Web3 Platform address of the topic.</p>
+<p>&nbsp;</p>
+<p class="p_Heading1"><span class="f_Heading1">To Refer to a Schema Type</span></p>
+<p>Schema types can be referenced by using on of the subject identifiers of the type. This facility allows the creation of SPARQL queries that will work on any topic map that uses a particular set of schema types. For example, the following query finds all topics of a particular type:</p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">SELECT&nbsp;?t&nbsp;WHERE&nbsp;{</span><br>
+<span class="f_CodeExample">&nbsp;&nbsp;?t&nbsp;a&nbsp;&lt;<a href="http://psi.networkedplanet.com/types/person" target="_blank" onclick="return HMTrackTopiclink(this);" class="weblink">http://psi.networkedplanet.com/types/person</a>&gt;</span><br>
+<span class="f_CodeExample">}</span></p>
+<p class="p_Heading1"><span class="f_Heading1">Shortening References</span></p>
+<p>To make complex SPARQL queries a little more compact and easier to read, SPARQL supports shortening URIs using predefined prefixes. Prefixes must be declared at the start of the query like this:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">PREFIX&nbsp;ont:&nbsp;&lt;<a href="http://psi.networkedplanet.com/types/" target="_blank" onclick="return HMTrackTopiclink(this);" class="weblink">http://psi.networkedplanet.com/types/</a>&gt;</span></p>
+<p>The prefix can then be used inside the query followed by the remainder of the URL. So the previous SPARQL query can be rewritten with a prefix like this:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">PREFIX&nbsp;ont:&nbsp;&lt;<a href="http://psi.networkedplanet.com/types/" target="_blank" onclick="return HMTrackTopiclink(this);" class="weblink">http://psi.networkedplanet.com/types/</a>&gt;</span><br>
+<span class="f_CodeExample">SELECT&nbsp;?t&nbsp;WHERE&nbsp;{&nbsp;</span><br>
+<span class="f_CodeExample">&nbsp;&nbsp;?t&nbsp;a&nbsp;ont:person&nbsp;</span><br>
+<span class="f_CodeExample">}</span></p>
+<p>Note that when a prefix is used inside a query, the value should not be surrounded by &lt; &gt; brackets.</p>
+
+</td></tr></table>
+
+</body>
+</html>

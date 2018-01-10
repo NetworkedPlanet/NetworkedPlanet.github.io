@@ -1,0 +1,243 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>TMCore Command Line Tools</title><link rel="stylesheet" href="../doc.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="pageheader"><table class="logo" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td><span class="networked">Networked</span><span class="planet">Planet</span></td><td align="right"><span class="title">TMCore Command Line Tools</span></td></tr></table></div><div class="article" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="d0e1"></a>TMCore Command Line Tools</h2></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="#d0e4">Introduction</a></span></dt><dt><span class="section"><a href="#tmimport">tmimport : XTM Import Utility</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e17">Command Synopsis</a></span></dt><dt><span class="section"><a href="#d0e135">Usage Examples</a></span></dt></dl></dd><dt><span class="section"><a href="#tmexport">tmexport : XTM Export Utility</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e180">Command Synopsis</a></span></dt><dt><span class="section"><a href="#d0e292">Usage Examples</a></span></dt></dl></dd><dt><span class="section"><a href="#tmdelete">tmdelete : Deletion Utility</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e329">Command Synopsis</a></span></dt><dt><span class="section"><a href="#d0e427">Usage Examples</a></span></dt></dl></dd><dt><span class="section"><a href="#npcl">npcl : Topic Map Schema Utility</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e469">Command Synopsis</a></span></dt><dt><span class="section"><a href="#d0e620">Usage Examples</a></span></dt></dl></dd><dt><span class="section"><a href="#tmdiag">tmdiag: Topic Map Diagnostic Utility</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e695">Command Synopsis</a></span></dt><dt><span class="section"><a href="#d0e812">Usage Examples</a></span></dt></dl></dd><dt><span class="section"><a href="#tmdiag">TMServiceQueryInvoker: TMService Query Diagnostic Utility</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e840">Command Synopsis</a></span></dt><dt><span class="section"><a href="#d0e912">Usage Examples</a></span></dt></dl></dd></dl></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e4"></a>Introduction</h2></div></div></div><p>This document describes the command line tools distributed with
+    TMCore. Each tool is documented in a separate section detailing the
+    purpose of the tool and the command line parameters it takes.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="tmimport"></a>tmimport : XTM Import Utility</h2></div></div></div><p>The <span><strong class="command">tmimport</strong></span> command can be used to import data
+    from an XTM file into a topic map in the TMCore system. The imported data
+    can either be merged with an existing topic map or loaded into a new topic
+    map.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e17"></a>Command Synopsis</h3></div></div></div><div class="cmdsynopsis"><p><code class="command">tmimport</code>  [/host:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/database:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/userid:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/password:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/mapname:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/verbose] {<em class="replaceable"><code>filename</code></em>}</p></div><div class="table"><a name="d0e48"></a><p class="title"><b>Table&nbsp;1.&nbsp;tmimport Parameter Summary</b></p><table summary="tmimport Parameter Summary" cellspacing="0" cellpadding="3" border="1"><colgroup><col><col></colgroup><thead><tr><th><p>Parameter (Short Form)</p></th><th><p>Description</p></th></tr></thead><tbody><tr><td>/host (/h)</td><td><p>Specifies the name or IP address of the database
+              server that hosts the TMCore system database.
+              </p><p>Defaults to 'localhost'.</p></td></tr><tr><td>/database (/d)</td><td><p>Specifies the name of the database catalog that
+              contains the TMCore system tables. </p><p>Defaults to
+              'topicmap'.</p></td></tr><tr><td>/userid (/u)</td><td><p>Specifies the database user ID to use when
+              connecting to the database.</p><p>If this parameter is
+              omitted, the connection will instead use the current Windows
+              login for database authentication.</p></td></tr><tr><td>/password (/p)</td><td><p>Specifies the password to use when connection to
+              the database.</p><p>This parameter is ignored if the
+              <em class="parameter"><code>/userid:</code></em> parameter is not present. If the
+              <em class="parameter"><code>/userid:</code></em> parameter is present and this
+              parameter is omitted, the program will attempt to connect to the
+              database using the specified user ID and no
+              password.</p></td></tr><tr><td>/srcuri (/s)</td><td><p>Specifies the URI which will be used for the
+              resolution of relative paths contained in the XTM file.
+              </p><p>If this parameter is not specified, then relative
+              paths will be resolved against the path to the imported
+              file.</p></td></tr><tr><td>/mapname (/m)</td><td><p>Specifies the name of the topic map to be populated
+              with the XTM data.</p><p>If the TMCore system does not
+              contain a topic map with that name, then a new topic map will be
+              created. If a topic map already exists with the specified name,
+              then the XTM data will be merged with the existing data in the
+              named topic map. If this parameter is omitted, then the value of
+              the <em class="parameter"><code>/srcuri:</code></em> parameter will be used as
+              the topic map name.</p><p> If both this parameter and the
+              <em class="parameter"><code>/srcuri</code></em>: parameter are omitted, then the
+              file:// URI of the imported XTM file will be used as the topic
+              map name.</p></td></tr><tr><td>/verbose (/v)</td><td><p>Give more verbose error messages.</p></td></tr><tr><td>filename</td><td><p>The path to the XTM file to be
+              imported.</p></td></tr></tbody></table></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e135"></a>Usage Examples</h3></div></div></div><div class="literallayout"><p>tmimport&nbsp;c:\mymap.xtm</p></div><p>Imports data from <code class="filename">mymap.xtm</code> into the TMCore
+      system. All relative URIs will be resolved against the path to the topic
+      map expressed as a file:// URI (i.e. against file://c/mymap.xtm). This
+      URI will also be used as the name of the imported topic map in the
+      TMCore system (if a topic map with this name already exists, then the
+      data from <code class="filename">mymap.xtm</code> will be merged into the
+      existing topic map).</p><div class="literallayout"><p>tmimport&nbsp;/host:tmserver&nbsp;/database:test&nbsp;c:\mymap.xtm</p></div><p>Operates in the same way as the first example, but connects to a
+      remote database server and a non-default catalog. Note that even when
+      importing data into a remote server, all file paths are still resolved
+      locally and the topic map name will still be generated from the file://
+      URI of the local file.</p><div class="literallayout"><p>tmimport&nbsp;/userid:tmguy&nbsp;/password:ihearttms&nbsp;c:\mymap.xtm</p></div><p>Operates in the same way as the first example, but uses a database
+      account to authorise access to the TMCore system.</p><div class="literallayout"><p>tmimport&nbsp;/srcuri:http://www.example.com/tmdata/mymap.xtm&nbsp;mymap.xtm</p></div><p>Imports data from <code class="filename">mymap.xtm</code> into the TMCore
+      system. All relative URIs will be resolved against the URI
+      http://www.example.com/tmdata/mymap.xtm. This URI will also be used as
+      the name of the imported topic map in the TMCore system.</p><div class="literallayout"><p>tmimport&nbsp;/srcuri:http://www.example.com/tmdata/index.xtm&nbsp;/mapname:index.xtm&nbsp;mymap.xtm</p></div><p>Imports data from <code class="filename">mymap.xtm</code> into the TMCore
+      system. All relative URIs will be resolved against the URI
+      http://www.example.com/tmdata/index.xtm. The data will be imported into
+      the topic map named index.xtm (if the topic map does not already exist,
+      it will be created).</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="tmexport"></a>tmexport : XTM Export Utility</h2></div></div></div><p>The <span><strong class="command">tmexport</strong></span> command can be used to export topic
+    maps from the TMCore system as XTM files. The utility includes an option
+    to dump all of the topic maps from the system as XTM, or to specify
+    selected topic map(s) to export.</p><p>Topic maps are always exported to a file in the current directory
+    with the file name being the same as the topic map name in the topic map
+    system. Any special characters in a topic map name that are not allowed as
+    file name characters will be replaced with the underscore (_)
+    character.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e180"></a>Command Synopsis</h3></div></div></div><div class="cmdsynopsis"><p><code class="command">tmexport</code>  [/host:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/database:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/userid:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/password:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/all] [/force] [/verbose] {<em class="replaceable"><code>mapname</code></em>...}</p></div><div class="table"><a name="d0e211"></a><p class="title"><b>Table&nbsp;2.&nbsp;tmexport Parameter Summary</b></p><table summary="tmexport Parameter Summary" cellspacing="0" cellpadding="3" border="1"><colgroup><col><col></colgroup><thead><tr><th><p>Parameter (Short Form)</p></th><th><p>Description</p></th></tr></thead><tbody><tr><td>/host (/h)</td><td><p>Specifies the name or IP address of the database
+              server that hosts the TMCore system database.
+              </p><p>Defaults to 'localhost'.</p></td></tr><tr><td>/database (/d)</td><td><p>Specifies the name of the database catalog that
+              contains the TMCore system tables. </p><p>Defaults to
+              'topicmap'.</p></td></tr><tr><td>/userid (/u)</td><td><p>Specifies the database user ID to use when
+              connecting to the database.</p><p>If this parameter is
+              omitted, the connection will instead use the current Windows
+              login for database authentication.</p></td></tr><tr><td>/password (/p)</td><td><p>Specifies the password to use when connection to
+              the database.</p><p>This parameter is ignored if the
+              <em class="parameter"><code>/userid:</code></em> parameter is not present. If the
+              <em class="parameter"><code>/userid:</code></em> parameter is present and this
+              parameter is omitted, the program will attempt to connect to the
+              database using the specified user ID and no
+              password.</p></td></tr><tr><td>/all (/a)</td><td><p>Specifies that all topic maps in the TMCore system
+              should be exported.</p> <p>If this parameter is specified
+              then any topic map names provided on the command-line will be
+              ignored and all topic maps will be exported.</p></td></tr><tr><td>/force (/f)</td><td><p>If this switch is specified on the command line,
+              then the application will silently overwrite existing files.
+              Otherwise, you will be prompted for each possible file
+              overwrite. </p></td></tr><tr><td>/verbose (/v)</td><td><p>Give more verbose error messages.</p></td></tr><tr><td>mapname</td><td><p>The name of the topic map to be exported. You may
+              specify multiple topic map names on the command line by
+              separating each name with a space. If a topic map name contains
+              a space, use quotes on the command line (e.g. <span><strong class="command">tmexport
+              "My Topic Map"</strong></span>).</p></td></tr></tbody></table></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e292"></a>Usage Examples</h3></div></div></div><p>The following examples do not show examples of the /host /database
+      /userid or /password options which work exactly as for the <a href="#tmimport" title="tmimport : XTM Import Utility">tmimport</a> application.</p><div class="literallayout"><p>tmexport&nbsp;mymap.xtm</p></div><p>Exports the topic map in the TMCore system with the name
+      'mymap.xtm'. The data will be written to a local file named
+      <code class="filename">mymap.xtm</code>.</p><div class="literallayout"><p>tmexport&nbsp;mymap.xtm&nbsp;myothermap</p></div><p>Exports the topic maps in the TMCore system with the names
+      'mymap.xtm' and 'myothermap'. The data will be written to the files
+      <code class="filename">mymap.xtm</code> and <code class="filename">myothermap</code>
+      respectively.</p><div class="literallayout"><p>tmexport&nbsp;/a&nbsp;/f</p></div><p>Exports all topic maps from the TMCore system to XTM files in the
+      local directory. This export will silently overwrite any existing files
+      in the same directory when a name-clash occurs (because of the /f
+      option).</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="tmdelete"></a>tmdelete : Deletion Utility</h2></div></div></div><p>The <span><strong class="command">tmdelete</strong></span> command can be used to remove a
+    topic map from the TMCore system. Because this deletion cannot be
+    reversed, by default the command will prompt you to confirm that you
+    really want the deletion to be performed.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e329"></a>Command Synopsis</h3></div></div></div><div class="cmdsynopsis"><p><code class="command">tmdelete</code>  [/host:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/database:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/userid:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/password:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/force] [/verbose] {<em class="replaceable"><code>mapname</code></em>}</p></div><div class="table"><a name="d0e358"></a><p class="title"><b>Table&nbsp;3.&nbsp;tmdelete Parameter Summary</b></p><table summary="tmdelete Parameter Summary" cellspacing="0" cellpadding="3" border="1"><colgroup><col><col></colgroup><thead><tr><th><p>Parameter (Short Form)</p></th><th><p>Description</p></th></tr></thead><tbody><tr><td>/host (/h)</td><td><p>Specifies the name or IP address of the database
+              server that hosts the TMCore system database.
+              </p><p>Defaults to 'localhost'.</p></td></tr><tr><td>/database (/d)</td><td><p>Specifies the name of the database catalog that
+              contains the TMCore system tables. </p><p>Defaults to
+              'topicmap'.</p></td></tr><tr><td>/userid (/u)</td><td><p>Specifies the database user ID to use when
+              connecting to the database.</p><p>If this parameter is
+              omitted, the connection will instead use the current Windows
+              login for database authentication.</p></td></tr><tr><td>/password (/p)</td><td><p>Specifies the password to use when connection to
+              the database.</p><p>This parameter is ignored if the
+              <em class="parameter"><code>/userid:</code></em> parameter is not present. If the
+              <em class="parameter"><code>/userid:</code></em> parameter is present and this
+              parameter is omitted, the program will attempt to connect to the
+              database using the specified user ID and no
+              password.</p></td></tr><tr><td>/force (/f)</td><td><p>If this command line option is specified, then the
+              topic map will be deleted without a confirmation prompt. Use
+              with caution! </p></td></tr><tr><td>/verbose (/v)</td><td><p>Give more verbose error messages.</p></td></tr><tr><td>mapname</td><td><p>The name of the topic map to be
+              deleted</p></td></tr></tbody></table></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e427"></a>Usage Examples</h3></div></div></div><div class="literallayout"><p>tmdelete&nbsp;mymap</p></div><p>Deletes the topic map named 'mymap' from the TMCore server on the
+      local machine using the default catalog 'topicmap'.</p><div class="literallayout"><p>tmdelete&nbsp;/host:tmserver&nbsp;/database:test&nbsp;mymap</p></div><p>Operates in the same way as the first example, but connects to a
+      remote database server and a non-default catalog.</p><div class="literallayout"><p>tmdelete&nbsp;/userid:tmguy&nbsp;/password:ihearttms&nbsp;mymap</p></div><p>Operates in the same way as the first example, but uses a database
+      account to authorise access to the TMCore system.</p><div class="literallayout"><p>tmdelete&nbsp;/force&nbsp;mymap</p></div><p>Deletes the topic map named 'mymap' from the TMCore server on the
+      local machine without prompting for confirmation.</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="npcl"></a>npcl : Topic Map Schema Utility</h2></div></div></div><p>The <span><strong class="command">npcl</strong></span> command can be used to work with the
+    NetworkedPlanet Constraint Language (NPCL). Using this tool you
+    can:</p><div class="orderedlist"><ol type="1"><li><p>Export an NPCL schema from a topic map.</p></li><li><p>Import an NPCL schema into a topic map, either updating or
+        replacing existing schema information.</p></li><li><p>Generate an NPCL schema by example, based on a topic map.</p></li></ol></div><p>The <span><strong class="command">npcl</strong></span> command works with NPCL schema files
+    that use the NPCL XML syntax. You can read more about NPCL in the Engine
+    API Guide document.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e469"></a>Command Synopsis</h3></div></div></div><div class="cmdsynopsis"><p><code class="command">npcl</code>  [/host:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/database:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/userid:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/password:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/verbose] [/sibase:<em class="replaceable"><code>&lt;base uri&gt;</code></em>]  /action:{add|overwrite|export|generate}   /mapname:<em class="replaceable"><code>&lt;topic map
+        name&gt;</code></em>   /npcl:<em class="replaceable"><code>&lt;filename&gt;</code></em> </p></div><div class="table"><a name="d0e507"></a><p class="title"><b>Table&nbsp;4.&nbsp;npcl Parameter Summary</b></p><table summary="npcl Parameter Summary" cellspacing="0" cellpadding="3" border="1"><colgroup><col><col></colgroup><thead><tr><th><p>Parameter (Short Form)</p></th><th><p>Description</p></th></tr></thead><tbody><tr><td>/host (/h)</td><td><p>Specifies the name or IP address of the database
+              server that hosts the TMCore system database.
+              </p><p>Defaults to 'localhost'.</p></td></tr><tr><td>/database (/d)</td><td><p>Specifies the name of the database catalog that
+              contains the TMCore system tables. </p><p>Defaults to
+              'topicmap'.</p></td></tr><tr><td>/userid (/u)</td><td><p>Specifies the database user ID to use when
+              connecting to the database.</p><p>If this parameter is
+              omitted, the connection will instead use the current Windows
+              login for database authentication.</p></td></tr><tr><td>/password (/p)</td><td><p>Specifies the password to use when connection to
+              the database.</p><p>This parameter is ignored if the
+              <em class="parameter"><code>/userid:</code></em> parameter is not present. If the
+              <em class="parameter"><code>/userid:</code></em> parameter is present and this
+              parameter is omitted, the program will attempt to connect to the
+              database using the specified user ID and no
+              password.</p></td></tr><tr><td>/verbose (/v)</td><td><p>Give more verbose error messages.</p></td></tr><tr><td>/sibase (/si)</td><td><p>Used only for the generate action. This parameter
+              specifies a base URI for generating subject identifiers for
+              topics which do not currently have one but are required to do so
+              to be included in the NPCL schema. </p><p>The generated
+              subject identifier for a topic will be created by concatenating
+              the display name for the topic (converted to lower case) with
+              the base URI, with an additional numeric suffix if required to
+              make the identifier unique.</p><p>If this option is
+              omitted, the subject identifiers are instead generated in the
+              form 'urn:x-tmcore:topicid:<em class="replaceable"><code>database id of
+              topic</code></em>', which will be recognised by the NPCL
+              import process and will ensure that those topics are correctly
+              updated with schema information.</p><p>If you are
+              generating a schema that you wish to then import back into the
+              same topic map, we recommend that you OMIT this option. If you
+              are generating a schema that you want to use on other topic
+              maps, we recommend that you SPECIFY this option.</p></td></tr><tr><td>/action (/a)</td><td><p>Specifies the action to be performed. This
+              parameter is REQUIRED and must have one of the following
+              values:</p><div class="variablelist"><dl><dt><span class="term">add</span></dt><dd><p>Specifies that the NPCL file should be imported
+                      into the topic map, adding to any existing schema
+                      information.</p></dd><dt><span class="term">overwrite</span></dt><dd><p>Specifies that the NPCL file should be imported
+                      into the topic map, replacing all existing schema
+                      information.</p></dd><dt><span class="term">export</span></dt><dd><p>Specifies that the schema information in the topic
+                      map should be written to the NPCL file.</p></dd><dt><span class="term">generate</span></dt><dd><p>Specifies that the topic map should be processed
+                      to generate a schema based on the actual usage of types,
+                      scopes etc. in the topic map. The schema will be written
+                      to the specified NPCL file.</p></dd></dl></div></td></tr><tr><td>/mapname (/m)</td><td>Specifies the name of the topic map to be read from or
+              written to (depending on the action chosen).</td></tr><tr><td>/npcl (/n)</td><td>Specifies the path to the NPCL XML file to be read from
+              or written to (depending on the action chosen). On an export or
+              generate action, if the file already exists, you will be
+              prompted to confirm the overwriting of the file.</td></tr></tbody></table></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e620"></a>Usage Examples</h3></div></div></div><div class="literallayout"><p>npcl&nbsp;/a:export&nbsp;/m:mytopicmap.xtm&nbsp;/n:mytopicmap-schema.npcl</p></div><p>Exports the NPCL Schema information from the TMCore topic map
+      named "mytopicmap.xtm" to a local NPCL XML file named
+      <code class="filename">mytopicmap-schema.npcl</code>.</p><div class="literallayout"><p>npcl&nbsp;/a:overwrite&nbsp;/m:mytopicmap.xtm&nbsp;/n:new-schema.npcl</p></div><p>Replaces the NPCL Schema information contained in the TMCore topic
+      map named "mytopicmap.xtm" with the schema defined in the NPCL XML file
+      named <code class="filename">new-schema.npcl</code>.</p><div class="literallayout"><p>npcl&nbsp;/a:add&nbsp;/m:mytopicmap.xtm&nbsp;/n:new-schema.npcl</p></div><p>Adds the NPCL Schema information contained in the local NPCL XML
+      file named <code class="filename">new-schema.npcl</code> to the schema
+      information contained in the TMCore topic map named
+      "mytopicmap.xtm".</p><div class="literallayout"><p>npcl&nbsp;/a:generate&nbsp;/m:mytopicmap.xtm&nbsp;/n:mytopicmap-schema.npcl</p></div><p>Infers a new NPCL Schema based on the actual usage of types,
+      scopes etc. in the TMCore topic map named "mytopicmap.xtm". The inferred
+      schema is written to the local NPCL XML file named
+      <code class="filename">mytopicmap-schema.npcl</code>. Topics in the source topic
+      map which do not have subject identifiers but are required to do so by
+      the restrictions of NPCL will have subject identifiers generated using
+      the default form 'urn:x-tmcore:topicid:<em class="replaceable"><code>database id of
+      topic</code></em>'. This allows a subsequent import of the schema
+      information into the same topic map (using the /a:add or /a:overwrite
+      options) to locate and update those topics correctly.</p><div class="literallayout"><p>npcl&nbsp;/a:generate&nbsp;/m:mytopicmap.xtm&nbsp;/n:mytopicmap-schema.npcl&nbsp;/si:http://www.example.com/psi/ontology/</p></div><p>Infers a new NPCL Schema based on the actual usage of types,
+      scopes etc. in the TMCore topic map named "mytopicmap.xtm". The inferred
+      schema is written to the local NPCL XML file named
+      <code class="filename">mytopicmap-schema.xml</code>. Topics in the source topic
+      map which do not have subject identifiers but are required to do so by
+      the restrictions of NPCL will have subject identifiers generated using
+      the custom subject identifier prefix
+      'http://www.example.com/psi/ontology/'. On a subsequent import of the
+      schema information into the same topic map, the topics with these
+      generated subject identifiers will be created as new topics and will not
+      properly update the topics from which they were generated. This option
+      is most useful when you want to generate a schema from one topic map and
+      then import that schema into a different topic map or use it as the
+      basis for creating a new topic map from scratch.</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="tmdiag"></a>tmdiag: Topic Map Diagnostic Utility</h2></div></div></div><p>The <span><strong class="command">tmdiag</strong></span> command can be used to query topic
+    maps searching for information about a particular topic map, topic or
+    topic attribute. Using this tool you can:</p><div class="orderedlist"><ol type="1"><li><p>Get a list of topic maps in the database.</p></li><li><p>Display information about any topic map object:</p><div class="orderedlist"><ol type="a"><li><p>Topic Map</p></li><li><p>Topic</p></li><li><p>Topic name</p></li><li><p>Occurrence</p></li><li><p>Association</p></li><li><p>Association Role</p></li></ol></div></li></ol></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e695"></a>Command Synopsis</h3></div></div></div><div class="cmdsynopsis"><p><code class="command">tmdiag</code>  [/host:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/database:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/userid:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/password:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/objectid:<em class="replaceable"><code>&lt;integer&gt;</code></em>]</p></div><div class="table"><a name="d0e721"></a><p class="title"><b>Table&nbsp;5.&nbsp;npcl Parameter Summary</b></p><table summary="npcl Parameter Summary" cellspacing="0" cellpadding="3" border="1"><colgroup><col><col></colgroup><thead><tr><th><p>Parameter (Short Form)</p></th><th><p>Description</p></th></tr></thead><tbody><tr><td>/host (/h)</td><td><p>Specifies the name or IP address of the database
+              server that hosts the TMCore system database.
+              </p><p>Defaults to 'localhost'.</p></td></tr><tr><td>/database (/d)</td><td><p>Specifies the name of the database catalog that
+              contains the TMCore system tables. </p><p>Defaults to
+              'topicmap'.</p></td></tr><tr><td>/userid (/u)</td><td><p>Specifies the database user ID to use when
+              connecting to the database.</p><p>If this parameter is
+              omitted, the connection will instead use the current Windows
+              login for database authentication.</p></td></tr><tr><td>/password (/p)</td><td><p>Specifies the password to use when connection to
+              the database.</p><p>This parameter is ignored if the
+              <em class="parameter"><code>/userid:</code></em> parameter is not present. If the
+              <em class="parameter"><code>/userid:</code></em> parameter is present and this
+              parameter is omitted, the program will attempt to connect to the
+              database using the specified user ID and no
+              password.</p></td></tr><tr><td>/verbose (/v)</td><td><p>Give more verbose error messages.</p></td></tr><tr><td>/objectId (/o)</td><td><p>The non-negative integer identity of a topic map
+              object in the database that is to be searched
+              for.</p><p>If no value is specified or 0 is specified then
+              a list of the topic maps in the database is
+              displayed.</p></td></tr><tr><td>/name (/n)</td><td>A topic name to search for. % and _ may be used as
+              wildcards for any string or a single character
+              respectively.</td></tr><tr><td>/subjectidentifier (/s)</td><td>A full or partial specification of a subject indicator. %
+              and _ may be used as wildcards for any string or a single
+              character respectively. Specifying this option will display
+              <span class="emphasis"><em>all</em></span> topics that match the subject
+              identifier pattern given, so care should be taken with this
+              option when specifying very commonly used patterns, such as
+              <span class="emphasis"><em>http%</em></span>.</td></tr><tr><td>/occValue</td><td>Used to find an occurrence by value. % and _ may be used
+              as wildcards for any string or a single character
+              respectively.</td></tr><tr><td>/occResource</td><td>Used to find an occurrence by resource. % and _ may be
+              used as wildcards for any string or a single character
+              respectively.</td></tr></tbody></table></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e812"></a>Usage Examples</h3></div></div></div><div class="literallayout"><p>tmdiag</p></div><p>Displays a list of topic maps available in the local
+      <span class="emphasis"><em>topicmap </em></span>database.</p><div class="literallayout"><p>tmdiag&nbsp;/o:23</p></div><p>Displays information about the topic map object with identity
+      <span class="emphasis"><em>23</em></span>.</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="tmdiag"></a>TMServiceQueryInvoker: TMService Query Diagnostic Utility</h2></div></div></div><p>The <span><strong class="command">TMServiceQueryInvoker</strong></span> command can be used to
+    invoke customized queries on the TMCore TMService web service. It can be
+    used for testing purposes by developers, or for diagnosing faults in
+    TMService query declarations in <code class="filename">web.config</code>.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e840"></a>Command Synopsis</h3></div></div></div><div class="cmdsynopsis"><p><code class="command">TMServiceQueryInvoker</code>  [/host:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/database:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/userid:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/password:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/objectid:<em class="replaceable"><code>&lt;integer&gt;</code></em>]</p></div><div class="table"><a name="d0e866"></a><p class="title"><b>Table&nbsp;6.&nbsp;npcl Parameter Summary</b></p><table summary="npcl Parameter Summary" cellspacing="0" cellpadding="3" border="1"><colgroup><col><col></colgroup><thead><tr><th><p>Parameter (Short Form)</p></th><th><p>Description</p></th></tr></thead><tbody><tr><td>/url (/u)</td><td><p>Specifies the URL to the TMService asmx
+              endpoint.</p><p>Defaults to
+              <code class="literal">http://localhost/tmws/TMService.asmx</code>.</p></td></tr><tr><td>/action (/a)</td><td>Either <code class="literal">query</code> or
+              <code class="literal">queries</code> depending on which method of
+              TMService you wish to invoke.</td></tr><tr><td>/query (/q)</td><td>The name of the query that is to be invoked.</td></tr><tr><td>/param (/p)</td><td><p>Specifies a parameter to be passed to the
+              query.</p></td></tr></tbody></table></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e912"></a>Usage Examples</h3></div></div></div><div class="literallayout"><p>TMServiceQueryInvoker&nbsp;"/u:http://localhost/tmws/TMService.asmx"&nbsp;/query:EPiModule_GetAllTypes&nbsp;/param:4333&nbsp;/a:query</p></div><p>Invokes the <code class="literal">EPiModule_GetAllTypes</code> query on the
+      TMService deployed at
+      <code class="literal">http://localhost/tmws/TMService.asmx</code> passing a single
+      parameter: <code class="literal">4333.</code></p><div class="literallayout"><p>TMServiceQueryInvoker&nbsp;/query:SitecoreModule_SearchTopicsByNameAndTypes&nbsp;/param:5423&nbsp;/param:64226&nbsp;/a:queries</p></div><p>Invokes the
+      <code class="literal">SitecoreModule_SearchTopicsByNameAndTypes</code> query on
+      the TMService passing two positional parameters: <code class="literal">4333</code>
+      and <code class="literal">64226</code>. As the TMRQL defined by this query returns
+      multiple data tables we also specify
+      <code class="literal">/a:queries</code>.</p></div></div></div></body></html>

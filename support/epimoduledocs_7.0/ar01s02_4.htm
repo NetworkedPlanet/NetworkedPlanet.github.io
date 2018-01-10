@@ -1,0 +1,84 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Installation &amp; Configuration</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?ar01s02_4.htm"; }
+  else { parent.quicksync('a7.2'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Installation &amp; Configuration</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="ar01s01s01.htm">Previous</a>&nbsp;
+     <a href="ar01s02s01_3.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p style="margin: 14px 0px 10px 0px;">To install the integration, copy the contents of the <span style="font-size: 10pt; font-family: 'Courier New';">bin</span> folder in to your EPiServer's web application <span style="font-size: 10pt; font-family: 'Courier New';">bin</span> folder. Only the DLL files are required, however copying the XML files will ensure that you have type-ahead comment support in Visual Studio:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 14px 0px 10px 1px;"><table cellspacing="0" cellpadding="3" border="1" style="border: solid 2px #000000; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Filename</p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Purpose</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-size: 10pt; font-family: 'Courier New';">NetworkedPlanet.EPiServerTopicMapIndexModule</span></p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Contains the event registration plug-in to detect changes in topics and the EPiServer specific web parts. This is the main entry point for the integration.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-size: 10pt; font-family: 'Courier New';">NetworkedPlanet.EnterpriseServices.Web</span></p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Contains the base web parts and support code for communicating with the TMIS client</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-size: 10pt; font-family: 'Courier New';">NetworkedPlanet.EnterpriseServiceClient</span></p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Contains the WCF client code for interacting with the TMIS server.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-size: 10pt; font-family: 'Courier New';">NetworkedPlanet.ServiceCommon</span></p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Contains the TMIS code that is common between server and client.</p>
+</td>
+</tr>
+</table>
+</div>
+<p style="margin: 14px 0px 10px 1px;"><span style="font-size: 10pt; font-family: 'Arial';">After installing the binaries you will need to </span><a href="ar01s02s01_3.htm">make some changes to the web.config file</a>.</p>
+
+</td></tr></table>
+
+</body>
+</html>

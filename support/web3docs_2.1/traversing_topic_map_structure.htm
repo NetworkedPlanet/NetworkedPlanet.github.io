@@ -1,0 +1,172 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Traversing Topic Map Structures</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?traversing_topic_map_structure.htm"; }
+  else { parent.quicksync('a6.5.6');  parent.track('topic', location.href);}
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Traversing Topic Map Structures</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="traversing_associations.htm">Previous</a>&nbsp;
+     <a href="tmsparql_reifier_predicate.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>The Web3 Platform implementation of SPARQL provides a number of "built-in" predicates that allow queries to be written that directly query the underlying topic map structures. These predicates can be used to construct more complex queries that are not possible with the short-cuts provided for retrieving topic property values and related topics.</p>
+<p>&nbsp;</p>
+<p>All of the built-in predicates are contained in the namespace <a href="http://www.networkedplanet.com/tmsparql/" target="_blank" onclick="return HMTrackTopiclink(this);" class="weblink">http://www.networkedplanet.com/tmsparql/</a>. </p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="94" style="width:94px;"><p>Predicate</p>
+</td>
+<td valign="top" width="553" style="width:553px;"><p>Description</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="94" style="width:94px;"><p>reifier</p>
+</td>
+<td valign="top" width="553" style="width:553px;"><p>Maps an association or topic property as the predicate subject to the topic that reifies that item as the object.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="94" style="width:94px;"><p>value</p>
+</td>
+<td valign="top" width="553" style="width:553px;"><p>Maps a topic property as the predicate subject to the value of that property as the object.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="94" style="width:94px;"><p>integerValue</p>
+</td>
+<td valign="top" width="553" style="width:553px;"><p>Maps a topic property as the predicate subject to the integer value of that property as the object. Results in no mapping if the topic property has a value of a different data-type.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="94" style="width:94px;"><p>decimalValue</p>
+</td>
+<td valign="top" width="553" style="width:553px;"><p>Maps a topic property as the predicate subject to the integer value of that property as the object. Results in no mapping if the topic property has a value of a different data-type.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="94" style="width:94px;"><p>doubleValue</p>
+</td>
+<td valign="top" width="553" style="width:553px;"><p>Maps a topic property as the predicate subject to the integer value of that property as the object. Results in no mapping if the topic property has a value of a different data-type.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="94" style="width:94px;"><p>dateTimeValue</p>
+</td>
+<td valign="top" width="553" style="width:553px;"><p>Maps a topic property as the predicate subject to the integer value of that property as the object. Results in no mapping if the topic property has a value of a different data-type.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="94" style="width:94px;"><p>topicProperty</p>
+</td>
+<td valign="top" width="553" style="width:553px;"><p>Maps a topic as the predicate subject to all of its topic properties as the predicate object.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="94" style="width:94px;"><p>label</p>
+</td>
+<td valign="top" width="553" style="width:553px;"><p>Maps a topic as the predicate subject to all of its labels as the predicate object. </p>
+<p>This predicate can be further refined by adding /{language code} to the end of the predicate URI, resulting in a mapping of the topic as the predicate subject to the label for that topic in the specified language as the predicate object.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="94" style="width:94px;"><p>subjectIdentifier</p>
+</td>
+<td valign="top" width="553" style="width:553px;"><p>Maps a topic as the predicate subject to all of its subject identifier URIs as the predicate object.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="94" style="width:94px;"><p>subjectLocator</p>
+</td>
+<td valign="top" width="553" style="width:553px;"><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="553" style="width:553px;"><p>Maps a topic as the predicate subject to all of its subject locator URIs as the predicate object.</p>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="94" style="width:94px;"><p>itemIdentifier</p>
+</td>
+<td valign="top" width="553" style="width:553px;"><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="553" style="width:553px;"><p>Maps a topic as the predicate subject to all of its item identifier URIs as the predicate object.</p>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="94" style="width:94px;"><p>role</p>
+</td>
+<td valign="top" width="553" style="width:553px;"><p>Maps an association as the predicate subject to all of its roles as the predicate object.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="94" style="width:94px;"><p>player</p>
+</td>
+<td valign="top" width="553" style="width:553px;"><p>Maps a role as the predicate subject to the topic that plays that role as the predicate object.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="94" style="width:94px;"><p>scope</p>
+</td>
+<td valign="top" width="553" style="width:553px;"><p>Maps an association or topic property as the predicate subject to all of the topics in its scope as the predicate object.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="94" style="width:94px;"><p>created</p>
+</td>
+<td valign="top" width="553" style="width:553px;"><p>Maps a topic, association, role or topic property as the predicate subject to the date/time when that item was first created in the Web3 store as the predicate object.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="94" style="width:94px;"><p>modified</p>
+</td>
+<td valign="top" width="553" style="width:553px;"><p>Maps a topic, association, role or topic property as the predicate subject to the date/time when that item was last modified in the Web3 store as the predicate object.</p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+
+</td></tr></table>
+
+</body>
+</html>

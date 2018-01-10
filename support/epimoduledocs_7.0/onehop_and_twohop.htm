@@ -1,0 +1,126 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>OneHop and TwoHop Queries</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?onehop_and_twohop.htm"; }
+  else { parent.quicksync('a5.3.1'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">OneHop and TwoHop Queries</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="ar01s03_2.htm">Previous</a>&nbsp;
+     <a href="one_hop_queries.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>The one and two hop helpers are used to provide navigation links from the page currently being viewed by the user to other associated pages in the topic. This functionality is available through the use of the <span class="f_CodeExample">NetworkedPlanet.EPiServerModule.TopicMapQueryHelper</span> class.</p>
+<p>To instantiate the class you need to initialize it specifying whether the control is rendering in Edit mode (for editors) or View mode (for normal users). </p>
+<p>To initialize the query helper in view mode you can use one of these options:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">TopicMapQueryHelper&nbsp;helper&nbsp;=&nbsp;new&nbsp;TopicMapQueryHelper();&nbsp;&nbsp;//&nbsp;Default&nbsp;is&nbsp;View&nbsp;mode</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">TopicMapQueryHelper&nbsp;helper&nbsp;=&nbsp;new&nbsp;TopicMapQueryHelper(TopicMapQueryHelper.QueryMode.View);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">TopicMapQueryHelper&nbsp;helper&nbsp;=&nbsp;new&nbsp;TopicMapQueryHelper(true);</span></p>
+<p>To initialize the query helper in edit mode use one of these options:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">TopicMapQueryHelper&nbsp;helper&nbsp;=&nbsp;new&nbsp;TopicMapQueryHelper(TopicMapQueryHelper.QueryMode.Edit);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">TopicMapQueryHelper&nbsp;helper&nbsp;=&nbsp;new&nbsp;TopicMapQueryHelper(false);</span></p>
+<p>The difference between View mode and Edit is mode is the filters that are applied to results from running a query against the topic map. The following filters, and their purposes are predefined by the <span class="f_InlineCode">QueryHelper</span>:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 14px 0px 10px 1px;"><table cellspacing="0" cellpadding="3" border="1" style="border: solid 2px #000000; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Filter</p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Description</p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Active in Mode(s)</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-size: 10pt; font-family: 'Courier New';">ExcludePagesNotInRecycleBinHandler</span></p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Excludes pages from results sets where the page is in the recycle bin.</p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">View, Edit</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-size: 10pt; font-family: 'Courier New';">ExcludePagesWithNoAccessHandler</span></p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Excludes pages from results sets where the user does not have access to the page.</p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">View, Edit</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-size: 10pt; font-family: 'Courier New';">ExcludeUnpublishedPagesHandler</span></p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Excludes pages from results sets that are not published.</p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">View</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-size: 10pt; font-family: 'Courier New';">ExcludeUnpublishedAssociationsHandler</span></p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Excludes pages from results sets where the page was found by traversing an association that is not published.</p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">View</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-size: 10pt; font-family: 'Courier New';">ExcludeOriginalPageHandler</span></p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Excludes pages from results sets that are the same page as the original page that the query was made from.</p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">View, Edit</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;"><span style="font-size: 10pt; font-family: 'Courier New';">ExcludeDeletedAssociationsHandler</span></p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Excludes pages from results sets where the page was found by traversing an association marked for deletion.</p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Edit</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_TableCaption"><span class="f_TableCaption">Query Helper Filters list, description and which modes they are active within.</span></p>
+<p class="p_Notes"><span class="f_Notes">There is a third mode: </span><span class="f_InlineCode">QueryMode.None</span><span class="f_Notes">, which initializes the query helper with no filters active.</span></p>
+<p>You are also able to define your own filters and add them to the query helper. Filter may be added and removed using:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">helper.PageValidationHandlers&nbsp;+=&nbsp;new&nbsp;ValidatePageHandler(...);&nbsp;//&nbsp;add&nbsp;a&nbsp;filter</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">helper.PageValidationHandlers&nbsp;-=&nbsp;existing&nbsp;page&nbsp;validation&nbsp;handler;&nbsp;//&nbsp;remove&nbsp;a&nbsp;filter</span></p>
+<p>The provided validation handlers are declared within the query helper as public static read-only members. See the API documentation for more information on how to implement your own page validation handlers.</p>
+<p style="margin: 19px 0px 19px 0px;"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="margin: 19px 0px 19px 0px;"><span style="font-size: 10pt; font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>ITopicMapSystem and TopicMapSystemFactory</title><link rel="stylesheet" href="../doc.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><link rel="start" href="index.html" title="TMCore Engine API Guide"><link rel="up" href="ch05.html" title="Chapter&nbsp;5.&nbsp;Core API"><link rel="prev" href="ch05.html" title="Chapter&nbsp;5.&nbsp;Core API"><link rel="next" href="ch05s01s01.html" title="Other ITopicMapSystem Methods"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="pageheader"><table class="logo" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td><span class="networked">Networked</span><span class="planet">Planet</span></td><td align="right"><span class="title">TMCore Engine API Guide</span></td></tr></table></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">ITopicMapSystem and TopicMapSystemFactory</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch05.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><th width="60%" align="center">Chapter&nbsp;5.&nbsp;Core API</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch05s01s01.html"><img src="../graphics/next.png" alt="Next"></a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="TopicMapSystem_TopicMapSystemFactory"></a>ITopicMapSystem and TopicMapSystemFactory</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="ch05s01s01.html">Other ITopicMapSystem Methods</a></span></dt></dl></div><p>The interface
+      <code class="interfacename">NetworkedPlanet.TMAPI.ITopicMapSystem</code>
+      represents a connection to a TMCore system. In the TMCore system, the
+      topic maps that it manages are each assigned a unique identifier string
+      specifed by the <span class="property">Name</span> property of the
+      <code class="interfacename">ITopicMap</code> instance. The property
+      <code class="methodname">ITopicMapSystem.TopicMapNames</code> returns a
+      read-only <code class="interfacename">IList</code> containing the
+      <span class="property">Name</span> property value of all topic maps that are
+      currently accesible through the
+      <code class="interfacename">ITopicMapSystem</code>. The
+      <code class="interfacename">ITopicMapSystem</code> method
+      <code class="methodname">GetTopicMap(String)</code>is an access method to
+      retrieve an <code class="interfacename">ITopicMap</code> from the
+      <code class="interfacename">ITopicMapSystem</code> using the value of its
+      <span class="property">Name</span> property as a key.</p><p>In addition, the <code class="interfacename">ITopicMapSystem</code>
+      interface allows you to create a new topic map in the TMCore system. To
+      create a new topic map, you will need to specify the unqiue name under
+      which the topic map should be stored. If you specify a name which is
+      already in use, a <code class="classname">TopicMapExists</code> exception will
+      be thrown.</p><p>An <code class="interfacename">ITopicMapSystem</code> instance cannot
+      be created directly, the TMCore API does not publicly expose a class
+      that implements this interface. Instead you must use the class
+      <code class="classname">NetworkedPlanet.TMAPI.TopicMapSystemFactory</code> to
+      configure and initialise an
+      <code class="interfacename">ITopicMapSystem</code> instance. The
+      configuration required for an
+      <code class="interfacename">ITopicMapSystem</code> is specified as a
+      collection of name/value pairs as shown in the following table:</p><div class="table"><a name="d0e962"></a><p class="title"><b>Table&nbsp;5.1.&nbsp;ITopicMapSystem Configuration Properties</b></p><table summary="ITopicMapSystem Configuration Properties" cellspacing="0" cellpadding="3" border="1"><colgroup><col><col><col></colgroup><tbody><tr><td>Property Name</td><td>Required?</td><td>Description</td></tr><tr><td>networkedplanet.tmcore.dbconnect</td><td>YES</td><td>The database connect string used to access the SQLServer
+              instance that holds the TMCore system tables.</td></tr><tr><td>networkedplanet.tmcore.commandtimeout</td><td>NO</td><td>The number of seconds that a TMRQL command executed via
+              <code class="methodname">ITopicMapSystem.ExecuteQuery</code> or
+              <code class="methodname">ITopicMapSystem.ExecuteQueries</code> will
+              time out after. Default value is 15.</td></tr></tbody></table></div><p>The <code class="classname">TopicMapSystemFactory</code> class provides an
+      overloaded method <code class="methodname">GetTopicMapSystem()</code> that
+      accepts this configuration information in a number of different ways.
+      The method <code class="methodname">GetTopicMapSystem()</code> with no
+      arguments will configure the
+      <code class="interfacename">ITopicMapSystem</code> instance using the local
+      application configuration file. This file is an XML file that is named
+      either <code class="filename">Web.config</code> for web applications or
+      <code class="filename"><em class="replaceable"><code>AppName</code></em>.config</code> for
+      applications (e.g. <code class="filename">MyApp.exe.config</code> for an
+      application called <code class="filename">MyApp.exe</code>). The configuration
+      information must go in the <code class="sgmltag-element">&lt;appSettings&gt;</code>
+      element of the config file. More information about the appSettings and
+      configuration files can be found <a href="http://msdn.microsoft.com/library/en-us/cpgenref/html/gngrfappsettingselement.asp" target="_top">here
+      on the Microsoft MSDN site</a>. An example of an application
+      configuration file is shown below:</p><div class="example"><a name="d0e1028"></a><p class="title"><b>Example&nbsp;5.1.&nbsp;A simple .config file for a TMCore Application</b></p><pre class="programlisting">&lt;?xml version="1.0" encocing="utf-8" ?&gt;
+&lt;configuration&gt;
+  ...
+  &lt;appSettings&gt;
+    &lt;add key="networkedplanet.tmcore.dbconnect"
+         value="Data Source=localhost;Integrated Security=SSPI; Initial Catalog=topicmap" /&gt;
+    ...
+  &lt;/appSettings&gt;
+  ...
+&lt;/configuration&gt;
+</pre></div><p>If you wish to retrieve the configuration information in some
+      other way, or wish to include a hard-coded set of configuration
+      parameters in your application, you can instead use the method
+      <code class="methodname">GetTopicMapSystem(NameValueCollection)</code>. The
+      <code class="classname">NameValueCollection</code> parameter contains the
+      property/value pairs to configure the
+      <code class="interfacename">ITopicMapSystem</code> that will be
+      returned.</p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch05.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch05.html"><img src="../graphics/up.png" alt="Up"></a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch05s01s01.html"><img src="../graphics/next.png" alt="Next"></a></td></tr><tr><td width="40%" align="left" valign="top">Chapter&nbsp;5.&nbsp;Core API&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html"><img src="../graphics/home.png" alt="Home"></a></td><td width="40%" align="right" valign="top">&nbsp;Other ITopicMapSystem Methods</td></tr></table></div></body></html>

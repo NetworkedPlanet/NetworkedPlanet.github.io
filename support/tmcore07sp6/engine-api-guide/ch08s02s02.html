@@ -1,0 +1,98 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Configuring The Application Ontology</title><link rel="stylesheet" href="../doc.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><link rel="start" href="index.html" title="TMCore Engine API Guide"><link rel="up" href="ch08s02.html" title="The ApplicationOntology Object"><link rel="prev" href="ch08s02s01.html" title="How the ApplicationOntology Works"><link rel="next" href="ch08s02s03.html" title="Using the ApplicationOntology"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="pageheader"><table class="logo" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td><span class="networked">Networked</span><span class="planet">Planet</span></td><td align="right"><span class="title">TMCore Engine API Guide</span></td></tr></table></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Configuring The Application Ontology</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch08s02s01.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><th width="60%" align="center">The ApplicationOntology Object</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch08s02s03.html"><img src="../graphics/next.png" alt="Next"></a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e2113"></a>Configuring The Application Ontology</h3></div></div></div><p>The Application Ontology object is configured in two steps. The
+    first step is to define the mappings between short identifiers (or short
+    identifier prefixes) and subject identifiers (or subject identifier
+    prefixes), and the second step is to specify which topic map or topic maps
+    should be searched for topics with the mapped subject identifiers during a
+    look-up.</p><p>The definition of the mappings can be done using an XML fragment.
+    This fragment can be part of a larger configuration file or a separate
+    file itself. The TMCore library provides a helper class to allow you to
+    embed the mappings as part of an application configuration (or web.config)
+    file.</p><p>The format of the XML fragment is as follows:</p><pre class="programlisting">&lt;ontology&gt;
+  &lt;identifierPrefix prefix="..." value="..."/&gt;
+  &lt;subject key="..." identifier="..."/&gt;
+&lt;/ontology&gt;
+</pre><div class="variablelist"><dl><dt><span class="term">ontology</span></dt><dd><p>The root element for the configuration fragment.</p></dd><dt><span class="term">identifierPrefix</span></dt><dd><p>This element specifies a mapping between a short identifier
+          prefix and a subject identifier prefix. The short identifier prefix
+          is specified as the value of the <code class="sgmltag-element">prefix</code> attribute
+          and the subject identifier prefix is specified as the value of the
+          <code class="sgmltag-element">value</code> attribute.</p></dd><dt><span class="term">subject</span></dt><dd><p>This element specifies a mapping between a short identifier
+          and a full subject identifier for a topic. The short identifier is
+          specified as the value of the <code class="sgmltag-element">key</code> attribute and
+          the full subject identifier is specified as the value of the
+          <code class="sgmltag-element">identifier</code> attribute.</p></dd></dl></div><div class="note"><h3 class="title">Note</h3><p>The ontology element may contain any number of
+      <code class="sgmltag-element">identifierPrefix</code> or <code class="sgmltag-element">subject</code>
+      elements in any order.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e2164"></a>Configuring from Web.Config or App.Config files</h4></div></div></div><p>If you wish your application to use an Application Ontology object
+      configured from the application's configuration file, you can make use
+      of the application section handler that is part of the TMCore library.
+      To do this you will need to add the following line into the
+      <code class="sgmltag-element">configSections</code> part of the application configuration
+      file:</p><pre class="programlisting">&lt;section name="ontology" type="NetworkedPlanet.TMCore.Utils.OntologySectionHandler, tmcore"/&gt;</pre><p>From within your code, you can then use this section handler to
+      retrieve an instance of the
+      NetworkedPlanet.TMCore.Utils.ApplicationOntology class that represents
+      the configured Application Ontology. e.g.</p><pre class="programlisting">ApplicationOntology ontology = 
+  System.Configuration.ConfigurationSettings.GetConfig(
+    "ontology") as ApplicationOntology;</pre></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e2178"></a>Configuring from an XML file</h4></div></div></div><p>If you wish to use the XML configuration from some configuration
+      file other than the application configuration file, you must instead
+      pass the XmlElement object that represents the ontology element to the
+      constructor of the ApplicationOntology class. e.g.</p><pre class="programlisting">ApplicationOntology applicationOntology;
+XmlDocument configDoc = new XmlDocument();
+configDoc.Load("myconfig.xml")
+XmlElement ontologyElement = configDoc.SelectSingleNode("/config/ontology");
+if (ontologyElement != null) {
+  applicationOntology = new ApplicationOntology(ontologyElement);
+} else {
+  applicationOntology = new ApplicationOntology();
+}
+</pre></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e2185"></a>Configuring Programatically</h4></div></div></div><p>Finally, it is also possible to set up all of the mappings for the
+      Application Ontology directly from code. The methods for doing this are
+      <code class="methodname">ApplicationOntology.AddPrefix(string shortIdPrefix, string
+      subjectIdentifierPrefix)</code> and
+      <code class="methodname">ApplicationOntology.AddIdentifier(string shortId, string
+      subjectIdentifier)</code>. e.g.</p><pre class="programlisting">ApplicationOntology ontology = new ApplicationOntology();
+ontology.AddPrefix("org", "http://www.networkedplanet.com/2005/01/organisation/");
+ontology.AddIdentifier("title", "http://purl.org/dc/1.1/title");</pre></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e2198"></a>Specifying Topic Maps</h4></div></div></div><p>The second step in configuring an ApplicationOntology instance for
+      use is to specify the topic map or topic maps on which it operates.
+      These topic maps are the ones in which the Application Ontology object
+      will search for topics by their full subject identifier. The Application
+      Ontology object will search the topic maps it is connected to in strict
+      order, returning the first topic that matches. A topic map can be added
+      to the end of the search list using the method
+      <code class="methodname">ApplicationOntology.AddTopicMap(ITopicMap tm)</code>
+      and can be removed using the method
+      <code class="methodname">ApplicationOntology.RemoveTopicMap(ITopicMap tm).
+      e.g.</code></p><pre class="programlisting">ITopicMap coreMap = m_topicMapSystem.GetTopicMap("core.xtm");
+ontology.AddTopicMap(coreMap)
+</pre><div class="note"><h3 class="title">Note</h3><p>Whenever you add a new topic map to the search list for an
+          ApplicationOntology instance or remove a topic map from its search
+          list, the cache of topics found up until that point will be dropped.
+          You should therefore avoid constantly reconfiguring the list of
+          topic maps connected to an ApplicationOntology instance to maximise
+          the potential for caching.</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e2213"></a>Combining ApplicationOntology instances</h4></div></div></div><p>In some cases you may want to combine a predefined set of mappings
+      that are set up programatically with a user-defined set of mappings
+      which could be specified in an app.config or other XML configuration
+      file. To support this you may nest one ApplicationOntology instance
+      within another. Every ApplicationOntology instance supports just one
+      nested instance. When an ApplicationOntology is asked to map a short
+      identifier, it will first attempt to perform the mapping to a full
+      subject identifier and then to a topic using its own configured mappings
+      and topic maps, if that fails to find a match the short identifier will
+      then be passed to the nested ApplicationOntology instance for it to
+      resolve (and if that instance cannot resolve the short identifier, it
+      will in turn pass the identifier on to its nested instance - if any -
+      and so on).</p><p>The nested ontology can only be specified through the use of the
+      appropriate constructor for the ApplicationOntology object. e.g.</p><pre class="programlisting">// Get the inner ontology from the application configuration file
+ApplicationOntology innerOntology = 
+  System.Configuration.ConfigurationSettings.GetConfig(
+    "ontology") as ApplicationOntology;
+
+// Create an outer ontology programatically:
+ApplicationOntology outerOntology = new ApplicationOntology(innerOntology);
+outerOntology.AddPrefix("org", "http://www.networkedplanet.com/2005/01/organisation/");
+</pre><div class="note"><h3 class="title">Note</h3><p>It is still possible to use an ApplicationOntology instance
+        which is nested inside another instance directly too, bypassing the
+        outer ontology's lookups if necessary. In the example above your code
+        could use either outerOntology (which adds a mapping for the prefix
+        "org") or innerOntology to avoid the additional mappings specified by
+        outerOntology.</p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch08s02s01.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch08s02.html"><img src="../graphics/up.png" alt="Up"></a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch08s02s03.html"><img src="../graphics/next.png" alt="Next"></a></td></tr><tr><td width="40%" align="left" valign="top">How the <code class="classname">ApplicationOntology</code> Works&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html"><img src="../graphics/home.png" alt="Home"></a></td><td width="40%" align="right" valign="top">&nbsp;Using the <code class="classname">ApplicationOntology</code></td></tr></table></div></body></html>

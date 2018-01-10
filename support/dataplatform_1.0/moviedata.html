@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Movies Example &mdash; Data Platform Documentation 1.0.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Data Platform Documentation 1.0.0.0 documentation" href="index.html" />
+    <link rel="next" title="Content Definitions" href="contentdefinitions.html" />
+    <link rel="prev" title="Querying Data" href="querying.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="movies-example">
+<h1>Movies Example<a class="headerlink" href="#movies-example" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For the purposes of this example, we will be working with a website set up to use the default Orchard installation domain of <a class="reference external" href="http://localhost:30321">http://localhost:30321</a>.</p>
+</div>
+<p>In the Data Platform installed directory there is a folder named example data, a TTL (Turtle) file, <strong>movies.ttl</strong>, is included that has a small number of triples describing some basic information about 10 movies.</p>
+<p>Go to the Data Platform main admin page on your site and create a new dataset called Movies.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/movies1.png"><img alt="Create a new dataset" src="_images/movies1.png" style="width: 1239.3px; height: 735.3000000000001px;" /></a>
+</div>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/movies2.png"><img alt="Create a new dataset" src="_images/movies2.png" style="width: 1239.3px; height: 735.3000000000001px;" /></a>
+</div>
+<p>Go to the Upload tab to add data to the dataset</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/movies_upload1.png"><img alt="Upload the example data" src="_images/movies_upload1.png" style="width: 1239.3px; height: 735.3000000000001px;" /></a>
+</div>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/movies_upload2.png"><img alt="Upload the example data" src="_images/movies_upload2.png" style="width: 1239.3px; height: 735.3000000000001px;" /></a>
+</div>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/movies_upload3.png"><img alt="Upload the example data" src="_images/movies_upload3.png" style="width: 1239.3px; height: 735.3000000000001px;" /></a>
+</div>
+<p>The successful upload of data starts up secondary background tasks for calculating dataset statistics and data dump files. The background tasks only run every minute in the website, so the tasks will not appear or run immediately after uploading data.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Data dump files will only be exported if the dataset is already published, if the dataset is not yet published it will skip the export, and create a data dump file when the dataset is first published.</p>
+</div>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/movies_upload4.png"><img alt="Upload the example data" src="_images/movies_upload4.png" style="width: 1239.3px; height: 735.3000000000001px;" /></a>
+</div>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/movies_stats.png"><img alt="Upload the example data" src="_images/movies_stats.png" style="width: 1239.3px; height: 735.3000000000001px;" /></a>
+</div>
+</div></blockquote>
+<p>Go to the dataset metadata page and set a URI from the movies.ttl file to use as an example resource URI. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>http://localhost:30321/movies/the-matrix
+</pre></div>
+</div>
+<p>will display that resource&#8217;s properties as a preview on the dataset page along with the other metadata of the dataset</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="_images/movies_exampleresource.png"><img alt="Add an example resource URI from the movies data file" src="_images/movies_exampleresource.png" style="width: 1239.3px; height: 735.3000000000001px;" /></a>
+</div>
+<p>Publish the dataset using the Publish button</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/movies_publish.png"><img alt="Upload the example data" src="_images/movies_publish.png" style="width: 1239.3px; height: 735.3000000000001px;" /></a>
+</div>
+<p>View the dataset to see how the dataset metadata appears to visitors of the site. The design will depend on what Theme you have installed on the website.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/movies_view.png"><img alt="Upload the example data" src="_images/movies_view.png" style="width: 1238.4px; height: 858.6px;" /></a>
+</div>
+</div></blockquote>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="querying.html" title="previous chapter">Querying Data</a></li>
+      <li>Next: <a href="contentdefinitions.html" title="next chapter">Content Definitions</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/moviedata.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <div class="document"></div>
+
+  </body>
+</html>

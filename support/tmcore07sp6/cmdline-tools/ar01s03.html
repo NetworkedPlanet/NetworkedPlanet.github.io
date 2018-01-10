@@ -1,0 +1,42 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>tmexport : XTM Export Utility</title><link rel="stylesheet" href="../doc.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><link rel="start" href="index.html" title="TMCore Command Line Tools"><link rel="up" href="index.html" title="TMCore Command Line Tools"><link rel="prev" href="ar01s02.html" title="tmimport : XTM Import Utility"><link rel="next" href="ar01s04.html" title="tmdelete : Deletion Utility"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="pageheader"><table class="logo" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td><span class="networked">Networked</span><span class="planet">Planet</span></td><td align="right"><span class="title">TMCore Command Line Tools</span></td></tr></table></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">tmexport : XTM Export Utility</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s02.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ar01s04.html"><img src="../graphics/next.png" alt="Next"></a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="tmexport"></a>tmexport : XTM Export Utility</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="ar01s03.html#d0e180">Command Synopsis</a></span></dt><dt><span class="section"><a href="ar01s03.html#d0e292">Usage Examples</a></span></dt></dl></div><p>The <span><strong class="command">tmexport</strong></span> command can be used to export topic
+    maps from the TMCore system as XTM files. The utility includes an option
+    to dump all of the topic maps from the system as XTM, or to specify
+    selected topic map(s) to export.</p><p>Topic maps are always exported to a file in the current directory
+    with the file name being the same as the topic map name in the topic map
+    system. Any special characters in a topic map name that are not allowed as
+    file name characters will be replaced with the underscore (_)
+    character.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e180"></a>Command Synopsis</h3></div></div></div><div class="cmdsynopsis"><p><code class="command">tmexport</code>  [/host:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/database:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/userid:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/password:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/all] [/force] [/verbose] {<em class="replaceable"><code>mapname</code></em>...}</p></div><div class="table"><a name="d0e211"></a><p class="title"><b>Table&nbsp;2.&nbsp;tmexport Parameter Summary</b></p><table summary="tmexport Parameter Summary" cellspacing="0" cellpadding="3" border="1"><colgroup><col><col></colgroup><thead><tr><th><p>Parameter (Short Form)</p></th><th><p>Description</p></th></tr></thead><tbody><tr><td>/host (/h)</td><td><p>Specifies the name or IP address of the database
+              server that hosts the TMCore system database.
+              </p><p>Defaults to 'localhost'.</p></td></tr><tr><td>/database (/d)</td><td><p>Specifies the name of the database catalog that
+              contains the TMCore system tables. </p><p>Defaults to
+              'topicmap'.</p></td></tr><tr><td>/userid (/u)</td><td><p>Specifies the database user ID to use when
+              connecting to the database.</p><p>If this parameter is
+              omitted, the connection will instead use the current Windows
+              login for database authentication.</p></td></tr><tr><td>/password (/p)</td><td><p>Specifies the password to use when connection to
+              the database.</p><p>This parameter is ignored if the
+              <em class="parameter"><code>/userid:</code></em> parameter is not present. If the
+              <em class="parameter"><code>/userid:</code></em> parameter is present and this
+              parameter is omitted, the program will attempt to connect to the
+              database using the specified user ID and no
+              password.</p></td></tr><tr><td>/all (/a)</td><td><p>Specifies that all topic maps in the TMCore system
+              should be exported.</p> <p>If this parameter is specified
+              then any topic map names provided on the command-line will be
+              ignored and all topic maps will be exported.</p></td></tr><tr><td>/force (/f)</td><td><p>If this switch is specified on the command line,
+              then the application will silently overwrite existing files.
+              Otherwise, you will be prompted for each possible file
+              overwrite. </p></td></tr><tr><td>/verbose (/v)</td><td><p>Give more verbose error messages.</p></td></tr><tr><td>mapname</td><td><p>The name of the topic map to be exported. You may
+              specify multiple topic map names on the command line by
+              separating each name with a space. If a topic map name contains
+              a space, use quotes on the command line (e.g. <span><strong class="command">tmexport
+              "My Topic Map"</strong></span>).</p></td></tr></tbody></table></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e292"></a>Usage Examples</h3></div></div></div><p>The following examples do not show examples of the /host /database
+      /userid or /password options which work exactly as for the <a href="ar01s02.html" title="tmimport : XTM Import Utility">tmimport</a> application.</p><div class="literallayout"><p>tmexport&nbsp;mymap.xtm</p></div><p>Exports the topic map in the TMCore system with the name
+      'mymap.xtm'. The data will be written to a local file named
+      <code class="filename">mymap.xtm</code>.</p><div class="literallayout"><p>tmexport&nbsp;mymap.xtm&nbsp;myothermap</p></div><p>Exports the topic maps in the TMCore system with the names
+      'mymap.xtm' and 'myothermap'. The data will be written to the files
+      <code class="filename">mymap.xtm</code> and <code class="filename">myothermap</code>
+      respectively.</p><div class="literallayout"><p>tmexport&nbsp;/a&nbsp;/f</p></div><p>Exports all topic maps from the TMCore system to XTM files in the
+      local directory. This export will silently overwrite any existing files
+      in the same directory when a name-clash occurs (because of the /f
+      option).</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s02.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><td width="20%" align="center">&nbsp;</td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ar01s04.html"><img src="../graphics/next.png" alt="Next"></a></td></tr><tr><td width="40%" align="left" valign="top">tmimport : XTM Import Utility&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html"><img src="../graphics/home.png" alt="Home"></a></td><td width="40%" align="right" valign="top">&nbsp;tmdelete : Deletion Utility</td></tr></table></div></body></html>

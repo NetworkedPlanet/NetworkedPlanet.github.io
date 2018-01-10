@@ -1,0 +1,73 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Topic Map tab pops up a dialog containing a 404 Not Found Error</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?ar01s05s02.htm"; }
+  else { parent.quicksync('a3.4.2'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Topic Map tab pops up a dialog containing a 404 Not Found Error</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="ar01s05s01.htm">Previous</a>&nbsp;
+     <a href="ar01s05s04.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p><span style="font-weight: bold; text-decoration: underline;">Symptom</span></p>
+<p>The AJAX classification editor on the topic map tab uses a web service published by the TMCore EPiServer Module to access information about the topic map. The service is located in: /NetworkedPlanet/EPiServerModule/Service/TMCoreEPiDataService.asmx.</p>
+<p><span style="font-weight: bold; text-decoration: underline;">Fix</span></p>
+<p>In Windows Server 2003 SP2 running EPiServer 6 it is possible for the EPiServer manager to incorrectly assign the handlers for ASMX files. This means that if you point your web browser at the ASMX service, you will be able to see a service description, and see individual method descriptions; however if the Invoke button is clicked on an operation then a 404 Not Found error is returned.</p>
+<p>(Note that you may have to enable HttpGet and HttpPost for the service, see the section <a href="allow_httppost_to_web_service.htm">Allow HttpPost to web service</a>)</p>
+<p>To fix this, ensure that the ASMX extension is mapped to the the ISAPI handler correctly using IIS 6 Manager. If this doesn't fix the problem, then it is probable that you need to add the following handler in to global.asax:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;%@&nbsp;Application&nbsp;Language="C#"&nbsp;Inherits="EPiServer.Global"&nbsp;%&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;script&nbsp;RunAt="server"&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;void&nbsp;Application_BeginRequest(object&nbsp;sender,&nbsp;EventArgs&nbsp;e)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Web.HttpApplication&nbsp;app&nbsp;=&nbsp;(System.Web.HttpApplication)&nbsp;sender;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Web.HttpContext&nbsp;context&nbsp;=&nbsp;app.Context;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;path&nbsp;=&nbsp;context.Request.Path;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;asmxPosition&nbsp;=&nbsp;path.IndexOf(".asmx/",&nbsp;StringComparison.OrdinalIgnoreCase);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(asmxPosition&nbsp;&gt;=&nbsp;0)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.RewritePath(</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path.Substring(0,&nbsp;asmxPosition&nbsp;+&nbsp;5),</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path.Substring(asmxPosition&nbsp;+&nbsp;5),</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.Request.QueryString.ToString());</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;/script&gt;</span></p>
+<p>This handler detects that an <span class="f_InlineCode">asmx</span> file has been invoked, and puts the operation name (everything after the<span class="f_InlineCode"> .asmx/</span> part of the path) back in to <span class="f_InlineCode">pathinfo</span>. The code listing above shows the entire contents of <span class="f_InlineCode">global.asax</span>. If you have your own methods in <span class="f_InlineCode">global.asax</span> or have a code-behind <span class="f_InlineCode">global.asax.cs</span> then take care not to disable or clash with existing modifications to this class.</p>
+
+</td></tr></table>
+
+</body>
+</html>

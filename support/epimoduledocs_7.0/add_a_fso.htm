@@ -1,0 +1,63 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Add a Faceted Search Orchestrator</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?add_a_fso.htm"; }
+  else { parent.quicksync('a7.3.2.1.1'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Add a Faceted Search Orchestrator</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="faceted_navigation.htm">Previous</a>&nbsp;
+     <a href="add_the_facet_selectors.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>Any use of faceted navigation requires a Faceted Search Orchestrator (FSO) web part. This web part is an instance of a <span class="f_InlineCode">NetworkedPlanet.EPiServerTopicMapIndexModule.WebParts.FacetedSearchOrchestratorEPiServerWebPart</span>. The FSO control performs the co-ordination between all the facet controls on the page:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;EPiParts:FacetedSearchOrchestratorEPiServerWebPart</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;runat="server"</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;ID="fso"</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;AlwaysShowResults="true"</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;ResultTypePsi="http://www.networkedplanet.com/psi/organisation/person"</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">/&gt;</span></p>
+<p>Then in the code-behind file:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">protected&nbsp;override&nbsp;void&nbsp;OnLoad(EventArgs&nbsp;e)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;this.fso.ShowPublishedOnly&nbsp;=&nbsp;(this.CurrentPage.Status&nbsp;==&nbsp;EPiServer.Core.VersionStatus.Published);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">}</span></p>
+<p>A description of the attributes may be found on the API documentation for those controls.</p>
+<p>The FSO co-ordinates provides data of the current available selections to the different facet selectors, then accepts updates from them as the user gradually narrows down the search for the topic they are looking for. It should be noted that the FSO does not render any mark-up, it is purely there are data handler. It is allowed to add multiple FSOs to a page, allowing multiple faceted searches to take place on the same page.</p>
+
+</td></tr></table>
+
+</body>
+</html>

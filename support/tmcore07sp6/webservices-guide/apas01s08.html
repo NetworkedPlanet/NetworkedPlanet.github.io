@@ -1,0 +1,79 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>association Element</title><link rel="stylesheet" href="../doc.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><link rel="start" href="index.html" title="TMCore Web Services Guide"><link rel="up" href="apas01.html" title="Topic Map Fragment XML Schema"><link rel="prev" href="apas01s07.html" title="occurrence Element"><link rel="next" href="apas01s09.html" title="scope Element"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="pageheader"><table class="logo" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td><span class="networked">Networked</span><span class="planet">Planet</span></td><td align="right"><span class="title">TMCore Web Services Guide</span></td></tr></table></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"><code class="sgmltag-element">association</code> Element</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="apas01s07.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><th width="60%" align="center">Topic Map Fragment XML Schema</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="apas01s09.html"><img src="../graphics/next.png" alt="Next"></a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e2653"></a><code class="sgmltag-element">association</code> Element</h4></div></div></div><p>This element contains all of the information about a single
+        association. The element has the following syntax:</p><pre class="programlisting">&lt;tm:association oid="<em class="replaceable"><code>OID</code></em>" version="VERSION"&gt;
+  &lt;tm:sourceLocators&gt;
+    &lt;tm:locator href="<em class="replaceable"><code>URI</code></em>"/&gt;
+  &lt;/tm:sourceLocators&gt;
+  &lt;tm:type displayname="<em class="replaceable"><code>NAME</code></em>" tref="<em class="replaceable"><code>OID</code></em>" psi="<em class="replaceable"><code>PSI</code></em>"/&gt;
+  &lt;tm:playsrole displayname="<em class="replaceable"><code>NAME</code></em>" tref="<em class="replaceable"><code>OID</code></em>" psi="<em class="replaceable"><code>PSI</code></em>"&gt;
+  &lt;tm:label&gt; <em class="replaceable"><code>STRING</code></em> &lt;/tm:label&gt;
+  &lt;tm:role&gt;
+    &lt;tm:sourceLocators&gt;
+      &lt;tm:locator href="<em class="replaceable"><code>URI</code></em>"/&gt;
+    &lt;/tm:sourceLocators&gt;
+    &lt;tm:type displayname="<em class="replaceable"><code>NAME</code></em>" tref="<em class="replaceable"><code>OID</code></em>"  psi="<em class="replaceable"><code>PSI</code></em>"/&gt;
+    &lt;tm:player displayname="<em class="replaceable"><code>NAME</code></em>" tref="<em class="replaceable"><code>OID</code></em>"  psi="<em class="replaceable"><code>PSI</code></em>"/&gt;
+  &lt;/tm:role&gt;
+  &lt;tm:scope&gt; ... &lt;/tm:scope&gt;
+&lt;/tm:association&gt;</pre><div class="variablelist"><dl><dt><span class="term">tm:association/@oid</span></dt><dd><p>Contains the unique object identifier of the association.
+              This attribute is OPTIONAL - it may be omitted when specifying a
+              new association to add to the topic map.</p></dd><dt><span class="term">tm:association/@version</span></dt><dd><p>Specifies the version number of the association. This
+              attribute is OPTIONAL. This attribute will always be present on
+              <code class="sgmltag-element">tm:association</code> elements received from web
+              service operations and will show the latest version number of
+              the association. If present on <code class="sgmltag-element">tm:association</code>
+              elements passed in to web service operations, this attribute
+              identifies the version of the association to be
+              used/updated.</p></dd><dt><span class="term">tm:association/tm:sourceLocators</span></dt><dd><p>Contains a list of the source locators for this
+              association. This element is OPTIONAL.</p></dd><dt><span class="term">tm:association/tm:sourceLocators/tm:locator/@href</span></dt><dd><p>Contain a single source locator URI for this association.
+              This attribute is REQUIRED.</p></dd><dt><span class="term">tm:association/tm:type</span></dt><dd><p>References the topic that defines the type of this
+              association. This element is OPTIONAL. If not present, the
+              association is untyped.</p></dd><dt><span class="term">tm:association/tm:type/@displayname</span></dt><dd><p>Contains a display label for the topic that defines the
+              type of this association. This attribute is OPTIONAL.</p></dd><dt><span class="term">tm:association/tm:type/@tref</span></dt><dd><p>Contains the object identifier of the topic that defines
+              the type of this association. This attribute is OPTIONAL.</p></dd><dt><span class="term">tm:association/tm:type/@psi</span></dt><dd><p>References the topic that defines the type of this
+              association by a subject identifier for that topic. This
+              attribute is OPTIONAL.</p></dd><dt><span class="term">tm:association/tm:playsrole</span></dt><dd><p>References the topic that defines the type of the role
+              played by the topic described by the ancestor
+              <code class="sgmltag-element">tm:topic</code> element of this element. This
+              element is OPTIONAL and MUST be omitted when this element is not
+              a descendant of a <code class="sgmltag-element">tm:topic</code> element.</p></dd><dt><span class="term">tm:association/tm:playsrole/@displayname</span></dt><dd><p>Contains the display label for the topic that defines the
+              role type played by the topic described by the ancestor tm:topic
+              element.</p></dd><dt><span class="term">tm:association/tm:playsrole/@tref</span></dt><dd><p>Contains the object identifier of the topic that defines
+              the role type played by the topic described by the ancestor
+              <code class="sgmltag-element">tm:topic</code> element.</p></dd><dt><span class="term">tm:association/tm:playsrole/@psi</span></dt><dd><p>References the topic that defines the role type played by
+              the topic described by the ancestor <code class="sgmltag-element">tm:topic</code>
+              element. This attribute contains a subject identifier for the
+              referenced topic. This attribute is OPTIONAL.</p></dd><dt><span class="term">tm:association/tm:label</span></dt><dd><p>Contains the "arc label" for the association. The arc
+              label is a name assigned to the association type that is scoped
+              by the topic that types the role identified by the
+              <code class="sgmltag-element">tm:playsrole</code> element. This element is
+              OPTIONAL and MUST be omitted when this element is not a
+              descendant of a <code class="sgmltag-element">tm:topic</code> element.</p></dd><dt><span class="term">tm:association/tm:role</span></dt><dd><p>Contains information about a single role in the
+              association. This element is OPTIONAL and REPEATABLE. If the
+              tm:association element is contained in a tm:topic element, then
+              there will be one tm:role element for each topic that
+              participates in the association other than the topic described
+              by the ancestor tm:topic element (whose role is instead
+              described by the tm:playsrole element). If the tm:association
+              element is not contained inside a tm:topic element, there will
+              be one tm:role element for each topic that participates in the
+              association.</p></dd><dt><span class="term">tm:association/tm:role/tm:sourceLocators</span></dt><dd><p>Contains a list of the source locators for this role. This
+              element is OPTIONAL.</p></dd><dt><span class="term">tm:association/tm:role/tm:sourceLocators/tm:locator/@href</span></dt><dd><p>Contains a single source locator URI for this role. This
+              attribute is REQUIRED.</p></dd><dt><span class="term">tm:association/tm:role/tm:type</span></dt><dd><p>Contains a reference to the topic that defines the type of
+              this role. This element is OPTIONAL. If omitted, then the role
+              is untyped.</p></dd><dt><span class="term">tm:association/tm:role/tm:type/@displayname</span></dt><dd><p>Contains a display label for the topic that defines the
+              type of this role. This attribute is OPTIONAL.</p></dd><dt><span class="term">tm:association/tm:role/tm:type/@tref</span></dt><dd><p>Contains the unique object identifier of the topic that
+              defines the type of this role. This attribute is
+              OPTIONAL.</p></dd><dt><span class="term">tm:association/tm:role/tm:type/@psi</span></dt><dd><p>References the topic that defines the type of this role by
+              a subject identifier. This attribute is OPTIONAL.</p></dd><dt><span class="term">tm:association/tm:role/tm:player</span></dt><dd><p>Contains a reference to the topic that participates in the
+              association via this role. This element is OPTIONAL. If omitted,
+              then the role is present in the association but is currently not
+              fulfilled by any role-playing topic.</p></dd><dt><span class="term">tm:association/tm:role/tm:player/@displayname</span></dt><dd><p>Contains a display label for the topic that participates
+              in the association via this role. This attribute is
+              OPTIONAL.</p></dd><dt><span class="term">tm:association/tm:role/tm:player/@tref</span></dt><dd><p>Contains the unique object identifier of the topic that
+              participates in the association via this role. This attribute is
+              OPTIONAL.</p></dd><dt><span class="term">tm:association/tm:role/tm:player/@psi</span></dt><dd><p>References the topic that participates in the association
+              via this role by a subject identifier of that topic. This
+              attribute is OPTIONAL.</p></dd><dt><span class="term">tm:association/tm:scope</span></dt><dd><p>Specifies the scope of this association. This element is
+              OPTIONAL.</p></dd></dl></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="apas01s07.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="apas01.html"><img src="../graphics/up.png" alt="Up"></a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="apas01s09.html"><img src="../graphics/next.png" alt="Next"></a></td></tr><tr><td width="40%" align="left" valign="top"><code class="sgmltag-element">occurrence</code> Element&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html"><img src="../graphics/home.png" alt="Home"></a></td><td width="40%" align="right" valign="top">&nbsp;<code class="sgmltag-element">scope</code> Element</td></tr></table></div></body></html>

@@ -1,0 +1,72 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Developing with the .NET Client</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?developing_with_the__net_clien.htm"; }
+  else { parent.quicksync('a6.4');  parent.track('topic', location.href);}
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Developing with the .NET Client</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="querying.htm">Previous</a>&nbsp;
+     <a href="setup.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p class="p_SectionHeading"><span class="f_SectionHeading">Introduction</span></p>
+<p class="p_SectionHeading"><span class="f_SectionHeading">&nbsp;</span></p>
+<p>The Web3 platform comprises a set of RESTful services that allow client applications to create, modify and delete Topic Maps and Topic Map Schemas. While all the resources and representations can be accessed and updated using HTTP operations there also exists a .NET client library that simplifies many of these tasks. This guide provides information about using the .NET client. &nbsp; </p>
+<p class="p_Heading1"><span class="f_Heading1">&nbsp;</span></p>
+<p class="p_SectionHeading"><span class="f_SectionHeading">Concepts</span></p>
+<p class="p_SectionHeading"><span class="f_SectionHeading">&nbsp;</span></p>
+<p>There are two sets of resources exposed by the Web3 services, resources relating to topic maps and resources relating to schemas. Examples of a resource are ‘a topic’, ‘an association’, ‘a topic map’, and ‘a schema’. While each resource can be retrieved, modified and sent back to the server on a one to one basis the client API adopts an approach that within a certain context all operations are collected into a transaction. It is this transaction that is sent to the server for execution. </p>
+<p>&nbsp;</p>
+<p>The Topic Map client is an Object Orientated API over the REST service. This means that all objects are lightweight wrappers around the representation of the resource. When updates are made to the objects they in turn make updates to the underlying representations. When a commit occurs a transaction containing all affected representations is sent to the server for processing. This provides a transactional capability when updating multiple resources.</p>
+<p>&nbsp;</p>
+<p>While the Web3 platform is a generic, free form, and schema free data store many of the supporting tools for editing topics and querying a topic map are driven from the schema associated with the topicmap. It is important that as part of any topicmap creation process a schema is also created and maintained. The client API provides classes to create and manage Schema instances stored by the service.</p>
+<p>&nbsp;</p>
+<p>A typical development cycle is to first create a schema, then create a topic map, then synchronize the topic map with its schema. The process of synchronization does two things. Firstly it ensures that the topic map contains a topic for each of the types defined in the schema - after synchronizing the topic map with its schema you can locate these topics using the GetTopicBySubjectIdentifier method on the TopicMap object, passing in the subject identifier assigned to the type in the schema. Secondly it creates a topic map-specific version of the schema that allows schema-driven applications such as the Web3 topic map browser and topic map editor applications to retrieve the schema without having to perform synchronization. If the synchronization step is not performed or if it fails for any reason, schema-driven applications may not work as expected.</p>
+<p>&nbsp;</p>
+<p>The following sections provide an overview of the client classes followed by a walk-through of common use cases. The samples described are also available as complete Visual Studio project that can be downloaded on the Web3 Platform download. </p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</td></tr></table>
+
+</body>
+</html>

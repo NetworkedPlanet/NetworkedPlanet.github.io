@@ -1,0 +1,17 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Overview</title><link rel="stylesheet" href="../doc.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><link rel="start" href="index.html" title="TMCore Web Services Guide"><link rel="up" href="apas03.html" title="Topic Map Transaction Schema"><link rel="prev" href="apas03.html" title="Topic Map Transaction Schema"><link rel="next" href="apas03s02.html" title="Namespaces"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="pageheader"><table class="logo" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td><span class="networked">Networked</span><span class="planet">Planet</span></td><td align="right"><span class="title">TMCore Web Services Guide</span></td></tr></table></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Overview</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="apas03.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><th width="60%" align="center">Topic Map Transaction Schema</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="apas03s02.html"><img src="../graphics/next.png" alt="Next"></a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e3119"></a>Overview</h4></div></div></div><p>This document presents the XML schema used to describe
+        transactional updates to a topic map in the ProcessTransaction method
+        of the Topic Map Web Service. The update structure is designed to
+        allow a collection of low level topic map operations to be grouped
+        together and executed as a single atomic operation.</p><p>The advantage of this over the Save method of the Topic Map Web
+        Service is that this transactional update method allows partial
+        information to be added to a topic and so it does not require the
+        whole of the topic to be available on the client, changed and then
+        posted back. The Process Transaction method has the notion of, "Here
+        are a set of changes to make to the topic map". The Save has the
+        notion that says: "This is the defitive version of the topic - replace
+        whatever is there". Both approaches are useful in different
+        situations.</p><p>The W3C XML Schema representation for this namespace is also in
+        the TMCore distribution and can also be downloaded from <a href="http://www.networkedplanet.com/schemas/transaction/transaction.xsd" target="_top">the
+        NetworkedPlanet website</a>.</p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="apas03.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="apas03.html"><img src="../graphics/up.png" alt="Up"></a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="apas03s02.html"><img src="../graphics/next.png" alt="Next"></a></td></tr><tr><td width="40%" align="left" valign="top">Topic Map Transaction Schema&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html"><img src="../graphics/home.png" alt="Home"></a></td><td width="40%" align="right" valign="top">&nbsp;Namespaces</td></tr></table></div></body></html>

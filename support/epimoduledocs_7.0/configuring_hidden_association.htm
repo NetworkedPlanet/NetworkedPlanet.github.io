@@ -1,0 +1,90 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Configuring Hidden Association Types</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?configuring_hidden_association.htm"; }
+  else { parent.quicksync('a4.1.4.1'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Configuring Hidden Association Types</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="ar01s02s04.htm">Previous</a>&nbsp;
+     <a href="hiding_association_types_based.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>In many situations it is not practical to display to the editor all of the roles that are played or may be played by a page in a particular association type. For example, if classifying documents against a theme taxonomy an individual theme may link to several thousand documents. It is not useful to display thousands of related pages in the edit mode of EPiServer, and doing so would severely impact the performance of the editing UI.</p>
+<p>To mitigate this problem you can annotate the topic map schema to instruct the edit mode interface to not show specified roles by using an NPCL Extension.</p>
+<p>To do this you should add an NPCL extension of<span class="f_InlineCode"> http://psi.networkedplanet.com/extensions/episervermodule/hideInEditMode</span> with the value <span class="f_InlineCode">true</span> to the source role (from the perspective of the role player) that you wish to hide.</p>
+<p>For example: if documents and themes are connected by:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 14px 0px 10px 1px;"><table cellspacing="0" cellpadding="3" border="1" style="border: solid 2px #000000; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p>Topic Map Construct</p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p>Subject Identifier</p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p>Role Playing Type</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p>Association Type</p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p>http://psi.networkedplanet.com/assocs/DocumentHasTheme</p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p>&nbsp;</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p>Source Role Type</p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p>http://psi.networkedplanet.com/assocs/DocumentHasThemeSource</p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p>Document</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" style="border: solid 1px #000000;"><p>Target Role Type</p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p>http://psi.networkedplanet.com/assocs/DocumentHasThemeTarget</p>
+</td>
+<td valign="middle" style="border: solid 1px #000000;"><p>Theme</p>
+</td>
+</tr>
+</table>
+</div>
+<p>When classifying a Theme if you wish to hide the display of associated documents then you should add an NPCL extension of type<span class="f_InlineCode"> http://psi.networkedplanet.com/extensions/episervermodule/hideInEditMode</span> with the value <span class="f_InlineCode">true</span> (the value is not case sensitive) to the role type: <span class="f_InlineCode">http://psi.networkedplanet.com/assocs/DocumentHasThemeTarget</span> as this is the role played by the Theme in the association that we want to be hidden.</p>
+<p class="p_Notes"><span class="f_Notes">An NPCL extension is modelled by creating a topic that is an occurrence type that is an instance of a topic with the subject identifier http://www.networkedplanet.com/psi/npcl/meta-types/npcl-extension-type. Consult the TMCore07 documentation for more information about NPCL extensions.</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

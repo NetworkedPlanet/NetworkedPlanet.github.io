@@ -1,0 +1,55 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Hiding Association Types Based On Security Role</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?hiding_association_types_based.htm"; }
+  else { parent.quicksync('a4.1.4.2'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Hiding Association Types Based On Security Role</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="configuring_hidden_association.htm">Previous</a>&nbsp;
+     <a href="ar01s02s05.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>There may be security implications with allowing all editors to see all the roles that are played, or may be played by a particular page in the topic map. The EPiServer Module supports schema annotations to specify particular association types that should not be shown by the classification editor unless the user is a member of one of a set of security roles.</p>
+<p class="p_Notes"><span class="f_Notes">EPiServer CMS 6 and later supports the .NET security model including users that operate in particular security roles (we will always refer to them as security roles to avoid ambiguity with the concept of topic map assocation roles).</span></p>
+<p>Users (or Principals) that are logged in to an EPiServer system may be assigned to particular security roles within the system. An editor, therefore, may be a member of several security roles in addition to being given the "Editor" role. The TMCore EPiServer Module takes advantage of the security role mechanism to provide a mechanism whereby the administrator may configure some of the association types to be hidden from the user depending on the role that are in.</p>
+<p>Using the same example as we used for hiding particular association types, if we wanted to allow only "PowerEditors" and "Administrators" access to see that Themes may be associated with Documents we create an occurrence/NPCL Extension of type <span class="f_InlineCode">http://psi.networkedplanet.com/extensions/episervermodule/allowOnlyRoles</span> with the value set to be a semi-colon delimited list of security roles that are permitted: <span class="f_InlineCode">PowerEditors;Administrators</span>.</p>
+<p>If this occurrence is omitted, then all security roles are permitted (no security checks are done).</p>
+<p class="p_Notes"><span class="f_Notes">If you wish to totally hide an association type from all but a specific set of security roles, then you must add the occurrence to both roles of the association.</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

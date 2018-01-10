@@ -1,0 +1,65 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Internationalization and Customization of Edit Mode Plug-Ins (optional)</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?ar01s04s08.htm"; }
+  else { parent.quicksync('a3.3.8'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Internationalization and Customization of Edit Mode Plug-Ins (optional)</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="ar01s04s07.htm">Previous</a>&nbsp;
+     <a href="ar01s05.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>EPiServer allows the internationalization of the names and descriptions of GUI plug-ins via the EPiServer language files. The tab names used for each language can be configured by editing the relevant language file contained within the <span class="f_InlineCode">lang\languageXX</span> file, where <span class="f_InlineCode">XX</span> is the two letter language code for that language.</p>
+<p>The XPath location that the edit mode GUI plug-in looks for an internationalized name is<span class="f_InlineCode"> /networkedplanet/classificationeditor/plugin</span>. If you add this structure to one of the language files, it will use the values contained with sub-elements named name and description for the tab display. For example:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;?xml&nbsp;version="1.0"&nbsp;encoding="utf-8"&nbsp;standalone="yes"&nbsp;?&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;languages&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;language&nbsp;name="English"&nbsp;id="EN"&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;networkedplanet&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;classificationeditor&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;plugin&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;displayname&gt;Classification&lt;/displayname&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;description&gt;Classify&nbsp;the&nbsp;page&nbsp;against&nbsp;the&nbsp;knowledge&nbsp;model&lt;/description&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/plugin&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/classificationeditor&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/networkedplanet&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;...</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;/languages&gt;</span></p>
+<p>This shows customized display name and descriptions for the English language (file <span class="f_InlineCode">lang\languageEN.xml</span>).</p>
+
+</td></tr></table>
+
+</body>
+</html>

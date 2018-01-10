@@ -1,0 +1,53 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Install logging configuration file (optional)</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?ar01s04s07.htm"; }
+  else { parent.quicksync('a3.3.7'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Install logging configuration file (optional)</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="install_the_topic_map_addon.htm">Previous</a>&nbsp;
+     <a href="ar01s04s08.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>EPiServer uses log4net for providing diagnostic log and trace information for administrators. Log4net is apart of the <a href="http://logging.apache.org/" class="filelink">Apache Logging Services</a> project. The TMCore EPiServer Module also uses log4net for outputting details log and trace information. All TMCore EPiServer Module logging output is done through loggers starting with the string <span class="f_InlineCode">NetworkedPlanet.EPiServerModule</span>.</p>
+<p>If you wish to trace what is happening in EPiServer and the TMCore EPiServer Module then you may enable logging for EPiServer web application. To do this either add a logger for <span style="font-style: italic;">NetworkedPlanet</span> or use the provided file as follows:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 10px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><span style="font-size: 12pt; font-family: 'Times New Roman'; color: #000000;">1.</span></td><td>Place the <span class="f_InlineCode">config/EPiServerlog.config</span> file in to the root of the EPiServer web application directory. Ensure that the ASP.NET (or the identity under which IIS will execute the application) has read access to this file.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 10px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><span style="font-size: 12pt; font-family: 'Times New Roman'; color: #000000;">2.</span></td><td>Create a log directory under the EPiServer web application directory.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 10px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><span style="font-size: 12pt; font-family: 'Times New Roman'; color: #000000;">3.</span></td><td>Grant full control to the EPiServer site application pool identity.</td></tr></table></div><p class="p_Notes"><span class="f_Notes">Full documentation on log4net is available from <a href="http://logging.apache.org/log4net/index.html" target="_top" class="weblink">http://logging.apache.org/log4net/</a></span></p>
+<p>&nbsp;</p>
+
+</td></tr></table>
+
+</body>
+</html>

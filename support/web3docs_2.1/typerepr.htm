@@ -1,0 +1,101 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>TypeRepr</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?typerepr.htm"; }
+  else { parent.quicksync('a6.6.5.36');  parent.track('topic', location.href);}
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">TypeRepr</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="typerefrepr.htm">Previous</a>&nbsp;
+     <a href="textsearchhitrepr.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p class="p_SectionHeading"><span class="f_SectionHeading">Description</span></p>
+<p>Representation of a type in a schema.</p>
+<p>&nbsp;</p>
+<p class="p_SectionHeading"><span class="f_SectionHeading">XML Representation</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;Type&nbsp;Id="%internal&nbsp;id%"&nbsp;Version="%version&nbsp;number%"&nbsp;LastModified="%date/time%"&nbsp;Address="%type&nbsp;resource&nbsp;uri%"&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;IsTopicType&gt;%boolean%&lt;/IsTopicType&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;IsAssociationType&gt;%boolean%&lt;/IsAssociationType&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;IsRoleType&gt;%boolean%&lt;/IsRoleType&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;IsNameType&gt;%boolean%&lt;/IsNameType&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;IsOccurrenceType&gt;%boolean%&lt;/IsOccurrenceType&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;Labels&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;Label&nbsp;...&gt;&nbsp;See&nbsp;<a href="labelrepr.htm">LabelRepr</a>&nbsp;&lt;/Label&gt;*</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;/Labels&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;Identifiers&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;SubjectIdentifier&gt;%type&nbsp;si%&lt;/SubjectIdentifier&gt;*</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;/Identifiers&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;SubTypes&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;SubType&gt;%subtype&nbsp;resoure&nbsp;uri%&lt;/SubType&gt;*</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;/SubTypes&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;SuperTypes&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;SuperType&gt;%supertype&nbsp;resource&nbsp;uri%&lt;/SuperType&gt;*</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;/SuperTypes&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;Properties&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;Property&gt;&nbsp;See&nbsp;<a href="typepropertyrepr.htm">TypePropertyRepr</a>&nbsp;&lt;/Property&gt;*</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;/Properties&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;/Type&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_SectionHeading"><span class="f_SectionHeading">JSON Representation</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">{&nbsp;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">"Address":"%type&nbsp;resource&nbsp;uri%",&nbsp;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">"IsTopicType":%boolean%,&nbsp;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">"IsAssociationType":%boolean%,&nbsp;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">"IsRoleType":%boolean%,&nbsp;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">"IsNameType":%boolean%,&nbsp;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">"IsOccurrenceType":%boolean%,&nbsp;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">"Labels":&nbsp;array&nbsp;of&nbsp;<a href="labelrepr.htm">LabelRepr</a>,&nbsp;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">"Identifiers":&nbsp;array&nbsp;of&nbsp;"%type&nbsp;si%",&nbsp;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">"SubTypes":&nbsp;array&nbsp;of&nbsp;"%subtype&nbsp;resoure&nbsp;uri%",&nbsp;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">"SuperTypes":&nbsp;array&nbsp;of&nbsp;"%supertype&nbsp;resource&nbsp;uri%",&nbsp;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">"Properties":&nbsp;array&nbsp;of&nbsp;<a href="typepropertyrepr.htm">TypePropertyRepr</a></span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">"Id":"%internal&nbsp;id%",&nbsp;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">"Version":%version&nbsp;number%,&nbsp;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">"LastModified":%date/time%</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">}&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_SectionHeading"><span class="f_SectionHeading">Notes</span></p>
+<p>&nbsp;</p>
+<p class="p_SectionHeading"><span class="f_SectionHeading">See Also </span></p>
+<p>&nbsp;</p>
+
+</td></tr></table>
+
+</body>
+</html>

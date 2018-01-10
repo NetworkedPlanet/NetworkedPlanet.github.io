@@ -1,0 +1,72 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Troubleshooting</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?troubleshooting.htm"; }
+  else { parent.quicksync('a2.9');  parent.track('topic', location.href);}
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_SectionHeading"><span class="f_Heading1">Troubleshooting</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="manually_adding_a_web3_website.htm">Previous</a>&nbsp;
+     <a href="upgrading_from_previous_versio.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>This section describes some issues that may arise when installing the Web3 Platform and ways to address them.</p>
+<p>&nbsp;</p>
+<p class="p_SectionHeading"><span class="f_SectionHeading">Web3 Web Application Not Responding</span></p>
+<p>The most likely reason for this is that IIS7.0 was installed or activated after .NET 4.0 was installed. The resolution is to re-register .NET with IIS. The utility to register .NET with IIS is called <span class="f_FileName">aspnet_regiis.exe</span> and can be found in the .NET framework directory (<span class="f_FileName">%WindowsDir%/Microsoft.NET/Framework/v4.0.30319</span>). Typically it is run with the -i parameter to register .NET 4.0 with IIS, but you should refer to the documentation for that command to determine the registration command that best suits your particular environment.</p>
+<p>&nbsp;</p>
+<p class="p_SectionHeading"><span class="f_SectionHeading">SQL Server Express fails to Install after download</span></p>
+<p>Sometimes after downloading SQL Server Express over the internet it will fail to install correctly. The first thing to try is to rerun the Web3 installer. As the SQL Server install files have already been downloaded it will use those and should then install correctly.</p>
+<p>&nbsp;</p>
+<p class="p_SectionHeading"><span class="f_SectionHeading">SQL Server Express fails to Install after download and Retry</span></p>
+<p>There are many checks that SQL Server Express will perform when installing. As this is a silent install a failure in one of these checks, such as free disk space, are not propagated up for the user to see. If SQL Server Express does not install correctly then download it from <a href="http://www.microsoft.com/express/Database/InstallOptions.aspx" target="_blank" onclick="return HMTrackTopiclink(this);" class="weblink">http://www.microsoft.com/express/Database/InstallOptions.aspx</a>. Please ensure you download the version with Advanced Services. Running this installer will alert you to any other environment issues preventing SQL Server Express from installing. When prompted for the instance name enter 'Web3'. Once this process has completed re-run the Web3 installer. </p>
+<p>&nbsp;</p>
+<p class="p_SectionHeading"><span class="f_SectionHeading">Unable to create Message Queues due to insufficient privileges</span></p>
+<p>Ensure that the machine name was provided as part of the Account name. Providing just the user name without the machine name will lead to an error when installing the Message Queues and services.</p>
+<p>&nbsp;</p>
+<p class="p_SectionHeading"><span class="f_SectionHeading">Javascript Error When Viewing Web3 Site</span></p>
+<p>There is a known issue with the Javascript that loads the main Web3 portal Silverlight application. If you have installed Web3 at http://localhost/web3, browsing to this address (without a trailing slash) will display a Javascript error. To avoid this, always browse/link to the Web3 portal home page using a trailing slash on the URL (e.g. http://localhost/web3/). </p>
+<p>&nbsp;</p>
+<p class="p_SectionHeading"><span class="f_SectionHeading">Upgrade Process Requires a Reboot</span></p>
+<p>This is an issue for users upgrading from the beta release of Web3 - although services are stopped and restarted by the installer, in some cases it appears that references to old versions of the Web3 libraries can be referenced by the services when they restart, causing service processing to fail. To avoid this we strongly recommend a machine reboot after performing an upgrade installation. This should not be necessary when performing a clean installation of Web3 for the first time on a machine.</p>
+<p>&nbsp;</p>
+<p class="p_SectionHeading"><span class="f_SectionHeading">Deleting Topics Causes a '405 Method not allowed' error with WebDAV installed</span></p>
+<p>If WebDAV is installed as a module in the IIS site that is hosting the Web3 Platform then it is not possible to delete topics. WebDAV must be removed from the IIS site in order for the Web3 Platform to function correctly.</p>
+<p>To remove WebDAV, open the site in the IIS Features panel and open the Modules feature. Select the WebDAV module if it is installed and choose the Remove action. Restart the site and check that topics can now be deleted.</p>
+
+</td></tr></table>
+
+</body>
+</html>

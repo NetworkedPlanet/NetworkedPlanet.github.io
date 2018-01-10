@@ -1,0 +1,63 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Import-TopicMap</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?import_topicmap.htm"; }
+  else { parent.quicksync('a4.4.3.7');  parent.track('topic', location.href);}
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Import-TopicMap</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="grant_schemapermission.htm">Previous</a>&nbsp;
+     <a href="new_pool.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p class="p_Heading1"><span class="f_Heading1">Summary</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">Import-TopicMap&nbsp;[-TopicMapAddress]&nbsp;&lt;Uri&gt;&nbsp;[-FilePath]&nbsp;&lt;String&gt;&nbsp;[-BaseUri]&nbsp;&lt;String&gt;&nbsp;[-Follow]&nbsp;[-DefaultLanguage]&nbsp;&lt;String&gt;</span></p>
+<p class="p_Heading1"><span class="f_Heading1">Description</span></p>
+<p>Imports topic map data into a topic map from an XTM 1.0 or XTM 2.0 file. The import works be creating a long-running import task on the topic map and uploading the XTM data to the server for processing. To use this command successfully the user must have the Create Job privilege on the topic map store.</p>
+<p>&nbsp;</p>
+<p class="p_Heading1"><span class="f_Heading1">Parameters</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>TopicMapAddress &lt;Uri&gt;<br>
+The web address of the topic map to import into. &nbsp;This is a positional parameter - it must appear as the first parameter and the parameter name can be omitted.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>FilePath &lt;String&gt;<br>
+The path to the XTM file to be imported. &nbsp;This is a positional parameter - it must appear as the second parameter and the parameter name can be omitted.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>BaseUri &lt;String&gt;<br>
+The base URI used to resolve any relative references in the imported XTM data. This is a positional parameter - it must appear as the third parameter and the parameter name can be omitted.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Follow<br>
+This is an optional parameter. If specified on the command-line the command will monitor the progress of the processing job, displaying the current job status message as a Powershell progress message (usually displayed at the top of the Powershell screen), and not returning until the job has completed processing (either with or without errors). If omitted from the command-line then the command will return immediately after creating the import job without waiting to see if the job processing was successful. In this latter case you can use the <a href="get_topicmapjobs.htm">Get-TopicMapJobs</a> command to monitor progress manually.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>DefaultLanguage<br>
+This is an optional parameter. If present it must be a two-letter ISO language code or a two-letter language code followed by a dash and a two-letter ISO country code (e.g. en, en-us, fr, fr-ca etc.). This parameter specifies the language code that will be assigned to topic labels generated by the import processor. If omitted from the command-line, the language code for the current user environment will be used by default.</td></tr></table></div><p>&nbsp;</p>
+<p class="p_Heading1"><span class="f_Heading1">Returns</span></p>
+<p>If the -Follow parameter is omitted, the command will return the web address of the import job. If the -Follow parameter is specified on the command-line then the command will not produce any return value.</p>
+
+</td></tr></table>
+
+</body>
+</html>

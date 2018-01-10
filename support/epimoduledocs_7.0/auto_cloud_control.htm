@@ -1,0 +1,160 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Auto Cloud Control</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?auto_cloud_control.htm"; }
+  else { parent.quicksync('a7.3.1.5'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Auto Cloud Control</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="customizing_the_generated_xml.htm">Previous</a>&nbsp;
+     <a href="ar01s03s02_2.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>The "Auto Cloud" control is a special control that uses the topic map ontology to place a set of Topic Clouds on a page. Each topic type describes a set of suitable cloud definitions using NPCL extensions (see TMCore documentation for more information on NPCL extensions).</p>
+<p>The NPCL extension has the public subject identifier <span class="f_InlineCode">http://psi.networkedplanet.com/npcl/clouds/CloudDescription</span>. It should be of types:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 10px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><span style="font-size: 12pt; font-family: 'Times New Roman'; color: #000000;">1.</span></td><td><span class="f_InlineCode">http://www.networkedplanet.com/psi/npcl/meta-types/occurrence-type</span> (an NPCL occurrence)</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 10px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><span style="font-size: 12pt; font-family: 'Times New Roman'; color: #000000;">2.</span></td><td><span class="f_InlineCode">http://www.networkedplanet.com/psi/npcl/meta-types/npcl-extension-type</span> (an NPCL extension)</td></tr></table></div><p>The occurrence is a value-based occurrence of type string (UTF-8 encoded) and the value should be an XML document adhering to the following schema (in DTD and XML Schema formats)</p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;!ELEMENT&nbsp;topicOfTypeCloud&nbsp;(topicType,associationTemplates?)&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;!ATTLIST&nbsp;topicOfTypeCloud</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;title&nbsp;CDATA&nbsp;#IMPLIED</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;!ELEMENT&nbsp;associationTemplates&nbsp;(associationTemplate+)&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;!ELEMENT&nbsp;associationTemplate&nbsp;(associationType,&nbsp;sourceRoleType,&nbsp;targetRoleType)&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;!ELEMENT&nbsp;associationType&nbsp;(#CDATA)&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;!ELEMENT&nbsp;sourceRoleType&nbsp;(#CDATA)&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;!ELEMENT&nbsp;targetRoleType&nbsp;(#CDATA)&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;xs:schema&nbsp;xmlns:xs="http://www.w3.org/2001/XMLSchema"&nbsp;name="topicOfTypeCloud"&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;xs:complexType&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:sequence&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element&nbsp;ref="topicType"/&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element&nbsp;minOccurs="0"&nbsp;ref="associationTemplates"/&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:sequence&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:attribute&nbsp;name="title"&nbsp;type="xs:string"/&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;/xs:complexType&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;xs:complexType&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:sequence&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element&nbsp;maxOccurs="unbounded"&nbsp;ref="associationTemplate"/&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:sequence&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;/xs:complexType&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;xs:complexType&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:sequence&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element&nbsp;ref="associationType"/&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element&nbsp;ref="sourceRoleType"/&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element&nbsp;ref="targetRoleType"/&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:sequence&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;/xs:complexType&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;/xs:schema&gt;</span></p>
+<p>For example:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;?xml&nbsp;version="1.0"?&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;cloud&nbsp;title="Skills"&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;topicType&gt;http://www.networkedplanet.com/psi/organisation/skill&lt;/topicType&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;associationTemplates&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;associationTemplate&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;associationType&gt;http://www.networkedplanet.com/psi/organisation/personHasSkill&lt;/associationType&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;sourceRoleType&gt;http://www.networkedplanet.com/psi/organisation/personHasSkillTarget&lt;/sourceRoleType&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;targetRoleType&gt;http://www.networkedplanet.com/psi/organisation/personHasSkillSource&lt;/targetRoleType&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/associationTemplate&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;/associationTemplates&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;/cloud&gt;</span></p>
+<p>There is no limit on the number of extensions that may be added to a topic type.</p>
+<p>When the <span class="f_InlineCode">NetworkedPlanet.EPiServerModuleDemo.Controls.AutoCloudSelector</span> class is added to a page, it can be configured with the following properties:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 14px 0px 10px 1px;"><table cellspacing="0" cellpadding="3" border="1" style="border: solid 2px #000000; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="285" style="width:285px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Property Name</p>
+</td>
+<td valign="middle" width="117" style="width:117px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Required</p>
+</td>
+<td valign="middle" width="114" style="width:114px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Default Value</p>
+</td>
+<td valign="middle" width="759" style="width:759px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Description</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="285" style="width:285px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">ShowPublishedOnly</p>
+</td>
+<td valign="middle" width="117" style="width:117px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">No</p>
+</td>
+<td valign="middle" width="114" style="width:114px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">true</p>
+</td>
+<td valign="middle" width="759" style="width:759px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">If set to true then only topics marked as published, or topics that have no publication status will be shown. If false then all topics are shown.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="285" style="width:285px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">TitleCssClass</p>
+</td>
+<td valign="middle" width="117" style="width:117px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">No</p>
+</td>
+<td valign="middle" width="114" style="width:114px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">None</p>
+</td>
+<td valign="middle" width="759" style="width:759px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">The CSS class applied to the title block written above the cloud.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="285" style="width:285px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">TopicTypeSubjectIdentifier</p>
+</td>
+<td valign="middle" width="117" style="width:117px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Yes</p>
+</td>
+<td valign="middle" width="114" style="width:114px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">None</p>
+</td>
+<td valign="middle" width="759" style="width:759px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">This is the subject identifier of the topics to be shown in the cloud and of the topic type to read the cloud definitions from.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="285" style="width:285px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">XslLink</p>
+</td>
+<td valign="middle" width="117" style="width:117px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">No</p>
+</td>
+<td valign="middle" width="114" style="width:114px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">None</p>
+</td>
+<td valign="middle" width="759" style="width:759px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">This property specifies the URL of the stylesheet to use. Relative URLs will be resolved against the URL of the page on which the web part is displayed. If the XslStylesheet property has a non-null, non-empty value then this property is ignored.</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="285" style="width:285px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">XslStylesheet</p>
+</td>
+<td valign="middle" width="117" style="width:117px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">No</p>
+</td>
+<td valign="middle" width="114" style="width:114px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">None</p>
+</td>
+<td valign="middle" width="759" style="width:759px; border: solid 1px #000000;"><p style="margin: 0px 0px 0px 0px;">Get or set the XSLT stlylesheet used to render the content of the web part. Any non-null, non-empty value for this property overrides the value of the XslLink property.</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_TableCaption"><span class="f_TableCaption">Properties of the Auto Cloud Selector Control</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

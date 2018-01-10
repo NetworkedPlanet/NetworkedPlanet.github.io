@@ -1,0 +1,81 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>npcl : Topic Map Schema Utility</title><link rel="stylesheet" href="../doc.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><link rel="start" href="index.html" title="TMCore Command Line Tools"><link rel="up" href="index.html" title="TMCore Command Line Tools"><link rel="prev" href="ar01s04.html" title="tmdelete : Deletion Utility"><link rel="next" href="ar01s06.html" title="tmdiag: Topic Map Diagnostic Utility"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="pageheader"><table class="logo" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td><span class="networked">Networked</span><span class="planet">Planet</span></td><td align="right"><span class="title">TMCore Command Line Tools</span></td></tr></table></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">npcl : Topic Map Schema Utility</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s04.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ar01s06.html"><img src="../graphics/next.png" alt="Next"></a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="npcl"></a>npcl : Topic Map Schema Utility</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="ar01s05.html#d0e469">Command Synopsis</a></span></dt><dt><span class="section"><a href="ar01s05.html#d0e620">Usage Examples</a></span></dt></dl></div><p>The <span><strong class="command">npcl</strong></span> command can be used to work with the
+    NetworkedPlanet Constraint Language (NPCL). Using this tool you
+    can:</p><div class="orderedlist"><ol type="1"><li><p>Export an NPCL schema from a topic map.</p></li><li><p>Import an NPCL schema into a topic map, either updating or
+        replacing existing schema information.</p></li><li><p>Generate an NPCL schema by example, based on a topic map.</p></li></ol></div><p>The <span><strong class="command">npcl</strong></span> command works with NPCL schema files
+    that use the NPCL XML syntax. You can read more about NPCL in the Engine
+    API Guide document.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e469"></a>Command Synopsis</h3></div></div></div><div class="cmdsynopsis"><p><code class="command">npcl</code>  [/host:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/database:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/userid:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/password:<em class="replaceable"><code>&lt;string&gt;</code></em>] [/verbose] [/sibase:<em class="replaceable"><code>&lt;base uri&gt;</code></em>]  /action:{add|overwrite|export|generate}   /mapname:<em class="replaceable"><code>&lt;topic map
+        name&gt;</code></em>   /npcl:<em class="replaceable"><code>&lt;filename&gt;</code></em> </p></div><div class="table"><a name="d0e507"></a><p class="title"><b>Table&nbsp;4.&nbsp;npcl Parameter Summary</b></p><table summary="npcl Parameter Summary" cellspacing="0" cellpadding="3" border="1"><colgroup><col><col></colgroup><thead><tr><th><p>Parameter (Short Form)</p></th><th><p>Description</p></th></tr></thead><tbody><tr><td>/host (/h)</td><td><p>Specifies the name or IP address of the database
+              server that hosts the TMCore system database.
+              </p><p>Defaults to 'localhost'.</p></td></tr><tr><td>/database (/d)</td><td><p>Specifies the name of the database catalog that
+              contains the TMCore system tables. </p><p>Defaults to
+              'topicmap'.</p></td></tr><tr><td>/userid (/u)</td><td><p>Specifies the database user ID to use when
+              connecting to the database.</p><p>If this parameter is
+              omitted, the connection will instead use the current Windows
+              login for database authentication.</p></td></tr><tr><td>/password (/p)</td><td><p>Specifies the password to use when connection to
+              the database.</p><p>This parameter is ignored if the
+              <em class="parameter"><code>/userid:</code></em> parameter is not present. If the
+              <em class="parameter"><code>/userid:</code></em> parameter is present and this
+              parameter is omitted, the program will attempt to connect to the
+              database using the specified user ID and no
+              password.</p></td></tr><tr><td>/verbose (/v)</td><td><p>Give more verbose error messages.</p></td></tr><tr><td>/sibase (/si)</td><td><p>Used only for the generate action. This parameter
+              specifies a base URI for generating subject identifiers for
+              topics which do not currently have one but are required to do so
+              to be included in the NPCL schema. </p><p>The generated
+              subject identifier for a topic will be created by concatenating
+              the display name for the topic (converted to lower case) with
+              the base URI, with an additional numeric suffix if required to
+              make the identifier unique.</p><p>If this option is
+              omitted, the subject identifiers are instead generated in the
+              form 'urn:x-tmcore:topicid:<em class="replaceable"><code>database id of
+              topic</code></em>', which will be recognised by the NPCL
+              import process and will ensure that those topics are correctly
+              updated with schema information.</p><p>If you are
+              generating a schema that you wish to then import back into the
+              same topic map, we recommend that you OMIT this option. If you
+              are generating a schema that you want to use on other topic
+              maps, we recommend that you SPECIFY this option.</p></td></tr><tr><td>/action (/a)</td><td><p>Specifies the action to be performed. This
+              parameter is REQUIRED and must have one of the following
+              values:</p><div class="variablelist"><dl><dt><span class="term">add</span></dt><dd><p>Specifies that the NPCL file should be imported
+                      into the topic map, adding to any existing schema
+                      information.</p></dd><dt><span class="term">overwrite</span></dt><dd><p>Specifies that the NPCL file should be imported
+                      into the topic map, replacing all existing schema
+                      information.</p></dd><dt><span class="term">export</span></dt><dd><p>Specifies that the schema information in the topic
+                      map should be written to the NPCL file.</p></dd><dt><span class="term">generate</span></dt><dd><p>Specifies that the topic map should be processed
+                      to generate a schema based on the actual usage of types,
+                      scopes etc. in the topic map. The schema will be written
+                      to the specified NPCL file.</p></dd></dl></div></td></tr><tr><td>/mapname (/m)</td><td>Specifies the name of the topic map to be read from or
+              written to (depending on the action chosen).</td></tr><tr><td>/npcl (/n)</td><td>Specifies the path to the NPCL XML file to be read from
+              or written to (depending on the action chosen). On an export or
+              generate action, if the file already exists, you will be
+              prompted to confirm the overwriting of the file.</td></tr></tbody></table></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e620"></a>Usage Examples</h3></div></div></div><div class="literallayout"><p>npcl&nbsp;/a:export&nbsp;/m:mytopicmap.xtm&nbsp;/n:mytopicmap-schema.npcl</p></div><p>Exports the NPCL Schema information from the TMCore topic map
+      named "mytopicmap.xtm" to a local NPCL XML file named
+      <code class="filename">mytopicmap-schema.npcl</code>.</p><div class="literallayout"><p>npcl&nbsp;/a:overwrite&nbsp;/m:mytopicmap.xtm&nbsp;/n:new-schema.npcl</p></div><p>Replaces the NPCL Schema information contained in the TMCore topic
+      map named "mytopicmap.xtm" with the schema defined in the NPCL XML file
+      named <code class="filename">new-schema.npcl</code>.</p><div class="literallayout"><p>npcl&nbsp;/a:add&nbsp;/m:mytopicmap.xtm&nbsp;/n:new-schema.npcl</p></div><p>Adds the NPCL Schema information contained in the local NPCL XML
+      file named <code class="filename">new-schema.npcl</code> to the schema
+      information contained in the TMCore topic map named
+      "mytopicmap.xtm".</p><div class="literallayout"><p>npcl&nbsp;/a:generate&nbsp;/m:mytopicmap.xtm&nbsp;/n:mytopicmap-schema.npcl</p></div><p>Infers a new NPCL Schema based on the actual usage of types,
+      scopes etc. in the TMCore topic map named "mytopicmap.xtm". The inferred
+      schema is written to the local NPCL XML file named
+      <code class="filename">mytopicmap-schema.npcl</code>. Topics in the source topic
+      map which do not have subject identifiers but are required to do so by
+      the restrictions of NPCL will have subject identifiers generated using
+      the default form 'urn:x-tmcore:topicid:<em class="replaceable"><code>database id of
+      topic</code></em>'. This allows a subsequent import of the schema
+      information into the same topic map (using the /a:add or /a:overwrite
+      options) to locate and update those topics correctly.</p><div class="literallayout"><p>npcl&nbsp;/a:generate&nbsp;/m:mytopicmap.xtm&nbsp;/n:mytopicmap-schema.npcl&nbsp;/si:http://www.example.com/psi/ontology/</p></div><p>Infers a new NPCL Schema based on the actual usage of types,
+      scopes etc. in the TMCore topic map named "mytopicmap.xtm". The inferred
+      schema is written to the local NPCL XML file named
+      <code class="filename">mytopicmap-schema.xml</code>. Topics in the source topic
+      map which do not have subject identifiers but are required to do so by
+      the restrictions of NPCL will have subject identifiers generated using
+      the custom subject identifier prefix
+      'http://www.example.com/psi/ontology/'. On a subsequent import of the
+      schema information into the same topic map, the topics with these
+      generated subject identifiers will be created as new topics and will not
+      properly update the topics from which they were generated. This option
+      is most useful when you want to generate a schema from one topic map and
+      then import that schema into a different topic map or use it as the
+      basis for creating a new topic map from scratch.</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s04.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><td width="20%" align="center">&nbsp;</td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ar01s06.html"><img src="../graphics/next.png" alt="Next"></a></td></tr><tr><td width="40%" align="left" valign="top">tmdelete : Deletion Utility&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html"><img src="../graphics/home.png" alt="Home"></a></td><td width="40%" align="right" valign="top">&nbsp;tmdiag: Topic Map Diagnostic Utility</td></tr></table></div></body></html>

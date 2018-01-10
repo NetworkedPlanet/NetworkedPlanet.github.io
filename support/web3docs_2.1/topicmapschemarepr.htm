@@ -1,0 +1,88 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>TopicMapSchemaRepr</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?topicmapschemarepr.htm"; }
+  else { parent.quicksync('a6.6.5.29');  parent.track('topic', location.href);}
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">TopicMapSchemaRepr</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="topicmaprepr.htm">Previous</a>&nbsp;
+     <a href="topicpropertyrepr.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p class="p_SectionHeading"><span class="f_SectionHeading">Description</span></p>
+<p>Representation of the schema attached to a topic map.</p>
+<p>&nbsp;</p>
+<p class="p_SectionHeading"><span class="f_SectionHeading">XML Representation</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;TopicMapSchema&nbsp;</span></p>
+<p class="p_CodeExample"><span style="width:48px">&nbsp;</span><span class="f_CodeExample">Address="%schema&nbsp;resource&nbsp;uri%"&nbsp;</span></p>
+<p class="p_CodeExample"><span style="width:48px">&nbsp;</span><span class="f_CodeExample">TopicMapAddress="%topic&nbsp;map&nbsp;resource&nbsp;uri%"&nbsp;</span></p>
+<p class="p_CodeExample"><span style="width:48px">&nbsp;</span><span class="f_CodeExample">LastUpdated="2010-07-24T13:23:46.3785435Z"&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;SourceSchemas&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;SchemaSummary&nbsp;...&gt;&nbsp;See&nbsp;<a href="schemasummaryrepr.htm">SchemaSummaryRepr</a>&nbsp;&lt;/SchemaSummary&gt;*</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;/SourceSchemas&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;Types&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;Type&nbsp;...&gt;&nbsp;See&nbsp;<a href="mergedtyperepr.htm">MergedTypeRepr</a>&nbsp;&lt;/Type&gt;*</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;/Types&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;Constraints&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;Constraint&nbsp;...&gt;&nbsp;See&nbsp;<a href="mergedconstraintrepr.htm">MergedConstraintRepr</a>&nbsp;&lt;/Constraint&gt;*</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;/Constraints&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;Properties&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&lt;Property&nbsp;...&gt;&nbsp;see&nbsp;<a href="typepropertyrepr.htm">TypePropertyRepr</a>&nbsp;&lt;/Property&gt;*</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;/Properties&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;/TopicMapSchema&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_SectionHeading"><span class="f_SectionHeading">JSON Representation</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">{&nbsp;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">"Address":"%schema&nbsp;resource&nbsp;uri%",&nbsp;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">"TopicMapAddress":"%topic&nbsp;map&nbsp;resource&nbsp;uri%",&nbsp;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">"LastUpdated":%date/time%,&nbsp;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">"SourceSchemas":&nbsp;array&nbsp;of&nbsp;<a href="schemasummaryrepr.htm">SchemaSummaryRepr</a>,</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">"Types":&nbsp;array&nbsp;of&nbsp;<a href="mergedtyperepr.htm">MergedTypeRepr</a>,</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">"Constraints":&nbsp;array&nbsp;of&nbsp;<a href="mergedconstraintrepr.htm">MergedConstraintRepr</a>,</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">"Properties"&nbsp;:&nbsp;array&nbsp;of&nbsp;<a href="typepropertyrepr.htm">TypePropertyRepr</a></span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">}&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_SectionHeading"><span class="f_SectionHeading">Notes</span></p>
+<p>&nbsp;</p>
+<p class="p_SectionHeading"><span class="f_SectionHeading">See Also </span></p>
+<p>&nbsp;</p>
+
+</td></tr></table>
+
+</body>
+</html>

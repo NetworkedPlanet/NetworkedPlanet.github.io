@@ -1,0 +1,41 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Examples</title><link rel="stylesheet" href="../doc.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><link rel="start" href="index.html" title="TMCore Web Services Guide"><link rel="up" href="apas02.html" title="Hierarchy XML Schema"><link rel="prev" href="apas02s03.html" title="nodelist Element"><link rel="next" href="apas03.html" title="Topic Map Transaction Schema"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="pageheader"><table class="logo" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td><span class="networked">Networked</span><span class="planet">Planet</span></td><td align="right"><span class="title">TMCore Web Services Guide</span></td></tr></table></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Examples</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="apas02s03.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><th width="60%" align="center">Hierarchy XML Schema</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="apas03.html"><img src="../graphics/next.png" alt="Next"></a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e3084"></a>Examples</h4></div></div></div><div class="example"><a name="d0e3087"></a><p class="title"><b>Example&nbsp;A.1.&nbsp;A List of Trees using tmh:treelist</b></p><p>The following example shows the use of
+          <code class="sgmltag-element">tmh:treelist</code> to list the trees in a topic map (in
+          this case, two trees). This is the format of the returned document
+          from the <code class="methodname">GetHierarchyRoots</code> method of the
+          Topic Map Web Service.</p><pre class="programlisting">&lt;tmh:treelist&gt;
+  &lt;tmh:tree topicid="302728" displayname="Tree 1"&gt;
+    &lt;tmh:root displayname="My Root Node" tref="302740"/&gt;
+  &lt;/tmh:tree&gt;
+  &lt;tmh:tree topicid="316060" displayname="Tree 2"&gt;
+    &lt;tmh:root displayname="Root" tref="316071" /&gt;
+  &lt;/tmh:tree&gt;
+&lt;/tmh:treelist&gt;</pre></div><div class="example"><a name="d0e3100"></a><p class="title"><b>Example&nbsp;A.2.&nbsp;A Simple Tree Using <code class="sgmltag-element">tmh:nodelist</code></b></p><p>The following example shows the use of
+          <code class="constant">tmh:nodelist</code> to describe a tree. This is the
+          format of the returned document from the
+          <code class="sgmltag-element">GetHierarchy</code> method of the Topic Map Web
+          Service.</p><pre class="programlisting">&lt;tmh:nodelist&gt;
+  &lt;tmh:node&gt;
+    &lt;tmh:topic displayname="Root" tref="316071"/&gt;
+    &lt;tmh:children&gt;
+      &lt;tmh:node&gt;
+        &lt;tmh:topic displayname="Child1" tref="316075"/&gt;
+        &lt;tmh:children&gt;
+          &lt;tmh:node&gt;
+            &lt;tmh:topic displayname="Child1.Child1" tref="316077"/&gt;
+            &lt;tmh:children/&gt;
+          &lt;/tmh:node&gt;
+          &lt;tmh:node&gt;
+            &lt;tmh:topic displayname="Child1.Child2" tref="316079"/&gt;
+            &lt;tmh:children/&gt;
+          &lt;/tmh:node&gt;
+        &lt;/tmh:children&gt;
+      &lt;/tmh:node&gt;
+      &lt;tmh:node&gt;
+        &lt;tmh:topic displayname="Child2" tref="316081"/&gt;
+        &lt;tmh:children/&gt;
+      &lt;/tmh:node&gt;
+    &lt;/tmh:children&gt;
+  &lt;/tmh:node&gt;
+&lt;/tmh:nodelist&gt;</pre></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="apas02s03.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="apas02.html"><img src="../graphics/up.png" alt="Up"></a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="apas03.html"><img src="../graphics/next.png" alt="Next"></a></td></tr><tr><td width="40%" align="left" valign="top"><code class="sgmltag-element">nodelist</code> Element&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html"><img src="../graphics/home.png" alt="Home"></a></td><td width="40%" align="right" valign="top">&nbsp;Topic Map Transaction Schema</td></tr></table></div></body></html>

@@ -1,0 +1,78 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Using EPiServer Typed Models</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?using_episerver_typed_models.htm"; }
+  else { parent.quicksync('a5.2'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Using EPiServer Typed Models</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="ar01s02s01_1.htm">Previous</a>&nbsp;
+     <a href="ar01s03_2.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>As described in the sections <a href="ar01s02s01.htm">Mapping Page Types to Topic Types</a> and <a href="ar01s02s02.htm">Mapping EPiServer Pages to Topics</a>, the TMCore EPiServer Module requires two properties to be defined on the Page Type for pages that are to be automatically mapped to topics in the TMCore database. Those properties can be manually added to a Page Type as described in that section. However, if you are developing Page Types using the new strongly-typed content model facility of CMS7, then there is a more convenient way to define these properties in code.</p>
+<p>If you decide to take this approach we recommend that you make use of the  <span class="f_InlineCode"><a href="np_tm_topictype.htm">NP_TM_TopicType</a></span> and <span class="f_InlineCode"><a href="np_tm_topicsipageproperty.htm">NP_TM_TopicSIPageProperty</a></span> configuration properties to change the property names to names that also work as C# property names. The default names (<span class="f_InlineCode">nptopictype</span> and <span class="f_InlineCode">topicGuid</span>) are valid C# identifiers, but convention requires that property names be in upper camel-case, so we recommend using TopicType and TopicGuid instead.</p>
+<p>You can then add the required properties into the model for the page as shown in the code below:</p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;class&nbsp;MyPage&nbsp;:&nbsp;PageData</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Page&nbsp;properties&nbsp;go&nbsp;here</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;TMCore&nbsp;EPiServer&nbsp;Module&nbsp;Page&nbsp;Type&nbsp;Mapping</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Editable(false)]</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;virtual&nbsp;string&nbsp;TopicType&nbsp;{&nbsp;get;&nbsp;set;&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;TMCore&nbsp;EPiServer&nbsp;Module&nbsp;Page&nbsp;Topic&nbsp;Mapping</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Editable(false)]</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;virtual&nbsp;string&nbsp;TopicGuid&nbsp;{&nbsp;get;&nbsp;set;&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;override&nbsp;void&nbsp;SetDefaultValues(ContentType&nbsp;contentType)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;base.SetDefaultValues(contentType);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Provide&nbsp;a&nbsp;fixed&nbsp;default&nbsp;value&nbsp;for&nbsp;the&nbsp;TopicType&nbsp;property</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.TopicType&nbsp;=&nbsp;"http://www.example.com/psi/types/myPageType";</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;}</span></p>
+<p>&nbsp;</p>
+<p>Note that the <span class="f_InlineCode">SetDefaultValues(ContentType)</span> method is used to provide a default for the <span class="f_InlineCode">TopicType</span> property - this ensures that all pages of this Page Type will be represented by a topic in TMCore with a type that is identified by the subject identifier <span class="f_InlineCode">http://www.example.com/psi/types/myPageType</span>. Also note that both properties are set as read-only using the<span class="f_InlineCode"> [Editable(false)]</span> attribute - this will ensure that editors cannot change the values of these properties but does not prevent them from being changed in code.</p>
+<p class="p_Notes"><span class="f_Notes">If you are creating a large number of </span><span class="f_InlineCode">PageData</span><span class="f_Notes"> classes that map to topics, you may want to consider creating a base class that has these two core properties defined on it. However, each class should have its own override of </span><span class="f_InlineCode">SetDefaultValues</span><span class="f_Notes"> or you should use some other mechanism to ensure that each page type maps to the correct topic type in your topic map schema.</span></p>
+<p class="p_Warning"><span class="f_Warning">If you take this approach to defining the default topic type value, you will find that the TMCore EPiServer Module Configuration Checker will report errors when verifying the page types. These will be &nbsp;messages such as:</span><br>
+<span class="f_InlineCode">FAIL - Page type MyPage contains an invalid topic type SI: </span><br>
+<span class="f_Warning">These messages are generated because the default value is set in code and is not stored on the Page Type record itself and so is not available to the Configuration Checker.</span></p>
+<p>&nbsp;</p>
+
+</td></tr></table>
+
+</body>
+</html>

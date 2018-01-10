@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Ensure the EPiServer application pool can access the TMCore database</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?ar01s04s06.htm"; }
+  else { parent.quicksync('a3.3.2'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Ensure the EPiServer application pool can access the TMCore database</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="ar01s04s04_1.htm">Previous</a>&nbsp;
+     <a href="ar01s04s01_3.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>All connections through to the TMCore database will be performed using the identity assigned to the Application Pool that runs your EPiServer site. This account must therefore be granted the correct level of access to the TMCore database. Use SQL Server Enterprise Manager or your preferred SQL management tool to grant access for the account that the application pool runs as to the topic map database. </p>
+<p>If TMCore shares the same database server as EPiServer, you should find that the account is already registered as a database login. All that you need to do is grant the account access under the database roles <span class="f_InlineCode">tm_reader</span> and <span class="f_InlineCode">tm_writer</span>.</p>
+<p>If the TMCore database resides on a different server you may need to register the Application Pool account as a database login before you can grant access to the TMCore database under the <span class="f_InlineCode">tm_reader</span> and <span class="f_InlineCode">tm_writer</span> roles.</p>
+
+</td></tr></table>
+
+</body>
+</html>

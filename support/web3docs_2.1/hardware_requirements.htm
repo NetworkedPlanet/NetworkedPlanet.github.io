@@ -1,0 +1,185 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Hardware Requirements</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?hardware_requirements.htm"; }
+  else { parent.quicksync('a2.2.3');  parent.track('topic', location.href);}
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Hardware Requirements</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="granting_database_access.htm">Previous</a>&nbsp;
+     <a href="complete_server_installation.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>The hardware requirements for Web3 depend on the role(s) played by the machine in the deployment. We identify three key roles:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Database Server - hosts the Web3 databases</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Web3 Front-End Server - hosts some or all of the Web3 services, connecting to a remote database server</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Web3 Combined Server - hosts the Web3 databases and all Web3 services</td></tr></table></div><p>&nbsp;</p>
+<p class="p_Notes"><span class="f_Notes">A Developers Edition installation that includes its own SQL Server Express database should meet at least the minimum requirements for the Database Server role, but when combined with running Visual Studio and other developer tools it should at least meet the Recommended Requirements for the Web3 Combined Server role.</span></p>
+<p class="p_Notes"><span class="f_Notes">&nbsp;</span></p>
+<p class="p_Heading1"><span class="f_Heading1">Database Server</span></p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<th valign="top" width="20%" style="width:20%;"><p><span style="font-weight: bold;">Component</span></p>
+</th>
+<th valign="top" width="40%" style="width:40%;"><p><span style="font-weight: bold;">Minimum Requirement</span></p>
+</th>
+<th valign="top" width="40%" style="width:40%;"><p><span style="font-weight: bold;">Recommend Requirement</span></p>
+</th>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="20%" style="width:20%;"><p>Processor</p>
+</td>
+<td valign="top" width="40%" style="width:40%;"><p>Modern 64-bit processor such as Intel Xeon, Intel Core i7, AMD Athlon 64 or later. At least 1.4 Ghz</p>
+</td>
+<td valign="top" width="40%" style="width:40%;"><p>Modern &nbsp;64-bit processor such as Intel Xeon, Intel Core i7, AMD Athlon 64 or later. </p>
+<p>2 Ghz or faster</p>
+<p>At least dual-core</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="20%" style="width:20%;"><p>RAM</p>
+</td>
+<td valign="top" width="40%" style="width:40%;"><p>2 GB</p>
+</td>
+<td valign="top" width="40%" style="width:40%;"><p>4 GB or more</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="20%" style="width:20%;"><p>Operating System</p>
+</td>
+<td valign="top" width="40%" style="width:40%;"><p>Windows Server 2008 SP2 x64 or later</p>
+<p>Windows Server 2008 R2 SP1 x64 or later</p>
+<p>Windows 7 x64 Professional (or higher)</p>
+</td>
+<td valign="top" width="40%" style="width:40%;"><p>Windows Server 2008 SP2 x64 or later</p>
+<p>Windows Server 2008 R2 SP1 x64 or later</p>
+<p>Windows 7 x64 Professional (or higher)</p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<p>Notes:</p>
+<p>Installation of the database on a server that is also a domain controller is not supported at this time.</p>
+<p>&nbsp;</p>
+<p class="p_Heading1"><span class="f_Heading1">Web3 Front-End Server</span></p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table width="100%" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px;"><p><span style="font-weight: bold;">Component</span></p>
+</td>
+<td valign="top" width="40%" style="width:40%;"><p><span style="font-weight: bold;">Minimum Requirement</span></p>
+</td>
+<td valign="top" width="40%" style="width:40%;"><p><span style="font-weight: bold;">Recommended Requirement</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px;"><p>Processor</p>
+</td>
+<td valign="top" width="40%" style="width:40%;"><p>Modern multi-core processor such as Intel Xeon, Intel Core i5/i7, AMD Athlon 64 or later</p>
+<p>At least 1.4 Ghz</p>
+</td>
+<td valign="top" width="40%" style="width:40%;"><p>Modern multi-core processor such as Intel Xeon, Intel Core i5/i7, AMD Athlon 64 or later</p>
+<p>2 Ghz or faster</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px;"><p>RAM</p>
+</td>
+<td valign="top" width="40%" style="width:40%;"><p>1GB</p>
+</td>
+<td valign="top" width="40%" style="width:40%;"><p>4 GB or more</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="214" style="width:214px;"><p>Operating System</p>
+</td>
+<td valign="top" width="40%" style="width:40%;"><p>Windows Server 2008 SP2 x64 or later</p>
+<p>Windows Server 2008 R2 SP1 x64 or later</p>
+<p>Windows 7 x64 Professional (or higher)</p>
+</td>
+<td valign="top" width="40%" style="width:40%;"><br>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Heading1"><span class="f_Heading1">&nbsp;</span></p>
+<p class="p_Heading1"><span class="f_Heading1">Web3 Combined Server</span></p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table width="100%" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="20%" style="width:20%;"><p><span style="font-weight: bold;">Component</span></p>
+</td>
+<td valign="top" width="40%" style="width:40%;"><p><span style="font-weight: bold;">Minimum Requirement</span></p>
+</td>
+<td valign="top" width="40%" style="width:40%;"><p><span style="font-weight: bold;">Recommend Requirement</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="20%" style="width:20%;"><p>Processor</p>
+</td>
+<td valign="top" width="40%" style="width:40%;"><p>Modern 64-bit processor such as Intel Xeon, Intel Core i7, AMD Athlon 64 or later. At least 1.4 Ghz</p>
+</td>
+<td valign="top" width="40%" style="width:40%;"><p>Modern &nbsp;64-bit processor such as Intel Xeon, Intel Core i7, AMD Athlon 64 or later. </p>
+<p>2 Ghz or faster</p>
+<p>At least dual-core</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="20%" style="width:20%;"><p>RAM</p>
+</td>
+<td valign="top" width="40%" style="width:40%;"><p>4 GB</p>
+</td>
+<td valign="top" width="40%" style="width:40%;"><p>6 GB or more</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="20%" style="width:20%;"><p>Operating System</p>
+</td>
+<td valign="top" width="40%" style="width:40%;"><p>Windows Server 2008 SP2 x64 or later</p>
+<p>Windows Server 2008 R2 SP1 x64 or later</p>
+<p>Windows 7 x64 Professional (or higher)</p>
+</td>
+<td valign="top" width="40%" style="width:40%;"><p>Windows Server 2008 SP2 x64 or later</p>
+<p>Windows Server 2008 R2 SP1 x64 or later</p>
+<p>Windows 7 x64 Professional (or higher)</p>
+</td>
+</tr>
+</table>
+</div>
+
+</td></tr></table>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Hierarchy Node</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?hierarchy_node.htm"; }
+  else { parent.quicksync('a6.6.3.1.2.4.1.1');  parent.track('topic', location.href);}
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Hierarchy Node</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="hierarchy_definition.htm">Previous</a>&nbsp;
+     <a href="hierarchy_node_children.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p class="p_SectionHeading"><span class="f_SectionHeading">Path</span></p>
+<p>/topicmaps/{tm}/hierarchies/{hierarchyId}/{topicId}</p>
+<p>&nbsp;</p>
+<p class="p_SectionHeading"><span class="f_SectionHeading">Description</span></p>
+<p>A node in a topic map hierarchy. The {topicId} portion of the URL is the same GUID that can be used in the {topicId} portion of the Topic representation URL to retrieve the topic itself.</p>
+<p>&nbsp;</p>
+<p class="p_SectionHeading"><span class="f_SectionHeading">Supported HTTP Operations</span></p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table class="standard table" width="100%" cellspacing="0" cellpadding="3" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" bgcolor="#000000" style="background-color:#000000;"><p class="p_TableHeader"><span class="f_TableHeader">HTTP Method</span></p>
+</td>
+<td valign="top" bgcolor="#000000" style="background-color:#000000;"><p class="p_TableHeader"><span class="f_TableHeader">Description</span></p>
+</td>
+<td valign="top" bgcolor="#000000" style="background-color:#000000;"><p class="p_TableHeader"><span class="f_TableHeader">Supported Formats</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p>GET</p>
+</td>
+<td valign="top"><p>Retrieves a representation of the hierarchy node. Returns a <a href="hierarchynoderepr.htm">HierarchyNodeRepr</a> item.</p>
+</td>
+<td valign="top"><p>XML, JSON</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" bgcolor="#c0c0c0" style="background-color:#c0c0c0;"><p>PUT</p>
+</td>
+<td valign="top" bgcolor="#c0c0c0" style="background-color:#c0c0c0;"><p>Updates the definition of a hierarchy node. Accepts a <a href="hierarchynoderepr.htm">HierarchyNodeRepr</a> item.</p>
+</td>
+<td valign="top" bgcolor="#c0c0c0" style="background-color:#c0c0c0;"><p>XML, JSON</p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p>DELETE</p>
+</td>
+<td valign="top"><p>Removes a hierarchy node from the hierarchy. This operation does not delete the topic from the topic map - it just disconnect it from the hierarchy. The operation supports the following optional parameters:</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>attachChildren - allowed values are 'false' or 'true'. If 'true', then the direct children of the deleted hierarchy node will be connected as direct children of the parent(s) of the deleted hierarchy node - meaning that they remain in the tree but are effectively promoted up the hierarchy by one level. Default value is 'false'</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>delete - allowed values are 'false' or 'true'. If 'true' then the topic for the hierarchy node is deleted from the topic map. Otherwise it is just disconnected from the hierarchy without being deleted from the topic map. Default value is 'false'.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>cascade - allowed values are 'false' or 'true'. This property is only processed if the 'delete' parameter is set to 'true'. If 'true', then all descendants of the node are also deleted from the topic map. NOTE: The cascade='true' option takes precedence over the attachChildren='true' option. Default value is false.</td></tr></table></div></td>
+<td valign="top"><p>N/A</p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<p class="p_SectionHeading"><span class="f_SectionHeading">Notes</span></p>
+<p>&nbsp;</p>
+
+</td></tr></table>
+
+</body>
+</html>

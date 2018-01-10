@@ -1,0 +1,60 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>REST vs .NET APIs</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?rest_vs__net_apis.htm"; }
+  else { parent.quicksync('a6.3.1');  parent.track('topic', location.href);}
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">REST vs .NET APIs</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="chapter_2.htm">Previous</a>&nbsp;
+     <a href="caching_in_the_web3_platform.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>All the services in the Web3 Platform are RESTful web services. There are no client APIs that connect directly to the underlying data store. This provides the Web3 platform with the ability to scale out and take advantage of the features of HTTP. Client applications can interact directly with the resources exposed by the service but they can use the .NET client APIs. This section provides an overview of the different between using the two models.</p>
+<p>&nbsp;</p>
+<p class="p_Heading1"><span class="f_Heading1">REST API</span></p>
+<p>The REST API requires that a client retrieves the representation (in XML, JSON) of a given resource (a topic, association, etc) and then if needed updates the representation and sends (Http POST) it back to the same web address from which it retrieved it. All resources in the Web3 Platform have a unique web address. </p>
+<p>&nbsp;</p>
+<p>Using this API requires an understanding of the service URI space, the service representations and the HTTP client library on the development platform. The REST API can be accessed and used from any platform or language that supports an HTTP client.</p>
+<p>&nbsp;</p>
+<p>If using the REST services from .NET there are already a set of representation classes generated. This removes the need to craft the XML or JSON by hand.</p>
+<p class="p_Heading1"><span class="f_Heading1">&nbsp;</span></p>
+<p class="p_Heading1"><span class="f_Heading1">.NET API</span></p>
+<p>The .NET API is the suggested way to develop when creating client applications on the .NET platform. The .NET API wraps the REST API to provide a more object-orientated development experience. .NET clients exist for the Topic Map and Schema services.</p>
+
+</td></tr></table>
+
+</body>
+</html>

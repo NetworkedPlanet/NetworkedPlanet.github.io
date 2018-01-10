@@ -1,0 +1,43 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Using The HierarchyManager API</title><link rel="stylesheet" href="../doc.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><link rel="start" href="index.html" title="TMCore Engine API Guide"><link rel="up" href="ch08s03.html" title="Creating and Accessing Topic Hierarchies"><link rel="prev" href="ch08s03s01.html" title="Creating a Hierarchy"><link rel="next" href="ch08s03s03.html" title="Hierarchy Manager Example"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="pageheader"><table class="logo" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td><span class="networked">Networked</span><span class="planet">Planet</span></td><td align="right"><span class="title">TMCore Engine API Guide</span></td></tr></table></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Using The HierarchyManager API</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch08s03s01.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><th width="60%" align="center">Creating and Accessing Topic Hierarchies</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch08s03s03.html"><img src="../graphics/next.png" alt="Next"></a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="d0e2493"></a>Using The HierarchyManager API</h3></div></div></div><p>The class
+        <code class="classname">NetworkedPlanet.TME.Utils.HierarchyManager</code>
+        provides access to all of the hierarchies contained in a single topic
+        map. The constructor for the class takes a single
+        <code class="interfacename">ITopicMap</code> parameter which defines the
+        topic map which the manager should process. During the constructor,
+        the topic map is interrogated for all facets and the
+        <code class="classname">HierarchyManager</code> will attempt to process each
+        of those facets as a hierarchy. If the the subject identifiers
+        specified in <a href="ch08s03s01.html#hierarchy-psis" title="Table&nbsp;8.1.&nbsp;Topic PSIs for Topic Hierarchies">Table&nbsp;8.1, &#8220;Topic PSIs for Topic Hierarchies&#8221;</a> are not all found in
+        the topic map, a ERROR level message will be written to the
+        <code class="classname">HierarchyManager</code> log (see <a href="ch14.html" title="Chapter&nbsp;14.&nbsp;Logging">Chapter&nbsp;14, <i>Logging</i></a> for more details); a
+        <code class="exceptionname">TopicMapProcessingException</code> will be
+        thrown and no hierarchies will be loaded. If some of the facets do not
+        conform to the structure required for a hierarchical facet, a WARNING
+        level message will be written to the
+        <code class="classname">HierarchyManager</code> log, but the correctly
+        structure facets will all be processed. The constructor code caches
+        the hierarchy in memory to provide rapid access to the entire
+        tree.</p><p>Once the <code class="classname">HierarchyManager</code> constructor
+        returns, the hierarchies found can be accessed through the
+        <span class="property">Hierarchies</span> property. This returns an
+        unmodifiable <code class="interfacename">IList</code> of
+        <code class="classname">NetworkedPlanet.TME.Utils.Hierarchy</code> instances.
+        A <code class="classname">Hierarchy</code> instance represents the meta-data
+        for a hierarchy. This includes the
+        <code class="interfacename">ITopic</code> that defines the hierarchy and
+        the <code class="interfacename">ITopic</code> that defines the hierarchy
+        association type. In addition, the root node of the hierarchy can be
+        accessed through the <span class="property">Root</span> property.</p><p>The <span class="property">Root</span> property returns an instance of
+        <code class="classname">NetworkedPlanet.TME.Utils.HierarchyNode</code>. This
+        class is used to represent a single node in the hierarchy tree. The
+        property <span class="property">Topic</span> provides access to the underlying
+        <code class="interfacename">ITopic</code> in the topic map and the
+        property <span class="property">Children</span> returns an unmodifiable
+        <code class="interfacename">IList</code> of
+        <code class="classname">HierarchyNode</code> instances representing all of the
+        children of this node in the hierarchy. The properties
+        <span class="property">Parent</span> and <span class="property">Hierarchy</span> allow
+        direct access to the parent node in the hierarchy and the hierarchy
+        definition respectively.</p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch08s03s01.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch08s03.html"><img src="../graphics/up.png" alt="Up"></a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch08s03s03.html"><img src="../graphics/next.png" alt="Next"></a></td></tr><tr><td width="40%" align="left" valign="top">Creating a Hierarchy&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html"><img src="../graphics/home.png" alt="Home"></a></td><td width="40%" align="right" valign="top">&nbsp;Hierarchy Manager Example</td></tr></table></div></body></html>

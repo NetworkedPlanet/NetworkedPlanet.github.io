@@ -1,0 +1,76 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Conventions Used In This Reference</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?conventions_used_in_this_refer.htm"; }
+  else { parent.quicksync('a6.6.1');  parent.track('topic', location.href);}
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Conventions Used In This Reference</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="rest_interface_reference.htm">Previous</a>&nbsp;
+     <a href="common_rest_api_features.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>The following conventions are used in this reference documentation for clarity and compactness.</p>
+<p>&nbsp;</p>
+<p class="p_SectionHeading"><span class="f_SectionHeading">Server Path References</span></p>
+<p>&nbsp;</p>
+<p>Path references are shown from the Web3 service root. For example, if Web3 is installed at http://www.example.com/web3 then the path /topicmaps would map to <a href="http://www.example.com/web3/topicmaps" target="_blank" onclick="return HMTrackTopiclink(this);" class="weblink">http://www.example.com/web3/topicmaps</a>.</p>
+<p>&nbsp;</p>
+<p class="p_SectionHeading"><span class="f_SectionHeading">Server Path Variables</span></p>
+<p>&nbsp;</p>
+<p>Path references that contain item-specific information such as item IDs show these path components surrounded in curly braces. e.g. /topicmaps/{tm}. The path component in curly braces would be replaced in a real URI by the identifier of a Web3 item.</p>
+<p>&nbsp;</p>
+<p class="p_SectionHeading"><span class="f_SectionHeading">Representation Variables</span></p>
+<p>&nbsp;</p>
+<p>Item-specific information in the representation documentation is represented surrounded by % characters. e.g. %association resource uri%. Some values have a special meaning:</p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>%boolean% means a value that can be replaced by a valid boolean value. For JSON, this means either true or false. For XML it means true, false, 0 or 1.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>%date/time% means that the value will be formatted as a representation-specific date/time value. For JSON this means a Javascript Date object. For XML this means a date/time string in sortable YYYY-MM-DD:HH:mm:ss format.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>A series of values separated by pipe (|) characters means that any one of the values is valid. e.g. %Created|Queued% means that either the value Created or the value Queued is allowed.</td></tr></table></div><p>&nbsp;</p>
+<p class="p_SectionHeading"><span class="f_SectionHeading">Nested Representations</span></p>
+<p class="p_SectionHeading"><span class="f_SectionHeading">&nbsp;</span></p>
+<p>Many representations contain other nested representations. For the XML serialization, the outer element of the representation for a nested object may have a different name from the standard representation for that object type. This is shown by showing the name of the outer element and then in the element content including a link to the nested object representation definition. For example</p>
+<p>&nbsp;</p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;Association&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&lt;Type&nbsp;...&gt;See&nbsp;<a href="topicref.htm">TopicRef</a>&lt;/Type&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&lt;/Association&gt;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p>Means that the &lt;Association&gt; element will contain an element whose name is &lt;Type&gt; but whose attributes and content are defined by the <a href="topicref.htm">TopicRef</a> representation description.</p>
+<p>&nbsp;</p>
+<p>For JSON objects a property value that references another type or list of types will be shown as either "instance of (reference to type)" or "array of (reference to type)".</p>
+<p>&nbsp;</p>
+
+</td></tr></table>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>UpdateTopic Element</title><link rel="stylesheet" href="../doc.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><link rel="start" href="index.html" title="TMCore Web Services Guide"><link rel="up" href="apas03.html" title="Topic Map Transaction Schema"><link rel="prev" href="apas03s05.html" title="CreateTopic Element"><link rel="next" href="apas03s07.html" title="DeleteTopic Element"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="pageheader"><table class="logo" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td><span class="networked">Networked</span><span class="planet">Planet</span></td><td align="right"><span class="title">TMCore Web Services Guide</span></td></tr></table></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"><code class="sgmltag-element">UpdateTopic</code> Element</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="apas03s05.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><th width="60%" align="center">Topic Map Transaction Schema</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="apas03s07.html"><img src="../graphics/next.png" alt="Next"></a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e3259"></a><code class="sgmltag-element">UpdateTopic</code> Element</h4></div></div></div><p>This operations specifies a new set of names, occurrences and
+        identifiers to be assigned to an existing topic in the topic map. The
+        new data completely replaces all existing names, occurrences and
+        identifiers, but the roles played by the topic in associations are not
+        modified by this action. The <code class="sgmltag-element">txn:UpdateTopic</code>
+        element has the following structure:</p><div class="note"><h3 class="title">Note</h3><p>It is important to note that this action completely overwrites
+          any existing identiiers, names or occurrences on the target topic.
+          If you just wish to add new identifiers, names or occurrences use
+          the CreateTopicProperty method. If you wish to remove some
+          identifiers, names or occurrences but leave others intact, use
+          DeleteTopicProperty. A combination of DeleteTopicProperty and
+          CreateTopicProperty can be used to modify a specific item (by
+          deleting it and creating it with a new value in a single
+          TopicMapTransaction).</p></div><pre class="programlisting">&lt;txn:UpdateTopic id="..." create="<em class="replaceable"><code>true|false</code></em>"&gt;
+  &lt;tmd:topic oid="..." subjectIdentifier="..." subjectLocator="..." sourceLocator="..."&gt;
+    ...
+  &lt;/tmd:topic&gt;
+&lt;/txn:UpdateTopic&gt;
+    </pre><div class="variablelist"><dl><dt><span class="term">txn:UpdateTopic</span></dt><dd><p>The wrapper element for the UpdateTopic action.</p></dd><dt><span class="term">txn:UpdateTopic/@id</span></dt><dd><p>The identifier for this operation. This identifier is used
+              to correlate any error messages to the operation that caused the
+              error.</p></dd><dt><span class="term">txn:UpdateTopic/@create</span></dt><dd><p>A boolean flag indicating if the topic should be created
+              if it does not already exist.</p></dd><dt><span class="term">txn:UpdateTopic/tmd:topic</span></dt><dd><p>This REQUIRED element from the Topic Map Fragment XML
+              Schema provides the new details to be applied to the topic. The
+              topic that the update is applied to is identified by one of the
+              two optional attributes on this element.</p></dd><dt><span class="term">txn:UpdateTopic/tmd:topic/@oid</span></dt><dd><p>This OPTIONAL attribute directly identifies the topic to
+              be updated. The value of this attribute may be either an integer
+              database object identifier, or the string identifier of a topic
+              created in this a previous action contained in the current
+              request document. If the topic cannot be found in the database
+              and the <code class="sgmltag-element">create</code> attribute of the
+              <code class="sgmltag-element">UpdateTopic</code> element is set to true, then a
+              new topic will be created and will be accessible in the current
+              transaction either using its actual object identifier, or using
+              the oid value specified by this attribute.</p><div class="note"><h3 class="title">Note</h3><p>The system will always attempt to process an integer oid
+                attribute value as a database object identifier, so it is
+                important when creating new topics using this interface that
+                you only assign non-integer values to the
+                <code class="sgmltag-element">oid</code> attribute of topics and associations
+                created using the CreateTopic or CreateAssociation
+                actions.</p></div></dd><dt><span class="term">txn:UpdateTopic/tmd:topic/@subjectIdentifier</span></dt><dd><p>This optional attribute identifies the topic to be updated
+              by its subject identifier. This attribute will be processed ONLY
+              IF the <code class="sgmltag-element">oid</code> attribute is not present. If the
+              topic cannot be found in the database and the
+              <code class="sgmltag-element">create</code> attribute of the
+              <code class="sgmltag-element">UpdateTopic</code> element is set to true, then a
+              new topic will be created in the topic map.</p></dd><dt><span class="term">txn:UpdateTopic/tmd:topic/@subjectLocator</span></dt><dd><p>This optional attribute identifies the topic to be updated
+              by its subject locator. This attribute will be processed ONLY IF
+              the <code class="sgmltag-element">oid</code> and
+              <code class="sgmltag-element">subjectIdentifier</code> attributes are not present.
+              If the topic cannot be found in the database and the
+              <code class="sgmltag-element">create</code> attribute of the
+              <code class="sgmltag-element">UpdateTopic</code> element is set to true, then a
+              new topic will be created in the topic map.</p></dd><dt><span class="term">txn:UpdateTopic/tmd:topic/@sourceLocator</span></dt><dd><p>This optional attribute identifies the topic to be updated
+              by its source locator. This attribute will be processed ONLY IF
+              the <code class="sgmltag-element">oid</code>, subjectIdentifier and
+              <code class="sgmltag-element">sourceLocator</code> attributes are not present. If
+              the topic cannot be found in the database and the
+              <code class="sgmltag-element">create</code> attribute of the
+              <code class="sgmltag-element">UpdateTopic</code> element is set to true, then a
+              new topic will be created in the topic map.</p></dd><dt><span class="term">txn:UpdateTopic/tmd:topic/@version</span></dt><dd><p>This OPTIONAL attribute identifies the version of the
+              topic to be updated. The topic will only be updated if its
+              current version number matches the value of this attribute. If
+              the topic's current version number does not match the value
+              specified here, then an error will be returned.</p><p>If this attribute is ommitted, the update will be applied
+              to the latest version of the topic.</p></dd></dl></div><div class="note"><h3 class="title">Note</h3><p>Although the Topic Map Fragment XML Schema allows the
+          <code class="sgmltag-element">oid</code>, <code class="sgmltag-element">subjectIdentifier</code>,
+          <code class="sgmltag-element">subjectLocator</code> and
+          <code class="sgmltag-element">sourceLocator</code> attributes to be ommitted, this
+          action requires that at least one of these attributes has a
+          value.</p></div><div class="note"><h3 class="title">Note</h3><p>This action will update the names, occurrences and identifiers
+          of the topic only. The contents of a
+          <code class="sgmltag-element">tmd:associations</code> element inside the
+          <code class="sgmltag-element">tmd:topic</code> element will be ignored by this
+          operation.</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="apas03s05.html"><img src="../graphics/prev.png" alt="Prev"></a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="apas03.html"><img src="../graphics/up.png" alt="Up"></a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="apas03s07.html"><img src="../graphics/next.png" alt="Next"></a></td></tr><tr><td width="40%" align="left" valign="top"><code class="sgmltag-element">CreateTopic</code> Element&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html"><img src="../graphics/home.png" alt="Home"></a></td><td width="40%" align="right" valign="top">&nbsp;<code class="sgmltag-element">DeleteTopic</code> Element</td></tr></table></div></body></html>

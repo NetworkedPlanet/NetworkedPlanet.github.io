@@ -1,0 +1,67 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Topics</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?topics.htm"; }
+  else { parent.quicksync('a3.3.1.1');  parent.track('topic', location.href);}
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#D0D0D0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Topics</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="introduction.htm">Top</a>&nbsp;
+     <a href="topic_maps.htm">Previous</a>&nbsp;
+     <a href="associations.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p>A topic is a machine-processable representation of a concept. The Topic Maps standard does not restrict the set of concepts that can be represented as topics in any way. Typically topics are used to represent electronic resources (such as documents, Web pages, Web services) and non-electronic resources (such as people or places). Topics can equally be used to represent things that have no tangible form at all, such as companies, events, and abstract concepts like "Pensions" or "Insurance."</p>
+<p>&nbsp;</p>
+<p class="p_Heading1"><span class="f_Heading1">Topic Identity</span></p>
+<p>Topics have three principal forms of identity. A topic can have many instances of each of these forms of identity, and thus can be identified within a topic map system by a number of different ways:</p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span style="font-style: italic;">Identity as a topic resource in a serialized topic map</span>. When a topic map is represented in a serialized form for interchange, and also when it is addressed via the Web3 Platform each topic is assigned a URI identifier that is unique across that topic map. These URIs are used principally for deserializing or creating references between topics in the same topic map. Such identifiers are referred to as source locators. This form of identity is the one most commonly used by <a href="linked_data.htm">Linked Data</a> systems.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span style="font-style: italic;">Identity by reference</span>. When a topic is used to represent a resource that already has its own unique URI, that URI can be used as part of the identity of the topic. This is simply a way of telling the processing agent that "This topic stands for that resource." A good example would be a topic map that contains topics that represent pictures in an image database - assuming that the image database provides a URI for each image that it manages; that URI can be used as part of the identity for the topic that represents the image. In the topic map standard, this form of identifier is known as a subject locator.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span style="font-style: italic;">Identity by description</span>. Topics can be used to represent a concept that does not have its own unique URI. Many of the things that a topic can represent could never have a unique URI because they are not things that a computer can resolve a reference to. For example, a person may have any number of database records about himself or online biographies or pictures, but none of those addressable resources are the person - they are merely some form of descriptor for the person. In the topic map standard, this form of identifier is known as a subject identifier, and the resource that the subject identifier resolves to is known as a subject indicator. Topic maps allow the use of URI references to such descriptive resources as a form of identity. Obviously it is important that the topic map author chooses unambiguous descriptive resources for this purpose, and this is an issue that we will return to later.</td></tr></table></div><p>The distinction between the latter two of these forms of identity can be confusing. Consider the URL http://www.networkedplanet.com/about/index.html. This is a Web page that describes the company NetworkedPlanet. So, this URL could be used as the subject identifier for a topic named "The company NetworkedPlanet," because it resolves to a resource which describes the concept of the company. However, if we wanted to talk about the concept "The 'About' page on the website www.networkedplanet.com," we actually want a topic whose subject really is the resource at the address http://www.networkedplanet.com/about/index.html and so we would then use the same URI as a subject locator.</p>
+<p>&nbsp;</p>
+<p>The key difference between a subject identifier and a subject locator is that a subject identifier requires human interpretation of a resource to determine the concept that a topic represents, whereas a subject locator simply points to the concept that the topic represents. This is shown in the diagram below. The solid arrows show the references from the topic to the resource that acts as the subject locator or subject identifier and the dashed arrows show the role of the human being in interpreting the resource pointed to by a subject identifier.</p>
+<p>&nbsp;</p>
+<div><div style="width:1464px;padding:0px"><img src="identifiers.png" width="1464" height="822" border="0" alt="Subject Locators vs Subject Identifiers"><p style="text-align:center"><span class="f_ImageCaption">Subject Locators vs Subject Identifiers</span></p></div></div>
+<p>Although a single topic can have many forms of identity, it is important to note that each separate identifier can resolve to only one topic. The merging rules of topic maps (described later) enforces this one-to-many relationship between topics and their identifiers.</p>
+<p>&nbsp;</p>
+<p class="p_Heading1"><span class="f_Heading1">Topic Types</span></p>
+<p>The types of a topic define the class (or classes) of concept that the concept represented by the topic belongs to. Types are treated in topic maps as concepts in their own right; hence every type is represented by a topic. The type of a topic is specified simply by a privileged form of relationship between the topic that represents the instance and the topic that represents the type. In the Topic Maps standard and in Web3, this privileged relationship is actually represented as an association where the association type and role types have some pre-defined identities.</p>
+<p>&nbsp;</p>
+<p class="p_Heading1"><span class="f_Heading1">Topic Names</span></p>
+<p>The names of a topic define a set of labels for a topic. Every name has a hierarchical structure. At the root is the base name, which has a string representation. It is the base name string value that is used to determine topic identity by label. A base name is also a container for any number of alternate forms (known as variant names). The alternate forms of a name may be either string values or references to resources; allowing representations such as icons or sound clips to be referenced as variant names. Base names and variant names can be given a context (or scope) in which they are valid, allowing a topic map-aware application to select the best name for presentation to a user in a given situation. We will cover scope later.</p>
+<p>The Web3 Platform also provides a simple mechanism for assigning simple text labels to a topic for UI purposes as described later in the section <a href="web3_extensions.htm">Web3 Extensions</a>.</p>
+
+</td></tr></table>
+
+</body>
+</html>

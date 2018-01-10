@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Troubleshooting &mdash; Data Platform Documentation 1.0.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Data Platform Documentation 1.0.0.0 documentation" href="index.html" />
+    <link rel="prev" title="Custom Content Parts - Tutorial" href="customcontentparts.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="troubleshooting">
+<h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="uploading-large-files-results-in-a-blank-page">
+<h2>Uploading large files results in a blank page<a class="headerlink" href="#uploading-large-files-results-in-a-blank-page" title="Permalink to this headline">¶</a></h2>
+<p>Orchard CMS and .NET Web Applications set a limit on file uploads. To increase the maximumn allowed size, find the following section in the Web.Config file in the root of your Orchard website and edit as appropriate.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;security&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;requestFiltering&gt;</dt>
+<dd>&lt;!&#8211; Accept file uploads up to 64 MB. &#8211;&gt;
+&lt;requestLimits maxAllowedContentLength=&#8221;67108864&#8221; /&gt;</dd>
+</dl>
+<p class="last">&lt;/requestFiltering&gt;</p>
+</dd>
+</dl>
+<p>&lt;/security&gt;</p>
+</div></blockquote>
+</div>
+<div class="section" id="datasets-appear-when-a-site-is-freshly-created">
+<h2>Datasets appear when a site is freshly created<a class="headerlink" href="#datasets-appear-when-a-site-is-freshly-created" title="Permalink to this headline">¶</a></h2>
+<p>The Data Platform will not delete any data stores automatically. If you have deleted an Orchard CMS site and then create a new one, when the Data Platform is installed it will check for the existence of a data store with the name <strong>Data</strong> and if found it will connect to it and any pre-existing datasets found within it.</p>
+<p>If you do not want to connect to the pre-existing store, you have two options:</p>
+<ol class="arabic simple">
+<li>Delete the store manually from the server and then restart IIS and visit the main Data Platform page in Admin - this means the Data Platform will create a fresh store with no datasets within it.</li>
+<li>If using an embedded connection string for the connection to the BrightstarDB server - specify a new location for the stores directory.</li>
+<li>If using a REST connection string for the connection to the BrightstarDB server - set up a new server under a separate port in IIS and use the new address in the connection string.</li>
+</ol>
+</div>
+<div class="section" id="datadump-download-file-gets-a-404-error">
+<h2>Datadump download file gets a 404 error<a class="headerlink" href="#datadump-download-file-gets-a-404-error" title="Permalink to this headline">¶</a></h2>
+<p>Make sure that the web.config supplied in [[INSTALLDIR]]\configDownload has been copied to the [[WEBROOT]]\Download directory, and that the website IIS user has read and write access to the directory.</p>
+</div>
+<div class="section" id="datadump-download-file-gets-a-blank-page">
+<h2>Datadump download file gets a blank page<a class="headerlink" href="#datadump-download-file-gets-a-blank-page" title="Permalink to this headline">¶</a></h2>
+<p>Check to see that the N-Triples MIME type has been set in IIS for the website. The file extension is <strong>.nt</strong> and the MIME type is <strong>application/n-triples</strong>.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/mimetype.png"><img alt="N-Triples MIME type" src="_images/mimetype.png" style="width: 329.40000000000003px; height: 190.8px;" /></a>
+</div>
+</div>
+<div class="section" id="check-log-files">
+<h2>Check log files.<a class="headerlink" href="#check-log-files" title="Permalink to this headline">¶</a></h2>
+<p>Always check the log files as a first step when troubleshooting - the problem is usually one of configuration set up incorrectly or another simple fix once the logs pinpoint the cause.</p>
+<p>There are two main places to check for log files - the Orchard CMS logs (where entries from the Data Platform start with NetworkedPlanet.DataPlatform) or the BrightstarDB logs.
+Please refer to the relevant online documentation for details about logging locations and how to change the level of logging. When troubleshooting it&#8217;s advisable to adjust to DEBUG level, but as this produces a far higher output of logging it&#8217;s not recommended for a standard setting on a production server.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Troubleshooting</a><ul>
+<li><a class="reference internal" href="#uploading-large-files-results-in-a-blank-page">Uploading large files results in a blank page</a></li>
+<li><a class="reference internal" href="#datasets-appear-when-a-site-is-freshly-created">Datasets appear when a site is freshly created</a></li>
+<li><a class="reference internal" href="#datadump-download-file-gets-a-404-error">Datadump download file gets a 404 error</a></li>
+<li><a class="reference internal" href="#datadump-download-file-gets-a-blank-page">Datadump download file gets a blank page</a></li>
+<li><a class="reference internal" href="#check-log-files">Check log files.</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="customcontentparts.html" title="previous chapter">Custom Content Parts - Tutorial</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/troubleshooting.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <div class="document"></div>
+
+  </body>
+</html>
