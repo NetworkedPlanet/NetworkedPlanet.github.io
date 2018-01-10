@@ -31,10 +31,6 @@
     <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://networkedplanet.com/feed/" />
     <link rel="alternate" type="application/rss+xml" title="NetworkedPlanet &raquo; Feed" href="http://networkedplanet.com/feed/" />
 
-    <link rel="stylesheet" href="/css/main.css" />
-    <link rel="stylesheet" href="/css/cookiecuttr.css" />
-
-	
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -44,12 +40,35 @@
     
     <link rel="canonical" href="http://networkedplanet.com/blog/2006/09/30/introducing-tmcore07.html">
     
+
+	<!-- slider -->
+	<link rel="stylesheet" href="/assets/sliderpro/slider-pro.css"/>
+
+	<!-- fontawesome 4 -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+
+	<!-- hexagons
+	https://github.com/shariarbd/CSS3-Hexagon-Buttons
+	-->
+
+	<link rel="stylesheet" type="text/css" href="/assets/hexagon/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/assets/hexagon/css/hexagons.min.css">
+
+	<!-- semantic-ui -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/card.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/button.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/image.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/label.min.css">
+
+	<link rel="stylesheet" href="/css/main.css" />
+	<link rel="stylesheet" href="/css/cookiecuttr.css" />
 </head>
 
 
   <body>
 
-    <nav class="navbar navbar-default navbar-fixed-top top-nav-collapse" role="navigation">
+    <nav class="navbar navbar-default top-nav-collapse" role="navigation">
 	<div class="container">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -58,7 +77,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand page-scroll primary" href="/"><img src="/assets/images/np_header.png" alt="NetworkedPlanet"/> </a>
+			<a class="navbar-brand page-scroll primary" href="/"><img src="/assets/images/Networked_Planet_Full_Colour_Web.png" alt="NetworkedPlanet" class="np-header-logo" /> </a>
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
@@ -66,19 +85,19 @@
 					<a href="/" title="Networked Planet"></a>
 				</li>
 				<li>
-					<a href="/services" title="Networked Planet: Services">Services</a>
+					<a href="/linked-data" title="Networked Planet: Linked Data">Linked Data</a>
+				</li>
+				<li>
+					<a href="/consultancy" title="Networked Planet: Consultancy">Consultancy</a>
 				</li>
 				<li>
 					<a href="/training" title="Networked Planet: Training">Training</a>
 				</li>
 				<li>
-					<a href="/products" title="Networked Planet: Products">Products</a>
+					<a href="/free-open-data-publishing" title="Networked Planet: Data Publishing">Data Publishing</a>
 				</li>
 				<li>
 					<a href="/support/" title="Networked Planet: Support">Support</a>
-				</li>
-				<li>
-					<a href="/blog/" title="Networked Planet: Blog">Blog</a>
 				</li>
 				<li>
 					<a href="/about-us" title="Networked Planet: About Us">About Us</a>
@@ -86,21 +105,14 @@
 				<li>
 					<a href="/contact" title="Networked Planet: Contact">Contact </a>
 				</li>
-			</ul>
-			<ul class="navbar-nav nav navbar-right">
 				<li>
-					<div style="margin-top: 15px">
-						<a href="https://twitter.com/nwplanet" class="twitter-follow-button" data-show-count="false">Follow @nwplanet</a>
-						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-					</div>
-				</li>
-				<li>
-					<div style="margin: 15px 0 0 5px">
-						<script src="https://platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
-						<script type="IN/FollowCompany" data-id="2359324"></script>
-					</div>
+					<a href="/blog/" title="Networked Planet: Blog">Blog</a>
 				</li>
 			</ul>
+			<div class="nav navbar-right">
+				<a href="https://twitter.com/nwplanet" class="hb-xs-margin"><span class="hb hb-xs spin-icon hb-twitter"><i class="fa fa-twitter"></i></span></a>
+				<a href="https://www.linkedin.com/company/2359324/" class="hb-xs-margin"><span class="hb hb-xs spin-icon hb-linkedin"><i class="fa fa-linkedin-square"></i></span></a>
+			</div>
 		</div>
 	</div>
 </nav>
@@ -313,7 +325,11 @@ This has been a quick tour around the major new features of TMCore. We will have
         <div class="spacer">&nbsp;</div>
         <div class="row">
             <div class="col-xs-6">
-                <p>&copy; 2016 Networked Planet Limited.</p>
+                <p>&copy; <span id="crYear">2017</span> Networked Planet Limited.</p>
+                <script>
+                    var d = new Date();
+                    document.getElementById("crYear").innerHTML = d.getFullYear();
+                </script>
             </div>
             <div class="col-xs-6">
                 <div class="pull-right">

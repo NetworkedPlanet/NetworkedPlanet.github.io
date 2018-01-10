@@ -2,70 +2,62 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>NetworkedPlanet</title>
-    <description>Experts in Linked and Open Data Publishing</description>
+    <description>Linked Data Consultancy and Software</description>
     <link>http://networkedplanet.com/</link>
     <atom:link href="http://networkedplanet.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 31 Aug 2017 15:25:40 +0100</pubDate>
-    <lastBuildDate>Thu, 31 Aug 2017 15:25:40 +0100</lastBuildDate>
+    <pubDate>Wed, 10 Jan 2018 17:08:38 +0000</pubDate>
+    <lastBuildDate>Wed, 10 Jan 2018 17:08:38 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
-        <title>Flipping The Data Hierarchy - Disrupting the Charity and Academic Sectors</title>
-        <description>&lt;p&gt;&lt;a href=&quot;http://networkedplanet.com/&quot;&gt;NetworkedPlanet&lt;/a&gt; seeks to alleviate suffering in the world by helping find solutions to persistent problems with sensible open and linked data and technology. We are confident that charities and others can succeed better and find new insights in high quality, shared datasets. We know that good datasets can be much more useful when open and discoverable by others and/or at other times.&lt;/p&gt;
+        <title>Using DataDock to publish to shared data collections</title>
+        <description>&lt;p&gt;Using GitHub as the backend to your data storage has a few obvious benefits straight off the bat:&lt;/p&gt;
 
-&lt;p&gt;To build the best open datasets, studies show that stakeholder involvement is key, and it has always been at the heart of what we do. I have written a few pieces on the nature of stakeholder involvement. Today, I want to explain the vision of the future with a web of data that is built by stakeholders.  &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;All the files produced by DataDock — the original spreadsheets, the RDF triples making up the Linked Data, the dataset metadata, and the static HTML files that display your data portal — are hosted on your own GitHub account.&lt;/li&gt;
+  &lt;li&gt;Each update to a dataset via DataDock produces a new “commit” in the GitHub history, producing over time a full revision history of that dataset.&lt;/li&gt;
+  &lt;li&gt;It has secure authentication which can be used for logging in to your DataDock management portal, meaning you don’t have to remember yet another username and password combination!&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;Having a &lt;a href=&quot;https://www.w3.org/2013/data/&quot;&gt;web of useful data&lt;/a&gt; will disrupt the current structures of the &lt;a href=&quot;https://en.oxforddictionaries.com/definition/third_sector&quot;&gt;third sector&lt;/a&gt;, charities, government, and &lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_academic_databases_and_search_engines&quot;&gt;academia&lt;/a&gt;, because stakeholders will not be paid simple lip-service, but will drive research and data collection. It is a cultural change that has been developing slowly, and many important factors are now in place.&lt;/p&gt;
-
-&lt;p&gt;In a &lt;a href=&quot;https://ourworldindata.org/literacy/&quot;&gt;world of better educated people&lt;/a&gt;, which we now have, it is not necessary to shield good data from the public&lt;sup&gt;1&lt;/sup&gt;. Further, due to the changes in the methods of production and education, many people are (and will increasingly be) highly skilled in data science, numeracy, and technology. Numerous studies have already found that involving stakeholders in research improves the quality of the research, and the same appears to be true for the quality of data sets and open data.  As the saying goes, “Two (hundred) heads is better than one.”&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/disrupt/planet.png&quot; alt=&quot;Graphic of linked icons connected around the earth&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;In this enlightened new world, academic researchers and statisticians will be asked to interact with data that is collected from a different perspective. Academic funding (and therefore careers) will depend on interactions with the stakeholder data collaboratives, rather than only interactions with other academics, because academic journals and research funders will demand proof of stakeholder involvement and open data. The growing openness of research and research data means that social workers and programme delivery staff at charities will be (are) empowered to understand more fully the reasoning of policies, procedures, and programme delivery. Analysts and service delivery personnel of government are already finding that, in order to keep up, they must work together with the data-hungry public&lt;sup&gt;2&lt;/sup&gt;. There is some promise that these change will push political agendas to the margins of day-to-day governance.&lt;/p&gt;
-
-&lt;p&gt;One can see how the core practices in social work and academia will change. Hierarchies will be (are being) disrupted. Large scale production and usage of open and linked data to solve social problems requires dramatic inclusion and agility. The pace of change will (is), no doubt, cause (causing) pain points. (We may be feeling these in the tight elections and shifting journalistic landscape of today.) &lt;/p&gt;
-
-&lt;p&gt;Imagine a different hierarchy that focuses on being evidence-based in designing programmes and interventions. Social scientists, statisticians, and data scientists, will work for social workers to design programmes that remedy social ills and leave communities with a need to teach about the history of suffering (because most will not be subject to it). There might even be interventions planned for highly privileged groups, who are shown to lack knowledge of how one’s “first world choices” &lt;/p&gt;
-
-&lt;p&gt;Currently, many social programmes are the result of various practices - some scientific, and some purely theoretical (or political). Too often, management fails to put faith in social science and research and relies only on political jargon and a fleeting understanding of the causes and cures to socially caused suffering. Adhering to a dogma, rather than knowing that society is always changing and constantly gathering evidence to measure what has changed, can make staff afraid to question the data, and suffocate innovation. Programme staff may see their role as only a repetitive function -serving the same victims of the same perpetrators, and not stopping to ask questions that lead to finding solutions. For example: a few weeks ago, a young woman who works for a domestic violence charity in fundraising was aghast when I suggested that we could try to work with survivors of domestic abuse to design a data strategy to end &lt;a href=&quot;https://www.justice.gov/ovw/domestic-violence#dv&quot;&gt;domestic violence&lt;/a&gt;. She said something really troubling to me (as a professional who has worked to end domestic violence for more than 20 years). She said, “We can’t do it. We can never end domestic violence. It will always exist.”  I was stunned into absolute silence. I had assumed that young people in the field had knowledge of all the progress we’ve made as we have studied and tested interventions and studied and reiterated, ect… The international movement to end domestic violence has ended a great deal of domestic violence, in many contexts. A lot of women and children survived because of evidence based policy changes. There is no reason to think (I believe) that we can’t really wipe it out, but we have to persist at a scientific level. Keep studying → look at more data → research more → learn → collect more data → review → reiterate → etc. We can find insight today in all the data we collect and keep in silos (or in paper files), and in medical, court, police, and, even, shelter records. We can add data from all over the world, and find rich insights. We can find critical moments, actions, failures - all from data we already have, but are not sharing. If we (data scientists, technology developers, doctors/farmers and patients) can overcome problems of intense weather and complex health problems (which we do more and more), why can’t we also overcome problems that involve some mentality/mental health and social power confluences?&lt;/p&gt;
-
-&lt;p&gt;When I recovered from my shock over what the young woman said, I turned to a favourite letter of Rosalind Franklin, who faced the complexity of researching the existence of DNA. She wrote: &lt;/p&gt;
+&lt;p&gt;But there’s another great feature of GitHub that we can leverage on DataDock for use in data publishing, and that’s &lt;strong&gt;Organizations&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;… you look at science (or at least talk of it) as some sort of demoralizing invention of man, something apart from real life, and which must be cautiously guarded and kept separate from everyday existence. But &lt;strong&gt;science and everyday life cannot and should not be separated&lt;/strong&gt;. Science, for me, gives a partial explanation of life. In so far as it goes, it is based on fact, experience and experiment. Your theories are those which you and many other people find easiest and pleasantest to believe, but so far as I can see, they have no foundation other than they leaf to a pleasanter view of life (and an exaggerated idea of our own importance)… - &lt;a href=&quot;https://profiles.nlm.nih.gov/ps/retrieve/Narrative/KR/p-nid/183&quot;&gt;Letter to Ellis Franklin&lt;/a&gt;, mid-1900s&lt;/p&gt;
+  &lt;p&gt;Organizations are shared accounts where groups of people can collaborate across many projects at once. Owners and administrators can manage member access to the organization’s data and projects with sophisticated security and administrative features. - GitHub&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Jump forward, to today, with me. Google Cloud and Amazon Web Services recently hosted big events in London, and each of them has a “your organisational culture will change” component to their new cloud-based offers. They are using exactly the same messages we have been using in the Evidence-Based-Policy community for years&lt;sup&gt;3&lt;/sup&gt;, and before that, Critical Studies (as an academic field) identified the needs for cultural shifts to enable logical decisions for society. I am really happy to see that the world of tech (or at least some of the most visionary leaders) have understood that being evidence-based, or using science, means that we have to change the hierarchies in organisations (some members will no longer “feel exaggerated ideas of our own importance”), and we have to make people comfortable with a new foundation of respect between different people in different roles in (and not in) our organisations.&lt;/p&gt;
+&lt;p&gt;Our last release of DataDock completely rebuilt the dashboard structure to be able to make use of the way in which GitHub user accounts can be added to organizations. This means that as you create organizations on GitHub, or are added to someone else’s, you will see them appear as options on your DataDock dashboard ready to publish data to.&lt;/p&gt;
 
-&lt;p&gt;I am launching some collaborative open data projects (as are others), now, and they begin with the notion that, if we want to collect a lot of data and we want it to be the right data, then we must involve many stakeholders. They will work with analysts to figure out what is important to capture and both types of participants will work (together) to capture high quality data. Stakeholders and analysts can surprise each other with insights found over a beautiful, high quality data set. It is a really cool new world, which does require bravery and respect.&lt;/p&gt;
+&lt;p&gt;A GitHub “organization” does not need to be a company you work for, you can set up organizations for projects, meet-up groups, or crowdsourcing pushes. As &lt;a href=&quot;https://help.github.com/articles/differences-between-user-and-organization-accounts/#organizations&quot;&gt;GitHub states&lt;/a&gt;, even on the free GitHub plan you can have “unlimited collaborators on unlimited public repositories” - fantastic!&lt;/p&gt;
 
-&lt;p&gt;Note: Contact &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#108;&amp;#101;&amp;#097;&amp;#064;&amp;#110;&amp;#101;&amp;#116;&amp;#119;&amp;#111;&amp;#114;&amp;#107;&amp;#101;&amp;#100;&amp;#112;&amp;#108;&amp;#097;&amp;#110;&amp;#101;&amp;#116;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;&amp;#108;&amp;#101;&amp;#097;&amp;#064;&amp;#110;&amp;#101;&amp;#116;&amp;#119;&amp;#111;&amp;#114;&amp;#107;&amp;#101;&amp;#100;&amp;#112;&amp;#108;&amp;#097;&amp;#110;&amp;#101;&amp;#116;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&lt;/a&gt;, if you are interested in planning a collaborative data project.&lt;/p&gt;
+&lt;p&gt;If you don’t see your organization pop up on your dashboard, that’s most likely because you set your DataDock-GitHub access permissions before you created the organization, simply check your access settings and allow DataDock access to the new organization. &lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://www.linkedin.com/in/lea-gorgulu-webb-461a8114/&quot;&gt;Lea&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Due to the built-in data portal page building, each project / group / organization set up in this way has a data portal automatically, with catalog lists and navigation along with the deep dive into the Linked Data as is standard on all DataDock published data.&lt;/p&gt;
+
+&lt;p&gt;That’s all for now, but I’ll be writing a few more DataDock related blog posts over the next few months as we draw near to the end of our Preview Release. Watch this space!&lt;/p&gt;
+
+&lt;div class=&quot;text-center&quot;&gt;
+    &lt;a class=&quot;pointer-button arrow text-left sp-selectable&quot; href=&quot;http://manage.datadock.io&quot;&gt;Go To DataDock.io&lt;/a&gt;
+&lt;/div&gt;
+
 &lt;hr /&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Not that it was necessary before, either, but the past is the past. I am focused on moving into the future, and doing it better than leaders of the past.&lt;/li&gt;
-  &lt;li&gt;See, for example a report I worked on for The Way Ahead for Civil Society in London: Data Sharing, at: &lt;a href=&quot;http://thewayahead.london/sites/default/files/uploads/DataSharingforTheWayAheadFinalReport100417.pdf&quot;&gt;http://thewayahead.london/sites/default/files/uploads/DataSharingforTheWayAheadFinalReport100417.pdf&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;I honestly wondered if one of the Google gurus used my little webinar from last autumn. &lt;a href=&quot;https://goo.gl/BfCHx5&quot;&gt;https://goo.gl/BfCHx5&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/datadock/DataDock_ColourTrans.png&quot; alt=&quot;DataDock logo&quot; height=&quot;149px&quot; width=&quot;400px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
 
+&lt;p class=&quot;well text-center&quot;&gt;This article is part of the &lt;a href=&quot;/blog/tags/datadock-intro/&quot;&gt;Data Dock Intro series&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Wed, 02 Aug 2017 11:00:00 +0100</pubDate>
-        <link>http://networkedplanet.com/blog/2017/08/02/flipping-the-data-hierarchy.html</link>
-        <guid isPermaLink="true">http://networkedplanet.com/blog/2017/08/02/flipping-the-data-hierarchy.html</guid>
+        <pubDate>Wed, 10 Jan 2018 17:00:00 +0000</pubDate>
+        <link>http://networkedplanet.com/blog/2018/01/10/using-datadock-to-publish-to-shared-data-collections.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2018/01/10/using-datadock-to-publish-to-shared-data-collections.html</guid>
         
-        <category>charity</category>
+        <category>datadock</category>
         
-        <category>academic</category>
-        
-        <category>open data</category>
+        <category>free data publishing</category>
         
         <category>collaboration</category>
         
-        <category>linked data</category>
+        <category>organisations</category>
         
-        <category>stakeholders</category>
+        <category>datadock-intro</category>
         
         
       </item>
@@ -150,57 +142,6 @@
         <category>workshop</category>
         
         <category>open data</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Digital Social Innovation (DSI) involves people, and it is time for evaluation</title>
-        <description>&lt;p&gt;It is Friday morning, and I feel like the week lasted about 20 minutes. During the busy week, though, I learned, worked, and began creating even more in this space of innovation that is &lt;a href=&quot;http://networkedplanet.com/&quot;&gt;NetworkedPlanet&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;I spent two days at &lt;a href=&quot;http://www.nesta.org.uk/&quot;&gt;Nesta&lt;/a&gt; events. One was a terrific day of learning with other Digital Social Innovators. The programme of speakers was excellent. Whether they were organising volunteers from the tech industry to help people in need (Techfugees) or working as city leaders to transform ancient cities into communities that work better for more people (Barcelona, Milan, Amsterdam), they were really bright and well-trained people who work to make the world a kinder place. &lt;/p&gt;
-
-&lt;p&gt;There were two themes that were dominant and are very important: &lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;digital social innovation requires contact with people, and &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;we have to start measuring the impact of the efforts to digitally socially innovate&lt;/strong&gt; (just like we do in the rest of the always innovative, social service world).&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/blog/dsi/codefirst.png&quot; alt=&quot;illustration showing a person saying &amp;quot;what?! people?! But I have a GREAT idea for the way we can write code to solve many social problems!&amp;quot;&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;I don’t enjoy saying, “I told you so.”  I do enjoy getting on with the work that needs to be done.&lt;/p&gt;
-
-&lt;p&gt;We, at NetworkedPlanet, and in the social innovation communities have to base our innovations on what we learn from people. Whether we are developing an app or a test or a research project or an education programme. The people with which we engage might not even be potential users of what we are producing.  In Barcelona, the Chief Technology Officer, Francesca Bria, spoke passionately about sending researchers out to collect information from persons who do not use any technology.  &lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Digital social innovation is innovation FOR ALL of society.&lt;/strong&gt; &lt;/p&gt;
-
-  &lt;p&gt;Francesca Bria, Chief Technology Officer for Barcelona, at &lt;a href=&quot;http://www.nesta.org.uk/publications/what-next-digital-social-innovation-realising-potential-people-and-technology-tackle-social-challenges&quot;&gt;“What next for digital social innovation?”&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;This is what we are doing at NetworkedPlanet, with our targeted combination of technology, data specialists, social science, and community leadership. We are building projects around problems that are repeatedly identified by people, and for which the web-of-data can be used as a powerful tool. &lt;/p&gt;
-
-&lt;p&gt;Secondly, we have to start measuring, testing, and studying whether what we are doing is working… or not… or if we even have a valid theory about why we are doing it. This might be rather new to digital social innovators, but the world of social services has loads of resources and knowledge to lend!  I became a data strategist in order to help charities get the data collected to enable meaningful learning about programmes (whether or not they are working, how they are working, what is working, and what is not). The same analytical methods can be applied to digital innovations, and it is a fabulous way to get a product right! Without evaluation - by researchers who know how to approach the development curves of innovation - we can’t argue that what we are doing is valuable.&lt;/p&gt;
-
-&lt;p&gt;Feel free to &lt;a href=&quot;http://networkedplanet.com/contact/&quot;&gt;send me a note&lt;/a&gt; if you want to have an evaluation consultation. The good news is, that measuring impact and producing reports about findings can be really easy when you have a few technical skills. So, you are one step ahead of loads of social innovators that are not in the DSI space.&lt;/p&gt;
-
-&lt;p&gt;Thanks for such a great event Nesta!  You are a gem!  I’m going to get on with what needs to be done, now. &lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.linkedin.com/in/lea-gorgulu-webb-461a8114/&quot;&gt;Lea&lt;/a&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 19 May 2017 11:00:00 +0100</pubDate>
-        <link>http://networkedplanet.com/blog/2017/05/19/digital-social-innovation-time-for-evaluation.html</link>
-        <guid isPermaLink="true">http://networkedplanet.com/blog/2017/05/19/digital-social-innovation-time-for-evaluation.html</guid>
-        
-        <category>digital social innovation</category>
-        
-        <category>evaluation</category>
-        
-        <category>nesta</category>
-        
-        <category>measuring impact</category>
         
         
       </item>
@@ -294,25 +235,6 @@
         <category>charities</category>
         
         <category>london</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Working from home survey</title>
-        <description>&lt;p&gt;The following short survey will be used to analyse links between working from home and feelings of effective work.&lt;/p&gt;
-
-&lt;p&gt;You can read the &lt;a href=&quot;https://drive.google.com/file/d/0B99tCKKR0U1VNEt1Y1ZOX3gwQ1E/view&quot;&gt;privacy statement and data protection details here&lt;/a&gt;. We will not contact you with the information you provide on this form. We will keep this data on file, unless you &lt;a href=&quot;/contact&quot;&gt;contact us&lt;/a&gt; and request that we delete the data you provided.&lt;/p&gt;
-
-&lt;p&gt;The form is embedded below or you can &lt;a href=&quot;https://goo.gl/forms/OQOrcI3uyFroTgAO2&quot;&gt;open it here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;iframe src=&quot;https://docs.google.com/forms/d/e/1FAIpQLSfwP9Cklo96HqrdJVDWYQlVOzvy5lO1-q2L0R-MX1xwHm98UA/viewform?embedded=true&quot; width=&quot;760&quot; height=&quot;900&quot; frameborder=&quot;0&quot; marginheight=&quot;0&quot; marginwidth=&quot;0&quot; align=&quot;center&quot;&gt;Loading...&lt;/iframe&gt;
-</description>
-        <pubDate>Thu, 13 Apr 2017 12:00:00 +0100</pubDate>
-        <link>http://networkedplanet.com/blog/2017/04/13/working-from-home-survey.html</link>
-        <guid isPermaLink="true">http://networkedplanet.com/blog/2017/04/13/working-from-home-survey.html</guid>
-        
-        <category>survey</category>
         
         
       </item>
@@ -602,6 +524,98 @@
         <category>platform cooperatives</category>
         
         <category>linked data</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Open 2017 Platform Co-operatives</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;By providing a viable alternative to the standard internet business model based on monopoly and extraction, platform cooperatives provide a template for a new type of organisation – forming the building blocks for a new economy. &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I’m very much looking forward to Open:2017 which is being held tomorrow and Friday at Goldsmiths in South London. The subjects of the various sessions looks so interesting I think I’ll find it difficult to choose what to attend!&lt;/p&gt;
+
+&lt;p&gt;I’m on a few of the panels, so at least I know a few of the subjects that I’ll get to participate in discussions about. I was very happy to hear from the organisers that they are fighting hard to avoid “Death By Powerpoint”, so expect panels and discussions and audience discussion instead of a single person droning on at you for an hour.&lt;/p&gt;
+
+&lt;p&gt;My sessions are:&lt;/p&gt;
+
+&lt;h3 id=&quot;from-data-slaves-to-data-citizens&quot;&gt;From data slaves to data citizens&lt;/h3&gt;
+
+&lt;p&gt;Thursday 4:15pm&lt;/p&gt;
+
+&lt;h3 id=&quot;linked-open-data-for-the-solidarity-economy&quot;&gt;Linked open data for the solidarity economy&lt;/h3&gt;
+
+&lt;p&gt;Friday 11:20am&lt;/p&gt;
+
+&lt;h3 id=&quot;working-session-designing-interoperable-apps-for-the-open-app-ecosystem&quot;&gt;Working session: Designing interoperable apps for the open app ecosystem&lt;/h3&gt;
+
+&lt;p&gt;Friday 2pm&lt;/p&gt;
+
+&lt;p&gt;If you want to know more, &lt;a href=&quot;https://open.coop/2016/12/02/introduction-platform-co-ops/&quot;&gt;this blogpost introducing the concept of platform cooperatives&lt;/a&gt; is a great starting point, and you can see the &lt;a href=&quot;https://2017.open.coop/programme/&quot;&gt;full programme here&lt;/a&gt;. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/opc/jen.jpg&quot; alt=&quot;Contributor&quot; height=&quot;375px&quot; width=&quot;750px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 15 Feb 2017 10:17:38 +0000</pubDate>
+        <link>http://networkedplanet.com/blog/2017/02/15/open-platform-coop.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2017/02/15/open-platform-coop.html</guid>
+        
+        <category>conference</category>
+        
+        <category>events</category>
+        
+        <category>collaborative economy</category>
+        
+        <category>platform cooperatives</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Open Data Camp 4</title>
+        <description>&lt;p&gt;Only a few weeks to go! &lt;a href=&quot;http://odcamp.org.uk/announcing-open-data-camp-4/&quot;&gt;Open Data Camp numero 4&lt;/a&gt; is being held at the Pierhead in Cardiff on the Saturday and Sunday, 25-26th of February. ODCamp instantly became my favourite data focused event after I attended the second ODCamp in Manchester and then helped bring it to Bristol for ODCamp3. You can read my &lt;a href=&quot;#&quot;&gt;other blog posts&lt;/a&gt; if you want to dive deep into my ODCamp journey. &lt;/p&gt;
+
+&lt;p&gt;Since volunteering with the ODCamp organising committee for the Bristol event, I was invited to remain on the organising team to help make future ODCamps happen. I was more than happy to accept and am really delighted to be part of a team made up of such friendly, proactive humans. NetworkedPlanet were proud to be one of the key sponsors of ODCamp3 in Bristol, and remain committed to sponsoring ODCamp4 and future events as we are so impressed with the team’s ability to foster an environment that nurtures forward-thinking ideas and debate surrounding production and consumption of open data in the UK.&lt;/p&gt;
+
+&lt;p&gt;Enough of my gushing about the people who run and attend ODCamps - if you’ve not been to one then here’s a quick run down…&lt;/p&gt;
+
+&lt;div style=&quot;clear:both;&quot;&gt;&amp;nbsp;&lt;/div&gt;
+
+&lt;p&gt;ODCamp is a free &lt;strong&gt;un-&lt;/strong&gt;conference. Unconferences are a particular format of event that doesn’t pre-plan a programme of sessions. Instead, session ideas are “pitched” by the attendees at the start of the day and then, using a show of hands to judge size of space required, pens, and sticky notes, the volunteer crew (called “camp-makers” at ODCamp) create the programme for the day. ODCamp covers costs by offering various sponsorship levels, &lt;a href=&quot;http://odcamp.org.uk/sponsors-feb-2017/&quot;&gt;the list of sponsors helping make ODCamp4 happen is available here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/odcamp4/odc3_sessionboard.jpg&quot; alt=&quot;Creating the  session schedule&quot; height=&quot;426px&quot; width=&quot;640px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;At my first ODCamp I didn’t plan on pitching a session, but over the course of the first day and chats in the evening afterwards, I realised that a small session on converting CSV data formats to RDF linked data formats might be useful to a few people. I pitched it on the Sunday morning, and that afternoon ran a small workshop messing about with Open Refine to show people how you get from CSV to RDF as basically a “demystifying RDF” workshop.&lt;/p&gt;
+
+&lt;p&gt;The structure of ODCamp massively appeals to me because the content is so obviously influenced by the attendees. The organising team have a really good balance of hands-on when it comes to keeping the event flowing and dealing with all the logistics, whilst staying more hands-off to allow the content and discussions to grow organically. Sessions might be round-circle discussions, presentations about tools or projects, building and making of new projects, all kinds of things! You don’t have to pitch a session based on your own subject-knowledge, sessions can be pitched around a question or topic that you want to know more about, and the “pitch” becomes a shout out for other attendees with more knowledge in that area to share in a session.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/odcamp4/odc3_breakoutspaces.jpg&quot; alt=&quot;Break out spaces&quot; height=&quot;426px&quot; width=&quot;640px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The hardest thing is to choose which sessions to go to, you will undoubtedly have 2 or more sessions that you want to attend at the same time. Luckily ODCamp encourages people to move between sessions instead of feeling they must remain for the entirety of one, and this way you can dip in to more than one interesting session (a top tip is to follow the &lt;a href=&quot;https://twitter.com/hashtag/odcamp?src=hash&quot;&gt;live-tweeting&lt;/a&gt; from attendees in other sessions). Some sessions also get covered by the amazing talents at &lt;a href=&quot;https://drawnalism.com/&quot;&gt;Drawnalism&lt;/a&gt;, who live-draw infographics of key points from session content, which are then tacked up around the main room for all to benefit from.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/odcamp4/odc3_livedrawing.jpg&quot; alt=&quot;Live drawing capture the key points from sessions&quot; height=&quot;426px&quot; width=&quot;640px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ODCamp releases the free tickets in batches, and each batch “sells out” in a matter of minutes. Those who are unable to attend are &lt;strong&gt;strongly encouraged&lt;/strong&gt; to update their registration so that others can make it in their place. ODCamp4 is already at full capacity but there may well be extra releases if there have been any cancellations, so set your twitter feed to give you notifications from &lt;a href=&quot;https://twitter.com/ODcamp&quot;&gt;@ODCamp&lt;/a&gt; if you’ve not already secured a ticket.&lt;/p&gt;
+
+&lt;p&gt;If you’ve already got a ticket then I’ll see you there, if you miss out this time, ODCamp5 will be along before you know it.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/odcamp4/odc3_finalsession.jpg&quot; alt=&quot;Open Data Camp - Bristol&quot; height=&quot;426px&quot; width=&quot;640px&quot; class=&quot;img-medium img-responsive center-block bordered-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;All photos used in this post are by &lt;a href=&quot;https://www.flickr.com/photos/wnbishop/sets/72157668368192166/&quot;&gt;Nigel Bishop&lt;/a&gt;, licensed &lt;a href=&quot;https://creativecommons.org/licenses/by-nc/2.0/&quot;&gt;CC BY-NC 2.0&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 30 Jan 2017 13:17:38 +0000</pubDate>
+        <link>http://networkedplanet.com/blog/2017/01/30/open-data-camp-4-cardiff.html</link>
+        <guid isPermaLink="true">http://networkedplanet.com/blog/2017/01/30/open-data-camp-4-cardiff.html</guid>
+        
+        <category>open data</category>
+        
+        <category>unconference</category>
+        
+        <category>odcamp</category>
+        
+        <category>events</category>
         
         
       </item>
