@@ -85,13 +85,13 @@
 					<a href="/support/" title="Networked Planet: Support">Support</a>
 				</li>
 				<li>
+					<a href="/open-source/" title="Networked Planet: Open Source products">Open Source</a>
+				</li>
+				<li>
 					<a href="/about-us" title="Networked Planet: About Us">About Us</a>
 				</li>
 				<li>
 					<a href="/contact" title="Networked Planet: Contact">Contact </a>
-				</li>
-				<li>
-					<a href="/blog/" title="Networked Planet: Blog">Blog</a>
 				</li>
 			</ul>
 			<div class="nav navbar-right">
@@ -116,9 +116,100 @@
 </div>
 
     <div class="container">
-        <p class="lead">Information management and metadata management practitioners throw around a lot of technical terms. Let us guide you through some of the key concepts to understand.</p>
+        <section>
+    <h1>Glossary</h1>
 
+    <p class="lead text-center">Information management and metadata management practitioners throw around a lot of technical terms. Let us guide you through some of the key concepts to understand.</p>
 
+    <hr />
+
+    
+
+    
+    <article class="glossary-term">
+        <h2><a href="/glossary/linked-data" title="Linked Data">Linked Data</a></h2>
+        <p><p>Linked Data is the set of best practises for structuring, sharing and publishing raw data using accepted Web standards.</p>
+
+<p>Read a more lengthy description <a href="/linked-data" title="What is Linked Data?">here</a></p>
+</p>
+    </article>
+    
+    <article class="glossary-term">
+        <h2><a href="/glossary/ontology" title="Ontology">Ontology</a></h2>
+        <p><p class="lead">An ontology is a model that describes types of things that exist in a knowledge domain and the types of relationships between them.</p>
+
+<p>An ontology is typically used to describe a particular domain of interest, for example a business. There are some attempts at creating generic ontologies, but these tend to be very large and complex.</p>
+
+<p>The ontology describes:</p>
+
+<ol>
+  <li>The types of things that will exist in the knowledge domain e.g. Person, Product, Company.</li>
+  <li>The properties different type instances may have e.g. Date of Birth, Social Security Number.</li>
+  <li>The types of relationships that can exist between different entities e.g. Person Works For Company, Person Is Expert In Product.</li>
+</ol>
+</p>
+    </article>
+    
+    <article class="glossary-term">
+        <h2><a href="/glossary/rdf" title="RDF">RDF</a></h2>
+        <p><p class="lead">RDF (Resource Description Framework) is a standard model for data interchange on the Web.</p>
+
+<p>RDF extends the linking structure of the Web to use URIs to name the subjects being discussed and to identify the type of relationships between subjects.</p>
+
+<p>The basic data model of RDF is (subject, predicate, object). Using this simple model, it allows structured and semi-structured data to be mixed, exposed, and shared across different applications.</p>
+
+<p>RDF also has features that facilitate data merging even if the underlying schemas differ, and it specifically supports the evolution of schemas over time.</p>
+
+<p>The RDF structure forms a directed, labelled graph, where the edges represent the named link between two resources, represented by the graph nodes. This graph view is the easiest possible mental model for RDF and is often used in easy-to-understand visual explanations.</p>
+</p>
+    </article>
+    
+    <article class="glossary-term">
+        <h2><a href="/glossary/rest" title="REST">REST</a></h2>
+        <p><p class="lead">REST is an architectural style where stateless servers provide representations of resources under its control. Client applications use known information about the representation content type to decide how to operate.</p>
+
+<p>REST uses HTTP to fetch, update and delete resource representations.</p>
+
+<p>In combination with HTTP it is the content types and the semantics associated with these that drive the application. The ATOM publishing protocol is a good example of a RESTful technology where given a single entry URL and knowledge of the content types and client can reliably interact with any ATOM server</p>
+</p>
+    </article>
+    
+    <article class="glossary-term">
+        <h2><a href="/glossary/sparql" title="SPARQL">SPARQL</a></h2>
+        <p><p class="lead">SPARQL is the query language for RDF. SPARQL can be used to express queries across diverse data sources, whether the data is stored natively as RDF or viewed as RDF via middleware.</p>
+
+<p>The SPARQL query language is based on the concept of matching patterns in a graph. These patterns can be combined to produce complex match criteria that consist of the conjunction (AND) and disjunction (OR) of many simpler patterns. SPARQL also supports extensible value testing for filtering matches.</p>
+
+<p>The implementation of SPARQL provided by the <a href="/solutions/web3/">Web3 Platform</a> makes it easy to query across the association relationships and properties of topics but also supports querying all aspects of the ISO Topic Maps Data Model. Our implementation also adds support for full-text search against topic labels, names and occurrences.</p>
+
+<p>SPARQL is also the principal query language supported by <a href="/solutions/brightstardb/">BrightstarDB</a>, which also provides a binding for converting LINQ queries into SPARQL; allowing access to RDF data stores without needing to learn another query language.</p>
+</p>
+    </article>
+    
+    <article class="glossary-term">
+        <h2><a href="/glossary/taxonomy" title="Taxonomy">Taxonomy</a></h2>
+        <p><p class="lead">A Taxonomy is a set of concepts, generally organized into a hierarchical structure. Concepts are more general at the top and become more specialised further down in the tree. Taxonomies are often used to create controlled vocabularies of classification terms. These taxonomy concepts can then be used to classify content, or even other concepts.</p>
+
+<p>A taxonomy concept typically has one or more unique identifiers, multiple labels or names (in different languages, or for different user groups) and then relationships to other terms.</p>
+
+<p>The kinds of relationships a taxonomy concept can have to other concepts in the taxonomy are broader (typically a parent concept which can be applied to a wider class of item than any of its child concepts), and narrower terms (a child concept that is more specific than its parent concept). Taxonomy concepts may also have other loosely related concept-to-concept relationships, such as see also.</p>
+
+<p>Taxonomies are very powerful for managing hierarchical vocabularies but the lack of typed relationships between terms means that they are insufficient for modelling business domains. To model these sorts of systems we instead need to create an <a href="/glossary/ontology/">ontology</a>.</p>
+</p>
+    </article>
+    
+    <article class="glossary-term">
+        <h2><a href="/glossary/topic-maps" title="Topic Maps">Topic Maps</a></h2>
+        <p><p class="lead">ISO13250 – Topic Maps Standard is one of the semantic standards supported by our products. This standard defines a model and syntax for generic knowledge representation with a particular focus on using knowledge structures to organize content.</p>
+
+<p>The standard defines three main constructs, Topic, Association and Occurrence. Topics are proxies for any subject that someone might want to talk about. Associations define relationships between Topics and Occurrences are the properties of Topics.</p>
+
+<p>Topic Maps has a strong notion of identity and supports merging of Topic Maps in an automatic fashion.</p>
+</p>
+    </article>
+    
+
+</section>
         <div class="spacer2">&nbsp;</div>
     </div>
     
@@ -134,8 +225,10 @@
                 </script>
             </div>
             <div class="col-xs-6">
-                <div class="pull-right">
-                    <a href="/">Home</a>
+                <div class="nav navbar-right footer-nav">
+                    <a href="/" title="Networked Planet home page">Home</a>
+                    <a href="/blog/" title="Networked Planet Blog">Blog</a>
+                    <a href="/glossary/" title="Glossary of terms">Glossary</a>
                 </div>
             </div>
         </div> <!-- /.row -->
